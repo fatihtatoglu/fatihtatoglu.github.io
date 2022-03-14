@@ -14,7 +14,9 @@ enginær.setOptions({
             "./css/*.css",
             "./js/*.js",
             "./image/*.png",
-            "./image/*.jpg"
+            "./image/*.jpg",
+            "./CNAME",
+            "./.nojekyll"
         ]
     },
 

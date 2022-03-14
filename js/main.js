@@ -1,4 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
+
+    loadSiteSettings();
+
+    bindMenu();
+    
+    bindThemeButtons();
+});
+
+function bindMenu()
+{
     var menuitems = document.querySelectorAll("nav>ul>li");
     menuitems.forEach((item) => {
 
@@ -17,7 +27,32 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     });
+}
 
+function loadSiteSettings() {
+    // default
+    var $html = document.getElementsByTagName("html")[0];
+    var themeWidth = window.localStorage.getItem("theme-width");
+    var themeColor = window.localStorage.getItem("theme-color");
+
+    if (themeWidth) {
+        $html.setAttribute("data-width", themeWidth);
+    }
+    else {
+        $html.setAttribute("data-width", "");
+        window.localStorage.setItem("theme-width", "");
+    }
+
+    if (themeColor) {
+        $html.setAttribute("data-theme", themeColor);
+    }
+    else {
+        $html.setAttribute("data-theme", "light");
+        window.localStorage.setItem("theme-color", "light");
+    }
+}
+
+function bindThemeButtons() {
     var $html = document.getElementsByTagName("html")[0];
 
     var $lnkSmallTheme = document.getElementById("lnkSmallTheme");
@@ -55,4 +90,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
         window.localStorage.setItem("theme-color", "dark");
     });
-});
+}

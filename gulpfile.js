@@ -75,21 +75,6 @@ enginær.setOptions({
                     return date.toString(config["site-culture"]);
                 }
             },
-
-            {
-                "type": "menu",
-                "handler": function (metadata, menu, config) {
-                    var title = "Anasayfa";
-                    var menuItem = {
-                        "title": title,
-                        "url": config["base-url"],
-                        "order": 0
-                    };
-
-                    menu[title] = menuItem;
-                }
-            },
-
             {
                 "type": "menu",
                 "handler": function (metadata, menu) {

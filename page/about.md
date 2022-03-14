@@ -7,7 +7,7 @@ published: true
 permalink: about.html
 image: ./image/about_me.jpg
 tags: about_me fatih tatoglu
-order: 99
+order: 999
 ---
 
 # Hakkımda

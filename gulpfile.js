@@ -3,21 +3,25 @@ const clean = require("gulp-clean");
 const replace = require("gulp-replace");
 const enginær = require("enginaer");
 
+var output = "./dist/";
+
 enginær.setOptions({
-    "output": "../dist/",
+    "output": output,
 
     "asset": {
-        "base": "./assets/",
+        "base": "./",
         "path": [
-            "./assets/css/*.css",
-            "./assets/js/*.js",
-            "./assets/img/*.png",
-            "./assets/img/*.jpg"
+            "./css/*.css",
+            "./js/*.js",
+            "./image/*.png",
+            "./image/*.jpg"
         ]
     },
 
     "page": {
-        "path": "./page/**/*.md",
+        "path": [
+            "./page/*.md"
+        ],
         "enrichers": [
             {
                 "key": "title",
@@ -69,6 +73,21 @@ enginær.setOptions({
                     return date.toString(config["site-culture"]);
                 }
             },
+
+            {
+                "type": "menu",
+                "handler": function (metadata, menu, config) {
+                    var title = "Anasayfa";
+                    var menuItem = {
+                        "title": title,
+                        "url": config["base-url"],
+                        "order": 0
+                    };
+
+                    menu[title] = menuItem;
+                }
+            },
+
             {
                 "type": "menu",
                 "handler": function (metadata, menu) {
@@ -146,11 +165,11 @@ enginær.setOptions({
     },
 
     "config": {
-        "site-language": "en",
-        "site-culture": "en-US",
-        "site-title-prefix": "Enginær - ",
-        "site-name": "Enginær Demo",
-        "base-url": "https://blog.tatoglu.net/enginaer/"
+        "site-language": "tr",
+        "site-culture": "tr-TR",
+        "site-title-prefix": "",
+        "site-name": "Fatih Tatoğlu",
+        "base-url": "https://blog.tatoglu.net/"
     },
 
     "marked": {
@@ -189,8 +208,7 @@ function generate() {
     return enginær.generate()
         .pipe(replace("<h1>", "<header><h1>"))
         .pipe(replace("</h1>", "</h1></header>"))
-        .pipe(replace(/..\/assets\/img\//g, "./img/"))
-        .pipe(dest("../dist/"));
+        .pipe(dest(output));
 }
 
 exports.default = series(

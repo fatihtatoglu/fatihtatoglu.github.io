@@ -17,6 +17,7 @@ enginær.setOptions({
             "./js/*.js",
             "./image/*.png",
             "./image/*.jpg",
+            "./image/favicon/*",
             "./CNAME",
             "./.nojekyll"
         ]

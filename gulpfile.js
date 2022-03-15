@@ -118,7 +118,43 @@ enginær.setOptions({
 
                     var layout = metadata.get("layout");
                     var title = metadata.get("title");
-                    if (layout === "page") {
+                    if (layout !== "page") {
+                        return;
+                    }
+
+                    var menuGroupName = metadata.get("group");
+                    if (menuGroupName) {
+
+                        if (!menu[menuGroupName]) {
+                            menu[menuGroupName] = {
+                                title: menuGroupName,
+                                "order": 999,
+                                "children": []
+                            };
+                        }
+
+                        var menuGroup = menu[menuGroupName];
+
+                        var menuItem = {
+                            "title": title,
+                            "url": metadata.get("permalink"),
+                            "order": metadata.get("order")
+                        };
+
+                        if (metadata.get("published") !== "true") {
+                            menuItem["disabled"] = true;
+                            delete menuItem["url"];
+                        }
+
+                        menuGroup["children"].push(menuItem);
+                        menuGroup["children"] = menuGroup["children"].sort(function (a, b) {
+                            return a["order"] - b["order"];
+                        });
+
+
+                        menu[menuGroupName] = menuGroup;
+                    }
+                    else {
                         var menuItem = {
                             "title": title,
                             "url": metadata.get("permalink"),
@@ -131,38 +167,6 @@ enginær.setOptions({
                         }
 
                         menu[title] = menuItem;
-                    }
-                }
-            },
-            {
-                "type": "menu",
-                "handler": function (metadata, menu, config) {
-
-                    var posts = menu["posts"] || {
-                        "title": "Posts",
-                        "children": [],
-                        "order": 9999
-                    };
-
-                    var layout = metadata.get("layout");
-                    if (layout === "post") {
-                        var menuItem = {
-                            "title": metadata.get("title"),
-                            "url": metadata.get("permalink"),
-                            "date": metadata.get("date")
-                        };
-
-                        if (metadata.get("published") !== "true") {
-                            menuItem["disabled"] = true;
-                            delete menuItem["url"];
-                        }
-
-                        posts["children"].push(menuItem);
-                        posts["children"] = posts["children"].sort(function (a, b) {
-                            return new Date(a["date"]) - new Date(b["date"]);
-                        });
-
-                        menu["posts"] = posts;
                     }
                 }
             }

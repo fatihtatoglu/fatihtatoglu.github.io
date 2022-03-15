@@ -2,6 +2,8 @@ const { series, parallel, src, dest, tree } = require("gulp");
 const clean = require("gulp-clean");
 const replace = require("gulp-replace");
 const enginær = require("enginaer");
+const htmlmin = require("gulp-htmlmin");
+const versionNumber = require("gulp-version-number");
 
 var output = "./dist/";
 
@@ -233,9 +235,19 @@ function loadTemplates() {
 
 // Gulp Step 5 - Generate Output
 function generate() {
+    const versionConfig = {
+        'value': '%MDS%',
+        'append': {
+            'key': 'v',
+            'to': ['css', 'js'],
+        },
+    };
+
     return enginær.generate()
         .pipe(replace("<h1>", "<header><h1>"))
         .pipe(replace("</h1>", "</h1></header>"))
+        .pipe(htmlmin({ collapseWhitespace: true }))
+        .pipe(versionNumber(versionConfig))
         .pipe(dest(output));
 }
 

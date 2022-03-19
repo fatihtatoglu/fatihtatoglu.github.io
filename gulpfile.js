@@ -90,27 +90,8 @@ enginær.setOptions({
                         "order": 0,
                         "children": [
                             {
-                                "element-id": "lnkThemeLight",
-                                "title": "Aydınlık Tema"
-                            },
-                            {
-                                "element-id": "lnkThemeDark",
-                                "title": "Karanlık Tema"
-                            },
-                            {
-                                "role": "separator"
-                            },
-                            {
-                                "element-id": "lnkSmallTheme",
-                                "title": "Dar Sayfa"
-                            },
-                            {
-                                "element-id": "lnkMediumTheme",
-                                "title": "Normal Sayfa"
-                            },
-                            {
-                                "element-id": "lnkLargeTheme",
-                                "title": "Geniş Sayfa"
+                                "element-id": "btnTheme",
+                                "title": "Tema Ayarları"
                             }
                         ]
                     };

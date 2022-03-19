@@ -4,8 +4,10 @@ const replace = require("gulp-replace");
 const enginær = require("enginaer");
 const htmlmin = require("gulp-htmlmin");
 const versionNumber = require("gulp-version-number");
+const sitemap = require("gulp-sitemap");
 
 var output = "./dist/";
+var siteUrl = "https://blog.tatoglu.net/";
 
 enginær.setOptions({
     "output": output,
@@ -19,7 +21,8 @@ enginær.setOptions({
             "./image/*.jpg",
             "./image/favicon/*",
             "./CNAME",
-            "./.nojekyll"
+            "./.nojekyll",
+            "./robots.txt"
         ]
     },
 
@@ -200,7 +203,7 @@ enginær.setOptions({
         "site-culture": "tr-TR",
         "site-title-prefix": "",
         "site-name": "Fatih Tatoğlu",
-        "base-url": "https://blog.tatoglu.net/"
+        "base-url": siteUrl
     },
 
     "marked": {
@@ -252,10 +255,22 @@ function generate() {
         .pipe(dest(output));
 }
 
+function generateSiteMap() {
+    return src(output + "**/*.html")
+        .pipe(sitemap({
+            siteUrl: siteUrl,
+            changefreq: "weekly",
+            images: true
+        }))
+        .pipe(dest(output));
+}
+
 exports.default = series(
     cleanAll,
 
     parallel(copyAssets, loadPages, loadTemplates),
 
-    generate
+    generate,
+
+    generateSiteMap
 );

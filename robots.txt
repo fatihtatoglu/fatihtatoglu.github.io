@@ -1,0 +1,2 @@
+Sitemap: https://blog.tatoglu.net/sitemap.xml
+User-agent: *

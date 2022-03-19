@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+    <url>
+        
+        <loc>https://blog.tatoglu.net/about-me.html</loc>
+    
+        <image:image>
+            <image:loc>https://blog.tatoglu.net/image/about_me.jpg</image:loc>
+        </image:image>
+    
+        
+        <lastmod>2022-03-19T12:59:37.652Z</lastmod>
+    
+        
+        <changefreq>weekly</changefreq>
+    
+    </url>
+    <url>
+        
+        <loc>https://blog.tatoglu.net/about-site.html</loc>
+    
+        
+        <lastmod>2022-03-19T12:59:37.660Z</lastmod>
+    
+        
+        <changefreq>weekly</changefreq>
+    
+    </url>
+    <url>
+        
+        <loc>https://blog.tatoglu.net/</loc>
+    
+        
+        <lastmod>2022-03-19T12:59:37.664Z</lastmod>
+    
+        
+        <changefreq>weekly</changefreq>
+    
+    </url>
+</urlset>

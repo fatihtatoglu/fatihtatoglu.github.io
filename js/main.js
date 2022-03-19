@@ -1,93 +1,109 @@
+const defaultThemeColor = "aqua";
+
 document.addEventListener('DOMContentLoaded', () => {
 
     loadSiteSettings();
 
     bindMenu();
-    
+    renderThemeDialog();
+
     bindThemeButtons();
 });
 
-function bindMenu()
-{
-    var menuitems = document.querySelectorAll("nav>ul>li");
+function bindMenu() {
+    var menu = document.querySelector("nav>ul");
+    var menuitems = menu.querySelectorAll("nav>ul>li");
+
+    var toggler = document.querySelector("nav>span.menu-button");
+
+    function hideAllSubMenus() {
+        var submenus = menu.querySelectorAll("nav>ul>li div.sub-menu");
+        submenus.forEach(sm => {
+            sm.style.display = "none";
+        });
+    }
+
     menuitems.forEach((item) => {
 
         var subMenu = item.querySelector("div.sub-menu");
-        if (subMenu) {
-            item.addEventListener("mouseover", () => {
+        if (!subMenu) {
+            return;
+        }
+
+        // set initial state
+        subMenu.style.display = "none";
+
+        item.addEventListener("click", () => {
+            if (subMenu.style.display === "none") {
+
+                hideAllSubMenus();
+
                 subMenu.style.display = "block";
-            });
-
-            item.addEventListener("mouseleave", () => {
+            } else {
                 subMenu.style.display = "none";
-            });
+            }
+        });
+    });
 
-            subMenu.addEventListener("click", () => {
-                subMenu.style.display = "none";
-            });
+    toggler.addEventListener("click", () => {
+        if (menu.style.display === "table") {
+            hideAllSubMenus();
+
+            menu.style.display = "none";
+        }
+        else {
+            menu.style.display = "table";
         }
     });
 }
 
 function loadSiteSettings() {
-    // default
     var $html = document.getElementsByTagName("html")[0];
-    var themeWidth = window.localStorage.getItem("theme-width");
     var themeColor = window.localStorage.getItem("theme-color");
 
-    if (themeWidth) {
-        $html.setAttribute("data-width", themeWidth);
-    }
-    else {
-        $html.setAttribute("data-width", "");
-        window.localStorage.setItem("theme-width", "");
-    }
+    $html.className = "";
 
     if (themeColor) {
-        $html.setAttribute("data-theme", themeColor);
+        $html.classList.add(themeColor);
     }
     else {
-        $html.setAttribute("data-theme", "light");
-        window.localStorage.setItem("theme-color", "light");
+        $html.classList.add(defaultThemeColor);
+
+        window.localStorage.setItem("theme-color", defaultThemeColor);
     }
 }
 
 function bindThemeButtons() {
-    var $html = document.getElementsByTagName("html")[0];
+    var $btnTheme = document.getElementById("btnTheme");
+    var $pnlThemeDialog = document.getElementById("pnlThemeDialog");
 
-    var $lnkSmallTheme = document.getElementById("lnkSmallTheme");
-    var $lnkMediumTheme = document.getElementById("lnkMediumTheme");
-    var $lnkLargeTheme = document.getElementById("lnkLargeTheme");
-    var $lnkThemeLight = document.getElementById("lnkThemeLight");
-    var $lnkThemeDark = document.getElementById("lnkThemeDark");
-
-    $lnkSmallTheme.addEventListener("click", () => {
-        $html.setAttribute("data-width", "small");
-
-        window.localStorage.setItem("theme-width", "small");
+    $btnTheme.addEventListener("click", function () {
+        if ($pnlThemeDialog) {
+            $pnlThemeDialog.style.display = "block";
+        }
     });
 
-    $lnkMediumTheme.addEventListener("click", () => {
-        $html.setAttribute("data-width", "");
-
-        window.localStorage.setItem("theme-width", "");
+    window.addEventListener("click", function (e) {
+        if (e.target == $pnlThemeDialog) {
+            $pnlThemeDialog.style.display = "none";
+        }
     });
+}
 
-    $lnkLargeTheme.addEventListener("click", () => {
-        $html.setAttribute("data-width", "large");
+function renderThemeDialog() {
 
-        window.localStorage.setItem("theme-width", "large");
-    });
+    var $btnThemeDialogOK = document.getElementById("btnThemeDialogOK");
+    var dialog = document.getElementById("pnlThemeDialog");
+    $btnThemeDialogOK.addEventListener("click", function () {
+        var selectedElements = dialog.querySelectorAll("input[type=radio]:checked");
+        selectedElements.forEach(function (item) {
+            if (item.name === "color") {
+                window.localStorage.setItem("theme-color", item.value);
+            }
+        });
 
-    $lnkThemeLight.addEventListener("click", () => {
-        $html.setAttribute("data-theme", "light");
+        loadSiteSettings();
 
-        window.localStorage.setItem("theme-color", "light");
-    });
-
-    $lnkThemeDark.addEventListener("click", () => {
-        $html.setAttribute("data-theme", "dark");
-
-        window.localStorage.setItem("theme-color", "dark");
+        dialog.style.display = "none";
     });
 }

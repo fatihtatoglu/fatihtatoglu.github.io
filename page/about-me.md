@@ -6,7 +6,7 @@ date: 2021-11-19T00:00:00.000Z
 published: true
 permalink: about-me.html
 image: ./image/about_me.jpg
-tags: about_me fatih tatoglu
+tags: hakkımda fatih_tatoglu
 order: 2
 group: Hakkında
 ---

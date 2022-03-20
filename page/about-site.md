@@ -1,11 +1,11 @@
 ---
 layout: page
 author: Fatih Tatoğlu
-description: The short summary about using theme of the website.
+description: Sitenin üzerinde çalıştığı tema ve site motorunu nedir.
 date: 2021-11-19T00:00:00.000Z
 published: true
 permalink: ./about/about-site.html
-tags: fatih_tatoglu turbo_c enginar blog_teması site_hakkında
+tags: turbo_c enginaer blog_teması site_hakkında
 order: 1
 group: Hakkında
 ---

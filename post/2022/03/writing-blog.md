@@ -1,11 +1,11 @@
 ---
 layout: post
 author: Fatih Tatoğlu
-description: 
+description: Blog yazmak ve yazarken karşılaştığım zorlukları anlatmaya çalıştım. Motivasyon kaynağım olacak bir yazı.
 date: 2022-03-20T00:00:00.000Z
 published: true
 permalink: ./post/2022/03/writing-blog.html
-tags: fatih_tatoglu blog_yazmak selçuk_erdem be_agile
+tags: blog_yazmak selçuk_erdem be_agile
 ---
 
 # Blog Yazmak
@@ -30,4 +30,4 @@ Yukarıdaki eleştirileri ben kendi kendime söylüyorum. Yani beynimin içindek
 
 Amacım yarışmak değil, paylaşmak ve bundan keyif almak istiyorum. Aslında bu yazıyı o yüzden yazdım. Yine motivasyonum düşerse, bu yazımı okuyup amacımın ne olduğunu hatırlamak ve yazmaya devam etmek istiyorum. Bu amacımı pekiştirmek için [Selçuk Erdem](https://twitter.com/selcukerdem)’in benim gibi çizmekten hiç anlamayan birine bile bir karikatür karakteri çizdirdiği görseli de aşağıya bırakıyorum. Yazıyı okurken kendime not, karikatürün dediğini unutma!
 
-[![Be Agile](../image/be-agile-cartoon.jpg "Be Agile")](https://www.instagram.com/p/CH2zB56hMWV)
+[![Be Agile](../../../image/be-agile-cartoon.jpg "Be Agile")](https://www.instagram.com/p/CH2zB56hMWV)

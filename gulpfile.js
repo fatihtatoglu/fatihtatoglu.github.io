@@ -28,7 +28,8 @@ enginær.setOptions({
 
     "page": {
         "path": [
-            "./page/*.md"
+            "./page/*.md",
+            "./post/**/*.md"
         ],
         "enrichers": [
             {

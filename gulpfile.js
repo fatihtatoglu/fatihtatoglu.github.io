@@ -105,7 +105,7 @@ enginær.setOptions({
 
                     var layout = metadata.get("layout");
                     var title = metadata.get("title");
-                    if (layout !== "page") {
+                    if (layout !== "page" && layout !== "index") {
                         return;
                     }
 
@@ -175,6 +175,9 @@ enginær.setOptions({
                 }
 
                 return "javascript:;";
+            },
+            "isPost": function () {
+                return this.layout === "post";
             }
         }
     },

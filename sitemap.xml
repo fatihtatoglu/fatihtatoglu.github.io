@@ -2,14 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
     <url>
         
-        <loc>https://blog.tatoglu.net/about-me.html</loc>
+        <loc>https://blog.tatoglu.net/</loc>
+    
+        
+        <lastmod>2022-03-20T11:07:22.092Z</lastmod>
+    
+        
+        <changefreq>weekly</changefreq>
+    
+    </url>
+    <url>
+        
+        <loc>https://blog.tatoglu.net/about/about-me.html</loc>
     
         <image:image>
             <image:loc>https://blog.tatoglu.net/image/about_me.jpg</image:loc>
         </image:image>
     
         
-        <lastmod>2022-03-20T10:58:31.926Z</lastmod>
+        <lastmod>2022-03-20T11:07:22.088Z</lastmod>
     
         
         <changefreq>weekly</changefreq>
@@ -17,21 +28,10 @@
     </url>
     <url>
         
-        <loc>https://blog.tatoglu.net/about-site.html</loc>
+        <loc>https://blog.tatoglu.net/about/about-site.html</loc>
     
         
-        <lastmod>2022-03-20T10:58:31.930Z</lastmod>
-    
-        
-        <changefreq>weekly</changefreq>
-    
-    </url>
-    <url>
-        
-        <loc>https://blog.tatoglu.net/</loc>
-    
-        
-        <lastmod>2022-03-20T10:58:31.930Z</lastmod>
+        <lastmod>2022-03-20T11:07:22.092Z</lastmod>
     
         
         <changefreq>weekly</changefreq>
@@ -39,14 +39,14 @@
     </url>
     <url>
         
-        <loc>https://blog.tatoglu.net/writing-blog.html</loc>
+        <loc>https://blog.tatoglu.net/post/2022/03/writing-blog.html</loc>
     
         <image:image>
             <image:loc>https://blog.tatoglu.net/.image/be-agile-cartoon.jpg</image:loc>
         </image:image>
     
         
-        <lastmod>2022-03-20T10:58:31.930Z</lastmod>
+        <lastmod>2022-03-20T11:07:22.092Z</lastmod>
     
         
         <changefreq>weekly</changefreq>

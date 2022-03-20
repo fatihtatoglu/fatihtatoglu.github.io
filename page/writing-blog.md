@@ -4,7 +4,7 @@ author: Fatih Tatoğlu
 description: 
 date: 2022-03-20T00:00:00.000Z
 published: true
-permalink: writing-blog.html
+permalink: ./post/2022/03/writing-blog.html
 tags: fatih_tatoglu blog_yazmak selçuk_erdem be_agile
 ---
 

@@ -4,7 +4,7 @@ author: Fatih Tatoğlu
 description: The short summary about Fatih Tatoğlu.
 date: 2021-11-19T00:00:00.000Z
 published: true
-permalink: about-me.html
+permalink: ./about/about-me.html
 image: ./image/about_me.jpg
 tags: hakkımda fatih_tatoglu
 order: 2

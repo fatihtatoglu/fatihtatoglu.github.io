@@ -4,7 +4,7 @@ author: Fatih Tatoğlu
 description: The short summary about using theme of the website.
 date: 2021-11-19T00:00:00.000Z
 published: true
-permalink: about-site.html
+permalink: ./about/about-site.html
 tags: fatih_tatoglu turbo_c enginar blog_teması site_hakkında
 order: 1
 group: Hakkında

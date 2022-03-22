@@ -5,7 +5,7 @@
         <loc>https://blog.tatoglu.net/</loc>
     
         
-        <lastmod>2022-03-20T20:42:48.305Z</lastmod>
+        <lastmod>2022-03-22T11:09:52.432Z</lastmod>
     
         
         <changefreq>weekly</changefreq>
@@ -13,14 +13,14 @@
     </url>
     <url>
         
-        <loc>https://blog.tatoglu.net/about/about-me.html</loc>
+        <loc>https://blog.tatoglu.net/about/me.html</loc>
     
         <image:image>
             <image:loc>https://blog.tatoglu.net/image/about_me.jpg</image:loc>
         </image:image>
     
         
-        <lastmod>2022-03-20T20:42:48.305Z</lastmod>
+        <lastmod>2022-03-22T11:09:52.432Z</lastmod>
     
         
         <changefreq>weekly</changefreq>
@@ -28,10 +28,10 @@
     </url>
     <url>
         
-        <loc>https://blog.tatoglu.net/about/about-site.html</loc>
+        <loc>https://blog.tatoglu.net/about/site.html</loc>
     
         
-        <lastmod>2022-03-20T20:42:48.305Z</lastmod>
+        <lastmod>2022-03-22T11:09:52.432Z</lastmod>
     
         
         <changefreq>weekly</changefreq>
@@ -39,14 +39,14 @@
     </url>
     <url>
         
-        <loc>https://blog.tatoglu.net/post/2022/03/writing-blog.html</loc>
+        <loc>https://blog.tatoglu.net/post/writing-blog.html</loc>
     
         <image:image>
-            <image:loc>https://blog.tatoglu.net/.../../image/be-agile-cartoon.jpg</image:loc>
+            <image:loc>https://blog.tatoglu.net/image/be-agile-cartoon.jpg</image:loc>
         </image:image>
     
         
-        <lastmod>2022-03-20T20:42:48.305Z</lastmod>
+        <lastmod>2022-03-22T11:09:52.432Z</lastmod>
     
         
         <changefreq>weekly</changefreq>

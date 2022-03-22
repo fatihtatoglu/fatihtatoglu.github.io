@@ -1,10 +1,11 @@
-const { series, parallel, src, dest, tree } = require("gulp");
+const { series, parallel, src, dest } = require("gulp");
 const clean = require("gulp-clean");
 const replace = require("gulp-replace");
 const enginær = require("enginaer");
 const htmlmin = require("gulp-htmlmin");
 const versionNumber = require("gulp-version-number");
 const sitemap = require("gulp-sitemap");
+const anchorRewriter = require("gulp-html-anchor-rewriter");
 
 var output = "./dist/";
 var siteUrl = "https://blog.tatoglu.net/";
@@ -233,10 +234,33 @@ function generate() {
     };
 
     return enginær.generate()
+
+        // replace heading for theme
         .pipe(replace("<h1>", "<header><h1>"))
         .pipe(replace("</h1>", "</h1></header>"))
+
+        // replace fo4 image path
+        .pipe(replace(/..\/..\/..\/image\//g, "image/"))
+
+        // compress html file
         .pipe(htmlmin({ collapseWhitespace: true }))
+
+        // add version number for css and js files for preventing cache
         .pipe(versionNumber(versionConfig))
+
+        // add rel and target for outgoing links
+        .pipe(anchorRewriter({
+            target: "_new"
+        }))
+        .pipe(anchorRewriter({
+            keyword: "twitter.com",
+            rel: "nofollow"
+        }))
+        .pipe(anchorRewriter({
+            keyword: "instagram.com",
+            rel: "nofollow"
+        }))
+
         .pipe(dest(output));
 }
 

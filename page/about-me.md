@@ -4,7 +4,7 @@ author: Fatih Tatoğlu
 description: Fatih Tatoğlu kimdir ve hayatındaki önemli noktalar nelerdir.
 date: 2021-11-19T00:00:00.000Z
 published: true
-permalink: ./about/about-me.html
+permalink: ./about/me.html
 image: ./image/about_me.jpg
 tags: hakkımda
 order: 2

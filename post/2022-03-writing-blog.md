@@ -4,7 +4,7 @@ author: Fatih Tatoğlu
 description: Blog yazmak ve yazarken karşılaştığım zorlukları anlatmaya çalıştım. Motivasyon kaynağım olacak bir yazı.
 date: 2022-03-20T00:00:00.000Z
 published: true
-permalink: ./post/2022/03/writing-blog.html
+permalink: ./post/writing-blog.html
 tags: blog_yazmak selçuk_erdem be_agile
 ---
 
@@ -14,7 +14,7 @@ Fikirlerimi, ürettiklerimi veya öğrendiklerimi paylaşmak. Günlük hayatımd
 
 Blog yazma ile ilgili çok fazla başlama hikayem var. Her seferinde, ***"bu sefer devam edeceğim"*** motivasyonu ile başlıyorum. Güzel bir tema seçiyorum, güzel görseller buluyorum. İlginç olduğunu düşündüğüm konuları araştırıp, anlayıp sonrasında kendi cümlelerim ile yazıyorum ve paylaşıyorum. Sonrası...
 
-Eşime bu durumu anlattım ve bana *"sen başlamayı seviyorsun, ama devamını getirmiyorsun..."* dedi. 2020 yılında katıldığım bir seminerde konuşmacı olan [Selçuk Erdem](https://twitter.com/selcukerdem) de, *"... yazdığınız veya çizdiğiniz defter ve kalem sizi yargılamasın..."* dedi. Bütün bunları düşündüğümde daha önceden yazmak için kullandığım araçlar ve seçtiğim görseller hep güçlü ve hep beni yargılıyorlar.
+Eşime bu durumu anlattım ve bana *"sen başlamayı seviyorsun, ama devamını getirmiyorsun..."* dedi. 2020 yılında katıldığım bir seminerde konuşmacı olan [Selçuk Erdem](https://twitter.com/selcukerdem "Selçuk Erdem") de, *"... yazdığınız veya çizdiğiniz defter ve kalem sizi yargılamasın..."* dedi. Bütün bunları düşündüğümde daha önceden yazmak için kullandığım araçlar ve seçtiğim görseller hep güçlü ve hep beni yargılıyorlar.
 
 > Bu araçlarla bir yazı yazıyorsan harika olmalı.
 >

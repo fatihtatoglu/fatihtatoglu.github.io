@@ -187,7 +187,7 @@ enginær.setOptions({
     "config": {
         "site-language": "tr",
         "site-culture": "tr-TR",
-        "site-title-prefix": "",
+        "site-title-prefix": "Fatih Tatoğlu - ",
         "site-name": "Fatih Tatoğlu",
         "base-url": siteUrl
     },
@@ -250,15 +250,54 @@ function generate() {
 
         // add rel and target for outgoing links
         .pipe(anchorRewriter({
+            keyword: "twitter.com",
+            rel: "nofollow",
             target: "_new"
         }))
         .pipe(anchorRewriter({
-            keyword: "twitter.com",
-            rel: "nofollow"
+            keyword: "instagram.com",
+            rel: "nofollow",
+            target: "_new"
         }))
         .pipe(anchorRewriter({
-            keyword: "instagram.com",
-            rel: "nofollow"
+            keyword: "medium.com",
+            rel: "nofollow",
+            target: "_new"
+        }))
+        .pipe(anchorRewriter({
+            keyword: "github.io",
+            rel: "nofollow",
+            target: "_new"
+        }))
+        .pipe(anchorRewriter({
+            keyword: "dev.to",
+            rel: "nofollow",
+            target: "_new"
+        }))
+        .pipe(anchorRewriter({
+            keyword: "nodejs.org",
+            rel: "nofollow",
+            target: "_new"
+        }))
+        .pipe(anchorRewriter({
+            keyword: "gulpjs.com",
+            rel: "nofollow",
+            target: "_new"
+        }))
+        .pipe(anchorRewriter({
+            keyword: "sass-lang.com",
+            rel: "nofollow",
+            target: "_new"
+        }))
+        .pipe(anchorRewriter({
+            keyword: "github.com/features/actions",
+            rel: "nofollow",
+            target: "_new"
+        }))
+        .pipe(anchorRewriter({
+            keyword: "pages.github.com",
+            rel: "nofollow",
+            target: "_new"
         }))
 
         .pipe(dest(output));

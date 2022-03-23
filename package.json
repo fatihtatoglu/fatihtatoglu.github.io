@@ -13,7 +13,7 @@
   },
   "homepage": "https://github.com/fatihtatoglu/fatihtatoglu.github.io#readme",
   "devDependencies": {
-    "enginaer": "^4.0.2",
+    "enginaer": "^4.0.3",
     "gulp": "^4.0.2",
     "gulp-clean": "^0.4.0",
     "gulp-html-anchor-rewriter": "^1.0.0",

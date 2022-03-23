@@ -5,7 +5,7 @@
         <loc>https://blog.tatoglu.net/</loc>
     
         
-        <lastmod>2022-03-22T11:09:52.432Z</lastmod>
+        <lastmod>2022-03-23T21:27:28.885Z</lastmod>
     
         
         <changefreq>weekly</changefreq>
@@ -20,7 +20,7 @@
         </image:image>
     
         
-        <lastmod>2022-03-22T11:09:52.432Z</lastmod>
+        <lastmod>2022-03-23T21:27:28.885Z</lastmod>
     
         
         <changefreq>weekly</changefreq>
@@ -31,7 +31,50 @@
         <loc>https://blog.tatoglu.net/about/site.html</loc>
     
         
-        <lastmod>2022-03-22T11:09:52.432Z</lastmod>
+        <lastmod>2022-03-23T21:27:28.885Z</lastmod>
+    
+        
+        <changefreq>weekly</changefreq>
+    
+    </url>
+    <url>
+        
+        <loc>https://blog.tatoglu.net/post/turboc-blog-theme.html</loc>
+    
+        <image:image>
+            <image:loc>https://blog.tatoglu.net/.image/turboc_0001.png</image:loc>
+        </image:image>
+    
+        <image:image>
+            <image:loc>https://blog.tatoglu.net/.image/turboc_0002.png</image:loc>
+        </image:image>
+    
+        <image:image>
+            <image:loc>https://blog.tatoglu.net/.image/logo-sass.png</image:loc>
+        </image:image>
+    
+        <image:image>
+            <image:loc>https://blog.tatoglu.net/.image/logo-normalize.png</image:loc>
+        </image:image>
+    
+        <image:image>
+            <image:loc>https://blog.tatoglu.net/.image/logo-gulp.png</image:loc>
+        </image:image>
+    
+        <image:image>
+            <image:loc>https://blog.tatoglu.net/.image/logo-nodejs.png</image:loc>
+        </image:image>
+    
+        <image:image>
+            <image:loc>https://blog.tatoglu.net/.image/logo-mustache.png</image:loc>
+        </image:image>
+    
+        <image:image>
+            <image:loc>https://blog.tatoglu.net/.image/logo-github-actions.png</image:loc>
+        </image:image>
+    
+        
+        <lastmod>2022-03-23T21:27:28.885Z</lastmod>
     
         
         <changefreq>weekly</changefreq>
@@ -46,7 +89,7 @@
         </image:image>
     
         
-        <lastmod>2022-03-22T11:09:52.432Z</lastmod>
+        <lastmod>2022-03-23T21:27:28.885Z</lastmod>
     
         
         <changefreq>weekly</changefreq>

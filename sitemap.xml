@@ -5,7 +5,7 @@
         <loc>https://blog.tatoglu.net/</loc>
     
         
-        <lastmod>2022-03-23T21:27:28.885Z</lastmod>
+        <lastmod>2022-03-24T14:33:26.056Z</lastmod>
     
         
         <changefreq>weekly</changefreq>
@@ -20,7 +20,7 @@
         </image:image>
     
         
-        <lastmod>2022-03-23T21:27:28.885Z</lastmod>
+        <lastmod>2022-03-24T14:33:26.056Z</lastmod>
     
         
         <changefreq>weekly</changefreq>
@@ -31,7 +31,42 @@
         <loc>https://blog.tatoglu.net/about/site.html</loc>
     
         
-        <lastmod>2022-03-23T21:27:28.885Z</lastmod>
+        <lastmod>2022-03-24T14:33:26.056Z</lastmod>
+    
+        
+        <changefreq>weekly</changefreq>
+    
+    </url>
+    <url>
+        
+        <loc>https://blog.tatoglu.net/post/enginaer.html</loc>
+    
+        <image:image>
+            <image:loc>https://blog.tatoglu.net/.image/logo-gulp.png</image:loc>
+        </image:image>
+    
+        <image:image>
+            <image:loc>https://blog.tatoglu.net/.image/logo-markdown.png</image:loc>
+        </image:image>
+    
+        <image:image>
+            <image:loc>https://blog.tatoglu.net/.image/logo-markedjs.png</image:loc>
+        </image:image>
+    
+        <image:image>
+            <image:loc>https://blog.tatoglu.net/.image/logo-mustache.png</image:loc>
+        </image:image>
+    
+        <image:image>
+            <image:loc>https://blog.tatoglu.net/.image/logo-nodejs.png</image:loc>
+        </image:image>
+    
+        <image:image>
+            <image:loc>https://blog.tatoglu.net/.image/logo-github-actions.png</image:loc>
+        </image:image>
+    
+        
+        <lastmod>2022-03-24T14:33:26.056Z</lastmod>
     
         
         <changefreq>weekly</changefreq>
@@ -74,7 +109,7 @@
         </image:image>
     
         
-        <lastmod>2022-03-23T21:27:28.885Z</lastmod>
+        <lastmod>2022-03-24T14:33:26.056Z</lastmod>
     
         
         <changefreq>weekly</changefreq>
@@ -89,7 +124,7 @@
         </image:image>
     
         
-        <lastmod>2022-03-23T21:27:28.885Z</lastmod>
+        <lastmod>2022-03-24T14:33:26.056Z</lastmod>
     
         
         <changefreq>weekly</changefreq>

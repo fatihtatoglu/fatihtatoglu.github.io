@@ -299,6 +299,36 @@ function generate() {
             rel: "nofollow",
             target: "_new"
         }))
+        .pipe(anchorRewriter({
+            keyword: "web.archive.org",
+            rel: "nofollow",
+            target: "_new"
+        }))
+        .pipe(anchorRewriter({
+            keyword: "notable.app",
+            rel: "nofollow",
+            target: "_new"
+        }))
+        .pipe(anchorRewriter({
+            keyword: "marked.js.org",
+            rel: "nofollow",
+            target: "_new"
+        }))
+        .pipe(anchorRewriter({
+            keyword: "daringfireball.net",
+            rel: "nofollow",
+            target: "_new"
+        }))
+        .pipe(anchorRewriter({
+            keyword: "jekyllrb.com",
+            rel: "nofollow",
+            target: "_new"
+        }))
+        .pipe(anchorRewriter({
+            keyword: "www.facebook.com",
+            rel: "nofollow",
+            target: "_new"
+        }))
 
         .pipe(dest(output));
 }

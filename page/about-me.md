@@ -33,6 +33,6 @@ Bunlar sadece benim bir major veya minor versiyon yükseltmemi sağlayan dönüm
 
 > Hayat devam ediyor, bir ucundan tutmak lazım...
 
-## References
+## Referanslar
 
-- [1]: Photo was taken by [Erkan Balk](https://www.facebook.com/erkan.balk) on January 2, 2015 in Eskişehir.
+- [1]: Fotoğraf [Erkan Balk](https://www.facebook.com/erkan.balk) tarafından 2 Ocak 2015 tarihinde Eskişehir'de çekilmiştir.

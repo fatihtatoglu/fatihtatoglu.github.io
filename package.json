@@ -20,6 +20,7 @@
     "gulp-htmlmin": "^5.0.1",
     "gulp-replace": "^1.1.3",
     "gulp-sitemap": "^8.0.0",
-    "gulp-version-number": "^0.2.4"
+    "gulp-version-number": "^0.2.4",
+    "highlight.js": "^11.5.0"
   }
 }

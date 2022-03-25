@@ -10,7 +10,7 @@ tags: enginaer site_motoru gulp nodejs otomasyon markdown mustache markedjs
 
 # Enginær
 
-Bir geliştirici olarak bir kaç ayar yapayım ve sonrasında sadece yazayım ve canlıya alayım dediğim çok günüm oldu. Bu yazıda size bu günlerde bir tanesinde aklıma gelen ama daha yeni hayata geçirebildiğim bir araçtan veya site moturundan bahsedeceğim.
+Bir geliştirici olarak bir kaç ayar yapayım ve sonrasında sadece yazayım ve canlıya alayım dediğim çok günüm oldu. Bu yazıda size bu günlerden bir tanesinde aklıma gelen ama daha yeni hayata geçirebildiğim bir araçtan bahsediyor olacağım.
 
 2012 yılında `enginar.in` adresi üzerinden yayına aldığım bir proje kendisi.
 

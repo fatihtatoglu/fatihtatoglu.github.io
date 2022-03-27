@@ -239,7 +239,7 @@ function generate() {
         'value': '%MDS%',
         'append': {
             'key': 'v',
-            'to': ['css', 'js'],
+            'to': ['css', 'js', 'image'],
         },
     };
 

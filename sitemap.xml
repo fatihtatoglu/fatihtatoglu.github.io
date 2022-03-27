@@ -5,7 +5,7 @@
         <loc>https://blog.tatoglu.net/</loc>
     
         
-        <lastmod>2022-03-27T19:42:26.765Z</lastmod>
+        <lastmod>2022-03-27T19:49:22.262Z</lastmod>
     
         
         <changefreq>weekly</changefreq>
@@ -16,11 +16,11 @@
         <loc>https://blog.tatoglu.net/about/me.html</loc>
     
         <image:image>
-            <image:loc>https://blog.tatoglu.net/image/about_me.jpg</image:loc>
+            <image:loc>https://blog.tatoglu.net/image/about_me.jpg?v=5eb7c87b34c746099b6e147d3ccc2cc8</image:loc>
         </image:image>
     
         
-        <lastmod>2022-03-27T19:42:26.765Z</lastmod>
+        <lastmod>2022-03-27T19:49:22.258Z</lastmod>
     
         
         <changefreq>weekly</changefreq>
@@ -31,7 +31,7 @@
         <loc>https://blog.tatoglu.net/about/site.html</loc>
     
         
-        <lastmod>2022-03-27T19:42:26.765Z</lastmod>
+        <lastmod>2022-03-27T19:49:22.258Z</lastmod>
     
         
         <changefreq>weekly</changefreq>
@@ -42,31 +42,31 @@
         <loc>https://blog.tatoglu.net/post/enginaer.html</loc>
     
         <image:image>
-            <image:loc>https://blog.tatoglu.net/.image/logo-gulp.png</image:loc>
+            <image:loc>https://blog.tatoglu.net/.image/logo-gulp.png?v=5eb7c87b34c746099b6e147d3ccc2cc8</image:loc>
         </image:image>
     
         <image:image>
-            <image:loc>https://blog.tatoglu.net/.image/logo-markdown.png</image:loc>
+            <image:loc>https://blog.tatoglu.net/.image/logo-markdown.png?v=5eb7c87b34c746099b6e147d3ccc2cc8</image:loc>
         </image:image>
     
         <image:image>
-            <image:loc>https://blog.tatoglu.net/.image/logo-markedjs.png</image:loc>
+            <image:loc>https://blog.tatoglu.net/.image/logo-markedjs.png?v=5eb7c87b34c746099b6e147d3ccc2cc8</image:loc>
         </image:image>
     
         <image:image>
-            <image:loc>https://blog.tatoglu.net/.image/logo-mustache.png</image:loc>
+            <image:loc>https://blog.tatoglu.net/.image/logo-mustache.png?v=5eb7c87b34c746099b6e147d3ccc2cc8</image:loc>
         </image:image>
     
         <image:image>
-            <image:loc>https://blog.tatoglu.net/.image/logo-nodejs.png</image:loc>
+            <image:loc>https://blog.tatoglu.net/.image/logo-nodejs.png?v=5eb7c87b34c746099b6e147d3ccc2cc8</image:loc>
         </image:image>
     
         <image:image>
-            <image:loc>https://blog.tatoglu.net/.image/logo-github-actions.png</image:loc>
+            <image:loc>https://blog.tatoglu.net/.image/logo-github-actions.png?v=5eb7c87b34c746099b6e147d3ccc2cc8</image:loc>
         </image:image>
     
         
-        <lastmod>2022-03-27T19:42:26.765Z</lastmod>
+        <lastmod>2022-03-27T19:49:22.262Z</lastmod>
     
         
         <changefreq>weekly</changefreq>
@@ -77,39 +77,39 @@
         <loc>https://blog.tatoglu.net/post/turboc-blog-theme.html</loc>
     
         <image:image>
-            <image:loc>https://blog.tatoglu.net/.image/turboc_0001.png</image:loc>
+            <image:loc>https://blog.tatoglu.net/.image/turboc_0001.png?v=5eb7c87b34c746099b6e147d3ccc2cc8</image:loc>
         </image:image>
     
         <image:image>
-            <image:loc>https://blog.tatoglu.net/.image/turboc_0002.png</image:loc>
+            <image:loc>https://blog.tatoglu.net/.image/turboc_0002.png?v=5eb7c87b34c746099b6e147d3ccc2cc8</image:loc>
         </image:image>
     
         <image:image>
-            <image:loc>https://blog.tatoglu.net/.image/logo-sass.png</image:loc>
+            <image:loc>https://blog.tatoglu.net/.image/logo-sass.png?v=5eb7c87b34c746099b6e147d3ccc2cc8</image:loc>
         </image:image>
     
         <image:image>
-            <image:loc>https://blog.tatoglu.net/.image/logo-normalize.png</image:loc>
+            <image:loc>https://blog.tatoglu.net/.image/logo-normalize.png?v=5eb7c87b34c746099b6e147d3ccc2cc8</image:loc>
         </image:image>
     
         <image:image>
-            <image:loc>https://blog.tatoglu.net/.image/logo-gulp.png</image:loc>
+            <image:loc>https://blog.tatoglu.net/.image/logo-gulp.png?v=5eb7c87b34c746099b6e147d3ccc2cc8</image:loc>
         </image:image>
     
         <image:image>
-            <image:loc>https://blog.tatoglu.net/.image/logo-nodejs.png</image:loc>
+            <image:loc>https://blog.tatoglu.net/.image/logo-nodejs.png?v=5eb7c87b34c746099b6e147d3ccc2cc8</image:loc>
         </image:image>
     
         <image:image>
-            <image:loc>https://blog.tatoglu.net/.image/logo-mustache.png</image:loc>
+            <image:loc>https://blog.tatoglu.net/.image/logo-mustache.png?v=5eb7c87b34c746099b6e147d3ccc2cc8</image:loc>
         </image:image>
     
         <image:image>
-            <image:loc>https://blog.tatoglu.net/.image/logo-github-actions.png</image:loc>
+            <image:loc>https://blog.tatoglu.net/.image/logo-github-actions.png?v=5eb7c87b34c746099b6e147d3ccc2cc8</image:loc>
         </image:image>
     
         
-        <lastmod>2022-03-27T19:42:26.773Z</lastmod>
+        <lastmod>2022-03-27T19:49:22.262Z</lastmod>
     
         
         <changefreq>weekly</changefreq>
@@ -120,11 +120,11 @@
         <loc>https://blog.tatoglu.net/post/writing-blog.html</loc>
     
         <image:image>
-            <image:loc>https://blog.tatoglu.net/.image/be-agile-cartoon.jpg</image:loc>
+            <image:loc>https://blog.tatoglu.net/.image/be-agile-cartoon.jpg?v=5eb7c87b34c746099b6e147d3ccc2cc8</image:loc>
         </image:image>
     
         
-        <lastmod>2022-03-27T19:42:26.777Z</lastmod>
+        <lastmod>2022-03-27T19:49:22.262Z</lastmod>
     
         
         <changefreq>weekly</changefreq>

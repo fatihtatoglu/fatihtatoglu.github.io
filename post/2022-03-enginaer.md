@@ -51,7 +51,7 @@ Kendi sitemi, kendi istediğim tema ile yayınlayabileceğim bir sisteme sahip o
 |-|
 | ![Gulp](../image/logo-gulp.png "Gulp") ![Markdown](../image/logo-markdown.png "Markdown") ![MarkedJS](../image/logo-markedjs.png "MarkedJS") ![Mustache](../image/logo-mustache.png "Mustache") ![NodeJS](../image/logo-nodejs.png "NodeJS") ![GitHub Actions](../image/logo-github-actions.png "GitHub Actions") |
 
-Eğer sizde kullanmak isterseniz [Enginær'ın Github][12] sayfasını ziyaret edebilirsiniz. Herkesin kullanabilmesi için [MIT][13] lisansı ile paylaştım. Kullandıktan sonra geliştirilmesini istediğiniz özellikler veya hatalı kısımlar için issue açmanızı ve destek vermek için reporu yıldılamanızı rica ediyorum.
+Eğer sizde kullanmak isterseniz [Enginær'ın Github][11] sayfasını ziyaret edebilirsiniz. Herkesin kullanabilmesi için [MIT][12] lisansı ile paylaştım. Kullandıktan sonra geliştirilmesini istediğiniz özellikler veya hatalı kısımlar için issue açmanızı ve destek vermek için reporu yıldılamanızı rica ediyorum.
 
 ## Referanslar
 

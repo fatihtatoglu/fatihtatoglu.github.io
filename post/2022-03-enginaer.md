@@ -10,9 +10,9 @@ tags: enginaer site_motoru gulp nodejs otomasyon markdown mustache markedjs
 
 # Enginær
 
-Bir geliştirici olarak bir kaç ayar yapayım ve sonrasında sadece yazayım ve canlıya alayım dediğim çok günüm oldu. Bu yazıda size bu günlerden bir tanesinde aklıma gelen ama daha yeni hayata geçirebildiğim bir araçtan bahsediyor olacağım.
+Bir geliştirici olarak, *her gün tekrar eden işlemlerin bir kaç ayar sonrasında sadece basit tetiklemeler ile otomatik hale gelmeli* dediğim çok günlerim oldu. Bu yazıda size bu günlerden bir tanesinde aklıma gelen ama daha yeni hayata geçirebildiğim bir araçtan bahsediyor olacağım.
 
-2012 yılında `enginar.in` adresi üzerinden yayına aldığım bir proje kendisi.
+2012 yılında `enginar.in` adresi üzerinden yayına almayı planladığım bir proje kendisi.
 
 > **Enginær neki?**
 >
@@ -22,33 +22,36 @@ Bir geliştirici olarak bir kaç ayar yapayım ve sonrasında sadece yazayım ve
 >
 > Tek yapmanız Enginær sistemini kuracağınız web sitesine karar vermek.
 
-yukarıdaki yazıyı [Web Archive][1] üzerinden buldum. O zamanlar ilgi çekici bir yazı hazırlamışım ama yine de projeyi tamamlayamadığım için yayına almadım.
+yukarıdaki yazıyı [Web Archive][1] üzerinden buldum. O zamanlar ilgi çekici bir yazı hazırlamışım ama projeye hiç başlamadım.
 
-[Turbo C Teması][3] yazımda da bahsettiğim gibi 2021 yılının sonralarında web sitemin temasını değiştirmek istemekle başladı. Sonrasında bu temayı nasıl bir siteye çeviririm ile devam etti.
+[Turbo C Teması][3] yazımda da bahsettiğim gibi 2021 yılının sonralarında web sitemin temasını değiştirmek istemekle başladı. Sonrasında bu temayı nasıl bir siteye çeviririm ile devam etti. Kafamda çok fazla düşünce vardı ama hangisinin tam olarak istediğim sonuca beni götereceğinden emin değildim. Bu yüzden biraz etrafa bakmak istedim.
 
-[gulp][2]'ın sitesini ziyaret ettiğimde bir görsel gördüm. Görselde markdown dokümanların HTML dokümanlara çevirilmesiyle ilgili olarak bir animasyon vardı. Daha öncesinde [notable][4] ile markdown üzerinden PDF dokümanlar oluşturduğum olmuştu. Bunun aynısını yazacağım sistemde de olması gerekiyordu. [GitHub Pages] kullanırken önerilen sistemlerden biri olan [Jekyll][14]'de benzer bir yapı ile çalıştığını gördüm.
+[gulp][2]'ın sitesini ziyaret ettiğimde bir animasyon gördüm. Animasyon, markdown dokümanların HTML dokümanlara çevirilmesiyle ilgiliydi. Daha öncesinde [notable][4] ile markdown üzerinden PDF dokümanlar oluşturduğum aklıma geldi. [GitHub Pages] kullanırken önerilen sistemlerden biri olan [Jekyll][13]'de benzer bir yapı ile çalıştığını gördüm. Buna benzer bir yapınında mutlaka bu sistem olması gerektiğini düşündüm.
 
-Bu isteklerimi tek tek not ettim. Sonrasında bu notlarımı bir araya getirip çalışmaya başladım.
+[gulp][2] geliştirme sırasında bana büyük bir kolaylık sağlıyor. Bu sisteminde gulp üzerinde olması veya gulp içinde olması gerektiğini düşünerek, *bir gulp eklentisi nasıl yazılır?* konusunu araştırmaya başladım.
+
+Bu isteklerimi tek tek not ettim. Araştırmalarımı yaptım ve sonrasında tam olarak ne istediğimi çok net kararlaştırmış oldum.
 
 ## Amaçlar & Hedef
 
-1. Öncelikle kolay ayarlanabilmeli. Çok karmaşık ayarlamalar veye kurallar gerektirmemeli.
-2. Temaya göre veya şablonlara göre HTML üretimini değiştirebilmeliyim.
+Projeye başlarken bir amacım olursa bu sefer hem projeyi hayata geçirebilirim hem de takip edeceğim bir çerçeve olabilir diye düşündüm. Kafamdaki proje aşağıdaki listede yer alan özellikleri mutlaka karşılamayıldı.
+
+1. Kolay ayarlanabilmeli. Çok karmaşık ayarlamalar veye kurallar gerektirmemeli.
+2. Ayarladıktan sonra hızlı ve kolay kullanımlı olmalı.
 3. Yazılar veya entryler markdown olmalı.
-4. Sistem gulp uyumlu olmalı. Bu sayede HTML dosyalar oluşturulduktan sonra üzerlerinde ek güncellemeler veya işlemler yapılabilir.
-5. Bir kere ayarladıktan sonra hızlı ve kolay kullanımlı olmalı.
+4. HTML çıktılar şablonlar ile değiştirilebilir olmalı.
+5. Sistem gulp uyumlu olmalı. Bu sayede HTML dosyalar oluşturulduktan sonra üzerlerinde ek güncellemeler veya işlemler yapılabilir.
+6. Sadece gereken kadar geliştirme yapılmalı. Çok ileriyi düşünmeye şu anda gerek yok.
 
 ## Çalışma Şekli
 
-Çalışma şekli aslında çok basit. Sayfalar, yazılar ve şablonlar sisteme yükleniyor. Sonrasında HTML sayfaları oluşturuluyor. En son sistemin çıktısının peşine ek olarak bağlayacan gulp pluginleri ile sistem esnek ve genişletilebilir oluyor.
+Çalışma şekli aslında çok basit. Genel ayarlamalar, sayfalar, yazılar ve şablonlar sisteme yükleniyor. Sonrasında HTML sayfaları oluşturuluyor. En son sistemin çıktısının peşine ek olarak bağlayacan gulp pluginleri ile sistem esnek ve genişletilebilir oluyor.
 
-Çalışma şeklinin kontrol ettiğimde bütün amaçları ve hedefleri sağladığımı düşünüyorum.
-
-Sistemin ana bileşeni [gulp][7] ve site motoruda onun üzerinde çalışıyor. Eklenen ek özellikler sayesinde de HTML dosyalarının oluşturulma aşamasında özelleştirmeler ve ayarlamalar yapılabiliyor.
+Aslında sistemin ana bileşeni [gulp][2] ve site motoru da onun üzerinde çalışıyor. Eklenen ek özellikler sayesinde de HTML dosyalarının oluşturulma aşamasında özelleştirmeler yapılabiliyor.
 
 ## Kazanımlar ve Öğrenimler
 
-Kendi sitemi, kendi istediğim tema ile yayınlayabileceğim bir sisteme sahip oldum. Ayrıca buna kolay ve hızlıca sahip oldum. Ek olarak sistemi [GitHub Actions][5]'a bağlayarak CI/CD sürecini de yapmış oldum. Tek yapmam gereken -sistemi bir kere ayarladıktan sonra- Markdown olarak istediğim yazıyı yazmak ve sonrasında `git push` komutunu çalıştırmak.
+Kendi sitemi, kendi istediğim tema ile yayınlayabileceğim bir sisteme sahip oldum. Ayrıca buna kolay ve hızlıca sahip oldum. Ek olarak sistemi [GitHub Actions][5]'a bağlayarak CI/CD sürecini de hazırlanmış oldu. Tek yapılması gereken -sistemi bir kere ayarladıktan sonra- Markdown olarak istenilen yazıyı yazmak ve sonrasında `git push` komutunu çalıştırmak.
 
 | Teknolojiler |
 |-|
@@ -60,15 +63,15 @@ Bu format ile aslında sadece düm düz yazıyoruz. Sonunda elimizde sade ve anl
 
 ## Mustache
 
-Eğer bir yerde şablon kullanmam gerekiyor ise mutlaka ilk tercihim [mustache][8] oluyor. Kullanımı kolay olmasının yanında esnek bir yapı sağlaması tercih etmemdeki en büyük nedenlerden biri.
+Eğer bir yerde şablon kullanmam gerekiyor ise mutlaka ilk tercihim [mustache][7] oluyor. Kullanımı kolay olmasının yanında esnek bir yapı sağlaması tercih etmemdeki en büyük nedenlerden biri.
 
 ## MarkedJS
 
-Sistemi kurmak için mutlaka markdown objeleri HTML olarak işlemem gerekiyordu. Bunun için biraz araştırınca çoğunluğun önerisi olan [MarkedJS][11] kütüphanesini seçmemin doğru olacağını düşündüm. Geliştirilebilir bir plugin yapısına sahip olması ve kullanım kolaylığı doğru seçim yaptığımı gösteriyor.
+Sistemi kurmak için mutlaka markdown objeleri HTML olarak işlemem gerekiyordu. Bunun için biraz araştırınca çoğunluğun önerisi olan [MarkedJS][10] kütüphanesini seçmemin doğru olacağını düşündüm. Geliştirilebilir bir plugin yapısına sahip olması ve kullanım kolaylığı doğru seçim yaptığımı gösteriyor.
 
 Diğer teknolojileri veya araçları normalde de kullanıyorum. O yüzden çok değinmeyeceğim. Ama kendi ürettiğim ürünleri kullanarak başka bir ürün çıkartıyor olmak aynı bir mutluluk kaynağı.
 
-Eğer sizde kullanmak isterseniz [Enginær'ın Github][13] sayfasını ziyaret edebilirsiniz. Herkesin kullanabilmesi için [MIT][14] lisansı ile paylaştım. Kullandıktan sonra geliştirilmesini istediğiniz özellikler veya hatalı kısımlar için issue açmanızı ve destek vermek için reporu yıldılamanızı rica ediyorum.
+Eğer sizde kullanmak isterseniz [Enginær'ın Github][12] sayfasını ziyaret edebilirsiniz. Herkesin kullanabilmesi için [MIT][13] lisansı ile paylaştım. Kullandıktan sonra geliştirilmesini istediğiniz özellikler veya hatalı kısımlar için issue açmanızı ve destek vermek için reporu yıldılamanızı rica ediyorum.
 
 ## Referanslar
 
@@ -78,14 +81,13 @@ Eğer sizde kullanmak isterseniz [Enginær'ın Github][13] sayfasını ziyaret e
 4. [NotableApp][4]
 5. [GitHub Actions][5]
 6. [NodeJS][6]
-7. [Gulp][7]
-8. [Mustache][8]
-9. [GitHub Pages][9]
-10. [MarkedJS][10]
-11. [Markdown Project][11]
-12. [Enginaer][12]
-13. [Enginaer MIT License][13]
-14. [Jekyll][14]
+7. [Mustache][7]
+8. [GitHub Pages][8]
+9. [MarkedJS][9]
+10. [Markdown Project][10]
+11. [Enginaer][11]
+12. [Enginaer MIT License][12]
+13. [Jekyll][13]
 
 [1]: https://web.archive.org/web/20120520021450/http://enginar.in/
 [2]: https://gulpjs.com/
@@ -93,11 +95,10 @@ Eğer sizde kullanmak isterseniz [Enginær'ın Github][13] sayfasını ziyaret e
 [4]: https://notable.app/
 [5]: https://github.com/features/actions
 [6]: https://nodejs.org/en/
-[7]: https://gulpjs.com/
-[8]: https://mustache.github.io/
-[9]: https://pages.github.com/
-[10]: https://marked.js.org/
-[11]: https://daringfireball.net/projects/markdown/
-[12]: https://github.com/fatihtatoglu/enginaer
-[13]: https://github.com/fatihtatoglu/enginaer/blob/master/LICENSE
-[14]: https://jekyllrb.com/
+[7]: https://mustache.github.io/
+[8]: https://pages.github.com/
+[9]: https://marked.js.org/
+[10]: https://daringfireball.net/projects/markdown/
+[11]: https://github.com/fatihtatoglu/enginaer
+[12]: https://github.com/fatihtatoglu/enginaer/blob/master/LICENSE
+[13]: https://jekyllrb.com/

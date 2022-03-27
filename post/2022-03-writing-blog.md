@@ -10,11 +10,11 @@ tags: blog_yazmak selçuk_erdem be_agile
 
 # Blog Yazmak
 
-Fikirlerimi, ürettiklerimi veya öğrendiklerimi paylaşmak. Günlük hayatımda yaptığım ama internet üzerinde yaparken sürdürülebilir olmasını sağlayamadığım isteklerimden biri.
+Fikirlerimi, ürettiklerimi veya öğrendiklerimi paylaşmak, günlük hayatımda yaptığım ama internet üzerinde yaparken sürdürülebilir olmasını sağlayamadığım isteklerimden biri.
 
 Blog yazma ile ilgili çok fazla başlama hikayem var. Her seferinde, ***"bu sefer devam edeceğim"*** motivasyonu ile başlıyorum. Güzel bir tema seçiyorum, güzel görseller buluyorum. İlginç olduğunu düşündüğüm konuları araştırıp, anlayıp sonrasında kendi cümlelerim ile yazıyorum ve paylaşıyorum. Sonrası...
 
-Eşime bu durumu anlattım ve bana *"sen başlamayı seviyorsun, ama devamını getirmiyorsun..."* dedi. 2020 yılında katıldığım bir seminerde konuşmacı olan [Selçuk Erdem](https://twitter.com/selcukerdem "Selçuk Erdem") de, *"... yazdığınız veya çizdiğiniz defter ve kalem sizi yargılamasın..."* dedi. Bütün bunları düşündüğümde daha önceden yazmak için kullandığım araçlar ve seçtiğim görseller hep güçlü ve hep beni yargılıyorlar.
+Eşime bu durumu anlattım ve *"sen başlamayı seviyorsun, ama devamını getirmiyorsun..."* dedi. 2020 yılında katıldığım bir seminerde konuşmacı olan [Selçuk Erdem](https://twitter.com/selcukerdem "Selçuk Erdem") de, *"... yazdığınız veya çizdiğiniz defter ve kalem sizi yargılamasın..."* dedi. Bütün bunları düşündüğümde daha önceden yazmak için kullandığım araçlar ve seçtiğim görseller hep güçlü ve hep beni yargılıyorlar diye düşündüm.
 
 > Bu araçlarla bir yazı yazıyorsan harika olmalı.
 >
@@ -28,6 +28,6 @@ Yukarıdaki eleştirileri ben kendi kendime söylüyorum. Yani beynimin içindek
 
 > Diğerleri haftalık paylaşımlar yapıyorlar. Onlarla yarışamam...
 
-Amacım yarışmak değil, paylaşmak ve bundan keyif almak istiyorum. Aslında bu yazıyı o yüzden yazdım. Yine motivasyonum düşerse, bu yazımı okuyup amacımın ne olduğunu hatırlamak ve yazmaya devam etmek istiyorum. Bu amacımı pekiştirmek için [Selçuk Erdem](https://twitter.com/selcukerdem)’in benim gibi çizmekten hiç anlamayan birine bile bir karikatür karakteri çizdirdiği görseli de aşağıya bırakıyorum. Yazıyı okurken kendime not, karikatürün dediğini unutma!
+Amacım yarışmak değil, paylaşmak ve bundan keyif almak istiyorum. Aslında bu yazıyı o yüzden yazdım. Yine motivasyonum düşerse, bu yazımı okuduktan sonra amacımın ne olduğunu hatırlamak ve yazmaya devam etmek istiyorum. Bu amacımı pekiştirmek için [Selçuk Erdem](https://twitter.com/selcukerdem)’in benim gibi çizmekten hiç anlamayan birine bile bir karikatür çizdirdiği görseli de aşağıya bırakıyorum.
 
-[![Be Agile](../../../image/be-agile-cartoon.jpg "Be Agile")](https://www.instagram.com/p/CH2zB56hMWV)
+[![Be Agile](../image/be-agile-cartoon.jpg "Be Agile")](https://www.instagram.com/p/CH2zB56hMWV)

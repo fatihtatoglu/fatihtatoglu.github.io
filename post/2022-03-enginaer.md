@@ -43,12 +43,6 @@ Projeye başlarken bir amacım olursa bu sefer hem projeyi hayata geçirebilirim
 5. Sistem gulp uyumlu olmalı. Bu sayede HTML dosyalar oluşturulduktan sonra üzerlerinde ek güncellemeler veya işlemler yapılabilir.
 6. Sadece gereken kadar geliştirme yapılmalı. Çok ileriyi düşünmeye şu anda gerek yok.
 
-## Çalışma Şekli
-
-Çalışma şekli aslında çok basit. Genel ayarlamalar, sayfalar, yazılar ve şablonlar sisteme yükleniyor. Sonrasında HTML sayfaları oluşturuluyor. En son sistemin çıktısının peşine ek olarak bağlayacan gulp pluginleri ile sistem esnek ve genişletilebilir oluyor.
-
-Aslında sistemin ana bileşeni [gulp][2] ve site motoru da onun üzerinde çalışıyor. Eklenen ek özellikler sayesinde de HTML dosyalarının oluşturulma aşamasında özelleştirmeler yapılabiliyor.
-
 ## Kazanımlar ve Öğrenimler
 
 Kendi sitemi, kendi istediğim tema ile yayınlayabileceğim bir sisteme sahip oldum. Ayrıca buna kolay ve hızlıca sahip oldum. Ek olarak sistemi [GitHub Actions][5]'a bağlayarak CI/CD sürecini de hazırlanmış oldu. Tek yapılması gereken -sistemi bir kere ayarladıktan sonra- Markdown olarak istenilen yazıyı yazmak ve sonrasında `git push` komutunu çalıştırmak.
@@ -56,20 +50,6 @@ Kendi sitemi, kendi istediğim tema ile yayınlayabileceğim bir sisteme sahip o
 | Teknolojiler |
 |-|
 | ![Gulp](../image/logo-gulp.png "Gulp") ![Markdown](../image/logo-markdown.png "Markdown") ![MarkedJS](../image/logo-markedjs.png "MarkedJS") ![Mustache](../image/logo-mustache.png "Mustache") ![NodeJS](../image/logo-nodejs.png "NodeJS") ![GitHub Actions](../image/logo-github-actions.png "GitHub Actions") |
-
-## Markdown
-
-Bu format ile aslında sadece düm düz yazıyoruz. Sonunda elimizde sade ve anlaşılabilir bir doküman oluyor. Bu yüzden ben çok tercih ediyorum.
-
-## Mustache
-
-Eğer bir yerde şablon kullanmam gerekiyor ise mutlaka ilk tercihim [mustache][7] oluyor. Kullanımı kolay olmasının yanında esnek bir yapı sağlaması tercih etmemdeki en büyük nedenlerden biri.
-
-## MarkedJS
-
-Sistemi kurmak için mutlaka markdown objeleri HTML olarak işlemem gerekiyordu. Bunun için biraz araştırınca çoğunluğun önerisi olan [MarkedJS][10] kütüphanesini seçmemin doğru olacağını düşündüm. Geliştirilebilir bir plugin yapısına sahip olması ve kullanım kolaylığı doğru seçim yaptığımı gösteriyor.
-
-Diğer teknolojileri veya araçları normalde de kullanıyorum. O yüzden çok değinmeyeceğim. Ama kendi ürettiğim ürünleri kullanarak başka bir ürün çıkartıyor olmak aynı bir mutluluk kaynağı.
 
 Eğer sizde kullanmak isterseniz [Enginær'ın Github][12] sayfasını ziyaret edebilirsiniz. Herkesin kullanabilmesi için [MIT][13] lisansı ile paylaştım. Kullandıktan sonra geliştirilmesini istediğiniz özellikler veya hatalı kısımlar için issue açmanızı ve destek vermek için reporu yıldılamanızı rica ediyorum.
 

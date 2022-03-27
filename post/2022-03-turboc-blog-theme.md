@@ -12,11 +12,11 @@ tags: turboc turbocpp site_teması borland sass mustache gulp nodejs normalizecs
 
 ![Turbo C](../image/turboc_0001.png "Turbo C")
 
-Küçükken en büyük eğlencem, bilgisayar dergilerini okumak ve onlardan çıkan CD lerdeki demo oyunları oynamaktı. Bir gün dergilerden bir tanesinin yanında ufak bir el kitapçığı buldum **C ile Programlama**. Kitapçık içinde basit bir şekilde C programlama dili anlatılıyordu. Kitapçığı bir çırpıda okudum ve denemek istiyordum. Turbo C adında bir program olduğunu ve bunun ile örnek yapabileceğim yazılıyordu ama program hiç bir yerde yoktu. İnternette dolaşırken buldum. Kendilerini hacker ekibi olarak tanıtan bir ekibin hazırladığı notların da olduğu bir zip dosyasını indirdim. İçinde Turbo C de vardı. Önce notları okudum ve sonrasında denemeler yapmaya başladım.
+Küçükken en büyük eğlencem, bilgisayar dergilerini okumak ve onlardan çıkan CD lerdeki demo oyunları oynamaktı. Bir gün dergilerden bir tanesinin yanında ufak bir el kitapçığı buldum **C ile Programlama**. Kitapçık içinde basit bir şekilde C programlama dili anlatılıyordu. Kitapçığı bir çırpıda okudum ve denemek istiyordum. Turbo C adında bir program olduğunu ve bunun ile örnek yapabileceğim yazılıyordu ama program hiç bir yerde yoktu. İnternette dolaşırken buldum. Kendilerini hacker olarak tanıtan bir ekibin hazırladığı notların da olduğu bir zip dosyasını indirdim. İçinde Turbo C de vardı. Önce notları okudum ve sonrasında denemeler yapmaya başladım.
 
 Bir kitapçık sayesinde programlamaya başlamam lise yıllarına denk geliyor. Programlamaya başladıktan sonra da ayrılamadım.
 
-[Blog Yazmak][1] yazısında da bahsettiğim gibi blog yazmak çok eğlenceli ama ben daha çok başlamayı yapabiliyorum. 2021 sonlarında yine blog yazmak istediğim zaman sitemin temasını çok beğenmedim. Yeni tema; hem sade hem de biraz nerd işi olmalıydı. Bu istediğim özelliklerde bir şey de bulamadım. En sonunda kendim bir şeyler yapayım dedim ama öyle hazır bir şeyler kullanmak yerine ellerimiz biraz kirletmek istedim.
+[Blog Yazmak][1] yazısında da bahsettiğim gibi blog yazmak çok eğlenceli ama ben daha çok başlamayı yapabiliyorum. 2021 sonlarında yine blog yazmak istediğim zaman sitemin temasını çok beğenmedim. Yeni tema; hem sade hem de biraz nerd işi olmalıydı. Bu istediğim özelliklerde bir şey de bulamadım. En sonunda kendim bir şeyler yapayım dedim ama öyle hazır bir şeyler kullanmak yerine ellerimi biraz kirletmek istedim.
 
 ![Turbo C](../image/turboc_0002.png "Turbo C")
 
@@ -24,7 +24,7 @@ Hem Turbo C ile olan duygusal bağımı yansıtacak, hem yeni şeyler öğrenebi
 
 ## Zorluklar ve Kazanımlar
 
-Ben senelerce ön yüzü olmayan uygulamalar geliştirdim. Çok nadir olarak ön yüzü olan ve genelde de şirket içinde kullanılan uygulamalar geliştirdim. Bu yüzden önyüz teknolojilerine çok hakim olmasam da bir kaçını biliyordum. Bu fırsat ile bunları deneme şansım oldu.
+Ben senelerce ön yüzü olmayan uygulamalar geliştirdim. Çok nadir olarak ön yüzü olan ve genelde de şirket içinde kullanılan uygulamalar geliştirdim. Bu yüzden önyüz teknolojilerine çok hakim değilim. Bu fırsat ile bunları deneme şansım oldu.
 
 | Teknolojiler |
 |-|
@@ -32,39 +32,39 @@ Ben senelerce ön yüzü olmayan uygulamalar geliştirdim. Çok nadir olarak ön
 
 ### SASS
 
-Daha önce duyduğum ama hiç kullanma fırsatım olmayan bir konuydu. Kullanınca ne kadar kolay ve basit olduğunu gördüm. Yeniden bir önyüz işine girsem mutlaka kullanmam gerektiğini düşünüyorum. Başta `function` ve `mixin` arasında biraz kaldım. Ama sonra örneklerden de bakarak ilerlediğimde aslında çok zor olmadığını farkkettim. `function` bildiğimiz gibi bir dönüyor. `mixin` ise bir kod parçasını çağrıldığı alana ekliyor. Bu sayede tekrar kullanılabilir bir parça elde etmiş olunuyor.
+Daha önce duyduğum ama hiç kullanma fırsatım olmayan bir yapıydı. Kullanınca ne kadar kolay ve basit olduğunu gördüm. Yeniden bir önyüz işine girsem mutlaka kullanmam gerektiğini düşünüyorum. Başta `function` ve `mixin` arasında biraz karışıklık yaşadım. Sonra örneklerden de bakarak aslında çok zor olmadığını farkkettim. `function` bir değer dönüyor. `mixin` ise bir kod parçasını çağrıldığı alana ekliyor. Bu sayede tekrar kullanılabilir bir parça elde etmiş olunuyor.
 
 ### Normalize.css
 
-Önyüz geliştirmesi yapan arkadaşlarıma en çok sorduğum sorulardan bir tanesi ***"Reset.css mi yoksa Normalize.css mi?"*** Cevapları genelde [normalize.css][4] şeklinde oluyor. Kararsız kaldığım için biraz araştırma yaptım. Gözüme **Elad Shechter**'ın yazdığı [Normalize CSS or CSS Reset?!][3] yazı takıldı. Okuduktan sonra ikisini de bir arada kullanmanın daha iyi olduğunu düşündüm.
+Önyüz geliştirmesi yapan arkadaşlarıma en çok sorduğum sorulardan bir tanesi ***"Reset.css mi yoksa Normalize.css mi?"*** Cevapları genelde [normalize.css][4] şeklinde oluyor. Kararsız kaldığım için biraz daha araştırma yaptım. Gözüme **Elad Shechter**'ın yazdığı [Normalize CSS or CSS Reset?!][3] yazı takıldı. Okuduktan sonra ikisini de bir arada kullanmanın daha iyi olduğunu düşündüm.
 
-[normalize.css][4] ile sitil dosyalarını bir seviyede eşitliyorum. Ama ihtiyacım olan sıfırlama işlemlerini de sonrasına ekliyorum. Bu sayede istediğim esnekliğe kavuşmuş oluyorum.
+Yazıda anlatılan ve özetle yapılan yaşlaşım; [normalize.css][4] ile sitil dosyaları bir seviyede eşitliyor. İhtiyaç olan sıfırlama işlemleri de sonrasına ekliyor. Bu sayede istenilen esnekliğe kavuşulmuş olunuyor.
 
 ### Gulp & NodeJS
 
-Önyüz projesi geliştirirken her zaman tercihim [nodejs][6]'in gücünüde kullanmak şeklinde oluyor. [nodejs][6] sayesinde paket yönetimini çok rahat yapabiliyorum. Ama bu sefer biraz daha kompleks işler yapacağımı düşünerek [gulp][7] eklemek istedim.
+Önyüz projesi geliştirirken her zaman tercihim [nodejs][6] kullanmak şeklinde oluyor. [nodejs][6] sayesinde paket yönetimini çok rahat yapılabiliyor. Ama bu sefer biraz daha kompleks işler yapacağımı düşünerek [gulp][7] eklemek istedim.
 
-[gulp][7] hem önyüz projeleri hem de basit otomasyon işleri için kullanılacak bir araç.
+[gulp][7] hem önyüz projeleri hem de basit otomasyon işleri için kullanılan bir araç. Başka otomasyon araçları da olmasına karşın ilk öğrendiğim otomasyon aracı olduğu için kullanmak istedim.
 
 ### Mustache
 
-Tasarımları yaptıktan sonra bunları bir şekilde bir bütün halinde sunmak istedim. Bunu yaparken çoğu yerin tekrar ettiğini gördüm. Özellikle menü kısmı neredeyse her sayfada olduğu için bunu bir şekilde dinamik olarak oluşturmak için [mustache][8] kullandım.
+Tasarımları yaptıktan sonra bunları bir şekilde bir bütün halinde sunmak istedim. Bunu yaparken çoğu parçanın tekrar ettiğini gördüm. Özellikle menü kısmı neredeyse her sayfada olduğu için bunu bir şekilde dinamik olarak oluşturmak için [mustache][8] kullandım.
 
 [mustache][8] ile daha önce ile bir code generator yazmıştım. Oradan da öğrendiklerimi kullanarak menü kısmının oluşturulmasını sağladım.
 
-Normal template yapılarının aksine içerisinde koşul özelliği barındırmıyor. Bu yüzden kullanımı biraz zor gibi gözüksede benim her zaman kullanmak için seçeceğim template motorlarından biri.
+[mustache][8], normal template yapılarının aksine içerisinde koşul özelliği barındırmıyor. Bu yüzden kullanımı biraz zor gibi gözüksede benim her zaman kullanmak için seçeceğim template motorlarından biri.
 
 ### GitHub Actions & GitHub Pages
 
-Temayı hazırladıktan sonra bunu bir şekilde paylaşmak istedim. Benim gibi eskiyi özleyen birileri belki vardır diye. Elimdeki hazır olan sunucuya yüklemek istedim. Ama sunucuda site yayınlamak için docker imajı oluşturmam gerekiyor ve her güncelleme sonrasında bu işlemleri tekrarlamam gerekiyor. Bunun için bana bir docker imaj reposu lazım. Sonrasında bir build pipeline kurmam gerekiyor.
+Temayı hazırladıktan sonra bunu bir şekilde paylaşmak istedim (benim gibi eskiyi özleyen birileri belki vardır diye). Elimdeki hazır olan sunucuya yüklemek istedim. Ama sunucuda site yayınlamak için docker imajı oluşturmam gerekiyor ve her güncelleme sonrasında bu işlemleri tekrarlamam gerekiyor. Bunun için bana bir docker imaj reposu lazım. Sonrasında bir build pipeline kurmam gerekiyor. Sonrasında imajları çalıştırmam için ayarlamaları yapmam ve çalıştırmam gerekiyor.
 
-Bu işlemleri daha kolay yapabilmek için [GitHub Actions][9] ile bir pipeline oluşturdum. Proje build oldu, [gulp][7] çalıştı ve [GitHub Pages][10] üzerine deploy yapıldı. Bunların hepsini hızlı ve basit şekilde yapmak çok motive edici oldu.
+Bu işlemleri daha kolay yapabilmek için [GitHub Actions][9] ile bir pipeline oluşturdum. Proje build oldu, [gulp][7] çalıştı ve [GitHub Pages][10] üzerine deploy yapıldı. Bunların hepsini hızlı ve basit şekilde oldu.
 
 Toplamak gerekirse, temayı geliştirirken yeni şeyler öğrendim. Ek olarak elimde istediğim gibi kullanabileceğim bir tema oldu. Sıfırdan bir şeyler yapmak ve çıkan ürünü kullanmak çok motive edici oldu (yeni bir ürün geliştirmenin mutluluğu).
 
 ## Tema Özellikleri
 
-Tema sadece düz bir şekilde olsun istemedim. Bazı ek özellikler de eklemek istedim.
+Tema sade olsun istemedim. Bazı ek özellikler de eklemek istedim.
 
 Sitenin menüsündeki `-` kısmından temanın farklı renklerini de görebilirsiniz. Geliştirmeye devam ediyorum ama basit olarak yazmak gerekirse temanın özellikleri aşağıdaki gibi.
 

@@ -182,7 +182,7 @@ enginær.setOptions({
                 return this.layout === "post";
             },
             "canonical": function () {
-                return this["base-path"] + this.permalink.replace("./","");
+                return this["base-path"] + this.permalink.replace("./", "");
             }
         }
     },
@@ -260,84 +260,10 @@ function generate() {
 
         // add rel and target for outgoing links
         .pipe(anchorRewriter({
-            keyword: "twitter.com",
+            keyword: [siteUrl, "./", "javascript:;", "index.html"],
             rel: "noopener noreferrer",
-            target: "_blank"
-        }))
-        .pipe(anchorRewriter({
-            keyword: "instagram.com",
-            rel: "noopener noreferrer",
-            target: "_blank"
-        }))
-        .pipe(anchorRewriter({
-            keyword: "medium.com",
-            rel: "noopener noreferrer",
-            target: "_blank"
-        }))
-        .pipe(anchorRewriter({
-            keyword: "github.io",
-            rel: "noopener noreferrer",
-            target: "_blank"
-        }))
-        .pipe(anchorRewriter({
-            keyword: "dev.to",
-            rel: "noopener noreferrer",
-            target: "_blank"
-        }))
-        .pipe(anchorRewriter({
-            keyword: "nodejs.org",
-            rel: "noopener noreferrer",
-            target: "_blank"
-        }))
-        .pipe(anchorRewriter({
-            keyword: "gulpjs.com",
-            rel: "noopener noreferrer",
-            target: "_blank"
-        }))
-        .pipe(anchorRewriter({
-            keyword: "sass-lang.com",
-            rel: "noopener noreferrer",
-            target: "_blank"
-        }))
-        .pipe(anchorRewriter({
-            keyword: "github.com/features/actions",
-            rel: "noopener noreferrer",
-            target: "_blank"
-        }))
-        .pipe(anchorRewriter({
-            keyword: "pages.github.com",
-            rel: "noopener noreferrer",
-            target: "_blank"
-        }))
-        .pipe(anchorRewriter({
-            keyword: "web.archive.org",
-            rel: "noopener noreferrer",
-            target: "_blank"
-        }))
-        .pipe(anchorRewriter({
-            keyword: "notable.app",
-            rel: "noopener noreferrer",
-            target: "_blank"
-        }))
-        .pipe(anchorRewriter({
-            keyword: "marked.js.org",
-            rel: "noopener noreferrer",
-            target: "_blank"
-        }))
-        .pipe(anchorRewriter({
-            keyword: "daringfireball.net",
-            rel: "noopener noreferrer",
-            target: "_blank"
-        }))
-        .pipe(anchorRewriter({
-            keyword: "jekyllrb.com",
-            rel: "noopener noreferrer",
-            target: "_blank"
-        }))
-        .pipe(anchorRewriter({
-            keyword: "www.facebook.com",
-            rel: "noopener noreferrer",
-            target: "_blank"
+            target: "_blank",
+            whiteList: true
         }))
 
         .pipe(dest(output));

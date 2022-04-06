@@ -2,25 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
     <url>
         
-        <loc>https://blog.tatoglu.net/</loc>
+        <loc>file:///F:/workspace/fatihtatoglu/fatihtatoglu.github.io/dist/</loc>
     
         
-        <lastmod>2022-03-29T14:39:51.234Z</lastmod>
-    
-        
-        <changefreq>weekly</changefreq>
-    
-    </url>
-    <url>
-        
-        <loc>https://blog.tatoglu.net/about/me.html</loc>
-    
-        <image:image>
-            <image:loc>https://blog.tatoglu.net/image/about_me.jpg?v=aadcadf47b7932091914034d481a8d73</image:loc>
-        </image:image>
-    
-        
-        <lastmod>2022-03-29T14:39:51.234Z</lastmod>
+        <lastmod>2022-04-06T15:37:28.806Z</lastmod>
     
         
         <changefreq>weekly</changefreq>
@@ -28,45 +13,14 @@
     </url>
     <url>
         
-        <loc>https://blog.tatoglu.net/about/site.html</loc>
-    
-        
-        <lastmod>2022-03-29T14:39:51.234Z</lastmod>
-    
-        
-        <changefreq>weekly</changefreq>
-    
-    </url>
-    <url>
-        
-        <loc>https://blog.tatoglu.net/post/enginaer.html</loc>
+        <loc>file:///F:/workspace/fatihtatoglu/fatihtatoglu.github.io/dist/about/me.html</loc>
     
         <image:image>
-            <image:loc>https://blog.tatoglu.net/.image/logo-gulp.png?v=aadcadf47b7932091914034d481a8d73</image:loc>
-        </image:image>
-    
-        <image:image>
-            <image:loc>https://blog.tatoglu.net/.image/logo-markdown.png?v=aadcadf47b7932091914034d481a8d73</image:loc>
-        </image:image>
-    
-        <image:image>
-            <image:loc>https://blog.tatoglu.net/.image/logo-markedjs.png?v=aadcadf47b7932091914034d481a8d73</image:loc>
-        </image:image>
-    
-        <image:image>
-            <image:loc>https://blog.tatoglu.net/.image/logo-mustache.png?v=aadcadf47b7932091914034d481a8d73</image:loc>
-        </image:image>
-    
-        <image:image>
-            <image:loc>https://blog.tatoglu.net/.image/logo-nodejs.png?v=aadcadf47b7932091914034d481a8d73</image:loc>
-        </image:image>
-    
-        <image:image>
-            <image:loc>https://blog.tatoglu.net/.image/logo-github-actions.png?v=aadcadf47b7932091914034d481a8d73</image:loc>
+            <image:loc>file:///F:/workspace/fatihtatoglu/fatihtatoglu.github.io/dist/image/about_me.jpg?v=bf0c840b1d54e5fadd08fc1c1a796ec8</image:loc>
         </image:image>
     
         
-        <lastmod>2022-03-29T14:39:51.234Z</lastmod>
+        <lastmod>2022-04-06T15:37:28.798Z</lastmod>
     
         
         <changefreq>weekly</changefreq>
@@ -74,42 +28,10 @@
     </url>
     <url>
         
-        <loc>https://blog.tatoglu.net/post/turboc-blog-theme.html</loc>
-    
-        <image:image>
-            <image:loc>https://blog.tatoglu.net/.image/turboc_0001.png?v=aadcadf47b7932091914034d481a8d73</image:loc>
-        </image:image>
-    
-        <image:image>
-            <image:loc>https://blog.tatoglu.net/.image/turboc_0002.png?v=aadcadf47b7932091914034d481a8d73</image:loc>
-        </image:image>
-    
-        <image:image>
-            <image:loc>https://blog.tatoglu.net/.image/logo-sass.png?v=aadcadf47b7932091914034d481a8d73</image:loc>
-        </image:image>
-    
-        <image:image>
-            <image:loc>https://blog.tatoglu.net/.image/logo-normalize.png?v=aadcadf47b7932091914034d481a8d73</image:loc>
-        </image:image>
-    
-        <image:image>
-            <image:loc>https://blog.tatoglu.net/.image/logo-gulp.png?v=aadcadf47b7932091914034d481a8d73</image:loc>
-        </image:image>
-    
-        <image:image>
-            <image:loc>https://blog.tatoglu.net/.image/logo-nodejs.png?v=aadcadf47b7932091914034d481a8d73</image:loc>
-        </image:image>
-    
-        <image:image>
-            <image:loc>https://blog.tatoglu.net/.image/logo-mustache.png?v=aadcadf47b7932091914034d481a8d73</image:loc>
-        </image:image>
-    
-        <image:image>
-            <image:loc>https://blog.tatoglu.net/.image/logo-github-actions.png?v=aadcadf47b7932091914034d481a8d73</image:loc>
-        </image:image>
+        <loc>file:///F:/workspace/fatihtatoglu/fatihtatoglu.github.io/dist/about/site.html</loc>
     
         
-        <lastmod>2022-03-29T14:39:51.234Z</lastmod>
+        <lastmod>2022-04-06T15:37:28.802Z</lastmod>
     
         
         <changefreq>weekly</changefreq>
@@ -117,14 +39,92 @@
     </url>
     <url>
         
-        <loc>https://blog.tatoglu.net/post/writing-blog.html</loc>
+        <loc>file:///F:/workspace/fatihtatoglu/fatihtatoglu.github.io/dist/post/enginaer.html</loc>
     
         <image:image>
-            <image:loc>https://blog.tatoglu.net/.image/be-agile-cartoon.jpg?v=aadcadf47b7932091914034d481a8d73</image:loc>
+            <image:loc>file:///F:/workspace/fatihtatoglu/fatihtatoglu.github.io/dist/.image/logo-gulp.png?v=bf0c840b1d54e5fadd08fc1c1a796ec8</image:loc>
+        </image:image>
+    
+        <image:image>
+            <image:loc>file:///F:/workspace/fatihtatoglu/fatihtatoglu.github.io/dist/.image/logo-markdown.png?v=bf0c840b1d54e5fadd08fc1c1a796ec8</image:loc>
+        </image:image>
+    
+        <image:image>
+            <image:loc>file:///F:/workspace/fatihtatoglu/fatihtatoglu.github.io/dist/.image/logo-markedjs.png?v=bf0c840b1d54e5fadd08fc1c1a796ec8</image:loc>
+        </image:image>
+    
+        <image:image>
+            <image:loc>file:///F:/workspace/fatihtatoglu/fatihtatoglu.github.io/dist/.image/logo-mustache.png?v=bf0c840b1d54e5fadd08fc1c1a796ec8</image:loc>
+        </image:image>
+    
+        <image:image>
+            <image:loc>file:///F:/workspace/fatihtatoglu/fatihtatoglu.github.io/dist/.image/logo-nodejs.png?v=bf0c840b1d54e5fadd08fc1c1a796ec8</image:loc>
+        </image:image>
+    
+        <image:image>
+            <image:loc>file:///F:/workspace/fatihtatoglu/fatihtatoglu.github.io/dist/.image/logo-github-actions.png?v=bf0c840b1d54e5fadd08fc1c1a796ec8</image:loc>
         </image:image>
     
         
-        <lastmod>2022-03-29T14:39:51.234Z</lastmod>
+        <lastmod>2022-04-06T15:37:28.806Z</lastmod>
+    
+        
+        <changefreq>weekly</changefreq>
+    
+    </url>
+    <url>
+        
+        <loc>file:///F:/workspace/fatihtatoglu/fatihtatoglu.github.io/dist/post/turboc-blog-theme.html</loc>
+    
+        <image:image>
+            <image:loc>file:///F:/workspace/fatihtatoglu/fatihtatoglu.github.io/dist/.image/turboc_0001.png?v=bf0c840b1d54e5fadd08fc1c1a796ec8</image:loc>
+        </image:image>
+    
+        <image:image>
+            <image:loc>file:///F:/workspace/fatihtatoglu/fatihtatoglu.github.io/dist/.image/turboc_0002.png?v=bf0c840b1d54e5fadd08fc1c1a796ec8</image:loc>
+        </image:image>
+    
+        <image:image>
+            <image:loc>file:///F:/workspace/fatihtatoglu/fatihtatoglu.github.io/dist/.image/logo-sass.png?v=bf0c840b1d54e5fadd08fc1c1a796ec8</image:loc>
+        </image:image>
+    
+        <image:image>
+            <image:loc>file:///F:/workspace/fatihtatoglu/fatihtatoglu.github.io/dist/.image/logo-normalize.png?v=bf0c840b1d54e5fadd08fc1c1a796ec8</image:loc>
+        </image:image>
+    
+        <image:image>
+            <image:loc>file:///F:/workspace/fatihtatoglu/fatihtatoglu.github.io/dist/.image/logo-gulp.png?v=bf0c840b1d54e5fadd08fc1c1a796ec8</image:loc>
+        </image:image>
+    
+        <image:image>
+            <image:loc>file:///F:/workspace/fatihtatoglu/fatihtatoglu.github.io/dist/.image/logo-nodejs.png?v=bf0c840b1d54e5fadd08fc1c1a796ec8</image:loc>
+        </image:image>
+    
+        <image:image>
+            <image:loc>file:///F:/workspace/fatihtatoglu/fatihtatoglu.github.io/dist/.image/logo-mustache.png?v=bf0c840b1d54e5fadd08fc1c1a796ec8</image:loc>
+        </image:image>
+    
+        <image:image>
+            <image:loc>file:///F:/workspace/fatihtatoglu/fatihtatoglu.github.io/dist/.image/logo-github-actions.png?v=bf0c840b1d54e5fadd08fc1c1a796ec8</image:loc>
+        </image:image>
+    
+        
+        <lastmod>2022-04-06T15:37:28.810Z</lastmod>
+    
+        
+        <changefreq>weekly</changefreq>
+    
+    </url>
+    <url>
+        
+        <loc>file:///F:/workspace/fatihtatoglu/fatihtatoglu.github.io/dist/post/writing-blog.html</loc>
+    
+        <image:image>
+            <image:loc>file:///F:/workspace/fatihtatoglu/fatihtatoglu.github.io/dist/.image/be-agile-cartoon.jpg?v=bf0c840b1d54e5fadd08fc1c1a796ec8</image:loc>
+        </image:image>
+    
+        
+        <lastmod>2022-04-06T15:37:28.810Z</lastmod>
     
         
         <changefreq>weekly</changefreq>

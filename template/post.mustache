@@ -35,6 +35,10 @@
             <img src="{{& image}}" alt="{{title}} " />
             {{/image}}
             {{& content}}
+
+            <footer>
+            By <a rel="author" href="./about/me.html">{{author}}</a> - <time pubdate datetime="{{publish-date-datetime}}" title="{{publish-date}}">{{publish-date}}</time>
+            </footer>
         </article>
     </main>
     <footer>{{> _footer}}</footer>

@@ -1,6 +1,7 @@
 "use strict";
 
 const BasePageVisitor = require("enginaer/lib/pageVisitor");
+const dayjs = require("dayjs");
 
 class DateVisitor extends BasePageVisitor {
 
@@ -13,6 +14,8 @@ class DateVisitor extends BasePageVisitor {
         var date = new Date(Date.parse(dateString));
 
         page.set("date", date);
+        page.set("publish-date", dayjs(date).format("DD.MM.YYYY"));
+        page.set("publish-date-datetime", dayjs(date).format("YYYY-MM-DDTHH:mm:ssZZ"));
     }
 }
 

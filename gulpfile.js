@@ -1,236 +1,54 @@
 const { series, parallel, src, dest } = require("gulp");
 const clean = require("gulp-clean");
 const replace = require("gulp-replace");
-const enginær = require("enginaer");
+const Enginaer = require("enginaer");
 const htmlmin = require("gulp-htmlmin");
 const versionNumber = require("gulp-version-number");
 const sitemap = require("gulp-sitemap");
 const anchorRewriter = require("gulp-html-anchor-rewriter");
 
-var output = "./dist/";
-var siteUrl = "https://blog.tatoglu.net/";
+var outputPath = "./dist/";
+var siteUrl = "file:///F:/workspace/fatihtatoglu/fatihtatoglu.github.io/dist/";//"https://blog.tatoglu.net/";
 
-enginær.setOptions({
-    "output": output,
-
-    "asset": {
-        "base": "./",
-        "path": [
-            "./css/*.css",
-            "./js/*.js",
-            "./image/*.png",
-            "./image/*.jpg",
-            "./image/favicon/*",
-            "./CNAME",
-            "./.nojekyll",
-            "./robots.txt"
-        ]
-    },
-
+const config = {
+    "base": __dirname,
     "page": {
-        "path": [
-            "./page/*.md",
-            "./post/**/*.md"
-        ],
-        "enrichers": [
-            {
-                "key": "title",
-                "type": "raw",
-                "handler": function (fileRawContent) {
-                    var titleRegex = /<h1>(.*)<\/h1>/g;
-                    var titleResult = titleRegex.exec(fileRawContent);
+        "path": ["./page/*.md", "./post/*.md"],
+        "visitor": "./visitor/*.js",
+        "marked": {
+            breaks: true,
+            smartLists: true,
+            headerIds: false,
+            langPrefix: "hljs language-",
+            highlight: function (code, lang) {
+                const hljs = require('highlight.js');
+                const language = hljs.getLanguage(lang) ? lang : 'plaintext';
 
-                    return titleResult[1];
-                }
-            },
-            {
-                "key": "tags",
-                "type": "metadata",
-                "handler": function (value) {
-                    return value.split().map(v => {
-                        return v.replace(/\_/g, " ");
-                    });
-                }
-            },
-            {
-                "key": "date",
-                "type": "metadata",
-                "handler": function (value) {
-                    return new Date(Date.parse(value));
-                }
-            },
-            {
-                "sourceKey": "date",
-                "targetKey": "publish-date",
-                "type": "generate",
-                "handler": function (date) {
-                    return date.toISOString();
-                }
-            },
-            {
-                "sourceKey": "date",
-                "targetKey": "publish-date-localformat",
-                "type": "generate",
-                "handler": function (date, config) {
-                    return date.toLocaleDateString(config["site-culture"]);
-                }
-            },
-            {
-                "sourceKey": "date",
-                "targetKey": "publish-date-title",
-                "type": "generate",
-                "handler": function (date, config) {
-                    return date.toString(config["site-culture"]);
-                }
-            },
-            {
-                "type": "menu",
-                "handler": function (metadata, menu, config) {
-                    var title = "-";
-                    var menuItem = {
-                        "title": title,
-                        "order": 0,
-                        "children": [
-                            {
-                                "element-id": "btnTheme",
-                                "title": "Tema Ayarları"
-                            }
-                        ]
-                    };
-
-                    menu[title] = menuItem;
-                }
-            },
-            {
-                "type": "menu",
-                "handler": function (metadata, menu) {
-
-                    var layout = metadata.get("layout");
-                    var title = metadata.get("title");
-                    if (layout !== "page" && layout !== "index") {
-                        return;
-                    }
-
-                    var menuGroupName = metadata.get("group");
-                    if (menuGroupName) {
-
-                        if (!menu[menuGroupName]) {
-                            menu[menuGroupName] = {
-                                title: menuGroupName,
-                                "order": 999,
-                                "children": []
-                            };
-                        }
-
-                        var menuGroup = menu[menuGroupName];
-
-                        var menuItem = {
-                            "title": title,
-                            "url": metadata.get("permalink"),
-                            "order": metadata.get("order")
-                        };
-
-                        if (metadata.get("published") !== "true") {
-                            menuItem["disabled"] = true;
-                            delete menuItem["url"];
-                        }
-
-                        menuGroup["children"].push(menuItem);
-                        menuGroup["children"] = menuGroup["children"].sort(function (a, b) {
-                            return a["order"] - b["order"];
-                        });
-
-
-                        menu[menuGroupName] = menuGroup;
-                    }
-                    else {
-                        var menuItem = {
-                            "title": title,
-                            "url": metadata.get("permalink"),
-                            "order": metadata.get("order")
-                        };
-
-                        if (metadata.get("published") !== "true") {
-                            menuItem["disabled"] = true;
-                            delete menuItem["url"];
-                        }
-
-                        menu[title] = menuItem;
-                    }
-                }
+                return hljs.highlight(code, { language }).value;
             }
-        ]
+        },
     },
-
     "template": {
         "path": "./template/*.mustache",
-        "helpers": {
-            "separator": function () {
-                return this.role === "separator";
-            },
-            "hasChildren": function () {
-                return this.children && this.children.length > 0;
-            },
-            "url": function () {
-                if (this.url) {
-                    return this.url;
-                }
-
-                return "javascript:;";
-            },
-            "isPost": function () {
-                return this.layout === "post";
-            },
-            "canonical": function () {
-                return this["base-path"] + this.permalink.replace("./", "");
-            }
-        }
+        "helpers": "./template/*.js"
     },
-
-    "config": {
-        "site-language": "tr",
-        "site-culture": "tr-TR",
-        "site-title-prefix": "Fatih Tatoğlu - ",
-        "site-name": "Fatih Tatoğlu",
-        "base-url": siteUrl
-    },
-
-    "marked": {
-        breaks: true,
-        smartLists: true,
-        headerIds: false,
-        langPrefix: "hljs language-",
-        highlight: function (code, lang) {
-            const hljs = require('highlight.js');
-            const language = hljs.getLanguage(lang) ? lang : 'plaintext';
-
-            return hljs.highlight(code, { language }).value;
-        }
-    }
-});
+    "site-language": "tr",
+    "site-culture": "tr-TR",
+    "site-title-prefix": "Fatih Tatoğlu - ",
+    "site-name": "Fatih Tatoğlu",
+    "base-url": siteUrl
+};
 
 // Gulp Step 1 - Clean old files.
 function cleanAll() {
-    return src([enginær.outputPath], { allowEmpty: true })
+    return src(outputPath, { allowEmpty: true })
         .pipe(clean({ force: true }));
 }
 
 // Gulp Step 2 - Copy all required assets.
 function copyAssets() {
-    return src(enginær.assetPath, { base: enginær.assetBasePath })
-        .pipe(dest(enginær.outputPath));
-}
-
-// Gulp Step 3 - Add Pages
-function loadPages() {
-    return src(enginær.pagePath)
-        .pipe(enginær.setPages());
-}
-
-// Gulp Step 4 - Add Templates
-function loadTemplates() {
-    return src(enginær.templatePath)
-        .pipe(enginær.setTemplates());
+    return src(["./css/*.css", "./js/*.js", "./image/*.png", "./image/*.jpg", "./image/favicon/*", "./CNAME", "./.nojekyll", "./robots.txt"], { base: "./" })
+        .pipe(dest(outputPath));
 }
 
 // Gulp Step 5 - Generate Output
@@ -242,6 +60,9 @@ function generate() {
             'to': ['css', 'js', 'image'],
         },
     };
+
+    var enginær = new Enginaer(config);
+    enginær.load();
 
     return enginær.generate()
 
@@ -266,25 +87,21 @@ function generate() {
             whiteList: true
         }))
 
-        .pipe(dest(output));
+        .pipe(dest(outputPath));
 }
 
 function generateSiteMap() {
-    return src(output + "**/*.html")
+    return src(outputPath + "**/*.html")
         .pipe(sitemap({
             siteUrl: siteUrl,
             changefreq: "weekly",
             images: true
         }))
-        .pipe(dest(output));
+        .pipe(dest(outputPath));
 }
 
 exports.default = series(
     cleanAll,
-
-    parallel(copyAssets, loadPages, loadTemplates),
-
-    generate,
-
+    parallel(copyAssets, generate),
     generateSiteMap
 );

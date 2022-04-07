@@ -8,7 +8,7 @@ const sitemap = require("gulp-sitemap");
 const anchorRewriter = require("gulp-html-anchor-rewriter");
 
 var outputPath = "./dist/";
-var siteUrl = "https://blog.tatoglu.net/";
+var siteUrl = "file:///F:/workspace/fatihtatoglu/fatihtatoglu.github.io/dist/";//"https://blog.tatoglu.net/";
 
 const config = {
     "base": __dirname,

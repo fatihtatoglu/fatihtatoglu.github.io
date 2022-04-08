@@ -21,7 +21,7 @@ Aradığım eklentiyi bulamadığım zaman, aklımın içindeki bir ses bunu ken
 
 ## Zorluklar
 
-![NodeJS, Mocha, Chai, GitHub Actions, SonarCloud](../image/gulp-html-anchor-rewriter.png "Proje için kullanılan teknolojiler")
+![NodeJS, Mocha, Chai, GitHub Actions, SonarCloud](../image/gulp-html-anchor-rewriter_tech.png "Proje için kullanılan teknolojiler")
 
 Daha önce sadece Enginær ile gulp eklentisi geliştirme tecrübem olmuştu. Bu proje biraz daha kolay olacağı için kendimce kendime bir zorluk çıkartmam gerektiğini düşündüm ve bir gulp eklentisinin nasıl yazılması gerektiği ile ilgili araştırmalara başladım. Gulp'ın GitHub adresinde çok güzel bir doküman buldum. Bu dokümanı takip ederek güzel bir eklenti yazabileceğimi düşünerek işe başladım.
 

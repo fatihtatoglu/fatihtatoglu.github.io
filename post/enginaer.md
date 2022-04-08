@@ -35,7 +35,7 @@ Blog yazmanın en zor kısmı sürekli olmasını sağlamak. Süreklilik sağlam
 
 Yazı yazma dışında; temayı ayarlamak, sayfaların görünüşünü düzenlemek ya da sayfalarda ufak eklemeler için eklenti aramakla geçiyordu. Bu kısmı ne kadar kolay yapabilirim diye düşünürken bu kısmın şablonlar ile oluşturulmasını sağlayacak bir yapı kurabileceğimi düşündüm.
 
-![Gulp, Markdown, MarkedJS, Mustache, NodeJS, GitHub Actions, Glob, Sonar Cloud](../image/enginaer.png "Proje için kullanılan teknolojiler")
+![Gulp, Markdown, MarkedJS, Mustache, NodeJS, GitHub Actions, Glob, Sonar Cloud](../image/enginaer_tech.png "Proje için kullanılan teknolojiler")
 
 Bunun yanında sistem çok basit ayarlanmalı ve daha sonrasında neredeyse hiç ayarlamaya ihtiyaç duymadan çalışabilmeliydi. Tıpkı yazılım projelerinde olduğu gibi CI/CD pipeline'ı ile yayına çıkması aradığım mühendislik dokunuşunu da sağlayacaktı.
 

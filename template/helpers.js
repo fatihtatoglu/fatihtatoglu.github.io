@@ -21,13 +21,13 @@ module.exports = {
         return this["base-path"] + this.permalink.replace("./", "");
     },
     "coaching": function () {
-        return this.layout === "post" && this.category === "coaching";
+        return this.layout === "post" && this.category === "coaching" && this.published === "true";
     },
     "notes": function () {
-        return this.layout === "post" && this.category === "notes";
+        return this.layout === "post" && this.category === "notes" && this.published === "true";
     },
     "projects": function () {
-        return this.layout === "post" && this.category === "projects";
+        return this.layout === "post" && this.category === "projects" && this.published === "true";
     },
     "menu": function () {
         var menu = [];

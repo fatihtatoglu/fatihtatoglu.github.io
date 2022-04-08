@@ -35,4 +35,4 @@ Bunlar sadece benim bir major veya minor versiyon yükseltmemi sağlayan dönüm
 
 diyorum. Umarım sizlerde hayatınızdaki dönüm noktalarının farkına varabilirsiniz.
 
-Benimle iletişim kurmak için [Linkedin](https://www.linkedin.com/in/fatihtatoglu/) üzerinden mesaj bırakabilirsiniz. Projelerimi [GitHub](https://github.com/fatihtatoglu/) hesabım üzerinden takip edebilirsiniz.
+Benimle iletişim kurmak için [Linkedin](https://www.linkedin.com/in/fatihtatoglu/ "Fatih Tatoğlu | LinkedIn") üzerinden mesaj bırakabilirsiniz. Projelerimi [GitHub](https://github.com/fatihtatoglu/ "fatihtatoglu (Fatih Tatoğlu)") hesabım üzerinden takip edebilirsiniz.

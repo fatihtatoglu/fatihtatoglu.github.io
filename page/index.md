@@ -20,4 +20,4 @@ Site benim aklım gibi biraz. Şimdiden iyi okumalar diliyorum.
 
 ## Referanslar
 
-- [1]: Fotoğraf [Erkan Balk](https://www.facebook.com/erkan.balk) tarafından 2 Ocak 2015 tarihinde Eskişehir'de çekilmiştir.
+- [1]: Fotoğraf [Erkan Balk](https://www.facebook.com/erkan.balk "Erkan Balk | Facebook") tarafından 2 Ocak 2015 tarihinde Eskişehir'de çekilmiştir.

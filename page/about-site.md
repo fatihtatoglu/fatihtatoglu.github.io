@@ -3,12 +3,10 @@ layout: page
 author: Fatih Tatoğlu
 description: Sitenin üzerinde çalıştığı tema ve site motorunu nedir.
 date: 2021-11-19T00:00:00.000Z
-published: true
+published: false
 permalink: ./about/site.html
 tags: turbo_c enginaer blog_teması site_hakkında
 order: 1
-group: Hakkında
-groupOrder: 999
 ---
 
 # Site Hakkında

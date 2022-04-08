@@ -3,7 +3,7 @@ layout: post
 author: Fatih Tatoğlu
 description: Enginaer site motorunu nereden çıktı, neden yazmak istedim, neleri başardım ve başıma neler geldi.
 date: 2022-03-24T00:00:00.000Z
-published: true
+published: false
 permalink: ./post/enginaer.html
 tags: enginaer site_motoru gulp nodejs otomasyon markdown mustache markedjs
 ---

@@ -23,6 +23,12 @@ module.exports = {
     "coaching": function () {
         return this.layout === "post" && this.category === "coaching";
     },
+    "notes": function () {
+        return this.layout === "post" && this.category === "notes";
+    },
+    "projects": function () {
+        return this.layout === "post" && this.category === "projects";
+    },
     "menu": function () {
         var menu = [];
 
@@ -83,8 +89,7 @@ module.exports = {
                 };
 
                 if (page["published"] != "true") {
-                    item["disabled"] = true;
-                    delete item["url"];
+                    return;
                 }
 
                 menu.push(item);

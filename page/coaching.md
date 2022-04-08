@@ -7,11 +7,10 @@ permalink: ./coaching/index.html
 description: Koçluk konusunda yazdığım yazıların olduğu bölümün giriş yazısı.
 order: 2
 tags: koçluk psikoloji sosyoloji
+image: ./image/coaching.jpg
 ---
 
 # Koçluk
-
-![Koçluk](../image/coaching.jpg "Koçluk")
 
 **Psikoloji** ve **Sosyoloji**; okulda okurken, iş yerinde çalışırken, evde ailemizle zaman geçirirken ve farkketmediğimiz çoğu zaman diliminde tahmin ettiğimizden çok daha fazla hayatımızı etkiliyor. Bu bilim dallarında uzman değilim ama iş ve özel hayatımda çok fazla karşıma çıkıyorlar. Bu bölümde karşılaştığım ve hayatımda kullandığım bazı konuları paylaşmaya çalışıyor olacağım.
 

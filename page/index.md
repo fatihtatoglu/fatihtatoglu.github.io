@@ -14,3 +14,5 @@ order: 1
 Merhaba ben Fatih Tatoğlu. Her şey merak etmem ile başladı. ***"Bunu nasıl yapıyorlar?"***, ***"Bu nasıl çalışıyor?"*** ve benzeri soruları soran bir çocuk olduğumu söylüyor ailem. Bu siteyi merak ettiklerimi ve öğrendiklerimi paylaşmak için hazırladım. Ek olarak öğrenirken takip ettiğim kaynakları ve denemelerimi de paylaşıyor olacağım.
 
 Şimdiden iyi okumalar diliyorum.
+
+## Yazılar

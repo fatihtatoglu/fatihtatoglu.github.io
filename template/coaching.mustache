@@ -1,11 +1,11 @@
 {{> _pageHeader}}
             {{& content}}
 
-            <ul>
+            <ol>
                 {{#pages}}
-                {{#isPost}}
+                {{#coaching}}
                 <li><a href="{{& permalink}}">{{title}}</a></li>
-                {{/isPost}}
+                {{/coaching}}
                 {{/pages}}
-            </ul>
+            </ol>
 {{> _pageFooter}}

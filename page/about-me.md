@@ -9,6 +9,7 @@ image: ./image/about_me.jpg
 tags: hakkımda
 order: 2
 group: Hakkında
+groupOrder: 999
 ---
 
 # Hakkımda

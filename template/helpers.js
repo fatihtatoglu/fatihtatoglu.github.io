@@ -20,6 +20,9 @@ module.exports = {
     "canonical": function () {
         return this["base-path"] + this.permalink.replace("./", "");
     },
+    "coaching": function () {
+        return this.layout === "post" && this.category === "coaching";
+    },
     "menu": function () {
         var menu = [];
 
@@ -52,7 +55,7 @@ module.exports = {
                     var menuItem = {
                         "group": group,
                         "title": group,
-                        "order": 999,
+                        "order": page["groupOrder"],
                         "children": [{
                             "title": page["title"],
                             "url": page["permalink"],
@@ -68,6 +71,8 @@ module.exports = {
                         "url": page["permalink"],
                         "order": page["order"]
                     });
+
+                    menu[index]["children"] = menu[index]["children"].sort((a, b) => a["order"] - b["order"]);
                 }
             }
             else {
@@ -85,8 +90,6 @@ module.exports = {
                 menu.push(item);
             }
         });
-
-
 
         return menu.sort((a, b) => a["order"] - b["order"]);
     }

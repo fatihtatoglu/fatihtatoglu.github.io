@@ -8,6 +8,7 @@ permalink: ./about/site.html
 tags: turbo_c enginaer blog_teması site_hakkında
 order: 1
 group: Hakkında
+groupOrder: 999
 ---
 
 # Site Hakkında

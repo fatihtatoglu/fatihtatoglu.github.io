@@ -1,47 +1,7 @@
-<!DOCTYPE html>
-<html lang="{{site-language}}">
-
-<head>
-    <base href="{{& base-path}}">
-
-    <meta charset="UTF-8">
-    <meta name="description" content="{{description}}">
-    <meta name="author" content="{{author}}">
-    <link rel="canonical" href="{{& canonical}}">
-
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>{{site-title-prefix}}{{title}}</title>
-
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/custom.css">
-    <script src="./js/main.js"></script>
-    {{#jsmodule}}
-    <script src="./js/{{jsmodule}}.js" async></script>
-    {{/jsmodule}}
-    
-    <link rel="apple-touch-icon" sizes="180x180" href="./image/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./image/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./image/favicon/favicon-16x16.png">
-    <link rel="manifest" href="./image/favicon/site.webmanifest">
-</head>
-
-<body>
-    <header><span class="site-name">{{site-name}}</span></header>
-    <nav id="navigation">
-        {{> _menu}}
-    </nav>
-    <main>
-        <article>
+{{> _pageHeader}}
             {{#image}}
             <img src="{{& image}}" alt="{{title}} " />
             {{/image}}
+            
             {{& content}}
-        </article>
-    </main>
-    <footer>{{> _footer}}</footer>
-    {{> _themeDialog}}
-</body>
-
-</html>
+{{> _pageFooter}}

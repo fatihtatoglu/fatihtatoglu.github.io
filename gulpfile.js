@@ -67,7 +67,7 @@ function generate() {
         'value': '%MDS%',
         'append': {
             'key': 'v',
-            'to': ['css', 'js', 'image'],
+            'to': ['css', 'js'],
         },
     };
 

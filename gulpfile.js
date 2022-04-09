@@ -6,9 +6,19 @@ const htmlmin = require("gulp-htmlmin");
 const versionNumber = require("gulp-version-number");
 const sitemap = require("gulp-sitemap");
 const anchorRewriter = require("gulp-html-anchor-rewriter");
+const os = require("os");
 
 var outputPath = "./dist/";
-var siteUrl = "https://blog.tatoglu.net/";
+
+var siteUrl;
+if (os.platform() === "win32") {
+    siteUrl = "file:///F:/workspace/fatihtatoglu/fatihtatoglu.github.io/dist/";
+}
+else {
+    siteUrl = "https://blog.tatoglu.net/";
+}
+
+console.log();
 
 const config = {
     "base": __dirname,

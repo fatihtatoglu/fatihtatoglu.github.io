@@ -1,7 +1,7 @@
 ---
 layout: post
 author: Fatih Tatoğlu
-description: İlk programlamaya başladığım zamanlarda sadece Turbo C vardı ve onun ile çok fazla geliştirme yaptım. Bu yazıda Turbo C'yi baz alarak oluşturduğum site temasından bahsediyor olacağım.
+description: İlk programlamaya başladığımda kullanabileceğim sadece Turbo C/C++ vardı. Bu yazıda Turbo C'yi baz alarak oluşturduğum site temasından bahsediyor olacağım.
 date: 2022-03-22T00:00:00.000Z
 published: true
 permalink: ./projects/turboc-blog-theme.html

@@ -18,8 +18,6 @@ else {
     siteUrl = "https://blog.tatoglu.net/";
 }
 
-console.log();
-
 const config = {
     "base": __dirname,
     "page": {

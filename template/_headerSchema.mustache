@@ -34,4 +34,76 @@
     <meta name="twitter:description" content="{{description}}" />
 <!-- Twitter Card -->
 
-<script type="application/ld+json">{"@context": "https://schema.org","graph": [{"@type": "WebSite","@id": "{{& base-path}}#website","url": "{{& base-path}}","name": "{{site-name}}","description": "{{description}}","publisher": {	"@id": "{{& base-path}}/#/schema/person/9112274035621a3fbf80e30c19216034"},"inLanguage": "{{site-language}}"},{"@type": "Article","@id": "{{& canonical}}#article","author": {	"@id": "{{& base-path}}/#/schema/person/9112274035621a3fbf80e30c19216034"},"headline": "{{title}}","datePublished": "{{publish-date-datetime}}","publisher": {	"@id": "{{& base-path}}/#/schema/person/9112274035621a3fbf80e30c19216034"},{{#image}}"thumbnailUrl": "{{& image}}",{{/image}}{{#category}}"articleSection": [	"{{category}}"],{{/category}}"inLanguage": "{{site-language}}"},{"@type": "person","@id": "{{& base-path}}/#/schema/person/9112274035621a3fbf80e30c19216034","name": "Fatih Tatoğlu","url": "https://blog.tatoglu.net/about-me.html","address": {"@type": "PostalAddress","addressLocality": "İstanbul","addressCountry": "Turkey"},"email": "fatih@tatoglu.net"}]}</script>
+<script type="application/ld+json">
+{
+	"@context": "https://schema.org",
+	"@graph": [
+		{
+			"@type": "WebSite",
+			"@id": "{{& base-path}}#website",
+			"url": "{{& base-path}}",
+			"name": "{{site-name}}",
+			"description": "{{description}}",
+			"publisher": {
+				"@id": "{{& base-path}}/#/schema/person/9112274035621a3fbf80e30c19216034"
+			},
+			"inLanguage": "{{site-language}}"
+		},
+		
+		
+		{
+			"@type": "WebPage",
+			"@id": "{{& base-path}}#webpage",
+			"url": "{{& base-path}}",
+			"name": "{{title}} - {{site-name}}",
+			"isPartOf": {
+				"@id": "{{& base-path}}#website"
+			},
+			"datePublished": "{{publish-date-datetime}}",
+			"inLanguage": "{{site-language}}",
+			"potentialAction": [
+				{
+					"@type": "ReadAction",
+					"target": [
+						"{{& canonical}}"
+					]
+				}
+			]
+		},
+		
+		{
+			"@type": "Article",
+			"@id": "{{& canonical}}#article",
+			"author": {
+				"@id": "{{& base-path}}/#/schema/person/9112274035621a3fbf80e30c19216034"
+			},
+			"headline": "{{title}}",
+			"datePublished": "{{publish-date-datetime}}",
+			"publisher": {
+				"@id": "{{& base-path}}/#/schema/person/9112274035621a3fbf80e30c19216034"
+			},
+			{{#image}}
+			"thumbnailUrl": "{{& image}}",
+			{{/image}}
+			{{#category}}
+			"articleSection": [
+				"{{category}}"
+			],
+			{{/category}}
+			"inLanguage": "{{site-language}}"
+		},
+		{
+			"@type": "person",
+			"@id": "{{& base-path}}/#/schema/person/9112274035621a3fbf80e30c19216034",
+			"name": "Fatih Tatoğlu",
+			"url": "https://www.linkedin.com/in/fatihtatoglu/",
+			"address": {
+				"@type": "PostalAddress",
+				"addressLocality": "İstanbul",
+				"addressCountry": "Turkey"
+			},
+			"email": "fatih@tatoglu.net"
+		}
+	]
+}
+</script>

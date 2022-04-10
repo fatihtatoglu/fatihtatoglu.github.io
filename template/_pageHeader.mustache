@@ -8,6 +8,7 @@
     <meta name="description" content="{{description}}">
     <meta name="author" content="{{author}}">
     <link rel="canonical" href="{{& canonical}}">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,6 +19,7 @@
     <link rel="stylesheet" href="./css/custom.css">
 
     <script src="./js/main.js"></script>
+    <script src="./js/analytics.js"></script>
     {{#jsmodule}}
     <script src="./js/{{jsmodule}}.js" async></script>
     {{/jsmodule}}
@@ -26,16 +28,15 @@
     <link rel="icon" type="image/png" sizes="32x32" href="./image/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./image/favicon/favicon-16x16.png">
     <link rel="manifest" href="./image/favicon/site.webmanifest">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 
     <!-- Site Verification -->
     <meta name="yandex-verification" content="31a29a16b97b37a8" />
     <meta name="msvalidate.01" content="578B5091D7C5A2C03BE2EE0DF0CCC024" />
     <!-- Site Verification -->
 
-    <script src="./js/analytics.js"></script>
-    <!-- Yandex.Metrika counter -->
-    <noscript><div><img src="https://mc.yandex.ru/watch/88224633" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-    <!-- /Yandex.Metrika counter -->
+    {{> _opengraph}}
+    {{> _twittercard}}
 </head>
 
 <body>

@@ -57,7 +57,7 @@ function cleanAll() {
 
 // Gulp Step 2 - Copy all required assets.
 function copyAssets() {
-    return src(["./css/*.css", "./js/*.js", "./image/*.png", "./image/*.jpg", "./image/favicon/*", "./CNAME", "./.nojekyll", "./robots.txt"], { base: "./" })
+    return src(["./css/*.css", "./js/*.js", "./image/*.png", "./image/*.jpg", "./image/favicon/*", "./CNAME", "./.nojekyll", "./robots.txt", "./favicon.ico"], { base: "./" })
         .pipe(dest(outputPath));
 }
 
@@ -104,7 +104,6 @@ function generateSiteMap() {
     return src(outputPath + "**/*.html")
         .pipe(sitemap({
             siteUrl: siteUrl,
-            changefreq: "weekly",
             images: true
         }))
         .pipe(dest(outputPath));

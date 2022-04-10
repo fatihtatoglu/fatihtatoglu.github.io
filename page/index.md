@@ -1,7 +1,7 @@
 ---
 layout: page
 author: Fatih Tatoğlu
-description: Fatih Tatoğlu'nun kişisel web sitesi.
+description: Fatih Tatoğlu kişisel web sitesi anasayfası.
 date: 2022-03-14T00:00:00.000Z
 published: true
 permalink: index.html

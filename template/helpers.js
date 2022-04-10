@@ -18,7 +18,12 @@ module.exports = {
         return this.layout === "post";
     },
     "canonical": function () {
-        return this["base-path"] + this.permalink.replace("./", "");
+        if (this.permalink.endsWith("index.html")) {
+            return this["base-path"] + this.permalink.replace("./", "").replace("index.html", "");
+        }
+        else {
+            return this["base-path"] + this.permalink.replace("./", "");
+        }
     },
     "coaching": function () {
         return this.layout === "post" && this.category === "coaching" && this.published === "true";

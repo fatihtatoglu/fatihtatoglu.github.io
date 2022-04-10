@@ -34,6 +34,13 @@ module.exports = {
     "projects": function () {
         return this.layout === "post" && this.category === "projects" && this.published === "true";
     },
+    "postImage": function () {
+        if (this["image"]) {
+            return this["image"].replace("./", "");
+        }
+
+        return undefined;
+    },
     "menu": function () {
         var menu = [];
 

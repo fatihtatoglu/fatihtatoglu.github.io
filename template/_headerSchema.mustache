@@ -1,5 +1,4 @@
 <!-- Open Graph -->
-    <link rel="profile" href="https://gmpg.org/xfn/11">
     <meta property="og:locale" content="{{site-culture}}" />
     <meta property="og:title" content="{{title}}" />
     <meta property="og:type" content="article" />
@@ -12,23 +11,23 @@
     {{/category}}
 
     {{#tags}}
-    <meta property="article:tag" content="{{& .}}" />
+    <meta property="article:tag" content="{{& base-path}}{{& .}}" />
     {{/tags}}
 
-    {{#image}}
-    <meta property="og:image" content="{{& image}}" />
+    {{#postImage}}
+    <meta property="og:image" content="{{& base-path}}{{& .}}" />
     <meta property="og:image:type" content="image/jpeg" />
-    {{/image}}
+    {{/postImage}}
 <!-- Open Graph -->
 
 <!-- Twitter Card -->
-    {{#image}}
+    {{#postImage}}
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="{{& image}}" />
+    <meta name="twitter:image" content="{{& base-path}}{{& .}}" />
     <meta name="twitter:creator" content="@fatihtatoglu">
-    {{/image}}
+    {{/postImage}}
     {{^image}}
-    <meta name="twitter:card" content="summarye" />
+    <meta name="twitter:card" content="summary" />
     {{/image}}
     <meta name="twitter:site" content="@fatihtatoglu" />
     <meta name="twitter:title" content="{{title}}" />
@@ -80,9 +79,9 @@
 			"publisher": {
 				"@id": "{{& base-path}}/#/schema/person/9112274035621a3fbf80e30c19216034"
 			},
-			{{#image}}
-			"thumbnailUrl": "{{& image}}",
-			{{/image}}
+			{{#postImage}}
+			"thumbnailUrl": "{{& base-path}}{{& .}}",
+			{{/postImage}}
 			{{#category}}
 			"articleSection": [
 				"{{category}}"

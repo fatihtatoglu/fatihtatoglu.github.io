@@ -12,9 +12,9 @@ var outputPath = "./dist/";
 
 var siteUrl;
 if (os.platform() === "win32") {
-    siteUrl = "file:///F:/workspace/fatihtatoglu/fatihtatoglu.github.io/dist/";
-}
-else {
+//     siteUrl = "file:///F:/workspace/fatihtatoglu/fatihtatoglu.github.io/dist/";
+// }
+// else {
     siteUrl = "https://blog.tatoglu.net/";
 }
 

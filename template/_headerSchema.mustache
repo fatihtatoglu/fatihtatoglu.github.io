@@ -1,25 +1,3 @@
-<!-- Open Graph -->
-    <meta property="og:locale" content="{{site-culture}}" />
-    <meta property="og:title" content="{{title}}" />
-    <meta property="og:type" content="article" />
-    <meta property="og:description" content="{{description}}" />
-    <meta property="og:url" content="{{& canonical}}" />
-    <meta property="og:site_name" content="{{site-name}}" />
-    <meta property="article:published_time" content="{{publish-date-datetime}}" />
-    {{#category}}
-    <meta property="article:section" content="{{category}}" />
-    {{/category}}
-
-    {{#tags}}
-    <meta property="article:tag" content="{{& .}}" />
-    {{/tags}}
-
-    {{#postImage}}
-    <meta property="og:image" content="{{& base-path}}{{& .}}" />
-    <meta property="og:image:type" content="image/jpeg" />
-    {{/postImage}}
-<!-- Open Graph -->
-
 <!-- Twitter Card -->
     {{#postImage}}
     <meta name="twitter:card" content="summary_large_image" />
@@ -113,12 +91,12 @@
 				"{{& .}}"
 			],
 			{{/category}}
+            {{#postTags}}"keywords": [{{& .}}],{{/postTags}}
 			"inLanguage": "{{site-language}}"
 		},
 		{
 			"@type": [
-				"Person",
-				"Organization"
+				"Person"
 			],
 			"@id": "{{& base-path}}/#/schema/person/9112274035621a3fbf80e30c19216034",
 			"name": "Fatih Tatoğlu",

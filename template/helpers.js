@@ -41,6 +41,13 @@ module.exports = {
 
         return undefined;
     },
+    "postTags": function () {
+        if (this["tags"]) {
+            return '"' + this["tags"].join('","') + '"';
+        }
+
+        return undefined;
+    },
     "menu": function () {
         var menu = [];
 

@@ -4,15 +4,8 @@
         
         <loc>https://blog.tatoglu.net/about-me.html</loc>
     
-        <image:image>
-            <image:loc>https://mc.yandex.ru/watch/88224633</image:loc>
-        </image:image>
-    
         
-        <lastmod>2022-04-09T18:58:16.336Z</lastmod>
-    
-        
-        <changefreq>weekly</changefreq>
+        <lastmod>2022-04-10T13:11:57.454Z</lastmod>
     
     </url>
     <url>
@@ -20,18 +13,11 @@
         <loc>https://blog.tatoglu.net/</loc>
     
         <image:image>
-            <image:loc>https://mc.yandex.ru/watch/88224633</image:loc>
-        </image:image>
-    
-        <image:image>
             <image:loc>https://blog.tatoglu.net/image/about_me.jpg</image:loc>
         </image:image>
     
         
-        <lastmod>2022-04-09T18:58:16.340Z</lastmod>
-    
-        
-        <changefreq>weekly</changefreq>
+        <lastmod>2022-04-10T13:11:57.458Z</lastmod>
     
     </url>
     <url>
@@ -39,18 +25,11 @@
         <loc>https://blog.tatoglu.net/coaching/</loc>
     
         <image:image>
-            <image:loc>https://mc.yandex.ru/watch/88224633</image:loc>
-        </image:image>
-    
-        <image:image>
             <image:loc>https://blog.tatoglu.net/image/coaching.jpg</image:loc>
         </image:image>
     
         
-        <lastmod>2022-04-09T18:58:16.336Z</lastmod>
-    
-        
-        <changefreq>weekly</changefreq>
+        <lastmod>2022-04-10T13:11:57.454Z</lastmod>
     
     </url>
     <url>
@@ -58,18 +37,11 @@
         <loc>https://blog.tatoglu.net/coaching/roles-and-hats.html</loc>
     
         <image:image>
-            <image:loc>https://mc.yandex.ru/watch/88224633</image:loc>
-        </image:image>
-    
-        <image:image>
             <image:loc>https://blog.tatoglu.net/image/hats.jpg</image:loc>
         </image:image>
     
         
-        <lastmod>2022-04-09T18:58:16.348Z</lastmod>
-    
-        
-        <changefreq>weekly</changefreq>
+        <lastmod>2022-04-10T13:11:57.466Z</lastmod>
     
     </url>
     <url>
@@ -77,18 +49,11 @@
         <loc>https://blog.tatoglu.net/notes/</loc>
     
         <image:image>
-            <image:loc>https://mc.yandex.ru/watch/88224633</image:loc>
-        </image:image>
-    
-        <image:image>
             <image:loc>https://blog.tatoglu.net/image/notes.jpg</image:loc>
         </image:image>
     
         
-        <lastmod>2022-04-09T18:58:16.344Z</lastmod>
-    
-        
-        <changefreq>weekly</changefreq>
+        <lastmod>2022-04-10T13:11:57.458Z</lastmod>
     
     </url>
     <url>
@@ -96,18 +61,11 @@
         <loc>https://blog.tatoglu.net/notes/writing-blog.html</loc>
     
         <image:image>
-            <image:loc>https://mc.yandex.ru/watch/88224633</image:loc>
-        </image:image>
-    
-        <image:image>
             <image:loc>https://blog.tatoglu.net/.image/be-agile-cartoon.jpg</image:loc>
         </image:image>
     
         
-        <lastmod>2022-04-09T18:58:16.352Z</lastmod>
-    
-        
-        <changefreq>weekly</changefreq>
+        <lastmod>2022-04-10T13:11:57.466Z</lastmod>
     
     </url>
     <url>
@@ -115,18 +73,11 @@
         <loc>https://blog.tatoglu.net/projects/enginaer.html</loc>
     
         <image:image>
-            <image:loc>https://mc.yandex.ru/watch/88224633</image:loc>
-        </image:image>
-    
-        <image:image>
             <image:loc>https://blog.tatoglu.net/.image/enginaer_tech.png</image:loc>
         </image:image>
     
         
-        <lastmod>2022-04-09T18:58:16.348Z</lastmod>
-    
-        
-        <changefreq>weekly</changefreq>
+        <lastmod>2022-04-10T13:11:57.466Z</lastmod>
     
     </url>
     <url>
@@ -134,18 +85,11 @@
         <loc>https://blog.tatoglu.net/projects/gulp-html-anchor-rewriter.html</loc>
     
         <image:image>
-            <image:loc>https://mc.yandex.ru/watch/88224633</image:loc>
-        </image:image>
-    
-        <image:image>
             <image:loc>https://blog.tatoglu.net/.image/gulp-html-anchor-rewriter_tech.png</image:loc>
         </image:image>
     
         
-        <lastmod>2022-04-09T18:58:16.348Z</lastmod>
-    
-        
-        <changefreq>weekly</changefreq>
+        <lastmod>2022-04-10T13:11:57.462Z</lastmod>
     
     </url>
     <url>
@@ -153,27 +97,16 @@
         <loc>https://blog.tatoglu.net/projects/</loc>
     
         <image:image>
-            <image:loc>https://mc.yandex.ru/watch/88224633</image:loc>
-        </image:image>
-    
-        <image:image>
             <image:loc>https://blog.tatoglu.net/image/projects.jpg</image:loc>
         </image:image>
     
         
-        <lastmod>2022-04-09T18:58:16.344Z</lastmod>
-    
-        
-        <changefreq>weekly</changefreq>
+        <lastmod>2022-04-10T13:11:57.462Z</lastmod>
     
     </url>
     <url>
         
         <loc>https://blog.tatoglu.net/projects/turboc-blog-theme.html</loc>
-    
-        <image:image>
-            <image:loc>https://mc.yandex.ru/watch/88224633</image:loc>
-        </image:image>
     
         <image:image>
             <image:loc>https://blog.tatoglu.net/.image/turboc_0001.png</image:loc>
@@ -188,10 +121,7 @@
         </image:image>
     
         
-        <lastmod>2022-04-09T18:58:16.352Z</lastmod>
-    
-        
-        <changefreq>weekly</changefreq>
+        <lastmod>2022-04-10T13:11:57.466Z</lastmod>
     
     </url>
 </urlset>

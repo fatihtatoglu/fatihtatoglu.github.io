@@ -11,7 +11,7 @@ order: 5
 
 # Hakkımda
 
-Kendi hakkımda bir şeyler yazabileceğimi çok sanmıyorum ama hayatın dönüm noktalarından geçerek ilerlediğini düşünene biriyim. Şu anda buluduğum versiyonum olan ve beni oluşturan ana dönüm noktaları şu şekilde;
+Merhaba ben Fatih Tatoğlu. Kendi hakkımda bir şeyler yazabileceğimi çok sanmıyorum ama hayatın dönüm noktalarından geçerek ilerlediğini düşünen biriyim. Şu anda buluduğum versiyonum olan ve beni oluşturan ana dönüm noktaları şu şekilde;
 
 - **1.0**: 1985 yılında İstanbul'da doğdum.
 - **2.0**: 1999 yılında **Haydarpaşa Anadolu Teknik Lisesi Makina** bölümünde **Almanca** okumaya başladım.
@@ -29,7 +29,7 @@ Kendi hakkımda bir şeyler yazabileceğimi çok sanmıyorum ama hayatın dönü
   - **6.2**: 2011 yılında askerlik görevimi yaptım.
 - **7.0**: 2016 yılında evlendim.
 
-Bunlar sadece benim bir major veya minor versiyon yükseltmemi sağlayan dönüm noktaları. Ama bunların dışında da bir sürü hikaye, yaşadığım tecrübeler ve en çok olan başarısızlık hikayelerim var. Sonuç olarak;
+Bunlar sadece benim bir major veya minor versiyon yükseltmemi sağlayan dönüm noktaları. Ama bunların dışında da bir sürü hikaye, yaşadığım tecrübeler ve en çok başarısızlık hikayelerim var. Sonuç olarak;
 
 > Hayat devam ediyor, bir ucundan tutmak lazım...
 

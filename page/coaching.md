@@ -6,7 +6,7 @@ published: true
 permalink: ./coaching/index.html
 description: Koçluk konusunda yazdığım yazıların olduğu bölümün giriş yazısı.
 order: 2
-tags: koçluk psikoloji sosyoloji
+tags: koçluk psikoloji sosyoloji iş_hayatı takım_çalışması yöneticilik
 image: ./image/coaching.jpg
 ---
 

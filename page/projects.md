@@ -6,7 +6,7 @@ published: true
 permalink: ./projects/index.html
 description: Geliştirdiğim ve destek verdiğim projelerle ilgili yazılarımın olduğu bölümün giriş yazısı.
 order: 3
-tags: 
+tags: projeler portfolio
 image: ./image/projects.jpg
 ---
 

@@ -20,7 +20,9 @@
     <link rel="stylesheet" href="./css/custom.css">
 
     <script src="./js/main.js"></script>
+    {{^isLocal}}
     <script src="./js/analytics.js"></script>
+    {{/isLocal}}
     {{#jsmodule}}
     <script src="./js/{{jsmodule}}.js" async></script>
     {{/jsmodule}}

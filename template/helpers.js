@@ -9,7 +9,7 @@ module.exports = {
     },
     "url": function () {
         if (this.url) {
-            return this.url;
+            return this.url.toString();
         }
 
         return "javascript:;";
@@ -47,6 +47,9 @@ module.exports = {
         }
 
         return undefined;
+    },
+    "isLocal": function () {
+        return this["base-url"].indexOf("localhost") >= 0;
     },
     "menu": function () {
         var menu = [];

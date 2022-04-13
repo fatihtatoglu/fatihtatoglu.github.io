@@ -12,7 +12,7 @@ var outputPath = "./dist/";
 
 var siteUrl;
 if (os.platform() === "win32") {
-    siteUrl = "file:///F:/workspace/fatihtatoglu/fatihtatoglu.github.io/dist/";
+    siteUrl = "http://localhost:8080/";
 }
 else {
     siteUrl = "https://blog.tatoglu.net/";

@@ -2,31 +2,31 @@
     <ul>
     {{#menu}}
     {{#disabled}}
-        <li class="disabled">
+        <li class="disabled" data-language="{{language}}">
             <a href="{{& url}}">{{title}}</a>
         </li>
     {{/disabled}}
     {{^disabled}}
-        <li>
+        <li data-language="{{language}}">
             <a href="{{& url}}">{{title}}</a>
     {{#hasChildren}}
-        <div class="sub-menu">
-            <ul>
-        {{#children}}
-            {{#separator}}
-                <li role="separator"></li>
-            {{/separator}}
-            {{^separator}}
-                {{#disabled}}
-                <li class="disabled"><a {{#element-id}}id="{{.}}" {{/element-id}}href="{{& url}}">{{title}}</a></li>
-                {{/disabled}}
-                {{^disabled}}
-                <li><a {{#element-id}}id="{{.}}" {{/element-id}}href="{{& url}}">{{title}}</a></li>
-                {{/disabled}}
-            {{/separator}}
-        {{/children}}
-            </ul>
-        </div>
+            <div class="sub-menu">
+                <ul>
+            {{#children}}
+                {{#separator}}
+                    <li role="separator"></li>
+                {{/separator}}
+                {{^separator}}
+                    {{#disabled}}
+                    <li class="disabled"><a {{#element-id}}id="{{.}}" {{/element-id}}href="{{& url}}">{{title}}</a></li>
+                    {{/disabled}}
+                    {{^disabled}}
+                    <li><a {{#element-id}}id="{{.}}" {{/element-id}}href="{{& url}}">{{title}}</a></li>
+                    {{/disabled}}
+                {{/separator}}
+            {{/children}}
+                </ul>
+            </div>
     {{/hasChildren}}
         </li>
     {{/disabled}}

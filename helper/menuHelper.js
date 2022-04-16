@@ -14,43 +14,6 @@ module.exports = {
 
         return "javascript:;";
     },
-    "isPost": function () {
-        return this.layout === "post";
-    },
-    "canonical": function () {
-        if (this.permalink.endsWith("index.html")) {
-            return this["base-path"] + this.permalink.replace("./", "").replace("index.html", "");
-        }
-        else {
-            return this["base-path"] + this.permalink.replace("./", "");
-        }
-    },
-    "coaching": function () {
-        return this.layout === "post" && this.category === "coaching" && this.published === "true";
-    },
-    "notes": function () {
-        return this.layout === "post" && this.category === "notes" && this.published === "true";
-    },
-    "projects": function () {
-        return this.layout === "post" && this.category === "projects" && this.published === "true";
-    },
-    "postImage": function () {
-        if (this["image"]) {
-            return this["image"].replace("./", "");
-        }
-
-        return undefined;
-    },
-    "postTags": function () {
-        if (this["tags"]) {
-            return '"' + this["tags"].join('","') + '"';
-        }
-
-        return undefined;
-    },
-    "isLocal": function () {
-        return this["base-url"].indexOf("localhost") >= 0;
-    },
     "menu": function () {
         var menu = [];
 
@@ -84,6 +47,7 @@ module.exports = {
                         "group": group,
                         "title": group,
                         "order": page["groupOrder"],
+                        "language": page["language"],
                         "children": [{
                             "title": page["title"],
                             "url": page["permalink"],
@@ -107,7 +71,8 @@ module.exports = {
                 var item = {
                     "title": page["title"],
                     "url": page["permalink"],
-                    "order": page["order"]
+                    "order": page["order"],
+                    "language": page["language"]
                 };
 
                 if (page["published"] != "true") {

@@ -41,10 +41,8 @@ const config = {
     },
     "template": {
         "path": "./template/*.mustache",
-        "helpers": "./template/*.js"
+        "helpers": "./helper/*.js"
     },
-    "site-language": "tr",
-    "site-culture": "tr-TR",
     "site-title-prefix": "Fatih Tatoğlu - ",
     "site-name": "Fatih Tatoğlu",
     "base-url": baseUrl
@@ -84,6 +82,7 @@ function generate() {
         // replace fo4 image path
         .pipe(replace(/..\/..\/..\/image\//g, "image/"))
         .pipe(replace(/..\/..\/image\//g, "image/"))
+        .pipe(replace(/..\/image\//g, "image/"))
 
         // compress html file
         // .pipe(htmlmin({ collapseWhitespace: true }))

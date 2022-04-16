@@ -4,11 +4,11 @@ published: true
 author: Fatih Tatoğlu
 date: 2022-04-08T00:00:00Z
 permalink: ./notes/index.html
+language: tr
 
 description: Kendime not aldığım konular ve püf noktarı.
 tags: kendime_notlar kişisel_notlar notlar
 order: 4
-language: tr
 ---
 
 # Kendime Notlar

@@ -1,6 +1,5 @@
 const defaultThemeColor = "aqua";
 const defaultLanguage = "tr";
-const defaultCulture = "tr-TR";
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -71,7 +70,6 @@ function loadSiteSettings() {
     }
     else {
         $html.classList.add(defaultThemeColor);
-
         window.localStorage.setItem("site-theme", defaultThemeColor);
     }
 
@@ -80,9 +78,7 @@ function loadSiteSettings() {
     }
     else {
         $html.setAttribute("lang", defaultLanguage);
-
         window.localStorage.setItem("site-language", defaultLanguage);
-        window.localStorage.setItem("site-culture", defaultCulture);
     }
 }
 
@@ -115,7 +111,6 @@ function renderThemeDialog() {
             }
             else if (item.name === "lang") {
                 window.localStorage.setItem("site-language", item.value);
-                window.localStorage.setItem("site-culture", item.getAttribute("data-culture"));
             }
         });
 

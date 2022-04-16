@@ -4,11 +4,11 @@ published: true
 author: Fatih Tatoğlu
 date: 2022-04-07T00:00:00Z
 permalink: ./coaching/index.html
+language: tr
 
 description: Koçluk konusunda yazdığım yazıların olduğu bölümün giriş yazısı.
 tags: koçluk psikoloji sosyoloji iş_hayatı takım_çalışması yöneticilik
 order: 2
-language: tr
 ---
 
 # Koçluk

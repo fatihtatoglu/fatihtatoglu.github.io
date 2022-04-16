@@ -4,11 +4,11 @@ published: true
 author: Fatih Tatoğlu
 date: 2022-04-07T00:00:00Z
 permalink: ./projects/index.html
+language: tr
 
 description: Geliştirdiğim ve destek verdiğim projelerle ilgili yazılarımın olduğu bölümün giriş yazısı.
 tags: projeler portfolio
 order: 3
-language: tr
 ---
 
 # Projeler

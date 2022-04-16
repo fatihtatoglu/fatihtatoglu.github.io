@@ -4,10 +4,10 @@ published: true
 author: Fatih Tatoğlu
 date: 2022-03-20T00:00:00.000Z
 permalink: ./notes/writing-blog.html
+language: tr
 
 description: Blog yazmak ve yazarken karşılaştığım zorlukları anlatmaya çalıştım. Motivasyon kaynağım olacak bir yazı.
 tags: blog_yazmak selçuk_erdem be_agile
-language: tr
 category: notes
 ---
 

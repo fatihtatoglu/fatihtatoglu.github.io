@@ -4,11 +4,11 @@ published: true
 author: Fatih Tatoğlu
 date: 2022-03-14T00:00:00.000Z
 permalink: ./index.html
+language: tr
 
 description: Fatih Tatoğlu kişisel web sitesi anasayfası.
 tags: 
 order: 1
-language: tr
 ---
 
 # Anasayfa

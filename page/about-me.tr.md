@@ -4,11 +4,11 @@ published: true
 author: Fatih Tatoğlu
 date: 2021-11-19T00:00:00.000Z
 permalink: ./about-me.html
+language: tr
 
 description: Fatih Tatoğlu kimdir ve hayatındaki önemli noktalar nelerdir.
 tags: hakkımda fatih_tatoglu
 order: 5
-language: tr
 ---
 
 # Hakkımda

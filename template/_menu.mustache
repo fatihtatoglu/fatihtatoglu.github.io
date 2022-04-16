@@ -2,12 +2,12 @@
     <ul>
     {{#menu}}
     {{#disabled}}
-        <li class="disabled" data-language="{{language}}">
+        <li class="disabled">
             <a href="{{& url}}">{{title}}</a>
         </li>
     {{/disabled}}
     {{^disabled}}
-        <li data-language="{{language}}">
+        <li>
             <a href="{{& url}}">{{title}}</a>
     {{#hasChildren}}
             <div class="sub-menu">

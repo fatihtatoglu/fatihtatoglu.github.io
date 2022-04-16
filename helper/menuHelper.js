@@ -1,5 +1,24 @@
 "use strict";
 
+function createSettingMenu(metadata) {
+    return {
+        "title": "-",
+        "order": 0,
+        "children": [{
+            "element-id": "btnSetting",
+            "title": metadata.language === "tr" ? "Tema Ayarları" : "Theme Options"
+        }]
+    };
+}
+
+function createMenuItem(page) {
+    return {
+        "title": page["title"],
+        "url": page["base-url"] + page["permalink"].replace("./", ""),
+        "order": page["order"]
+    };
+}
+
 module.exports = {
     "separator": function () {
         return this.role === "separator";
@@ -18,14 +37,7 @@ module.exports = {
         var menu = [];
 
         // Thema ayarları.
-        menu.push({
-            "title": "-",
-            "order": 0,
-            "children": [{
-                "element-id": "btnSetting",
-                "title": "Ayarlar"
-            }]
-        });
+        menu.push(createSettingMenu(this));
 
         this.pages.forEach((page) => {
 
@@ -47,34 +59,18 @@ module.exports = {
                         "group": group,
                         "title": group,
                         "order": page["groupOrder"],
-                        "language": page["language"],
-                        "children": [{
-                            "title": page["title"],
-                            "url": page["permalink"],
-                            "order": page["order"]
-                        }]
+                        "children": [createMenuItem(page)]
                     };
 
                     menu.push(menuItem);
                 }
                 else {
-                    menu[index]["children"].push({
-                        "title": page["title"],
-                        "url": page["permalink"],
-                        "order": page["order"]
-                    });
-
+                    menu[index]["children"].push(createMenuItem(page));
                     menu[index]["children"] = menu[index]["children"].sort((a, b) => a["order"] - b["order"]);
                 }
             }
             else {
-                var item = {
-                    "title": page["title"],
-                    "url": page["permalink"],
-                    "order": page["order"],
-                    "language": page["language"]
-                };
-
+                var item = createMenuItem(page);
                 if (page["published"] != "true") {
                     return;
                 }

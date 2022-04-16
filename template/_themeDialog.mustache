@@ -1,12 +1,23 @@
 <div id="pnlSettingDialog" class="dialog">
     <div class="dialog-box">
         <div class="dialog-content">
+            {{#isTurkish}}
+            <header><span>Tema Ayarları</span></header>
+            {{/isTurkish}}
+            {{#isEnglish}}
             <header><span>Theme Options</span></header>
+            {{/isEnglish}}
             <main>
                 <table style="margin: auto;">
                     <thead>
+                    {{#isTurkish}}
                         <th style="width: 150px;">Renkler</th>
                         <th style="width: 150px">Diller</th>
+                    {{/isTurkish}}
+                    {{#isEnglish}}
+                        <th style="width: 150px;">Colors</th>
+                        <th style="width: 150px">Languages</th>
+                    {{/isEnglish}}
                     </thead>
                     <tbody>
                         <tr>
@@ -36,7 +47,12 @@
                 <br />
             </main>
             <footer>
+                {{#isTurkish}}
+                <button id="btnSettingDialogOK" class="default" accesskey="t"><u>T</u>amam</button>
+                {{/isTurkish}}
+                {{#isEnglish}}
                 <button id="btnSettingDialogOK" class="default" accesskey="o"><u>O</u>K</button>
+                {{/isEnglish}}
             </footer>
         </div>
     </div>

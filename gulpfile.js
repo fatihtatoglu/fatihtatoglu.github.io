@@ -80,12 +80,11 @@ function generate() {
         .pipe(replace("</h1>", "</h1></header>"))
 
         // replace fo4 image path
-        .pipe(replace(/..\/..\/..\/image\//g, "image/"))
-        .pipe(replace(/..\/..\/image\//g, "image/"))
-        .pipe(replace(/..\/image\//g, "image/"))
+        .pipe(replace(/\.\.\/\.\.\/image/g, "image"))
+        .pipe(replace(/\.\.\/image/g, "image"))
 
         // compress html file
-        // .pipe(htmlmin({ collapseWhitespace: true }))
+        .pipe(htmlmin({ collapseWhitespace: true }))
 
         // add version number for css and js files for preventing cache
         .pipe(versionNumber(versionConfig))
@@ -104,7 +103,12 @@ function generate() {
 function generateSiteMap() {
 
     let getHref = function (siteUrl, file, lang, _loc) {
-        return siteUrl + lang + "/" + file.replace("tr/", "").replace("en/", "");
+        if (lang === "en") {
+            return siteUrl + lang + "/" + file.replace("tr/", "").replace("en/", "");
+        }
+        else {
+            return siteUrl + file.replace("tr/", "").replace("en/", "");
+        }
     };
 
     return src(outputPath + "**/*.html")
@@ -116,7 +120,7 @@ function generateSiteMap() {
                 { lang: 'en', getHref }
             ]
         }))
-        // .pipe(htmlmin({ collapseWhitespace: true }))
+        //.pipe(htmlmin({ collapseWhitespace: true }))
         .pipe(dest(outputPath));
 }
 

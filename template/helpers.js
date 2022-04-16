@@ -59,8 +59,8 @@ module.exports = {
             "title": "-",
             "order": 0,
             "children": [{
-                "element-id": "btnTheme",
-                "title": "Tema Ayarları"
+                "element-id": "btnSetting",
+                "title": "Ayarlar"
             }]
         });
 

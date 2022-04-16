@@ -3,11 +3,11 @@ layout: post
 author: Fatih Tatoğlu
 date: 2022-04-07T00:00:00Z
 published: true
-permalink: ./coaching/roles-and-hats.html
+permalink: ./tr/coaching/roles-and-hats.html
 description: Roller ve şapkalar bir birlerine çok benziyorlar aslında. Hangi şapkayı tercih edeceğinize, bu yazıyı okuduktan sonra daha kolay karar vereceksiniz.
 tags: temel_roller koçluk mentörlük eğitmenlik
 category: coaching
-image: ./image/hats.jpg
+image: /image/hats.jpg
 ---
 
 # Roller ve Şapkalar
@@ -78,7 +78,7 @@ Sizinde çalışma hayatınızda gözlemlediğinizi farklı roller veya şapkala
 
 Çalışma hayatında rollerin ve sorumlulukların her zaman iç içe geçtiğini gördüm. Bu yüzden yöneticilik ya da mentorlük yaparken aslında koçluk veya eğitmenlik yaptığım da oldu. Yani aynı anda birden fazla şapka giymem gerekti. Fakat bazı zamanlarda da sadece tek bir şapka ile ilerleyebildim.
 
-Yoğun zamanlarda çok fazla şapkayı aynı anda giymeniz gerekecek. Bu durumda sorumluluklar üst üste binecektir. Burada çözüm bir denge veya sıralama oluşturmak olabilir. **Koç** olarak konuları derinleştirip, ihtiyacın anlaşılmasına olanak verdikten sonra danışanın ihtiyacına göre diğer şapkalara geçiş yapılabilir. 
+Yoğun zamanlarda çok fazla şapkayı aynı anda giymeniz gerekecek. Bu durumda sorumluluklar üst üste binecektir. Burada çözüm bir denge veya sıralama oluşturmak olabilir. **Koç** olarak konuları derinleştirip, ihtiyacın anlaşılmasına olanak verdikten sonra danışanın ihtiyacına göre diğer şapkalara geçiş yapılabilir.
 
 Her rolün kullanması gereken teknikler ve bilgi birikimleri farklıdır. **Koç** yolunuzu bulmanızda sizi yönlendirirken, **Mentor** size destek olarak yolda birlikte yürümenizi sağlayacaktır. **Danışman** hızlıca probleminizi çözerken, **Eğitmen** size yeni bir bilgi aktarmaya çalışacaktır.
 

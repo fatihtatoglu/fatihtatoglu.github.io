@@ -1,27 +1,30 @@
 const { series, parallel, src, dest } = require("gulp");
+
+const Enginaer = require("enginaer");
+const anchorRewriter = require("gulp-html-anchor-rewriter");
+
 const clean = require("gulp-clean");
 const replace = require("gulp-replace");
-const Enginaer = require("enginaer");
 const htmlmin = require("gulp-htmlmin");
 const versionNumber = require("gulp-version-number");
 const sitemap = require("gulp-sitemap");
-const anchorRewriter = require("gulp-html-anchor-rewriter");
+
 const os = require("os");
 
 var outputPath = "./dist/";
 
-var siteUrl;
+var baseUrl;
 if (os.platform() === "win32") {
-    siteUrl = "http://localhost:8080/";
+    baseUrl = "http://localhost:8080/";
 }
 else {
-    siteUrl = "https://blog.tatoglu.net/";
+    baseUrl = "https://blog.tatoglu.net/";
 }
 
 const config = {
     "base": __dirname,
     "page": {
-        "path": ["./page/*.md", "./post/*.md"],
+        "path": ["./page/**/*.md", "./post/**/*.md"],
         "visitor": "./visitor/*.js",
         "marked": {
             breaks: true,
@@ -44,7 +47,7 @@ const config = {
     "site-culture": "tr-TR",
     "site-title-prefix": "Fatih Tatoğlu - ",
     "site-name": "Fatih Tatoğlu",
-    "base-url": siteUrl
+    "base-url": baseUrl
 };
 
 // Gulp Step 1 - Clean old files.
@@ -80,6 +83,7 @@ function generate() {
 
         // replace fo4 image path
         .pipe(replace(/..\/..\/..\/image\//g, "image/"))
+        .pipe(replace(/..\/..\/image\//g, "image/"))
 
         // compress html file
         .pipe(htmlmin({ collapseWhitespace: true }))
@@ -89,7 +93,7 @@ function generate() {
 
         // add rel and target for outgoing links
         .pipe(anchorRewriter({
-            keyword: [siteUrl, "./", "javascript:;", "index.html"],
+            keyword: [baseUrl, "./", "javascript:;", "index.html"],
             rel: "noopener noreferrer",
             target: "_blank",
             whiteList: true
@@ -99,11 +103,21 @@ function generate() {
 }
 
 function generateSiteMap() {
+
+    let getHref = function (siteUrl, file, lang, _loc) {
+        return siteUrl + lang + "/" + file.replace("tr/", "").replace("en/", "");
+    };
+
     return src(outputPath + "**/*.html")
         .pipe(sitemap({
-            siteUrl: siteUrl,
-            images: true
+            siteUrl: baseUrl,
+            images: true,
+            hreflang: [
+                { lang: 'tr', getHref },
+                { lang: 'en', getHref }
+            ]
         }))
+        .pipe(htmlmin({ collapseWhitespace: true }))
         .pipe(dest(outputPath));
 }
 

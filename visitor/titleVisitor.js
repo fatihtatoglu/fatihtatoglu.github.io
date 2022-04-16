@@ -12,7 +12,7 @@ class TitleVisitor extends BasePageVisitor {
         var regex = /<h1\s*.{0,128}>(.*)<\/h1>/g;
         var value = regex.exec(page.content);
 
-        if (value.length > 0) {
+        if (value && value.length > 0) {
             page.set("title", value[1]);
         }
     }

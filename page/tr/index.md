@@ -4,10 +4,10 @@ author: Fatih Tatoğlu
 description: Fatih Tatoğlu kişisel web sitesi anasayfası.
 date: 2022-03-14T00:00:00.000Z
 published: true
-permalink: index.html
+permalink: ./tr/index.html
 tags: 
 order: 1
-image: ./image/about_me.jpg
+image: /image/about_me.jpg
 ---
 
 # Anasayfa

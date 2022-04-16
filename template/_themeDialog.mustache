@@ -1,15 +1,16 @@
-<div id="pnlThemeDialog" class="dialog">
+<div id="pnlSettingDialog" class="dialog">
     <div class="dialog-box">
         <div class="dialog-content">
             <header><span>Theme Options</span></header>
             <main>
                 <table style="margin: auto;">
                     <thead>
-                        <th style="width: 150px;">Colors</th>
+                        <th style="width: 150px;">Renkler</th>
+                        <th style="width: 150px">Diller</th>
                     </thead>
                     <tbody>
                         <tr>
-                            <td style="text-align: left; padding-left: 25%;">
+                            <td style="text-align: left; padding-left: 5%;">
                                 <input id="rbColoraqua" name="color" type="radio" value="aqua" />
                                 <label for="rbColoraqua">Aqua</label>
                                 <br />
@@ -22,13 +23,20 @@
                                 <input id="rbColorwhite" name="color" type="radio" value="white" />
                                 <label for="rbColorwhite">White</label>
                             </td>
+                            <td style="text-align: left; padding-left: 5%;">
+                                <input id="rbLangTR" name="lang" type="radio" value="tr" data-culture="tr-TR" />
+                                <label for="rbLangTR">Türkçe</label>
+                                <br />
+                                <input id="rbLangEN" name="lang" type="radio" value="en" data-culture="en-US" />
+                                <label for="rbLangEN">English</label>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
                 <br />
             </main>
             <footer>
-                <button id="btnThemeDialogOK" class="default" accesskey="o"><u>O</u>K</button>
+                <button id="btnSettingDialogOK" class="default" accesskey="o"><u>O</u>K</button>
             </footer>
         </div>
     </div>

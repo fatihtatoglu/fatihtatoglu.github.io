@@ -7,7 +7,7 @@ permalink: ./projects/index.html
 description: Geliştirdiğim ve destek verdiğim projelerle ilgili yazılarımın olduğu bölümün giriş yazısı.
 order: 3
 tags: projeler portfolio
-image: ./image/projects.jpg
+image: /image/projects.jpg
 ---
 
 # Projeler

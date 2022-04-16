@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{site-language}}">
+<html lang="{{language}}">
 
 <head>
     <base href="{{& base-path}}">
@@ -16,21 +16,21 @@
 
     <title>{{site-title-prefix}}{{title}}</title>
 
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/custom.css">
+    <link rel="stylesheet" href="{{& base-path}}css/main.css">
+    <link rel="stylesheet" href="{{& base-path}}css/custom.css">
 
-    <script src="./js/main.js"></script>
+    <script src="{{& base-path}}js/main.js"></script>
     {{^isLocal}}
-    <script src="./js/analytics.js"></script>
+    <script src="{{& base-path}}js/analytics.js"></script>
     {{/isLocal}}
     {{#jsmodule}}
-    <script src="./js/{{jsmodule}}.js" async></script>
+    <script src="{{& base-path}}js/{{jsmodule}}.js" async></script>
     {{/jsmodule}}
     
-    <link rel="apple-touch-icon" sizes="180x180" href="./image/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./image/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./image/favicon/favicon-16x16.png">
-    <link rel="manifest" href="./image/favicon/site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{& base-path}}image/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{& base-path}}image/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{& base-path}}image/favicon/favicon-16x16.png">
+    <link rel="manifest" href="{{& base-path}}image/favicon/site.webmanifest">
     <link rel="icon" href="{{& base-path}}favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="{{& base-path}}favicon.ico" type="image/x-icon" />
 

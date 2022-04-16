@@ -1,16 +1,19 @@
 ---
 layout: post
+published: true
 author: Fatih Tatoğlu
 date: 2022-04-07T00:00:00Z
-published: true
 permalink: ./coaching/roles-and-hats.html
+
 description: Roller ve şapkalar bir birlerine çok benziyorlar aslında. Hangi şapkayı tercih edeceğinize, bu yazıyı okuduktan sonra daha kolay karar vereceksiniz.
 tags: temel_roller koçluk mentörlük eğitmenlik
+language: tr
 category: coaching
-image: /image/hats.jpg
 ---
 
 # Roller ve Şapkalar
+
+![Roller & Şapkalar](../image/hats.jpg)
 
 Scrum Master'lık yaparken ve sonrasında eğitim alırken bir Scrum Master'ın sahip olması gereken yetkinlikleri öğrenmiştim. Kolaylaştırıcı, Değişim Ajanı, Engel Kaldırıcı vb. gibi roller. Daha sonrasında yönetici eğitimi alıyorken benzer rol yapısının yönetici tarafında da olması gerektiğini gördüm.
 

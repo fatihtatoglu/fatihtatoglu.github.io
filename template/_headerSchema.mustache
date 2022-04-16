@@ -1,17 +1,9 @@
 <!-- Twitter Card -->
-    {{#postImage}}
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="{{& base-path}}{{& .}}" />
-    <meta name="twitter:creator" content="@fatihtatoglu">
-    {{/postImage}}
-    {{^image}}
-    <meta name="twitter:card" content="summary" />
-    {{/image}}
-    <meta name="twitter:site" content="@fatihtatoglu" />
-    <meta name="twitter:title" content="{{title}}" />
-    <meta name="twitter:description" content="{{& description}}" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@fatihtatoglu" />
+<meta name="twitter:title" content="{{title}}" />
+<meta name="twitter:description" content="{{& description}}" />
 <!-- Twitter Card -->
-
 <script type="application/ld+json">
 {"@context": "https://schema.org","@graph": [{"@type": "WebSite","@id": "{{& base-path}}#website","url": "{{& base-path}}","name": "{{site-name}}","description": "Fatih Tatoğlu - Kişisel Web Sayfası","publisher": {"@id": "{{& base-path}}/#/schema/person/9112274035621a3fbf80e30c19216034"},"inLanguage": "{{site-language}}"},{"@type": "WebPage","@id": "{{& canonical}}/#webpage","url": "{{& canonical}}","name": "{{title}} - {{site-name}}","isPartOf": {"@id": "{{& base-path}}#website"},"datePublished": "{{publish-date-datetime}}","breadcrumb": {"@id": "{{& canonical}}/#breadcrumb"},"inLanguage": "{{site-language}}","potentialAction": [{"@type": "ReadAction","target": ["{{& canonical}}"]}]},{"@type": "BreadcrumbList","@id": "{{& canonical}}/#breadcrumb","itemListElement": [{"@type": "ListItem","position": 1,"name": "Ana sayfa","item": "{{& base-path}}"},{"@type": "ListItem","position": 2,"name": "{{title}}"}]},{"@type": "Article","@id": "{{& canonical}}/#article","isPartOf": {"@id": "{{& canonical}}/#webpage"},"author": {"@id": "{{& base-path}}/#/schema/person/9112274035621a3fbf80e30c19216034"},"headline": "{{title}}","datePublished": "{{publish-date-datetime}}","mainEntityOfPage": {"@id": "{{& canonical}}/#webpage"},"publisher": {"@id": "{{& base-path}}/#/schema/person/9112274035621a3fbf80e30c19216034"},{{#postImage}}"thumbnailUrl": "{{& base-path}}{{& .}}",{{/postImage}}{{#category}}"articleSection": ["{{& .}}"],{{/category}}{{#postTags}}"keywords": [{{& .}}],{{/postTags}}"inLanguage": "{{site-language}}"},{"@type": ["Person"],"@id": "{{& base-path}}/#/schema/person/9112274035621a3fbf80e30c19216034","name": "Fatih Tatoğlu","url": "{{& base-path}}about-me.html","image": {"@type": "ImageObject","@id": "{{& base-path}}#personlogo","inLanguage": "{{site-language}}","url": "{{& base-path}}image/about_me.jpg","contentUrl": "{{& base-path}}image/about_me.jpg","width": 1024,"height": 683,"caption": "{{site-name}}"},"address": {"@type": "PostalAddress","addressLocality": "İstanbul","addressCountry": "Turkey"},"email": "fatih@tatoglu.net"}]}
 </script>

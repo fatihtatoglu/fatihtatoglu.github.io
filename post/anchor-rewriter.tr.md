@@ -1,11 +1,13 @@
 ---
 layout: post
-author: Fatih Tatoğlu
-description: Kendi ihtiyacım için geliştirdiğim gulp eklentisi ve bunu yaparken öğrendiklerim ile ilgili bir proje.
-date: 2022-04-08T00:00:00.000Z
 published: true
+author: Fatih Tatoğlu
+date: 2022-04-08T00:00:00.000Z
 permalink: ./projects/gulp-html-anchor-rewriter.html
+
+description: Kendi ihtiyacım için geliştirdiğim gulp eklentisi ve bunu yaparken öğrendiklerim ile ilgili bir proje.
 tags: enginaer gulp mocha chai plugin eklenti
+language: tr
 category: projects
 ---
 
@@ -21,7 +23,7 @@ Aradığım eklentiyi bulamadığım zaman, aklımın içindeki bir ses bunu ken
 
 ## Zorluklar
 
-![NodeJS, Mocha, Chai, GitHub Actions, SonarCloud](../../image/gulp-html-anchor-rewriter_tech.png "Proje için kullanılan teknolojiler")
+![NodeJS, Mocha, Chai, GitHub Actions, SonarCloud](../image/gulp-html-anchor-rewriter_tech.png "Proje için kullanılan teknolojiler")
 
 Daha önce sadece Enginær ile gulp eklentisi geliştirme tecrübem olmuştu. Bu proje biraz daha kolay olacağı için kendimce kendime bir zorluk çıkartmam gerektiğini düşündüm ve bir gulp eklentisinin nasıl yazılması gerektiği ile ilgili araştırmalara başladım. Gulp'ın GitHub adresinde çok güzel bir doküman buldum. Bu dokümanı takip ederek güzel bir eklenti yazabileceğimi düşünerek işe başladım.
 

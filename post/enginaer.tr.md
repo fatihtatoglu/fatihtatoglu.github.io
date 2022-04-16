@@ -1,11 +1,13 @@
 ---
 layout: post
 author: Fatih Tatoğlu
-description: Enginaer site motorunu projesinin amacı ve arkasındaki motivasyonun kaynağını açıklamaya çalışacağım.
-date: 2022-03-24T00:00:00.000Z
 published: true
+date: 2022-03-24T00:00:00.000Z
 permalink: ./projects/enginaer.html
+
+description: Enginaer site motorunu projesinin amacı ve arkasındaki motivasyonun kaynağını açıklamaya çalışacağım.
 tags: enginaer site_motoru gulp nodejs otomasyon markdown mustache markedjs
+language: tr
 category: projects
 ---
 
@@ -35,7 +37,7 @@ Blog yazmanın en zor kısmı sürekli olmasını sağlamak. Süreklilik sağlam
 
 Yazı yazma dışında; temayı ayarlamak, sayfaların görünüşünü düzenlemek ya da sayfalarda ufak eklemeler için eklenti aramakla geçiyordu. Bu kısmı ne kadar kolay yapabilirim diye düşünürken bu kısmın şablonlar ile oluşturulmasını sağlayacak bir yapı kurabileceğimi düşündüm.
 
-![Gulp, Markdown, MarkedJS, Mustache, NodeJS, GitHub Actions, Glob, Sonar Cloud](../../image/enginaer_tech.png "Proje için kullanılan teknolojiler")
+![Gulp, Markdown, MarkedJS, Mustache, NodeJS, GitHub Actions, Glob, Sonar Cloud](../image/enginaer_tech.png "Proje için kullanılan teknolojiler")
 
 Bunun yanında sistem çok basit ayarlanmalı ve daha sonrasında neredeyse hiç ayarlamaya ihtiyaç duymadan çalışabilmeliydi. Tıpkı yazılım projelerinde olduğu gibi CI/CD pipeline'ı ile yayına çıkması aradığım mühendislik dokunuşunu da sağlayacaktı.
 

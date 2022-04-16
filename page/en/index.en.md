@@ -1,20 +1,21 @@
 ---
 layout: page
-author: Fatih Tatoğlu
-description: The home page of the Fatih Tatoğlu's personal web site.
-date: 2022-03-14T00:00:00.000Z
 published: true
+author: Fatih Tatoğlu
+date: 2022-03-14T00:00:00.000Z
 permalink: ./en/index.html
+
+description: The home page of the Fatih Tatoğlu's personal web site.
 tags: 
 order: 1
-image: /image/about_me.jpg
+language: en
 ---
 
 # Homepage
 
+![Notlar](../../image/about_me.jpg)
+
 Hello, this is Fatih Tatoğlu. Everything has been started with my curiosity. My family says
-
-
 
 Merhaba ben Fatih Tatoğlu. Her şey merak etmem ile başladı. ***"Bunu nasıl yapıyorlar?"***, ***"Bu nasıl çalışıyor?"*** ve benzeri soruları soran bir çocuk olduğumu söylüyor ailem. Bu siteyi merak ettiklerimi ve öğrendiklerimi paylaşmak için hazırladım. Ek olarak öğrenirken takip ettiğim kaynakları ve denemelerimi de paylaşıyor olacağım.
 

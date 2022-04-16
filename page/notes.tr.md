@@ -3,7 +3,7 @@ layout: notes
 author: Fatih Tatoğlu
 date: 2022-04-08T00:00:00Z
 published: true
-permalink: ./tr/notes/index.html
+permalink: ./notes/index.html
 tags: kendime_notlar kişisel_notlar notlar
 description: Kendime not aldığım konular ve püf noktarı.
 order: 4

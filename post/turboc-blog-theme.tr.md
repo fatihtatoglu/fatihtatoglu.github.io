@@ -4,7 +4,7 @@ author: Fatih Tatoğlu
 description: İlk programlamaya başladığımda kullanabileceğim sadece Turbo C/C++ vardı. Bu yazıda Turbo C'yi baz alarak oluşturduğum site temasından bahsediyor olacağım.
 date: 2022-03-22T00:00:00.000Z
 published: true
-permalink: ./tr/projects/turboc-blog-theme.html
+permalink: ./projects/turboc-blog-theme.html
 tags: turboc turbocpp site_teması borland sass mustache gulp nodejs normalizecss github_actions github_pages
 category: projects
 ---

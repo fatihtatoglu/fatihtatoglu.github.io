@@ -86,7 +86,7 @@ function generate() {
         .pipe(replace(/..\/..\/image\//g, "image/"))
 
         // compress html file
-        .pipe(htmlmin({ collapseWhitespace: true }))
+        // .pipe(htmlmin({ collapseWhitespace: true }))
 
         // add version number for css and js files for preventing cache
         .pipe(versionNumber(versionConfig))
@@ -117,7 +117,7 @@ function generateSiteMap() {
                 { lang: 'en', getHref }
             ]
         }))
-        .pipe(htmlmin({ collapseWhitespace: true }))
+        // .pipe(htmlmin({ collapseWhitespace: true }))
         .pipe(dest(outputPath));
 }
 

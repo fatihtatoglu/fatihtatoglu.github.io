@@ -13,7 +13,7 @@ language: tr
 
 # Koçluk
 
-![Notlar](../../image/coaching.jpg)
+![Koçluk](../../image/coaching.jpg)
 
 **Psikoloji** ve **Sosyoloji**; okulda okurken, iş yerinde çalışırken, evde ailemizle zaman geçirirken ve farkketmediğimiz çoğu zaman diliminde tahmin ettiğimizden çok daha fazla hayatımızı etkiliyor. Bu bilim dallarında uzman değilim ama iş ve özel hayatımda çok fazla karşıma çıkıyorlar. Bu bölümde karşılaştığım ve hayatımda kullandığım bazı konuları paylaşmaya çalışıyor olacağım.
 

@@ -13,7 +13,7 @@ language: tr
 
 # Anasayfa
 
-![Notlar](../../image/about_me.jpg)
+![Fatih Tatoğlu](../../image/about_me.jpg)
 
 Merhaba ben Fatih Tatoğlu. Her şey merak etmem ile başladı. ***"Bunu nasıl yapıyorlar?"***, ***"Bu nasıl çalışıyor?"*** ve benzeri soruları soran bir çocuk olduğumu söylüyor ailem. Bu siteyi merak ettiklerimi ve öğrendiklerimi paylaşmak için hazırladım. Ek olarak öğrenirken takip ettiğim kaynakları ve denemelerimi de paylaşıyor olacağım.
 

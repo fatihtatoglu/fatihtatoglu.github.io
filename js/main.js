@@ -2,8 +2,8 @@ const defaultThemeColor = "aqua";
 const defaultLanguage = "tr";
 
 document.addEventListener('DOMContentLoaded', () => {
-
     loadSiteSettings();
+    redirectCorrectLanguage();
 
     bindMenu();
     renderThemeDialog();
@@ -115,7 +115,25 @@ function renderThemeDialog() {
         });
 
         loadSiteSettings();
+        redirectCorrectLanguage();
 
         dialog.style.display = "none";
     });
+}
+
+function redirectCorrectLanguage() {
+    var language = window.localStorage.getItem("site-language");
+    var languageUrlLink = document.querySelector("link[rel=alternate][hreflang=" + language + "]");
+    if (!languageUrlLink) {
+        return;
+    }
+
+    var languageUrl = languageUrlLink.getAttribute("href");
+    var currentUrl = window.location.href;
+
+    if (languageUrl === currentUrl) {
+        return;
+    }
+
+    window.location.href = languageUrl;
 }

@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
     <url>
         
         <loc>https://blog.tatoglu.net/about-me.html</loc>
     
         
-        <lastmod>2022-04-13T18:20:00.486Z</lastmod>
+        <lastmod>2022-04-17T21:21:22.177Z</lastmod>
     
+        <xhtml:link rel="alternate" hreflang="tr" href="https://blog.tatoglu.net/about-me.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://blog.tatoglu.net/en/about-me.html" />
     </url>
     <url>
         
@@ -17,8 +19,10 @@
         </image:image>
     
         
-        <lastmod>2022-04-13T18:20:00.490Z</lastmod>
+        <lastmod>2022-04-17T21:21:22.185Z</lastmod>
     
+        <xhtml:link rel="alternate" hreflang="tr" href="https://blog.tatoglu.net/" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://blog.tatoglu.net/en/" />
     </url>
     <url>
         
@@ -29,8 +33,10 @@
         </image:image>
     
         
-        <lastmod>2022-04-13T18:20:00.490Z</lastmod>
+        <lastmod>2022-04-17T21:21:22.181Z</lastmod>
     
+        <xhtml:link rel="alternate" hreflang="tr" href="https://blog.tatoglu.net/coaching/" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://blog.tatoglu.net/en/coaching/" />
     </url>
     <url>
         
@@ -41,8 +47,34 @@
         </image:image>
     
         
-        <lastmod>2022-04-13T18:20:00.510Z</lastmod>
+        <lastmod>2022-04-17T21:21:22.197Z</lastmod>
     
+        <xhtml:link rel="alternate" hreflang="tr" href="https://blog.tatoglu.net/coaching/roles-and-hats.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://blog.tatoglu.net/en/coaching/roles-and-hats.html" />
+    </url>
+    <url>
+        
+        <loc>https://blog.tatoglu.net/en/about-me.html</loc>
+    
+        
+        <lastmod>2022-04-17T21:21:22.205Z</lastmod>
+    
+        <xhtml:link rel="alternate" hreflang="tr" href="https://blog.tatoglu.net/about-me.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://blog.tatoglu.net/en/about-me.html" />
+    </url>
+    <url>
+        
+        <loc>https://blog.tatoglu.net/en/</loc>
+    
+        <image:image>
+            <image:loc>https://blog.tatoglu.net/image/about_me.jpg</image:loc>
+        </image:image>
+    
+        
+        <lastmod>2022-04-17T21:21:22.209Z</lastmod>
+    
+        <xhtml:link rel="alternate" hreflang="tr" href="https://blog.tatoglu.net/" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://blog.tatoglu.net/en/" />
     </url>
     <url>
         
@@ -53,44 +85,52 @@
         </image:image>
     
         
-        <lastmod>2022-04-13T18:20:00.494Z</lastmod>
+        <lastmod>2022-04-17T21:21:22.189Z</lastmod>
     
+        <xhtml:link rel="alternate" hreflang="tr" href="https://blog.tatoglu.net/notes/" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://blog.tatoglu.net/en/notes/" />
     </url>
     <url>
         
         <loc>https://blog.tatoglu.net/notes/writing-blog.html</loc>
     
         <image:image>
-            <image:loc>https://blog.tatoglu.net/.image/be-agile-cartoon.jpg</image:loc>
+            <image:loc>https://blog.tatoglu.net/image/be-agile-cartoon.jpg</image:loc>
         </image:image>
     
         
-        <lastmod>2022-04-13T18:20:00.510Z</lastmod>
+        <lastmod>2022-04-17T21:21:22.205Z</lastmod>
     
+        <xhtml:link rel="alternate" hreflang="tr" href="https://blog.tatoglu.net/notes/writing-blog.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://blog.tatoglu.net/en/notes/writing-blog.html" />
     </url>
     <url>
         
         <loc>https://blog.tatoglu.net/projects/enginaer.html</loc>
     
         <image:image>
-            <image:loc>https://blog.tatoglu.net/.image/enginaer_tech.png</image:loc>
+            <image:loc>https://blog.tatoglu.net/image/enginaer_tech.png</image:loc>
         </image:image>
     
         
-        <lastmod>2022-04-13T18:20:00.506Z</lastmod>
+        <lastmod>2022-04-17T21:21:22.197Z</lastmod>
     
+        <xhtml:link rel="alternate" hreflang="tr" href="https://blog.tatoglu.net/projects/enginaer.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://blog.tatoglu.net/en/projects/enginaer.html" />
     </url>
     <url>
         
         <loc>https://blog.tatoglu.net/projects/gulp-html-anchor-rewriter.html</loc>
     
         <image:image>
-            <image:loc>https://blog.tatoglu.net/.image/gulp-html-anchor-rewriter_tech.png</image:loc>
+            <image:loc>https://blog.tatoglu.net/image/gulp-html-anchor-rewriter_tech.png</image:loc>
         </image:image>
     
         
-        <lastmod>2022-04-13T18:20:00.506Z</lastmod>
+        <lastmod>2022-04-17T21:21:22.193Z</lastmod>
     
+        <xhtml:link rel="alternate" hreflang="tr" href="https://blog.tatoglu.net/projects/gulp-html-anchor-rewriter.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://blog.tatoglu.net/en/projects/gulp-html-anchor-rewriter.html" />
     </url>
     <url>
         
@@ -101,27 +141,151 @@
         </image:image>
     
         
-        <lastmod>2022-04-13T18:20:00.506Z</lastmod>
+        <lastmod>2022-04-17T21:21:22.193Z</lastmod>
     
+        <xhtml:link rel="alternate" hreflang="tr" href="https://blog.tatoglu.net/projects/" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://blog.tatoglu.net/en/projects/" />
     </url>
     <url>
         
         <loc>https://blog.tatoglu.net/projects/turboc-blog-theme.html</loc>
     
         <image:image>
-            <image:loc>https://blog.tatoglu.net/.image/turboc_0001.png</image:loc>
+            <image:loc>https://blog.tatoglu.net/image/turboc_0001.png</image:loc>
         </image:image>
     
         <image:image>
-            <image:loc>https://blog.tatoglu.net/.image/turboc_0002.png</image:loc>
+            <image:loc>https://blog.tatoglu.net/image/turboc_0002.png</image:loc>
         </image:image>
     
         <image:image>
-            <image:loc>https://blog.tatoglu.net/.image/turboc_tech.png</image:loc>
+            <image:loc>https://blog.tatoglu.net/image/turboc_tech.png</image:loc>
         </image:image>
     
         
-        <lastmod>2022-04-13T18:20:00.510Z</lastmod>
+        <lastmod>2022-04-17T21:21:22.205Z</lastmod>
     
+        <xhtml:link rel="alternate" hreflang="tr" href="https://blog.tatoglu.net/projects/turboc-blog-theme.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://blog.tatoglu.net/en/projects/turboc-blog-theme.html" />
+    </url>
+    <url>
+        
+        <loc>https://blog.tatoglu.net/en/coaching/</loc>
+    
+        <image:image>
+            <image:loc>https://blog.tatoglu.net/image/coaching.jpg</image:loc>
+        </image:image>
+    
+        
+        <lastmod>2022-04-17T21:21:22.209Z</lastmod>
+    
+        <xhtml:link rel="alternate" hreflang="tr" href="https://blog.tatoglu.net/coaching/" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://blog.tatoglu.net/en/coaching/" />
+    </url>
+    <url>
+        
+        <loc>https://blog.tatoglu.net/en/coaching/roles-and-hats.html</loc>
+    
+        <image:image>
+            <image:loc>https://blog.tatoglu.net/image/hats.jpg</image:loc>
+        </image:image>
+    
+        
+        <lastmod>2022-04-17T21:21:22.217Z</lastmod>
+    
+        <xhtml:link rel="alternate" hreflang="tr" href="https://blog.tatoglu.net/coaching/roles-and-hats.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://blog.tatoglu.net/en/coaching/roles-and-hats.html" />
+    </url>
+    <url>
+        
+        <loc>https://blog.tatoglu.net/en/notes/</loc>
+    
+        <image:image>
+            <image:loc>https://blog.tatoglu.net/image/notes.jpg</image:loc>
+        </image:image>
+    
+        
+        <lastmod>2022-04-17T21:21:22.213Z</lastmod>
+    
+        <xhtml:link rel="alternate" hreflang="tr" href="https://blog.tatoglu.net/notes/" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://blog.tatoglu.net/en/notes/" />
+    </url>
+    <url>
+        
+        <loc>https://blog.tatoglu.net/en/notes/writing-blog.html</loc>
+    
+        <image:image>
+            <image:loc>https://blog.tatoglu.net/image/be-agile-cartoon.jpg</image:loc>
+        </image:image>
+    
+        
+        <lastmod>2022-04-17T21:21:22.221Z</lastmod>
+    
+        <xhtml:link rel="alternate" hreflang="tr" href="https://blog.tatoglu.net/notes/writing-blog.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://blog.tatoglu.net/en/notes/writing-blog.html" />
+    </url>
+    <url>
+        
+        <loc>https://blog.tatoglu.net/en/projects/enginaer.html</loc>
+    
+        <image:image>
+            <image:loc>https://blog.tatoglu.net/image/enginaer_tech.png</image:loc>
+        </image:image>
+    
+        
+        <lastmod>2022-04-17T21:21:22.217Z</lastmod>
+    
+        <xhtml:link rel="alternate" hreflang="tr" href="https://blog.tatoglu.net/projects/enginaer.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://blog.tatoglu.net/en/projects/enginaer.html" />
+    </url>
+    <url>
+        
+        <loc>https://blog.tatoglu.net/en/projects/gulp-html-anchor-rewriter.html</loc>
+    
+        <image:image>
+            <image:loc>https://blog.tatoglu.net/image/gulp-html-anchor-rewriter_tech.png</image:loc>
+        </image:image>
+    
+        
+        <lastmod>2022-04-17T21:21:22.213Z</lastmod>
+    
+        <xhtml:link rel="alternate" hreflang="tr" href="https://blog.tatoglu.net/projects/gulp-html-anchor-rewriter.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://blog.tatoglu.net/en/projects/gulp-html-anchor-rewriter.html" />
+    </url>
+    <url>
+        
+        <loc>https://blog.tatoglu.net/en/projects/</loc>
+    
+        <image:image>
+            <image:loc>https://blog.tatoglu.net/image/projects.jpg</image:loc>
+        </image:image>
+    
+        
+        <lastmod>2022-04-17T21:21:22.213Z</lastmod>
+    
+        <xhtml:link rel="alternate" hreflang="tr" href="https://blog.tatoglu.net/projects/" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://blog.tatoglu.net/en/projects/" />
+    </url>
+    <url>
+        
+        <loc>https://blog.tatoglu.net/en/projects/turboc-blog-theme.html</loc>
+    
+        <image:image>
+            <image:loc>https://blog.tatoglu.net/image/turboc_0001.png</image:loc>
+        </image:image>
+    
+        <image:image>
+            <image:loc>https://blog.tatoglu.net/image/turboc_0002.png</image:loc>
+        </image:image>
+    
+        <image:image>
+            <image:loc>https://blog.tatoglu.net/image/turboc_tech.png</image:loc>
+        </image:image>
+    
+        
+        <lastmod>2022-04-17T21:21:22.217Z</lastmod>
+    
+        <xhtml:link rel="alternate" hreflang="tr" href="https://blog.tatoglu.net/projects/turboc-blog-theme.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://blog.tatoglu.net/en/projects/turboc-blog-theme.html" />
     </url>
 </urlset>

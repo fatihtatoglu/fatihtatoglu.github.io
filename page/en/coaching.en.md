@@ -19,7 +19,7 @@ While studying at school, working at work, spending time with our family, and mo
 
 In this section, I try to share articles about my experiences and some information I am using in my life.
 
-I've selected the name of the section **Coaching** because of my main aim, creating awareness of my opinions and experiences. Likewise, I am attaching a photo that will be suitable for this purpose to the article ([Photo Source](https://www.pexels.com/tr-tr/fotograf/ormanin-ortasinda-motosiklet-suren-iki-kisi-fotografi-1006116/)).
+I've selected the name of the section **Coaching** because of my main aim, creating awareness for you with my opinions and experiences. Likewise, I am attaching a photo that will be suitable for this purpose to the article ([Photo Source](https://www.pexels.com/tr-tr/fotograf/ormanin-ortasinda-motosiklet-suren-iki-kisi-fotografi-1006116/)).
 
 I wish you good reading in advance.
 

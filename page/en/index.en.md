@@ -23,4 +23,4 @@ The website seems like my mind. I wish you good reading in advance.
 
 ## References
 
-- [1]: The Photo was taken on 2nd January 2015 in Eskişehir, Turkey by [Erkan Balk](https://www.facebook.com/erkan.balk "Erkan Balk | Facebook").
+- [1]: The photo was taken on 2nd January 2015 in Eskişehir, Turkey by [Erkan Balk](https://www.facebook.com/erkan.balk "Erkan Balk | Facebook").

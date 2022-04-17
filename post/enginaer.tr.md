@@ -59,7 +59,7 @@ Sistem bazı basit adımların sırayla yapılması ile çalışıyor. Bu adıml
 - Konfigürasyon dosyalarında belirlenen kaynakların sisteme yüklenmesi.
 - Son adım olarak sistemin işini yapması için statik sayfaların oluşturulması.
 
-Sistem sayfalarda bulunan metadata bilgilerini kullanarak statik bir web sayfası oluşturuyor. Ancak sayfaları kaydetmiyor. Bu işlemi gulp üzerinde yapılması gerekiyor. Bunun en büyük sebebi de çıkan HTML dosyların farklı gulp eklentileri ile özelleştirilmesine olanak sağlayabiliyor olmak. Örneğin; çıktıların sıkıştırılması veya çıktırların içerisindeki css ve js dosyalarının sonuna versiyon numarası eklenerek istemci cache'inin devre dışı bırakılması vb. gibi işlemler.
+Sistem sayfalarda bulunan metadata bilgilerini kullanarak statik bir web sayfası oluşturuyor. Ancak sayfaları kaydetmiyor. Bunun en büyük sebebi de çıkan HTML dosyların farklı gulp eklentileri ile özelleştirilmesine olanak sağlayabiliyor olmak. Örneğin; çıktıların sıkıştırılması veya çıktırların içerisindeki css ve js dosyalarının sonuna versiyon numarası eklenerek istemci cache'inin devre dışı bırakılması vb.
 
 ## Destek
 

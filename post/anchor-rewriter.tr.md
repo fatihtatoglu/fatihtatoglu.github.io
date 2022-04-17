@@ -1,10 +1,12 @@
 ---
 layout: post
-author: Fatih Tatoğlu
-description: Kendi ihtiyacım için geliştirdiğim gulp eklentisi ve bunu yaparken öğrendiklerim ile ilgili bir proje.
-date: 2022-04-08T00:00:00.000Z
 published: true
+author: Fatih Tatoğlu
+date: 2022-04-08T00:00:00.000Z
 permalink: ./projects/gulp-html-anchor-rewriter.html
+language: tr
+
+description: Kendi ihtiyacım için geliştirdiğim gulp eklentisi ve bunu yaparken öğrendiklerim ile ilgili bir proje.
 tags: enginaer gulp mocha chai plugin eklenti
 category: projects
 ---

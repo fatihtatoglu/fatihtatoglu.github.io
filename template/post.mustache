@@ -1,11 +1,6 @@
 {{> _pageHeader}}
-            {{#image}}
-            <img src="{{& image}}" alt="{{title}} " />
-            {{/image}}
-            
             {{& content}}
-
             <footer>
-            By <a href="./about-me.html">{{author}}</a> - <time pubdate datetime="{{publish-date-datetime}}" title="{{publish-date}}">{{publish-date}}</time>
+            By {{#isTurkish}}<a href="about-me.html">{{/isTurkish}}{{#isEnglish}}<a href="en/about-me.html">{{/isEnglish}}{{author}}</a> - <time pubdate datetime="{{publish-date-datetime}}" title="{{publish-date}}">{{publish-date}}</time>
             </footer>
 {{> _pageFooter}}

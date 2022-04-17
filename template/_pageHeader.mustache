@@ -1,43 +1,46 @@
 <!DOCTYPE html>
-<html lang="{{site-language}}">
+<html lang="{{language}}">
 
 <head>
-    <base href="{{& base-path}}">
+    <base href="{{& base-url}}">
 
     <meta charset="UTF-8">
     <link rel="profile" href="https://gmpg.org/xfn/11">
-    <meta name="description" content="{{description}}">
+    <meta name="description" content="{{& description}}">
     <meta name="author" content="{{author}}">
-    <link rel="canonical" href="{{& canonical}}">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    
+    <link rel="canonical" href="{{& canonical}}">
+    {{#alternate}}
+    <link rel="alternate" hreflang="{{language}}" href="{{& href}}" />
+    {{/alternate}}
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>{{site-title-prefix}}{{title}}</title>
 
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/custom.css">
+    <link rel="stylesheet" href="{{& base-url}}css/main.css">
+    <link rel="stylesheet" href="{{& base-url}}css/custom.css">
 
-    <script src="./js/main.js"></script>
+    <script src="{{& base-url}}js/main.js"></script>
     {{^isLocal}}
-    <script src="./js/analytics.js"></script>
+    <script src="{{& base-url}}js/analytics.js"></script>
     {{/isLocal}}
     {{#jsmodule}}
-    <script src="./js/{{jsmodule}}.js" async></script>
+    <script src="{{& base-url}}js/{{jsmodule}}.js" async></script>
     {{/jsmodule}}
     
-    <link rel="apple-touch-icon" sizes="180x180" href="./image/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./image/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./image/favicon/favicon-16x16.png">
-    <link rel="manifest" href="./image/favicon/site.webmanifest">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-
+    <link rel="apple-touch-icon" sizes="180x180" href="{{& base-url}}image/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{& base-url}}image/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{& base-url}}image/favicon/favicon-16x16.png">
+    <link rel="manifest" href="{{& base-url}}image/favicon/site.webmanifest">
+    <link rel="icon" href="{{& base-url}}favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="{{& base-url}}favicon.ico" type="image/x-icon" />
     <!-- Site Verification -->
     <meta name="yandex-verification" content="31a29a16b97b37a8" />
     <meta name="msvalidate.01" content="578B5091D7C5A2C03BE2EE0DF0CCC024" />
     <!-- Site Verification -->
-
     {{> _headerSchema}}
 </head>
 

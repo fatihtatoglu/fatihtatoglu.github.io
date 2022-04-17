@@ -1,10 +1,12 @@
 ---
 layout: post
 author: Fatih Tatoğlu
-description: Enginaer site motorunu projesinin amacı ve arkasındaki motivasyonun kaynağını açıklamaya çalışacağım.
-date: 2022-03-24T00:00:00.000Z
 published: true
+date: 2022-03-24T00:00:00.000Z
 permalink: ./projects/enginaer.html
+language: tr
+
+description: Enginaer site motorunu projesinin amacı ve arkasındaki motivasyonun kaynağını açıklamaya çalışacağım.
 tags: enginaer site_motoru gulp nodejs otomasyon markdown mustache markedjs
 category: projects
 ---
@@ -57,7 +59,7 @@ Sistem bazı basit adımların sırayla yapılması ile çalışıyor. Bu adıml
 - Konfigürasyon dosyalarında belirlenen kaynakların sisteme yüklenmesi.
 - Son adım olarak sistemin işini yapması için statik sayfaların oluşturulması.
 
-Sistem sayfalarda bulunan metadata bilgilerini kullanarak statik bir web sayfası oluşturuyor. Ancak sayfaları kaydetmiyor. Bu işlemi gulp üzerinde yapılması gerekiyor. Bunun en büyük sebebi de çıkan HTML dosyların farklı gulp eklentileri ile özelleştirilmesine olanak sağlayabiliyor olmak. Örneğin; çıktıların sıkıştırılması veya çıktırların içerisindeki css ve js dosyalarının sonuna versiyon numarası eklenerek istemci cache'inin devre dışı bırakılması vb. gibi işlemler.
+Sistem sayfalarda bulunan metadata bilgilerini kullanarak statik bir web sayfası oluşturuyor. Ancak sayfaları kaydetmiyor. Bunun en büyük sebebi de çıkan HTML dosyların farklı gulp eklentileri ile özelleştirilmesine olanak sağlayabiliyor olmak. Örneğin; çıktıların sıkıştırılması veya çıktırların içerisindeki css ve js dosyalarının sonuna versiyon numarası eklenerek istemci cache'inin devre dışı bırakılması vb.
 
 ## Destek
 

@@ -1,10 +1,12 @@
 ---
 layout: post
-author: Fatih Tatoğlu
-description: İlk programlamaya başladığımda kullanabileceğim sadece Turbo C/C++ vardı. Bu yazıda Turbo C'yi baz alarak oluşturduğum site temasından bahsediyor olacağım.
-date: 2022-03-22T00:00:00.000Z
 published: true
+author: Fatih Tatoğlu
+date: 2022-03-22T00:00:00.000Z
 permalink: ./projects/turboc-blog-theme.html
+language: tr
+
+description: İlk programlamaya başladığımda kullanabileceğim sadece Turbo C/C++ vardı. Bu yazıda Turbo C'yi baz alarak oluşturduğum site temasından bahsediyor olacağım.
 tags: turboc turbocpp site_teması borland sass mustache gulp nodejs normalizecss github_actions github_pages
 category: projects
 ---
@@ -21,7 +23,7 @@ Küçükken en büyük eğlencem, bilgisayar dergilerini okumak ve onlardan çı
 
 Bir kitapçık sayesinde programlamaya başlamam lise yıllarına denk geliyor. Programlamaya başladıktan sonra da ayrılamadım.
 
-Yazılıma ilk başladığım geliştirme ortamını unutmadığımı göstermek, sade ve biraz nerd işi olan bir tame istedim. Bu istediğim özelliklerde bir şey de bulamadım. En sonunda kendim bir şeyler yapayım dedim ama öyle hazır bir şeyler kullanmak yerine ellerimi biraz kirletmek istedim.
+Yazılıma ilk başladığım geliştirme ortamını unutmadığımı göstermek, sade ve biraz nerd işi olan bir tane istedim. Bu istediğim özelliklerde bir şey de bulamadım. En sonunda kendim bir şeyler yapayım dedim ama öyle hazır bir şeyler kullanmak yerine ellerimi biraz kirletmek istedim.
 
 ## Zorluklar
 
@@ -29,7 +31,7 @@ Yazılıma ilk başladığım geliştirme ortamını unutmadığımı göstermek
 
 En önemli zorluğun daha önceden Turbo C/C++ kullanmış olan kişiler için aynı hissi verebilinir mi kaygısı olduğunu düşünüyorum. Masaüstü olarak geliştirilmiş bir uygulamanın sağladığı deneyim ile bir web sitesinin sağlayacağı deneyim tamamen farklı. Ancak yine de bunu başarabileceğime inandım ve kolları sıvadım.
 
-Geliştirmeye başladığımda ilk aklımda **HTML 5** ve **CSS 3** ile ilerlemek vardı. Ancak daha sonra işin içine **SASS** dahil etmek istedim.
+Geliştirmeye başladığımda ilk aklımda **HTML5** ve **CSS3** ile ilerlemek vardı. Ancak daha sonra işin içine **SASS** dahil etmek istedim.
 
 Backend geliştirmesi yapan bir geliştiriciyim. Çok nadir olarak frontend geliştirmesi yaptım. Bu projenin diğer bir zorluğu da tanıdığım frontend geliştirici arkadaşlarımın da onaylayacağı bir yapı kurmaktı.
 

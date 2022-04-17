@@ -13,7 +13,7 @@ order: 5
 
 # Hakkımda
 
-Merhaba ben Fatih Tatoğlu. Kendi hakkımda bir şeyler yazabileceğimi çok sanmıyorum ama hayatın dönüm noktalarından geçerek ilerlediğini düşünen biriyim. Şu anda buluduğum versiyonum olan ve beni oluşturan ana dönüm noktaları şu şekilde;
+Merhaba ben Fatih Tatoğlu. Kendi hakkımda bir şeyler yazabileceğimi çok sanmıyorum ama hayatın dönüm noktalarından geçerek ilerlediğini düşünen biriyim. Şu anda bulunduğum versiyonum olan ve beni oluşturan ana dönüm noktaları şu şekilde;
 
 - **1.0**: 1985 yılında İstanbul'da doğdum.
 - **2.0**: 1999 yılında **Haydarpaşa Anadolu Teknik Lisesi Makina** bölümünde **Almanca** okumaya başladım.

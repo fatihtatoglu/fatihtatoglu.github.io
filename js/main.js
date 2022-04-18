@@ -129,11 +129,11 @@ function redirectCorrectLanguage() {
     }
 
     var languageUrl = languageUrlLink.getAttribute("href");
-    var currentUrl = window.location.href;
-
-    if (languageUrl === currentUrl) {
+    if (languageUrl === window.location.href) {
         return;
     }
 
-    window.location.href = languageUrl;
+    if (languageUrl.startsWith(window.origin)) {
+        window.location.replace(languageUrl);
+    }
 }

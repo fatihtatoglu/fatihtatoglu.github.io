@@ -6,7 +6,7 @@ date: 2022-04-08T00:00:00Z
 permalink: ./notes/index.html
 language: tr
 
-description: Kendime not aldığım konular ve püf noktarı.
+description: Kendime not aldığım konular ve püf noktaları.
 tags: kendime_notlar kişisel_notlar notlar
 order: 4
 ---
@@ -15,10 +15,8 @@ order: 4
 
 ![Notlar](../../image/notes.jpg)
 
-Geliştirme yaparken kullandığım araçlar, kullandığım teknolojiler veya konseptler, karşılaştığım zorluklar, bunlara bulduğum doğru veya eksik çözümler, araştırdığım konular... Bunların hepsini aklımda, bilgisayarımda, sağda solda ufak not kayıtlarında tuttuğumu fark ettim. Verimlilik için bu kadar çalışırken, bir o kadar verimsiz bu davranışımdan kurtulmak için "Kendime Notlar" adını verdiğim bir grup yazı yazmaya başlıyorum.
+Şimdiye kadar geliştirme, araştırma, çalıştığım şirketin iş süreçleri ve okumalarım hakkında tüm bilgileri ezberlemeye çalıştığımı gördüm. Bazen bu iyi bir şeydi. Ancak bilgiyi ezberlemek, bulmak, işlemek ve yeni bilgi üretmek yorucu bir zihinsel süreç. Eğer bunu uzun süre yaparsam, ruh sağlığıma zarar verebilir. Zihni temizlemek, temiz tutmak ve gerekli bilgileri bulan bir giriş noktası oluşturmak yararlıdır.
 
-"Kendime Notlar" yazılarının hepsini; ilerleyen zamanda dönüp baktığımda bunu şundan dolayı yapmışım diyebileceğim kadar özel, okuyanlara bir başlangıç sağlayacak basit ve devamında yapılması gerekenleri belirtecek kadar yönlendirici olacak ([Fotoğraf Kaynağı](https://www.pexels.com/tr-tr/fotograf/yapiskan-not-lot-1629212/)).
-
-İyi okumalar diliyorum.
+Bu bölüm notlarımı, yönergelerimi ve giriş noktalarımı içerir([Photo Source](https://www.pexels.com/tr-tr/fotograf/yapiskan-not-lot-1629212/)).
 
 ## Notlar

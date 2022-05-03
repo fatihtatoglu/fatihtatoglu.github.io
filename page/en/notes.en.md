@@ -6,7 +6,7 @@ date: 2022-04-08T00:00:00Z
 permalink: ./en/notes/index.html
 language: en
 
-description: Topics and tricks that I took note of for myself.
+description: Topics and tricks that I noted for myself.
 tags: notes_to_self personal_notes notes my_notes
 order: 4
 ---
@@ -15,10 +15,8 @@ order: 4
 
 ![My Notes](../../image/notes.jpg)
 
-The tools I used while developing, the technologies or concepts I used, the difficulties I faced, the correct and incomplete solutions I found to them, and the subjects I researched. I've realized that I try to keep all of these notes in my mind, in notebooks, and on my computer as small note files. While I'm trying to work efficiently, I've started writing some articles called "Notes to Myself" to escape my unproductive behavior.
+So far, I have found that I try to memorize all information about development, research, the company's business processes which I am working for, and my readings. Sometimes that was a good thing. But memorizing, finding, processing, and generating new information is an exhausting mental process. If I do it for a long time, it can be detrimental to my mental health. It's helpful to clear the mind, keep it clean, and create an entry point that finds needed information.
 
-All of the "Notes to Myself" articles will be private enough that can say that I did it because of those reasons, simple enough to give a start to the readers, and helpful enough to guide the steps of the process ([Photo Source](https://www.pexels.com/tr-tr/fotograf/yapiskan-not-lot-1629212/)).
-
-I wish you good reading.
+This section contains my notes, my guidelines, and my entry points([Photo Source](https://www.pexels.com/tr-tr/fotograf/yapiskan-not-lot-1629212/)).
 
 ## Notes

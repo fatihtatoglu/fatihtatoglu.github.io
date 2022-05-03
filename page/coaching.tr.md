@@ -6,7 +6,7 @@ date: 2022-04-07T00:00:00Z
 permalink: ./coaching/index.html
 language: tr
 
-description: Koçluk konusunda yazdığım yazıların olduğu bölümün giriş yazısı.
+description: Koçluk, iş hayatı, takım çalışması, yönetim ve benzeri konularda yazdığım yazıların olduğu bölümün ana sayfası.
 tags: koçluk psikoloji sosyoloji iş_hayatı takım_çalışması yöneticilik
 order: 2
 ---
@@ -15,12 +15,10 @@ order: 2
 
 ![Koçluk](../../image/coaching.jpg)
 
-**Psikoloji** ve **Sosyoloji**; okulda okurken, iş yerinde çalışırken, evde ailemizle zaman geçirirken ve farkketmediğimiz çoğu zaman diliminde tahmin ettiğimizden çok daha fazla hayatımızı etkiliyor. Bu bilim dallarında uzman değilim ama iş ve özel hayatımda çok fazla karşıma çıkıyorlar. 
+Kişisel ve iş hayatımda, **Psikoloji** ve **Sosyoloji**'nin davranışlarımı beklediğimden daha fazla etkilediğini gördüm. Sorularımın ve araştırmalarımın çoğu onlarla bağlantılıydı.
 
-Bu bölümde karşılaştığım ve hayatımda kullandığım bazı konuları paylaşmaya çalışıyor olacağım.
+Bu bölümde yönetim, ekip oluşturma, kurumsal yaşam, ekip çalışması vb. ile ilgili deneyimlerimi yazmak istiyorum.
 
-Bölümün adını **Koçluk** olarak belirledim çünkü ana amacım, gözden kaçan noktalarla ilgili kendi deneyim ve fikirlerimle farkındalık yaratmak. Yine bu amacıma uygun olacak bir fotoğrafı da yazıya ekliyorum ([Fotoğraf Kaynağı](https://www.pexels.com/tr-tr/fotograf/ormanin-ortasinda-motosiklet-suren-iki-kisi-fotografi-1006116/)).
-
-İyi okumalar diliyorum.
+"Koçluk" konusunda uzman değilim ama farkındalık ve merakı artırmak için bu bölüme ***"Koçluk"*** adını seçtim. Ayrıca, bu amaca uygun bir fotoğraf ekledim([Photo Source](https://www.pexels.com/tr-tr/fotograf/ormanin-ortasinda-motosiklet-suren-iki-kisi-fotografi-1006116/)).
 
 ## Yazılar

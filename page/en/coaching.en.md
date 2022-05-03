@@ -6,8 +6,8 @@ date: 2022-04-07T00:00:00Z
 permalink: ./en/coaching/index.html
 language: en
 
-description: The main page to the section I have written about coaching, business life, teamwork, and management.
-tags: coachine psychology sociology business_life teamwork management
+description: The main page to the section I have written about coaching, corporate life, teamwork, management, etc.
+tags: coaching psychology sociology corporate_life teamwork management
 order: 2
 ---
 
@@ -15,12 +15,10 @@ order: 2
 
 ![Posts](../../image/coaching.jpg)
 
-While studying at school, working at work, spending time with our family, and most of the period when cannot be aware, **Psychology** and **Sociology** affect our life more than we guess. I am not an expert on those subjects, but I faced them in my private life.
+In my personal and business life, I have found that ***Psychology*** and ***Sociology*** influence my behavior more than I expect. Many of my questions and inquiries were affiliated with them.
 
-In this section, I try to share articles about my experiences and some information I am using in my life.
+In this section, I would like to write down my experience with management, team building, corporate life, teamwork, etc.
 
-I've selected the name of the section **Coaching** because of my main aim, creating awareness for you with my opinions and experiences. Likewise, I am attaching a photo that will be suitable for this purpose to the article ([Photo Source](https://www.pexels.com/tr-tr/fotograf/ormanin-ortasinda-motosiklet-suren-iki-kisi-fotografi-1006116/)).
-
-I wish you good reading in advance.
+I am not an expert on coaching, but I chose the name ***"Coaching"*** for this section to increase awareness and curiosity. Also, I have attached a photo that is suitable for this purpose ([Photo Source](https://www.pexels.com/tr-tr/fotograf/ormanin-ortasinda-motosiklet-suren-iki-kisi-fotografi-1006116/)).
 
 ## Articles

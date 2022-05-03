@@ -15,11 +15,11 @@ order: 1
 
 ![Fatih Tatoğlu](../../image/about_me.jpg)
 
-Hello, this is Fatih Tatoğlu. Everything has been started with my curiosity. My family says I was an inquisitive boy that asked similar questions such as, "How do they do this?", "How does it work?". I've prepared this website to share my learned and interesting subjects. In addition, I'll share my experiments' results and sources which are followed by me.
+Hello, I am Fatih. It all started with my curiosity. When I was a child, I used to ask myself the following questions: ***"How does it work?"***, ***"Why does it rain?"***, etc. These questions and pursuit of answers have shaped my life. I like to learn new things, and to ask curios questions.
 
-I've developed both theme of the website and the publishing system. My posts about this topic, you can find under the **Projects** menu. Under the **Coaching** menu, there are my observations (I am not an expert) about sociological and psychological posts and my analysis. I mostly write about business life, management and teamwork. **My Notes** section mostly contains notes about myself that are technical and increase my motivation. However, there is no limitation, I write what I want.
+On this website, I would like to share my experience, my worries, my projects, and my questions. There are a lot of topic to write about. However, I prefer to follow my thinking path in my head when writing. In other words, the articles will be sometimes chaotic, sometimes simple and sometimes empirical...
 
-The website seems like my mind. I wish you good reading in advance.
+I hope you will enjoy and learn new things reading it.
 
 ## References
 

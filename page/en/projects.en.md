@@ -15,8 +15,8 @@ order: 3
 
 ![Projects](../../image/projects.jpg)
 
-I guess the title of the text will explain itself. In this section, I share the open-source project I've developed until now. There won't contain project documentation and support, but I'll try to write my purpose for developing those projects ([Photo Source](https://www.pexels.com/tr-tr/fotograf/tilt-shift-lens-uzerindeki-kodlar-2004161/)).
+Actually, the title of the section expresses itself clearly. So far I have developed open source and personal projects. I would like to share these projects and the idea behind them with you ([Photo Source](https://www.pexels.com/tr-tr/fotograf/tilt-shift-lens-uzerindeki-kodlar-2004161/)).
 
-If there is any project you are interested in, I'll request you to give a star to the project repository on GitHub, and if there is any request that you want to be developed, you can add it.
+Like all open source projects, these need your support. If there is a project you are interested in, you can star it or create an issue for bugs and new features.
 
 ## Project List

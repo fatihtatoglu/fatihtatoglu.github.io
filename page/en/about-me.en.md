@@ -25,6 +25,6 @@ My milestones are;
 
 To contact me, you can send a message on [Linkedin](https://www.linkedin.com/in/fatihtatoglu/ "Fatih Tatoğlu | LinkedIn"). You can follow my project on my [GitHub](https://github.com/fatihtatoglu/ "fatihtatoglu (Fatih Tatoğlu)") account.
 
-## Why am I just developer?
+## Why am I just a developer?
 
-In my business life, I have developed many software and processes. While I have developed software, I have realized that I have also developed team members and people. In addition, I have also developed myself. So I can say "I am a developer".
+In my business life, I have developed much software and processes. While I have developed software, I have realized that I have also developed team members and people. In addition, I have also developed myself. So I can say "I am a developer".

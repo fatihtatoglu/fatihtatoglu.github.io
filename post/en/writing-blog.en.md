@@ -13,9 +13,7 @@ category: notes
 
 # Writing Blog
 
-Sharing my ideas, products, projects, and knowledge is one of my desires that I fulfill physically, but I could not sustain that on the internet. Therefore, I have many stories about how 
-
-I started blogging. Each time, I started enthusiastically. But after five or six articles, I had no more motivation to write.
+Sharing my ideas, products, projects, and knowledge is one of my desires that I fulfill physically, but I could not sustain that on the internet. Therefore, I have many stories about how I started blogging. Each time, I started enthusiastically. But after five or six articles, I had no more motivation to write.
 
 I talked to my wife about this situation. She said, "You like to start something, but you do not continue". While I was trying to understand the main reason for my lack of motivation, I attended a meeting in 2020. [Selçuk Erdem](https://twitter.com/selcukerdem "Selçuk Erdem (@selcukerdem) / Twitter"), one of the most famous cartoonists in Turkey, said at the meeting, "There are too many internal excuses for not doing something. For example, colorful and expensive notebooks or pens. They judge you when you write or draw. Choose the cheapest and most unimpressive ones". After the meeting, I realized that my old attempts had similar steps. I needed to break the routine and try new things to blog.
 

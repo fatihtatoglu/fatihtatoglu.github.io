@@ -29,7 +29,7 @@ Turbo C/C++'ı seviyorum çünkü bana kendi ellerimle bir şeyler yapma fırsat
 
 ![Turbo C/C++](../image/turboc_0002.png "Turbo C/C++")
 
-Bence göze çarpan zorluk, daha önce Turbo C/C++ ile çalışmış kullanıcılar için bir web uygulamasında benzer bir kullanıcı deneyimi oluşturmak, çünkü web uygulamalarının ve masaüstü uygulamalarının kullanıcı deneyimleri tamamen farklı. Bunu başarmak için, kullanıcılara bunları kullanırken aynı şeyi hissediyor olması gerekiyor.
+Bence en büyük zorluk, daha önce Turbo C/C++ kullanmış kullanıcılar için bir web uygulamasında benzer bir deneyim oluşturmak, çünkü web uygulamalarının ve masaüstü uygulamalarının kullanıcı deneyimleri tamamen farklı. Bunu başarmak için, kullanıcılara bunları kullanırken aynı şeyi hissediyor olması gerekiyor.
 
 Diğer bir zorluk ise temaya farklı renkler ve ekran duyarlı tasarım özellikleri eklemek. Bu istekler, **HTML5** ve **CSS3** ile geliştirilebilir, ancak **SASS** eklemek temayı daha uyumlanabilir hale getirecektir.
 

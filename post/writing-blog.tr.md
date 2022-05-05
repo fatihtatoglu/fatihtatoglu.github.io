@@ -13,24 +13,12 @@ category: notes
 
 # Blog Yazmak
 
-Fikirlerimi, ürettiklerimi veya öğrendiklerimi paylaşmak, günlük hayatımda yaptığım ama internet üzerinde yaparken sürdürülebilir olmasını sağlayamadığım isteklerimden biri.
+Fikirlerimi, ürünlerimi, projelerimi ve bilgilerimi paylaşmak, fiziksel olarak gerçekleştirdiğim arzularımdan biri ama bunu internette sürdüremedim. Bu nedenle, blog yazmaya nasıl başladığıma dair birçok hikayem var. Her seferinde heyecanla başladım. Ama beş altı makaleden sonra artık yazmak için motivasyonum kalmamıştı.
 
-Blog yazma ile ilgili çok fazla başlama hikayem var. Her seferinde, ***"bu sefer devam edeceğim"*** motivasyonu ile başlıyorum. Güzel bir tema seçiyorum, güzel görseller buluyorum. İlginç olduğunu düşündüğüm konuları araştırıp, anlayıp sonrasında kendi cümlelerim ile yazıyorum ve paylaşıyorum. Sonrası...
+Bu durumu eşimle konuştum. *"Bir şeye başlamayı seviyorsun ama devam etmiyorsun"* dedi. Motivasyon eksikliğimin asıl nedenini anlamaya çalışırken 2020 yılında bir toplantıya katıldım. Türkiye'nin en ünlü karikatüristlerinden [Selçuk Erdem](https://twitter.com/selcukerdem "Selçuk Erdem (@selcukerdem) / Twitter"), toplantıda şunları söyledi: *"Bir şey yapmamak için çok fazla içsel mazeret var. Örneğin, renkli ve pahalı defterler veya kalemler. Yazarken veya çizerken sizi yargılarlar. En ucuz ve en etkileyici olmayanları seçin"*. Görüşmeden sonra eski girişimlerimin de benzer adımların olduğunu fark ettim. Rutini kırmam ve blog için yeni şeyler denemem gerekiyordu.
 
-Eşime bu durumu anlattım ve *"sen başlamayı seviyorsun, ama devamını getirmiyorsun..."* dedi. 2020 yılında katıldığım bir seminerde konuşmacı olan [Selçuk Erdem](https://twitter.com/selcukerdem "Selçuk Erdem (@selcukerdem) / Twitter") de, *"... yazdığınız veya çizdiğiniz defter ve kalem sizi yargılamasın..."* dedi. Bütün bunları düşündüğümde daha önceden yazmak için kullandığım araçlar ve seçtiğim görseller hep güçlü ve hep beni yargılıyorlar diye düşündüm.
+Öncelikle blog yazma amacımı tanımlıyorum. Amacım yeni şeyler öğrenmek, başkalarıyla paylaşmak ve yazılarımdan keyif almak. Daha sonra motivasyonumu artırmak için bu yazıyı yazdım. Motivasyonumu kaybedersem, artırmak için bu makaleyi okuyacağım. Ayrıca [Selçuk Erdem](https://twitter.com/selcukerdem "Selçuk Erdem (@selcukerdem) / Twitter")'in verdiği talimatla hiç çizim yeteneğim olmadan çizdiğim bir resmi de ekledim.
 
-> Bu araçlarla bir yazı yazıyorsan harika olmalı.
->
-> Seçtiğin görsel o kadar etkiliyeci olmalı ki, okuyucu hayran kalmalı.
->
-> Yazıların bizi bize bizimle anlatmalı.
->
-> Yazılarını herkes beğenmeli. Yoksa elalem ne der...
-
-Yukarıdaki eleştirileri ben kendi kendime söylüyorum. Yani beynimin içindeki bir ses bunları kafamda söyleyip duruyor. Yazarken bunları düşünmekten kendime 7 veya 8 revize verdiğim yazılarım var. Kendimi bu kadar zorlamak veya kendime bu kadar yüklendikten sonra dönüp baktığımda yazılarımın çok okunmadığını görmek veya yazmaya devam edecek motivasyonu kendimde bulamamak kendimi kurban döngüsünde gibi hissettiriyor.
-
-> Diğerleri haftalık paylaşımlar yapıyorlar. Onlarla yarışamam...
-
-Amacım yarışmak değil, paylaşmak ve bundan keyif almak istiyorum. Aslında bu yazıyı o yüzden yazdım. Yine motivasyonum düşerse, bu yazımı okuduktan sonra amacımın ne olduğunu hatırlamak ve yazmaya devam etmek istiyorum. Bu amacımı pekiştirmek için [Selçuk Erdem](https://twitter.com/selcukerdem "Selçuk Erdem (@selcukerdem) / Twitter")’in benim gibi çizmekten hiç anlamayan birine bile bir karikatür çizdirdiği görseli de aşağıya bırakıyorum.
+Blog yazma konusunda beni bilinçlendirdikleri için eşime ve [Selçuk Erdem](https://twitter.com/selcukerdem "Selçuk Erdem (@selcukerdem) / Twitter")'e teşekkür ederim.
 
 [![Be Agile](../image/be-agile-cartoon.jpg "Be Agile")](https://www.instagram.com/p/CH2zB56hMWV)

@@ -13,24 +13,14 @@ category: notes
 
 # Writing Blog
 
-Sharing my ideas, productions, or learnings is one of the wishes that I make in my daily life, but  I could not ensure to be sustainable while doing it on the internet.
+Sharing my ideas, products, projects, and knowledge is one of my desires that I fulfill physically, but I could not sustain that on the internet. Therefore, I have many stories about how 
 
-I have a lot of start-up stories about blogging. Each time, I start with the motivation ***" I will continue this time"***. I choose a beautiful theme. I find beautiful images. I research and understand the topics that I think are interesting, then write and share them in my own words. Next...
+I started blogging. Each time, I started enthusiastically. But after five or six articles, I had no more motivation to write.
 
-I told my wife about this situation. She said *"you like to start, but you don't continue..."*. Speaking at a meeting which I attended in 2020, [Selçuk Erdem](https://twitter.com/selcukerdem "Selçuk Erdem (@selcukerdem) / Twitter") also said, *"... don't let the notebook and pen you write or draw on the judge you... "*. When I thought about all this, I considered that the tools I used for writing and the images I chose were always powerful, and they were always judging me.
+I talked to my wife about this situation. She said, "You like to start something, but you do not continue". While I was trying to understand the main reason for my lack of motivation, I attended a meeting in 2020. [Selçuk Erdem](https://twitter.com/selcukerdem "Selçuk Erdem (@selcukerdem) / Twitter"), one of the most famous cartoonists in Turkey, said at the meeting, "There are too many internal excuses for not doing something. For example, colorful and expensive notebooks or pens. They judge you when you write or draw. Choose the cheapest and most unimpressive ones". After the meeting, I realized that my old attempts had similar steps. I needed to break the routine and try new things to blog.
 
-> If you were writing a post with these tools, it must be great.
->
-> The visual you choose should be so impressive that the reader should be amazed.
->
-> Your articles should tell us about us.
->
-> Everyone should like your posts. Or what will my family say?
+First, I define my purpose for blogging. My purpose is to learn new things, share with others and enjoy my articles. Next, I wrote this article to increase my motivation. If I lose my motivation, I will read this article to increase it. Also, I added a picture that I drew without any drawing skills as instructed by [Selçuk Erdem](https://twitter.com/selcukerdem "Selçuk Erdem (@selcukerdem) / Twitter").
 
-I say the above criticisms to myself. In different words, a voice repeated these sentences in my head. I want to revise my articles seven or eight times to think about those ideas. After pushing myself and loading myself, I cannot find any motivation to continue writing because there is not enough reading count.
-
-> Others are posting weekly. I can't compete with them...
-
-My goal is not to compete. I want to share and enjoy it. That's why I wrote this post. If my motivation decreases, I will want to remember and keep on writing after reading this article. To support my aim, I leave the image below where [Selçuk Erdem](https://twitter.com/selcukerdem "Selçuk Erdem (@selcukerdem) / Twitter") had a caricature drawn by someone like me who has no understanding of drawing.
+I would like to thank my wife and [Selçuk Erdem](https://twitter.com/selcukerdem "Selçuk Erdem (@selcukerdem) / Twitter") for making me aware of writing a blog.
 
 [![Be Agile](../image/be-agile-cartoon.jpg "Be Agile")](https://www.instagram.com/p/CH2zB56hMWV)

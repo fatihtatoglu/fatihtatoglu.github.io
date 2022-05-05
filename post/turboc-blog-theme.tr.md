@@ -15,58 +15,54 @@ category: projects
 
 ![Turbo C/C++](../image/turboc_0001.png "Turbo C/C++")
 
-Yazılım geliştirmeye 2000 yılından önce başlayan geliştiricilerin görmüş olduğu ve tam bir efsane olan Turbo C/C++ programını baz alarak geliştirdiğim bir tema. Bu tema şu anda bu yazıyı okumuş olduğunuz site de kullanılmaktadır.
+Programlamaya başladığımda, kullanabileceğim yalnızca Turbo C/C++ vardı. Bu yazımda sizlere Turbo C/C++ tabanlı bir web sitesi temasını paylaşmak istiyorum.
 
 ## Motivasyon
 
-Küçükken en büyük eğlencem, bilgisayar dergilerini okumak ve onlardan çıkan CD lerdeki demo oyunları oynamaktı. Bir gün dergilerden bir tanesinin yanında ufak bir el kitapçığı buldum **C ile Programlama**. Kitapçık içinde basit bir şekilde C programlama dili anlatılıyordu. Kitapçığı bir çırpıda okudum ve denemek istiyordum. Turbo C adında bir program olduğunu ve bunun ile örnek yapabileceğim yazılıyordu ama program hiç bir yerde yoktu. İnternette dolaşırken buldum. Kendilerini hacker olarak tanıtan bir ekibin hazırladığı notların da olduğu bir zip dosyasını indirdim. İçinde Turbo C de vardı. Önce notları okudum ve sonrasında denemeler yapmaya başladım.
+Liseye gittiğimde internet benim için çok yeniydi. İnternetsiz bir bilgisayarım vardı. İnterneti sadece bir internet kafede kullanma fırsatım oluyordu. Bilgisayarlar hakkında bilgi edinmek için bazı bilgisayar dergilerini kullanıyordum. Bir gün bir dergiden siyah bir kitapçık aldım. Kitapçığın başlığında "C Programlama Dili" yazıyordu ve bu benim merakımı harekete geçirdi. Kitapçığı olabildiğince hızlı okudum, ancak bu deneyimde bir şeylerin eksik olduğunu hissettim. Denemek zorundaydım. İnternette, bir Türk hacker grubu tarafından oluşturulmuş bazı ek notlarla birlikte Turbo C/C++ derleyicisini buldum.
 
-Bir kitapçık sayesinde programlamaya başlamam lise yıllarına denk geliyor. Programlamaya başladıktan sonra da ayrılamadım.
+Yukarıdaki hikaye aynı zamanda programlamaya başlamam için ilk adımım. Programlamaya başladıktan sonra duramadım.
 
-Yazılıma ilk başladığım geliştirme ortamını unutmadığımı göstermek, sade ve biraz nerd işi olan bir tane istedim. Bu istediğim özelliklerde bir şey de bulamadım. En sonunda kendim bir şeyler yapayım dedim ama öyle hazır bir şeyler kullanmak yerine ellerimi biraz kirletmek istedim.
+Turbo C/C++'ı seviyorum çünkü bana kendi ellerimle bir şeyler yapma fırsatı verdi. Bu yüzden Turbo C/C++ tabanlı bir web sitesi teması programlamak istiyorum.
 
 ## Zorluklar
 
 ![Turbo C/C++](../image/turboc_0002.png "Turbo C/C++")
 
-En önemli zorluğun daha önceden Turbo C/C++ kullanmış olan kişiler için aynı hissi verebilinir mi kaygısı olduğunu düşünüyorum. Masaüstü olarak geliştirilmiş bir uygulamanın sağladığı deneyim ile bir web sitesinin sağlayacağı deneyim tamamen farklı. Ancak yine de bunu başarabileceğime inandım ve kolları sıvadım.
+Bence göze çarpan zorluk, daha önce Turbo C/C++ ile çalışmış kullanıcılar için bir web uygulamasında benzer bir kullanıcı deneyimi oluşturmak, çünkü web uygulamalarının ve masaüstü uygulamalarının kullanıcı deneyimleri tamamen farklı. Bunu başarmak için, kullanıcılara bunları kullanırken aynı şeyi hissediyor olması gerekiyor.
 
-Geliştirmeye başladığımda ilk aklımda **HTML5** ve **CSS3** ile ilerlemek vardı. Ancak daha sonra işin içine **SASS** dahil etmek istedim.
+Diğer bir zorluk ise temaya farklı renkler ve ekran duyarlı tasarım özellikleri eklemek. Bu istekler, **HTML5** ve **CSS3** ile geliştirilebilir, ancak **SASS** eklemek temayı daha uyumlanabilir hale getirecektir.
 
-Backend geliştirmesi yapan bir geliştiriciyim. Çok nadir olarak frontend geliştirmesi yaptım. Bu projenin diğer bir zorluğu da tanıdığım frontend geliştirici arkadaşlarımın da onaylayacağı bir yapı kurmaktı.
-
-Bütün geliştirmeyi yaptıktan sonra bu projenin bir şekilde görücüye de çıkması gerekiyordu. Bunun için de daha önce kullandığım **Gulp** otomasyon kütüphanesini de kullanarak **GitHub Actions** sayesinde **GitHub Pages** üzerinde yayına aldım.
-
-Geliştirmelerde güvenlik açıkları veya kod iyileştirmelerinin her zaman olabileceğini biliyorum. Bu açıkları takip etmek için **GitHub CodeQL** ve **SonarCloud** ile sağlamaya çalıştım.
-
-![SASS, normalize.css, Gulp, NodeJS, Mustache, GitHub Actions, GitHub Pages, Sonar Cloud](../image/turboc_tech.png "Proje için kullanılan teknolojiler")
+![SASS, normalize.css, Gulp, NodeJS, Mustache, GitHub Actions, GitHub Pages, Sonar Cloud](../image/turboc_tech.png "Proje Kütüphaneleri & Teknolojileri")
 
 ## Tema Özellikleri
 
-Tema sade olsun istemedim. Bazı ek özellikler de eklemek istedim. Geliştirmeye devam ediyorum ama basit olarak yazmak gerekirse temanın özellikleri aşağıdaki gibi.
+Geliştirme sırasında bazı bileşenler ekledim, bunlar aşağıda listelenmiştir.
 
-- Responsive tasarıma sahip,
-- 4 renk olarak kullanılabilir,
-  - Aqua
-  - Blue
-  - Black
-  - White
-- Turbo C'nin çalıştığı 8-bit ortama uygun renk paleti var,
-- Tasarıma eklenen elementler
-  - Yazı sitilleri
-  - Button
-  - Textbox
-  - Textarea
-  - Checkbox
-  - Radio Button
-  - Selectbox
-  - Table
-  - Form
-  - Dialog
-  - Menu (Navigation Bar)
-  - Notification Boxes
+- Responsive tasarım
+- Dört farklı renk
+  - Su Yeşili
+  - Mavi
+  - Siyah
+  - Beyaz
+- Turbo C/C++ ortamı için uygun renk paleti 8 bittir
+- Temanın unsurları
+  - Tipografi
+  - Buton
+  - Metin kutusu
+  - Metin alanı
+  - Onay kutusu
+  - Radyo düğmesi
+  - Seçim kutusu
+  - Tablo
+  - Biçim
+  - iletişim kutusu
+  - Menü (Gezinme Çubuğu)
+  - Bildirim Kutuları
 
-Temayı kendim için geliştirdim ama herkesin kullanımına [MIT](https://github.com/fatihtatoglu/blog-theme-turboc/blob/master/LICENSE "Projenin MIT Lisansı") lisansı ile açtım. Sizde kullanmak isterseniz temanın [GitHub](https://github.com/fatihtatoglu/blog-theme-turboc "Projenin GitHub Adresi") reposunu ziyaret edebilirsiniz. Eğer beni desteklemek isterseniz, repoyu yıldızlayabilir, demo site üzerinden bulduğunuz bugları issue olarak açabilir ya da yeni özellik isteklerinizi issue olarak iletebilirsiniz.
+## Destek
+
+Temayı kendim için geliştirdim ancak [MIT](https://github.com/fatihtatoglu/blog-theme-turboc/blob/master/LICENSE "MIT Projesinin Lisansı") lisansı kapsamında herkesin erişmesi için paylaştım. Kullanmak için projenin [GitHub](https://github.com/fatihtatoglu/blog-theme-turboc "GitHub Projenin Adresi") adresini ziyaret edebilirsiniz.
 
 ## Referanslar
 

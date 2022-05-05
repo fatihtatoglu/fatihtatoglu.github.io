@@ -15,35 +15,29 @@ category: projects
 
 ![Turbo C/C++](../image/turboc_0001.png "Turbo C/C++")
 
-It is a theme I've developed based on the legendary Turbo C/C++ program faced by developers who started to program before 2000. This theme uses in the current website you are reading now.
+When I started programming, there was only Turbo C/C++ that I could use. In this article, I would like to share you to a website theme that is based on Turbo C/C++.
 
 ## Motivation
 
-When I was a child, my leisure activity was reading computer magazines and playing demo games on the CD from those magazines. One day, I found a booklet with one of them, **C Programming Language**. In that booklet, it explained basically. I read it in a short time, and I wanted to try it. There was a program called Turbo C, and I could practice with it was written in the booklet. However, there was nowhere. During surfing the internet, I found it. I downloaded a zip file with notes prepared by a team that introduced themselves as hackers. It also had a Turbo C in it. I read notes first and then started experimenting.
+When I went to high school, the Internet was so new to me. I had a computer without internet. I only had the opportunity to use the Internet in an Internet café. To learn about computers, there were some computer magazines. One day, a magazine gave me a black booklet. The title of the booklet said "C Programming Language", and my curiosity was swung into action. I read through the booklet as fast as possible, but I felt that there was something missing from this experience. I had to try it out. On the Internet, I found the Turbo C/C++ compiler with some additional notes created by a Turkish hacker group.
 
-Starting programming with a booklet was during my high school years. Even after I started programming, I couldn't leave.
+The above story is also my first step to start programming. Then, once I started programming, I could not stop.
 
-I wanted a theme of plain, nerd work and showing that I didn't forget the development environment when I started. I couldn't find anything according to my wants. In the end, I decided to develop myself, but inside of using ready things, I preferred to get my hands dirty.
+I like Turbo C/C++ because it gave me the opportunity to make something with my own hands. So I want to program a website theme based on Turbo C/C++.
 
 ## Challenges
 
 ![Turbo C/C++](../image/turboc_0002.png "Turbo C/C++")
 
-In my thought, the significant challenge was giving a similar user experience to the users who had used Turbo C/C++ before. The user experience is different between developed as a desktop application and a website. Nevertheless, I believed I could achieve it, and I started to work.
+In my opinion, the noticeable challenge is to create a similar user interface in a web application for users who have previously worked with Turbo C/C++, because the user interfaces of web applications and desktop applications are completely different. To achieve this, I need to make users feel the same when using them.
 
-When I started development, my first thought was to move forward with **HTML5** and **CSS3**. But then I wanted to include **SASS**.
+Another challenge is adding different colors and responsive design features to the theme. With HTML5 and CSS3 it can be coded, but adding SASS makes the theme more adaptable.
 
-I am a back-end developer. I rarely develop front-end applications. Another challenge of this project was creating a structure that the other front-end developers would accept.
-
-After completing the development, this project had to be shared somehow. I used the **Gulp** automation library that I've used before, and the **GitHub Actions** has published it on the **GitHub Pages**.
-
-Usually, there will be security vulnerabilities, code smells, and improvements during the development. I've used **GitHub CodeQL** and **Sonar Cloud** for tracking these.
-
-![SASS, normalize.css, Gulp, NodeJS, Mustache, GitHub Actions, GitHub Pages, Sonar Cloud](../image/turboc_tech.png "Proje için kullanılan teknolojiler")
+![SASS, normalize.css, Gulp, NodeJS, Mustache, GitHub Actions, GitHub Pages, Sonar Cloud](../image/turboc_tech.png "Project Libraries & Technologies")
 
 ## Theme Properties
 
-I didn't want the theme to be plain. I also wanted to add some additional features. I continue to develop it, but there are the current features in the below list.
+While developing I added some components, these are listed below.
 
 - Responsive design
 - Four different colors
@@ -66,7 +60,9 @@ I didn't want the theme to be plain. I also wanted to add some additional featur
   - Menu (Navigation Bar)
   - Notification Boxes
 
-I developed the theme for myself, but I made it available to everyone under the [MIT](https://github.com/fatihtatoglu/blog-theme-turboc/blob/master/LICENSE "MIT License of the Project") license. If you want to use it yourself, you can visit the theme's [GitHub](https://github.com/fatihtatoglu/blog-theme-turboc "GitHub Address of the Project") repo. If you want to support me, you can give a star to the repo, open the bugs you find on the demo site as an issue, or submit your new feature requests as an issue.
+## Support
+
+I've developed the theme for myself, but I shared it to be accessible to everyone under the [MIT](https://github.com/fatihtatoglu/blog-theme-turboc/blob/master/LICENSE "MIT License of the Project") license. To use, you can visit the project's [GitHub](https://github.com/fatihtatoglu/blog-theme-turboc "GitHub Address of the Project") repositories.
 
 ## References
 

@@ -63,9 +63,3 @@ While developing I added some components, these are listed below.
 ## Support
 
 I've developed the theme for myself, but I shared it to be accessible to everyone under the [MIT](https://github.com/fatihtatoglu/blog-theme-turboc/blob/master/LICENSE "MIT License of the Project") license. To use, you can visit the project's [GitHub](https://github.com/fatihtatoglu/blog-theme-turboc "GitHub Address of the Project") repositories.
-
-## References
-
-1. [CSS Architecture — Part 1 - Normalize CSS or CSS Reset?!](https://elad.medium.com/normalize-css-or-css-reset-9d75175c5d1e "CSS Architecture — Part 1 - Normalize CSS or CSS Reset?!")
-2. [normalize.css](https://necolas.github.io/normalize.css/ "normalize.css")
-3. [Sass : @function, @mixin, placeholder, @extend](https://dev.to/keinchy/sass--function-mixin-placeholder-extend-18g6 "Sass : @function, @mixin, placeholder, @extend")

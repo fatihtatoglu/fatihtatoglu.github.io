@@ -15,7 +15,7 @@ order: 3
 
 ![Projeler](../../image/projects.jpg)
 
-Aslında bölümün başlığı kendini açıkça ifade ediyor. Şimdiye kadar açık kaynak kodlu ve kişisel projeler geliştirdim. Bu projeleri ve arkasındaki fikri sizlerle paylaşmak istiyorum ([Photo Source](https://www.pexels.com/tr-tr/fotograf/tilt-shift-lens-uzerindeki-kodlar-2004161/)).
+Aslında bölümün başlığı kendini açıkça ifade ediyor. Şimdiye kadar açık kaynak kodlu ve kişisel projeler geliştirdim. Bu projeleri ve arkasındaki fikri sizlerle paylaşmak istiyorum ([Fotoğraf Kaynağı](https://www.pexels.com/tr-tr/fotograf/tilt-shift-lens-uzerindeki-kodlar-2004161/)).
 
 Tüm açık kaynaklı projeler gibi, bunların da desteğinize ihtiyacı var. İlgilendiğiniz bir proje varsa, ona yıldız verebilir veya hatalar ve yeni özellikler için bir sorun oluşturabilirsiniz.
 

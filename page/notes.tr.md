@@ -17,6 +17,6 @@ order: 4
 
 Şimdiye kadar geliştirme, araştırma, çalıştığım şirketin iş süreçleri ve okumalarım hakkında tüm bilgileri ezberlemeye çalıştığımı gördüm. Bazen bu iyi bir şeydi. Ancak bilgiyi ezberlemek, bulmak, işlemek ve yeni bilgi üretmek yorucu bir zihinsel süreç. Eğer bunu uzun süre yaparsam, ruh sağlığıma zarar verebilir. Zihni temizlemek, temiz tutmak ve gerekli bilgileri bulan bir giriş noktası oluşturmak yararlıdır.
 
-Bu bölüm notlarımı, yönergelerimi ve giriş noktalarımı içerir([Photo Source](https://www.pexels.com/tr-tr/fotograf/yapiskan-not-lot-1629212/)).
+Bu bölüm notlarımı, yönergelerimi ve giriş noktalarımı içerir([Fotoğraf Kaynağı](https://www.pexels.com/tr-tr/fotograf/yapiskan-not-lot-1629212/)).
 
 ## Notlar

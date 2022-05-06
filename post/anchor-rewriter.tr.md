@@ -19,17 +19,17 @@ Enginaer'i geliştirdikten sonra SEO'nun eksik olduğunu fark ettim. Bu eklenti 
 
 Kişisel web siteleri için SEO önemlidir. SEO eksikliği, web sitesinin yeterince ziyaretçi tarafından ziyaret edilmemesine neden olabilir. Kişisel web sitem için Enginaer'ı kullanmadan önce bunu hayal bile edemezdim. Sonunda SEO için bir bağlantı elemanını tekrar yazmaya ihtiyacım oldu.
 
-Normalde, SEO'yu düzeltmek için bir kod parçası ekleyebilirim. Ama bu sefer ellerimi kirletmeyi tercih ettim. Öncelikle, bir Gulp eklentisinin nasıl geliştirileceğini bilmem gerekiyordu. Ardından, statik kod analizi ile bir derleme işlem hattı oluşturdum. Sonunda web sitem için kullandım.
+Normalde, SEO'yu düzeltmek için bir kod parçası ekleyebilirdim. Ama bu sefer ellerimi kirletmeyi tercih ettim. Öncelikle, bir Gulp eklentisinin nasıl geliştirileceğini bilmem gerekiyordu. Ardından, statik kod analizi ile bir derleme akışı oluşturdum. Sonunda web sitem için kullandım.
 
-Bu eklentiyi geliştirmek benim için çok öğreticiydi.
+Bu eklentiyi geliştirmek benim için çok öğretici oldu.
 
 ## Zorluklar
 
 ![NodeJS, Mocha, Chai, GitHub Actions, SonarCloud](../image/gulp-html-anchor-rewriter_tech.png "Proje için kullanılan teknolojiler")
 
-Daha önce hiç Gulp eklentisi geliştirmedim. Eklenti belgelerini okuduktan sonra heyecanlandım. Gulp eklentileri için birim testleri zorunludur. Yani birim testi isteğe bağlı değilse, Test Odaklı Geliştirme ile geliştirebilirim.
+Daha önce hiç Gulp eklentisi geliştirmedim. Eklenti belgelerini okuduktan sonra heyecanlandım. Gulp eklentileri için birim testleri zorunluymuş. Yani birim testi isteğe bağlı değilse, Test Odaklı Geliştirmeyi kullanma ihtimalim oluyor.
 
-Özetle, kendi sorunumu çözmeye başladım. Sonuç, herkes için açık kaynak olarak sunulan bir Gulp eklentisiydi.
+Özetle, kendi sorunumu çözmeye başlarken, sonuç herkes için açık kaynak olarak sunulan bir Gulp eklentisi oldu.
 
 ## Destek
 

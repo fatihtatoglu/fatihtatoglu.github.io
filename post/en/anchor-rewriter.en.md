@@ -20,6 +20,7 @@ After developing Enginaer, I realized that SEO was missing. With this plugin I e
 SEO is important for personal websites. A lack of SEO will result in the website not being visited by enough visitors. Before using Enginaer for my personal website, I could not imagine this. Eventually, I was in want of rewriting an anchor element for SEO.
 
 Normally, I could add a piece of code to correct the SEO. But this time, I preferred to get my hands dirty.
+
 First, I needed to know how to develop a Gulp plugin. Next, I created a build pipeline with static code analysis. Finally, I used it for my website.
 
 The development of this plugin was very instructive for me.
@@ -28,9 +29,9 @@ The development of this plugin was very instructive for me.
 
 ![NodeJS, Mocha, Chai, GitHub Actions, SonarCloud](../image/gulp-html-anchor-rewriter_tech.png "Technologies used for the project")
 
-I have never developed a Gulp plugin before. After reading the plugin documentation, I was excited. The unit tests for the Gulp plugins are mandatory. So if the unit test is not optional, I can develop it with Test Driven Development.
+I have never developed a Gulp plugin before. After reading the plugin documentation, I was excited. The unit tests for the Gulp plugins are mandatory. So, if the unit test is not optional, I will have an opportunity to develop it with Test Driven Development.
 
-In summary, I started solving my own problem. The result was a Gulp plugin for everyone, which is available as open source.
+In summary, While I started solving my own problem, the result was a Gulp plugin for everyone, which is available as open-source.
 
 ## Support
 

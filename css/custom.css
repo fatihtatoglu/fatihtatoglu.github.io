@@ -1,4 +1,14 @@
-td>img {
-    margin: 0px;
-    display: inline-block;
+tr{
+    border-bottom: dotted 1px;
+}
+
+table tbody tr:first-child td,
+table tbody tr:last-child td
+{
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+table tbody tr td{
+    vertical-align: inherit;
 }

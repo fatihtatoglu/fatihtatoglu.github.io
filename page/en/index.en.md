@@ -1,6 +1,6 @@
 ---
 layout: page
-published: true
+published: false
 author: Fatih Tatoğlu
 date: 2022-03-14T00:00:00.000Z
 permalink: ./en/index.html

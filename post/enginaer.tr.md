@@ -9,6 +9,8 @@ language: tr
 description: Enginaer site motorunu projesinin amacı ve arkasındaki motivasyonun kaynağını açıklamaya çalışacağım.
 tags: enginaer site_motoru gulp nodejs otomasyon markdown mustache markedjs
 category: projects
+repo_url: https://github.com/fatihtatoglu/enginaer
+repo_type: GitHub
 ---
 
 # Enginær
@@ -31,4 +33,4 @@ Teknik olarak, başka bir zorluk da mümkün olduğunca basit kalmak. Motor öze
 
 ## Destek
 
-Projeyi herkesin kullanması için [MIT](https://github.com/fatihtatoglu/enginaer/blob/master/LICENSE) lisansıyla kullanıma sundum. Proje ayrıca bir [NPM](https://www.npmjs.com/package/enginaer) paketi olarak da kullanılabilir. Projeyi daha da geliştirmek istediğim için desteğiniz önemli. Kullanmak ve desteklemek için projenin [GitHub](https://github.com/fatihtatoglu/enginaer/) adresini ziyaret edebilirsiniz.
+Projeyi herkesin kullanması için [MIT](https://github.com/fatihtatoglu/enginaer/blob/master/LICENSE) lisansıyla kullanıma sundum. Proje ayrıca bir [NPM](https://www.npmjs.com/package/enginaer) paketi olarak da kullanılabilir. Projeyi daha da geliştirmek istediğim için desteğiniz önemli. Kullanmak ve desteklemek için projenin [GitHub](https://github.com/fatihtatoglu/enginaer) adresini ziyaret edebilirsiniz.

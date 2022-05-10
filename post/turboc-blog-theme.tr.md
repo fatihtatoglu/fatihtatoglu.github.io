@@ -6,9 +6,11 @@ date: 2022-03-22T00:00:00.000Z
 permalink: ./projects/turboc-blog-theme.html
 language: tr
 
-description: İlk programlamaya başladığımda kullanabileceğim sadece Turbo C/C++ vardı. Bu yazıda Turbo C'yi baz alarak oluşturduğum site temasından bahsediyor olacağım.
+description: İlk programlamaya başladığımda kullanabileceğim sadece Turbo C/C++ vardı. Turbo C'yi baz alarak oluşturduğum site temasından bahsediyor olacağım.
 tags: turboc turbocpp site_teması borland sass mustache gulp nodejs normalizecss github_actions github_pages
 category: projects
+repo_url: https://github.com/fatihtatoglu/blog-theme-turboc
+repo_type: GitHub
 ---
 
 # Turbo C/C++ Teması
@@ -19,17 +21,17 @@ Programlamaya başladığımda, kullanabileceğim yalnızca Turbo C/C++ vardı. 
 
 ## Motivasyon
 
-Liseye gittiğimde internet benim için çok yeniydi. İnternetsiz bir bilgisayarım vardı. İnterneti sadece bir internet kafede kullanma fırsatım oluyordu. Bilgisayarlar hakkında bilgi edinmek için bazı bilgisayar dergilerini kullanıyordum. Bir gün bir dergiden siyah bir kitapçık aldım. Kitapçığın başlığında "C Programlama Dili" yazıyordu ve bu benim merakımı harekete geçirdi. Kitapçığı olabildiğince hızlı okudum, ancak bu deneyimde bir şeylerin eksik olduğunu hissettim. Denemek zorundaydım. İnternette, bir Türk hacker grubu tarafından oluşturulmuş bazı ek notlarla birlikte Turbo C/C++ derleyicisini buldum.
+> Liseye gittiğimde internet benim için çok yeniydi. İnternetsiz bir bilgisayarım vardı. İnterneti sadece internet kafelerde kullanma fırsatım oluyordu. Bilgisayarlar hakkında bilgi edinmek için bazı bilgisayar dergilerini takip ediyordum. Bir gün bir dergiden siyah bir kitapçık aldım. Kitapçığın başlığında "C Programlama Dili" yazıyordu ve bu benim merakımı harekete geçirdi. Kitapçığı olabildiğince hızlı okudum, ancak bu deneyimde bir şeylerin eksik olduğunu hissettim. Denemek zorundaydım. İnternette, bir Türk hacker grubu tarafından oluşturulmuş bazı ek notlarla birlikte Turbo C/C++ derleyicisini buldum.
 
-Yukarıdaki hikaye aynı zamanda programlamaya başlamam için ilk adımım. Programlamaya başladıktan sonra duramadım.
+Yukarıdaki hikaye aynı zamanda programlama ile tanışma hikayem.
 
-Turbo C/C++'ı seviyorum çünkü bana kendi ellerimle bir şeyler yapma fırsatı verdi. Bu yüzden Turbo C/C++ tabanlı bir web sitesi teması programlamak istiyorum.
+Turbo C/C++'ı seviyorum çünkü bana kendi ellerimle bir şeyler yapma fırsatı verdi. Bu yüzden Turbo C/C++ tabanlı bir web sitesi teması programlamak istedim.
 
 ## Zorluklar
 
 ![Turbo C/C++](../image/turboc_0002.png "Turbo C/C++")
 
-Bence en büyük zorluk, daha önce Turbo C/C++ kullanmış kullanıcılar için bir web uygulamasında benzer bir deneyim oluşturmak, çünkü web uygulamalarının ve masaüstü uygulamalarının kullanıcı deneyimleri tamamen farklı. Bunu başarmak için, kullanıcılara bunları kullanırken aynı şeyi hissediyor olması gerekiyor.
+Bence en büyük zorluk, daha önce Turbo C/C++ kullanmış kullanıcılar için bir web uygulamasında benzer bir deneyim oluşturmaktı, çünkü web uygulamalarının ve masaüstü uygulamalarının kullanıcı deneyimleri tamamen farklı. Bunu başarmak için, kullanıcılara bunları kullanırken aynı deneyimi hissetmesini amaçladım.
 
 Diğer bir zorluk ise temaya farklı renkler ve ekran duyarlı tasarım özellikleri eklemek. Bu istekler, **HTML5** ve **CSS3** ile geliştirilebilir, ancak **SASS** eklemek temayı daha uyumlanabilir hale getirecektir.
 

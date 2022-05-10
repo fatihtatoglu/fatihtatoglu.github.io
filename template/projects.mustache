@@ -1,10 +1,23 @@
 {{> _pageHeader}}
             {{& content}}
-            <ol>
-                {{#pages}}
-                {{#projects}}
-                <li><a href="{{& permalink}}">{{title}}</a></li>
-                {{/projects}}
-                {{/pages}}
-            </ol>
+
+<table>
+<thead>
+<tr>
+<th style="width:10%">Adı</th>
+<th style="width:80%">Açıklama</th>
+<th style="width:10%">Proje Reposu</th>
+</tr>
+</thead>
+<tbody>
+
+{{#pages}}{{#projects}}
+<tr>
+<td align="left"><a href="{{& permalink}}">{{title}}</a></td>
+<td align="left">{{& description}} </td>
+<td align="center"><a href="{{& repo_url}}">{{repo_type}}</a></td>
+</tr>
+{{/projects}}{{/pages}}
+</tbody></table>
+
 {{> _pageFooter}}

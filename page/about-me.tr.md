@@ -13,7 +13,7 @@ order: 5
 
 # Hakkımda
 
-Merhaba ben Fatih Tatoğlu. Meraklı bir geliştiriciyim. Hayatın bazı kilometre taşlarını geçerek ilerlediğini düşünüyorum. Sadece kendi kilometre taşlarımızın farkına varmamız gerekiyor.
+Merhaba ben Fatih Tatoğlu. Meraklı bir geliştiriciyim. Hayatın bazı kilometre taşlarını geçerek ilerlediğini düşünüyorum. Sadece kendi kilometre taşlarımızı görmemiz gerekiyor.
 
 Benim kilometre taşlarım;
 
@@ -27,4 +27,4 @@ Benimle iletişime geçmek için, [Linkedin](https://www.linkedin.com/in/fatihta
 
 ## Neden geliştiriciyim?
 
-İş hayatımda birçok yazılım ve süreç geliştirdim. Yazılım geliştirirken, ekip üyelerini ve insanları da geliştirdiğimi fark ettim. Bunun yanında kendimi de geliştirdim. Yani kendime "Ben bir geliştiriciyim" diyebilirim.
+İş hayatımda birçok yazılım ve süreç geliştirdim. Yazılım geliştirirken, ekip üyelerini ve insanları da geliştirdiğimi fark ettim. Bunun yanında kendimi de geliştirdim. Yani kendime "Ben bir geliştiriciyim" diyebileceğimi düşünüyorum.

@@ -1,6 +1,6 @@
 ---
 layout: post
-published: true
+published: false
 author: Fatih Tatoğlu
 date: 2022-04-08T00:00:00.000Z
 permalink: ./en/projects/gulp-html-anchor-rewriter.html

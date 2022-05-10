@@ -1,6 +1,6 @@
 ---
 layout: post
-published: true
+published: false
 author: Fatih Tatoğlu
 date: 2022-04-07T00:00:00Z
 permalink: ./en/coaching/roles-and-hats.html

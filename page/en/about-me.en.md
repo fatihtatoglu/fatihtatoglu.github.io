@@ -1,6 +1,6 @@
 ---
 layout: page
-published: true
+published: false
 author: Fatih Tatoğlu
 date: 2021-11-19T00:00:00.000Z
 permalink: ./en/about-me.html

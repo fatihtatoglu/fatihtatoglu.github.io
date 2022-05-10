@@ -1,6 +1,6 @@
 ---
 layout: post
-published: true
+published: false
 author: Fatih Tatoğlu
 date: 2022-03-22T00:00:00.000Z
 permalink: ./en/projects/turboc-blog-theme.html

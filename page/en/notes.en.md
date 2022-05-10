@@ -1,6 +1,6 @@
 ---
 layout: notes
-published: true
+published: false
 author: Fatih Tatoğlu
 date: 2022-04-08T00:00:00Z
 permalink: ./en/notes/index.html

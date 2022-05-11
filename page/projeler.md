@@ -3,7 +3,7 @@ layout: projects
 published: true
 author: Fatih Tatoğlu
 date: 2022-04-07T00:00:00Z
-permalink: ./projects/index.html
+permalink: ./projeler/index.html
 language: tr
 
 description: Geliştirdiğim ve destek verdiğim projelerle ilgili yazılarımın olduğu bölümün giriş yazısı.

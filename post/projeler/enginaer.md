@@ -3,7 +3,7 @@ layout: post
 author: Fatih Tatoğlu
 published: true
 date: 2022-03-24T00:00:00.000Z
-permalink: ./projects/enginaer.html
+permalink: ./projeler/enginaer.html
 language: tr
 
 description: Enginaer site motorunu projesinin amacı ve arkasındaki motivasyonun kaynağını açıklamaya çalışacağım.

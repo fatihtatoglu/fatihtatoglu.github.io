@@ -3,7 +3,7 @@ layout: post
 published: true
 author: Fatih Tatoğlu
 date: 2022-03-22T00:00:00.000Z
-permalink: ./projects/turboc-blog-theme.html
+permalink: ./projeler/turboc-blog-temasi.html
 language: tr
 
 description: İlk programlamaya başladığımda kullanabileceğim sadece Turbo C/C++ vardı. Turbo C'yi baz alarak oluşturduğum site temasından bahsediyor olacağım.

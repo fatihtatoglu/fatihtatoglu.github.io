@@ -3,7 +3,7 @@ layout: coaching
 published: true
 author: Fatih Tatoğlu
 date: 2022-04-07T00:00:00Z
-permalink: ./coaching/index.html
+permalink: ./kocluk/index.html
 language: tr
 
 description: Koçluk, iş hayatı, takım çalışması, yönetim ve benzeri konularda yazdığım yazıların olduğu bölümün ana sayfası.

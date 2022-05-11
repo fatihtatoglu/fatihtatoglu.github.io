@@ -3,7 +3,7 @@ layout: post
 published: true
 author: Fatih Tatoğlu
 date: 2022-04-08T00:00:00.000Z
-permalink: ./projects/gulp-html-anchor-rewriter.html
+permalink: ./projeler/gulp-html-link-duzenleyicisi.html
 language: tr
 
 description: Kendi ihtiyacım için geliştirdiğim gulp eklentisi.

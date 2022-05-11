@@ -3,7 +3,7 @@ layout: post
 published: false
 author: Fatih Tatoğlu
 date: 2022-04-07T00:00:00Z
-permalink: ./coaching/roles-and-hats.html
+permalink: ./kocluk/roles-and-hats.html
 language: tr
 
 description: Roller ve şapkalar bir birlerine çok benziyorlar aslında. Hangi şapkayı tercih edeceğinize, bu yazıyı okuduktan sonra daha kolay karar vereceksiniz.

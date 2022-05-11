@@ -113,6 +113,7 @@ function generateSiteMap() {
 
     return src(outputPath + "**/*.html")
         .pipe(sitemap({
+            changefreq: "weekly",
             siteUrl: baseUrl,
             images: true,
             hreflang: [

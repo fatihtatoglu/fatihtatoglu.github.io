@@ -3,7 +3,7 @@ layout: notes
 published: true
 author: Fatih Tatoğlu
 date: 2022-04-08T00:00:00Z
-permalink: ./notes/index.html
+permalink: ./kendime-notlar/index.html
 language: tr
 
 description: Kendime not aldığım konular ve püf noktaları.

@@ -7,7 +7,7 @@ permalink: ./index.html
 language: tr
 
 description: Fatih Tatoğlu kişisel web sitesi anasayfası.
-tags: 
+tags: fatih tatoglu fatih_tatoglu
 order: 1
 ---
 

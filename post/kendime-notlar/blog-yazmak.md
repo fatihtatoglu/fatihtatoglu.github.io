@@ -13,7 +13,7 @@ category: notes
 
 # Blog Yazmak
 
-[![Be Agile](../image/be-agile-cartoon.jpg "Be Agile")](https://www.instagram.com/p/CH2zB56hMWV)
+[![Be Agile](../../image/be-agile-cartoon.jpg "Be Agile")](https://www.instagram.com/p/CH2zB56hMWV)
 
 Fikirlerimi, ürünlerimi, projelerimi ve bilgilerimi paylaşmak, fiziksel olarak gerçekleştirdiğim arzularımdan biri ama bunu internette sürdüremedim. Bu nedenle, blog yazmaya nasıl başladığıma dair birçok hikayem var. Her seferinde heyecanla başladım. Ama beş altı makaleden sonra artık yazmak için motivasyonum kalmamıştı.
 

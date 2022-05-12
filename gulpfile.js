@@ -77,7 +77,7 @@ function generate() {
 
         // replace heading for theme
         .pipe(replace("<h1>", "<header><h1>"))
-        .pipe(replace("</h1>", "</h1></header>"))
+        .pipe(replace("</h1>", "</h1><button>#</button></header>"))
 
         // replace fo4 image path
         .pipe(replace(/\.\.\/\.\.\/image/g, "image"))

@@ -23,7 +23,7 @@
     "gulp-sitemap": "^8.0.0",
     "gulp-version-number": "^0.2.4",
     "highlight.js": "^11.5.0",
-    "turboc_blog_theme.css": "^4.0.0"
+    "turboc_blog_theme.css": "^4.0.1"
   },
   "scripts": {
     "postinstall": "node post"

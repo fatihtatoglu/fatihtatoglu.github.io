@@ -9,6 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
     renderThemeDialog();
 
     bindThemeButtons();
+    dialogCloseButton();
+    articleHeaderButton();
 });
 
 function bindMenu() {
@@ -136,4 +138,24 @@ function redirectCorrectLanguage() {
     if (languageUrl.startsWith(window.origin)) {
         window.location.replace(languageUrl);
     }
+}
+
+function dialogCloseButton() {
+    let dialogs = document.querySelectorAll("div.dialog");
+    dialogs.forEach((item) => {
+        let closeButton = item.querySelector("div.dialog-box div.dialog-content header button");
+        closeButton.addEventListener("click", () => {
+            item.style.display = "none";
+        });
+    });
+}
+
+function articleHeaderButton() {
+    let articleButton = document.querySelector("article > header > button");
+    articleButton.addEventListener("click", () => {
+        var $pnlThemeDialog = document.getElementById("pnlSettingDialog");
+        if ($pnlThemeDialog) {
+            $pnlThemeDialog.style.display = "block";
+        }
+    });
 }

@@ -1,6 +1,6 @@
 ---
 layout: post
-published: true
+published: false
 author: Fatih Tatoğlu
 date: 2022-05-16T18:30:00Z
 permalink: ./kocluk/degerler.html

@@ -13,7 +13,7 @@ category: coaching
 
 # Roller ve Şapkalar
 
-![Roller & Şapkalar](../image/hats.jpg)
+![Roller & Şapkalar](../../image/hats.jpg)
 
 Scrum Master'lık yaparken ve sonrasında eğitim alırken bir Scrum Master'ın sahip olması gereken yetkinlikleri öğrenmiştim. Kolaylaştırıcı, Değişim Ajanı, Engel Kaldırıcı vb. gibi roller. Daha sonrasında yönetici eğitimi alıyorken benzer rol yapısının yönetici tarafında da olması gerektiğini gördüm.
 

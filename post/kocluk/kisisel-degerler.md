@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 author: Fatih Tatoğlu
 date: 2022-05-16T18:30:00Z
 permalink: ./kocluk/degerler.html
@@ -13,31 +13,35 @@ category: coaching
 
 # Değerler
 
+![Değerler](../../image/degerler-saglik-kisi-kalp.jpg)
+
 Değer kavramını kurumsal ve bireysel eğitimlerde, kitaplarda ve bunun gibi yazılarda çok görmüş, duymuş veya okumuş olabilirsiniz. Bu yazıda düşüncelerimizden davranışlarımıza kadar etki eden değer kavramını anlatmaya çalışacağım.
 
-Değer içimizde bir yerlerde olan karar verirken, problem çözerken, iletişim kurarken ve motivasyon ihtiyacı olduğu zaman ortaya çıkan bir kavram. Bu kadar etkisi olmasından dolayı kişisel bir yolculuğa çıkarken mutlaka iyi anlaşılması gerektiğini düşünüyorum.
+Değer içimizde bir yerlerde olan karar verirken, problem çözerken, iletişim kurarken ve motivasyon ihtiyacında ortaya çıkan bir kavram. Bu kadar etkisi olmasından dolayı kişisel bir yolculuğa çıkarken mutlaka iyi anlaşılması gerektiğini düşünüyorum.
 
 Değerlerimiz biz daha çocukken oluşmaya başlamakta, tecrübelerimiz ve çevremiz ile şekillenmeye de devam etmektedir. Ancak bazı değerlerimizin kökleri o kadar derinlere inmiştir ki, bunlar artık bizim için vazgeçilmez diyeceğimiz niteliktedir. Aldığım eğitimler, kişisel değerlerin periyodik olarak değişebildiğini ve bu değişimlerin daha çok çevresel faktörlere bağlı olduğunu gösteriyor. Örneğin, yakın zamanda yaşanmış olan bir maddi sıkıntı paranın değeriniz olarak ortaya çıkmasını sağlayabilirken, büyük bir sağlık sorunu aile, sağlık veya huzur gibi değerlerin gün yüzene çıkmasını sağlayabilir. Vazgeçilmez olarak nitelendirdiğimiz değerlerimizin de, çocukluk zamanındaki çevresel faktörlerden etkilendiğini düşünmektediyim. Eğer çok disiplinli bir çocukluk geçirildiyse ya disiplin ya da disiplinin tam dersi olan bir kavram değeriniz olabilir.
 
 ## Kişisel Değerler
 
-Değer kavramı kişiseldir. Bireyden bireye değişen sadece o değerin tanımı ve hatta anlamı olacaktır. Birinin olumlu gördüğünü, diğeri aşırı olumsuz görebilir. Bu yüzden sizi siz yapan değerleriniz ve onlara yüklenen anlamlar sizin için özeldir, paylaşırken daha üstüne konuşurken dikkat edilmesi gerekir.
+Değer kavramı kişiseldir. Bireyden bireye değişen sadece o değerin tanımı ve hatta anlamı olacaktır. Birinin olumlu gördüğünü, diğeri olumsuz görebilir. Bu yüzden sizi siz yapan değerleriniz ve onlara yüklenen anlamlar sizin için özeldir, paylaşırken daha üstüne konuşurken dikkat edilmesi gerekir.
 
 ## Toplumsal Değerler
 
-Sosyolojik olarak, birey toplumun en küçük parçasıysa, bireylerin sahip olduğu değerlerin toplamı toplumun değerleri ile ilgili fikir edinmemizi sağlayabilir. Tahminen, bu önermeyi ilk ben yapmadım. Bunun gibi daha bir çok önermenin olduğunu da kabul ederek, bir toplumun hareket edebilmesi yani bulunduğu bir noktadan başka bir noktaya ilerlemesi için ortak bir değere ihtiyacı olduğunu düşünebilirim. Bu düşüncemi destekleyecek en güzel örneği, spor ekiplerinin başarıları olacaktır.
+![Toplumsal Değerler](../../image/degerler-topluluk.jpg)
+
+Sosyolojik olarak, birey toplumun en küçük parçasıysa, bireylerin sahip olduğu değerlerin toplamı toplumun değerleri ile ilgili fikir edinmemizi sağlayabilir. Tahminen, bu önermeyi ilk ben yapmadım. Bunun gibi daha bir çok önermenin olduğunu da kabul ederek, bir toplumun hareket edebilmesi yani bulunduğu bir noktadan başka bir noktaya ilerlemesi için ortak bir değere ihtiyacı olduğunu düşünmekteyim. Bu düşüncemi destekleyecek en güzel örnek, spor ekiplerinin başarıları olacaktır.
 
 Kişisel değerlerde olduğu gibi toplumsal değerler de toplumların kararlarını ve davranışlarını etkilemektedir. Topluma özel olan bu ortak değerlerin bilinmesi ve doğru kullanması toplumlarda büyük etkilere sebep olabileceği unutulmamalıdır.
 
 ## Değerlerin Tespit Edilmesi
 
-Değerlerin doğru tespit edilmesindeki en önemli engel kişinin kendisi ve o an içinde olduğu bilinç düzeyidir. Bu etkilerden kurtulmak için, kıyaslama veya anlamlandırma yöntemleri tercih edilebilir. Anlamlandırma yönteminin daha uzman kişiler tarafından yapılması gerektiğini düşünen biri olarak, basit ve hızlı sonuç verebildiği için de kıyaslama yöntemini tercih etmekteyim.
+Değerlerin doğru tespit edilmesindeki en önemli engel; kişinin kendisi ve o an içinde olduğu bilinç düzeyidir. Bu etkilerden kurtulmak için, kıyaslama veya anlamlandırma yöntemleri tercih edilebilir. Anlamlandırma yönteminin daha uzman kişiler tarafından yapılması gerektiğini düşünen biri olarak, basit ve hızlı sonuç verebildiği için de kıyaslama yöntemini tercih etmekteyim.
 
-Kişisel değerlerin tespit edilmesi sırasında en çok gözlemlediğim bireyin seçim yaparken aslında sahip olmasa bile, olmasını arzuladığı değerleri de işaretliyor olması. Ben bunu gözlemlediğimde kendimin de bunu yaptığını gördüm. Bunun üzerine çalışmanın bir yönetici ya da koç olarak çalışmanın faydalı olabileceğini düşünüyorum.
+Kişisel değerlerin tespit edilmesi sırasında en çok gözlemlediğim bireyin seçim yaparken aslında sahip olmasa bile, olmasını arzuladığı değerleri de işaretliyor olması. Ben bunu gözlemlediğimde kendimin de bunu yaptığını gördüm. Bunun üzerinde durmanın bir yönetici ya da koç olarak faydalı olabileceğini düşünüyorum.
 
 ## Kişisel Değerlerin Kullanımı
 
-Kişisel değerler bir bakıma bireyi yansıttığı için kullanılması çoğu uygulamada kaçınılmaz olmaktadır. Ancak kullanmadan önce bu değerleri doğru anlamak ve doğru konumlandırmak gerekmektedir. Bu işlemi yine birey ile yapmayı seçmenin hem kolay hem de etkili olduğunu söyleyebilirim. Kendi mentörlük ya da koçluk çalışmalarımda birey en çok tercih ettiği 3 kişisel değerini belirledikten sonra aşağıdaki soruları kullanıyorum.
+Kişisel değerler bir bakıma bireyi yansıttığı için kullanılması çoğu uygulamada kaçınılmaz olmaktadır. Ancak kullanmadan önce bu değerleri doğru anlamak ve değerlendirmek gerekmektedir. Bu işlemi yine birey ile yapmayı seçiyor olmanın, hem kolay hem de etkili olduğunu söyleyebilirim. Kendi mentörlük ya da koçluk çalışmalarımda birey en çok tercih ettiği 3 kişisel değerini belirledikten sonra aşağıdaki soruları kullanıyorum.
 
 - Senin için ..... ne demek?
 - ..... 'nın senin için anlamı nedir?
@@ -46,11 +50,13 @@ Kişisel değerler bir bakıma bireyi yansıttığı için kullanılması çoğu
 - Kendini tatmin etmiş ya da gerçekleştirmiş hissettiğinde değerlerinden hangilerini sağlamış oluyorsun?
 - .....'yı yaşamanın önündeki engeller nelerdir?
 
-Bu soruları kullandığımda aslında bireyde bir uyanma ya da zihninde biraz kıpırdanma olduğunu gözlemledim (bir koç olarak amacıma ulaşmış oluyorum).
+Bu soruları kullandığımda aslında bireyde bir uyanma ya da zihninde biraz kıpırdanma olduğunu gözlemledim (bir koç olarak amacıma ulaşmış oluyorum). Unutmadan amacım bireyin değerlerini kendi anladığı şekilde anlatması ve ifade edebilmesi.
 
-Değerler üzerine çok fazla konuşabilirim ama bu noktada kalmanın faydalı olacağını düşünüyorum.
+Koçluk yapmaya çalışan biri olarak değerlerle ilgili çok fazla çalışma buldum, her birini ayrı ayrı değerlendirmeye çalışıyorum. Bu konuda yazılarım devam edecek.
 
 ## Referanslar
 
-1. [Bi̇reysel Değerler Envanteri̇'ni̇n Di̇lsel Eşdeğerli̇k Geçerli̇k Ve Güveni̇rli̇k Çalışması](https://dergipark.org.tr/tr/download/article-file/1783)
-2. Yemeksepeti Şefler Kulübü - SRL Danışmanlık
+1. [Yazının Görseli](https://www.pexels.com/tr-tr/fotograf/saglikli-kisi-kalp-el-4386466/ "Karolina Grabowska")
+2. [Yazının Görseli](https://www.pexels.com/tr-tr/fotograf/grup-el-tezahurat-yapan-insanlar-3280130/ "Dio Hasbi Saniskoro")
+3. [Bi̇reysel Değerler Envanteri̇'ni̇n Di̇lsel Eşdeğerli̇k Geçerli̇k Ve Güveni̇rli̇k Çalışması](https://dergipark.org.tr/tr/download/article-file/1783)
+4. Yemeksepeti Şefler Kulübü - SRL Danışmanlık

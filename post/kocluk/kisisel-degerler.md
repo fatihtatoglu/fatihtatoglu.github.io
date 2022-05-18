@@ -56,7 +56,7 @@ Koçluk yapmaya çalışan biri olarak değerlerle ilgili çok fazla çalışma 
 
 ## Referanslar
 
-1. [Yazının Görseli](https://www.pexels.com/tr-tr/fotograf/saglikli-kisi-kalp-el-4386466/ "Karolina Grabowska")
-2. [Yazının Görseli](https://www.pexels.com/tr-tr/fotograf/grup-el-tezahurat-yapan-insanlar-3280130/ "Dio Hasbi Saniskoro")
+1. [Yazının 1. Görseli](https://www.pexels.com/tr-tr/fotograf/saglikli-kisi-kalp-el-4386466/ "Karolina Grabowska")
+2. [Yazının 2. Görseli](https://www.pexels.com/tr-tr/fotograf/grup-el-tezahurat-yapan-insanlar-3280130/ "Dio Hasbi Saniskoro")
 3. [Bi̇reysel Değerler Envanteri̇'ni̇n Di̇lsel Eşdeğerli̇k Geçerli̇k Ve Güveni̇rli̇k Çalışması](https://dergipark.org.tr/tr/download/article-file/1783)
 4. Yemeksepeti Şefler Kulübü - SRL Danışmanlık

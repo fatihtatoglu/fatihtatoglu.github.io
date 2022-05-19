@@ -39,9 +39,11 @@ Değerlerin doğru tespit edilmesindeki en önemli engel; kişinin kendisi ve o 
 
 Kişisel değerlerin tespit edilmesi sırasında en çok gözlemlediğim bireyin seçim yaparken aslında sahip olmasa bile, olmasını arzuladığı değerleri de işaretliyor olması. Ben bunu gözlemlediğimde kendimin de bunu yaptığını gördüm. Bunun üzerinde durmanın bir yönetici ya da koç olarak faydalı olabileceğini düşünüyorum.
 
+Kendi kişisel değerlerinizi tespit etmek isterseniz hazırladığım [Kişisel Değerler Anketini](./kocluk/survey-core-values.html) ziyaret edebilirsiniz.
+
 ## Kişisel Değerlerin Kullanımı
 
-Kişisel değerler bir bakıma bireyi yansıttığı için kullanılması çoğu uygulamada kaçınılmaz olmaktadır. Ancak kullanmadan önce bu değerleri doğru anlamak ve değerlendirmek gerekmektedir. Bu işlemi yine birey ile yapmayı seçiyor olmanın, hem kolay hem de etkili olduğunu söyleyebilirim. Kendi mentörlük ya da koçluk çalışmalarımda birey en çok tercih ettiği 3 kişisel değerini belirledikten sonra aşağıdaki soruları kullanıyorum.
+Kişisel değerler bir bakıma bireyi yansıttığı için kullanılması çoğu uygulamada kaçınılmaz olmaktadır. Ancak kullanmadan önce bu değerleri doğru anlamak ve değerlendirmek gerekmektedir. Bu işlemi yine birey ile yapmayı seçiyor olmanın, hem kolay hem de etkili olduğunu söyleyebilirim. Kendi mentörlük ve koçluk çalışmalarım sırasında birey en çok tercih ettiği 3 kişisel değerini belirledikten sonra aşağıdaki soruları kullanıyorum.
 
 - Senin için ..... ne demek?
 - ..... 'nın senin için anlamı nedir?
@@ -50,7 +52,7 @@ Kişisel değerler bir bakıma bireyi yansıttığı için kullanılması çoğu
 - Kendini tatmin etmiş ya da gerçekleştirmiş hissettiğinde değerlerinden hangilerini sağlamış oluyorsun?
 - .....'yı yaşamanın önündeki engeller nelerdir?
 
-Bu soruları kullandığımda aslında bireyde bir uyanma ya da zihninde biraz kıpırdanma olduğunu gözlemledim (bir koç olarak amacıma ulaşmış oluyorum). Unutmadan amacım bireyin değerlerini kendi anladığı şekilde anlatması ve ifade edebilmesi.
+Bu soruları kullandığımda aslında bireyde bir uyanma ya da zihninde biraz kıpırdanma olduğunu gözlemledim (bir koç olarak amacıma ulaşmış oluyorum). Unutmadan bu soruların amacı bireyin değerlerini kendi anladığı şekilde anlatması ve ifade edebilmesi.
 
 Koçluk yapmaya çalışan biri olarak değerlerle ilgili çok fazla çalışma buldum, her birini ayrı ayrı değerlendirmeye çalışıyorum. Bu konuda yazılarım devam edecek.
 

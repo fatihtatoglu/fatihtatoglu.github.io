@@ -211,9 +211,27 @@ function _getRoot() {
     return $rootElement;
 }
 
+function _getRandomNumber(length) {
+
+    if (length <= 0) {
+        length = 1;
+    }
+
+    const crypto = window.crypto || window.msCrypto;
+    var array = new Uint32Array(length);
+    crypto.getRandomValues(array);
+
+    return array;
+}
+
 function _shuffle(data) {
+    var randomValues = _getRandomNumber(data.length * 2);
+    var x = 0;
+
     for (var i = data.length - 1; i > 0; i--) {
-        var j = Math.floor(Math.random() * (i + 1));
+        var j = Math.floor(randomValues[++x] * (i + 1));
+        j = (j % data.length) + 1;
+
         var temp = data[i];
         data[i] = data[j];
         data[j] = temp;

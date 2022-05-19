@@ -211,9 +211,16 @@ function _getRoot() {
     return $rootElement;
 }
 
+function _getRandomNumber() {
+    const crypto = window.crypto || window.msCrypto;
+    var array = new Uint32Array(1);
+    crypto.getRandomValues(array); // Compliant for security-sensitive use cases
+    return array[0];
+}
+
 function _shuffle(data) {
     for (var i = data.length - 1; i > 0; i--) {
-        var j = Math.floor(Math.random() * (i + 1));
+        var j = Math.floor(_getRandomNumber() * (i + 1));
         var temp = data[i];
         data[i] = data[j];
         data[j] = temp;

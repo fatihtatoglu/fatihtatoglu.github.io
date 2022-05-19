@@ -8,6 +8,7 @@ const replace = require("gulp-replace");
 const htmlmin = require("gulp-htmlmin");
 const versionNumber = require("gulp-version-number");
 const sitemap = require("gulp-sitemap");
+const minify = require("gulp-minify");
 
 const os = require("os");
 
@@ -56,11 +57,24 @@ function cleanAll() {
 
 // Gulp Step 2 - Copy all required assets.
 function copyAssets() {
-    return src(["./css/*.css", "./js/*.js", "./image/*.png", "./image/*.jpg", "./image/favicon/*", "./CNAME", "./.nojekyll", "./robots.txt", "./favicon.ico" , "./sitemap.xsl"], { base: "./" })
+    return src(["./css/*.css", "./image/*.png", "./image/*.jpg", "./image/favicon/*", "./CNAME", "./.nojekyll", "./robots.txt", "./favicon.ico", "./sitemap.xsl"], { base: "./" })
         .pipe(dest(outputPath));
 }
 
-// Gulp Step 5 - Generate Output
+function jsMinify() {
+    return src(["./js/*.js"], { base: "./" })
+        .pipe(minify({
+            ext: {
+                src: "-debug.js",
+                min: ".js"
+            },
+            compress: true,
+            mangle: true
+        }))
+        .pipe(dest(outputPath));
+}
+
+// Gulp Step 3 - Generate Output
 function generate() {
     const versionConfig = {
         'value': '%MDS%',
@@ -121,7 +135,7 @@ function generateSiteMap() {
                 { lang: 'en', getHref }
             ]
         }))
-        .pipe(replace("<urlset", "<?xml-stylesheet type=\"text/xsl\" href=\""+baseUrl+"sitemap.xsl\"?> <urlset"))
+        .pipe(replace("<urlset", "<?xml-stylesheet type=\"text/xsl\" href=\"" + baseUrl + "sitemap.xsl\"?> <urlset"))
         .pipe(replace(/\n/g, ""))
         .pipe(replace(/\r/g, ""))
         .pipe(replace("  ", ""))
@@ -130,6 +144,7 @@ function generateSiteMap() {
 
 exports.default = series(
     cleanAll,
-    parallel(copyAssets, generate),
+    parallel(copyAssets, jsMinify),
+    generate,
     generateSiteMap
 );

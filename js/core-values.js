@@ -59,7 +59,7 @@ values.push(_createValueItem("calmness", "Calmness", "Dinginlik"));
 values.push(_createValueItem("carefulness", "Carefulness", "Dikkatlilik"));
 values.push(_createValueItem("challenge", "Challenge", "Meydan Okuma"));
 values.push(_createValueItem("cheerfulness", "Cheerfulness", "Neşe"));
-values.push(_createValueItem("clear-mindedness", "Clear-mindedness", "Şeffaf Fikirlilik"));
+values.push(_createValueItem("clear-mindedness", "Clear-mindedness", "Açık Fikirlilik"));
 values.push(_createValueItem("commitment", "Commitment", "Taahhüt - Sözünü Yerine Getirme"));
 values.push(_createValueItem("community", "Community", "Topluluk"));
 values.push(_createValueItem("compassion", "Compassion", "Merhamet"));
@@ -181,7 +181,7 @@ values.push(_createValueItem("timeliness", "Timeliness", "Vakitlilik - Dakiklik"
 values.push(_createValueItem("tolerance", "Tolerance", "Hata Payı - Toleranslı Olma"));
 values.push(_createValueItem("traditionalism", "Traditionalism", "Gelenekselcilik"));
 values.push(_createValueItem("trustworthiness", "Trustworthiness", "Güvenilir Olma"));
-values.push(_createValueItem("truth-seeking", "Truth-seeking", "Doğruculuk - Gerçek Düşünü"));
+values.push(_createValueItem("truth-seeking", "Truth-seeking", "Doğruculuk - Gerçeği Arama"));
 values.push(_createValueItem("understanding", "Understanding", "Anlayış"));
 values.push(_createValueItem("uniqueness", "Uniqueness", "Benzersizlik"));
 values.push(_createValueItem("unity", "Unity", "Birlik - Bütünlük"));
@@ -236,8 +236,6 @@ function _shuffle(data) {
         data[i] = data[j];
         data[j] = temp;
     }
-
-debugger;
 
     return data;
 }
@@ -350,7 +348,8 @@ function _renderCompareTable(data, $rootElement, calculationField, buttonText) {
 
         var $firstLabelElement = document.createElement("label");
         $firstLabelElement.setAttribute("for", pair.xKey);
-        $firstLabelElement.innerHTML = pair.x.turkish + " (" + pair.x.english + ")";
+        $firstLabelElement.innerHTML = pair.x.turkish;
+        $firstLabelElement.title = pair.x.english;
         $tableBodyFirstCell.appendChild($firstLabelElement);
 
         let $tableBodySecondCell = $tableBodyRow.insertCell(2);
@@ -364,7 +363,8 @@ function _renderCompareTable(data, $rootElement, calculationField, buttonText) {
 
         var $secondLabelElement = document.createElement("label");
         $secondLabelElement.setAttribute("for", pair.yKey);
-        $secondLabelElement.innerHTML = pair.y.turkish + " (" + pair.y.english + ")";
+        $secondLabelElement.innerHTML = pair.y.turkish;
+        $secondLabelElement.title = pair.y.english;
         $tableBodySecondCell.appendChild($secondLabelElement);
     });
 
@@ -419,7 +419,8 @@ function stepSelection($rootElement) {
 
         var $firstLabelElement = document.createElement("label");
         $firstLabelElement.setAttribute("for", value.key);
-        $firstLabelElement.innerHTML = value.turkish + " (" + value.english + ")";
+        $firstLabelElement.innerHTML = value.turkish;
+        $firstLabelElement.title = value.english;
         $firstCell.appendChild($firstLabelElement);
 
         value = data[i + 1];
@@ -432,7 +433,8 @@ function stepSelection($rootElement) {
 
         var $secondLabelElement = document.createElement("label");
         $secondLabelElement.setAttribute("for", value.key);
-        $secondLabelElement.innerHTML = value.turkish + " (" + value.english + ")";
+        $secondLabelElement.innerHTML = value.turkish;
+        $secondLabelElement.title = value.english;
         $secondCell.appendChild($secondLabelElement);
     }
 
@@ -541,13 +543,14 @@ function stepResult($rootElement) {
         const item = selection[i];
 
         let $tableBodyRow = $tableBody.insertRow($tableBody.rows.length);
+        $tableBodyRow.title = item.english;
 
         let $firstCell = $tableBodyRow.insertCell(0);
         $firstCell.innerHTML = i + 1;
         $firstCell.style.textAlign = "center";
 
         let $secondCell = $tableBodyRow.insertCell(1);
-        $secondCell.innerHTML = item.turkish + " (" + item.english + ")";
+        $secondCell.innerHTML = item.turkish;
         $secondCell.style.textAlign = "center";
 
         let $thirdCell = $tableBodyRow.insertCell(2);

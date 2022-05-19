@@ -13,4 +13,4 @@ jsmodule: core-values
 
 # Kişisel Değerler Anketi
 
-Bu anket kişisel değerlerinizi belirlemenizde size destek olması için hazırlanmıştır. Sizin ile ilgili her hangi bir bilgi kaydedilmemektedir. 3 adımda anketi tamamladıktan sonra kişisel değerlerinizi öğreneceksiniz.
+Bu anket kişisel değerlerinizi belirlemenizde size destek olması için hazırlanmıştır. Sizin ile ilgili her hangi bir bilgi kaydedilmemektedir. 3 adımda anketi tamamladıktan sonra kişisel değerlerinizi öğreneceksiniz. Anket İngilizce kaynaklardan derlenmiştir. Bu yüzden maddenin İngilizce karşılığı üstünde imleç ile durduğunuzda belirecektir.

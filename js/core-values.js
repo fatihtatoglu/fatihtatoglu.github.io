@@ -230,14 +230,16 @@ function _shuffle(data) {
 
     for (var i = data.length - 1; i > 0; i--) {
         var j = Math.floor(randomValues[++x] * (i + 1));
-        j = (j % data.length) + 1;
+        j = j % data.length;
 
         var temp = data[i];
         data[i] = data[j];
         data[j] = temp;
     }
 
-    return data.map(function (x) { return x });
+debugger;
+
+    return data;
 }
 
 var currentStep = 1;
@@ -305,7 +307,7 @@ function _createMatrix(data) {
     return matrix;
 }
 
-function _renderCompareTable(data, $rootElement) {
+function _renderCompareTable(data, $rootElement, calculationField, buttonText) {
 
     let $table = document.createElement("table");
     $rootElement.appendChild($table);
@@ -365,6 +367,30 @@ function _renderCompareTable(data, $rootElement) {
         $secondLabelElement.innerHTML = pair.y.turkish + " (" + pair.y.english + ")";
         $tableBodySecondCell.appendChild($secondLabelElement);
     });
+
+    var $completeButton = document.createElement("button");
+    $completeButton.innerHTML = buttonText;
+
+    let clickHandler = function () {
+
+        let checkedItems = document.querySelectorAll("input[type=radio]:checked");
+        if (checkedItems.length !== data.length) {
+            alert("Bütün karşılaştırmaları yamamlayınız!");
+            return;
+        }
+
+        checkedItems.forEach(item => {
+            var dataKey = item.getAttribute("data-key");
+            let index = values.findIndex(({ key }) => key === dataKey);
+            values[index][calculationField]++;
+        });
+
+        $completeButton.removeEventListener("click", clickHandler);
+        _nextStep();
+    };
+
+    $completeButton.addEventListener("click", clickHandler);
+    $rootElement.appendChild($completeButton);
 }
 
 function stepSelection($rootElement) {
@@ -451,31 +477,7 @@ function stepFirstCompare($rootElement) {
     let $fieldRowGroup = document.createElement("div");
     $fieldRowGroup.classList.add("field-group-row");
 
-    _renderCompareTable(data, $fieldRowGroup);
-
-    var $completeButton = document.createElement("button");
-    $completeButton.innerHTML = "Karşılaştırmayı Tamamla";
-
-    let clickHandler = function () {
-
-        let checkedItems = document.querySelectorAll("input[type=radio]:checked");
-        if (checkedItems.length !== data.length) {
-            alert("Bütün karşılaştırmaları yamamlayınız!");
-            return;
-        }
-
-        checkedItems.forEach(item => {
-            var dataKey = item.getAttribute("data-key");
-            let index = values.findIndex(({ key }) => key === dataKey);
-            values[index].vote++;
-        });
-
-        $completeButton.removeEventListener("click", clickHandler);
-        _nextStep();
-    };
-
-    $completeButton.addEventListener("click", clickHandler);
-    $fieldRowGroup.appendChild($completeButton);
+    _renderCompareTable(data, $fieldRowGroup, "vote", "Karşılaştırmayı Tamamla");
 
     $rootElement.appendChild($fieldRowGroup);
 }
@@ -496,31 +498,7 @@ function stepLastCompare($rootElement) {
     let $fieldRowGroup = document.createElement("div");
     $fieldRowGroup.classList.add("field-group-row");
 
-    _renderCompareTable(data, $fieldRowGroup);
-
-    var $completeButton = document.createElement("button");
-    $completeButton.innerHTML = "Karşılaştırmayı Tamamla";
-
-    let clickHandler = function () {
-
-        let checkedItems = document.querySelectorAll("input[type=radio]:checked");
-        if (checkedItems.length !== data.length) {
-            alert("Bütün karşılaştırmaları yamamlayınız!");
-            return;
-        }
-
-        checkedItems.forEach(item => {
-            var dataKey = item.getAttribute("data-key");
-            let index = values.findIndex(({ key }) => key === dataKey);
-            values[index].secondVote++;
-        });
-
-        $completeButton.removeEventListener("click", clickHandler);
-        _nextStep();
-    };
-
-    $completeButton.addEventListener("click", clickHandler);
-    $fieldRowGroup.appendChild($completeButton);
+    _renderCompareTable(data, $fieldRowGroup, "secondVote", "Değerlendirmeyi Tamamla");
 
     $rootElement.appendChild($fieldRowGroup);
 }

@@ -1,14 +1,26 @@
-tr{
+tr {
     border-bottom: dotted 1px;
 }
 
 table tbody tr:first-child td,
-table tbody tr:last-child td
-{
-    padding-top: 0px;
-    padding-bottom: 0px;
+table tbody tr:last-child td,
+table tbody tr td,
+table tbody tr td {
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
-table tbody tr td{
+table tbody tr td {
     vertical-align: inherit;
+}
+
+input[type=checkbox],
+input[type=radio] {
+    width: 40px;
+}
+
+input[type=checkbox]::after,
+input[type=radio]::after {
+    margin-left: 0px;
+    cursor: inherit;
 }

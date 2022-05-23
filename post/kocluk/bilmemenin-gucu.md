@@ -7,7 +7,7 @@ permalink: ./kocluk/bilmemenin-gucu.html
 language: tr
 
 description: Bilmiyorum demenin gücü onu kullanmamız için bekliyor. Kullanılırsa çok güzel şeyler olacak.
-tags: bilmemek bilmemenin_gucu ogrenmek cesaret korku elalem
+tags: bilmemek bilmemenin_gucu ogrenme guven cesaret rahatlama 
 category: coaching
 ---
 

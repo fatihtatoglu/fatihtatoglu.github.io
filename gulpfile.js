@@ -126,22 +126,22 @@ function generateSiteMap() {
     };
 
     let dates = {
-        '\\hakkimda': "2022-05-11",
-        '\\index': "2022-03-14",
-        '\\kendime-notlar\\blog-yazmak': "2022-03-20",
-        '\\kendime-notlar\\index': "2022-04-08",
-        '\\kocluk\\bilmemenin-gucu': "2022-05-21",
-        '\\kocluk\\degerler': "2022-05-16",
-        '\\kocluk\\index': "2022-04-07",
-        '\\kocluk\\survey-core-values': "2022-05-19",
-        '\\projeler\\enginaer': "2022-03-24",
-        '\\projeler\\gulp-html-link-duzenleyicisi': "2022-04-08",
-        '\\projeler\\index': "2022-04-07",
-        '\\projeler\\turboc-blog-temasi': "2022-03-22"
+        '_hakkimda': "2022-05-11",
+        '_index': "2022-03-14",
+        '_kendime-notlar_blog-yazmak': "2022-03-20",
+        '_kendime-notlar_index': "2022-04-08",
+        '_kocluk_bilmemenin-gucu': "2022-05-21",
+        '_kocluk_degerler': "2022-05-16",
+        '_kocluk_index': "2022-04-07",
+        '_kocluk_survey-core-values': "2022-05-19",
+        '_projeler_enginaer': "2022-03-24",
+        '_projeler_gulp-html-link-duzenleyicisi': "2022-04-08",
+        '_projeler_index': "2022-04-07",
+        '_projeler_turboc-blog-temasi': "2022-03-22"
     };
 
     let getLastMod = function (file) {
-        var fileName = file.path.replace(file.base, "").replace(file.extname, "");
+        var fileName = file.path.replace(file.base, "").replace(file.extname, "").replace(/\\/g,"_").replace(/\//g,"_");
         return dates[fileName];
     };
 

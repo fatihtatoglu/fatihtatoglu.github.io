@@ -7,7 +7,7 @@ permalink: ./kendime-notlar/blog-yazmak.html
 language: tr
 
 description: Blog yazmak ve yazarken karşılaştığım zorlukları anlatmaya çalıştım. Motivasyon kaynağım olacak bir yazı.
-tags: blog_yazmak selçuk_erdem be_agile
+tags: blog_yazmak selçuk_erdem
 category: notes
 ---
 

@@ -125,6 +125,26 @@ function generateSiteMap() {
         }
     };
 
+    let dates = {
+        '\\hakkimda': "2022-05-11",
+        '\\index': "2022-03-14",
+        '\\kendime-notlar\\blog-yazmak': "2022-03-20",
+        '\\kendime-notlar\\index': "2022-04-08",
+        '\\kocluk\\bilmemenin-gucu': "2022-05-21",
+        '\\kocluk\\degerler': "2022-05-16",
+        '\\kocluk\\index': "2022-04-07",
+        '\\kocluk\\survey-core-values': "2022-05-19",
+        '\\projeler\\enginaer': "2022-03-24",
+        '\\projeler\\gulp-html-link-duzenleyicisi': "2022-04-08",
+        '\\projeler\\index': "2022-04-07",
+        '\\projeler\\turboc-blog-temasi': "2022-03-22"
+    };
+
+    let getLastMod = function (file) {
+        var fileName = file.path.replace(file.base, "").replace(file.extname, "");
+        return dates[fileName];
+    };
+
     return src(outputPath + "**/*.html")
         .pipe(sitemap({
             changefreq: "weekly",
@@ -133,7 +153,8 @@ function generateSiteMap() {
             hreflang: [
                 { lang: 'tr', getHref },
                 { lang: 'en', getHref }
-            ]
+            ],
+            lastmod: getLastMod
         }))
         .pipe(replace("<urlset", "<?xml-stylesheet type=\"text/xsl\" href=\"" + baseUrl + "sitemap.xsl\"?> <urlset"))
         .pipe(replace(/\n/g, ""))

@@ -140,7 +140,10 @@ function generateSiteMap() {
         "_projeler_turboc-blog-temasi": "2022-03-22",
         "_kendime-notlar_swot-analizi": "2022-05-24T15:34:54Z",
         "_kocluk_bireysel-swot-analizi": "2022-05-28T15:23:33Z",
-        "_kocluk_bir-yoneticinin-yolu": "2022-05-28T16:47:14Z"
+        "_kocluk_bir-yoneticinin-yolu": "2022-05-28T16:47:14Z",
+        "_kendime-notlar_haproxy": "2022-05-28T18:49:21Z",
+        "_kendime-notlar_haproxy-varsayilan-statik-cevap": "2022-05-28T23:10:41Z",
+        "_kendime-notlar_haproxy-ssl-sertifikasi-tanimlama": "2022-05-28T23:26:58Z"
     };
 
     let getLastMod = function (file) {

@@ -1,0 +1,23 @@
+{
+	"Insert Header": {
+		"prefix": "header",
+		"description": "Insert enginaer content header.",
+		"body": [
+			"---",
+			"layout: post",
+			"published: false",
+			"author: Fatih Tatoğlu",
+			"date: ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}T${CURRENT_HOUR}:${CURRENT_MINUTE}:${CURRENT_SECOND}Z",
+			"permalink: ./$1/$2.html",
+			"language: tr",
+			"",
+			"description: $3",
+			"tags: $4",
+			"category: $5",
+			"---",
+			"",
+			"# $6",
+			"$0"
+		]
+	}
+}

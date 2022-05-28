@@ -139,7 +139,8 @@ function generateSiteMap() {
         "_projeler_index": "2022-04-07",
         "_projeler_turboc-blog-temasi": "2022-03-22",
         "_kendime-notlar_swot-analizi": "2022-05-24T15:34:54Z",
-        "_kocluk_bireysel-swot-analizi": "2022-05-28T15:23:33Z"
+        "_kocluk_bireysel-swot-analizi": "2022-05-28T15:23:33Z",
+        "_kocluk_bir-yoneticinin-yolu": "2022-05-28T16:47:14Z"
     };
 
     let getLastMod = function (file) {

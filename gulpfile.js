@@ -33,8 +33,8 @@ const config = {
             headerIds: false,
             langPrefix: "hljs language-",
             highlight: function (code, lang) {
-                const hljs = require('highlight.js');
-                const language = hljs.getLanguage(lang) ? lang : 'plaintext';
+                const hljs = require("highlight.js");
+                const language = hljs.getLanguage(lang) ? lang : "plaintext";
 
                 return hljs.highlight(code, { language }).value;
             }
@@ -77,10 +77,10 @@ function jsMinify() {
 // Gulp Step 3 - Generate Output
 function generate() {
     const versionConfig = {
-        'value': '%MDS%',
-        'append': {
-            'key': 'v',
-            'to': ['css', 'js'],
+        "value": "%MDS%",
+        "append": {
+            "key": "v",
+            "to": ["css", "js"],
         },
     };
 
@@ -126,22 +126,24 @@ function generateSiteMap() {
     };
 
     let dates = {
-        '_hakkimda': "2022-05-11",
-        '_index': "2022-03-14",
-        '_kendime-notlar_blog-yazmak': "2022-03-20",
-        '_kendime-notlar_index': "2022-04-08",
-        '_kocluk_bilmemenin-gucu': "2022-05-21",
-        '_kocluk_degerler': "2022-05-16",
-        '_kocluk_index': "2022-04-07",
-        '_kocluk_survey-core-values': "2022-05-19",
-        '_projeler_enginaer': "2022-03-24",
-        '_projeler_gulp-html-link-duzenleyicisi': "2022-04-08",
-        '_projeler_index': "2022-04-07",
-        '_projeler_turboc-blog-temasi': "2022-03-22"
+        "_hakkimda": "2022-05-11",
+        "_index": "2022-03-14",
+        "_kendime-notlar_blog-yazmak": "2022-03-20",
+        "_kendime-notlar_index": "2022-04-08",
+        "_kocluk_bilmemenin-gucu": "2022-05-21",
+        "_kocluk_degerler": "2022-05-16",
+        "_kocluk_index": "2022-04-07",
+        "_kocluk_survey-core-values": "2022-05-19",
+        "_projeler_enginaer": "2022-03-24",
+        "_projeler_gulp-html-link-duzenleyicisi": "2022-04-08",
+        "_projeler_index": "2022-04-07",
+        "_projeler_turboc-blog-temasi": "2022-03-22",
+        "_kendime-notlar_swot-analizi": "2022-05-24T15:34:54Z",
+        "_kocluk_bireysel-swot-analizi": "2022-05-28T15:23:33Z"
     };
 
     let getLastMod = function (file) {
-        var fileName = file.path.replace(file.base, "").replace(file.extname, "").replace(/\\/g,"_").replace(/\//g,"_");
+        var fileName = file.path.replace(file.base, "").replace(file.extname, "").replace(/\\/g, "_").replace(/\//g, "_");
         return dates[fileName];
     };
 
@@ -151,8 +153,8 @@ function generateSiteMap() {
             siteUrl: baseUrl,
             images: true,
             hreflang: [
-                { lang: 'tr', getHref },
-                { lang: 'en', getHref }
+                { lang: "tr", getHref },
+                { lang: "en", getHref }
             ],
             lastmod: getLastMod
         }))

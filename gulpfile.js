@@ -15,7 +15,7 @@ const os = require("os");
 var outputPath = "./dist/";
 
 var baseUrl;
-if (os.platform() === "win32" || os.hostname() === "mint-development") {
+if (os.platform() === "win32" || os.hostname() === "fth-linux") {
     baseUrl = "http://localhost:8080/";
 }
 else {

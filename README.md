@@ -4,6 +4,10 @@ This is my blog site.
 
 ## Local Execution
 
+```bash
+npm install --global gulp-cli
+```
+
 ### Install `http-server`
 
 ```bash

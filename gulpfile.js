@@ -12,10 +12,10 @@ const minify = require("gulp-minify");
 
 const os = require("os");
 
-var outputPath = "./dist/";
+const outputPath = "./dist/";
 
-var baseUrl;
-if (os.platform() === "win32" || os.hostname() === "mint-development") {
+let baseUrl;
+if (os.platform() === "win32" || os.hostname() === "fth-linux") {
     baseUrl = "http://localhost:8080/";
 }
 else {
@@ -84,7 +84,7 @@ function generate() {
         },
     };
 
-    var enginær = new Enginaer(config);
+    let enginær = new Enginaer(config);
     enginær.load();
 
     return enginær.generate()
@@ -141,13 +141,18 @@ function generateSiteMap() {
         "_kendime-notlar_swot-analizi": "2022-05-24T15:34:54Z",
         "_kocluk_bireysel-swot-analizi": "2022-05-28T15:23:33Z",
         "_kocluk_bir-yoneticinin-yolu": "2022-05-28T16:47:14Z",
-        "_kendime-notlar_haproxy": "2022-05-28T18:49:21Z",
-        "_kendime-notlar_haproxy-varsayilan-statik-cevap": "2022-05-28T23:10:41Z",
-        "_kendime-notlar_haproxy-ssl-sertifikasi-tanimlama": "2022-05-28T23:26:58Z"
+        "_kendime-notlar_lab_index":"2022-06-12T13:30:35Z",
+        "_kendime-notlar_lab_haproxy_cluster":"2022-06-12T18:41:00Z",
+        "_kendime-notlar_lab_haproxy_kurulum":"2022-06-12T14:07:13Z",
+        "_kendime-notlar_lab_haproxy_ssl-sertifikasi-ekleme":"2022-06-12T19:03:27Z",
+        "_kendime-notlar_lab_haproxy_varsayilan-yonlendirme":"2022-06-12T20:25:53Z",
+        "_kendime-notlar_lab_linux_mint-gelistirme-ortami":"2022-06-12T22:00:42Z",
+        "_kendime-notlar_lab_windows_ortam-kurulumu":"2022-06-12T20:43:39Z",
+        "_kendime-notlar_lab_windows_sanal-makine-olusturma":"2022-06-12T21:28:33Z"
     };
 
     let getLastMod = function (file) {
-        var fileName = file.path.replace(file.base, "").replace(file.extname, "").replace(/\\/g, "_").replace(/\//g, "_");
+        let fileName = file.path.replace(file.base, "").replace(file.extname, "").replace(/\\/g, "_").replace(/\//g, "_");
         return dates[fileName];
     };
 

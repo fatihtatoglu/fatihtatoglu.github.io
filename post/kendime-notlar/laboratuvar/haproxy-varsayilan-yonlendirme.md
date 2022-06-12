@@ -2,24 +2,22 @@
 layout: post
 published: true
 author: Fatih Tatoğlu
-date: 2022-05-28T23:10:41Z
-permalink: ./kendime-notlar/haproxy-varsayilan-statik-cevap.html
+date: 2022-06-12T20:25:53Z
+permalink: ./kendime-notlar/lab/haproxy/varsayilan-yonlendirme.html
 language: tr
 
-description: HAProxy'den geçen trafik belirlenen filtreler ile eşleşmediğinde isteklerin varsayılan bir cevaba yönlendirilmesini anlatan notlarım.
-tags: haproxy default_response 503
-category: notes
+description: HAProxy yönlendirmeyi kurallara göre yapmaktadır. Ancak bazen kurallara uymayan isteklerde geldiğinde bunların da cevaplanması gerekmektedir.
+tags: haproxy redirect static_content statik_icerik
 ---
 
-# HAProxy - Varsayılan Statik Cevap
+# HAProxy - Varsayılan Yönlendirme
 
 HAProxy gelen istekleri ayarlanan filtrelerden geçirerek ilgili `backend` servislerine yönlendirmektedir. Ancak eşleşme olmadığı zaman isteğin sonlanması için varsayılan bir cevap dönülmesi çok uygulanan bir yöntemdir. Bu yöntemi statik dosyalar için de kullanabiliriz. Özellikle arama motorlarının taramalarını bu şekilde sisteme yük getirmeden yapmasını sağlayabiliriz.
 
 HAProxy konfigürasyon dosyasını aşağıdaki gibi güncelliyoruz.
 
 ```shell
-> sudo su
-$ vi /etc/haproxy/haproxy.conf
+> sudo vi /etc/haproxy/haproxy.conf
 ```
 
 ```nestedtext
@@ -58,8 +56,7 @@ backend be_default
 Sonrasında statik içeriği oluşturuyoruz.
 
 ```shell
->
-$ vi /etc/haproxy/errors/503.http
+> sudo vi /etc/haproxy/errors/503.http
 ```
 
 ```html
@@ -86,7 +83,6 @@ Bu ayar uygulanmadan önce doğruluğu kontrol edilmeli ve sonrasında servisler
 Eğer cluster bir yapınız varsa iki makinede de aynı geliştirmenin yapılması gerekmektedir.
 
 ```shell
->
-$ /opt/haproxy/sbin/haproxy -c -V -f /etc/haproxy/haproxy.conf
-$ systemctl reload haproxy
+> sudo /opt/haproxy/sbin/haproxy -c -V -f /etc/haproxy/haproxy.conf
+> sudo systemctl reload haproxy
 ```

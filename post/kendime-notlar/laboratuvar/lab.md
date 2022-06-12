@@ -11,7 +11,7 @@ tags: lab laboratuvar test tecrübe
 category: notes
 ---
 
-# Laboratuvar
+# 🔬​ Laboratuvar
 
 ![Laboratuvar](../../../image/laboratuvar.jpg "Laboratuvar")
 
@@ -25,6 +25,15 @@ Hem kendimin hem de okumak isteyenlerin daha rahat bulabilmesi için yazıları 
 2. [Cluster](./kendime-notlar/lab/haproxy/cluster.html "HAProxy - Cluster")
 3. [SSL Sertifikası Ekleme](./kendime-notlar/lab/haproxy/ssl-sertifikasi-ekleme.html "HAProxy - SSL Sertifikası Ekleme")
 4. [Varsayılan Yönlendirme](./kendime-notlar/lab/haproxy/varsayilan-yonlendirme.html "HAProxy - Varsayılan Yönlendirme")
+
+## Windows
+
+1. [Ortam Kurulumu](./kendime-notlar/lab/windows/ortam-kurulumu.html "Windows - Ortam Kurulumu")
+2. [Sanal Makine Oluşturma](./kendime-notlar/lab/windows/sanal-makine-olusturma.html "Windows - Sanal Makine Oluşturma")
+
+## Linux
+
+1. [Mint Geliştirme Ortamı](/kendime-notlar/lab/linux/mint-gelistirme-ortami.html "Linux - Mint Geliştirme Ortamı")
 
 ## Referanslar
 

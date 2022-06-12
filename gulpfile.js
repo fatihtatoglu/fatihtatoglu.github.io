@@ -12,9 +12,9 @@ const minify = require("gulp-minify");
 
 const os = require("os");
 
-var outputPath = "./dist/";
+const outputPath = "./dist/";
 
-var baseUrl;
+let baseUrl;
 if (os.platform() === "win32" || os.hostname() === "fth-linux") {
     baseUrl = "http://localhost:8080/";
 }
@@ -84,7 +84,7 @@ function generate() {
         },
     };
 
-    var enginær = new Enginaer(config);
+    let enginær = new Enginaer(config);
     enginær.load();
 
     return enginær.generate()
@@ -147,7 +147,7 @@ function generateSiteMap() {
     };
 
     let getLastMod = function (file) {
-        var fileName = file.path.replace(file.base, "").replace(file.extname, "").replace(/\\/g, "_").replace(/\//g, "_");
+        let fileName = file.path.replace(file.base, "").replace(file.extname, "").replace(/\\/g, "_").replace(/\//g, "_");
         return dates[fileName];
     };
 

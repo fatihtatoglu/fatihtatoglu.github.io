@@ -19,6 +19,13 @@ Bir konuyu teorik olarak öğrenmek bana çoğu zaman yetmedi. Daha çok uygulam
 
 Hem kendimin hem de okumak isteyenlerin daha rahat bulabilmesi için yazıları belli başlıkların altında paylaşıyor olacağım. Bu başlıkların bir giriş yazısı olmayacak direk konuya giren yazılar olacağı için bazı genel tanımları ayrıca bir tanımlıyor olmak istiyorum.
 
+## HAProxy
+
+1. [Kurulum](./kendime-notlar/lab/haproxy/kurulum.html "HAProxy - Kurulum")
+2. [Cluster](./kendime-notlar/lab/haproxy/cluster.html "HAProxy - Cluster")
+3. [SSL Sertifikası Ekleme](./kendime-notlar/lab/haproxy/ssl-sertifikasi-ekleme.html "HAProxy - SSL Sertifikası Ekleme")
+4. [Varsayılan Yönlendirme](./kendime-notlar/lab/haproxy/varsayilan-yonlendirme.html "HAProxy - Varsayılan Yönlendirme")
+
 ## Referanslar
 
 1. [Yazının Görseli](https://www.pexels.com/tr-tr/fotograf/bardak-renkli-renkler-laboratuvar-9628807/ "Ivan Samkov")

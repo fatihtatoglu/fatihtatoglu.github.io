@@ -2,24 +2,22 @@
 layout: post
 published: true
 author: Fatih Tatoğlu
-date: 2022-05-28T23:26:58Z
-permalink: ./kendime-notlar/haproxy-ssl-sertifikasi-tanimlama.html
+date: 2022-06-12T19:03:27Z
+permalink: ./kendime-notlar/lab/haproxy/ssl-sertifikasi-ekleme.html
 language: tr
 
-description: HAProxy'e gelen güvenli trafiğin nasıl karşılanacağı ve güvenlik sertifikasının nasıl hazırlanacağını anlatan notlarım.
-tags: haproxy ssl ssl_certificate https 443
-category: notes
+description: HAProxy kendisine gelen SSL trafiğini de yönetebilmektedir. Bunun için ilk adım sertifika ayarlaması.
+tags: haproxy ssl tls https sertifika
 ---
 
-# HAProxy - SSL Sertifikası Tanımlama
+# HAProxy - SSL Sertifikası Ekleme
 
 HAProxy kendisine gelen SSL isteklerini de karşılayabilmektedir. Bu istekleri `backend` servislerine doğru aktarmak için `frontend` servislerinde doğru tanımların yapılması gerekmektedir.
 
 HAProxy konfigürasyon dosyasını aşağıdaki gibi güncelliyoruz.
 
 ```shell
-> sudo su
-$ vi /etc/haproxy/haproxy.conf
+> sudo vi /etc/haproxy/haproxy.conf
 ```
 
 ```nestedtext
@@ -50,9 +48,9 @@ backend be_default
 
 Bu ayar sayesinde artık 443 portundan gelen SSL isteklerini istediğiniz `backend` servisine aktarabilirsiniz. Konfigürasyonu doğrulamadan önce sertifikanın belirttiğiniz yerde olmasını sağlamamız gerekiyor. HAProxy hem public hem de private key'in aynı dosyada peş peşe olmasını istiyor. Bunun için aşağıdaki komutları çalıştırabilirsiniz.
 
+Ben bu işlemleri yaparken hep elimde pfx uzantılı sertifika dosyası oluyordu. Eğer sizin elinizde farklı formatlarda varsa mutlaka pem formatına ayarlamanız gerekecek.
+
 ```shell
-> pwd
-/home/devops
 > sudo su
 $ openssl pkcs12 -in certificate.pfx -nocerts -out certificate_priv.pem -nodes
 $ openssl pkcs12 -in certificate.pfx -nokeys -out certificate_public.pem -nodes
@@ -65,7 +63,6 @@ Bu ayar uygulanmadan önce doğruluğu kontrol edilmeli ve sonrasında servisler
 Eğer cluster bir yapınız varsa iki makinede de aynı geliştirmenin yapılması gerekmektedir.
 
 ```shell
->
-$ /opt/haproxy/sbin/haproxy -c -V -f /etc/haproxy/haproxy.conf
-$ systemctl reload haproxy
+sudo /opt/haproxy/sbin/haproxy -c -V -f /etc/haproxy/haproxy.conf
+sudo systemctl reload haproxy
 ```

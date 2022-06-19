@@ -33,7 +33,7 @@ Hem kendimin hem de okumak isteyenlerin daha rahat bulabilmesi için yazıları 
 
 ## Linux
 
-1. [Mint Geliştirme Ortamı](/kendime-notlar/lab/linux/mint-gelistirme-ortami.html "Linux - Mint Geliştirme Ortamı")
+1. [Mint Geliştirme Ortamı](./kendime-notlar/lab/linux/mint-gelistirme-ortami.html "Linux - Mint Geliştirme Ortamı")
 
 ## Referanslar
 

@@ -16,7 +16,7 @@ Geliştirmelerimin çoğu artık cross platform olarak çalışıyor. Diğer ins
 
 Linux Mint, Ubuntu'yu baz alan bir dağıtım ve Ubuntu için çalışan çoğu paketi de çalıştırabiliyor. Ama tam bir geliştirme ortamı olabilmesi için bazı ufak eklemeler ve çıkartmalar yapmam gerekiyor.
 
-Linux Mint, seçimi yaparken basit, hafif ve verimli olması için **Xfce Edition** sürümünü kullanıyorum. Diğer sürümlerinde daha görsel olarak güzel ve eğlenceli arayüzler olmasına karşın ben olabildiğinde az yer kaplayan bir sürüm olmasını tercih ediyorum. Bu arada kurulum yaptığım sürüm 20.03 sürümü.
+Linux Mint, seçimi yaparken basit, hafif ve verimli olması için **Xfce Edition** sürümünü kullanıyorumdum. Diğer sürümlerinde daha görsel olarak güzel ve eğlenceli arayüzler olmasına karşın ben olabildiğinde az yer kaplayan bir sürüm olmasını tercih ediyorumdum. Ancak bir senaryoda Palo Alto'nun Global Protect ürünü için **Xfce Edition**'i ile sorun yaşadım. Bu senaryoda **Cinnamon Edition** sorunsuz çalışma sağladı ve kontrol ettiğimde yer kaplamasının o kadar da çok olmadığını görünce **Cinnamon Edition**'ı ile devam ediyor olacağım.
 
 ## Çıkartmalar
 

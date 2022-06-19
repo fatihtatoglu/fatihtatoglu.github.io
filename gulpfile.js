@@ -146,7 +146,7 @@ function generateSiteMap() {
         "_kendime-notlar_lab_haproxy_kurulum":"2022-06-12T14:07:13Z",
         "_kendime-notlar_lab_haproxy_ssl-sertifikasi-ekleme":"2022-06-12T19:03:27Z",
         "_kendime-notlar_lab_haproxy_varsayilan-yonlendirme":"2022-06-12T20:25:53Z",
-        "_kendime-notlar_lab_linux_mint-gelistirme-ortami":"2022-06-12T22:00:42Z",
+        "_kendime-notlar_lab_linux_mint-gelistirme-ortami":"2022-06-19T23:35:00Z",
         "_kendime-notlar_lab_windows_ortam-kurulumu":"2022-06-12T20:43:39Z",
         "_kendime-notlar_lab_windows_sanal-makine-olusturma":"2022-06-12T21:28:33Z"
     };

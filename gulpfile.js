@@ -148,7 +148,10 @@ function generateSiteMap() {
         "_kendime-notlar_lab_haproxy_varsayilan-yonlendirme":"2022-06-12T20:25:53Z",
         "_kendime-notlar_lab_linux_mint-gelistirme-ortami":"2022-06-19T23:35:00Z",
         "_kendime-notlar_lab_windows_ortam-kurulumu":"2022-06-12T20:43:39Z",
-        "_kendime-notlar_lab_windows_sanal-makine-olusturma":"2022-06-12T21:28:33Z"
+        "_kendime-notlar_lab_windows_sanal-makine-olusturma":"2022-06-12T21:28:33Z",
+        "_kocluk_sosyal-aylaklik":"2022-06-23T09:22:56Z",
+        "_kocluk_takim-dongusu":"2022-06-23T12:40:14Z",
+        "_kocluk_takim-mi-grup-mu":"2022-06-23T12:00:33Z"
     };
 
     let getLastMod = function (file) {

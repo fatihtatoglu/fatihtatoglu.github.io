@@ -16,24 +16,14 @@ Geliştirmelerimin çoğu artık cross platform olarak çalışıyor. Diğer ins
 
 Linux Mint, Ubuntu'yu baz alan bir dağıtım ve Ubuntu için çalışan çoğu paketi de çalıştırabiliyor. Ama tam bir geliştirme ortamı olabilmesi için bazı ufak eklemeler ve çıkartmalar yapmam gerekiyor.
 
-Linux Mint, seçimi yaparken basit, hafif ve verimli olması için **Xfce Edition** sürümünü kullanıyorumdum. Diğer sürümlerinde daha görsel olarak güzel ve eğlenceli arayüzler olmasına karşın ben olabildiğinde az yer kaplayan bir sürüm olmasını tercih ediyorumdum. Ancak bir senaryoda Palo Alto'nun Global Protect ürünü için **Xfce Edition**'i ile sorun yaşadım. Bu senaryoda **Cinnamon Edition** sorunsuz çalışma sağladı ve kontrol ettiğimde yer kaplamasının o kadar da çok olmadığını görünce **Cinnamon Edition**'ı ile devam ediyor olacağım.
+Linux Mint, seçimi yaparken basit, hafif ve verimli olması için **Xfce Edition** sürümünü kullanıyorumdum. Diğer sürümlerinde daha görsel olarak güzel ve eğlenceli arayüzler olmasına karşın ben olabildiğinde az yer kaplayan bir sürüm olmasını tercih ediyorumdum.
 
 ## Çıkartmalar
 
 Linux Mint, hafif bir dağıtım olmasına rağmen içinde benim geliştirme sırasında kullanmayacağım bazı yüklemelerde bulunmakta. Öncelikle bunlardan kurtuluyor olacağım.
 
 ```shell
-> sudo apt remove --purge libreoffice* -y
-> sudo apt remove --purge thunderbird -y
-> sudo apt remove --purge rhythmbox -y 
-> sudo apt remove --purge transmission-gtk -y 
-> sudo apt remove --purge simple-scan -y
-> sudo apt remove --purge timeshift -y
-> sudo apt remove --purge vim-tiny -y
-> sudo apt remove --purge hplip -y
-> sudo apt remove --purge youtube-dl -y
-> sudo apt remove --purge hypnotix -y
-> sudo apt remove --purge warpinator -y
+> sudo apt remove --purge -y libreoffice* thunderbird rhythmbox transmission-gtk simple-scan timeshift vim-tiny hplip youtube-dl hypnotix warpinator
 > sudo apt clean
 > sudo apt autoremove
 ```
@@ -90,9 +80,24 @@ Dosyayı açtıktan sonra **`GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"`** olan s
 
 Sonrasında yukarıdaki komutları çalıştırarak sanal makineyi restart ediyoruz ve ekran artık kocaman oluyor.
 
+## VPN Ayarlamaları
+
+Geliştirme yaparken çalıştığım şirketin ortamlarına bağlanmak ya da güvenlik gereği bir jumpserver üzerinden bağlanmam gerektiğinde VPN yapmam kaçınılmaz hale geliyor. Linux Mint **Xfce Edition** sürümü ile GlobalProtect VPN servisine bağlanmak sorun olabiliyor. Bunun için aşağıdaki adımların yapılması yeterli olacaktır.
+
+```shell
+> sudo apt install build-essential 
+> sudo apt install qtcreator
+> sudo apt install qt5-default
+> sudo add-apt-repository ppa:yuezk/globalprotect-openconnect
+> sudo apt update
+> sudo apt install -y globalprotect-openconnect
+```
+
+Yukarıdaki komutlar çalıştırıldıktan sonra eğer cli üzerinden çalıştırmak ve loglarını görmek isterseniz `gpclient` komutu kullanılabilir. Cli kapandığında bağlantı kesilecektir. Bağlantı hep açık kalsın istiyorsanız makine restart edildikten sonra başlat menüsünden **GlobalProtect** yazarak uygulamaya ulaşılabilir.
+
 ## Kurulumlar
 
-İşimize yaramayacak yazılımlardan kurtulduk, ayarlamalarımızı yaptık ve en son ekranımızı da ayarladıktan sonra sadece geliştirme ortamının kurulması işlemi kaldı. Bu bölümde parça parça benim kullandığım araçların kurulumları ile ilgili komutları paylaşacağım.
+İşimize yaramayacak yazılımlardan kurtulduk, ayarlamalarımızı yaptık, gerekiyorsa VPN'i ayarladık ve en son ekranımızı da ayarladıktan sonra sadece geliştirme ortamının kurulması işlemi kaldı. Bu bölümde parça parça benim kullandığım araçların kurulumları ile ilgili komutları paylaşacağım.
 
 ### VSCode
 

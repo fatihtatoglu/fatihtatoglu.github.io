@@ -117,7 +117,7 @@ code.hljs {
 .hljs-addition,
 .hljs-title.class_.inherited__,
 .hljs-string {
-    color: rgba(169, 0, 0, 1);
+    color: rgb(254, 84, 84,1)
 }
 
 /* base0C - Support, Regular Expressions, Escape Characters, Markup Quotes */

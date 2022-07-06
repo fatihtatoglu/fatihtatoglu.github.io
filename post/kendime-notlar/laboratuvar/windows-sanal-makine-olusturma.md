@@ -43,8 +43,8 @@ $vmGroup = "fatihtatoglu"
 $vmName = "fth-linux"
 $workspacePath = "C:\\workspace\\servers\\"
 
-$ramSize  = 4GB 
-$diskSize = 100GB
+$ramSize  = 2GB 
+$diskSize = 50GB
 
 
 New-VHD -Path "$workspacePath\\$vmGroup\\$vmName\\$vmName.vhdx" -SizeBytes $diskSize -Fixed -BlockSizeBytes 1MB

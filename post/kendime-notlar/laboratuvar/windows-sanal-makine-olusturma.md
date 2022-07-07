@@ -54,6 +54,7 @@ New-VM -Name $vmName -MemoryStartupBytes $ramSize -BootDevice VHD -VHDPath "$wor
 Set-VMFirmware $vmName -EnableSecureBoot Off
 Set-VMProcessor -VMName $vmName -Count 2
 Set-VM -Name $vmName -AutomaticCheckpointsEnabled $false -CheckpointType Disabled
+Set-VMMemory -VMName $vmName -DynamicMemoryEnabled $true -MinimumBytes ($ramSize / 16) -StartupBytes ($ramSize / 8) -MaximumBytes $ramSize
 
 Add-VMDvdDrive -VMName $vmName -Path "C:\\workspace\\isos\\linuxmint-20.3-xfce-64bit.iso"
 

@@ -3,7 +3,7 @@ layout: post
 published: true
 author: Fatih Tatoğlu
 date: 2022-06-12T21:28:33Z
-permalink: ./kendime-notlar/lab/windows/sanal-makine-olusturma.html
+permalink: ./lab/windows/sanal-makine-olusturma.html
 language: tr
 
 description: Sanal makine oluşturmak için UI üzerinden çok fazla tıklama yapmam gerekiyor. Bunun yerine bu işlemi powershell ile yapmak daha kolay oluyor.

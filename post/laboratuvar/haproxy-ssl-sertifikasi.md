@@ -3,7 +3,7 @@ layout: post
 published: true
 author: Fatih Tatoğlu
 date: 2022-06-12T19:03:27Z
-permalink: ./kendime-notlar/lab/haproxy/ssl-sertifikasi-ekleme.html
+permalink: ./lab/haproxy/ssl-sertifikasi-ekleme.html
 language: tr
 
 description: HAProxy kendisine gelen SSL trafiğini de yönetebilmektedir. Bunun için ilk adım sertifika ayarlaması.

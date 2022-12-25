@@ -8,7 +8,7 @@ language: tr
 
 description: Fatih Tatoğlu kimdir ve hayatındaki önemli noktalar nelerdir.
 tags: hakkımda fatih_tatoglu
-order: 5
+order: 6
 ---
 
 # Hakkımda

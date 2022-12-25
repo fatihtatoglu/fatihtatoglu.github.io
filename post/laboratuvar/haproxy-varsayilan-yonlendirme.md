@@ -3,7 +3,7 @@ layout: post
 published: true
 author: Fatih Tatoğlu
 date: 2022-06-12T20:25:53Z
-permalink: ./kendime-notlar/lab/haproxy/varsayilan-yonlendirme.html
+permalink: ./lab/haproxy/varsayilan-yonlendirme.html
 language: tr
 
 description: HAProxy yönlendirmeyi kurallara göre yapmaktadır. Ancak bazen kurallara uymayan isteklerde geldiğinde bunların da cevaplanması gerekmektedir.

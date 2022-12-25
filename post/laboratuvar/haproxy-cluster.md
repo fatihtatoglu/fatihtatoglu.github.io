@@ -3,7 +3,7 @@ layout: post
 published: true
 author: Fatih Tatoğlu
 date: 2022-06-12T18:41:00Z
-permalink: ./kendime-notlar/lab/haproxy/cluster.html
+permalink: ./lab/haproxy/cluster.html
 language: tr
 
 description: HAProxy'nin yüksek erişilebilir yapısının kurulması ve test edilmesi.

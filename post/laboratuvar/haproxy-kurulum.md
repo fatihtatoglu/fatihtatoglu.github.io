@@ -3,7 +3,7 @@ layout: post
 published: true
 author: Fatih Tatoğlu
 date: 2022-06-12T14:07:13Z
-permalink: ./kendime-notlar/lab/haproxy/kurulum.html
+permalink: ./lab/haproxy/kurulum.html
 language: tr
 
 description: HAProxy'nin kaynak kodu üzerinden kurulması ve basit ayarlarının yapılması.

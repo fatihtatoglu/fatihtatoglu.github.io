@@ -3,7 +3,7 @@ layout: post
 published: true
 author: Fatih Tatoğlu
 date: 2022-08-07T17:54:27Z
-permalink: ./kendime-notlar/lab/linux/otomatik-guncelleme.html
+permalink: ./lab/linux/otomatik-guncelleme.html
 language: tr
 
 description: Ubuntu veya Mint makinemi her seferinde güncellemekle uğraşmak yerine bu işlemi otomatik olarak yaptırıyorum.

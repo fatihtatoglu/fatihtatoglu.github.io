@@ -3,7 +3,7 @@ layout: post
 published: true
 author: Fatih Tatoğlu
 date: 2022-06-12T20:43:39Z
-permalink: ./kendime-notlar/lab/windows/ortam-kurulumu.html
+permalink: ./lab/windows/ortam-kurulumu.html
 language: tr
 
 description: Bütün baskılara rağmen hala Windows makine kullanıyorum. Bu makinede istediklerimi yapmak için ön hazırlık yapmam gerekiyor.

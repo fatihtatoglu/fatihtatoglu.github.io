@@ -3,7 +3,7 @@ layout: post
 published: true
 author: Fatih Tatoğlu
 date: 2022-06-12T22:00:42Z
-permalink: ./kendime-notlar/lab/linux/mint-gelistirme-ortami.html
+permalink: ./lab/linux/mint-gelistirme-ortami.html
 language: tr
 
 description: Geliştirmelerimin çoğu artık cross platform olduğu için linux üzerinde geliştirme yapmayı tercih ediyorum. Mint linux ile geliştirmelerime devam ediyorum.

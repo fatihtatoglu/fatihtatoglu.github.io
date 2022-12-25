@@ -1,3 +1,4 @@
+const defaultThemeName = "turboc";
 const defaultThemeColor = "aqua";
 const defaultLanguage = "tr";
 
@@ -62,17 +63,21 @@ function bindMenu() {
 
 function loadSiteSettings() {
     var $html = document.getElementsByTagName("html")[0];
-    var themeColor = window.localStorage.getItem("site-theme");
+    var themeName = window.localStorage.getItem("theme-name");
+    var themeColor = window.localStorage.getItem("theme-color");
     var language = window.localStorage.getItem("site-language");
 
     $html.className = "";
 
-    if (themeColor) {
+    if (themeName && themeColor) {
+        $html.classList.add(themeName);
         $html.classList.add(themeColor);
     }
     else {
+        $html.classList.add(defaultThemeName);
         $html.classList.add(defaultThemeColor);
-        window.localStorage.setItem("site-theme", defaultThemeColor);
+        window.localStorage.setItem("theme-name", defaultThemeName);
+        window.localStorage.setItem("theme-color", defaultThemeColor);
     }
 
     if (language) {
@@ -109,7 +114,8 @@ function renderThemeDialog() {
         var selectedElements = dialog.querySelectorAll("input[type=radio]:checked");
         selectedElements.forEach(function (item) {
             if (item.name === "color") {
-                window.localStorage.setItem("site-theme", item.value);
+                window.localStorage.setItem("theme-name", item.getAttribute("data-theme"));
+                window.localStorage.setItem("theme-color", item.value);
             }
             else if (item.name === "lang") {
                 window.localStorage.setItem("site-language", item.value);

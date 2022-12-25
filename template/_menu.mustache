@@ -8,7 +8,7 @@
     {{/disabled}}
     {{^disabled}}
         <li>
-            <a href="{{& url}}">{{title}}</a>
+            <a {{#element-id}}id="{{.}}" {{/element-id}} href="{{& url}}">{{title}}</a>
     {{#hasChildren}}
             <div class="sub-menu">
                 <ul>

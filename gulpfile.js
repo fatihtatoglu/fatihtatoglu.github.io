@@ -141,18 +141,18 @@ function generateSiteMap() {
         "_kendime-notlar_swot-analizi": "2022-05-24T15:34:54Z",
         "_kocluk_bireysel-swot-analizi": "2022-05-28T15:23:33Z",
         "_kocluk_bir-yoneticinin-yolu": "2022-05-28T16:47:14Z",
-        "_kendime-notlar_lab_index":"2022-06-12T13:30:35Z",
-        "_kendime-notlar_lab_haproxy_cluster":"2022-06-12T18:41:00Z",
-        "_kendime-notlar_lab_haproxy_kurulum":"2022-06-12T14:07:13Z",
-        "_kendime-notlar_lab_haproxy_ssl-sertifikasi-ekleme":"2022-06-12T19:03:27Z",
-        "_kendime-notlar_lab_haproxy_varsayilan-yonlendirme":"2022-06-12T20:25:53Z",
-        "_kendime-notlar_lab_linux_mint-gelistirme-ortami":"2022-07-05T13:55:00Z",
-        "_kendime-notlar_lab_windows_ortam-kurulumu":"2022-06-12T20:43:39Z",
-        "_kendime-notlar_lab_windows_sanal-makine-olusturma":"2022-06-12T21:28:33Z",
+        "_lab_index":"2022-06-12T13:30:35Z",
+        "_lab_haproxy_cluster":"2022-06-12T18:41:00Z",
+        "_lab_haproxy_kurulum":"2022-06-12T14:07:13Z",
+        "_lab_haproxy_ssl-sertifikasi-ekleme":"2022-06-12T19:03:27Z",
+        "_lab_haproxy_varsayilan-yonlendirme":"2022-06-12T20:25:53Z",
+        "_lab_linux_mint-gelistirme-ortami":"2022-07-05T13:55:00Z",
+        "_lab_windows_ortam-kurulumu":"2022-06-12T20:43:39Z",
+        "_lab_windows_sanal-makine-olusturma":"2022-06-12T21:28:33Z",
         "_kocluk_sosyal-aylaklik":"2022-06-23T09:22:56Z",
         "_kocluk_takim-dongusu":"2022-06-23T12:40:14Z",
         "_kocluk_takim-mi-grup-mu":"2022-06-23T12:00:33Z",
-        "_kendime-notlar_lab_linux_otomatik-guncelleme":"2022-08-07T17:54:27Z"
+        "_lab_linux_otomatik-guncelleme":"2022-08-07T17:54:27Z"
     };
 
     let getLastMod = function (file) {

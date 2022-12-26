@@ -13,18 +13,21 @@ order: 6
 
 # Hakkımda
 
-Merhaba ben Fatih Tatoğlu. Meraklı bir geliştiriciyim. Hayatın bazı kilometre taşlarını geçerek ilerlediğini düşünüyorum. Sadece kendi kilometre taşlarımızı görmemiz gerekiyor.
+![Fatih Tatoğlu](../../image/about_me.jpg)
 
-Benim kilometre taşlarım;
+Merhaba ben Fatih. Her şey benim merakımla başladı. Çocukken, "Bu nasıl çalışır?", "Neden yağmur yağar?", vb soruları sorardım. Bu sorular ve cevaplarını bulmaya çalışmak benim hayatımı şekillendirdi. Yeni şeyler öğrenmeyi ve meraklı sorular sormayı seviyorum.
+
+Benim hakkımda bilinmesi gereken kısa bilgiler aşağıdadır.
 
 - İstanbul, Türkiye de yaşıyorum.
+- Haydarpaşa Anadolu Teknik Lisesi Makina bölümünden mezun oldum.
 - Bahçeşehir Üniversitesi Bilgisayar Mühendisliğinden mezun oldum.
 - Programlamaya hobi olarak başladım, ancak ilk stajımdan sonra işim haline döndü.
-- Harika bir eşim var.
-- Tüplü dalışa gitmeyi ve meraklı sorular sormayı seviyorum.
+- Hayatımdaki güzel şeylerin çoğunda benim yanımda olan harika bir eşim var.
+- Yüzme ve tüplü dalış ile ilgilendim.
 
 Benimle iletişime geçmek için, [Linkedin](https://www.linkedin.com/in/fatihtatoglu/ "Fatih Tatoğlu | LinkedIn") üzerinden mesaj atabilirsiniz. [GitHub](https://github.com/fatihtatoglu/ "fatihtatoglu (Fatih Tatoğlu)") hesabım üzerinden projelerimi takip edebilirsiniz.
 
-## Neden geliştiriciyim?
+## Referanslar
 
-İş hayatımda birçok yazılım ve süreç geliştirdim. Yazılım geliştirirken, ekip üyelerini ve insanları da geliştirdiğimi fark ettim. Bunun yanında kendimi de geliştirdim. Yani kendime "Ben bir geliştiriciyim" diyebileceğimi düşünüyorum.
+- [1]: Fotoğraf [Erkan Balk](https://www.facebook.com/erkan.balk "Erkan Balk | Facebook") tarafından 2 Ocak 2015 tarihinde Eskişehir'de çekilmiştir.

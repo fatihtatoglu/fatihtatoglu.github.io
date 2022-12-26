@@ -15,9 +15,9 @@ order: 1
 
 ![Fatih Tatoğlu](../../image/about_me.jpg)
 
-Merhaba ben Fatih. Her şey benim merakımla başladı. Çocukken, "Bu nasıl çalışır?", "Neden yağmur yağar?", vb soruları sorardım. Bu sorular ve cevaplarını bulmaya çalışmak benim hayatımı şekillendirdi. Yeni şeyler öğrenmeyi ve meraklı sorular sormayı seviyorum.
+Merhaba ben Fatih. Bu sitede, deneyimlerimi, çekincelerimi, projelerimi ve sorularımı paylaşmak istiyorum. Yazılacak çok fazla konu var. Ancak, yazarken kafamdaki düşünce yolunu kullanmayı tercih ediyorum. Yani yazılarım bazen kaotik, bazen basit ve bazen de ampirik olacaktır.
 
-Bu sitede, deneyimlerimi, çekincelerimi, projelerimi ve sorularımı paylaşmak istiyorum. Yazılacak çok fazla konu var. Ancak, yazarken kafamdaki düşünce yolunu kullanmayı tercih ediyorum. Yani yazılarım bazen kaotik, bazen basit ve bazen de ampirik olacaktır...
+Sitenin teması biraz retro gelebilir ama "-" menüsü üzerinden alternatif temaları seçerek kendinize göre özelleştirme yapabilirsiniz.
 
 Umarım okurken eğlenir ve yeni şeyler öğrenirsiniz.
 

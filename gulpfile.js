@@ -126,8 +126,8 @@ function generateSiteMap() {
     };
 
     let dates = {
-        "_hakkimda": "2022-05-11",
-        "_index": "2022-03-14",
+        "_hakkimda": "2022-12-26",
+        "_index": "2022-12-26",
         "_kendime-notlar_blog-yazmak": "2022-03-20",
         "_kendime-notlar_index": "2022-04-08",
         "_kocluk_bilmemenin-gucu": "2022-05-21",

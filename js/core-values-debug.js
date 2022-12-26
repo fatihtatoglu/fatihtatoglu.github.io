@@ -172,7 +172,7 @@ values.push(_createValueItem("strength", "Strength", "Güç - Kuvvet"));
 values.push(_createValueItem("structure", "Structure", "Bütün Olarak<br>Düşünmek"));
 values.push(_createValueItem("success", "Success", "Başarı"));
 values.push(_createValueItem("support", "Support", "Destek"));
-values.push(_createValueItem("teamwork", "Teamwork", "Takım Çalışmaso"));
+values.push(_createValueItem("teamwork", "Teamwork", "Takım Çalışması"));
 values.push(_createValueItem("temperance", "Temperance", "Ölçülülük<br>Ilımlı Olma"));
 values.push(_createValueItem("thankfulness", "Thankfulness", "Şükran - Minnet"));
 values.push(_createValueItem("thoroughness", "Thoroughness", "Titizlik<br>Tam Olma"));

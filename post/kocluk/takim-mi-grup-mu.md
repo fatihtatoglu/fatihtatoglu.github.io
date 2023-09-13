@@ -6,12 +6,12 @@ date: 2022-06-23T12:00:33Z
 permalink: ./kocluk/takim-mi-grup-mu.html
 language: tr
 
+title: Takım mı? Grup mu?
+header: Takım mı? Grup mu?
 description: Takım mı? Grup mu? Bu soruyu çoğu kişiye sorduğum zaman aynı şey oldukları cevabını aldım. Ancak ikisi arasında bazı farklar var.
 tags: takım grup amaç hedef sorumluluk iletişim etki çalışma_tarzı
 category: coaching
 ---
-
-# Takım mı? Grup mu?
 
 ![Takım - Grup](../../image/takim-grup.jpg "Takım - Grup")
 

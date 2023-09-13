@@ -6,12 +6,12 @@ date: 2022-04-07T00:00:00Z
 permalink: ./projeler/index.html
 language: tr
 
+title: Projeler
+header: Projeler
 description: Geliştirdiğim ve destek verdiğim projelerle ilgili yazılarımın olduğu bölümün giriş yazısı.
 tags: projeler portfolio
 order: 3
 ---
-
-# Projeler
 
 ![Projeler](../../image/projects.jpg)
 

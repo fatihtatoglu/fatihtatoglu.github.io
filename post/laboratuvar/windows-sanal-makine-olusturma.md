@@ -6,11 +6,11 @@ date: 2022-06-12T21:28:33Z
 permalink: ./lab/windows/sanal-makine-olusturma.html
 language: tr
 
+title: Windows - Sanal Makine Oluşturma
+header: Windows - Sanal Makine Oluşturma
 description: Sanal makine oluşturmak için UI üzerinden çok fazla tıklama yapmam gerekiyor. Bunun yerine bu işlemi powershell ile yapmak daha kolay oluyor.
 tags: powershell hyper-v sanal_makine
 ---
-
-# Windows - Sanal Makine Oluşturma
 
 Sanal makine oluşturmak için UI üzerinden çok fazla tıklama yapmam gerekiyor. Bunun yerine bu işlemi powershell ile yapmak daha kolay oluyor. Bu notumda powershell ile sanal makine kurmayı anlatmaya çalışacağım.
 

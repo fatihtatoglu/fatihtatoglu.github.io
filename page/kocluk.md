@@ -6,12 +6,12 @@ date: 2022-04-07T00:00:00Z
 permalink: ./kocluk/index.html
 language: tr
 
+title: Koçluk
+header: Koçluk
 description: Koçluk, iş hayatı, takım çalışması, yönetim ve benzeri konularda yazdığım yazıların olduğu bölümün ana sayfası.
 tags: koçluk psikoloji sosyoloji iş_hayatı takım_çalışması yöneticilik
 order: 2
 ---
-
-# Koçluk
 
 ![Koçluk](../../image/coaching.jpg)
 

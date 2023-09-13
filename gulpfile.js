@@ -90,10 +90,10 @@ function generate() {
     return enginær.generate()
 
         // replace heading for theme
-        .pipe(replace("<h1>", "<header><h1>"))
-        .pipe(replace("</h1>", "</h1><button>#</button></header>"))
+        //.pipe(replace("<h1>", "<header><h1>"))
+        //.pipe(replace("</h1>", "</h1><button>#</button></header>"))
 
-        // replace fo4 image path
+        // replace for image path
         .pipe(replace(/\.\.\/\.\.\/image/g, "image"))
         .pipe(replace(/\.\.\/image/g, "image"))
 

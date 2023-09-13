@@ -6,11 +6,11 @@ date: 2022-06-12T22:00:42Z
 permalink: ./lab/linux/mint-gelistirme-ortami.html
 language: tr
 
+title: Linux - Mint Geliştirme Ortamı
+header: Linux - Mint Geliştirme Ortamı
 description: Geliştirmelerimin çoğu artık cross platform olduğu için linux üzerinde geliştirme yapmayı tercih ediyorum. Mint linux ile geliştirmelerime devam ediyorum.
 tags: mint ubuntu linux_mint geliştirme
 ---
-
-# Linux - Mint Geliştirme Ortamı
 
 Geliştirmelerimin çoğu artık cross platform olarak çalışıyor. Diğer insanların aksine MacOS seçmediğim için Linux üzerinde geliştirmelerime devam ediyorum. Odağım geliştirme olduğu için çok büyük bir dağıtım seçmek yerine daha kolay alışabileceğim bir dağıtım tercih ettim.
 

@@ -6,12 +6,12 @@ date: 2022-06-23T09:22:56Z
 permalink: ./kocluk/sosyal-aylaklik.html
 language: tr
 
+title: Sosyal Aylaklık
+header: Sosyal Aylaklık
 description: Çalışırken arada bir kaybolmayı denediniz mi ya da bir takım oyuncusunun yapması gereken iş için birileri zaten yapar dediğini duydunuz mu?
 tags: sosyal_aylaklık social_loafing aylaklık max_ringelmann
 category: coaching
 ---
-
-# Sosyal Aylaklık
 
 Çalışırken arada bir kaybolmayı denediniz mi ya da bir takım oyuncusunun yapması gereken iş için birileri zaten yapar dediğini duydunuz mu? Eğer cevabınız evet ise, siz ve o takımın oyuncuları birer **sosyal aylak** olarak isimlendirilebilir.
 

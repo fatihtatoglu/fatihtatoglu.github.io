@@ -6,12 +6,12 @@ date: 2022-06-23T12:40:14Z
 permalink: ./kocluk/takim-dongusu.html
 language: tr
 
+title: Takım Döngüsü
+header: Takım Döngüsü
 description: Bir takımın kurulması tam bir döngü ve belli adımlardan oluşuyor. Bu adımların neler olduğuna bir bakalım.
 tags: takım dongu Bruce_Wayne_Tuckman Mary_Ann_Jensen forming storming norming performing adjourning
 category: coaching
 ---
-
-# Takım Döngüsü
 
 ![Takım](../../image/takim.jpg "Takım")
 

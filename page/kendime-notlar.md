@@ -6,12 +6,12 @@ date: 2022-04-08T00:00:00Z
 permalink: ./kendime-notlar/index.html
 language: tr
 
+title: Kendime Notlar
+header: Kendime Notlar
 description: Kendime not aldığım konular ve püf noktaları.
 tags: kendime_notlar kişisel_notlar notlar
 order: 4
 ---
-
-# Kendime Notlar
 
 ![Notlar](../../image/notes.jpg)
 

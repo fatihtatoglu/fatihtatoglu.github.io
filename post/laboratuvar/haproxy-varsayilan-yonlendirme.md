@@ -6,11 +6,11 @@ date: 2022-06-12T20:25:53Z
 permalink: ./lab/haproxy/varsayilan-yonlendirme.html
 language: tr
 
+title: HAProxy - Varsayılan Yönlendirme
+header: HAProxy - Varsayılan Yönlendirme
 description: HAProxy yönlendirmeyi kurallara göre yapmaktadır. Ancak bazen kurallara uymayan isteklerde geldiğinde bunların da cevaplanması gerekmektedir.
 tags: haproxy redirect static_content statik_icerik
 ---
-
-# HAProxy - Varsayılan Yönlendirme
 
 HAProxy gelen istekleri ayarlanan filtrelerden geçirerek ilgili `backend` servislerine yönlendirmektedir. Ancak eşleşme olmadığı zaman isteğin sonlanması için varsayılan bir cevap dönülmesi çok uygulanan bir yöntemdir. Bu yöntemi statik dosyalar için de kullanabiliriz. Özellikle arama motorlarının taramalarını bu şekilde sisteme yük getirmeden yapmasını sağlayabiliriz.
 

@@ -6,11 +6,11 @@ date: 2022-06-12T19:03:27Z
 permalink: ./lab/haproxy/ssl-sertifikasi-ekleme.html
 language: tr
 
+title: HAProxy - SSL Sertifikası Ekleme
+header: HAProxy - SSL Sertifikası Ekleme
 description: HAProxy kendisine gelen SSL trafiğini de yönetebilmektedir. Bunun için ilk adım sertifika ayarlaması.
 tags: haproxy ssl tls https sertifika
 ---
-
-# HAProxy - SSL Sertifikası Ekleme
 
 HAProxy kendisine gelen SSL isteklerini de karşılayabilmektedir. Bu istekleri `backend` servislerine doğru aktarmak için `frontend` servislerinde doğru tanımların yapılması gerekmektedir.
 

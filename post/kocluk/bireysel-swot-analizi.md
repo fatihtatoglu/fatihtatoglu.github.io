@@ -6,12 +6,12 @@ date: 2022-05-28T15:23:33Z
 permalink: ./kocluk/bireysel-swot-analizi.html
 language: tr
 
+title: Bireysel SWOT Analizi
+header: Bireysel SWOT Analizi
 description: SWOT analizi sadece şirketlere değil kişilere de uygulanabilir. Genel uygulamanın üzerine bazı ek çalışmalarda eklemeye çalıştım.
 tags: swot_analizi swot güçlü_yanlar zayıf_yanlar fırsatlar tehditler
 category: coaching
 ---
-
-# Bireysel SWOT Analizi
 
 [SWOT analizi](./kendime-notlar/swot-analizi.html "SWOT Analizi")ni daha öncesinde anlatmaya çalıştım. Şimdi bireysel olarak nasıl uygulandığını anlatmaya çalışacağım.
 

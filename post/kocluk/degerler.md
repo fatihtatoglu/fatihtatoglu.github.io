@@ -6,12 +6,12 @@ date: 2022-05-16T18:30:00Z
 permalink: ./kocluk/degerler.html
 language: tr
 
+title: Değerler
+header: Değerler
 description: Karar verirken veya hareket ederken bizi ne tetikliyor, durduruyor ya da harekete geçiriyor?
 tags: kisisel_degerler kararlar
 category: coaching
 ---
-
-# Değerler
 
 ![Değerler](../../image/degerler-saglik-kisi-kalp.jpg)
 

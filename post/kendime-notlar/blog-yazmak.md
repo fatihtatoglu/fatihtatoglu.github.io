@@ -6,12 +6,12 @@ date: 2022-03-20T00:00:00.000Z
 permalink: ./kendime-notlar/blog-yazmak.html
 language: tr
 
+title: Blog Yazmak
+header: Blog Yazmak
 description: Blog yazmak ve yazarken karşılaştığım zorlukları anlatmaya çalıştım. Motivasyon kaynağım olacak bir yazı.
 tags: blog_yazmak selçuk_erdem
 category: notes
 ---
-
-# Blog Yazmak
 
 [![Be Agile](../../image/be-agile-cartoon.jpg "Be Agile")](https://www.instagram.com/p/CH2zB56hMWV)
 

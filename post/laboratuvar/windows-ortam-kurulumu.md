@@ -6,11 +6,11 @@ date: 2022-06-12T20:43:39Z
 permalink: ./lab/windows/ortam-kurulumu.html
 language: tr
 
+title: Windows - Ortam Kurulumu
+header: Windows - Ortam Kurulumu
 description: Bütün baskılara rağmen hala Windows makine kullanıyorum. Bu makinede istediklerimi yapmak için ön hazırlık yapmam gerekiyor.
 tags: windows choco chocolatey powershell hyper-v ortam_kurulumu
 ---
-
-# Windows - Ortam Kurulumu
 
 Arkadaşlarımın bütün baskılarına rağmen hala Windows makine kullanıyorum. Bu makinede istediklerimi yapmak için ön hazırlık yapmam gerekiyor. Bu notumda ana windows makinemin geliştirme ortamını nasıl hazırlıyorum onu anlatmaya çalışacağım.
 

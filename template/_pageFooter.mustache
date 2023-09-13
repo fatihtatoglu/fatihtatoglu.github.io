@@ -1,9 +1,16 @@
-        </article>
-    </main>
+  </main>
     <footer>
-    <span class="credits">Fatih Tatoğlu &copy; 1985</span>
+      &copy; 1985 - {{#isTurkish}}<a href="about-me.html">{{/isTurkish}}{{#isEnglish}}<a href="en/about-me.html">{{/isEnglish}}{{author}}</a>
     </footer>
-    {{> _themeDialog}}
+    
+    <script src="{{& base-url}}js/main.js"></script>
+    {{^isLocal}}
+    <script src="{{& base-url}}js/analytics.js"></script>
+    {{/isLocal}}
+    {{#jsmodule}}
+    <script src="{{& base-url}}js/{{jsmodule}}.js" async></script>
+    {{/jsmodule}}
+    
 </body>
 
 </html>

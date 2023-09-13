@@ -6,14 +6,14 @@ date: 2022-04-08T00:00:00.000Z
 permalink: ./projeler/gulp-html-link-duzenleyicisi.html
 language: tr
 
+title: Gulp HTML Link Düzenleyicisi
+header: Gulp HTML Link Düzenleyicisi
 description: Kendi ihtiyacım için geliştirdiğim gulp eklentisi.
 tags: enginaer gulp mocha chai plugin eklenti
 category: projects
 repo_url: https://github.com/fatihtatoglu/gulp-html-anchor-rewriter
 repo_type: GitHub
 ---
-
-# Gulp HTML Link Düzenleyicisi
 
 Enginaer'i geliştirdikten sonra SEO'nun eksik olduğunu fark ettim. Bu eklenti ile HTML bağlantı elemanlarının **rel** ve **target** attributelarını düzenliyorum.
 

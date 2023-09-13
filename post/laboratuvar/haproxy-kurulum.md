@@ -6,11 +6,11 @@ date: 2022-06-12T14:07:13Z
 permalink: ./lab/haproxy/kurulum.html
 language: tr
 
+title: HAProxy - Kurulum
+header: HAProxy - Kurulum
 description: HAProxy'nin kaynak kodu üzerinden kurulması ve basit ayarlarının yapılması.
 tags: haproxy centos lua kurulum install
 ---
-
-# HAProxy - Kurulum
 
 Bu notumda CentOS 7.X Minimal üzerine HAProxy kurma notlarımı bulabilirsiniz. Kurulum kaynak kodlar üzerinden yapılacak şekildedir.
 

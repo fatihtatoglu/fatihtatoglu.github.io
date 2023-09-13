@@ -6,12 +6,12 @@ date: 2022-05-28T16:47:14Z
 permalink: ./kocluk/bir-yoneticinin-yolu.html
 language: tr
 
+title: Bir Yöneticinin Yolu
+header: Bir Yöneticinin Yolu
 description: Pandemi ile başlayan yöneticilik yolculuğum sırasında olanlar ve yaşadıklarım.
 tags: yönetici koçluk takım_arkadaşı şeffaflık
 category: coaching
 ---
-
-# Bir Yöneticinin Yolu
 
 ![Yol Ayrımı](../../image/kariyer-yol.jpg)
 

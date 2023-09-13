@@ -25,8 +25,5 @@
     "highlight.js": "^11.5.0",
     "turboc_blog_theme.css": "^4.0.4",
     "gulp-minify": "^3.1.0"
-  },
-  "scripts": {
-    "postinstall": "node post"
   }
 }

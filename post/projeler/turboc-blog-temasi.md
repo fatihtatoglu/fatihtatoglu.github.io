@@ -6,14 +6,14 @@ date: 2022-03-22T00:00:00.000Z
 permalink: ./projeler/turboc-blog-temasi.html
 language: tr
 
+title: Turbo C/C++ Teması
+header: Turbo C/C++ Teması
 description: İlk programlamaya başladığımda kullanabileceğim sadece Turbo C/C++ vardı. Turbo C'yi baz alarak oluşturduğum site temasından bahsediyor olacağım.
 tags: turboc turbocpp site_teması borland sass mustache gulp nodejs normalizecss github_actions github_pages
 category: projects
 repo_url: https://github.com/fatihtatoglu/blog-theme-turboc
 repo_type: GitHub
 ---
-
-# Turbo C/C++ Teması
 
 ![Turbo C/C++](../image/turboc_0001.png "Turbo C/C++")
 

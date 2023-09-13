@@ -6,12 +6,12 @@ date: 2022-03-14T00:00:00.000Z
 permalink: ./index.html
 language: tr
 
-description: Fatih Tatoğlu kişisel web sitesi anasayfası.
+title: Anasayfa
+header: Fatih Tatoğlu
+description: Öğrenmekten ve denemekten asla vazgeçme!
 tags: fatih tatoglu fatih_tatoglu
 order: 1
 ---
-
-# Anasayfa
 
 ![Fatih Tatoğlu](../../image/about_me.jpg)
 

@@ -6,12 +6,12 @@ date: 2022-06-12T13:30:35Z
 permalink: ./lab/index.html
 language: tr
 
+title: Laboratuvar
+header: Laboratuvar
 description: Çalışmalarımı yaptığım ve bilmediğim konularda tecrübe kazanmaya çalıştığım kişisel oyun alanım.
 tags: lab laboratuvar test tecrübe
 order: 5
 ---
-
-# Laboratuvar
 
 ![Laboratuvar](../image/laboratuvar.jpg "Laboratuvar")
 

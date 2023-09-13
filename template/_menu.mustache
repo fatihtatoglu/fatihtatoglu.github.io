@@ -1,34 +1,10 @@
-    <span class="menu-button">▼</span>
-    <ul>
-    {{#menu}}
-    {{#disabled}}
-        <li class="disabled">
-            <a href="{{& url}}">{{title}}</a>
-        </li>
-    {{/disabled}}
-    {{^disabled}}
-        <li>
-            <a {{#element-id}}id="{{.}}" {{/element-id}} href="{{& url}}">{{title}}</a>
-    {{#hasChildren}}
-            <div class="sub-menu">
-                <ul>
-            {{#children}}
-                {{#separator}}
-                    <li role="separator"></li>
-                {{/separator}}
-                {{^separator}}
-                    {{#disabled}}
-                    <li class="disabled"><a {{#element-id}}id="{{.}}" {{/element-id}}href="{{& url}}">{{title}}</a></li>
-                    {{/disabled}}
-                    {{^disabled}}
-                    <li><a {{#element-id}}id="{{.}}" {{/element-id}}href="{{& url}}">{{title}}</a></li>
-                    {{/disabled}}
-                {{/separator}}
-            {{/children}}
-                </ul>
-            </div>
-    {{/hasChildren}}
-        </li>
-    {{/disabled}}
-    {{/menu}}
-    </ul>
+    <i class="menu-icon">&#9776;</i>
+        <ul>
+        {{#menu}}
+            <li><a href="{{& url}}">{{title}}</a></li>
+        {{/menu}}
+            <li>
+                <button id="btnDarkTheme" class="icon">&#127770;</button>
+                <button id="btnLightTheme" class="icon">&#127774;</button>
+            </li>
+        </ul>

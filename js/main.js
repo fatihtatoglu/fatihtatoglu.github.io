@@ -1,167 +1,55 @@
-const defaultThemeName = "turboc";
-const defaultThemeColor = "aqua";
-const defaultLanguage = "tr";
+var $menuButton = document.querySelector("nav i.menu-icon");
+var $menuList = document.querySelector("nav ul");
 
-document.addEventListener('DOMContentLoaded', () => {
-    loadSiteSettings();
-    redirectCorrectLanguage();
+var $btnLightTheme = document.getElementById("btnLightTheme");
+var $btnDarkTheme = document.getElementById("btnDarkTheme");
 
-    bindMenu();
-    renderThemeDialog();
+var $html = document.getElementsByTagName("html")[0];
 
-    bindThemeButtons();
-    dialogCloseButton();
-    articleHeaderButton();
+var currentPage = window.location.href;
+var menuListItems = $menuList.querySelectorAll("li a");
+
+for (let i = 0; i < menuListItems.length; i++) {
+    const item = menuListItems[i];
+
+    if (item.href === currentPage) {
+        item.classList.add("active");
+        break;
+    }
+}
+
+$menuButton.addEventListener("click", () => {
+    $menuList.classList.toggle("show");
 });
 
-function bindMenu() {
-    var menu = document.querySelector("nav>ul");
-    var menuitems = menu.querySelectorAll("nav>ul>li");
+var currentTheme = window.localStorage.getItem("theme");
+if (currentTheme && (currentTheme === "light" || currentTheme === "dark")) {
+    $html.classList.add(currentTheme);
 
-    var toggler = document.querySelector("nav>span.menu-button");
-
-    function hideAllSubMenus() {
-        var submenus = menu.querySelectorAll("nav>ul>li div.sub-menu");
-        submenus.forEach(sm => {
-            sm.style.display = "none";
-        });
+    if (currentTheme === "light") {
+        $btnLightTheme.setAttribute("disabled", "disabled");
     }
-
-    menuitems.forEach((item) => {
-
-        var subMenu = item.querySelector("div.sub-menu");
-        if (!subMenu) {
-            return;
-        }
-
-        // set initial state
-        subMenu.style.display = "none";
-
-        item.addEventListener("click", () => {
-            if (subMenu.style.display === "none") {
-
-                hideAllSubMenus();
-
-                subMenu.style.display = "block";
-            } else {
-                subMenu.style.display = "none";
-            }
-        });
-    });
-
-    toggler.addEventListener("click", () => {
-        if (menu.style.display === "table") {
-            hideAllSubMenus();
-
-            menu.style.display = "none";
-        }
-        else {
-            menu.style.display = "table";
-        }
-    });
-}
-
-function loadSiteSettings() {
-    var $html = document.getElementsByTagName("html")[0];
-    var themeName = window.localStorage.getItem("theme-name");
-    var themeColor = window.localStorage.getItem("theme-color");
-    var language = window.localStorage.getItem("site-language");
-
-    $html.className = "";
-
-    if (themeName && themeColor) {
-        $html.classList.add(themeName);
-        $html.classList.add(themeColor);
-    }
-    else {
-        $html.classList.add(defaultThemeName);
-        $html.classList.add(defaultThemeColor);
-        window.localStorage.setItem("theme-name", defaultThemeName);
-        window.localStorage.setItem("theme-color", defaultThemeColor);
-    }
-
-    if (language) {
-        $html.setAttribute("lang", language);
-    }
-    else {
-        $html.setAttribute("lang", defaultLanguage);
-        window.localStorage.setItem("site-language", defaultLanguage);
+    else if (currentTheme === "dark") {
+        $btnDarkTheme.setAttribute("disabled", "disabled");
     }
 }
 
-function bindThemeButtons() {
-    var $btnSetting = document.getElementById("btnSetting");
-    var $pnlSettingDialog = document.getElementById("pnlSettingDialog");
+$btnLightTheme.addEventListener("click", () => {
+    $btnLightTheme.setAttribute("disabled", "disabled");
+    $btnDarkTheme.removeAttribute("disabled");
 
-    $btnSetting.addEventListener("click", function () {
-        if ($pnlSettingDialog) {
-            $pnlSettingDialog.style.display = "block";
-        }
-    });
+    $html.classList.add("light");
+    $html.classList.remove("dark");
 
-    window.addEventListener("click", function (e) {
-        if (e.target == $pnlSettingDialog) {
-            $pnlSettingDialog.style.display = "none";
-        }
-    });
-}
+    window.localStorage.setItem("theme", "light");
+});
 
-function renderThemeDialog() {
+$btnDarkTheme.addEventListener("click", () => {
+    $btnDarkTheme.setAttribute("disabled", "disabled");
+    $btnLightTheme.removeAttribute("disabled");
 
-    var $btnSettingDialogOK = document.getElementById("btnSettingDialogOK");
-    var dialog = document.getElementById("pnlSettingDialog");
-    $btnSettingDialogOK.addEventListener("click", function () {
-        var selectedElements = dialog.querySelectorAll("input[type=radio]:checked");
-        selectedElements.forEach(function (item) {
-            if (item.name === "color") {
-                window.localStorage.setItem("theme-name", item.getAttribute("data-theme"));
-                window.localStorage.setItem("theme-color", item.value);
-            }
-            else if (item.name === "lang") {
-                window.localStorage.setItem("site-language", item.value);
-            }
-        });
+    $html.classList.add("dark");
+    $html.classList.remove("light");
 
-        loadSiteSettings();
-        redirectCorrectLanguage();
-
-        dialog.style.display = "none";
-    });
-}
-
-function redirectCorrectLanguage() {
-    var language = window.localStorage.getItem("site-language");
-    var languageUrlLink = document.querySelector("link[rel=alternate][hreflang=" + language + "]");
-    if (!languageUrlLink) {
-        return;
-    }
-
-    var languageUrl = languageUrlLink.getAttribute("href");
-    if (languageUrl === window.location.href) {
-        return;
-    }
-
-    if (languageUrl.startsWith(window.origin)) {
-        window.location.replace(languageUrl);
-    }
-}
-
-function dialogCloseButton() {
-    let dialogs = document.querySelectorAll("div.dialog");
-    dialogs.forEach((item) => {
-        let closeButton = item.querySelector("div.dialog-box div.dialog-content header button");
-        closeButton.addEventListener("click", () => {
-            item.style.display = "none";
-        });
-    });
-}
-
-function articleHeaderButton() {
-    let articleButton = document.querySelector("article > header > button");
-    articleButton.addEventListener("click", () => {
-        var $pnlThemeDialog = document.getElementById("pnlSettingDialog");
-        if ($pnlThemeDialog) {
-            $pnlThemeDialog.style.display = "block";
-        }
-    });
-}
+    window.localStorage.setItem("theme", "dark");
+});

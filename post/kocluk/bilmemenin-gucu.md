@@ -6,12 +6,12 @@ date: 2022-05-21T23:15:00Z
 permalink: ./kocluk/bilmemenin-gucu.html
 language: tr
 
+title: Bilmemenin Gücü
+header: Bilmemenin Gücü
 description: Bilmiyorum demenin gücü onu kullanmamız için bekliyor. Kullanılırsa çok güzel şeyler olacak.
 tags: bilmemek bilmemenin_gucu ogrenme guven cesaret rahatlama 
 category: coaching
 ---
-
-# Bilmemenin Gücü
 
 ![Bilmemenin Gücü](../../image/soru_isareti.jpg)
 

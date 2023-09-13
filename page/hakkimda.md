@@ -6,12 +6,12 @@ date: 2021-11-19T00:00:00.000Z
 permalink: ./hakkimda.html
 language: tr
 
+title: Hakkımda
+header: Hakkımda
 description: Fatih Tatoğlu kimdir ve hayatındaki önemli noktalar nelerdir.
 tags: hakkımda fatih_tatoglu
 order: 6
 ---
-
-# Hakkımda
 
 ![Fatih Tatoğlu](../../image/about_me.jpg)
 

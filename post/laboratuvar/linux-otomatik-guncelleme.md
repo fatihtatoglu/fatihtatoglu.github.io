@@ -6,11 +6,11 @@ date: 2022-08-07T17:54:27Z
 permalink: ./lab/linux/otomatik-guncelleme.html
 language: tr
 
+title: Linux - Otomatik Güncelleme
+header: Linux - Otomatik Güncelleme
 description: Ubuntu veya Mint makinemi her seferinde güncellemekle uğraşmak yerine bu işlemi otomatik olarak yaptırıyorum.
 tags: mint ubuntu linux_mint apt update upgrade autoclean
 ---
-
-# Linux - Otomatik Güncelleme
 
 İşletim sistemi ne olursa olsun mutlaka periyodik olarak güncellemelerini kontrol etmek gerektiğini düşünüyorum. Bu yüzden Linux Mint geliştirme ortamımın her zaman güncel kalmasını sağlamak için aşağıdaki tanımları yapmam yeterli oluyor.
 

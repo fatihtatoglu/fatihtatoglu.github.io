@@ -6,11 +6,11 @@ date: 2022-06-12T18:41:00Z
 permalink: ./lab/haproxy/cluster.html
 language: tr
 
+title: HAProxy - Cluster
+header: HAProxy - Cluster
 description: HAProxy'nin yüksek erişilebilir yapısının kurulması ve test edilmesi.
 tags: haproxy keepalived centos failover yüksek_erişilebilirlilik high_availability
 ---
-
-# HAProxy - Cluster
 
 Bu notumda HAProxy için yüksek erişilebilir bir yapı kurulmasından bahsetmeye çalışacağım.
 

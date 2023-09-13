@@ -6,12 +6,12 @@ date: 2022-05-24T15:34:54Z
 permalink: ./kendime-notlar/swot-analizi.html
 language: tr
 
+title: SWOT Analizi
+header: SWOT Analizi
 description: SWOT analizi bir şirketin ya da yapının stratejik durumunu gösteren, uygulanması basit ama etkisi yüksek bir araçtır.
 tags: SWOT güçlü_yanlar zayıf_yanlar fırsatlar tehditler
 category: notes
 ---
-
-# SWOT Analizi
 
 SWOT (Strengths, Weaknesses, Opportunities, Threats) analizi bir şirketin ya da organizasyonun stratejik durumununun gelişimini gösteren basit ama etkin bir araçtır. Stratejik yönetim aracı olan SWOT analizi, karar vermenin erken aşamalarında da destek olmaktadır.
 

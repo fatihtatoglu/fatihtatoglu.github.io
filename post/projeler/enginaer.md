@@ -6,14 +6,14 @@ date: 2022-03-24T00:00:00.000Z
 permalink: ./projeler/enginaer.html
 language: tr
 
+title: Enginær
+header: Enginær
 description: Enginaer site motorunu projesinin amacı ve arkasındaki motivasyonun kaynağını açıklamaya çalışacağım.
 tags: enginaer site_motoru gulp nodejs otomasyon markdown mustache markedjs
 category: projects
 repo_url: https://github.com/fatihtatoglu/enginaer
 repo_type: GitHub
 ---
-
-# Enginær
 
 Enginær, basit bir statik web sitesi oluşturma motoru. Ayrıca, [2012](https://web.archive.org/web/20120626234836/http://enginar.in/ "Web Archive - Enginær") yılında aynı isimle ve amaçla tamamlayamadığım bir proje.
 

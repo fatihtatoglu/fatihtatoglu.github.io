@@ -31,6 +31,10 @@
     <title>{{site-title-prefix}}{{title}}</title>
 
     <link rel="stylesheet" href="{{& base-url}}css/main.css">
+    <link rel="stylesheet" href="{{& base-url}}css/custom.css">
+    {{#stylemodule}}
+    <link rel="stylesheet" href="{{& base-url}}css/{{stylemodule}}.css">
+    {{/stylemodule}}
     
     <link rel="apple-touch-icon" sizes="180x180" href="{{& base-url}}image/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="{{& base-url}}image/favicon/favicon-32x32.png">

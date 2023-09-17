@@ -93,8 +93,7 @@ header {
 
 @media only screen and (min-width: 600px) {
     header {
-        margin: 1rem 1em;
-        margin-bottom: 0rem;
+        margin: 0rem 1em;
     }
 
     nav {
@@ -579,8 +578,11 @@ code {
     font-size: 1rem;
 }
 
-a {
-    color: var(--text-color);
+a,
+a:link,
+a.visited,
+a:visited {
+    color: var(--secondary-color);
     text-decoration: none;
     transition: color 0.3 ease;
     cursor: pointer;
@@ -590,11 +592,7 @@ a.hover,
 a:hover,
 a:visited:hover {
     color: var(--secondary-color);
-}
-
-a.visited,
-a:visited {
-    color: var(--text-color);
+    text-decoration: underline;
 }
 
 a.active,
@@ -987,10 +985,172 @@ audio {
     }
 }
 
+/*--------------------*\
+    # TABLE
+\*--------------------*/
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: var(--baseline) 0px;
+}
+
+table th,
+table td {
+    padding: var(--baseline);
+    border-bottom: 1px solid var(--border-color);
+}
+
+table th {
+    font-weight: bold;
+    border-right: 1px solid var(--border-color);
+    border-bottom-width: 2px;
+}
+
+table th:last-child {
+    border-right: none;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: var(--secondary-color);
+    color: var(--secondary-color-text);
+}
+
+table tbody tr.hover,
+table tbody tr:hover {
+    background-color: var(--primary-color);
+    color: var(--primary-color-text);
+}
+
+table tbody tr:nth-child(even) a,
+table tbody tr:nth-child(even) a:link,
+table tbody tr:nth-child(even) a.visited,
+table tbody tr:nth-child(even) a:visited {
+    color: var(--secondary-color-text);
+}
+
+table tbody tr:nth-child(even) a.disabled,
+table tbody tr:nth-child(even) a:disabled,
+table tbody tr:nth-child(even) a[disabled] {
+    color: var(--text-color-disabled);
+}
+
+table tbody tr td[colspan] {
+    background-color: var(--border-color);
+}
+
+table tbody tr:nth-child(even).hover a,
+table tbody tr:nth-child(even).hover a:link,
+table tbody tr:nth-child(even).hover a.visited,
+table tbody tr:nth-child(even).hover a:visited,
+table tbody tr:nth-child(even):hover a,
+table tbody tr:nth-child(even):hover a:link,
+table tbody tr:nth-child(even):hover a.visited,
+table tbody tr:nth-child(even):hover a:visited {
+    color: var(--secondary-color);
+}
+
+table tbody tr:nth-child(even).hover a.active,
+table tbody tr:nth-child(even).hover a:active,
+table tbody tr:nth-child(even):hover a.active,
+table tbody tr:nth-child(even):hover a:active,
+
+
+table tbody tr.hover a.focus,
+table tbody tr.hover a:focus,
+table tbody tr:hover a.focus,
+table tbody tr:hover a:focus,
+table tbody tr:nth-child(even).hover a.focus,
+table tbody tr:nth-child(even).hover a:focus,
+table tbody tr:nth-child(even):hover a.focus,
+table tbody tr:nth-child(even):hover a:focus {
+    color: var(--secondary-color-dark);
+}
+
+table tbody tr:nth-child(even).hover a.disabled,
+table tbody tr:nth-child(even).hover a:disabled,
+table tbody tr:nth-child(even):hover a.disabled,
+table tbody tr:nth-child(even):hover a:disabled {
+    color: var(--text-color-disabled);
+}
 
 /*--------------------*\
-    # CUSTOM
+    # CHECKBOX & RADIOBOX
 \*--------------------*/
-time {
-    display: none;
+input[type="checkbox"],
+input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 1rem;
+    height: 1rem;
+    border: 1px solid var(--border-color);
+    background-color: var(--background-color);
+    cursor: pointer;
+    vertical-align: middle;
+    margin-right: var(--baseline);
+    margin-top: calc(calc(var(--baseline) / 2)*-1);
+}
+
+input[type="radio"] {
+    border-radius: 50%;
+}
+
+input[type="checkbox"].hover,
+input[type="checkbox"]:hover,
+input[type="radio"].hover,
+input[type="radio"]:hover {
+    background-color: var(--primary-color);
+}
+
+input[type="checkbox"].checked,
+input[type="checkbox"]:checked,
+input[type="checkbox"]:hover.checked,
+input[type="checkbox"]:hover:checked,
+input[type="radio"].checked,
+input[type="radio"]:checked,
+input[type="radio"]:hover.checked,
+input[type="radio"]:hover:checked {
+    background-color: var(--primary-color-dark);
+    border-color: var(--primary-color-dark);
+}
+
+input[type="checkbox"].focus,
+input[type="checkbox"]:focus,
+input[type="radio"].focus,
+input[type="radio"]:focus {
+    outline: none;
+    border-color: var(--primary-color-dark);
+}
+
+input[type="checkbox"].disabled,
+input[type="checkbox"]:disabled,
+input[type="radio"].disabled,
+input[type="radio"]:disabled {
+    cursor: not-allowed;
+    background-color: var(--background-color-disabled);
+    border-color: var(--border-color);
+}
+
+input[type="checkbox"]::before,
+input[type="radio"]::before {
+    content: "";
+    display: block;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    width: var(--baseline);
+    height: var(--baseline);
+    background-color: var(--background-color);
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+input[type="radio"]::before {
+    border-radius: 50%;
+}
+
+input[type="checkbox"]:checked::before,
+input[type="radio"]:checked::before {
+    opacity: 1;
 }

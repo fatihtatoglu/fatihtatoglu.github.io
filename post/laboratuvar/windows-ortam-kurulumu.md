@@ -19,7 +19,7 @@ Arkadaşlarımın bütün baskılarına rağmen hala Windows makine kullanıyoru
 Öncelikle makineme gereken kurulumları yapabilmek için tıpkı MacOS ya da Linux dağıtımlarında olduğu gibi bir paket yöneticisine ihtiyacım var. Bunun için en aşağıdaki komut ile chocolatey'i yükleniyor.
 
 ```powershell
-Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+PS C:\Users\fatih.tatoglu> Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 ```
 
 Kurulum tamamlandıktan sonra diğer adımlar için **PowerShell** ve **Chocolatey** ile devam ediyor olacağım.
@@ -29,13 +29,13 @@ Kurulum tamamlandıktan sonra diğer adımlar için **PowerShell** ve **Chocolat
 Geliştirme yapmak için ana makinemi kullanmak yerine daha çok sanal makine kullanıyorum. Bu sayede hem taşınabilir hem de istediğim her makinede çalışabilir bir geliştirme ortamım oluyor. Bunu sağlamak için ilk yapmam gereken Windows içindeki Hyper-V modülünü etkinleştirmek.
 
 ```powershell
-Enable-WindowsOptionalFeature -Online -FeatureName "Microsoft-Hyper-V-All" -NoRestart
-Enable-WindowsOptionalFeature -Online -FeatureName "Microsoft-Hyper-V" -NoRestart
-Enable-WindowsOptionalFeature -Online -FeatureName "Microsoft-Hyper-V-Tools-All" -NoRestart
-Enable-WindowsOptionalFeature -Online -FeatureName "Microsoft-Hyper-V-Management-Powershell" -NoRestart
-Enable-WindowsOptionalFeature -Online -FeatureName "Microsoft-Hyper-V-Hypervisor" -NoRestart
-Enable-WindowsOptionalFeature -Online -FeatureName "Microsoft-Hyper-V-Services" -NoRestart
-Enable-WindowsOptionalFeature -Online -FeatureName "Microsoft-Hyper-V-Management-Clients" -NoRestart
+PS C:\Users\fatih.tatoglu> Enable-WindowsOptionalFeature -Online -FeatureName "Microsoft-Hyper-V-All" -NoRestart
+PS C:\Users\fatih.tatoglu> Enable-WindowsOptionalFeature -Online -FeatureName "Microsoft-Hyper-V" -NoRestart
+PS C:\Users\fatih.tatoglu> Enable-WindowsOptionalFeature -Online -FeatureName "Microsoft-Hyper-V-Tools-All" -NoRestart
+PS C:\Users\fatih.tatoglu> Enable-WindowsOptionalFeature -Online -FeatureName "Microsoft-Hyper-V-Management-Powershell" -NoRestart
+PS C:\Users\fatih.tatoglu> Enable-WindowsOptionalFeature -Online -FeatureName "Microsoft-Hyper-V-Hypervisor" -NoRestart
+PS C:\Users\fatih.tatoglu> Enable-WindowsOptionalFeature -Online -FeatureName "Microsoft-Hyper-V-Services" -NoRestart
+PS C:\Users\fatih.tatoglu> Enable-WindowsOptionalFeature -Online -FeatureName "Microsoft-Hyper-V-Management-Clients" -NoRestart
 ```
 
 ## Gereken Yazılımlar
@@ -55,15 +55,15 @@ Kullanım sırasında işimi kolaylaştırması için bazı ufak ayarlamalar da 
 ### UAC Kapatılması
 
 ```powershell
-New-ItemProperty -Path HKLM:Software\Microsoft\Windows\CurrentVersion\policies\system -Name EnableLUA -PropertyType DWord -Value 0 -Force
+PS C:\Users\fatih.tatoglu> New-ItemProperty -Path HKLM:Software\Microsoft\Windows\CurrentVersion\policies\system -Name EnableLUA -PropertyType DWord -Value 0 -Force
 ```
 
 ### Klasör Görünümünün Ayarlanması
 
 ```powershell
-Push-Location
-Set-Location HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced
-Set-ItemProperty . HideFileExt "0"
-Set-ItemProperty . Hidden "1"
-Pop-Location
+PS C:\Users\fatih.tatoglu> Push-Location
+PS C:\Users\fatih.tatoglu> Set-Location HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced
+PS C:\Users\fatih.tatoglu> Set-ItemProperty . HideFileExt "0"
+PS C:\Users\fatih.tatoglu> Set-ItemProperty . Hidden "1"
+PS C:\Users\fatih.tatoglu> Pop-Location
 ```

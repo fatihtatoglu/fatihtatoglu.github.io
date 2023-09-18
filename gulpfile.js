@@ -31,13 +31,13 @@ const config = {
             breaks: true,
             smartLists: true,
             headerIds: false,
-            langPrefix: "hljs language-",
-            highlight: function (code, lang) {
-                const hljs = require("highlight.js");
-                const language = hljs.getLanguage(lang) ? lang : "plaintext";
+            //langPrefix: "hljs language-",
+            // highlight: function (code, lang) {
+            //     const hljs = require("highlight.js");
+            //     const language = hljs.getLanguage(lang) ? lang : "plaintext";
 
-                return hljs.highlight(code, { language }).value;
-            }
+            //     return hljs.highlight(code, { language }).value;
+            // }
         },
     },
     "template": {

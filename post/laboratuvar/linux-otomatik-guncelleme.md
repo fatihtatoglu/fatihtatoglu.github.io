@@ -15,7 +15,7 @@ tags: mint ubuntu linux_mint apt update upgrade autoclean
 İşletim sistemi ne olursa olsun mutlaka periyodik olarak güncellemelerini kontrol etmek gerektiğini düşünüyorum. Bu yüzden Linux Mint geliştirme ortamımın her zaman güncel kalmasını sağlamak için aşağıdaki tanımları yapmam yeterli oluyor.
 
 ```shell
-sudo vim /etc/crontab
+fatihtatoglu@fth-linux:~$ sudo vim /etc/crontab
 ```
 
 Açılan dosyanın en altına aşağıdaki komutu ekliyoruz.
@@ -27,7 +27,7 @@ Açılan dosyanın en altına aşağıdaki komutu ekliyoruz.
 Sonrasında makineyi restart etmek yeterli oluyor.
 
 ```shell
-sudo reboot
+fatihtatoglu@fth-linux:~$ sudo reboot
 ```
 
 Komutun açıklaması olarak; her açılışta `root` user olarak `update`, `upgrade`, `autoclean` ve `autoremove` komutlarını çalıştır deniyor. Bu sayede makinem her zaman her açılışta en güncel paketleri almış oluyor.

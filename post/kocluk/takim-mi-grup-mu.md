@@ -13,7 +13,7 @@ tags: takım grup amaç hedef sorumluluk iletişim etki çalışma_tarzı
 category: coaching
 ---
 
-![Takım - Grup](../../image/takim-grup.jpg "Takım - Grup")
+![Takım - Grup](../../image/takim-grup.jpg "Binyamin Mellish - [Pexels](https://www.pexels.com/photo/football-players-in-blue-jersey-lined-under-grey-white-cloudy-sky-during-sunset-186076/)")
 
 Yazının başlığındaki soruyu çoğu kişiye sorduğum zaman aynı şey oldukları cevabını aldım. İtiraf etmem lazım ben de en başta ne farkı olabileceğine çok kafa yormamıştım. Ancak ikisi arasında bazı farklar var. Bu yazıdaki ana motivasyon ne kadar tanımları ayrıştırma olarak yola çıkmış olsam da, iki kavramın birbirlerine olan avantajlarını da bilinir kılmayı amaçlıyorum.
 
@@ -51,6 +51,5 @@ Gün sonunda herkesin bireysel amaç, istek ve hedeflerini de bir şekilde gerç
 
 ## Referanslar
 
-1. [Yazının Görseli](https://www.pexels.com/photo/football-players-in-blue-jersey-lined-under-grey-white-cloudy-sky-during-sunset-186076/ "Binyamin Mellish")
-2. [Group vs. team: What's the difference?](https://asana.com/resources/group-vs-team)
-3. [Difference Between Group and Team](https://keydifferences.com/difference-between-group-and-team.html)
+1. [Group vs. team: What's the difference?](https://asana.com/resources/group-vs-team)
+2. [Difference Between Group and Team](https://keydifferences.com/difference-between-group-and-team.html)

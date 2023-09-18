@@ -23,9 +23,9 @@ Linux Mint, seçimi yaparken basit, hafif ve verimli olması için **Xfce Editio
 Linux Mint, hafif bir dağıtım olmasına rağmen içinde benim geliştirme sırasında kullanmayacağım bazı yüklemelerde bulunmakta. Öncelikle bunlardan kurtuluyor olacağım.
 
 ```shell
-> sudo apt remove --purge -y libreoffice* thunderbird rhythmbox transmission-gtk simple-scan timeshift vim-tiny hplip youtube-dl hypnotix warpinator
-> sudo apt clean
-> sudo apt autoremove
+fatihtatoglu@fth-linux:~$ sudo apt remove --purge -y libreoffice* thunderbird rhythmbox transmission-gtk simple-scan timeshift vim-tiny hplip youtube-dl hypnotix warpinator
+fatihtatoglu@fth-linux:~$ sudo apt clean
+fatihtatoglu@fth-linux:~$ sudo apt autoremove
 ```
 
 ## İlk Yapılacak
@@ -39,26 +39,26 @@ Gerek duymadığım yazılımları çıkarttıktan sonra yeni yükleme yapmadan 
 şeklinde. Bu işlemler yapılmadan güvenli, stabil ve rahat bir çalışma ortamına sahip olmayacağımı düşünüyorum. Bu yüzden öncelike bunları yapıyor olacağım.
 
 ```shell
-> sudo apt update
-> sudo apt upgrade -y
+fatihtatoglu@fth-linux:~$ sudo apt update
+fatihtatoglu@fth-linux:~$ sudo apt upgrade -y
 ```
 
 Yukarıdaki komutlar ile güncellemeler yapılıyor. İlk defa yapılacağı için biraz uzun sürebilir.
 
 ```shell
-> sudo apt install vim -y
-> sudo apt install --install-recommends linux-generic-hwe-20.04 -y
-> sudo apt install -y openssh-server
+fatihtatoglu@fth-linux:~$ sudo apt install vim -y
+fatihtatoglu@fth-linux:~$ sudo apt install --install-recommends linux-generic-hwe-20.04 -y
+fatihtatoglu@fth-linux:~$ sudo apt install -y openssh-server
 ```
 
 Yukarıdaki komutlar ile sırasıyla favori komut satırı editörümü yüklüyorum. Sonrasında ekran kartı sürücüsünü yüklüyorum. Hyper-V üzerinden çalıştırdığım için generic bir ekran kartı sürücüsü işimi görüyor olacaktır. Son olarak ana makine ile bağlantı sağlayabilmek için SSH Server kuruyorum.
 
 ```shell
-> sudo systemctl status ssh
-> sudo systemctl enable ssh
-> sudo ufw allow ssh
-> sudo ufw enable
-> sudo ufw reload
+fatihtatoglu@fth-linux:~$ sudo systemctl status ssh
+fatihtatoglu@fth-linux:~$ sudo systemctl enable ssh
+fatihtatoglu@fth-linux:~$ sudo ufw allow ssh
+fatihtatoglu@fth-linux:~$ sudo ufw enable
+fatihtatoglu@fth-linux:~$ sudo ufw reload
 ```
 
 Yukarıdaki komutlar ile Linux Mint içindeki firewallu etkinleştirip SSH Servera yetki veriyorum. Bunun dışında ek bir yetkiye ihtiyacım olmadığı için sadece SSH portuna yetki vermek yeterli olacaktır.
@@ -68,14 +68,14 @@ Yukarıdaki komutlar ile Linux Mint içindeki firewallu etkinleştirip SSH Serve
 Hyper-V üzerinde çalıştırdığım bütün Linux dağıtımlarında mutlaka sonrasında ekran ayarı yapılması gerekmektedir. Linux Mint için de bu işlemi aşağıdaki işlem ile yapabiliyorum.
 
 ```shell
-> sudo vi /etc/default/grub
+fatihtatoglu@fth-linux:~$ sudo vi /etc/default/grub
 ```
 
 Dosyayı açtıktan sonra **`GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"`** olan satırı **`GRUB_CMDLINE_LINUX_DEFAULT="quiet splash video=hyperv_fb:1920x1080"`** olarak güncelleyip kaydediyoruz.
 
 ```shell
-> sudo update-grub
-> sudo reboot
+fatihtatoglu@fth-linux:~$ sudo update-grub
+fatihtatoglu@fth-linux:~$ sudo reboot
 ```
 
 Sonrasında yukarıdaki komutları çalıştırarak sanal makineyi restart ediyoruz ve ekran artık kocaman oluyor.
@@ -85,12 +85,12 @@ Sonrasında yukarıdaki komutları çalıştırarak sanal makineyi restart ediyo
 Geliştirme yaparken çalıştığım şirketin ortamlarına bağlanmak ya da güvenlik gereği bir jumpserver üzerinden bağlanmam gerektiğinde VPN yapmam kaçınılmaz hale geliyor. Linux Mint **Xfce Edition** sürümü ile GlobalProtect VPN servisine bağlanmak sorun olabiliyor. Bunun için aşağıdaki adımların yapılması yeterli olacaktır.
 
 ```shell
-> sudo apt install build-essential 
-> sudo apt install qtcreator
-> sudo apt install qt5-default
-> sudo add-apt-repository ppa:yuezk/globalprotect-openconnect
-> sudo apt update
-> sudo apt install -y globalprotect-openconnect
+fatihtatoglu@fth-linux:~$ sudo apt install build-essential 
+fatihtatoglu@fth-linux:~$ sudo apt install qtcreator
+fatihtatoglu@fth-linux:~$ sudo apt install qt5-default
+fatihtatoglu@fth-linux:~$ sudo add-apt-repository ppa:yuezk/globalprotect-openconnect
+fatihtatoglu@fth-linux:~$ sudo apt update
+fatihtatoglu@fth-linux:~$ sudo apt install -y globalprotect-openconnect
 ```
 
 Yukarıdaki komutlar çalıştırıldıktan sonra eğer cli üzerinden çalıştırmak ve loglarını görmek isterseniz `gpclient` komutu kullanılabilir. Cli kapandığında bağlantı kesilecektir. Bağlantı hep açık kalsın istiyorsanız makine restart edildikten sonra başlat menüsünden **GlobalProtect** yazarak uygulamaya ulaşılabilir.
@@ -102,41 +102,41 @@ Yukarıdaki komutlar çalıştırıldıktan sonra eğer cli üzerinden çalışt
 ### VSCode
 
 ```shell
-> wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
-> sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
-> sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
-> rm -f packages.microsoft.gpg
-> sudo apt install apt-transport-https -y
-> sudo apt update
-> sudo apt install code -y
+fatihtatoglu@fth-linux:~$ wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+fatihtatoglu@fth-linux:~$ sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
+v sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
+fatihtatoglu@fth-linux:~$ rm -f packages.microsoft.gpg
+fatihtatoglu@fth-linux:~$ sudo apt install apt-transport-https -y
+fatihtatoglu@fth-linux:~$ sudo apt update
+fatihtatoglu@fth-linux:~$ sudo apt install code -y
 ```
 
 ### Git
 
 ```shell
-> sudo apt install git -y
+fatihtatoglu@fth-linux:~$ sudo apt install git -y
 ```
 
 ### DotNet Core
 
 ```shell
-> wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
-> sudo dpkg -i packages-microsoft-prod.deb
-> rm packages-microsoft-prod.deb
-> sudo apt-get update
+fatihtatoglu@fth-linux:~$ wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+fatihtatoglu@fth-linux:~$ sudo dpkg -i packages-microsoft-prod.deb
+fatihtatoglu@fth-linux:~$ rm packages-microsoft-prod.deb
+fatihtatoglu@fth-linux:~$ sudo apt-get update
 
-> sudo apt-get install -y apt-transport-https
-> sudo apt-get install -y dotnet-sdk-6.0
-> sudo apt-get install -y aspnetcore-runtime-6.0
-> sudo apt-get install -y dotnet-runtime-6.0
+fatihtatoglu@fth-linux:~$ sudo apt-get install -y apt-transport-https
+fatihtatoglu@fth-linux:~$ sudo apt-get install -y dotnet-sdk-6.0
+fatihtatoglu@fth-linux:~$ sudo apt-get install -y aspnetcore-runtime-6.0
+fatihtatoglu@fth-linux:~$ sudo apt-get install -y dotnet-runtime-6.0
 ```
 
 ### NodeJs
 
 ```shell
-> sudo apt install -y curl
-> curl -fsSL https://deb.nodesource.com/setup_16.x |sudo -E bash -
-> sudo apt install nodejs
+fatihtatoglu@fth-linux:~$ sudo apt install -y curl
+fatihtatoglu@fth-linux:~$ curl -fsSL https://deb.nodesource.com/setup_16.x |sudo -E bash -
+fatihtatoglu@fth-linux:~$ sudo apt install nodejs
 ```
 
 ### PowerShell
@@ -144,46 +144,44 @@ Yukarıdaki komutlar çalıştırıldıktan sonra eğer cli üzerinden çalışt
 Evet doğru görüyorsunuz powershell. Çünkü artık PowerShell Core da cross platform olarak çalışabiliyor.
 
 ```shell
-> sudo apt-get install -y wget apt-transport-https software-properties-common
-> wget -q https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb
-> sudo dpkg -i packages-microsoft-prod.deb
-> sudo apt-get update
-> sudo apt-get install -y powershell
+fatihtatoglu@fth-linux:~$ sudo apt-get install -y wget apt-transport-https software-properties-common
+fatihtatoglu@fth-linux:~$ wget -q https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb
+fatihtatoglu@fth-linux:~$ sudo dpkg -i packages-microsoft-prod.deb
+fatihtatoglu@fth-linux:~$ sudo apt-get update
+fatihtatoglu@fth-linux:~$ sudo apt-get install -y powershell
 ```
 
 ### Docker
 
 ```shell
-> sudo apt-get remove docker docker-engine docker.io containerd runc
-> sudo apt-get install -y ca-certificates curl gnupg lsb-release
-> curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
-> echo \
-  "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
-  focal stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-> sudo apt-get update
-> sudo apt-get install -y docker-ce docker-ce-cli containerd.io
-> sudo usermod -aG docker $USER
-> newgrp docker 
-> sudo systemctl enable docker.service
-> sudo systemctl enable containerd.service
-> docker run hello-world
+fatihtatoglu@fth-linux:~$ sudo apt-get remove docker docker-engine docker.io containerd runc
+fatihtatoglu@fth-linux:~$ sudo apt-get install -y ca-certificates curl gnupg lsb-release
+fatihtatoglu@fth-linux:~$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+fatihtatoglu@fth-linux:~$ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu focal stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+fatihtatoglu@fth-linux:~$ sudo apt-get update
+fatihtatoglu@fth-linux:~$ sudo apt-get install -y docker-ce docker-ce-cli containerd.io
+fatihtatoglu@fth-linux:~$ sudo usermod -aG docker $USER
+fatihtatoglu@fth-linux:~$ newgrp docker 
+fatihtatoglu@fth-linux:~$ sudo systemctl enable docker.service
+fatihtatoglu@fth-linux:~$ sudo systemctl enable containerd.service
+fatihtatoglu@fth-linux:~$ docker run hello-world
 ```
 
 ### GO
 
 ```shell
-> wget https://go.dev/dl/go1.18.3.linux-amd64.tar.gz
-> sudo su
-> rm -rf /usr/local/go && tar -C /usr/local -xzf go1.18.3.linux-amd64.tar.gz
-> exit
-> export PATH=$PATH:/usr/local/go/bin
-> go version
+fatihtatoglu@fth-linux:~$ wget https://go.dev/dl/go1.18.3.linux-amd64.tar.gz
+fatihtatoglu@fth-linux:~$ sudo su
+fatihtatoglu@fth-linux:~$ rm -rf /usr/local/go && tar -C /usr/local -xzf go1.18.3.linux-amd64.tar.gz
+fatihtatoglu@fth-linux:~$ exit
+fatihtatoglu@fth-linux:~$ export PATH=$PATH:/usr/local/go/bin
+fatihtatoglu@fth-linux:~$ go version
 ```
 
 GO kurulumu yaparken dikkat eklmemiz gereken bir noktada her seferinde otomatik olarak GOPATH değerinin atanması. Bu işlem için;
 
 ```shell
-> sudo vi ~/.bashrc
+fatihtatoglu@fth-linux:~$ sudo vi ~/.bashrc
 ```
 
 komutu ile dosyayı açıyoruz ve en altına aşağıdaki satırı ekleyip kapatıyoruz.
@@ -197,14 +195,14 @@ export PATH=$PATH:/usr/local/go/bin
 Kendime göre geliştirme ortamımı kurdum ve her zaman son işlem mutlaka makineyi restart etmek olacaktır. Restart işleminden sonra kurulumları test etmek için aşağıdaki komutları çalıştırabilirsiniz.
 
 ```shell
-> git --version
-> node --version
-> npm --version
-> go version
-> docker --version
-> dotnet --version
-> pwsh --version
-> code --version
+fatihtatoglu@fth-linux:~$ git --version
+fatihtatoglu@fth-linux:~$ node --version
+fatihtatoglu@fth-linux:~$ npm --version
+fatihtatoglu@fth-linux:~$ go version
+fatihtatoglu@fth-linux:~$ docker --version
+fatihtatoglu@fth-linux:~$ dotnet --version
+fatihtatoglu@fth-linux:~$ pwsh --version
+fatihtatoglu@fth-linux:~$ code --version
 ```
 
 Bu komutların sonunda hata alıyor ya da sonuç alamıyorsanız yüklemelerde bir sıkıntı olmuş olabilir. Bu sorunları tespit etmek için yükleme adımlarını kontrol ederek giderebilirsiniz.

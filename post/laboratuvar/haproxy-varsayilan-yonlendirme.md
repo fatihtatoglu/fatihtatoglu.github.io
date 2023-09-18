@@ -17,7 +17,7 @@ HAProxy gelen istekleri ayarlanan filtrelerden geçirerek ilgili `backend` servi
 HAProxy konfigürasyon dosyasını aşağıdaki gibi güncelliyoruz.
 
 ```shell
-> sudo vi /etc/haproxy/haproxy.conf
+fatihtatoglu@fth-linux:~$ sudo vi /etc/haproxy/haproxy.conf
 ```
 
 ```nestedtext
@@ -56,7 +56,7 @@ backend be_default
 Sonrasında statik içeriği oluşturuyoruz.
 
 ```shell
-> sudo vi /etc/haproxy/errors/503.http
+fatihtatoglu@fth-linux:~$ sudo vi /etc/haproxy/errors/503.http
 ```
 
 ```html
@@ -83,6 +83,6 @@ Bu ayar uygulanmadan önce doğruluğu kontrol edilmeli ve sonrasında servisler
 Eğer cluster bir yapınız varsa iki makinede de aynı geliştirmenin yapılması gerekmektedir.
 
 ```shell
-> sudo /opt/haproxy/sbin/haproxy -c -V -f /etc/haproxy/haproxy.conf
-> sudo systemctl reload haproxy
+fatihtatoglu@fth-linux:~$ sudo /opt/haproxy/sbin/haproxy -c -V -f /etc/haproxy/haproxy.conf
+fatihtatoglu@fth-linux:~$ sudo systemctl reload haproxy
 ```

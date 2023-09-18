@@ -24,6 +24,8 @@
     "gulp-version-number": "^0.2.4",
     "highlight.js": "^11.5.0",
     "turboc_blog_theme.css": "^4.0.4",
-    "gulp-minify": "^3.1.0"
+    "gulp-minify": "^3.1.0",
+    "node-html-parser": "^6.1.10",
+    "marked": "^9.0.2"
   }
 }

@@ -13,7 +13,7 @@ tags: hakkımda fatih_tatoglu
 order: 6
 ---
 
-![Fatih Tatoğlu](../../image/about_me.jpg)
+![Fatih Tatoğlu](../../image/about_me.jpg "Fotoğraf [Erkan Balk](https://www.facebook.com/erkan.balk 'Erkan Balk | Facebook') tarafından 2 Ocak 2015 tarihinde Eskişehir'de çekilmiştir.")
 
 Merhaba ben Fatih. Her şey benim merakımla başladı. Çocukken, "Bu nasıl çalışır?", "Neden yağmur yağar?", vb soruları sorardım. Bu sorular ve cevaplarını bulmaya çalışmak benim hayatımı şekillendirdi. Yeni şeyler öğrenmeyi ve meraklı sorular sormayı seviyorum.
 
@@ -28,6 +28,3 @@ Benim hakkımda bilinmesi gereken kısa bilgiler aşağıdadır.
 
 Benimle iletişime geçmek için, [Linkedin](https://www.linkedin.com/in/fatihtatoglu/ "Fatih Tatoğlu | LinkedIn") üzerinden mesaj atabilirsiniz. [GitHub](https://github.com/fatihtatoglu/ "fatihtatoglu (Fatih Tatoğlu)") hesabım üzerinden projelerimi takip edebilirsiniz.
 
-## Referanslar
-
-- [1]: Fotoğraf [Erkan Balk](https://www.facebook.com/erkan.balk "Erkan Balk | Facebook") tarafından 2 Ocak 2015 tarihinde Eskişehir'de çekilmiştir.

@@ -36,8 +36,8 @@ KeepAlived uygulaması iki makine arasında 3. IP adresini taşıyarak sistemin 
 Yükleme yapılması için gereken kaynak kodların indirilmesi.
 
 ```shell
-> curl https://www.keepalived.org/software/keepalived-2.2.7.tar.gz > keepalived-2.2.7.tar.gz
-> tar xf keepalived-2.2.7.tar.gz
+fatihtatoglu@fth-linux:~$ curl https://www.keepalived.org/software/keepalived-2.2.7.tar.gz > keepalived-2.2.7.tar.gz
+fatihtatoglu@fth-linux:~$ tar xf keepalived-2.2.7.tar.gz
 ```
 
 ### KeepAlived'ın Derlenmesi
@@ -45,12 +45,12 @@ Yükleme yapılması için gereken kaynak kodların indirilmesi.
 HAProxy'nin cluster olarak çalışması sağlayacak olan uygulamanın kurulumu.
 
 ```shell
-> cd ~
-> sudo su
-> cd keepalived-2.2.7
-> ./configure --prefix=/
-> make
-> make install
+fatihtatoglu@fth-linux:~$ cd ~
+root@fth-linux:~# sudo su
+root@fth-linux:~# cd keepalived-2.2.7
+root@fth-linux:~# ./configure --prefix=/
+root@fth-linux:~# make
+root@fth-linux:~# make install
 ```
 
 ### Failover Scripti
@@ -58,7 +58,7 @@ HAProxy'nin cluster olarak çalışması sağlayacak olan uygulamanın kurulumu.
 KeepAlived HAProxy'nin çalışma durumuna göre iki makine arasında fail-over yapmaktadır. Ancak HAProxy uygulamasının çalıştığını anlaması için bir script ile kontrol etmesi gerekmektedir.
 
 ```shell
-> sudo vi /usr/local/bin/failover.sh
+fatihtatoglu@fth-linux:~$ sudo vi /usr/local/bin/failover.sh
 ```
 
 ```bash
@@ -75,7 +75,7 @@ fi
 ```
 
 ```shell
-> sudo chmod a+rx /usr/local/bin/failover.sh
+fatihtatoglu@fth-linux:~$ sudo chmod a+rx /usr/local/bin/failover.sh
 ```
 
 ### Konfigürasyon
@@ -85,7 +85,7 @@ KeepAlived makine bazında ayrı ayrı ayarlanması gerekmektedir.
 #### HAPROXY-01 Konfigürasyonu
 
 ```shell
-> sudo vi /etc/keepalived/keepalived.conf
+fatihtatoglu@fth-linux:~$ sudo vi /etc/keepalived/keepalived.conf
 ```
 
 ```roboconf
@@ -126,7 +126,7 @@ vrrp_instance VI_MASTER {
 #### HAPROXY-02 Konfigürasyonu
 
 ```shell
-> sudo vi /etc/keepalived/keepalived.conf
+fatihtatoglu@fth-linux:~$ sudo vi /etc/keepalived/keepalived.conf
 ```
 
 ```roboconf
@@ -167,7 +167,7 @@ vrrp_instance VI_BACKUP {
 Aşağıdaki script ile KeepAlived konfigürasyonunu kontrol edebilirsiniz.
 
 ```shell
-> sudo keepalived --config-test=keepalived.conf
+fatihtatoglu@fth-linux:~$ sudo keepalived --config-test=keepalived.conf
 ```
 
 ### Servislerin Etkinleştirilmesi ve Çalıştırılmaları
@@ -175,13 +175,13 @@ Aşağıdaki script ile KeepAlived konfigürasyonunu kontrol edebilirsiniz.
 Ayarlamalar yapıldığına göre artık çalıştırma zamanı.
 
 ```shell
-> sudo chkconfig keepalived on
-> sudo systemctl enable firewalld
-> sudo systemctl start firewalld
-> sudo firewall-cmd --add-rich-rule='rule protocol value="vrrp" accept' --permanent
-> sudo firewall-cmd --reload
-> sudo systemctl enable keepalived
-> sudo systemctl start keepalived
+fatihtatoglu@fth-linux:~$ sudo chkconfig keepalived on
+fatihtatoglu@fth-linux:~$ sudo systemctl enable firewalld
+fatihtatoglu@fth-linux:~$ sudo systemctl start firewalld
+fatihtatoglu@fth-linux:~$ sudo firewall-cmd --add-rich-rule='rule protocol value="vrrp" accept' --permanent
+fatihtatoglu@fth-linux:~$ sudo firewall-cmd --reload
+fatihtatoglu@fth-linux:~$ sudo systemctl enable keepalived
+fatihtatoglu@fth-linux:~$ sudo systemctl start keepalived
 ```
 
 ## Test Edilmesi
@@ -198,13 +198,13 @@ Sonrasında **`http://172.19.85.104:1985/stats`** adresi ziyaret edilir. KeepAli
 Şimdi geldik fail-over testine. haproxy-01 makinesideki haproxy durulur.
 
 ```shell
-> sudo systemctl stop haproxy
+fatihtatoglu@fth-linux:~$ sudo systemctl stop haproxy
 ```
 
 Sonrasında **`http://172.19.85.104:1985/stats`** adresi ziyaret edilir ve haproxy-02 makinesinin statü sayfasının geldiğin kontrol edilir.
 
 ```shell
-> sudo systemctl start haproxy
+fatihtatoglu@fth-linux:~$ sudo systemctl start haproxy
 ```
 
 Yukarıdaki komut çalıştırılır ve haproxy-01 makinesinin statü sayfası geldiği kontrol edilir.

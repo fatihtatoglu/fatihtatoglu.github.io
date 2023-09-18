@@ -13,9 +13,9 @@ tags: bilmemek bilmemenin_gucu ogrenme guven cesaret rahatlama
 category: coaching
 ---
 
-![Bilmemenin Gücü](../../image/soru_isareti.jpg)
+![Bilmemenin Gücü](../../image/soru_isareti.jpg "Olya Kobruseva - [Pexels](https://www.pexels.com/tr-tr/fotograf/beyaz-ve-kahverengi-harf-b-duvar-dekoru-5428829/)")
 
-Bilmek ile hiç birimiz derdinin olmadığını [Cem Yılmaz](https://twitter.com/CMYLMZ "Cem Yılmaz (@CMYLMZ) / Twitter") Faruk Eczanesi ile çok güzel anlattı. Bu yazıda bilmiyorum demenin gücünden biraz bahsetmek istiyorum.
+Bilmek ile hiç birimiz derdinin olmadığını [Cem Yılmaz](https://twitter.com/CMYLMZ "Cem Yılmaz (@CMYLMZ) / Twitter") [Faruk Eczanesi](https://www.youtube.com/watch?v=Ef53-pi66QY) ile çok güzel anlattı. Bu yazıda bilmiyorum demenin gücünden biraz bahsetmek istiyorum.
 
 Toplum olarak sorulan sorulara bilmiyorum demenin eksiliğini yaşıyoruz. Belki bu yüzden gelişim eğitimlerinde ilk olarak bilmiyorum nasıl denir öğretiliyor. Anlam veremediğimiz bir görsel, bilmediğimiz bir konu, izlemediğimiz bir film veya okumadığımız bir kitap ile ilgili gelen sorulara bilinçli ya da bilinçsiz olarak bilmiyorum dememeyi seçtiğimizi düşünüyorum. Bunun altındaki nedenler çok derin olabilir, ancak şu anda bilmiyorum dediğimiz zaman neler kazandığımıza odaklanmak istiyorum.
 
@@ -42,8 +42,3 @@ Bilmediğimiz bir konu da soru sorulduğunda gerildiğimiz anlar oluyordur ama b
 Bilmiyorum dendiği zaman farkında olmadan dürüstlüğümüzü de göstermiş oluyoruz. Bu dürüstlük bize karşı olan güvenin artmasını da sağlayacaktır. Bilmiyorum denilmesinden sonra bilinmeyen konunun soruyu soran birey ile birlikte öğrenilmesi de güven duygusunu arttıracaktır.
 
 Toplamak gerekirse bilmiyorum denildiğin de aslında farkında olmadığımız bazı güzel şeyler de oluyor. Günlük hayatımızı idame ettirirken bilmiyorum demenin gücünü kullanmamız gerekiyor. İletişim kurarken bizim için dezavantaj gibi görünen bu söz dizisinin gücü sandığımızdan çok daha fazla.
-
-## Referanslar
-
-1. [Yazının Görseli](https://www.pexels.com/tr-tr/fotograf/beyaz-ve-kahverengi-harf-b-duvar-dekoru-5428829/ "Olya Kobruseva")
-2. [Cem Yılmaz | Faruk Eczanesi](https://www.youtube.com/watch?v=Ef53-pi66QY)

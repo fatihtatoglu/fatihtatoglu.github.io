@@ -15,7 +15,7 @@ repo_url: https://github.com/fatihtatoglu/blog-theme-turboc
 repo_type: GitHub
 ---
 
-![Turbo C/C++](../image/turboc_0001.png "Turbo C/C++")
+![Turbo C/C++](../image/turboc_0001.png "Turbo C/C++ About Panel")
 
 Programlamaya başladığımda, kullanabileceğim yalnızca Turbo C/C++ vardı. Bu yazımda sizlere Turbo C/C++ tabanlı bir web sitesi temasını paylaşmak istiyorum.
 
@@ -29,7 +29,7 @@ Turbo C/C++'ı seviyorum çünkü bana kendi ellerimle bir şeyler yapma fırsat
 
 ## Zorluklar
 
-![Turbo C/C++](../image/turboc_0002.png "Turbo C/C++")
+![Turbo C/C++](../image/turboc_0002.png "Turbo C/C++ Directories Panel")
 
 Bence en büyük zorluk, daha önce Turbo C/C++ kullanmış kullanıcılar için bir web uygulamasında benzer bir deneyim oluşturmaktı, çünkü web uygulamalarının ve masaüstü uygulamalarının kullanıcı deneyimleri tamamen farklı. Bunu başarmak için, kullanıcılara bunları kullanırken aynı deneyimi hissetmesini amaçladım.
 

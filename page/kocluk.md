@@ -13,12 +13,12 @@ tags: koçluk psikoloji sosyoloji iş_hayatı takım_çalışması yöneticilik
 order: 2
 ---
 
-![Koçluk](../../image/coaching.jpg)
+![Koçluk](../../image/coaching.jpg "Min An - Ormanın Ortasında Motosiklet Süren İki Kişi Kaynak: [Pexels](https://www.pexels.com/tr-tr/fotograf/ormanin-ortasinda-motosiklet-suren-iki-kisi-fotografi-1006116/)")
 
 Kişisel ve iş hayatımda, **Psikoloji** ve **Sosyoloji**'nin davranışlarımı beklediğimden daha fazla etkilediğini gördüm. Sorularımın ve merakımın çoğu onlarla bağlantılıydı.
 
 Bu bölümde yönetim, ekip oluşturma, kurumsal yaşam, ekip çalışması vb. ile ilgili deneyimlerimi yazmak istiyorum.
 
-***"Koçluk"*** konusunda uzman değilim ama farkındalık ve merakı artırmak için bu bölüme ***"Koçluk"*** adını seçtim. Ayrıca, bu amaca uygun bir fotoğraf ekledim([Fotoğraf Kaynağı](https://www.pexels.com/tr-tr/fotograf/ormanin-ortasinda-motosiklet-suren-iki-kisi-fotografi-1006116/)).
+***"Koçluk"*** konusunda uzman değilim ama farkındalık ve merakı artırmak için bu bölüme ***"Koçluk"*** adını seçtim. Ayrıca, bu amaca uygun bir fotoğraf ekledim.
 
 ## Yazılar

@@ -81,7 +81,7 @@ notepad %systemroot%\system32\drivers\etc\hosts
 
 ## Sanal Makine Ayarı
 
-![Linux Mint Ethernet](../../../image/linux-mint-eth0.png "Linux Mint Ethernet")
+![Linux Mint Ethernet](../../../image/linux-mint-eth0.png "Linux Mint Ethernet Configuration Panel")
 
 Sanal makinenin içerisinde olacak ayarladan da ufak bahsetmem gerekeceğini düşündüm. Görselde görüldüğü gibi **NetMask** ve **Gateway** tanımları sanal network ile aynı olacak şekilde. Sadece dikkat edilmesi gereken konu ise **DNS Server** değerinin ana makinenin gateway değeri olarak güncellenmesi. Bu işlem yapılmadığında sanal makine internete çıkabiliyor ama DNS çözümlemesi yapamıyor. Bununla ilgili olarak bazı denemeler de yaptım ama başarılı olarak çalışan iki denemem oldu.
 

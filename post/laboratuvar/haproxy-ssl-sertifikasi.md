@@ -17,7 +17,7 @@ HAProxy kendisine gelen SSL isteklerini de karşılayabilmektedir. Bu istekleri 
 HAProxy konfigürasyon dosyasını aşağıdaki gibi güncelliyoruz.
 
 ```shell
-> sudo vi /etc/haproxy/haproxy.conf
+fatihtatoglu@fth-linux:~$ sudo vi /etc/haproxy/haproxy.conf
 ```
 
 ```nestedtext
@@ -51,11 +51,11 @@ Bu ayar sayesinde artık 443 portundan gelen SSL isteklerini istediğiniz `backe
 Ben bu işlemleri yaparken hep elimde pfx uzantılı sertifika dosyası oluyordu. Eğer sizin elinizde farklı formatlarda varsa mutlaka pem formatına ayarlamanız gerekecek.
 
 ```shell
-> sudo su
-$ openssl pkcs12 -in certificate.pfx -nocerts -out certificate_priv.pem -nodes
-$ openssl pkcs12 -in certificate.pfx -nokeys -out certificate_public.pem -nodes
-$ cat certificate_public.pem certificate_priv.pem > certificate-cert-key.pem
-$ mv certificate-cert-key.pem /etc/haproxy/certificates/certificate-cert-key.pem
+fatihtatoglu@fth-linux:~$ sudo su
+root@fth-linux:~# openssl pkcs12 -in certificate.pfx -nocerts -out certificate_priv.pem -nodes
+root@fth-linux:~# openssl pkcs12 -in certificate.pfx -nokeys -out certificate_public.pem -nodes
+root@fth-linux:~# cat certificate_public.pem certificate_priv.pem > certificate-cert-key.pem
+root@fth-linux:~# mv certificate-cert-key.pem /etc/haproxy/certificates/certificate-cert-key.pem
 ```
 
 Bu ayar uygulanmadan önce doğruluğu kontrol edilmeli ve sonrasında servisler güncellenerek yayına alınmalıdır.
@@ -63,6 +63,6 @@ Bu ayar uygulanmadan önce doğruluğu kontrol edilmeli ve sonrasında servisler
 Eğer cluster bir yapınız varsa iki makinede de aynı geliştirmenin yapılması gerekmektedir.
 
 ```shell
-sudo /opt/haproxy/sbin/haproxy -c -V -f /etc/haproxy/haproxy.conf
-sudo systemctl reload haproxy
+fatihtatoglu@fth-linux:~$ /opt/haproxy/sbin/haproxy -c -V -f /etc/haproxy/haproxy.conf
+fatihtatoglu@fth-linux:~$ systemctl reload haproxy
 ```

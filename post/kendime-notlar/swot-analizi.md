@@ -15,7 +15,7 @@ category: notes
 
 SWOT (Strengths, Weaknesses, Opportunities, Threats) analizi bir şirketin ya da organizasyonun stratejik durumununun gelişimini gösteren basit ama etkin bir araçtır. Stratejik yönetim aracı olan SWOT analizi, karar vermenin erken aşamalarında da destek olmaktadır.
 
-![Notlar](../../image/swot.png)
+![Notlar](../../image/swot.png "SWOT Analizi")
 
 Yukarıdaki aslında sözlük tanımı. Bu tanımın yanında SWOT analizinin kişi için de uyarlamaları günümüzde karşımıza çıkmaktadır. SWOT analizi öğrenilmesi ve uygulanması basit ama etkisi yüksek bir araç olmasından dolayı mutlaka herkesin takım çantasında olması gerektiğini düşünüyorum.
 

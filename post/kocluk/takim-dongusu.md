@@ -13,11 +13,11 @@ tags: takım dongu Bruce_Wayne_Tuckman Mary_Ann_Jensen forming storming norming 
 category: coaching
 ---
 
-![Takım](../../image/takim.jpg "Takım")
+![Takım](../../image/takim.jpg "Belle Co - [Pexels](https://www.pexels.com/photo/silhouette-photography-of-group-of-people-jumping-during-golden-time-1000445/)")
 
 Sosyal bir canlı olarak çoğu zaman bir şeyi yapmak ya da bireysel olarak üstesinden gelemeyeceğimiz şeyleri yapmak için bir araya geliyoruz. Amacımız belirli ve onu yapmak için elimizden gelen bütün çabayı gösteriyoruz ve sonra dağılıyoruz. Aslında bu bir araya gelme, işleri birlikte yapmak ve sonra sessizce dağılmak tam olarak bir döngü. Bu döngü içerisinde bazı noktalar veya seviyeler bulunmakta.
 
-![Adımlar](../../image/takim-dongusu-adimlar.png "Adımlar")
+![Adımlar](../../image/takim-dongusu-adimlar.png "Kaynak: [Lumen Learning](https://courses.lumenlearning.com/suny-principlesmanagement/chapter/reading-the-five-stages-of-team-development/)")
 
 Takım kurulum veya yaşam döngüsü adımlarını 1965 yılında ***Bruce Wayne Tuckman*** 4 tane olarak **Tuckman Adımları** olarak açıkladı. 1977 yılında ise bu 4 adıma ek bir adım olarak eklemeyi Tuckman ve ***Mary Ann Jensen*** ile yapıp günümüzdeki son haline getirdiler.
 
@@ -61,9 +61,7 @@ Takımlar direk kurulup hemen üretken hale gelmeyeceklerdir. Bunun bilincinde o
 
 ## Referanslar
 
-1. [Yazının 1. Görseli](https://www.pexels.com/photo/silhouette-photography-of-group-of-people-jumping-during-golden-time-1000445/ "Belle Co")
-2. [Yazının 2. Görseli](https://courses.lumenlearning.com/suny-principlesmanagement/chapter/reading-the-five-stages-of-team-development/)
-3. [The 5 Stages of Team Development](https://www.teamwork.com/blog/the-5-stages-of-team-development-what-you-need-to-know/)
-4. [Using the Stages of Team Development](https://hr.mit.edu/learning-topics/teams/articles/stages-development)
-5. [Developmental Sequence in Small Groups](http://www.communicationcache.com/uploads/1/0/8/8/10887248/developmental_sequence_in_small_groups_-_reprint.pdf)
-6. [Stages of Small-Group Development Revisited](http://faculty.wiu.edu/P-Schlag/articles/Stages_of_Small_Group_Development.pdf)
+1. [The 5 Stages of Team Development](https://www.teamwork.com/blog/the-5-stages-of-team-development-what-you-need-to-know/)
+2. [Using the Stages of Team Development](https://hr.mit.edu/learning-topics/teams/articles/stages-development)
+3. [Developmental Sequence in Small Groups](http://www.communicationcache.com/uploads/1/0/8/8/10887248/developmental_sequence_in_small_groups_-_reprint.pdf)
+4. [Stages of Small-Group Development Revisited](http://faculty.wiu.edu/P-Schlag/articles/Stages_of_Small_Group_Development.pdf)

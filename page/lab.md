@@ -13,7 +13,7 @@ tags: lab laboratuvar test tecrübe
 order: 5
 ---
 
-![Laboratuvar](../image/laboratuvar.jpg "Laboratuvar")
+![Laboratuvar](../image/laboratuvar.jpg "Ivan Samkov - Laboratuvar Ekipmanları Kaynak: [Pexels](https://www.pexels.com/tr-tr/fotograf/bardak-renkli-renkler-laboratuvar-9628807/)")
 
 Bir konuyu teorik olarak öğrenmek bana çoğu zaman yetmedi. Daha çok uygulamasını yaparak öğrendiğimin bilincine vardığımdan beri bilgisayarımın içerisinde bir çok deney yapmaya çalışıyorum. Bu deneylerin bazıları gerçekten çözmem gereken problemlerden kaynaklı, ama bazıları da sadece uçuk kaçık bir fikrin doğruluğunu sınamak üzerine. Bu bölümde yaptığım teknik çalışmaları, öğrendiklerimi ve reçetelerimi paylaşıyor olacağım.
 
@@ -35,7 +35,3 @@ Hem kendimin hem de okumak isteyenlerin daha rahat bulabilmesi için yazıları 
 
 1. [Mint Geliştirme Ortamı](./lab/linux/mint-gelistirme-ortami.html "Linux - Mint Geliştirme Ortamı")
 2. [Otomatik Güncelleme](./lab/linux/otomatik-guncelleme.html "Linux - Otomatik Güncelleme")
-
-## Referanslar
-
-1. [Yazının Görseli](https://www.pexels.com/tr-tr/fotograf/bardak-renkli-renkler-laboratuvar-9628807/ "Ivan Samkov")

@@ -30,14 +30,7 @@ const config = {
         "marked": {
             breaks: true,
             smartLists: true,
-            headerIds: false,
-            //langPrefix: "hljs language-",
-            // highlight: function (code, lang) {
-            //     const hljs = require("highlight.js");
-            //     const language = hljs.getLanguage(lang) ? lang : "plaintext";
-
-            //     return hljs.highlight(code, { language }).value;
-            // }
+            headerIds: false
         },
     },
     "template": {
@@ -89,10 +82,6 @@ function generate() {
 
     return enginær.generate()
 
-        // replace heading for theme
-        //.pipe(replace("<h1>", "<header><h1>"))
-        //.pipe(replace("</h1>", "</h1><button>#</button></header>"))
-
         // replace for image path
         .pipe(replace(/\.\.\/\.\.\/image/g, "image"))
         .pipe(replace(/\.\.\/image/g, "image"))
@@ -126,6 +115,7 @@ function generateSiteMap() {
     };
 
     let dates = {
+        // Turkish
         "_hakkimda": "2022-12-26",
         "_index": "2022-12-26",
         "_kendime-notlar_blog-yazmak": "2022-03-20",
@@ -152,7 +142,10 @@ function generateSiteMap() {
         "_kocluk_sosyal-aylaklik":"2022-06-23T09:22:56Z",
         "_kocluk_takim-dongusu":"2022-06-23T12:40:14Z",
         "_kocluk_takim-mi-grup-mu":"2022-06-23T12:00:33Z",
-        "_lab_linux_otomatik-guncelleme":"2022-08-07T17:54:27Z"
+        "_lab_linux_otomatik-guncelleme":"2022-08-07T17:54:27Z",
+
+        // English
+        "_en_index": "2023-09-18T00:00:00.000Z"
     };
 
     let getLastMod = function (file) {

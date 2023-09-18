@@ -217,8 +217,9 @@ body {
 }
 
 main {
-    padding-bottom: var(--footer-padding);
     margin-top: 1rem;
+    padding: var(--baseline);
+    padding-bottom: var(--footer-padding);
 }
 
 footer {

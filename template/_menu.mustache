@@ -6,5 +6,13 @@
             <li>
                 <button id="btnDarkTheme" class="icon">&#127770;</button>
                 <button id="btnLightTheme" class="icon">&#127774;</button>
+
+                {{#isEnglish}}
+                    <button id="btnTurkish" class="icon">🇹🇷</button>
+                {{/isEnglish}}
+
+                {{#isTurkish}}
+                    <button id="btnEnglish" class="icon">🇺🇸</button>
+                {{/isTurkish}}
             </li>
         </ul>

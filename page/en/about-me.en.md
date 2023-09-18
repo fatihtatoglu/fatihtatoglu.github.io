@@ -13,7 +13,7 @@ tags: hakkımda fatih_tatoglu
 order: 6
 ---
 
-![Fatih Tatoğlu](../../image/about_me.jpg "The photo was taken by [Erkan Balk](https://www.facebook.com/erkan.balk 'Erkan Balk | Facebook') in Eskişehir on January 2, 2015.")
+![Fatih Tatoğlu](../../image/fatih_tatoglu.jpg "Fatih Tatoğlu")
 
 Hello, I am Fatih. I prefer to describe myself as a curious developer. My life has been shaped by asking everything as a child and trying to find the answers to these questions. I motivate myself by saying "Never stop learning and trying!".
 

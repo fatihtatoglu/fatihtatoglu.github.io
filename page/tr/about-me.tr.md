@@ -13,7 +13,7 @@ tags: hakkımda fatih_tatoglu
 order: 6
 ---
 
-![Fatih Tatoğlu](../../image/about_me.jpg "Fotoğraf [Erkan Balk](https://www.facebook.com/erkan.balk 'Erkan Balk | Facebook') tarafından 2 Ocak 2015 tarihinde Eskişehir'de çekilmiştir.")
+![Fatih Tatoğlu](../../image/fatih_tatoglu.jpg "Fatih Tatoğlu")
 
 Merhaba ben Fatih. Kendimi meraklı bir geliştirici olarak tanımlamayı tercih ediyorum. Çocukken her şeyi sormam ve bu sorunların cevaplarını bulmak için çabalamam benim hayatımı şekillendi. "Öğrenmekten ve denemekten asla vazgeçme!" diyerek kendimi motive ediyorum.
 

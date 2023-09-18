@@ -7,6 +7,9 @@ var $btnDarkTheme = document.getElementById("btnDarkTheme");
 var $html = document.getElementsByTagName("html")[0];
 
 var currentPage = window.location.href;
+if (window.location.pathname === "/") {
+    currentPage = window.location.href + "index.html";
+}
 var menuListItems = $menuList.querySelectorAll("li a");
 
 for (let i = 0; i < menuListItems.length; i++) {

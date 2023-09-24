@@ -3,30 +3,32 @@ layout: post
 published: true
 author: Fatih Tatoğlu
 date: 2022-05-24T15:34:54Z
-permalink: ./kendime-notlar/swot-analizi.html
+permalink: ./my-notes/swot.html
 language: tr
 
 title: SWOT Analizi
 header: SWOT Analizi
-description: SWOT analizi bir şirketin ya da yapının stratejik durumunu gösteren, uygulanması basit ama etkisi yüksek bir araçtır.
 tags: SWOT güçlü_yanlar zayıf_yanlar fırsatlar tehditler
 category: notes
 ---
 
-SWOT (Strengths, Weaknesses, Opportunities, Threats) analizi bir şirketin ya da organizasyonun stratejik durumununun gelişimini gösteren basit ama etkin bir araçtır. Stratejik yönetim aracı olan SWOT analizi, karar vermenin erken aşamalarında da destek olmaktadır.
+SWOT analysis is an effective tool for showing and guiding the strategic situation of a company or organization. It can be used in the early stage of decision-making. I think SWOT analysis should be in everyone's toolkit because it is easy to learn but effective.
 
-![Notlar](../../image/swot.png "SWOT Analizi")
+SWOT is focused on the four fundamental concepts.
 
-Yukarıdaki aslında sözlük tanımı. Bu tanımın yanında SWOT analizinin kişi için de uyarlamaları günümüzde karşımıza çıkmaktadır. SWOT analizi öğrenilmesi ve uygulanması basit ama etkisi yüksek bir araç olmasından dolayı mutlaka herkesin takım çantasında olması gerektiğini düşünüyorum.
+- Strengths
+- Weaknesses
+- Opportunities
+- Threats
 
-SWOT analizi 4 temel kavrama odaklanmıştır.
+SWOT analysis makes visible the environmental impacts that apply to the company or organization and that will affect its success in adapting to change. In other words, SWOT analysis makes internal and external factors visible.
 
-- Güçlü Yönler
-- Zayıf Yönler
-- Fırsatlar
-- Tehditler
+## Internal Factors
 
-SWOT analizi şirketin ya da organizasyonun üzerine uygulanan ve değişime adapte olma başarısını da etkileyecek çevresel etkilerin görünür olmasını sağlamaktadır. Yani, SWOT analizi iç ve dış faktörlerin görünür olmasını sağlamaktadır.
+The internal factors show what having and competencies of the company or organization. Strengths and Weaknesses are considered in this group.
+
+
+
 
 ## İç Faktörler
 
@@ -54,7 +56,7 @@ Diğer bir zorluğun da SWOT analizine eksik sayıda kişinin katılması ya da 
 
 ## Değerlendirme
 
-SWOT analizi tek başına değerlidir ama tam bir sonuç vermeyeceğini de unutmamak lazım. Sadece şirket ya da organizasyon için karar verirken sadece SWOT analizi baz alınarak aksiyon alınmasının hatalı olacağını düşünüyorum. SWOT mevcut durumun ne olduğunu gösterirken, verilecek kararların etkileyebileceği noktaları göstermektedir.
+SWOT analizi tek başına değerlidir ama tam bir sonuç vermeyeceğini de unutmamak lazım. Sadece şirket ya da organizasyon için karar verirken sadece SWOT analizi baz alınarak aksiyon alınmasının hatalı olacağını düşünüyorum. SWOT mevcut durumun ne olduğunu gösterirken, verilecek kararların etkileyebileceği noktaları göstermektedir. Analiz sonrasında çıkan maddelerin mutlaka derinlemesine incelenmesi, ön yargılardan arındırılması ve sonrasında mutlaka bir aksiyon planına dönüştürülmesi faydalıdır.
 
 ## Referanslar
 

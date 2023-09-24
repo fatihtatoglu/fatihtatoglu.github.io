@@ -60,9 +60,6 @@ let fth = (function () {
             const item = menuListItems[i];
 
             let href = item.href.replace("/index.html", "/");
-
-            console.log(currentPage, href);
-
             if (href === currentPage) {
                 item.classList.add("active");
                 break;

@@ -23,7 +23,7 @@ Bu durumu eşimle paylaştığımda, *"Bir şeye başlamayı seviyorsun ama deva
 
 Özetle sizlere blog yazma konusunda doğru yönlendirmeyi yapmaya çalışıyorum.
 
-- Blog yazmak için bir amaç bulun. **"Neden blog yazmak istiyorsun?"** sorusunu yanıtlayın.
+- Blog yazmak için bir amaç bulun. **"Neden blog yazmak istiyorum?"** sorusunu yanıtlayın.
 - Medium veya Linkedin gibi sahip olduğunuz şeylerle başlayın.
 - Blogun temasına veya tarzına odaklanmayın.
 - Arkadaşlarınızdan erken geri bildirim toplayın.

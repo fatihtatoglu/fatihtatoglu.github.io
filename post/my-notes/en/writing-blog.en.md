@@ -23,7 +23,7 @@ As a first action, I decided to find my intrinsic motivation to write a blog. My
 
 In a summary, I am trying to give a right direction to you for blogging.
 
-- Find a purpose to write a blog. Answer that question **"Why do you want to write a blog?"**.
+- Find a purpose to write a blog. Answer that question **"Why do I want to write a blog?"**.
 - Start with what you have, such as Medium or Linkedin.
 - Don't focus the theme or style of the blog.
 - Collect early feedback from your friends.

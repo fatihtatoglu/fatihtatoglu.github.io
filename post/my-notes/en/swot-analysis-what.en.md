@@ -3,7 +3,7 @@ layout: post
 published: true
 author: Fatih Tatoğlu
 date: 2022-05-24T15:34:54Z
-permalink: ./en/my-notes/swot-analysis.html
+permalink: ./en/my-notes/swot-analysis-what.html
 language: en
 
 title: SWOT Analysis
@@ -11,8 +11,6 @@ header: SWOT Analysis
 tags: SWOT Strengths Weaknesses Opportunities Threats Helpful Harmful Internal External Environment
 category: notes
 ---
-
-![SWOT Analysis](../../../image/swot.png "SWOT analysis - [Wikipedia](https://en.wikipedia.org/wiki/SWOT_analysis)")
 
 SWOT analysis is a crucial tool that shows the current situation of a company or organization. Everyone knows how is important to know this before making any strategic move. Therefore, I think it is a method that everyone should learn.
 
@@ -26,6 +24,8 @@ This technique focuses on four fundamental concepts.
 - Weaknesses
 - Opportunities
 - Threats
+
+![SWOT Analizi](../../../image/swot_initial.png "SWOT Analizi Bileşenleri")
 
 ## Strengths
 
@@ -72,9 +72,13 @@ So far, I've known there was only one grouping style for SWOT. However, I've lea
 
 #### Internal & External Factor Grouping
 
+![SWOT Analysis Grouping - Internal & External Factor](../../../image/swot_internal_external.png "SWOT Analysis Grouping - Internal & External Factor")
+
 In this grouping, the strengths and weaknesses are in the internal group. So, opportunities and threats are in the external group. This grouping comes from the definition of the SWOT concepts and it is the usual grouping style.
 
 #### Helpful & Harmful Factor Grouping
+
+![SWOT Analysis Grouping - Helpful & Harmful Factor](../../../image/swot_helpful_harmful.png "SWOT Analysis Grouping - Helpful & Harmful Factor]")
 
 I've learned this style recently and liked it because it creates an awareness of the pain points of a company or organization. From my experience, many people just focus on strengths and threats while interpreting the SWOT. Maybe some of them also focus on opportunities.
 

@@ -3,7 +3,7 @@ layout: post
 published: true
 author: Fatih Tatoğlu
 date: 2022-05-24T15:34:54Z
-permalink: ./my-notes/swot-analysis.html
+permalink: ./my-notes/swot-analysis-what.html
 language: tr
 
 title: SWOT Analizi
@@ -11,8 +11,6 @@ header: SWOT Analizi
 tags: SWOT Güçlü_Yanlar Zayıf_Yanlar Zayıflıklar Fırsatlar Tehtidler Yardımcı Zararlı İç Dış Çevre
 category: notes
 ---
-
-![SWOT Analizi](../../../image/swot.png "SWOT analizi - [Wikipedia](https://tr.wikipedia.org/wiki/SWOT_analizi)")
 
 SWOT analizi, bir şirketin veya kuruluşun mevcut durumunu gösteren önemli bir araçtır. Herhangi bir stratejik hamle yapmadan önce bunu bilmenin ne kadar önemli olduğunu herkes bilir. Bu nedenle herkesin öğrenmesi gereken bir yöntem olduğunu düşünüyorum.
 
@@ -26,6 +24,8 @@ Bu teknik dört temel kavrama odaklanmaktadır.
 - Zayıf yönler
 - Fırsatlar
 - Tehditler
+
+![SWOT Analizi](../../../image/swot_initial.png "SWOT Analizi Bileşenleri")
 
 ## Güçlü
 
@@ -72,9 +72,13 @@ SWOT değerlendirme aşamasında iki ortak adım vardır. Birincisi gruplama, di
 
 #### İç ve Dış Faktör Gruplaması
 
+![SWOT Analizi Gruplama - İç ve Dış Faktörler](../../../image/swot_internal_external.png "SWOT Analizi Gruplama - İç ve Dış Faktörler")
+
 Bu gruplamada güçlü ve zayıf yönler iç gruptadır. Yani fırsatlar ve tehditler dış gruptadır. Bu gruplandırma SWOT kavramlarının tanımından gelmektedir ve olağan gruplama stilidir.
 
 #### Yararlı ve Zararlı Faktör Gruplaması
+
+![SWOT Analizi Gruplama - Yaralı ve Zararlı Faktörler](../../../image/swot_helpful_harmful.png "SWOT Analizi Gruplama - Yaralı ve Zararlı Faktörler]")
 
 Bu tarzı yakın zamanda öğrendim ve beğendim çünkü bir şirketin veya organizasyonun sıkıntılı noktalarına dair farkındalık yaratıyor. Deneyimlerime göre birçok kişi SWOT'u yorumlarken sadece güçlü yönlere ve tehditlere odaklanıyor. Belki bazıları fırsatlara da odaklanıyor.
 

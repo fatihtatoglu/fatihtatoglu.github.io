@@ -1,6 +1,6 @@
 ---
 layout: post
-published: true
+published: false
 author: Fatih Tatoğlu
 date: 2022-05-28T16:47:14Z
 permalink: ./kocluk/bir-yoneticinin-yolu.html

@@ -1,6 +1,6 @@
 ---
 layout: post
-published: true
+published: false
 author: Fatih Tatoğlu
 date: 2022-06-12T19:03:27Z
 permalink: ./lab/haproxy/ssl-sertifikasi-ekleme.html

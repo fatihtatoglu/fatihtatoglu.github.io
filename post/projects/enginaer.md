@@ -1,7 +1,7 @@
 ---
 layout: post
 author: Fatih Tatoğlu
-published: true
+published: false
 date: 2022-03-24T00:00:00.000Z
 permalink: ./projeler/enginaer.html
 language: tr

@@ -1,6 +1,6 @@
 ---
 layout: post
-published: true
+published: false
 author: Fatih Tatoğlu
 date: 2022-05-21T23:15:00Z
 permalink: ./kocluk/bilmemenin-gucu.html

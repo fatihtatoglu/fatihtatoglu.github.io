@@ -1,6 +1,6 @@
 ---
 layout: post
-published: true
+published: false
 author: Fatih Tatoğlu
 date: 2022-06-12T20:43:39Z
 permalink: ./lab/windows/ortam-kurulumu.html

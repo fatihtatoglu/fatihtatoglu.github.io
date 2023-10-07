@@ -1,6 +1,6 @@
 ---
 layout: post
-published: true
+published: false
 author: Fatih Tatoğlu
 date: 2022-06-12T21:28:33Z
 permalink: ./lab/windows/sanal-makine-olusturma.html

@@ -1,6 +1,6 @@
 ---
 layout: post
-published: true
+published: false
 author: Fatih Tatoğlu
 date: 2022-05-28T15:23:33Z
 permalink: ./kocluk/bireysel-swot-analizi.html

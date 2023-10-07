@@ -1,6 +1,6 @@
 ---
 layout: post
-published: true
+published: false
 author: Fatih Tatoğlu
 date: 2022-06-12T22:00:42Z
 permalink: ./lab/linux/mint-gelistirme-ortami.html

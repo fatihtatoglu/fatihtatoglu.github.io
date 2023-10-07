@@ -1,6 +1,6 @@
 ---
 layout: post
-published: true
+published: false
 author: Fatih Tatoğlu
 date: 2022-06-23T12:40:14Z
 permalink: ./kocluk/takim-dongusu.html

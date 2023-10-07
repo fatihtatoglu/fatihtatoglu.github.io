@@ -1,6 +1,6 @@
 ---
 layout: post
-published: true
+published: false
 author: Fatih Tatoğlu
 date: 2022-06-12T20:25:53Z
 permalink: ./lab/haproxy/varsayilan-yonlendirme.html

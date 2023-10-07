@@ -1,6 +1,6 @@
 ---
 layout: post
-published: true
+published: false
 author: Fatih Tatoğlu
 date: 2022-06-23T09:22:56Z
 permalink: ./kocluk/sosyal-aylaklik.html

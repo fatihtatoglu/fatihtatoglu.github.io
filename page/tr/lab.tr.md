@@ -18,17 +18,4 @@ Bir şeyi teorik olarak öğrenmenin bana göre olmadığını fark ettiğimden 
 
 ## HAProxy
 
-- [Kurulum](./lab/haproxy/kurulum.html "HAProxy - Kurulum")
-- [Cluster](./lab/haproxy/cluster.html "HAProxy - Cluster")
-- [SSL Sertifikası Ekleme](./lab/haproxy/ssl-sertifikasi-ekleme.html "HAProxy - SSL Sertifikası Ekleme")
-- [Varsayılan Yönlendirme](./lab/haproxy/varsayilan-yonlendirme.html "HAProxy - Varsayılan Yönlendirme")
-
-## Windows
-
-- [Ortam Kurulumu](./lab/windows/ortam-kurulumu.html "Windows - Ortam Kurulumu")
-- [Sanal Makine Oluşturma](./lab/windows/sanal-makine-olusturma.html "Windows - Sanal Makine Oluşturma")
-
-## Linux
-
-- [Mint Geliştirme Ortamı](./lab/linux/mint-gelistirme-ortami.html "Linux - Mint Geliştirme Ortamı")
-- [Otomatik Güncelleme](./lab/linux/otomatik-guncelleme.html "Linux - Otomatik Güncelleme")
+- [Kurulum](./lab/haproxy/setup.html "HAProxy - Kurulum")

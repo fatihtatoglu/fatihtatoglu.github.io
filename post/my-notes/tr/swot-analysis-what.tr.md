@@ -6,8 +6,8 @@ date: 2022-05-24T15:34:54Z
 permalink: ./my-notes/swot-analysis-what.html
 language: tr
 
-title: SWOT Analizi
-header: SWOT Analizi
+title: Nedir - SWOT Analizi
+header: Nedir - SWOT Analizi
 tags: SWOT Güçlü_Yanlar Zayıf_Yanlar Zayıflıklar Fırsatlar Tehtidler Yardımcı Zararlı İç Dış Çevre
 category: notes
 ---
@@ -27,7 +27,7 @@ Bu teknik dört temel kavrama odaklanmaktadır.
 
 ![SWOT Analizi](../../../image/swot_initial.png "SWOT Analizi Bileşenleri")
 
-## Güçlü
+## Güçlü Yönler
 
 Bu kavram, bir şirketin veya kuruluşun sahip olduğu, bildiği veya deneyimlediği şeyleri ifade eder. Örneğin, Apple
 
@@ -37,7 +37,7 @@ Bu kavram, bir şirketin veya kuruluşun sahip olduğu, bildiği veya deneyimled
 
 Apple bu ürünlerle pazarda daha güvenli bir şekilde ilerleyebilir.
 
-## Zayıf yönler
+## Zayıf Yönler
 
 Güçlü yönler gibi, her şirket ve organizasyonun da zayıf yönleri vardır. Zayıf yönler, bir şirketin veya kuruluşun henüz sahip olmadığı, bilmediği veya deneyimlemediği şeyleri ifade eder.
 

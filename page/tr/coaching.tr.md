@@ -1,6 +1,6 @@
 ---
 layout: coaching
-published: true
+published: false
 author: Fatih Tatoğlu
 date: 2022-04-07T00:00:00Z
 permalink: ./coaching/index.html

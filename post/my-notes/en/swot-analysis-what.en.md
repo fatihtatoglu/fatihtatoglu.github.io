@@ -6,8 +6,8 @@ date: 2022-05-24T15:34:54Z
 permalink: ./en/my-notes/swot-analysis-what.html
 language: en
 
-title: SWOT Analysis
-header: SWOT Analysis
+title: What - SWOT Analysis
+header: What - SWOT Analysis
 tags: SWOT Strengths Weaknesses Opportunities Threats Helpful Harmful Internal External Environment
 category: notes
 ---

@@ -2,7 +2,7 @@
 layout: post
 published: true
 author: Fatih Tatoğlu
-date: 2023-09-20T00:00:00.000Z
+date: 2022-03-20T00:00:00.000Z
 permalink: ./en/my-notes/writing-blog.html
 language: en
 

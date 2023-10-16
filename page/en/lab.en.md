@@ -19,3 +19,8 @@ Ever since I realized that learning something theoretically is not for me, I hav
 ## HAProxy
 
 - [Setup](./en/lab/haproxy/setup.html "HAProxy - Setup")
+
+## Windows
+
+- [Environment Setup](./en/lab/windows/environment-setup.html "Windows - Environment Setup")
+- [Creatin a Virtual Machine](./en/lab/windows/hyperv.html "Windows - Hyper-V")

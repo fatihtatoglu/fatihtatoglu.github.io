@@ -19,3 +19,8 @@ Bir şeyi teorik olarak öğrenmenin bana göre olmadığını fark ettiğimden 
 ## HAProxy
 
 - [Kurulum](./lab/haproxy/setup.html "HAProxy - Kurulum")
+
+## Windows
+
+- [Ortam Kurulumu](./lab/windows/environment-setup.html "Windows - Ortam Kurulumu")
+- [Sanal Makine Oluşturmak](./lab/windows/hyperv.html "Windows - Hyper-V")

@@ -1,9 +1,9 @@
 ---
 layout: post
-published: false
+published: true
 author: Fatih Tatoğlu
 date: 2022-06-12T19:03:27Z
-permalink: ./lab/haproxy/ssl-sertifikasi-ekleme.html
+permalink: ./lab/haproxy/ssl-certificate.html
 language: tr
 
 title: HAProxy - SSL Sertifikası Ekleme

@@ -3,7 +3,7 @@ layout: post
 published: false
 author: Fatih Tatoğlu
 date: 2022-05-28T15:23:33Z
-permalink: ./kocluk/bireysel-swot-analizi.html
+permalink: ./my-notes/personal-swot.html
 language: tr
 
 title: Bireysel SWOT Analizi

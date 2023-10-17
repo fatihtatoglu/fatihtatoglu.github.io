@@ -1,9 +1,9 @@
 ---
 layout: post
-published: false
+published: true
 author: Fatih Tatoğlu
 date: 2022-06-23T12:40:14Z
-permalink: ./kocluk/takim-dongusu.html
+permalink: ./coaching/team-cycle.html
 language: tr
 
 title: Takım Döngüsü

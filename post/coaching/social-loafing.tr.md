@@ -1,9 +1,9 @@
 ---
 layout: post
-published: false
+published: true
 author: Fatih Tatoğlu
 date: 2022-06-23T09:22:56Z
-permalink: ./kocluk/sosyal-aylaklik.html
+permalink: ./coaching/social-loafing.html
 language: tr
 
 title: Sosyal Aylaklık

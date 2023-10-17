@@ -1,9 +1,9 @@
 ---
 layout: post
-published: false
+published: true
 author: Fatih Tatoğlu
 date: 2022-05-19T15:30:00Z
-permalink: ./kocluk/survey-core-values.html
+permalink: ./coaching/core-values-survey.html
 language: tr
 
 title: Kişisel Değerler Anketi

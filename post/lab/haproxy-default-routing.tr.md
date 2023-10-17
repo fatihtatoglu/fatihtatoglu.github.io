@@ -1,9 +1,9 @@
 ---
 layout: post
-published: false
+published: true
 author: Fatih Tatoğlu
 date: 2022-06-12T20:25:53Z
-permalink: ./lab/haproxy/varsayilan-yonlendirme.html
+permalink: ./lab/haproxy/default-routing.html
 language: tr
 
 title: HAProxy - Varsayılan Yönlendirme

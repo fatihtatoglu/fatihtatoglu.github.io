@@ -1,9 +1,9 @@
 ---
 layout: post
-published: false
+published: true
 author: Fatih Tatoğlu
 date: 2022-05-28T16:47:14Z
-permalink: ./kocluk/bir-yoneticinin-yolu.html
+permalink: ./coaching/a-managers-path.html
 language: tr
 
 title: Bir Yöneticinin Yolu

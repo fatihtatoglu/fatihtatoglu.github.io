@@ -1,9 +1,9 @@
 ---
 layout: post
-published: false
+published: true
 author: Fatih Tatoğlu
 date: 2022-05-21T23:15:00Z
-permalink: ./kocluk/bilmemenin-gucu.html
+permalink: ./coaching/power-of-unknowing.html
 language: tr
 
 title: Bilmemenin Gücü

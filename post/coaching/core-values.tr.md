@@ -1,15 +1,14 @@
 ---
 layout: post
-published: false
+published: true
 author: Fatih Tatoğlu
 date: 2022-05-16T18:30:00Z
-permalink: ./kocluk/degerler.html
+permalink: ./coaching/core-values.html
 language: tr
 
 title: Değerler
 header: Değerler
-description: Karar verirken veya hareket ederken bizi ne tetikliyor, durduruyor ya da harekete geçiriyor?
-tags: kisisel_degerler kararlar
+tags: kisisel_degerler temel_degerler kararlar
 category: coaching
 ---
 

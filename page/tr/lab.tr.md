@@ -18,9 +18,11 @@ Bir şeyi teorik olarak öğrenmenin bana göre olmadığını fark ettiğimden 
 
 ## HAProxy
 
-- [Kurulum](./lab/haproxy/setup.html "HAProxy - Kurulum")
+1. [Kurulum](./lab/haproxy/setup.html)
 
-## Windows
+## Geliştirme Ortamı
 
-- [Ortam Kurulumu](./lab/windows/environment-setup.html "Windows - Ortam Kurulumu")
-- [Sanal Makine Oluşturmak](./lab/windows/hyperv.html "Windows - Hyper-V")
+1. [Ana Makine Kurulumu](./lab/environment/setup.html)
+2. [Hyper-V ile Sanal Makine Oluşturma](./lab/environment/hyperv.html)
+3. [Linux Mint ile Geliştirme Ortamı Oluşturma](./lab/environment/dev-setup-mint.html)
+4. [Otomatik Güncellemeler](./lab/environment/auto-update.html)

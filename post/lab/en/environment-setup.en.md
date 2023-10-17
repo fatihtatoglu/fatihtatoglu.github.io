@@ -3,11 +3,11 @@ layout: post
 published: true
 author: Fatih Tatoğlu
 date: 2022-06-12T20:43:39Z
-permalink: ./en/lab/windows/environment-setup.html
+permalink: ./en/lab/environment/setup.html
 language: en
 
-title: Windows - Environment Setup
-header: Windows - Environment Setup
+title: Host Setup
+header: Host Setup
 tags: windows choco chocolatey powershell hyper-v environment_setup
 ---
 

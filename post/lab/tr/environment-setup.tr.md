@@ -3,11 +3,11 @@ layout: post
 published: true
 author: Fatih Tatoğlu
 date: 2022-06-12T20:43:39Z
-permalink: ./lab/windows/environment-setup.html
+permalink: ./lab/environment/setup.html
 language: tr
 
-title: Windows - Ortam Kurulumu
-header: Windows - Ortam Kurulumu
+title: Ana Makine Kurulumu
+header: Ana Makine Kurulumu
 tags: windows choco chocolatey powershell hyper-v ortam_kurulumu
 ---
 

@@ -18,9 +18,11 @@ Ever since I realized that learning something theoretically is not for me, I hav
 
 ## HAProxy
 
-- [Setup](./en/lab/haproxy/setup.html "HAProxy - Setup")
+1. [Setup](./lab/haproxy/setup.html)
 
-## Windows
+## Development Environment
 
-- [Environment Setup](./en/lab/windows/environment-setup.html "Windows - Environment Setup")
-- [Creatin a Virtual Machine](./en/lab/windows/hyperv.html "Windows - Hyper-V")
+1. [Host Setup](./en/lab/environment/setup.html)
+2. [Creating Virtual Machine with Hyper-V](./en/lab/environment/hyperv.html)
+3. [Creating Development Environment with Linux Mint](./en/lab/environment/dev-setup-mint.html)
+4. [Auto Updates](./en/lab/environment/auto-update.html)

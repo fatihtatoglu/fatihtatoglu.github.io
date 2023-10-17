@@ -3,19 +3,19 @@ layout: post
 published: true
 author: Fatih Tatoğlu
 date: 2022-06-12T21:28:33Z
-permalink: ./lab/windows/hyperv.html
-language: tr
+permalink: ./en/lab/environment/hyperv.html
+language: en
 
-title: Windows - Hyper-V
-header: Windows - Hyper-V
-tags: powershell hyper-v sanal_makine
+title: Creating Virtual Machine with Hyper-V
+header: Creating Virtual Machine with Hyper-V
+tags: powershell hyper-v virtual_machine virtual_switch
 ---
 
-Ortam kurulumunun hazırlığını tamamladıktan sonra, geliştirmeye başlamak için bir sanal makineye ihtiyacım var. Birçok butona tıklamak yerine Powershell kullanmayı tercih ediyorum.
+After completing the preparation of the environment installation, I need a virtual machine to start development. I prefer to use Powershell instead of clicking many buttons.
 
-## Ağ Ayarlaması
+## Network
 
-İnternete ulaşmak veya ana bilgisayar ve diğer sanal makinelerle iletişim kurmak için öncelikle ağ ayarları yapılmalıdır.
+To reach the Internet or communicate with the host and other virtual machines, the network settings should be done first.
 
 ```powershell
 PS C:\Users\Fatih Tatoğlu> $natSwitch     = "NATSwitch"
@@ -28,9 +28,9 @@ PS C:\Users\Fatih Tatoğlu>
 PS C:\Users\Fatih Tatoğlu> New-NetNAT -Name $natSwitch -InternalIPInterfaceAddressPrefix $natAddress
 ```
 
-Yukarıdaki komutlar ile bir virtual switch oluşturulacaktır. Ben `172.19.85.0/24` IP aralığını seçtim ama istek ve ihtiyaçlara göre değiştirilebilir.
+With the above commands, the virtual switch would be created. I selected the `172.19.85.0/24` IP range but it can be changed with wants and needs.
 
-## Sanal Makine Oluşturmak
+## Creating Virtual Machine
 
 ```powershell
 PS C:\Users\Fatih Tatoğlu> $natSwitch = "NATSwitch"
@@ -57,17 +57,17 @@ PS C:\Users\Fatih Tatoğlu> Set-VMFirmware -VMName $vmName -FirstBootDevice $dvd
 PS C:\Users\Fatih Tatoğlu> Start-VM -Name $vmName
 ```
 
-Yukarıdaki komutlar ile sanal disk oluşturulacaktır. Daha sonra sanal makine düzenlenir ve son olarak makine başlatılır.
+With the above commands, the virtual disk will be created. Then, the virtual machine will be arranged, and finally, the machine is started.
 
-🔥 Parametre değiştirilerek farklı sanal makineler oluşturulabilir. Öte yandan, bu sanal makineler temel ve boş makinelerdir. Ağ ayarlarını manuel olarak ayarlamayı unutmayın.
+🔥 By changing the parameter, the different virtual machines can be created. On the other hand, those virtual machines are the base and empty machines. Don't forget to set its network settings manually.
 
-Aşağıdaki komut uygulanırsa, ana makine konuk makineye bağlanacaktır.
+If the below command is applied, the host machine will connect to the guest machine.
 
 ```powershell
 PS C:\Users\Fatih Tatoğlu> $computer = hostname
 PS C:\Users\Fatih Tatoğlu> vmconnect.exe $computer $vmName
 ```
 
-## Sanal Makine Ayarları
+## Virtual Machine Setting
 
-Sanal makinenin ağ ayarının zor olabileceği farklı senaryoları deneyimleyerek öğrendim. Benim ortamımda, DNS ana bilgisayarın ağ geçidi IP adresi ile aynı atanmalıdır. Örneğin, ana bilgisayarın ağ geçidi IP adresi `192.168.6.1` ise. Sanal makinenin DNS IP adresi `192.168.6.1` olmalıdır. DNS sunucusu IP adresleri, geçerli bir DNS sunucusu bulunmuşsa kullanılabilir.
+I learned by experience with the different scenarios the network setting of the virtual machine may be tricky. In my environment, the DNS must be assigned the same as the host's gateway IP address. For example, if the host's gateway IP address is `192.168.6.1`. The virtual machine's DNS IP address must be `192.168.6.1`. The DNS server IP addresses can be used if a valid DNS server has been located.

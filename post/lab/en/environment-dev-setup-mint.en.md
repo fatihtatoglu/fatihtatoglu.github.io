@@ -9,6 +9,10 @@ language: en
 title: Creating Development Environment with Linux Mint
 header: Creating Development Environment with Linux Mint
 tags: mint ubuntu linux_mint development development_environment
+
+category: lab
+group: environment-setup
+order: 3
 ---
 
 Having numerous development environments with virtual machines provides extra advantages, such as separating the personal and working setup or trying different languages and tools. However, building an environment from scratch takes so much time. So, I have a base installation for every Linux virtual machine.

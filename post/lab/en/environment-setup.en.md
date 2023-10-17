@@ -9,6 +9,10 @@ language: en
 title: Host Setup
 header: Host Setup
 tags: windows choco chocolatey powershell hyper-v environment_setup
+
+category: lab
+group: environment-setup
+order: 1
 ---
 
 Despite all the pressure from my teammates and friends, I still use Microsoft Windows as a workplace. I don't know why, but I feel comfortable using Windows. However, I use Windows with Powershell, like a Unix-based OS.

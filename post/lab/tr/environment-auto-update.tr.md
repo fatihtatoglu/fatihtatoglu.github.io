@@ -9,6 +9,10 @@ language: tr
 title: Otomatik Güncellemeler
 header: Otomatik Güncellemeler
 tags: mint ubuntu linux_mint apt update upgrade autoclean
+
+category: lab
+group: environment-setup
+order: 4
 ---
 
 Her ne olursa olsun, bir işletim sistemi periyodik olarak güncel tutulmalıdır. Ancak bunun için zaman harcamak ekstra zaman gerektirebilir. Bu yüzden otomatik bir süreç tanımlamak faydalı olabilir. Bunu sağlamak için aşağıdaki komutlar yeterli olacaktır.

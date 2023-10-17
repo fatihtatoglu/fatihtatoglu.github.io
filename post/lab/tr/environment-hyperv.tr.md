@@ -9,6 +9,10 @@ language: tr
 title: Hyper-V ile Sanal Makine Oluşturma
 header: Hyper-V ile Sanal Makine Oluşturma
 tags: powershell hyper-v sanal_makine
+
+category: lab
+group: environment-setup
+order: 2
 ---
 
 Ortam kurulumunun hazırlığını tamamladıktan sonra, geliştirmeye başlamak için bir sanal makineye ihtiyacım var. Birçok butona tıklamak yerine Powershell kullanmayı tercih ediyorum.

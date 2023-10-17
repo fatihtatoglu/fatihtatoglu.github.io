@@ -9,6 +9,10 @@ language: en
 title: Creating Virtual Machine with Hyper-V
 header: Creating Virtual Machine with Hyper-V
 tags: powershell hyper-v virtual_machine virtual_switch
+
+category: lab
+group: environment-setup
+order: 2
 ---
 
 After completing the preparation of the environment installation, I need a virtual machine to start development. I prefer to use Powershell instead of clicking many buttons.

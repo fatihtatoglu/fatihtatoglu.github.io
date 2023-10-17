@@ -9,6 +9,10 @@ language: tr
 title: Ana Makine Kurulumu
 header: Ana Makine Kurulumu
 tags: windows choco chocolatey powershell hyper-v ortam_kurulumu
+
+category: lab
+group: environment-setup
+order: 1
 ---
 
 Ekip arkadaşlarımın ve dostlarımın tüm baskılarına rağmen işyeri olarak hala Microsoft Windows kullanıyorum. Neden bilmiyorum ama Windows kullanırken kendimi rahat hissediyorum. Ancak Windows'u Unix tabanlı bir işletim sistemi gibi Powershell ile kullanıyorum.

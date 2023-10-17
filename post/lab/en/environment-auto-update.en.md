@@ -9,6 +9,10 @@ language: en
 title: Auto Updates
 header: Auto Updates
 tags: mint ubuntu linux_mint apt update upgrade autoclean
+
+category: lab
+group: environment-setup
+order: 4
 ---
 
 Whatever happens, an OS must be kept up-to-dated periodically. However, spending time on this may be needed extra time. So, defining an automatic process can be helpful. To provide this the below commands can be enough.

@@ -9,7 +9,7 @@ language: tr
 title: Laboratuvar
 header: Laboratuvar
 tags: lab Laboratuvar test deney
-order: 5
+order: 4
 ---
 
 ![Laboratuvar](../image/laboratuvar.jpg "Ivan Samkov - [Pexels](https://www.pexels.com/tr-tr/fotograf/bardak-renkli-renkler-laboratuvar-9628807/)")

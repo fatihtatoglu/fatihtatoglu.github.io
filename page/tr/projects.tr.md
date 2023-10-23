@@ -1,6 +1,6 @@
 ---
 layout: projects
-published: false
+published: true
 author: Fatih Tatoğlu
 date: 2022-04-07T00:00:00Z
 permalink: ./projects/index.html
@@ -9,7 +9,7 @@ language: tr
 title: Projeler
 header: Projeler
 tags: projeler portfolio başarısızlık_hikayeleri itiraflar tasarım_fikirleri
-order: 3
+order: 5
 ---
 
 ![Projeler](../../image/projects.jpg "Markus Spiske - [Pexels](https://www.pexels.com/tr-tr/fotograf/tilt-shift-lens-uzerindeki-kodlar-2004161/)")

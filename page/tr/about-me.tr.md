@@ -19,7 +19,7 @@ Merhaba ben Fatih. Kendimi meraklı bir geliştirici olarak tanımlamayı tercih
 
 Uzun lafın kısası, benim ile ilgi bazı bilgiler aşağıdadır.
 
-- İstanbul, Türkiye de yaşıyorum.
+- İstanbul, Türkiye'de yaşıyorum.
 - Haydarpaşa Anadolu Teknik Lisesi Makina bölümünden mezun oldum.
 - Bahçeşehir Üniversitesi Bilgisayar Mühendisliğinden mezun oldum.
 - Programlamaya hobi olarak başladım, ancak ilk stajımdan sonra işim haline döndü.

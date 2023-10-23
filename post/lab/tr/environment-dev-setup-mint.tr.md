@@ -145,7 +145,7 @@ fatihtatoglu@fth-linux:~$ sudo vi ~/.bashrc
 
 Bunu yapmak için, `.bashrc` dosyası yukarıdaki komutla açılarak düzenlenir ve ardından aşağıdaki satır dosyanın altına eklenerek kaydedilir.
 
-```bash
+```text
 export PATH=$PATH:/usr/local/go/bin
 ```
 
@@ -192,7 +192,7 @@ fatihtatoglu@fth-linux:~$ sudo vi ~/.bashrc
 
 Aşağıdaki satırı dosyanın en altına ekleyin.
 
-```bash
+```text
 export PATH=$PATH:/usr/local/go/bin
 ```
 
@@ -200,7 +200,7 @@ O ortamda özel ve profesyonel hayatımdaki rutinim için Front-end ve back-end 
 
 ### Delivery Hero Geliştirme Ortamı
 
-Bu, Delivery Hero için benzersiz bir durumdur. Yukarıdaki ortam yeterli görünüyor. Buna rağmen, tüm kaynaklar AWS bulutunda olduğunda daha güvenli bir ortam sağlamak için bir VPN bağlantısı çok önemli olmalıdır. Fatih'in Geliştirme Ortamına** bir VPN istemcisi eklemek **Delivery Hero Ortamı** haline gelir.
+Bu, Delivery Hero için benzersiz bir durumdur. Yukarıdaki ortam yeterli görünüyor. Buna rağmen, tüm kaynaklar AWS bulutunda olduğunda daha güvenli bir ortam sağlamak için bir VPN bağlantısı çok önemli olmalıdır. **Fatih'in Geliştirme Ortamına** bir VPN istemcisi eklemek **Delivery Hero Ortamı** haline gelir.
 
 ```shell
 fatihtatoglu@fth-linux:~$ sudo apt install build-essential qtcreator qt5-default -y

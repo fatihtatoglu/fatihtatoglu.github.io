@@ -145,7 +145,7 @@ fatihtatoglu@fth-linux:~$ sudo vi ~/.bashrc
 
 To do this, the `.bashrc` file is opened by the above command to edit, and then the below line is added to the bottom of the file and saved.
 
-```bash
+```text
 export PATH=$PATH:/usr/local/go/bin
 ```
 
@@ -192,7 +192,7 @@ fatihtatoglu@fth-linux:~$ sudo vi ~/.bashrc
 
 Add the below line to the bottom of the file.
 
-```bash
+```text
 export PATH=$PATH:/usr/local/go/bin
 ```
 

@@ -9,7 +9,7 @@ language: en
 title: My Notes
 header: My Notes
 tags: my_notes notes
-order: 4
+order: 3
 ---
 
 ![Notlar](../../image/notes.jpg "Min An - [Pexels](https://www.pexels.com/tr-tr/fotograf/yapiskan-not-lot-1629212/)")

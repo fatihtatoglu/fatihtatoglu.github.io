@@ -9,7 +9,7 @@ language: en
 title: Laboratory
 header: Laboratory
 tags: lab Laboratory test experiment
-order: 5
+order: 4
 ---
 
 ![Laboratuvar](../image/laboratuvar.jpg "Ivan Samkov - [Pexels](https://www.pexels.com/tr-tr/fotograf/bardak-renkli-renkler-laboratuvar-9628807/)")

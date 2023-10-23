@@ -22,7 +22,7 @@ Bu not, CentOS 7.X Minimal üzerine kaynaktan tek sunucu kurulumu HAProxy adıml
 
 ## Ön Hazırlık
 
-|Özellik|Minimum Değer
+|Özellik|Minimum Değer|
 |---:|:---|
 |**Sunucu Adı**|haproxy-01|
 |**IP Adresi**|172.19.85.102|
@@ -71,7 +71,7 @@ devops@haproxy-01:~$ sudo yum install gcc openssl-devel readline-devel systemd-d
 devops@haproxy-01:~$ sudo yum update -y
 ```
 
-## İnşa et
+## Kurulum
 
 Lua kütüphane yolu HAProxy derleme komutu için bir parametre olduğundan derleme işlemi Lua'nın derlenmesi ile başlar.
 

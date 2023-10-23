@@ -3,8 +3,8 @@ layout: post
 published: true
 author: Fatih Tatoğlu
 date: 2022-06-12T18:41:00Z
-permalink: ./lab/haproxy/cluster.html
-language: tr
+permalink: ./en/lab/haproxy/cluster.html
+language: en
 
 title: HAProxy - Cluster
 header: HAProxy - Cluster
@@ -16,33 +16,33 @@ groupTitle: HAProxy
 order: 2
 ---
 
-Bu not, iki HAProxy sunucusuna sahip bir cluster kurulumunu içerir.
+This note contains a cluster setup that has two HAProxy servers.
 
-🔥 Bu not KeepAlived 2.2.7 sürümü için yazılmıştır. Daha yeni sürümler farklı konfigürasyonlara sahip olabilir.
+🔥 This note is written for KeepAlived 2.2.7 version. Newer versions may have different configurations.
 
-## Ön Hazırlık
+## Preliminary Preparation
 
-|Özellik|Master Sunucu|Slave Sunucu|
+|Property|Master Server|Slave Server|
 |---:|:---|:---|
-|**Sunucu Adı**|haproxy-01|haproxy-02|
-|**IP Adresi**|172.19.85.102|172.19.85.103|
+|**Server Name**|haproxy-01|haproxy-02|
+|**IP Address**|172.19.85.102|172.19.85.103|
 |**Netmask**|255.255.255.0|255.255.255.0|
 |**Gateway**|172.19.85.1|172.19.85.1|
 |**CPU** ⭐|4|4|
-|**Bellek** ⭐|2 GB|2 GB|
+|**Memory** ⭐|2 GB|2 GB|
 |**Disk**|40GB|40 GB|
 |**OS**|CentOS 7.X Minimal|CentOS 7.X Minimal|
-|**İnternet Erişimi**|Evet|Evet|
+|**Internet Access**|Yes|Yes|
 
-⭐: Kurulum işlemi sırasında kaynakları artırabilirsiniz.
+⭐: You can increase the resources during the installation process.
 
-Kurulum ve derleme sürecinde **root** kullanıcıya gerek yoktur. Ancak root ayrıcalıklarına sahip bir kullanıcıya ihtiyaç duyulacaktır. Notta **devops** kullanıcısı kurulum ve derleme süreci için kullanılır. Farklı bir kullanıcınız varsa lütfen onu kullanın.
+There is no need to have a **root** user during the setup and build process. However, a user with root privileges will be needed. In the note, the **devops** user is used for the setup and build process. If you have a different user, please use that.
 
-Ayrıca clusterın master sunucuya hizmet verebilmesi için özel bir IP adresine ihtiyacı vardır. Dolayısıyla bu notta sanal IP adresi olarak `172.19.85.104` kullanılacaktır.
+Moreover, the cluster needs a dedicated IP address to serve the master node. So, in this note, the `172.19.85.104` will be used as a virtual IP address.
 
-## Kurulum Hazırlığı
+## Setup Preparation
 
-Aşağıdaki dosya ilk sunucuya indirilmeli ve çıkartılmalıdır.
+The following file should be downloaded and extracted in the first server.
 
 ```shell
 devops@haproxy-01:~$ curl https://www.keepalived.org/software/keepalived-2.2.7.tar.gz > keepalived-2.2.7.tar.gz
@@ -50,7 +50,7 @@ devops@haproxy-01:~$ curl https://www.keepalived.org/software/keepalived-2.2.7.t
 devops@haproxy-01:~$ tar xf keepalived-2.2.7.tar.gz
 ```
 
-Aşağıdaki dosya ikinci sunucuya indirilmeli ve çıkartılmalıdır.
+The following file should be downloaded and extracted in the second server.
 
 ```shell
 devops@haproxy-02:~$ curl https://www.keepalived.org/software/keepalived-2.2.7.tar.gz > keepalived-2.2.7.tar.gz
@@ -58,9 +58,9 @@ devops@haproxy-02:~$ curl https://www.keepalived.org/software/keepalived-2.2.7.t
 devops@haproxy-02:~$ tar xf keepalived-2.2.7.tar.gz
 ```
 
-## Kurulum
+## Build
 
-Derleme işlemi otomatiktir ve master ve slave sunucularda aşağıdaki komutların çalıştırılması gerekir.
+The build process is automatic and needs to run the below commands in the master and slave servers.
 
 ```shell
 devops@haproxy-01:~$ cd ~
@@ -86,13 +86,13 @@ root@haproxy-02:/home/devops# exit
 devops@haproxy-02:~$
 ```
 
-## Konfigürasyon
+## Configuration
 
-Yapılandırma bölümüne başlamadan önce KeepAlived kütüphanesinin çalışma tarzı anlaşılmalıdır. Kütüphane aynı anda master ve slave sunucuları dinler. Master sunucu sorunlarla karşılaşırsa, slave sunucu IP adresini sanal IP adresiyle günceller. Master sunucu tekrar canlı veya kullanılabilir hale geldiğinde kitaplık, master sunucunun IP adresini günceller. Bunu yapmak için kütüphanenin bir failover scriptine ihtiyacı vardır.
+Before starting with the configuration section, the KeepAlived library's working style should be understood. The library listens to the master and slave nodes at the same time. If the master node faces problems, it updates the slave node's IP address with the virtual IP address. When the master node is again alive or available, the library updates the master node's IP address. To do this, the library needs a failover script.
 
 ### Failover Script
 
-Failover script dosyası HAProxy hizmetinin durumunu kontrol eder. Komut dosyasının tüm sunuculara eklenmesi gerekir.
+The failover script checks the haproxy service status. The script must be added to all the servers.
 
 ```shell
 devops@haproxy-01:~$ sudo vi /usr/local/bin/failover.sh
@@ -111,15 +111,15 @@ else
 fi
 ```
 
-KeepAlived kitaplığı root ayrıcalıklarıyla çalışır, bu nedenle failover script dosyasının ayrıcalıklarının güncellenmesi gerekir.
+The KeepAlived library runs with root privileges, so the failover script must be updated its privileges.
 
 ```shell
 devops@haproxy-01:~$ sudo chmod a+rx /usr/local/bin/failover.sh
 ```
 
-Sunucuların yapılandırmasına devam edelim. Master ve slave sunucuların konfigürasyonları farklıdır. Aşağıda paylaşılmaktadır.
+Let's continue with the configuration of the servers. The master and slave nodes' configurations are different. They are shared below.
 
-### Master Sunucu
+### Master Server
 
 ```shell
 devops@haproxy-01:~$ sudo vi /etc/keepalived/keepalived.conf
@@ -160,13 +160,13 @@ vrrp_instance VI_MASTER {
 }
 ```
 
-Doğrulamak için konfigürasyon dosyasını ekledikten sonra aşağıdaki komut kullanılabilir.
+After adding the configuration file to validate it, the below command can be used.
 
 ```shell
 devops@haproxy-01:~$ sudo keepalived --config-test=keepalived.conf
 ```
 
-### Slave Sunucu
+### Slave Server
 
 ```shell
 devops@haproxy-02:~$ sudo vi /etc/keepalived/keepalived.conf
@@ -207,15 +207,15 @@ vrrp_instance VI_BACKUP {
 }
 ```
 
-Doğrulamak için konfigürasyon dosyasını ekledikten sonra aşağıdaki komut kullanılabilir.
+After adding the configuration file to validate it, the below command can be used.
 
 ```shell
 devops@haproxy-02:~$ sudo keepalived --config-test=keepalived.conf
 ```
 
-## Güvenlik
+## Security
 
-Hatırlarsanız zaten HAProxy için güvenlik duvarı ayarlanmıştı. Şimdi KeepAlived kütüphanesine izin vermek için aşağıdaki komut faydalı olacaktır.
+If you remember, the firewall is already arranged for the HAProxy. Now, the below command should be beneficial to permit the KeepAlived library.
 
 ```shell
 devops@haproxy-01:~$ sudo firewall-cmd --add-rich-rule='rule protocol value="vrrp" accept' --permanent
@@ -227,7 +227,7 @@ devops@haproxy-02:~$ sudo firewall-cmd --add-rich-rule='rule protocol value="vrr
 devops@haproxy-02:~$ sudo firewall-cmd --reload
 ```
 
-## Çalıştırma
+## Turning Key
 
 ```shell
 devops@haproxy-01:~$ sudo chkconfig keepalived on
@@ -241,29 +241,29 @@ devops@haproxy-02:~$ sudo systemctl enable keepalived
 devops@haproxy-02:~$ sudo systemctl start keepalived
 ```
 
-## Doğrulama
+## Validation
 
-Öncelikle tüm sunucuların ayrı ayrı test edilmesi gerekmektedir. Bunun için;
+First of all, all the servers must be tested individually. For this;
 
 1. `http://172.19.85.102:1985/stats`
 2. `http://172.19.85.103:1985/stats`
 
-yukarıdaki adresler tarayıcı üzerinden ziyaret edilmelidir. HAProxy hizmetlerinin durum sayfası gösterilmelidir.
+the above addresses should be visited over the browser. The status page of the HAProxy services must be shown.
 
-Daha sonra tarayıcı üzerinden `http://172.19.85.104:1985/stats` adresine gidilmeli ve master sunucunun durum sayfası gösterilmelidir.
+Next, the `http://172.19.85.104:1985/stats` address should be visited over the browser and the master server's status page must be shown.
 
-Şu ana kadar herhangi bir sorun yaşanmadıysa her şey yolunda görünüyor. Bir sonraki adımda HAProxy hizmet durumuyla oynayalım.
+So far, everything seems okay, if any problems didn't occur. In the next step, let's play with the HAProxy service status.
 
 ```shell
 devops@haproxy-01:~$ sudo systemctl stop haproxy
 ```
 
-Yukarıdaki komutla master sunucudaki HAProxy hizmeti kapatılır. `http://172.19.85.104:1985/stats` adresini tekrar ziyaret ettikten sonra beklenen slave sunucunun durum sayfasının gösterilmesidir.
+With the above command, the HAProxy service on the master server is turned off.After visiting the `http://172.19.85.104:1985/stats` address again, the expectation is the slave's status page is shown.
 
-Son olarak aşağıdaki komut çalıştırıldığında her şey başlangıç durumunda olmalıdır.
+Finally, when the below command runs, everything should be in the initial state.
 
 ```shell
 devops@haproxy-01:~$ sudo systemctl start haproxy
 ```
 
-Bu arada, yapılandırma dosyalarını kontrol ederseniz bir e-posta adresi görebilirsiniz. Yani her yük devretme durumu değişikliğinden sonra bir e-posta alırsınız. Lütfen e-posta adresini güncellemeyi unutmayın. Aksi halde e-postam kilitlenebilir.
+By the way, if you check the configuration files, you can see an email address. So, after every failover status changes, you receive an email. Please don't forget to update the email address. Otherwise, my email may be locked.

@@ -1,3 +1,16 @@
 {{> _pageHeader}}
+    {{#labSide}}
+        <section>
+            <strong>{{title}}</strong>
+            <ul>
+        {{#pages}}
+            <li {{#selected}}class="active"{{/selected}}>{{^selected}}<a href="{{permalink}}">{{/selected}}{{title}}{{^selected}}</a>{{/selected}}</li>
+        {{/pages}}
+        </ul> 
+        </section>     
+    {{/labSide}}
+
+    <article>
     {{& content}}
+    </article>
 {{> _pageFooter}}

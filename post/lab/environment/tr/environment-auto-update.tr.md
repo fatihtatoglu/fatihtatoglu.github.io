@@ -11,7 +11,8 @@ header: Otomatik Güncellemeler
 tags: mint ubuntu linux_mint apt update upgrade autoclean
 
 category: lab
-group: environment-setup
+group: environment
+groupTitle: Geliştirme Ortamı
 order: 4
 ---
 

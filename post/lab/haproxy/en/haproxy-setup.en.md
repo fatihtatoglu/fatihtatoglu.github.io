@@ -3,53 +3,58 @@ layout: post
 published: true
 author: Fatih Tatoğlu
 date: 2022-06-12T14:07:13Z
-permalink: ./lab/haproxy/setup.html
-language: tr
+permalink: ./en/lab/haproxy/setup.html
+language: en
 
-title: HAProxy - Kurulum
-header: HAProxy - Kurulum
-tags: haproxy centos lua kurulum kurma kaynak_kod install yükleme
+title: HAProxy - Setup
+header: HAProxy - Setup
+tags: haproxy centos lua setup build source install
+
+category: lab
+group: haproxy
+groupTitle: HAProxy
+order: 1
 ---
 
-Bu not, CentOS 7.X Minimal üzerine kaynaktan tek sunucu kurulumu HAProxy adımlarını içerir. Bu kurulum, HAProxy ile ilgili aşağıdaki notlara yardımcı olmak için bazı ekstra adımlar da içerir.
+This note contains the steps of the single server setup HAProxy from source onto the CentOS 7.X Minimal. This setup includes some extra efforts for helping with the following notes about HAProxy.
 
-🔥 Bu not HAProxy 2.0.29 ve Lua 5.3.5 sürümü için yazılmıştır. Daha yeni sürümler farklı konfigürasyonlara sahip olabilir.
+🔥 This note is written for HAProxy 2.0.29 and Lua 5.3.5 version. Newer versions may have different configurations.
 
-## Ön Hazırlık
+## Preliminary Preparation
 
-|Özellik|Minimum Değer
+|Property|Minimum Value|
 |---:|:---|
-|**Sunucu Adı**|haproxy-01|
-|**IP Adresi**|172.19.85.102|
+|**Server Name**|haproxy-01|
+|**IP Address**|172.19.85.102|
 |**Netmask**|255.255.255.0|
 |**Gateway**|172.19.85.1|
 |**CPU** ⭐|4|
-|**Bellek** ⭐|2 GB
+|**Memory** ⭐|2 GB|
 |**Disk**|40GB|
 |**OS**|CentOS 7.X Minimal|
-|**İnternet Erişimi**|Evet|
+|**Internet Access**|Yes|
 
-⭐: Kurulum işlemi sırasında kaynakları artırabilirsiniz.
+⭐: You can increase the resources during the installation process.
 
-Kurulum ve derleme işlemi sırasında bir **root** kullanıcısına gerek yoktur. Ancak, root ayrıcalıklarına sahip bir kullanıcıya ihtiyaç duyulacaktır. Notta, kurulum ve derleme işlemi için **devops** kullanıcısı kullanılmıştır. Eğer farklı bir kullanıcınız varsa, lütfen onu kullanın.
+During the setup and build process, no need to have a **root** user. However, a user with root privileges will be needed. In the note, the **devops** user is used for the setup and build process. If you have a different user, please use that.
 
-Kurulum sırasında engellemeleri önlemek için SELinux devre dışı bırakılmıştır.
+To prevent the blockage during the setup, the SELinux will be disabled.
 
 ```shell
 devops@haproxy-01:~$ sudo setenforce 0
 devops@haproxy-01:~$ sudo sed -i 's/^SELINUX=.*/SELINUX=permissive/g' /etc/selinux/config
 ```
 
-## Kurulum Hazırlığı
+## Setup Preparation
 
-Güvenlik nedeniyle, HAProxy için ayrı bir kullanıcı oluşturulmalıdır.
+Because of security reasons, a separate user should be created for HAProxy.
 
 ```shell
 devops@haproxy-01:~$ sudo groupadd -g 1985 haproxy
 devops@haproxy-01:~$ sudo useradd -g 1985 -u 1985 -d /var/lib/haproxy -s /sbin/nologin -c haproxy haproxy
 ```
 
-Aşağıdaki dosyalar indirilmeli ve sıkıştırılmış dosyalardan çıkartılmalıdır.
+The following files should be downloaded and extracted.
 
 ```shell
 devops@haproxy-01:~$ curl https://www.lua.org/ftp/lua-5.3.5.tar.gz > lua-5.3.5.tar.gz
@@ -59,23 +64,23 @@ devops@haproxy-01:~$ tar xf lua-5.3.5tar.gz
 devops@haproxy-01:~$ tar xf haproxy-2.0.29.tar.gz 
 ```
 
-HAProxy'yi oluşturmaya başlamadan önce, bazı zorunlu kütüphanelerin yüklenmesi gerekir.
+Before starting to build the HAProxy, some mandatory libraries must be installed.
 
 ```shell
 devops@haproxy-01:~$ sudo yum install gcc openssl-devel readline-devel systemd-devel make pcre-devel net-tools kernel-headers url libnl3-devel net-snmp-devel -y
 devops@haproxy-01:~$ sudo yum update -y
 ```
 
-## İnşa et
+## Build
 
-Lua kütüphane yolu HAProxy derleme komutu için bir parametre olduğundan derleme işlemi Lua'nın derlenmesi ile başlar.
+The build operation starts with the building Lua because the Lua library path is a parameter during the HAProxy build script.
 
 ```shell
 devops@haproxy-01:~$ cd lua-5.3.5
 devops@haproxy-01:~$ sudo make INSTALL_TOP=/opt/lua-5.3.5 linux install
 ```
 
-Artık HAProxy kaynaktan oluşturulabilir.
+Now, the HAProxy can be built from the source.
 
 ```shell
 devops@haproxy-01:~$ cd ~
@@ -84,11 +89,11 @@ devops@haproxy-01:~$ sudo make USE_NS=1 USE_TFO=1 USE_OPENSSL=1 USE_ZLIB=1 USE_L
 devops@haproxy-01:~$ sudo make PREFIX=/opt/haproxy install
 ```
 
-Yukarıdaki parametreler HAProxy'nin genel kullanımı için seçilmiştir, daha spesifik parametrelere ihtiyacınız varsa kaynak koddaki **INSTALL** dosyası içinde yer almaktadır. Lütfen değişen parametrelerin HAProxy performansını ve çalışma şeklini etkilediğini unutmayın.
+The above parameters are selected for the general usage of HAProxy, if you need more specific parameters the **INSTALL** file in the source code, is contained inside. Please be aware that changing parameters affect the HAProxy performance and working style.
 
-## Konfigürasyon
+## Configuration
 
-HAProxy'yi oluşturduktan sonra, `systemctl` ile kontrol etmek için bir servis tanımı oluşturulmalıdır.
+After building the HAProxy, to control it with `systemctl`, a service definition must be created.
 
 ```shell
 devops@haproxy-01:~$ sudo vi /etc/systemd/system/haproxy.service
@@ -110,7 +115,7 @@ ExecStop=/bin/kill -USR1 $MAINPID
 WantedBy=multi-user.target
 ```
 
-Şimdi, başlangıç parametrelerini ve seçeneklerini tanımlamak için işlem dosyası oluşturulmalıdır.
+Now, the process file should be created to define the starting paramters and options.
 
 ```shell
 devops@haproxy-01:~$ sudo vi /etc/sysconfig/haproxy
@@ -128,7 +133,7 @@ CONFIG_FILE=/etc/haproxy/haproxy.conf
 PID_FILE=/var/run/haproxy.pid
 ```
 
-Yapılandırma bölümündeki son adım, bir HAProxy yapılandırma dosyası oluşturmaktır. Bu yapılandırma dosyası proxy tanımlarını, servis ve sunucu tanımlarını içerir.
+The last step in the configuration section is creating a HAProxy configuration file that given in the process file. This configuration file contains the proxy definitions, service and server definitions.
 
 ```shell
 devops@haproxy-01:~$ sudo mkdir /etc/haproxy/
@@ -220,17 +225,17 @@ listen stats
 ##################################################
 ```
 
-Yapılandırma bölümünü tamamlamak için, HAProxy yapılandırmasını doğrulamak için gerekli bir komut vardır.
+To complete the configuration section, there is one required command to validate the HAProxy configuration.
 
 ```shell
 devops@haproxy-01:~$ sudo /opt/haproxy/sbin/haproxy -c -V -f /etc/haproxy/haproxy.conf
 ```
 
-Bu komut, HAProxy yapılandırma dosyasındaki herhangi bir yapılandırma değişikliğinden sonra çalıştırılmalıdır.
+This command should be executed after any configuration changes in the HAProxy configuration file.
 
-## Güvenlik
+## Security
 
-SELinux devre dışıdır, ancak ağ saldırılarını veya keşfedilebilirliği önlemek için güvenlik duvarı etkinleştirilmelidir. Port bazında bir tanımlama yapmak karmaşıklık yaratır, bu nedenle Güvenlik Duvarı için bir HAProxy hizmet tanımı oluşturmak daha iyidir.
+The SELinux is disabled, but the firewall should be enabled to prevent network attacks or discoverability. Creating port by port creates complexity, so creating a HAProxy service definition for the Firewall should be better.
 
 ```shell
 devops@haproxy-01:~$ sudo vi /etc/firewalld/services/haproxy.xml
@@ -247,13 +252,13 @@ devops@haproxy-01:~$ sudo vi /etc/firewalld/services/haproxy.xml
 </service>
 ```
 
-Normal trafik için `80` ve `443` portları eklenmiştir. HAProxy durum sayfası erişimi için `1985` portu eklenmiştir. Ek portlarınızı ileride bu dosyaya ekleyebilirsiniz. Ekledikten sonra Güvenlik Duvarını ve HAProxy'i yeniden başlatmak gereklidir.
+The `80` and `443` port is added for the normal traffic. The port `1985` is added for the HAProxy status page access. You can add your additional ports to that file in the future. After adding, the restart is required for the Firewall and HAProxy.
 
 ```shell
 devops@haproxy-01:~$ sudo chmod 640 /etc/firewalld/services/haproxy.xml
 ```
 
-## Çalıştırma
+## Turning Key
 
 ```shell
 devops@haproxy-01:~$ sudo systemctl enable firewalld
@@ -265,14 +270,14 @@ devops@haproxy-01:~$ sudo systemctl enable haproxy
 devops@haproxy-01:~$ sudo systemctl start haproxy
 ```
 
-Yukarıdaki komutlar ile HAProxy'e kalıcı erişim sağlanır ve HAProxy'nin servisi etkinleştirilir ve başlatılır. Eğer herhangi bir sorun yoksa HAProxy çalışmalıdır.
+With the above commands, permanent access is given to HAProxy, and HAProxy's service is enabled and started. If there isn't any problem, the HAProxy should be worked.
 
-## Doğrulama
+## Validation
 
-Kurulumdan sonra, kurulumu dahili ve harici olarak doğrulamalısınız.
+After the setup, you should validate the setup internally and externally.
 
 ```shell
 devops@haproxy-01:~$ sudo systemctl status haproxy
 ```
 
-Yukarıdaki komutlar dahili doğrulama için **Running** durumunu döndürmelidir. Harici doğrulama için, HAProxy durum sayfası için HAProxy yapılandırma dosyasında tanımlanan `http://172.19.85.102:1985/stats` adresini ziyaret edebilirsiniz.
+The above commands should return the **Running** status for internal validation. For the external validation, you may visit the `http://172.19.85.102:1985/stats` address that is defined in the HAProxy configuration file for the HAProxy status page.

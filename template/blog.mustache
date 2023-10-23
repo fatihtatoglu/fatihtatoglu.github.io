@@ -1,0 +1,13 @@
+{{> _pageHeader}}
+    {{& content}}
+<ul class="square">
+    {{#labs}}
+        <h2>{{title}}</h2>
+        <ul>
+        {{#pages}}
+            <li><a href="{{permalink}}">{{title}}</a></li>
+        {{/pages}}
+        </ul>       
+    {{/labs}}
+</ul>
+{{> _pageFooter}}

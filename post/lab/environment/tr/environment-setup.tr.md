@@ -3,37 +3,38 @@ layout: post
 published: true
 author: Fatih Tatoğlu
 date: 2022-06-12T20:43:39Z
-permalink: ./en/lab/environment/setup.html
-language: en
+permalink: ./lab/environment/setup.html
+language: tr
 
-title: Host Setup
-header: Host Setup
-tags: windows choco chocolatey powershell hyper-v environment_setup
+title: Ana Makine Kurulumu
+header: Ana Makine Kurulumu
+tags: windows choco chocolatey powershell hyper-v ortam_kurulumu
 
 category: lab
-group: environment-setup
+group: environment
+groupTitle: Geliştirme Ortamı
 order: 1
 ---
 
-Despite all the pressure from my teammates and friends, I still use Microsoft Windows as a workplace. I don't know why, but I feel comfortable using Windows. However, I use Windows with Powershell, like a Unix-based OS.
+Ekip arkadaşlarımın ve dostlarımın tüm baskılarına rağmen işyeri olarak hala Microsoft Windows kullanıyorum. Neden bilmiyorum ama Windows kullanırken kendimi rahat hissediyorum. Ancak Windows'u Unix tabanlı bir işletim sistemi gibi Powershell ile kullanıyorum.
 
-🔥 This note is written for Windows 10 Enterprise and newer versions of Microsoft Windows Enterprise.
+🔥 Bu not Windows 10 Enterprise ve Microsoft Windows 11 Enterprise'ın daha yeni sürümleri için yazılmıştır.
 
-## Package Manager
+## Paket Yöneticisi
 
-First, the environment needs a package manager to install the required applications, like MacOS or Linux distros. I select Chocolatey, but the Winget can also be used.
+İlk olarak, ortamın MacOS veya Linux dağıtımları gibi gerekli uygulamaları yüklemek için bir paket yöneticisine ihtiyacı vardır. Ben Chocolatey'i seçiyorum, ancak Winget de kullanılabilir.
 
-By default, the Winget has been installed if the OS is the latest version of Windows 10 or any version of Windows 11.
+Varsayılan olarak, işletim sistemi Windows 10'un en son sürümü veya Windows 11'in herhangi bir sürümü ise Winget yüklenmiştir.
 
 ```powershell
 PS C:\Users\Fatih Tatoğlu> Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 ```
 
-## Windows Features
+## Windows Özellikleri
 
-I use virtual machines for development rather than installing all the development tools into the host machine. By doing this, I can have a portable and different environment at the same time.
+Tüm geliştirme araçlarını ana makineye kurmak yerine geliştirme için sanal makineler kullanıyorum. Bu sayede aynı anda hem taşınabilir hem de farklı bir ortama sahip olabiliyorum.
 
-I prefer Hyper-V because it is the best fit for Windows virtualization. However, the Virtualbox or other virtualization application or system can be used.
+Hyper-V'yi tercih ediyorum çünkü Windows sanallaştırma için en uygun olanı. Ancak Virtualbox ya da başka bir sanallaştırma uygulaması ya da sistemi de kullanılabilir.
 
 ```powershell
 PS C:\Users\Fatih Tatoğlu> Enable-WindowsOptionalFeature -Online -FeatureName "Microsoft-Hyper-V-All" -NoRestart
@@ -45,15 +46,15 @@ PS C:\Users\Fatih Tatoğlu> Enable-WindowsOptionalFeature -Online -FeatureName "
 PS C:\Users\Fatih Tatoğlu> Enable-WindowsOptionalFeature -Online -FeatureName "Microsoft-Hyper-V-Management-Clients" -NoRestart
 ```
 
-## Required Software
+## Gereken Yazılımlar
 
-Usually, I don't use a lot of programs in my daily routines. However, I need some additional software. In addition, office programs like Excel, Word, PowerPoint, etc, have already been installed on my computer during work.
+Genellikle günlük rutinlerimde çok fazla program kullanmıyorum. Ancak, bazı ek yazılımlara ihtiyacım var. Buna ek olarak, Excel, Word, PowerPoint gibi ofis programları iş sırasında bilgisayarıma zaten yüklenmiş durumda.
 
 ```powershell
-choco install slack zoom googlechrome notepadplusplus gimp spotify speedtest everything winrar powershell-core -y
+PS C:\Users\Fatih Tatoğlu> choco install slack zoom googlechrome notepadplusplus gimp spotify speedtest everything winrar powershell-core -y
 ```
 
-If the Winget wants to be used, the below command can be applied.
+Winget kullanılmak isteniyorsa aşağıdaki komut uygulanabilir.
 
 ```powershell
 PS C:\Users\Fatih Tatoğlu> winget install SlackTechnologies.Slack --accept-package-agreements --accept-source-agreements
@@ -67,19 +68,19 @@ PS C:\Users\Fatih Tatoğlu> winget install RARLab.winrar --accept-package-agreem
 PS C:\Users\Fatih Tatoğlu> winget install Microsoft.Powershell --accept-package-agreements --accept-source-agreements
 ```
 
-For more applications, the Chocolatey Package Repository or Winget `search` command should be used.
+Daha fazla uygulama için Chocolatey Paket Deposu veya Winget `search` komutu kullanılmalıdır.
 
-## Little Touch
+## Ufak Dokunuşlar
 
-I arrange some little touches to my host environment. After the below commands executes to apply, run the `Restart-Computer` command.
+Ana bilgisayar ortamıma bazı küçük dokunuşlar yapıyorum. Aşağıdaki komutları uygulandıktan sonra `Restart-Computer` komutunu çalıştırın.
 
-### Disabling UAC
+### UAC'ın Devredışı Bırakılması
 
 ```powershell
 PS C:\Users\Fatih Tatoğlu> New-ItemProperty -Path HKLM:Software\Microsoft\Windows\CurrentVersion\policies\system -Name EnableLUA -PropertyType DWord -Value 0 -Force
 ```
 
-### Folder Appearance Settings
+### Klasör Görünüm Seçenkleri
 
 ```powershell
 PS C:\Users\Fatih Tatoğlu> Push-Location

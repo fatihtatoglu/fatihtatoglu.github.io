@@ -11,7 +11,8 @@ header: Auto Updates
 tags: mint ubuntu linux_mint apt update upgrade autoclean
 
 category: lab
-group: environment-setup
+group: environment
+groupTitle: Development Environment
 order: 4
 ---
 

@@ -3,25 +3,26 @@ layout: post
 published: true
 author: Fatih Tatoğlu
 date: 2022-06-12T22:00:42Z
-permalink: ./en/lab/environment/dev-setup-mint.html
-language: en
+permalink: ./lab/environment/dev-setup-mint.html
+language: tr
 
-title: Creating Development Environment with Linux Mint
-header: Creating Development Environment with Linux Mint
-tags: mint ubuntu linux_mint development development_environment
+title: Linux Mint ile Geliştirme Ortamı Oluşturma
+header: Linux Mint ile Geliştirme Ortamı Oluşturma
+tags: mint ubuntu linux_mint geliştirme geliştirme_ortamı
 
 category: lab
-group: environment-setup
+group: environment
+groupTitle: Geliştirme Ortamı
 order: 3
 ---
 
-Having numerous development environments with virtual machines provides extra advantages, such as separating the personal and working setup or trying different languages and tools. However, building an environment from scratch takes so much time. So, I have a base installation for every Linux virtual machine.
+Sanal makinelerle çok sayıda geliştirme ortamına sahip olmak, kişisel ve çalışma kurulumunu ayırmak veya farklı dilleri ve araçları denemek gibi ekstra avantajlar sağlar. Ancak sıfırdan bir ortam oluşturmak çok zaman alıyor. Bu yüzden her Linux sanal makinesi için bir temel kurulumum var.
 
-I prefer a small and easy to get used to distribution rather than a big one. Linux Mint is a small and powerful distribution that is based on Ubuntu. It supports many Ubuntu features and packages. To keep the environment small, I select **Xfce Edition**. The other editions are more beautiful and funny, but I like the most compact one.
+Büyük bir dağıtımdan ziyade küçük ve alışması kolay bir dağıtımı tercih ediyorum. Linux Mint, Ubuntu tabanlı küçük ve güçlü bir dağıtımdır. Birçok Ubuntu özelliğini ve paketini destekliyor. Ortamı küçük tutmak için **Xfce Edition** sürümünü seçtim. Diğer sürümler daha güzel ve eğlenceli ama ben en kompakt olanı seviyorum.
 
-🔥 This note contains some commands tested on the Linux Mint 20.3 Xfce Edition. The different editions and versions may need extras.
+🔥 Bu not Linux Mint 20.3 Xfce Sürümü üzerinde test edilen bazı komutları içermektedir. Farklı sürümler ve versiyonlar ekstralara ihtiyaç duyabilir.
 
-Although Linux Mint is a small distribution, before starting to build the base development environment, I chose to remove some useless applications.
+Linux Mint küçük bir dağıtım olmasına rağmen, temel geliştirme ortamını oluşturmaya başlamadan önce, bazı gereksiz uygulamaları kaldırmayı seçtim.
 
 ```shell
 fatihtatoglu@fth-linux:~$ sudo apt remove --purge -y libreoffice* thunderbird rhythmbox transmission-gtk simple-scan timeshift vim-tiny hplip youtube-dl hypnotix warpinator
@@ -29,39 +30,39 @@ fatihtatoglu@fth-linux:~$ sudo apt clean
 fatihtatoglu@fth-linux:~$ sudo apt autoremove
 ```
 
-## Generic Operations
+## Genel İşlemler
 
-After completing this operation, there are five last steps to complete the base installation. These steps should be completed before starting to differentiate the environments. As a suggestion, after completing these steps, the guest machine's disk should be cloned as a base image for all other virtual servers.
+Bu işlemi tamamladıktan sonra, temel kurulumu tamamlamak için son beş adım vardır. Ortamları farklılaştırmaya başlamadan önce bu adımlar tamamlanmalıdır. Öneri olarak bu adımlar tamamlandıktan sonra misafir makinenin diski diğer tüm sanal sunucular için temel imaj olarak klonlanmalıdır.
 
-### Updates
+### Güncellemeler
 
-Before adding new software, every time I prefer to update the system to the latest version by updating OS-based updates to make the system more stable and secure. Usually, the first update can take a longer time.
+Yeni yazılım eklemeden önce, sistemi daha kararlı ve güvenli hale getirmek için her seferinde işletim sistemi tabanlı güncellemeleri yaparak sistemi en son sürüme güncellemeyi tercih ediyorum. Genellikle ilk güncelleme daha uzun zaman alabiliyor.
 
 ```shell
 fatihtatoglu@fth-linux:~$ sudo apt update
 fatihtatoglu@fth-linux:~$ sudo apt upgrade -y
 ```
 
-### SSH Connection
+### SSH Bağlantısı
 
-To connect the guest machine, the SSH is used from the host machine. So, the SSH server is an essential part of the installation. After the installation with the below command, the root authentication must be disabled. For a more secure system, certification-based authentication can be preferred.
+Konuk makineye bağlanmak için ana makineden SSH kullanılır. Bu nedenle, SSH sunucusu kurulumun önemli bir parçasıdır. Aşağıdaki komut ile kurulum yapıldıktan sonra root kimlik doğrulaması devre dışı bırakılmalıdır. Daha güvenli bir sistem için sertifika tabanlı kimlik doğrulama tercih edilebilir.
 
 ```shell
 fatihtatoglu@fth-linux:~$ sudo apt install -y openssh-server
 ```
 
-### Text Editor & Generic Drivers
+### Metin Düzenleyici ve Genel Sürücüler
 
-When using a virtual machine, the most used tool in the command line environment may be a text editor. That's why I chose to install my popular text editor `vim` with the generic drivers. By the way, for anything other than general use, installing the generic drivers should be sufficient.
+Sanal makineyi kullanırken, komut satırı ortamında en çok kullanılan araç bir metin editörü olabilir. Bu yüzden ben de popüler metin editörüm `vim`i jenerik sürücüler ile birlikte yüklemeyi kurmayı tercih ettim. Bu arada, genel kullanım dışında kalan bütün durumlar için jenerik sürücülerin yüklenmesi yeterli olacaktır.
 
 ```shell
 fatihtatoglu@fth-linux:~$ sudo apt install vim -y
 fatihtatoglu@fth-linux:~$ sudo apt install --install-recommends linux-generic-hwe-20.04 -y
 ```
 
-### Security
+### Güvenlik
 
-Making a server more secure cannot be think without a well-configured software base firewall. I prefer using `ufw` in Ubuntu and Mint Linux to manage the incoming and outgoing network traffic.
+Bir sunucuyu daha güvenli hale getirmek, iyi yapılandırılmış bir yazılım tabanlı güvenlik duvarı olmadan düşünülemez. Gelen ve giden ağ trafiğini yönetmek için Ubuntu ve Mint Linux'da `ufw` kullanmayı tercih ediyorum.
 
 ```shell
 fatihtatoglu@fth-linux:~$ sudo systemctl status ssh
@@ -71,30 +72,30 @@ fatihtatoglu@fth-linux:~$ sudo ufw enable
 fatihtatoglu@fth-linux:~$ sudo ufw reload
 ```
 
-### Screen Resolution
+### Ekran Çözünürlüğü
 
-Using the Linux distributions with the Hyper-V, many times I experienced problem with screen resolution. Also, Mint Linux needs to arrangement for this.
+Hyper-V ile Linux dağıtımlarını kullanırken, birçok kez ekran çözünürlüğü ile ilgili sorun yaşadım. Ayrıca, Mint Linux'un bunun için düzenleme yapması gerekiyor.
 
 ```shell
 fatihtatoglu@fth-linux:~$ sudo vi /etc/default/grub
 ```
 
-After opening the file, the following line **`GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"`** will change with this line **`GRUB_CMDLINE_LINUX_DEFAULT="quiet splash video=hyperv_fb:1920x1080"`**. Then the file must be saved and restart the system. I arrange the screen size with my laptop's active screen size.
+Dosya açıldıktan sonra bu satırı **`GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"`** bu satır ile **`GRUB_CMDLINE_LINUX_DEFAULT="quiet splash video=hyperv_fb:1920x1080"`** değişecektir. Daha sonra dosya kaydedilmeli ve sistem yeniden başlatılmalıdır. Ekran boyutunu dizüstü bilgisayarımın aktif ekran boyutuna göre ayarlıyorum.
 
 ```shell
 fatihtatoglu@fth-linux:~$ sudo update-grub
 fatihtatoglu@fth-linux:~$ sudo reboot
 ```
 
-## Development Environments
+## Geliştirme Ortamları
 
-After completing all the steps for the base server, let's jump into the different development environment preparations. Some steps can be duplicated, but all the steps must be applied for a proper installation.
+Temel sunucu için tüm adımları tamamladıktan sonra, farklı geliştirme ortamı hazırlıklarına geçelim. Bazı adımlar tekrarlanabilir, ancak düzgün bir kurulum için tüm adımlar uygulanmalıdır.
 
-🔥 Before using the below environment recipes, please be aware of the versions of the tools. The current command is tested for **Mint Linux 20.3 Xfce Edition**.
+🔥 Aşağıdaki ortam tariflerini kullanmadan önce, lütfen araçların sürümlerinden farkında olun. Mevcut komut **Mint Linux 20.3 Xfce Edition** için test edilmiştir.
 
-### C# Development Environment
+### C# Geliştirme Ortamı
 
-A classic Microsoft DotNet environment, for me, contains **PowerShell**, **Git**, **VSCode**, and related plugins for it.
+Klasik bir Microsoft DotNet geliştirme ortamı benim için **PowerShell**, **Git**, **VSCode** ve bunlarla ilgili eklentileri içerir.
 
 ```shell
 fatihtatoglu@fth-linux:~$ sudo apt-get install -y wget apt-transport-https software-properties-common
@@ -115,9 +116,9 @@ fatihtatoglu@fth-linux:~$
 fatihtatoglu@fth-linux:~$ sudo apt install code git powershell dotnet-sdk-6.0 aspnetcore-runtime-6.0 dotnet-runtime-6.0 -y
 ```
 
-### Go Development Environment
+### Go Geliştirme Ortamı
 
-For me, the Go development environment contains **Git**, **Go**, **VsCode**, and related plugins for the VsCode.
+Benim için Go geliştirme ortamı **Git**, **Go**, **VsCode** ve ilgili eklentileri içerir.
 
 ```shell
 fatihtatoglu@fth-linux:~$ wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
@@ -137,21 +138,21 @@ root@fth-linux:/home/fatihtatoglu# exit
 fatihtatoglu@fth-linux:~$ export PATH=$PATH:/usr/local/go/bin
 ```
 
-The tricky point of the installation of the Go is setting the `GOPATH` environment variable every time.
+Go kurulumunun en zor noktası her seferinde `GOPATH` ortam değişkenini ayarlamaktır.
 
 ```shell
 fatihtatoglu@fth-linux:~$ sudo vi ~/.bashrc
 ```
 
-To do this, the `.bashrc` file is opened by the above command to edit, and then the below line is added to the bottom of the file and saved.
+Bunu yapmak için, `.bashrc` dosyası yukarıdaki komutla açılarak düzenlenir ve ardından aşağıdaki satır dosyanın altına eklenerek kaydedilir.
 
 ```text
 export PATH=$PATH:/usr/local/go/bin
 ```
 
-### Fatih's Development Environment
+### Fatih'in Geliştirme Ortamı
 
-Usually, I develop multiple applications at the same time, so I need various tools. With the below command, my current environment can be prepared.
+Genellikle aynı anda birden fazla uygulama geliştiriyorum, bu nedenle çeşitli araçlara ihtiyacım var. Aşağıdaki komut ile mevcut ortamım hazırlanabilir.
 
 ```shell
 fatihtatoglu@fth-linux:~$ sudo apt-get install -y wget curl apt-transport-https software-properties-common
@@ -190,17 +191,17 @@ fatihtatoglu@fth-linux:~$
 fatihtatoglu@fth-linux:~$ sudo vi ~/.bashrc
 ```
 
-Add the below line to the bottom of the file.
+Aşağıdaki satırı dosyanın en altına ekleyin.
 
 ```text
 export PATH=$PATH:/usr/local/go/bin
 ```
 
-In that environment, I can develop Front-end and back-end applications for my routine in my personal and professional life. For example, I used this in Yemeksepeti.
+O ortamda özel ve profesyonel hayatımdaki rutinim için Front-end ve back-end uygulamalar geliştirebiliyorum. Örneğin Yemeksepeti'nde bunu kullandım.
 
-### Delivery Hero Environment
+### Delivery Hero Geliştirme Ortamı
 
-This is a unique case for Delivery Hero. The above environment seems enough. However, a VPN connection should be crucial when all the resources are in the AWS cloud to provide a more secure environment. Adding a VPN client to the **Fatih's Development Environment** becomes the **Delivery Hero Environment**.
+Bu, Delivery Hero için benzersiz bir durumdur. Yukarıdaki ortam yeterli görünüyor. Buna rağmen, tüm kaynaklar AWS bulutunda olduğunda daha güvenli bir ortam sağlamak için bir VPN bağlantısı çok önemli olmalıdır. **Fatih'in Geliştirme Ortamına** bir VPN istemcisi eklemek **Delivery Hero Ortamı** haline gelir.
 
 ```shell
 fatihtatoglu@fth-linux:~$ sudo apt install build-essential qtcreator qt5-default -y
@@ -210,9 +211,9 @@ fatihtatoglu@fth-linux:~$ sudo apt update
 fatihtatoglu@fth-linux:~$ sudo apt install -y globalprotect-openconnect
 ```
 
-## Last But Not Least
+## Son Ama Çok Önemli
 
-After completing all the installation and after restarting the system, don't forget to check the installation. For example, the below commands can be used.
+Tüm kurulum tamamlandıktan ve sistem yeniden başlatıldıktan sonra kurulumu kontrol etmeyi unutmayın. Örneğin aşağıdaki komutlar kullanılabilir.
 
 ```shell
 fatihtatoglu@fth-linux:~$ git --version

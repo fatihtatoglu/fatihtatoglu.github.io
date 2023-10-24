@@ -89,6 +89,7 @@ header {
     /* background-color: gray; */
 
     text-align: center;
+    cursor: context-menu;
 }
 
 @media only screen and (min-width: 600px) {

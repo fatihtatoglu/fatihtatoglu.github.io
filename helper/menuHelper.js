@@ -25,6 +25,10 @@ module.exports = {
                 return;
             }
 
+            if (page["layout"] === "redirect") {
+                return;
+            }
+
             var item = createMenuItem(page);
             if (page["published"] != "true") {
                 return;

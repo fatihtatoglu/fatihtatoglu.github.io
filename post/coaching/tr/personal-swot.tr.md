@@ -1,19 +1,18 @@
 ---
 layout: post
-published: false
+published: true
 author: Fatih Tatoğlu
 date: 2022-05-28T15:23:33Z
-permalink: ./my-notes/personal-swot.html
+permalink: ./coaching/personal-swot.html
 language: tr
 
 title: Bireysel SWOT Analizi
 header: Bireysel SWOT Analizi
-description: SWOT analizi sadece şirketlere değil kişilere de uygulanabilir. Genel uygulamanın üzerine bazı ek çalışmalarda eklemeye çalıştım.
 tags: swot_analizi swot güçlü_yanlar zayıf_yanlar fırsatlar tehditler
 category: coaching
 ---
 
-[SWOT analizi](./kendime-notlar/swot-analizi.html "SWOT Analizi")ni daha öncesinde anlatmaya çalıştım. Şimdi bireysel olarak nasıl uygulandığını anlatmaya çalışacağım.
+[SWOT analizi](./my-notes/swot-analysis-what.html "SWOT Analizi")ni daha öncesinde anlatmaya çalıştım. Şimdi bireysel olarak nasıl uygulandığını anlatmaya çalışacağım.
 
 Analizin kolaylığı aslında sadece sorulara cevap verilmesinde gizli. Ama cevapların objektif olması ve bireysel olarak yapılmasından dolayı bireyin kendine karşı dürüst olması unutulmaması gereken noktalardan bir tanesinidir.
 

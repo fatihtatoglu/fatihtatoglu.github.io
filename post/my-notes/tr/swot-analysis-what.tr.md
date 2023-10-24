@@ -20,7 +20,7 @@ SWOT analizinin gücü, uygulamasının basit olmasıdır. Bazı soruları içte
 
 Bu teknik dört temel kavrama odaklanmaktadır.
 
-- Güçlü
+- Güçlü yönler
 - Zayıf yönler
 - Fırsatlar
 - Tehditler

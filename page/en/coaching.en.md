@@ -1,5 +1,5 @@
 ---
-layout: coaching
+layout: page
 published: true
 author: Fatih Tatoğlu
 date: 2022-04-07T00:00:00Z
@@ -18,4 +18,4 @@ I think that being interested in **Psychology**, **Sociology**, and of course **
 
 In this section, I will share the experiences and awareness I have gained by coaching my teammates, reading books, and following some content about coaching and management. It would be unfair to my fellow coaches to consider myself an expert in coaching. However, I think that my awareness and experiences will be an opportunity to give a different perspective to new coaches or managers.
 
-## Posts
+***The posts were written in Turkish. I am working on translating them into English. Sorry for that.***

@@ -62,8 +62,6 @@ module.exports = {
             result.push(item);
         }
 
-        console.log(result);
-
         return result;
     },
     "labSide": function () {
@@ -115,9 +113,7 @@ module.exports = {
 
             result.push(item);
         }
-
-        console.log(result);
-
+        
         return result;
     }
 };

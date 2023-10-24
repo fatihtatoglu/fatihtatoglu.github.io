@@ -6,8 +6,8 @@ date: 2022-06-12T18:41:00Z
 permalink: ./en/lab/haproxy/cluster.html
 language: en
 
-title: HAProxy - Cluster
-header: HAProxy - Cluster
+title: Cluster
+header: Cluster
 tags: haproxy keepalived centos failover high_availability
 
 category: lab

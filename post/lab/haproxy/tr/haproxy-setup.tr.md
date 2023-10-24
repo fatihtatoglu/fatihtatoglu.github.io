@@ -6,8 +6,8 @@ date: 2022-06-12T14:07:13Z
 permalink: ./lab/haproxy/setup.html
 language: tr
 
-title: HAProxy - Kurulum
-header: HAProxy - Kurulum
+title: Kurulum
+header: Kurulum
 tags: haproxy centos lua kurulum kurma kaynak_kod install yükleme
 
 category: lab

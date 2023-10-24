@@ -6,8 +6,8 @@ date: 2022-06-12T14:07:13Z
 permalink: ./en/lab/haproxy/setup.html
 language: en
 
-title: HAProxy - Setup
-header: HAProxy - Setup
+title: Setup
+header: Setup
 tags: haproxy centos lua setup build source install
 
 category: lab

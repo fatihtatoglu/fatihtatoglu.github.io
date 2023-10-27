@@ -2,7 +2,7 @@
 layout: page
 published: true
 author: Fatih Tatoğlu
-date: 2023-09-18T00:00:00.000Z
+date: 2023-10-27T00:00:00.000Z
 permalink: ./index.html
 language: tr
 

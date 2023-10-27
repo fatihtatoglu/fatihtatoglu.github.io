@@ -2,7 +2,7 @@
 layout: lab
 published: true
 author: Fatih Tatoğlu
-date: 2022-06-12T13:30:35Z
+date: 2023-10-27T00:00:00.000Z
 permalink: ./en/lab/index.html
 language: en
 

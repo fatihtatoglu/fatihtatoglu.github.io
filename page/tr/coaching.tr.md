@@ -2,7 +2,7 @@
 layout: coaching
 published: true
 author: Fatih Tatoğlu
-date: 2022-04-07T00:00:00Z
+date: 2023-10-27T00:00:00.000Z
 permalink: ./coaching/index.html
 language: tr
 

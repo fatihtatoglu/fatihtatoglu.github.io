@@ -2,7 +2,7 @@
 layout: notes
 published: true
 author: Fatih Tatoğlu
-date: 2022-04-08T00:00:00Z
+date: 2023-10-27T00:00:00.000Z
 permalink: ./en/my-notes/index.html
 language: en
 

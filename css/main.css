@@ -283,6 +283,7 @@ nav ul li a:focus {
     color: var(--primary-color-text);
 }
 
+nav ul li a:link,
 nav ul li a:active,
 nav ul li a:focus,
 nav ul li a:visited {

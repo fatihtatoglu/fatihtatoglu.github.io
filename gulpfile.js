@@ -15,7 +15,7 @@ const os = require("os");
 const outputPath = "./dist/";
 
 let baseUrl;
-if (os.platform() === "win32" || os.hostname() === "fth-linux") {
+if (os.platform() === "win32" || os.hostname() === "fth-dev") {
     baseUrl = "http://localhost:8080/";
 }
 else {
@@ -30,14 +30,7 @@ const config = {
         "marked": {
             breaks: true,
             smartLists: true,
-            headerIds: false,
-            langPrefix: "hljs language-",
-            highlight: function (code, lang) {
-                const hljs = require("highlight.js");
-                const language = hljs.getLanguage(lang) ? lang : "plaintext";
-
-                return hljs.highlight(code, { language }).value;
-            }
+            headerIds: false
         },
     },
     "template": {
@@ -57,7 +50,7 @@ function cleanAll() {
 
 // Gulp Step 2 - Copy all required assets.
 function copyAssets() {
-    return src(["./css/*.css", "./image/*.png", "./image/*.jpg", "./image/favicon/*", "./CNAME", "./.nojekyll", "./robots.txt", "./favicon.ico", "./sitemap.xsl"], { base: "./" })
+    return src(["./css/*.css", "./image/*.png", "./image/*.jpg", "./image/favicon/*", "./CNAME", "./.nojekyll", "./robots.txt", "./sitemap.xsl"], { base: "./" })
         .pipe(dest(outputPath));
 }
 
@@ -89,11 +82,7 @@ function generate() {
 
     return enginær.generate()
 
-        // replace heading for theme
-        .pipe(replace("<h1>", "<header><h1>"))
-        .pipe(replace("</h1>", "</h1><button>#</button></header>"))
-
-        // replace fo4 image path
+        // replace for image path
         .pipe(replace(/\.\.\/\.\.\/image/g, "image"))
         .pipe(replace(/\.\.\/image/g, "image"))
 
@@ -112,6 +101,7 @@ function generate() {
         }))
 
         .pipe(dest(outputPath));
+
 }
 
 function generateSiteMap() {
@@ -126,33 +116,55 @@ function generateSiteMap() {
     };
 
     let dates = {
-        "_hakkimda": "2022-12-26",
-        "_index": "2022-12-26",
-        "_kendime-notlar_blog-yazmak": "2022-03-20",
-        "_kendime-notlar_index": "2022-04-08",
-        "_kocluk_bilmemenin-gucu": "2022-05-21",
-        "_kocluk_degerler": "2022-05-16",
-        "_kocluk_index": "2022-04-07",
-        "_kocluk_survey-core-values": "2022-05-19",
-        "_projeler_enginaer": "2022-03-24",
-        "_projeler_gulp-html-link-duzenleyicisi": "2022-04-08",
-        "_projeler_index": "2022-04-07",
-        "_projeler_turboc-blog-temasi": "2022-03-22",
-        "_kendime-notlar_swot-analizi": "2022-05-24T15:34:54Z",
-        "_kocluk_bireysel-swot-analizi": "2022-05-28T15:23:33Z",
-        "_kocluk_bir-yoneticinin-yolu": "2022-05-28T16:47:14Z",
-        "_lab_index":"2022-06-12T13:30:35Z",
-        "_lab_haproxy_cluster":"2022-06-12T18:41:00Z",
-        "_lab_haproxy_kurulum":"2022-06-12T14:07:13Z",
-        "_lab_haproxy_ssl-sertifikasi-ekleme":"2022-06-12T19:03:27Z",
-        "_lab_haproxy_varsayilan-yonlendirme":"2022-06-12T20:25:53Z",
-        "_lab_linux_mint-gelistirme-ortami":"2022-07-05T13:55:00Z",
-        "_lab_windows_ortam-kurulumu":"2022-06-12T20:43:39Z",
-        "_lab_windows_sanal-makine-olusturma":"2022-06-12T21:28:33Z",
-        "_kocluk_sosyal-aylaklik":"2022-06-23T09:22:56Z",
-        "_kocluk_takim-dongusu":"2022-06-23T12:40:14Z",
-        "_kocluk_takim-mi-grup-mu":"2022-06-23T12:00:33Z",
-        "_lab_linux_otomatik-guncelleme":"2022-08-07T17:54:27Z"
+        // Turkish
+        "_about-me": "2023-10-27T00:00:00.000Z",
+        "_index": "2023-10-27T00:00:00.000Z",
+        "_coaching_a-managers-path": "2022-05-28T16:47:14Z",
+        "_coaching_core-values-survey": "2022-05-19T15:30:00Z",
+        "_coaching_core-values": "2023-10-27T00:00:00.000Z",
+        "_coaching_index": "2023-10-27T00:00:00.000Z",
+        "_coaching_personal-swot": "2022-05-28T15:23:33Z",
+        "_coaching_power-of-unknowing": "2022-05-21T23:15:00Z",
+        "_coaching_social-loafing": "2022-06-23T09:22:56Z",
+        "_coaching_team-cycle": "2022-06-23T12:40:14Z",
+        "_coaching_team-group": "2022-06-23T12:00:33Z",
+        "_lab_index": "2023-10-27T00:00:00.000Z",
+        "_my-notes_index": "2023-10-27T00:00:00.000Z",
+        "_my-notes_swot-analysis-what": "2023-10-27T00:00:00.000Z",
+        "_my-notes_writing-blog": "2023-10-27T00:00:00.000Z",
+        "_lab_environment_auto-update": "2023-10-27T00:00:00.000Z",
+        "_lab_environment_dev-setup-mint": "2023-10-27T21:44:00Z",
+        "_lab_environment_hyperv": "2023-10-27T21:37:00Z",
+        "_lab_environment_setup": "2023-10-27T00:00:00.000Z",
+        "_lab_haproxy_cluster": "2023-10-27T00:00:00.000Z",
+        "_lab_haproxy_default-routing": "2023-10-27T00:00:00.000Z",
+        "_lab_haproxy_setup": "2023-10-27T00:00:00.000Z",
+        "_lab_haproxy_ssl-certificate": "2023-10-27T00:00:00.000Z",
+
+        // English
+        "_en_about-me": "2023-10-27T00:00:00.000Z",
+        "_en_index": "2023-10-27T00:00:00.000Z",
+        "_en_coaching_a-managers-path": "2023-10-27T00:00:00.000Z",
+        "_en_coaching_core-values-survey": "2023-10-27T00:00:00.000Z",
+        "_en_coaching_core-values": "2023-10-27T00:00:00.000Z",
+        "_en_coaching_index": "2023-10-27T00:00:00.000Z",
+        "_en_coaching_personal-swot": "2023-10-27T00:00:00.000Z",
+        "_en_coaching_power-of-unknowing": "2023-10-27T00:00:00.000Z",
+        "_en_coaching_social-loafing": "2023-10-27T00:00:00.000Z",
+        "_en_coaching_team-cycle": "2023-10-27T00:00:00.000Z",
+        "_en_coaching_team-group": "2023-10-27T00:00:00.000Z",
+        "_en_lab_index": "2023-10-27T00:00:00.000Z",
+        "_en_my-notes_index": "2023-10-27T00:00:00.000Z",
+        "_en_my-notes_swot-analysis-what": "2023-10-27T00:00:00.000Z",
+        "_en_my-notes_writing-blog": "2023-10-27T00:00:00.000Z",
+        "_en_lab_environment_auto-update": "2023-10-27T00:00:00.000Z",
+        "_en_lab_environment_dev-setup-mint": "2023-10-27T21:44:00Z",
+        "_en_lab_environment_hyperv": "2023-10-27T21:37:00Z",
+        "_en_lab_environment_setup": "2023-10-27T00:00:00.000Z",
+        "_en_lab_haproxy_cluster": "2023-10-27T00:00:00.000Z",
+        "_en_lab_haproxy_default-routing": "2023-10-27T00:00:00.000Z",
+        "_en_lab_haproxy_setup": "2023-10-27T00:00:00.000Z",
+        "_en_lab_haproxy_ssl-certificate": "2023-10-27T00:00:00.000Z"
     };
 
     let getLastMod = function (file) {
@@ -162,7 +174,7 @@ function generateSiteMap() {
 
     return src(outputPath + "**/*.html")
         .pipe(sitemap({
-            changefreq: "weekly",
+            changefreq: "monthly",
             siteUrl: baseUrl,
             images: true,
             hreflang: [

@@ -23,7 +23,7 @@ module.exports = {
 
             links.push({ language: "x-default", href: this["base-url"] + link });
             links.push({ language: "tr", href: this["base-url"] + link });
-            //links.push({ language: "en", href: this["base-url"] + "en/" + link });
+            links.push({ language: "en", href: this["base-url"] + "en/" + link });
         }
         else if (this.language === "en") {
             link = link.replace("./", "").replace(this.language + "/", "");

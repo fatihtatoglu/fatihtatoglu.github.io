@@ -1,167 +1,164 @@
-const defaultThemeName = "turboc";
-const defaultThemeColor = "aqua";
-const defaultLanguage = "tr";
+let fth = (function () {
+    var $btnLightTheme = document.getElementById("btnLightTheme");
+    var $btnDarkTheme = document.getElementById("btnDarkTheme");
+    var $menuButton = document.querySelector("nav i.menu-icon");
+    var $menuList = document.querySelector("nav ul");
+    var $html = document.getElementsByTagName("html")[0];
 
-document.addEventListener('DOMContentLoaded', () => {
-    loadSiteSettings();
-    redirectCorrectLanguage();
+    var bindThemeButtons = function () {
+        $btnLightTheme.addEventListener("click", () => {
+            $btnLightTheme.setAttribute("disabled", "disabled");
+            $btnDarkTheme.removeAttribute("disabled");
 
-    bindMenu();
-    renderThemeDialog();
+            $html.classList.add("light");
+            $html.classList.remove("dark");
 
-    bindThemeButtons();
-    dialogCloseButton();
-    articleHeaderButton();
-});
-
-function bindMenu() {
-    var menu = document.querySelector("nav>ul");
-    var menuitems = menu.querySelectorAll("nav>ul>li");
-
-    var toggler = document.querySelector("nav>span.menu-button");
-
-    function hideAllSubMenus() {
-        var submenus = menu.querySelectorAll("nav>ul>li div.sub-menu");
-        submenus.forEach(sm => {
-            sm.style.display = "none";
+            window.localStorage.setItem("theme", "light");
         });
-    }
 
-    menuitems.forEach((item) => {
+        $btnDarkTheme.addEventListener("click", () => {
+            $btnDarkTheme.setAttribute("disabled", "disabled");
+            $btnLightTheme.removeAttribute("disabled");
 
-        var subMenu = item.querySelector("div.sub-menu");
-        if (!subMenu) {
+            $html.classList.add("dark");
+            $html.classList.remove("light");
+
+            window.localStorage.setItem("theme", "dark");
+        });
+    };
+
+    var bindMenuToggle = function () {
+        $menuButton.addEventListener("click", () => {
+            $menuList.classList.toggle("show");
+        });
+    };
+
+    var bindLanguageButton = function () {
+        let $btnTurkish = document.getElementById("btnTurkish");
+        if ($btnTurkish) {
+            $btnTurkish.addEventListener("click", () => {
+                window.localStorage.setItem("language", "tr");
+                redirectCorrectLanguage();
+            });
+        }
+
+        let $btnEnglish = document.getElementById("btnEnglish");
+        if ($btnEnglish) {
+            $btnEnglish.addEventListener("click", () => {
+                window.localStorage.setItem("language", "en");
+                redirectCorrectLanguage();
+            });
+        }
+    };
+
+    var paintCurrentPageOnMenu = function () {
+        var $menuList = document.querySelector("nav ul");
+        var currentPage = window.location.href;
+        var menuListItems = $menuList.querySelectorAll("li a");
+
+        for (let i = 0; i < menuListItems.length; i++) {
+            const item = menuListItems[i];
+
+            let href = item.href.replace("/index.html", "/");
+            if (href === currentPage) {
+                item.classList.add("active");
+                break;
+            }
+        }
+    };
+
+    var themeLoading = function () {
+        var currentTheme = window.localStorage.getItem("theme");
+
+        if (currentTheme && (currentTheme === "light" || currentTheme === "dark")) {
+            $html.classList.add(currentTheme);
+
+            if (currentTheme === "light") {
+                $btnLightTheme.setAttribute("disabled", "disabled");
+            }
+            else if (currentTheme === "dark") {
+                $btnDarkTheme.setAttribute("disabled", "disabled");
+            }
+        }
+    };
+
+    var languageLoading = function () {
+        var currentLanguage = window.localStorage.getItem("language");
+        if (!currentLanguage) {
+            currentLanguage = navigator.language;
+
+            if (currentLanguage.indexOf("en-") === 0) {
+                currentLanguage = "en";
+            }
+            else if (currentLanguage.indexOf("tr-") === 0) {
+                currentLanguage = "tr";
+            }
+            else {
+                currentLanguage = "en";
+            }
+        }
+
+        $html.setAttribute("lang", currentLanguage);
+        window.localStorage.setItem("language", currentLanguage);
+    };
+
+    var redirectCorrectLanguage = function () {
+        var language = window.localStorage.getItem("language");
+        var languageUrlLink = document.querySelector("link[rel=alternate][hreflang=" + language + "]");
+        if (!languageUrlLink) {
             return;
         }
 
-        // set initial state
-        subMenu.style.display = "none";
+        var languageUrl = languageUrlLink.getAttribute("href");
+        if (languageUrl === window.location.href) {
+            return;
+        }
 
-        item.addEventListener("click", () => {
-            if (subMenu.style.display === "none") {
+        if (languageUrl.startsWith(window.origin)) {
+            window.location.replace(languageUrl);
+        }
+    };
 
-                hideAllSubMenus();
+    var feedbackSurvey = function () {
+        var $btnFeedback = document.getElementById("btnFeedback");
+        var $pnlFeedback = document.getElementById("pnlFeedbackSurvey");
+        var $btnFeedbackSurveyClose = document.getElementById("btnFeedbackSurveyClose");
 
-                subMenu.style.display = "block";
-            } else {
-                subMenu.style.display = "none";
+        $btnFeedback.addEventListener("click", () => {
+            var iframe = $pnlFeedback.querySelector("iframe");
+            if (iframe) {
+                iframe.src = iframe.src;
             }
-        });
-    });
 
-    toggler.addEventListener("click", () => {
-        if (menu.style.display === "table") {
-            hideAllSubMenus();
-
-            menu.style.display = "none";
-        }
-        else {
-            menu.style.display = "table";
-        }
-    });
-}
-
-function loadSiteSettings() {
-    var $html = document.getElementsByTagName("html")[0];
-    var themeName = window.localStorage.getItem("theme-name");
-    var themeColor = window.localStorage.getItem("theme-color");
-    var language = window.localStorage.getItem("site-language");
-
-    $html.className = "";
-
-    if (themeName && themeColor) {
-        $html.classList.add(themeName);
-        $html.classList.add(themeColor);
-    }
-    else {
-        $html.classList.add(defaultThemeName);
-        $html.classList.add(defaultThemeColor);
-        window.localStorage.setItem("theme-name", defaultThemeName);
-        window.localStorage.setItem("theme-color", defaultThemeColor);
-    }
-
-    if (language) {
-        $html.setAttribute("lang", language);
-    }
-    else {
-        $html.setAttribute("lang", defaultLanguage);
-        window.localStorage.setItem("site-language", defaultLanguage);
-    }
-}
-
-function bindThemeButtons() {
-    var $btnSetting = document.getElementById("btnSetting");
-    var $pnlSettingDialog = document.getElementById("pnlSettingDialog");
-
-    $btnSetting.addEventListener("click", function () {
-        if ($pnlSettingDialog) {
-            $pnlSettingDialog.style.display = "block";
-        }
-    });
-
-    window.addEventListener("click", function (e) {
-        if (e.target == $pnlSettingDialog) {
-            $pnlSettingDialog.style.display = "none";
-        }
-    });
-}
-
-function renderThemeDialog() {
-
-    var $btnSettingDialogOK = document.getElementById("btnSettingDialogOK");
-    var dialog = document.getElementById("pnlSettingDialog");
-    $btnSettingDialogOK.addEventListener("click", function () {
-        var selectedElements = dialog.querySelectorAll("input[type=radio]:checked");
-        selectedElements.forEach(function (item) {
-            if (item.name === "color") {
-                window.localStorage.setItem("theme-name", item.getAttribute("data-theme"));
-                window.localStorage.setItem("theme-color", item.value);
-            }
-            else if (item.name === "lang") {
-                window.localStorage.setItem("site-language", item.value);
-            }
+            $pnlFeedback.style.display = "block";
         });
 
-        loadSiteSettings();
-        redirectCorrectLanguage();
-
-        dialog.style.display = "none";
-    });
-}
-
-function redirectCorrectLanguage() {
-    var language = window.localStorage.getItem("site-language");
-    var languageUrlLink = document.querySelector("link[rel=alternate][hreflang=" + language + "]");
-    if (!languageUrlLink) {
-        return;
-    }
-
-    var languageUrl = languageUrlLink.getAttribute("href");
-    if (languageUrl === window.location.href) {
-        return;
-    }
-
-    if (languageUrl.startsWith(window.origin)) {
-        window.location.replace(languageUrl);
-    }
-}
-
-function dialogCloseButton() {
-    let dialogs = document.querySelectorAll("div.dialog");
-    dialogs.forEach((item) => {
-        let closeButton = item.querySelector("div.dialog-box div.dialog-content header button");
-        closeButton.addEventListener("click", () => {
-            item.style.display = "none";
+        $btnFeedbackSurveyClose.addEventListener("click", () => {
+            $pnlFeedback.style.display = "none";
         });
-    });
-}
+    };
 
-function articleHeaderButton() {
-    let articleButton = document.querySelector("article > header > button");
-    articleButton.addEventListener("click", () => {
-        var $pnlThemeDialog = document.getElementById("pnlSettingDialog");
-        if ($pnlThemeDialog) {
-            $pnlThemeDialog.style.display = "block";
+    return {
+        bindMenu: function () {
+            bindThemeButtons();
+            bindMenuToggle();
+            bindLanguageButton();
+        },
+        updateMenu: function () {
+            paintCurrentPageOnMenu();
+        },
+        loadSite: function () {
+            themeLoading();
+            languageLoading();
+            redirectCorrectLanguage();
+            feedbackSurvey();
         }
-    });
-}
+    };
+})();
+
+document.addEventListener("DOMContentLoaded", () => {
+    fth.bindMenu();
+    fth.updateMenu();
+
+    fth.loadSite();
+});

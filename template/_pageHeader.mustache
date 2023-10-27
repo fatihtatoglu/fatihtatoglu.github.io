@@ -18,8 +18,7 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
 
     <link rel="canonical" href="{{& canonical}}">
     {{#alternate}}
@@ -33,15 +32,9 @@
 
     <link rel="stylesheet" href="{{& base-url}}css/main.css">
     <link rel="stylesheet" href="{{& base-url}}css/custom.css">
-    <link rel="stylesheet" href="{{& base-url}}css/3024.css">
-
-    <script src="{{& base-url}}js/main.js"></script>
-    {{^isLocal}}
-    <script src="{{& base-url}}js/analytics.js"></script>
-    {{/isLocal}}
-    {{#jsmodule}}
-    <script src="{{& base-url}}js/{{jsmodule}}.js" async></script>
-    {{/jsmodule}}
+    {{#stylemodule}}
+    <link rel="stylesheet" href="{{& base-url}}css/{{stylemodule}}.css">
+    {{/stylemodule}}
     
     <link rel="apple-touch-icon" sizes="180x180" href="{{& base-url}}image/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="{{& base-url}}image/favicon/favicon-32x32.png">
@@ -53,9 +46,11 @@
 </head>
 
 <body>
-    <header><span class="site-name">{{site-name}}</span></header>
-    <nav id="navigation">
+     <header>
+        <h1 id="title">{{header}}</h1>
+        <summary id="description">{{description}}</summary>
+    </header>
+    <nav>
         {{> _menu}}
     </nav>
     <main>
-        <article data-clarity-region="article">

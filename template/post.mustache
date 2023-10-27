@@ -1,6 +1,17 @@
 {{> _pageHeader}}
-            {{& content}}
-            <footer>
-            By {{#isTurkish}}<a href="about-me.html">{{/isTurkish}}{{#isEnglish}}<a href="en/about-me.html">{{/isEnglish}}{{author}}</a> - <time pubdate datetime="{{publish-date-datetime}}" title="{{publish-date}}">{{publish-date}}</time>
-            </footer>
+    
+    {{#labSide}}
+        <section>
+            <strong>{{title}}</strong>
+            <ul>
+        {{#pages}}
+            <li {{#selected}}class="active"{{/selected}}>{{^selected}}<a href="{{permalink}}">{{/selected}}{{title}}{{^selected}}</a>{{/selected}}</li>
+        {{/pages}}
+        </ul> 
+        </section>     
+    {{/labSide}}
+
+    <article>
+    {{& content}}
+    </article>
 {{> _pageFooter}}

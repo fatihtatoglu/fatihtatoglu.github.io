@@ -4,9 +4,16 @@
 <table>
 <thead>
 <tr>
-<th style="width:10%">Adı</th>
-<th style="width:80%">Açıklama</th>
-<th style="width:10%">Proje Reposu</th>
+{{#isTurkish}}
+    <th style="width:10%">Adı</th>
+    <th style="width:80%">Açıklama</th>
+    <th style="width:10%">Proje Reposu</th>
+{{/isTurkish}}
+{{#isEnglish}}
+    <th style="width:10%">Name</th>
+    <th style="width:80%">Description</th>
+    <th style="width:10%">Code Repository</th>
+{{/isEnglish}}
 </tr>
 </thead>
 <tbody>

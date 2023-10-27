@@ -1,26 +1,100 @@
-tr {
-    border-bottom: dotted 1px;
+/*--------------------*\
+    # CUSTOM
+\*--------------------*/
+time {
+    display: none;
 }
 
-table tbody tr:first-child td,
-table tbody tr:last-child td,
-table tbody tr td,
-table tbody tr td {
-    padding-top: 5px;
-    padding-bottom: 5px;
+main section {
+    background-color: var(--background-color);
+    padding: var(--baseline);
+    border: solid 2px var(--border-color);
+    margin-bottom: 1em;
 }
 
-table tbody tr td {
-    vertical-align: inherit;
+main section ul {
+    margin-top: 1em;
+    list-style-type: none;
+    padding-left: 0em;
 }
 
-input[type=checkbox],
-input[type=radio] {
-    width: 40px;
+main section ul li {
+    margin-bottom: var(--baseline);
 }
 
-input[type=checkbox]::after,
-input[type=radio]::after {
-    margin-left: 0px;
-    cursor: inherit;
+main section ul li.active {
+    background-color: var(--secondary-color-dark);
+    color: var(--secondary-color-text);
+}
+
+@media only screen and (min-width: 600px) {
+
+    /*testing*/
+    /* header>summary::after {
+        content: " width: small";
+    } */
+}
+
+@media only screen and (min-width: 768px) {
+
+    /*testing*/
+    /* header>summary::after {
+        content: " width: medium";
+    } */
+
+    main section {
+        width: 16em;
+        float: right;
+        margin-left: 1em;
+        margin-bottom: 0em;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+
+    /*testing*/
+    /* header>summary::after {
+        content: " width: large";
+    } */
+}
+
+@media only screen and (min-width: 1200px) {
+
+    /*testing*/
+    /* header>summary::after {
+        content: " width: extra large";
+    } */
+}
+
+#pnlFeedbackSurvey {
+    display: none;
+
+    position: fixed;
+    z-index: 99;
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: auto;
+
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+#pnlFeedbackSurvey .model-content {
+    background-color: var(--background-color);
+    border: none;
+    height: 90%;
+    margin-top: 2.5%;
+    padding: 2.5%;
+}
+
+#pnlFeedbackSurvey .model-content iframe {
+    width: 100%;
+    height: 90%
+}
+
+#pnlFeedbackSurvey .model-content button {
+    float: right;
 }

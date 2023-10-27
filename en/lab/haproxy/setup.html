@@ -1,0 +1,145 @@
+<!DOCTYPE html><html lang="en"><head><base href="https://blog.tatoglu.net/"><meta charset="UTF-8"><meta name="yandex-verification" content="31a29a16b97b37a8"><meta name="msvalidate.01" content="578B5091D7C5A2C03BE2EE0DF0CCC024"><meta name="google-site-verification" content="7pv7CpUtN5qt6uIgrmkOjVK03wSJYs1vQKRiBESB978"><link rel="profile" href="https://gmpg.org/xfn/11"><meta name="description" content=""><meta name="author" content="Fatih Tatoğlu"><meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap&v=6f03e8ae96b970fc474ffe30207e7fbf" rel="stylesheet"><link rel="canonical" href="https://blog.tatoglu.net/en/lab/haproxy/setup.html"><link rel="alternate" hreflang="x-default" href="https://blog.tatoglu.net/lab/haproxy/setup.html"><link rel="alternate" hreflang="tr" href="https://blog.tatoglu.net/lab/haproxy/setup.html"><link rel="alternate" hreflang="en" href="https://blog.tatoglu.net/en/lab/haproxy/setup.html"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Fatih Tatoğlu - Setup</title><link rel="stylesheet" href="https://blog.tatoglu.net/css/main.css?v=6f03e8ae96b970fc474ffe30207e7fbf"><link rel="stylesheet" href="https://blog.tatoglu.net/css/custom.css?v=6f03e8ae96b970fc474ffe30207e7fbf"><link rel="apple-touch-icon" sizes="180x180" href="https://blog.tatoglu.net/image/favicon/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://blog.tatoglu.net/image/favicon/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://blog.tatoglu.net/image/favicon/favicon-16x16.png"><link rel="manifest" href="https://blog.tatoglu.net/image/favicon/site.webmanifest"><link rel="icon" href="https://blog.tatoglu.net/favicon.ico" type="image/x-icon"><link rel="shortcut icon" href="https://blog.tatoglu.net/favicon.ico" type="image/x-icon"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@fatihtatoglu"><meta name="twitter:title" content="Setup"><meta name="twitter:description" content=""><script type="application/ld+json">{"@context": "https://schema.org","@graph": [{"@type": "WebSite","@id": "https://blog.tatoglu.net/#website","url": "https://blog.tatoglu.net/","name": "Fatih Tatoğlu","description": "Fatih Tatoğlu - Kişisel Web Sayfası","publisher": {"@id": "https://blog.tatoglu.net//#/schema/person/9112274035621a3fbf80e30c19216034"},"inLanguage": ""},{"@type": "WebPage","@id": "https://blog.tatoglu.net/en/lab/haproxy/setup.html/#webpage","url": "https://blog.tatoglu.net/en/lab/haproxy/setup.html","name": "Setup - Fatih Tatoğlu","isPartOf": {"@id": "https://blog.tatoglu.net/#website"},"datePublished": "2022-06-12T14:07:13+0000","breadcrumb": {"@id": "https://blog.tatoglu.net/en/lab/haproxy/setup.html/#breadcrumb"},"inLanguage": "","potentialAction": [{"@type": "ReadAction","target": ["https://blog.tatoglu.net/en/lab/haproxy/setup.html"]}]},{"@type": "BreadcrumbList","@id": "https://blog.tatoglu.net/en/lab/haproxy/setup.html/#breadcrumb","itemListElement": [{"@type": "ListItem","position": 1,"name": "Ana sayfa","item": "https://blog.tatoglu.net/"},{"@type": "ListItem","position": 2,"name": "Setup"}]},{"@type": "Article","@id": "https://blog.tatoglu.net/en/lab/haproxy/setup.html/#article","isPartOf": {"@id": "https://blog.tatoglu.net/en/lab/haproxy/setup.html/#webpage"},"author": {"@id": "https://blog.tatoglu.net//#/schema/person/9112274035621a3fbf80e30c19216034"},"headline": "Setup","datePublished": "2022-06-12T14:07:13+0000","mainEntityOfPage": {"@id": "https://blog.tatoglu.net/en/lab/haproxy/setup.html/#webpage"},"publisher": {"@id": "https://blog.tatoglu.net//#/schema/person/9112274035621a3fbf80e30c19216034"},"articleSection": ["lab"],"keywords": ["haproxy","centos","lua","setup","build","source","install"],"inLanguage": ""},{"@type": ["Person"],"@id": "https://blog.tatoglu.net//#/schema/person/9112274035621a3fbf80e30c19216034","name": "Fatih Tatoğlu","url": "https://blog.tatoglu.net/about-me.html","image": {"@type": "ImageObject","@id": "https://blog.tatoglu.net/#personlogo","inLanguage": "","url": "https://blog.tatoglu.net/image/about_me.jpg","contentUrl": "https://blog.tatoglu.net/image/about_me.jpg","width": 1024,"height": 683,"caption": "Fatih Tatoğlu"},"address": {"@type": "PostalAddress","addressLocality": "İstanbul","addressCountry": "Turkey"},"email": "fatih@tatoglu.net"}]}</script></head><body><header><h1 id="title">Setup</h1><summary id="description"></summary></header><nav><i class="menu-icon">&#9776;</i><ul><li><a href="https://blog.tatoglu.net/en/index.html">Home Page</a></li><li><a href="https://blog.tatoglu.net/en/coaching/index.html">Coaching</a></li><li><a href="https://blog.tatoglu.net/en/my-notes/index.html">My Notes</a></li><li><a href="https://blog.tatoglu.net/en/lab/index.html">Laboratory</a></li><li><a href="https://blog.tatoglu.net/en/about-me.html">About Me</a></li><li><button id="btnFeedback" class="icon" title="Feedback">&#128640;</button> <button id="btnDarkTheme" class="icon" title="Dark Theme">&#127770;</button> <button id="btnLightTheme" class="icon" title="Light Theme">&#127774;</button> <button id="btnTurkish" class="icon" title="Turkish">🇹🇷</button></li></ul></nav><main><section><strong>HAProxy</strong><ul><li class="active">Setup</li><li><a href=".&#x2F;en&#x2F;lab&#x2F;haproxy&#x2F;cluster.html">Cluster</a></li><li><a href=".&#x2F;en&#x2F;lab&#x2F;haproxy&#x2F;default-routing.html">Static Routing</a></li><li><a href=".&#x2F;en&#x2F;lab&#x2F;haproxy&#x2F;ssl-certificate.html">SSL Certificate</a></li></ul></section><article><p>This note contains the steps of the single server setup HAProxy from source onto the CentOS 7.X Minimal. This setup includes some extra efforts for helping with the following notes about HAProxy.</p><p>🔥 This note is written for HAProxy 2.0.29 and Lua 5.3.5 version. Newer versions may have different configurations.</p><h2>Preliminary Preparation</h2><table><thead><tr><th align="right">Property</th><th align="left">Minimum Value</th></tr></thead><tbody><tr><td align="right"><strong>Server Name</strong></td><td align="left">haproxy-01</td></tr><tr><td align="right"><strong>IP Address</strong></td><td align="left">172.19.85.102</td></tr><tr><td align="right"><strong>Netmask</strong></td><td align="left">255.255.255.0</td></tr><tr><td align="right"><strong>Gateway</strong></td><td align="left">172.19.85.1</td></tr><tr><td align="right"><strong>CPU</strong> ⭐</td><td align="left">4</td></tr><tr><td align="right"><strong>Memory</strong> ⭐</td><td align="left">2 GB</td></tr><tr><td align="right"><strong>Disk</strong></td><td align="left">40GB</td></tr><tr><td align="right"><strong>OS</strong></td><td align="left">CentOS 7.X Minimal</td></tr><tr><td align="right"><strong>Internet Access</strong></td><td align="left">Yes</td></tr></tbody></table><p>⭐: You can increase the resources during the installation process.</p><p>During the setup and build process, no need to have a <strong>root</strong> user. However, a user with root privileges will be needed. In the note, the <strong>devops</strong> user is used for the setup and build process. If you have a different user, please use that.</p><p>To prevent the blockage during the setup, the SELinux will be disabled.</p><pre><code class="language-shell">devops@haproxy-01:~$ sudo setenforce 0
+devops@haproxy-01:~$ sudo sed -i &#39;s/^SELINUX=.*/SELINUX=permissive/g&#39; /etc/selinux/config
+</code></pre><h2>Setup Preparation</h2><p>Because of security reasons, a separate user should be created for HAProxy.</p><pre><code class="language-shell">devops@haproxy-01:~$ sudo groupadd -g 1985 haproxy
+devops@haproxy-01:~$ sudo useradd -g 1985 -u 1985 -d /var/lib/haproxy -s /sbin/nologin -c haproxy haproxy
+</code></pre><p>The following files should be downloaded and extracted.</p><pre><code class="language-shell">devops@haproxy-01:~$ curl https://www.lua.org/ftp/lua-5.3.5.tar.gz &gt; lua-5.3.5.tar.gz
+devops@haproxy-01:~$ curl http://www.haproxy.org/download/2.0/src/haproxy-2.0.29.tar.gz &gt; haproxy-2.0.29.tar.gz
+
+devops@haproxy-01:~$ tar xf lua-5.3.5tar.gz
+devops@haproxy-01:~$ tar xf haproxy-2.0.29.tar.gz 
+</code></pre><p>Before starting to build the HAProxy, some mandatory libraries must be installed.</p><pre><code class="language-shell">devops@haproxy-01:~$ sudo yum install gcc openssl-devel readline-devel systemd-devel make pcre-devel net-tools kernel-headers url libnl3-devel net-snmp-devel -y
+devops@haproxy-01:~$ sudo yum update -y
+</code></pre><h2>Build</h2><p>The build operation starts with the building Lua because the Lua library path is a parameter during the HAProxy build script.</p><pre><code class="language-shell">devops@haproxy-01:~$ cd lua-5.3.5
+devops@haproxy-01:~$ sudo make INSTALL_TOP=/opt/lua-5.3.5 linux install
+</code></pre><p>Now, the HAProxy can be built from the source.</p><pre><code class="language-shell">devops@haproxy-01:~$ cd ~
+devops@haproxy-01:~$ cd haproxy-2.0.29
+devops@haproxy-01:~$ sudo make USE_NS=1 USE_TFO=1 USE_OPENSSL=1 USE_ZLIB=1 USE_LUA=1 USE_PCRE=1 USE_SYSTEMD=1 USE_LIBCRYPT=1 USE_THREAD=1 TARGET=linux-glibc LUA_INC=/opt/lua-5.3.5/include LUA_LIB=/opt/lua-5.3.5/lib
+devops@haproxy-01:~$ sudo make PREFIX=/opt/haproxy install
+</code></pre><p>The above parameters are selected for the general usage of HAProxy, if you need more specific parameters the <strong>INSTALL</strong> file in the source code, is contained inside. Please be aware that changing parameters affect the HAProxy performance and working style.</p><h2>Configuration</h2><p>After building the HAProxy, to control it with <code>systemctl</code>, a service definition must be created.</p><pre><code class="language-shell">devops@haproxy-01:~$ sudo vi /etc/systemd/system/haproxy.service
+</code></pre><pre><code class="language-ini">[Unit]
+Description=HAProxy 2.0.29
+After=syslog.target network.target
+
+[Service]
+Type=notify
+EnvironmentFile=/etc/sysconfig/haproxy
+ExecStart=/opt/haproxy/sbin/haproxy -f $CONFIG_FILE -p $PID_FILE $CLI_OPTIONS
+ExecReload=/bin/kill -USR2 $MAINPID
+ExecStop=/bin/kill -USR1 $MAINPID
+
+[Install]
+WantedBy=multi-user.target
+</code></pre><p>Now, the process file should be created to define the starting paramters and options.</p><pre><code class="language-shell">devops@haproxy-01:~$ sudo vi /etc/sysconfig/haproxy
+</code></pre><pre><code class="language-ini"># Command line options to pass to HAProxy at startup
+# The default is:
+CLI_OPTIONS=&quot;-Ws&quot;
+
+# Specify an alternate configuration file. The default is:
+CONFIG_FILE=/etc/haproxy/haproxy.conf
+
+# File used to track process IDs. The default is:
+PID_FILE=/var/run/haproxy.pid
+</code></pre><p>The last step in the configuration section is creating a HAProxy configuration file that given in the process file. This configuration file contains the proxy definitions, service and server definitions.</p><pre><code class="language-shell">devops@haproxy-01:~$ sudo mkdir /etc/haproxy/
+devops@haproxy-01:~$ sudo vi /etc/haproxy/haproxy.conf
+</code></pre><pre><code class="language-nestedtext">##################################################
+#                    Global                      #
+##################################################
+global
+    daemon
+    maxconn     5000
+    user        haproxy
+    group       haproxy
+    chroot      /var/lib/haproxy
+    log 127.0.0.1 local0          #traffic logs
+    log 127.0.0.1 local1 notice   #event logs
+
+    #SSL option
+    tune.ssl.default-dh-param 2048
+    ssl-server-verify none
+    ssl-default-bind-options no-sslv3
+
+    #Multithreading
+    nbproc 1
+    nbthread 4
+    cpu-map auto:1/1-4 0-3
+##################################################
+
+
+##################################################
+#                   Defaults                     #
+##################################################
+defaults
+    log global
+    mode http
+    option httplog
+    option logasap
+    timeout connect 4s
+    timeout client 5s
+    timeout server 86400s
+    timeout http-request 30s
+    timeout http-keep-alive 5s
+    timeout queue 60s
+
+    #server defaults
+    default-server inter 1s rise 2 fall 4
+    grace 3000
+
+    #request
+    option redispatch 1
+    retries 2
+##################################################
+
+
+##################################################
+#                  Monitoring                    #
+##################################################
+listen stats
+    bind *:1985
+    mode http
+    stats enable
+    stats uri /stats
+    stats refresh 3s
+    stats show-node
+    option dontlog-normal
+##################################################
+
+
+##################################################
+#                    Frontend                    #
+##################################################
+
+##################################################
+
+
+##################################################
+#                    Backend                     #
+##################################################
+
+##################################################
+
+
+##################################################
+#                     Users                      #
+##################################################
+
+##################################################
+</code></pre><p>To complete the configuration section, there is one required command to validate the HAProxy configuration.</p><pre><code class="language-shell">devops@haproxy-01:~$ sudo /opt/haproxy/sbin/haproxy -c -V -f /etc/haproxy/haproxy.conf
+</code></pre><p>This command should be executed after any configuration changes in the HAProxy configuration file.</p><h2>Security</h2><p>The SELinux is disabled, but the firewall should be enabled to prevent network attacks or discoverability. Creating port by port creates complexity, so creating a HAProxy service definition for the Firewall should be better.</p><pre><code class="language-shell">devops@haproxy-01:~$ sudo vi /etc/firewalld/services/haproxy.xml
+</code></pre><pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;service&gt;
+    &lt;short&gt;HAProxy&lt;/short&gt;
+    &lt;description&gt;HAProxy load-balancer&lt;/description&gt;
+    &lt;port protocol=&quot;tcp&quot; port=&quot;80&quot;/&gt;
+    &lt;port protocol=&quot;tcp&quot; port=&quot;443&quot;/&gt;
+    &lt;port protocol=&quot;tcp&quot; port=&quot;1985&quot;/&gt;
+&lt;/service&gt;
+</code></pre><p>The <code>80</code> and <code>443</code> port is added for the normal traffic. The port <code>1985</code> is added for the HAProxy status page access. You can add your additional ports to that file in the future. After adding, the restart is required for the Firewall and HAProxy.</p><pre><code class="language-shell">devops@haproxy-01:~$ sudo chmod 640 /etc/firewalld/services/haproxy.xml
+</code></pre><h2>Turning Key</h2><pre><code class="language-shell">devops@haproxy-01:~$ sudo systemctl enable firewalld
+devops@haproxy-01:~$ sudo sudo systemctl start firewalld
+devops@haproxy-01:~$ sudo firewall-cmd --permanent --add-service=haproxy
+devops@haproxy-01:~$ 
+devops@haproxy-01:~$ sudo firewall-cmd --reload
+devops@haproxy-01:~$ sudo systemctl enable haproxy
+devops@haproxy-01:~$ sudo systemctl start haproxy
+</code></pre><p>With the above commands, permanent access is given to HAProxy, and HAProxy&#39;s service is enabled and started. If there isn&#39;t any problem, the HAProxy should be worked.</p><h2>Validation</h2><p>After the setup, you should validate the setup internally and externally.</p><pre><code class="language-shell">devops@haproxy-01:~$ sudo systemctl status haproxy
+</code></pre><p>The above commands should return the <strong>Running</strong> status for internal validation. For the external validation, you may visit the <code>http://172.19.85.102:1985/stats</code> address that is defined in the HAProxy configuration file for the HAProxy status page.</p></article></main><footer>&copy; 1985 - <a href="en/about-me.html" rel="noopener noreferrer" target="_blank">Fatih Tatoğlu</a></footer><script src="https://blog.tatoglu.net/js/main.js?v=6f03e8ae96b970fc474ffe30207e7fbf"></script><script src="https://blog.tatoglu.net/js/analytics.js?v=6f03e8ae96b970fc474ffe30207e7fbf"></script><div id="pnlFeedbackSurvey"><div class="model-content"><button id="btnFeedbackSurveyClose" class="icon bold x-small">&times;</button><iframe src="https://docs.google.com/forms/d/e/1FAIpQLSewJ_x10HBlFs2lO2zHUBI3ZeSdEXaISpK292RPJBoZyeC1HA/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe></div></div></body></html>

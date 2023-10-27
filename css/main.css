@@ -330,7 +330,7 @@ nav ul li button {
         position: sticky;
 
         top: var(--baseline);
-        z-index: 9999;
+        z-index: 9;
     }
 
     nav i.menu-icon {

@@ -119,6 +119,25 @@ let fth = (function () {
         }
     };
 
+    var feedbackSurvey = function () {
+        var $btnFeedback = document.getElementById("btnFeedback");
+        var $pnlFeedback = document.getElementById("pnlFeedbackSurvey");
+        var $btnFeedbackSurveyClose = document.getElementById("btnFeedbackSurveyClose");
+
+        $btnFeedback.addEventListener("click", () => {
+            var iframe = $pnlFeedback.querySelector("iframe");
+            if (iframe) {
+                iframe.src = iframe.src;
+            }
+
+            $pnlFeedback.style.display = "block";
+        });
+
+        $btnFeedbackSurveyClose.addEventListener("click", () => {
+            $pnlFeedback.style.display = "none";
+        });
+    };
+
     return {
         bindMenu: function () {
             bindThemeButtons();
@@ -132,6 +151,7 @@ let fth = (function () {
             themeLoading();
             languageLoading();
             redirectCorrectLanguage();
+            feedbackSurvey();
         }
     };
 })();

@@ -2,7 +2,7 @@
 layout: post
 published: true
 author: Fatih Tatoğlu
-date: 2022-06-12T21:28:33Z
+date: 2023-10-27T21:37:00Z
 permalink: ./lab/environment/hyperv.html
 language: tr
 
@@ -39,23 +39,22 @@ Yukarıdaki komutlar ile bir virtual switch oluşturulacaktır. Ben `172.19.85.0
 
 ```powershell
 PS C:\Users\Fatih Tatoğlu> $natSwitch = "NATSwitch"
-PS C:\Users\Fatih Tatoğlu> $vmGroup = "fatihtatoglu"
-PS C:\Users\Fatih Tatoğlu> $vmName = "fth-linux"
-PS C:\Users\Fatih Tatoğlu> $workspacePath = "C:\\workspace\\servers\\"
+PS C:\Users\Fatih Tatoğlu> $vmName = "fth-dev"
+PS C:\Users\Fatih Tatoğlu> $workspacePath = "C:\\workspace\\machine\\"
 PS C:\Users\Fatih Tatoğlu> 
-PS C:\Users\Fatih Tatoğlu> $ramSize  = 2GB 
+PS C:\Users\Fatih Tatoğlu> $ramSize  = 8GB 
 PS C:\Users\Fatih Tatoğlu> $diskSize = 50GB
 PS C:\Users\Fatih Tatoğlu> 
-PS C:\Users\Fatih Tatoğlu> New-VHD -Path "$workspacePath\\$vmGroup\\$vmName\\$vmName.vhdx" -SizeBytes $diskSize -Fixed -BlockSizeBytes 1MB
+PS C:\Users\Fatih Tatoğlu> New-VHD -Path "$workspacePath\\$vmName\\$vmName.vhdx" -SizeBytes $diskSize -Fixed -BlockSizeBytes 1MB
 PS C:\Users\Fatih Tatoğlu> 
-PS C:\Users\Fatih Tatoğlu> New-VM -Name $vmName -MemoryStartupBytes $ramSize -BootDevice VHD -VHDPath "$workspacePath\\$vmGroup\\$vmName\\$vmName.vhdx" -Path "$workspacePath\\$vmGroup" -Generation 2 -Switch $natSwitch
+PS C:\Users\Fatih Tatoğlu> New-VM -Name $vmName -MemoryStartupBytes $ramSize -BootDevice VHD -VHDPath "$workspacePath\\$vmName\\$vmName.vhdx" -Path "$workspacePath" -Generation 2 -Switch $natSwitch
 PS C:\Users\Fatih Tatoğlu> 
 PS C:\Users\Fatih Tatoğlu> Set-VMFirmware $vmName -EnableSecureBoot Off
 PS C:\Users\Fatih Tatoğlu> Set-VMProcessor -VMName $vmName -Count 2
 PS C:\Users\Fatih Tatoğlu> Set-VM -Name $vmName -AutomaticCheckpointsEnabled $false -CheckpointType Disabled
 PS C:\Users\Fatih Tatoğlu> Set-VMMemory -VMName $vmName -DynamicMemoryEnabled $true -MinimumBytes ($ramSize / 16) -StartupBytes ($ramSize / 8) -MaximumBytes $ramSize
 PS C:\Users\Fatih Tatoğlu> 
-PS C:\Users\Fatih Tatoğlu> Add-VMDvdDrive -VMName $vmName -Path "C:\\workspace\\isos\\linuxmint-20.3-xfce-64bit.iso"
+PS C:\Users\Fatih Tatoğlu> Add-VMDvdDrive -VMName $vmName -Path "C:\\workspace\\iso\\linuxmint-21.2-xfce-64bit.iso"
 PS C:\Users\Fatih Tatoğlu> 
 PS C:\Users\Fatih Tatoğlu> $dvd = Get-VMDVDDrive -VMName $vmName
 PS C:\Users\Fatih Tatoğlu> Set-VMFirmware -VMName $vmName -FirstBootDevice $dvd

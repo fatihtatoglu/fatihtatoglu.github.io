@@ -65,3 +65,36 @@ main section ul li.active {
         content: " width: extra large";
     } */
 }
+
+#pnlFeedbackSurvey {
+    display: none;
+
+    position: fixed;
+    z-index: 99;
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: auto;
+
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+#pnlFeedbackSurvey .model-content {
+    background-color: var(--background-color);
+    border: none;
+    height: 90%;
+    margin-top: 2.5%;
+    padding: 2.5%;
+}
+
+#pnlFeedbackSurvey .model-content iframe {
+    width: 100%;
+    height: 90%
+}
+
+#pnlFeedbackSurvey .model-content button {
+    float: right;
+}

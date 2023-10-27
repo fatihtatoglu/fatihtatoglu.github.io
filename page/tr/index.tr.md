@@ -2,7 +2,7 @@
 layout: page
 published: true
 author: Fatih Tatoğlu
-date: 2023-10-27T00:00:00.000Z
+date: 2023-10-27T21:57:00.000Z
 permalink: ./index.html
 language: tr
 
@@ -17,4 +17,4 @@ order: 1
 
 Merhaba ben Fatih. Kendimi meraklı bir geliştirici olarak tanımlamayı tercih ediyorum. Bu sitede deneyimlerimi, projelerimi, notlarımı, akıl yürütmelerimi ve kendime sorduğum sorularla ilgili farkındalıklarımı bulacaksınız.
 
-Umarım okurken eğlenir ve yeni şeyler öğrenirsiniz.
+Umarım okurken eğlenir ve yeni şeyler öğrenirsiniz. Eğer destek olmak isterseniz, &#128640; ikonuna tıklayarak geri bildirim verebilirsiniz.

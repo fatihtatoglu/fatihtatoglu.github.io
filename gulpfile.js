@@ -140,6 +140,7 @@ function generateSiteMap() {
         "_lab_haproxy_default-routing": "2023-10-27T00:00:00.000Z",
         "_lab_haproxy_setup": "2023-10-27T00:00:00.000Z",
         "_lab_haproxy_ssl-certificate": "2023-10-27T00:00:00.000Z",
+        "_my-notes_republic-100th-anniversary":"2023-10-29T12:37:49Z",
 
         // English
         "_en_about-me": "2023-10-27T00:00:00.000Z",
@@ -164,11 +165,15 @@ function generateSiteMap() {
         "_en_lab_haproxy_cluster": "2023-10-27T00:00:00.000Z",
         "_en_lab_haproxy_default-routing": "2023-10-27T00:00:00.000Z",
         "_en_lab_haproxy_setup": "2023-10-27T00:00:00.000Z",
-        "_en_lab_haproxy_ssl-certificate": "2023-10-27T00:00:00.000Z"
+        "_en_lab_haproxy_ssl-certificate": "2023-10-27T00:00:00.000Z",
+        "_en_my-notes_republic-100th-anniversary":"2023-10-29T12:37:49Z"
     };
 
     let getLastMod = function (file) {
         let fileName = file.path.replace(file.base, "").replace(file.extname, "").replace(/\\/g, "_").replace(/\//g, "_");
+
+        console.log(fileName);
+
         return dates[fileName];
     };
 

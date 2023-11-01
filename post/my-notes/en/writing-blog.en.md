@@ -8,7 +8,8 @@ language: en
 
 title: Writing Blog
 header: Writing Blog
-description: When you lose your motivation to write a blog, just read that post.
+description: Join the journey of a passionate blogger as they share their experiences and insights. Uncover the motivation to write, learn, and have fun. Plus, witness a surprising twist with my self-drawn cartoon.
+slogan: Fatih, when you lose your motivation to write a blog, just read that post.
 tags: writing_blog selçuk_erdem cartoon
 category: notes
 ---

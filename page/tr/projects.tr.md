@@ -8,6 +8,7 @@ language: tr
 
 title: Projeler
 header: Projeler
+description: Deneyimlerim, kullanım senaryolarım ve açık kaynak projelerim aracılığıyla yazılım geliştirme dünyasını keşfedin. İçgörü kazanın, projelerimi destekleyin ve yeni fikirler keşfedin.
 tags: projeler portfolio başarısızlık_hikayeleri itiraflar tasarım_fikirleri
 order: 5
 ---

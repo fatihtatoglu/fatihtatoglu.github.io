@@ -8,6 +8,7 @@ language: en
 
 title: Bir Yöneticinin Yolu
 header: Bir Yöneticinin Yolu
+description: Challenges of being a manager and lessons learned. Transparency, equality and justice are important concepts for managers. Management is a journey and requires development.
 tags: yönetici koçluk takım_arkadaşı şeffaflık
 category: coaching
 

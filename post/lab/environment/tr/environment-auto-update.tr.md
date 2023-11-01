@@ -8,6 +8,7 @@ language: tr
 
 title: Otomatik Güncellemeler
 header: Otomatik Güncellemeler
+description: Fatih'in alışkanlık ve tercihlerine uygun bir yazılım geliştirme ortamı hazırlamak.
 tags: mint ubuntu linux_mint apt update upgrade autoclean
 
 category: lab

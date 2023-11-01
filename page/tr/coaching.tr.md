@@ -8,6 +8,7 @@ language: tr
 
 title: Koçluk
 header: Koçluk
+description: Koçlukta Psikoloji, Sosyoloji ve Biyolojinin potansiyelini ortaya çıkarın. Hayatınızı geliştirin, davranışları anlayın ve etkileşimlerinizi artırın. Koçluk deneyimlerimden fikir edinin.
 tags: koçluk psikoloji sosyoloji biyoloji deneyim deneyler gözlemler
 order: 2
 ---

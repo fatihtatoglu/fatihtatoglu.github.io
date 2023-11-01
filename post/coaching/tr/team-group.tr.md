@@ -8,7 +8,7 @@ language: tr
 
 title: Takım mı? Grup mu?
 header: Takım mı? Grup mu?
-description: Takım mı? Grup mu? Bu soruyu çoğu kişiye sorduğum zaman aynı şey oldukları cevabını aldım. Ancak ikisi arasında bazı farklar var.
+description: Grup ve takım arasındaki farkları öğrenin. Gruplar bireysel hedeflere, takımlar ise ortak amaçlara odaklanır. İşbirliği ve liderlik farkları hakkında bilgi edinin.
 tags: takım grup amaç hedef sorumluluk iletişim etki çalışma_tarzı
 category: coaching
 ---

@@ -8,6 +8,7 @@ language: tr
 
 title: Cluster
 header: Cluster
+description: Verimli yük dengeleme için CentOS 7.X'te HAProxy'yi kurun. Hazırlık, kurulum, yapılandırma ve güvenlik için adım adım talimatları izleyin. Sorunsuz bir dağıtım sağlayın.
 tags: haproxy keepalived centos failover high_availability
 
 category: lab

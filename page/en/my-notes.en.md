@@ -8,6 +8,7 @@ language: en
 
 title: My Notes
 header: My Notes
+description: Simplify your life with information management strategies. Organize your knowledge and achieve mental clarity with practical notes and guidelines.
 tags: my_notes notes
 order: 3
 ---

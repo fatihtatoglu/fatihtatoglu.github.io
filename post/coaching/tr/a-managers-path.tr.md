@@ -8,7 +8,7 @@ language: tr
 
 title: Bir Yöneticinin Yolu
 header: Bir Yöneticinin Yolu
-description: Pandemi ile başlayan yöneticilik yolculuğum sırasında olanlar ve yaşadıklarım.
+description: Yönetici olmanın zorlukları ve öğrenilen dersler. Şeffaflık, eşitlik ve adalet, yöneticiler için önemli kavramlar. Yöneticilik bir yolculuktur ve gelişmeyi gerektirir.
 tags: yönetici koçluk takım_arkadaşı şeffaflık
 category: coaching
 ---

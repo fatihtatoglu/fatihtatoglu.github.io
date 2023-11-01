@@ -8,6 +8,7 @@ language: en
 
 title: Happy Birthday Türkiye
 header: Happy Birthday Türkiye
+description: Marking a century of the Turkish Republic and Atatürk's vision. A message of gratitude, responsibility, and commitment to protect the legacy for generations to come.
 tags: republic 100th atatürk mustafa_kemal mustafa_kemal_atatürk türkiye turkey turkish_republic
 category: notes
 ---

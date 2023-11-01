@@ -9,6 +9,7 @@ language: tr
 title: Hakkımda
 header: Hakkımda
 description: Kimdir bu Fatih Tatoğlu?
+summary: Kimdir bu Fatih Tatoğlu?
 tags: hakkımda fatih_tatoglu
 order: 6
 ---

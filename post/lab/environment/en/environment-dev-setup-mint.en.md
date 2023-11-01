@@ -8,6 +8,7 @@ language: en
 
 title: Creating Development Environment with Linux Mint
 header: Creating Development Environment with Linux Mint
+description: Preparing a software development environment with Fatih's habits and preferences.
 tags: mint ubuntu linux_mint development development_environment
 
 category: lab

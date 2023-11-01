@@ -8,6 +8,7 @@ language: en
 
 title: What - SWOT Analysis
 header: What - SWOT Analysis
+description: Discover the strength of SWOT analysis in assessing your business's current state. Uncover its simplicity and effectiveness in recognizing strengths, weaknesses, opportunities, and threats. Explore interpretation and sustainability for strategic success
 tags: SWOT Strengths Weaknesses Opportunities Threats Helpful Harmful Internal External Environment
 category: notes
 ---

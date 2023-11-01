@@ -8,6 +8,7 @@ language: en
 
 title: Auto Updates
 header: Auto Updates
+description: Preparing a software development environment with Fatih's habits and preferences.
 tags: mint ubuntu linux_mint apt update upgrade autoclean
 
 category: lab

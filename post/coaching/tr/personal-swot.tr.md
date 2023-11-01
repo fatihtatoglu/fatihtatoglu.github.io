@@ -8,6 +8,7 @@ language: tr
 
 title: Bireysel SWOT Analizi
 header: Bireysel SWOT Analizi
+description: Kişisel olarak uygulanan SWOT analizi ile güçlü yönlerinizi, zayıf yönlerinizi, fırsatlarınızı ve tehditlerinizi tespit edin. Kendi değerlerinizle yorumlayarak aksiyonlarınızı planlayın. Bireysel SWOT analizi ile şu andaki durumunuzu anlayın.
 tags: swot_analizi swot güçlü_yanlar zayıf_yanlar fırsatlar tehditler
 category: coaching
 ---

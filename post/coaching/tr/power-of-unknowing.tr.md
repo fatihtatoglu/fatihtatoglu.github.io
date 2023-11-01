@@ -8,7 +8,7 @@ language: tr
 
 title: Bilmemenin Gücü
 header: Bilmemenin Gücü
-description: Bilmiyorum demenin gücü onu kullanmamız için bekliyor. Kullanılırsa çok güzel şeyler olacak.
+description: Kendi bilgi sınırlarınızı tanıyarak cesaret ve dürüstlük ile 'Bilmiyorum' diyerek güç kazanın. Bilmediğiniz konuları keşfedin, öğrenin ve kendinize olan güveninizi artırın. Bilmiyorum demenin gücünü keşfedin.
 tags: bilmemek bilmemenin_gucu ogrenme guven cesaret rahatlama 
 category: coaching
 ---

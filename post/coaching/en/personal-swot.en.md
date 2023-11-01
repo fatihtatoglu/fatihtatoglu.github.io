@@ -8,6 +8,7 @@ language: en
 
 title: Bireysel SWOT Analizi
 header: Bireysel SWOT Analizi
+description: Identify your strengths, weaknesses, opportunities and threats with a personally applied SWOT analysis. Plan your actions by interpreting them with your own values. Understand your current situation with an individual SWOT analysis.
 tags: swot_analizi swot güçlü_yanlar zayıf_yanlar fırsatlar tehditler
 category: coaching
 

@@ -8,6 +8,7 @@ language: tr
 
 title: Doğum Günün Kutlu Olsun Türkiye
 header: Doğum Günün Kutlu Olsun Türkiye
+description: Türkiye Cumhuriyeti'nin ve Atatürk'ün vizyonunun yüzüncü yılı kutlanıyor. Gelecek nesiller için mirası korumaya yönelik bir şükran, sorumluluk ve bağlılık mesajı.
 tags: cumhuriyet 100yıl atatürk mustafa_kemal mustafa_kemal_atatürk türkiye türkiye_cumhuriyeti
 category: notes
 ---

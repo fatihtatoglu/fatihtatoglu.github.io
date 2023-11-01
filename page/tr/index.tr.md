@@ -8,7 +8,8 @@ language: tr
 
 title: Anasayfa
 header: Fatih Tatoğlu
-description: Öğrenmekten ve denemekten asla vazgeçme!
+description: Meraklı bir geliştirici olan Fatih'in dünyasını keşfedin. İlgi çekici sorulara ilişkin deneyimleri, projeleri, notları ve içgörüleri keşfedin. Öğrenin, eğlenin ve geri bildirimlerinizle destek olun.
+summary: Öğrenmekten ve denemekten asla vazgeçme!
 tags: fatih tatoglu fatih_tatoglu
 order: 1
 ---

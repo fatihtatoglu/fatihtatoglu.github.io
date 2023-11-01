@@ -8,6 +8,7 @@ language: tr
 
 title: Ana Makine Kurulumu
 header: Ana Makine Kurulumu
+description: Fatih'in alışkanlık ve tercihlerine uygun bir yazılım geliştirme ortamı hazırlamak.
 tags: windows choco chocolatey powershell hyper-v ortam_kurulumu
 
 category: lab

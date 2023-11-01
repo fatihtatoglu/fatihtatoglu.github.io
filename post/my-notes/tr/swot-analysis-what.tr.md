@@ -8,6 +8,7 @@ language: tr
 
 title: Nedir - SWOT Analizi
 header: Nedir - SWOT Analizi
+description: İşletmenizin mevcut durumunu değerlendirmede SWOT analizinin gücünü keşfedin. Güçlü yönleri, zayıf yönleri, fırsatları ve tehditleri tanımanın basitliğini ve etkinliğini ortaya çıkarın. Stratejik başarı için yorumlamayı ve sürdürülebilirliği keşfedin.
 tags: SWOT Güçlü_Yanlar Zayıf_Yanlar Zayıflıklar Fırsatlar Tehtidler Yardımcı Zararlı İç Dış Çevre
 category: notes
 ---

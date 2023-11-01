@@ -8,11 +8,12 @@ language: en
 
 title: Coaching
 header: Coaching
+description: Unlock the potential of Psychology, Sociology, and Biology in coaching. Enhance your life, understand behavior, and boost your interactions. Gain insights from my coaching experiences.
 tags: coaching psychology sociology biology experience experiments observations
 order: 2
 ---
 
-![Koçluk](../../image/coaching.jpg "Min An - [Pexels](https://www.pexels.com/tr-tr/fotograf/ormanin-ortasinda-motosiklet-suren-iki-kisi-fotografi-1006116/)")
+![Coaching](../../image/coaching.jpg "Min An - [Pexels](https://www.pexels.com/tr-tr/fotograf/ormanin-ortasinda-motosiklet-suren-iki-kisi-fotografi-1006116/)")
 
 I think that being interested in **Psychology**, **Sociology**, and of course **Biology** will make our lives easier, help us make sense of our behaviors, and enable us to interact with other individuals more easily. I can support this with the observations and individual experiments I have made so far.
 

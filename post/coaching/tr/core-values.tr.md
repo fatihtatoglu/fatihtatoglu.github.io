@@ -8,6 +8,7 @@ language: tr
 
 title: Değerler
 header: Değerler
+description: Kişisel ve toplumsal değerlerin etkisi. Değerlerin belirlenmesi ve kullanımı. İçsel değerlerin anlamı ve önemi. Toplumsal etik kurallar ve değerlerin topluma etkisi.
 tags: kisisel_degerler temel_degerler kararlar
 category: coaching
 ---

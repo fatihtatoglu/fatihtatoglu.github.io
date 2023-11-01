@@ -8,6 +8,7 @@ language: en
 
 title: Takım mı? Grup mu?
 header: Takım mı? Grup mu?
+description: Learn the differences between group and team. Groups focus on individual goals, teams focus on common goals. Learn about collaboration and leadership differences.
 tags: takım grup amaç hedef sorumluluk iletişim etki çalışma_tarzı
 category: coaching
 

@@ -8,6 +8,7 @@ language: tr
 
 title: Kurulum
 header: Kurulum
+description: Verimli yük dengeleme için CentOS 7.X'te HAProxy'yi kurun. Hazırlık, kurulum, yapılandırma ve güvenlik için adım adım talimatları izleyin. Sorunsuz bir dağıtım sağlayın.
 tags: haproxy centos lua kurulum kurma kaynak_kod install yükleme
 
 category: lab

@@ -8,6 +8,7 @@ language: en
 
 title: Laboratory
 header: Laboratory
+description: Dive into practical learning with my computer experiments and technical insights. Unlock the secrets of hands-on problem-solving and access detailed instructions for replicating and interpreting results.
 tags: lab Laboratory test experiment
 order: 4
 ---

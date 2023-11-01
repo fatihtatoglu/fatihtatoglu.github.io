@@ -8,7 +8,7 @@ language: tr
 
 title: Takım Döngüsü
 header: Takım Döngüsü
-description: Bir takımın kurulması tam bir döngü ve belli adımlardan oluşuyor. Bu adımların neler olduğuna bir bakalım.
+description: Takım oluşturma süreçleri ve Tuckman Adımları hakkında bilgi edinin. Sorunları ele alın, işbirliğinizi artırın.
 tags: takım dongu Bruce_Wayne_Tuckman Mary_Ann_Jensen forming storming norming performing adjourning
 category: coaching
 ---

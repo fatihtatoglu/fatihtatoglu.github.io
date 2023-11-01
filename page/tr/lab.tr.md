@@ -8,6 +8,7 @@ language: tr
 
 title: Laboratuvar
 header: Laboratuvar
+description: Bilgisayar deneylerim ve teknik bilgilerim ile pratik öğrenmeye dalın. Uygulamalı problem çözmenin sırlarını açığa çıkarın ve sonuçları çoğaltmak ve yorumlamak için ayrıntılı talimatlara erişin.
 tags: lab Laboratuvar test deney
 order: 4
 ---

@@ -8,6 +8,7 @@ language: en
 
 title: Bilmemenin Gücü
 header: Bilmemenin Gücü
+description: Gain strength by recognizing your own limits of knowledge and saying 'I don't know' with courage and honesty. Explore and learn topics you don't know about and increase your self-confidence. Discover the power of saying I don't know.
 tags: bilmemek bilmemenin_gucu ogrenme guven cesaret rahatlama 
 category: coaching
 

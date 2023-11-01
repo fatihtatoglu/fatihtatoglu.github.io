@@ -8,6 +8,7 @@ language: en
 
 title: Host Setup
 header: Host Setup
+description: Preparing a software development environment with Fatih's habits and preferences.
 tags: windows choco chocolatey powershell hyper-v environment_setup
 
 category: lab

@@ -9,6 +9,7 @@ language: en
 title: About Me
 header: About Me
 description: Who is this Fatih Tatoğlu?
+summary: Who is this Fatih Tatoğlu?
 tags: hakkımda fatih_tatoglu
 order: 6
 ---

@@ -8,6 +8,7 @@ language: en
 
 title: Setup
 header: Setup
+description: Set up HAProxy on CentOS 7.X for efficient load balancing. Follow step-by-step instructions for preparation, installation, configuration, and security. Ensure a smooth deployment.
 tags: haproxy centos lua setup build source install
 
 category: lab

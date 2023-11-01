@@ -8,6 +8,7 @@ language: en
 
 title: Static Routing
 header: Static Routing
+description: Set up HAProxy on CentOS 7.X for efficient load balancing. Follow step-by-step instructions for preparation, installation, configuration, and security. Ensure a smooth deployment.
 tags: haproxy redirect static_content
 
 category: lab

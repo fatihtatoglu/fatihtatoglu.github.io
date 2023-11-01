@@ -8,6 +8,7 @@ language: tr
 
 title: Hyper-V ile Sanal Makine Oluşturma
 header: Hyper-V ile Sanal Makine Oluşturma
+description: Fatih'in alışkanlık ve tercihlerine uygun bir yazılım geliştirme ortamı hazırlamak.
 tags: powershell hyper-v sanal_makine
 
 category: lab

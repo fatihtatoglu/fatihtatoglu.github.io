@@ -8,7 +8,8 @@ language: tr
 
 title: Blog Yazmak
 header: Blog Yazmak
-description: Blog yazmak için motivasyonunuzu kaybettiğinizde, sadece bu yazıyı okuyun.
+description: Deneyimlerini ve içgörülerini paylaşan tutkulu bir blog yazarının yolculuğuna katılın. Yazma, öğrenme ve eğlenme motivasyonunuzu ortaya çıkarın. Ayrıca kendi çizdiğim karikatürle şaşırtıcı bir değişime tanık olun.
+slogan: Blog yazmak için motivasyonunuzu kaybettiğinizde, sadece bu yazıyı okuyun.
 tags: blog_yazmak selçuk_erdem
 category: notes
 ---

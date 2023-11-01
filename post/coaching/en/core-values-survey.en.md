@@ -8,6 +8,7 @@ language: en
 
 title: Kişisel Değerler Anketi
 header: Kişisel Değerler Anketi
+description: Personal values survey. It is prepared so that the individual can determine his personal values.
 tags: kisisel_degerler anket
 jsmodule: core-values
 stylemodule: core-values

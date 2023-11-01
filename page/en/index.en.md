@@ -8,7 +8,8 @@ language: en
 
 title: Home Page
 header: Fatih Tatoğlu
-description: Never stop learning and trying!
+description: Explore the world of a curious developer, Fatih. Discover experiences, projects, notes, and insights into intriguing questions. Learn, have fun, and support with your feedback.
+summary: Never stop learning and trying!
 tags: fatih tatoglu fatih_tatoglu
 order: 1
 ---

@@ -8,7 +8,7 @@ language: tr
 
 title: Sosyal Aylaklık
 header: Sosyal Aylaklık
-description: Çalışırken arada bir kaybolmayı denediniz mi ya da bir takım oyuncusunun yapması gereken iş için birileri zaten yapar dediğini duydunuz mu?
+description: Çalışma verimliliğini artırmak ve takım çalışmasını optimize etmek için sosyal aylaklığın zararlarını anlayın. Max Ringelmann'ın deneyi ve sosyal aylaklık kavramı hakkında bilgi edinin.
 tags: sosyal_aylaklık social_loafing aylaklık max_ringelmann
 category: coaching
 ---

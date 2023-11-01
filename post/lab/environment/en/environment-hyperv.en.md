@@ -8,6 +8,7 @@ language: en
 
 title: Creating Virtual Machine with Hyper-V
 header: Creating Virtual Machine with Hyper-V
+description: Preparing a software development environment with Fatih's habits and preferences.
 tags: powershell hyper-v virtual_machine virtual_switch
 
 category: lab

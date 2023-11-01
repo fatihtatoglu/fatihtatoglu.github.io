@@ -8,6 +8,7 @@ language: en
 
 title: Takım Döngüsü
 header: Takım Döngüsü
+description: Learn about team building processes and the Tuckman Steps. Address problems, increase collaboration.
 tags: takım dongu Bruce_Wayne_Tuckman Mary_Ann_Jensen forming storming norming performing adjourning
 category: coaching
 

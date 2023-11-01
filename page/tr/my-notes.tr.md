@@ -8,6 +8,7 @@ language: tr
 
 title: Notlarım
 header: Notlarım
+description: Bilgi yönetimi stratejileriyle hayatınızı kolaylaştırın. Bilginizi düzenleyin ve pratik notlar ve yönergelerle zihinsel berraklığa ulaşın.
 tags: notlarım notlar
 order: 3
 ---

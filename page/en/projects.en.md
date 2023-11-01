@@ -8,6 +8,7 @@ language: en
 
 title: Projects
 header: Projects
+description: Explore the software development world through my experiences, use cases, and open-source projects. Gain insights, support my projects, and discover new ideas.
 tags: projects portfolio failed_stories confessions design_ideas
 order: 5
 ---

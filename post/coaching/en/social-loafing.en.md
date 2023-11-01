@@ -8,6 +8,7 @@ language: en
 
 title: Sosyal Aylaklık
 header: Sosyal Aylaklık
+description: Understand the harms of social loafing to increase work efficiency and optimize teamwork. Learn about Max Ringelmann's experiment and the concept of social loafing.
 tags: sosyal_aylaklık social_loafing aylaklık max_ringelmann
 category: coaching
 

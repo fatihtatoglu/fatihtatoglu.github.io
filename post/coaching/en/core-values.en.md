@@ -8,6 +8,7 @@ language: en
 
 title: Değerler
 header: Değerler
+description: The influence of personal and social values. Determination and use of values. The meaning and importance of intrinsic values. The impact of social ethical rules and values on society.
 tags: kisisel_degerler temel_degerler kararlar
 category: coaching
 

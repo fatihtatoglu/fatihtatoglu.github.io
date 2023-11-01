@@ -8,6 +8,7 @@ language: tr
 
 title: Linux Mint ile Geliştirme Ortamı Oluşturma
 header: Linux Mint ile Geliştirme Ortamı Oluşturma
+description: Fatih'in alışkanlık ve tercihlerine uygun bir yazılım geliştirme ortamı hazırlamak.
 tags: mint ubuntu linux_mint geliştirme geliştirme_ortamı
 
 category: lab

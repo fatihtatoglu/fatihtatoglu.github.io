@@ -80,6 +80,10 @@ let fth = (function () {
                 $btnDarkTheme.setAttribute("disabled", "disabled");
             }
         }
+        else {
+            window.localStorage.setItem("theme", "light");
+            $btnLightTheme.setAttribute("disabled", "disabled");
+        }
     };
 
     var languageLoading = function () {
@@ -94,7 +98,7 @@ let fth = (function () {
                 currentLanguage = "tr";
             }
             else {
-                currentLanguage = "en";
+                currentLanguage = "tr";
             }
         }
 

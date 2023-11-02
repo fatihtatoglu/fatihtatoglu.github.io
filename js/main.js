@@ -125,8 +125,8 @@ let fth = (function () {
 
     var feedbackSurvey = function () {
         var $btnFeedback = document.getElementById("btnFeedback");
-        var $pnlFeedback = document.getElementById("pnlFeedbackSurvey");
-        var $btnFeedbackSurveyClose = document.getElementById("btnFeedbackSurveyClose");
+        var $pnlFeedback = document.getElementById("pnlFeedback");
+        var $btnFeedbackSurveyClose = document.getElementById("btnClose");
 
         $btnFeedback.addEventListener("click", () => {
             var iframe = $pnlFeedback.querySelector("iframe");

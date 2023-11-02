@@ -11,17 +11,8 @@
     {{#jsmodule}}
     <script src="{{& base-url}}js/{{jsmodule}}.js" async></script>
     {{/jsmodule}}
-
-    <div id="pnlFeedbackSurvey">
-      <div class="model-content">
-      <button id="btnFeedbackSurveyClose" class="icon bold x-small">&times;</button>
-      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSewJ_x10HBlFs2lO2zHUBI3ZeSdEXaISpK292RPJBoZyeC1HA/viewform?embedded=true"      
-      frameborder="0" 
-      marginheight="0" 
-      marginwidth="0">Loading…</iframe>
-      </div>
-    </div>
     
+    {{> _feedbackSurvey}}
 </body>
 
 </html>

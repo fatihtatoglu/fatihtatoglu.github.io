@@ -27,21 +27,9 @@ main section ul li.active {
     color: var(--secondary-color-text);
 }
 
-@media only screen and (min-width: 600px) {
-
-    /*testing*/
-    /* header>summary::after {
-        content: " width: small";
-    } */
-}
+@media only screen and (min-width: 600px) {}
 
 @media only screen and (min-width: 768px) {
-
-    /*testing*/
-    /* header>summary::after {
-        content: " width: medium";
-    } */
-
     main section {
         width: 16em;
         float: right;
@@ -50,23 +38,11 @@ main section ul li.active {
     }
 }
 
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 992px) {}
 
-    /*testing*/
-    /* header>summary::after {
-        content: " width: large";
-    } */
-}
+@media only screen and (min-width: 1200px) {}
 
-@media only screen and (min-width: 1200px) {
-
-    /*testing*/
-    /* header>summary::after {
-        content: " width: extra large";
-    } */
-}
-
-#pnlFeedbackSurvey {
+.model {
     display: none;
 
     position: fixed;
@@ -79,22 +55,44 @@ main section ul li.active {
 
     overflow: auto;
 
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: rgba(0, 0, 0, 0.85);
 }
 
-#pnlFeedbackSurvey .model-content {
+.model .model-container {
+    margin: 5% auto;
+    width: 90%;
+}
+
+@media only screen and (min-width: 600px) {}
+
+@media only screen and (min-width: 768px) {
+    .model .model-container {
+        width: 720px;
+    }
+}
+
+@media only screen and (min-width: 992px) {}
+
+@media only screen and (min-width: 1200px) {}
+
+.model .model-container .model-content {
     background-color: var(--background-color);
-    border: none;
-    height: 90%;
-    margin-top: 2.5%;
-    padding: 2.5%;
+    padding: 20px;
 }
 
-#pnlFeedbackSurvey .model-content iframe {
+.model .model-container .model-content iframe {
     width: 100%;
-    height: 90%
+    height: 640px;
 }
 
-#pnlFeedbackSurvey .model-content button {
+.model .model-container header {
+    overflow: auto;
+    margin: 0px;
+}
+
+.model .model-container header button.close {
     float: right;
+
+    width: 3rem;
+    margin: var(--baseline);
 }

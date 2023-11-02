@@ -27,21 +27,9 @@ main section ul li.active {
     color: var(--secondary-color-text);
 }
 
-@media only screen and (min-width: 600px) {
-
-    /*testing*/
-    /* header>summary::after {
-        content: " width: small";
-    } */
-}
+@media only screen and (min-width: 600px) {}
 
 @media only screen and (min-width: 768px) {
-
-    /*testing*/
-    /* header>summary::after {
-        content: " width: medium";
-    } */
-
     main section {
         width: 16em;
         float: right;
@@ -50,21 +38,9 @@ main section ul li.active {
     }
 }
 
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 992px) {}
 
-    /*testing*/
-    /* header>summary::after {
-        content: " width: large";
-    } */
-}
-
-@media only screen and (min-width: 1200px) {
-
-    /*testing*/
-    /* header>summary::after {
-        content: " width: extra large";
-    } */
-}
+@media only screen and (min-width: 1200px) {}
 
 #pnlFeedbackSurvey {
     display: none;
@@ -97,4 +73,49 @@ main section ul li.active {
 
 #pnlFeedbackSurvey .model-content button {
     float: right;
+}
+
+/*--------------------*\
+    # Menu Buttons
+\*--------------------*/
+#btnFeedback,
+#btnDarkTheme,
+#btnLightTheme,
+#btnTurkish,
+#btnEnglish {
+    display: none;
+}
+
+
+/*--------------------*\
+    # ICONS
+\*--------------------*/
+button.icon.dark-theme,
+button.icon.light-theme,
+button.icon.turkish,
+button.icon.english,
+button.icon.feedback {
+    background-repeat: no-repeat;
+    background-size: 1.15em 1.15em;
+    background-position: center;
+}
+
+button.icon.dark-theme {
+    background-image: url(../image/moon.png);
+}
+
+button.icon.light-theme {
+    background-image: url(../image/sun.png);
+}
+
+button.icon.turkish {
+    background-image: url(../image/turkey.png);
+}
+
+button.icon.english {
+    background-image: url(../image/usa.png);
+}
+
+button.icon.feedback {
+    background-image: url(../image/arrows.png);
 }

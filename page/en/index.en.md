@@ -18,4 +18,4 @@ order: 1
 
 Hello, I am Fatih. I prefer to describe myself as a curious developer. On this site, you will find my experiences, projects, notes, reasoning, and awareness about the questions I ask myself.
 
-I hope you have fun reading and learning new things. If you want to support me, you can give feedback by clicking the &#128640;.
+I hope you have fun reading and learning new things.

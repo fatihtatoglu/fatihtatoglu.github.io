@@ -4,17 +4,17 @@
             <li><a href="{{& url}}">{{title}}</a></li>
         {{/menu}}
             <li>
-                <button id="btnFeedback" class="icon" title="{{#isEnglish}}Feedback{{/isEnglish}}{{#isTurkish}}Geri Bildirim{{/isTurkish}}">&#128640;</button>
+                <button id="btnFeedback" class="icon feedback" title="{{#isEnglish}}Feedback{{/isEnglish}}{{#isTurkish}}Geri Bildirim{{/isTurkish}}">&nbsp;</button>
 
-                <button id="btnDarkTheme" class="icon" title="{{#isEnglish}}Dark Theme{{/isEnglish}}{{#isTurkish}}Koyu Tema{{/isTurkish}}">&#127770;</button>
-                <button id="btnLightTheme" class="icon" title="{{#isEnglish}}Light Theme{{/isEnglish}}{{#isTurkish}}Açık Tema{{/isTurkish}}">&#127774;</button>
+                <button id="btnDarkTheme" class="icon dark-theme" title="{{#isEnglish}}Dark Theme{{/isEnglish}}{{#isTurkish}}Koyu Tema{{/isTurkish}}">&nbsp;</button>
+                <button id="btnLightTheme" class="icon light-theme" title="{{#isEnglish}}Light Theme{{/isEnglish}}{{#isTurkish}}Açık Tema{{/isTurkish}}">&nbsp;</button>
 
                 {{#isEnglish}}
-                    <button id="btnTurkish" class="icon" title="Turkish">🇹🇷</button>
+                    <button id="btnTurkish" class="icon turkish" title="Turkish">&nbsp;</button>
                 {{/isEnglish}}
 
                 {{#isTurkish}}
-                    <button id="btnEnglish" class="icon" title="İngilizce">🇺🇸</button>
+                    <button id="btnEnglish" class="icon english" title="İngilizce">&nbsp;</button>
                 {{/isTurkish}}
             </li>
         </ul>

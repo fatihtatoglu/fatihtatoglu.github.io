@@ -7,8 +7,8 @@ let fth = (function () {
 
     var bindThemeButtons = function () {
         $btnLightTheme.addEventListener("click", () => {
-            $btnLightTheme.setAttribute("disabled", "disabled");
-            $btnDarkTheme.removeAttribute("disabled");
+            $btnLightTheme.style.display = "none";
+            $btnDarkTheme.style.display = "inline-block";
 
             $html.classList.add("light");
             $html.classList.remove("dark");
@@ -17,8 +17,8 @@ let fth = (function () {
         });
 
         $btnDarkTheme.addEventListener("click", () => {
-            $btnDarkTheme.setAttribute("disabled", "disabled");
-            $btnLightTheme.removeAttribute("disabled");
+            $btnDarkTheme.style.display = "none";
+            $btnLightTheme.style.display = "inline-block";
 
             $html.classList.add("dark");
             $html.classList.remove("light");
@@ -40,6 +40,8 @@ let fth = (function () {
                 window.localStorage.setItem("language", "tr");
                 redirectCorrectLanguage();
             });
+
+            $btnTurkish.style.display = "inline-block";
         }
 
         let $btnEnglish = document.getElementById("btnEnglish");
@@ -48,6 +50,8 @@ let fth = (function () {
                 window.localStorage.setItem("language", "en");
                 redirectCorrectLanguage();
             });
+
+            $btnEnglish.style.display = "inline-block";
         }
     };
 
@@ -74,15 +78,18 @@ let fth = (function () {
             $html.classList.add(currentTheme);
 
             if (currentTheme === "light") {
-                $btnLightTheme.setAttribute("disabled", "disabled");
+                $btnLightTheme.style.display = "none";
+                $btnDarkTheme.style.display = "inline-block";
             }
             else if (currentTheme === "dark") {
-                $btnDarkTheme.setAttribute("disabled", "disabled");
+                $btnDarkTheme.style.display = "none";
+                $btnLightTheme.style.display = "inline-block";
             }
         }
         else {
             window.localStorage.setItem("theme", "light");
-            $btnLightTheme.setAttribute("disabled", "disabled");
+            $btnLightTheme.style.display = "none";
+            $btnDarkTheme.style.display = "inline-block";
         }
     };
 
@@ -140,6 +147,8 @@ let fth = (function () {
         $btnFeedbackSurveyClose.addEventListener("click", () => {
             $pnlFeedback.style.display = "none";
         });
+
+        $btnFeedback.style.display = "inline-block";
     };
 
     return {

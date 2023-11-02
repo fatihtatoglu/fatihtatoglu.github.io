@@ -18,4 +18,4 @@ order: 1
 
 Merhaba ben Fatih. Kendimi meraklı bir geliştirici olarak tanımlamayı tercih ediyorum. Bu sitede deneyimlerimi, projelerimi, notlarımı, akıl yürütmelerimi ve kendime sorduğum sorularla ilgili farkındalıklarımı bulacaksınız.
 
-Umarım okurken eğlenir ve yeni şeyler öğrenirsiniz. Eğer destek olmak isterseniz, &#128640; ikonuna tıklayarak geri bildirim verebilirsiniz.
+Umarım okurken eğlenir ve yeni şeyler öğrenirsiniz.

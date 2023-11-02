@@ -29,6 +29,10 @@ module.exports = {
                 return;
             }
 
+            if (page["name"].indexOf("404") !== -1) {
+                return;
+            }
+
             var item = createMenuItem(page);
             if (page["published"] != "true") {
                 return;

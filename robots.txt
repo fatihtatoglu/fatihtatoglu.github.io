@@ -1,3 +1,4 @@
-User-agent: *
-Allow: /
-sitemap: https://blog.tatoglu.net/sitemap.xml
+User-Agent: *
+Allow: 
+
+Sitemap: https://blog.tatoglu.net/sitemap.xml

@@ -12,9 +12,11 @@ description: Fatih'in alışkanlık ve tercihlerine uygun bir yazılım gelişti
 tags: powershell hyper-v sanal_makine
 
 category: lab
-group: environment
-groupTitle: Geliştirme Ortamı
 order: 2
+
+group: environment
+groupTitle: Geliştirme Ortamı Kurulumu
+groupImage: ../image/lab-environment.jpg
 ---
 
 Ortam kurulumunun hazırlığını tamamladıktan sonra, geliştirmeye başlamak için bir sanal makineye ihtiyacım var. Birçok butona tıklamak yerine Powershell kullanmayı tercih ediyorum.

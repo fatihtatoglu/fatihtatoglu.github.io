@@ -12,9 +12,11 @@ description: Preparing a software development environment with Fatih's habits an
 tags: windows choco chocolatey powershell hyper-v environment_setup
 
 category: lab
-group: environment
-groupTitle: Development Environment
 order: 1
+
+group: environment
+groupTitle: Building Development Environment
+groupImage: ../image/lab-environment.jpg
 ---
 
 Despite all the pressure from my teammates and friends, I still use Microsoft Windows as a workplace. I don't know why, but I feel comfortable using Windows. However, I use Windows with Powershell, like a Unix-based OS.

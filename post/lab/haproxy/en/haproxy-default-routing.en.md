@@ -12,9 +12,11 @@ description: Set up HAProxy on CentOS 7.X for efficient load balancing. Follow s
 tags: haproxy redirect static_content
 
 category: lab
+order: 3
+
 group: haproxy
 groupTitle: HAProxy
-order: 3
+groupImage: ../../../../image/lab-haproxy.png
 ---
 
 HAProxy routes the incoming requests to the `backend` services after finding the correct routing rule. On the other hand, when it cannot find any routing rule, the request must be ended. An ordinary method for this is using static content. The static content can be used against the search engines to reduce server costs.

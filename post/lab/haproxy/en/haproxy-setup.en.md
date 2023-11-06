@@ -12,9 +12,11 @@ description: Set up HAProxy on CentOS 7.X for efficient load balancing. Follow s
 tags: haproxy centos lua setup build source install
 
 category: lab
+order: 1
+
 group: haproxy
 groupTitle: HAProxy
-order: 1
+groupImage: ../../../../image/lab-haproxy.png
 ---
 
 This note contains the steps of the single server setup HAProxy from source onto the CentOS 7.X Minimal. This setup includes some extra efforts for helping with the following notes about HAProxy.

@@ -85,14 +85,10 @@ body {
 header {
     background-color: var(--background-color);
 
-    /*testing*/
-    /* background-color: gray; */
-
     text-align: center;
-    cursor: context-menu;
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 576px) {
     header {
         margin: 0rem 1em;
     }
@@ -107,61 +103,26 @@ header>h1 {
 
     padding: 0px var(--baseline);
     margin-bottom: 0rem;
-
-    /*testing*/
-    /* background-color: red; */
 }
 
 header>summary {
     padding: var(--baseline);
-
-    /*testing*/
-    /* background-color: yellowgreen; */
 }
 
-/*testing*/
-/* header>summary::after {
-    content: " width: extra small";
-} */
+@media only screen and (min-width: 576px) {}
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 768px) {}
 
-    /*testing*/
-    /* header>summary::after {
-        content: " width: small";
-    } */
-}
+@media only screen and (min-width: 992px) {}
 
-@media only screen and (min-width: 768px) {
-
-    /*testing*/
-    /* header>summary::after {
-        content: " width: medium";
-    } */
-}
-
-@media only screen and (min-width: 992px) {
-
-    /*testing*/
-    /* header>summary::after {
-        content: " width: large";
-    } */
-}
-
-@media only screen and (min-width: 1200px) {
-
-    /*testing*/
-    /* header>summary::after {
-        content: " width: extra large";
-    } */
-}
+@media only screen and (min-width: 1200px) {}
 
 main {
     margin: 0px var(--baseline);
     overflow-y: auto;
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 576px) {
     main {
         margin: 0px 1em;
     }
@@ -179,7 +140,7 @@ main {
 @media only screen and (min-width: 1200px) {
 
     main {
-        max-width: 70%
+        max-width: 85%
     }
 }
 
@@ -234,9 +195,6 @@ footer {
     # NAVBAR
 \*--------------------*/
 nav {
-    /* testing */
-    /* background-color: lightpink; */
-
     background-color: var(--background-color);
 
     border-top: solid 1px var(--border-color);
@@ -271,9 +229,6 @@ nav ul li a {
 nav ul li a:hover,
 nav ul li a.active:hover,
 nav ul li a:visited:hover {
-    /* testing */
-    /* background-color: red; */
-
     background-color: var(--primary-color);
     color: var(--primary-color-text);
 }
@@ -283,7 +238,6 @@ nav ul li a:focus {
     color: var(--primary-color-text);
 }
 
-nav ul li a:link,
 nav ul li a:active,
 nav ul li a:focus,
 nav ul li a:visited {
@@ -318,14 +272,10 @@ nav ul li button {
     font-size: 1.5em;
     line-height: 1.25em;
     width: 3rem;
-    padding: 0px;
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 576px) {
     nav {
-        /* testing */
-        /* background-color: lightblue; */
-
         background-color: var(--background-color);
 
         position: -webkit-sticky;
@@ -376,7 +326,7 @@ body {
     font-size: 100%;
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 576px) {
 
     body {
         font-size: 105%;
@@ -411,13 +361,8 @@ h4,
 h5,
 h6 {
     font-weight: 400;
-    /* relative to font size */
     line-height: 2em;
-
     letter-spacing: 0.05em;
-
-    /*testing*/
-    /* background-color: rgba(255, 0, 0, 0.1);  */
 }
 
 h1,
@@ -427,7 +372,6 @@ h4,
 h5,
 h6,
 p {
-    /* relative to base font-size */
     margin: 0px 0px 1rem 0px;
 }
 
@@ -458,9 +402,6 @@ h6 {
 
 p {
     font-size: 1em;
-
-    /*testing*/
-    /* background-color: rgba(0, 0, 255, 0.1); */
 }
 
 p+h2,
@@ -709,7 +650,7 @@ button.bottom {
 /* Button Alignment */
 
 
-/* Button Steate */
+/* Button State */
 button.hover,
 button:not([disabled]):not(.loading):hover,
 button.text.hover,
@@ -806,7 +747,40 @@ button.icon.bold.loading::before {
     margin-left: -0.25em;
 }
 
-/* Button Steate */
+/* Button State */
+
+/* Menu Button Icon */
+button.icon.dark-theme,
+button.icon.light-theme,
+button.icon.turkish,
+button.icon.english,
+button.icon.feedback {
+    background-repeat: no-repeat;
+    background-size: 1.15em 1.15em;
+    background-position: center;
+}
+
+button.icon.dark-theme {
+    background-image: url(../image/moon.png);
+}
+
+button.icon.light-theme {
+    background-image: url(../image/sun.png);
+}
+
+button.icon.turkish {
+    background-image: url(../image/turkey.png);
+}
+
+button.icon.english {
+    background-image: url(../image/usa.png);
+}
+
+button.icon.feedback {
+    background-image: url(../image/arrows.png);
+}
+
+/* Menu Button Icon */
 
 /*--------------------*\
     # LIST
@@ -977,7 +951,7 @@ audio {
     margin: var(--baseline) auto;
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 576px) {
 
     img,
     video {
@@ -1157,4 +1131,71 @@ input[type="radio"]::before {
 input[type="checkbox"]:checked::before,
 input[type="radio"]:checked::before {
     opacity: 1;
+}
+
+/*--------------------*\
+    # CARD
+\*--------------------*/
+div.card-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+div.card-container h5 {
+    font-weight: 700;
+}
+
+div.card {
+    width: 40%;
+    margin: 2rem 1rem;
+
+    border: solid 1px var(--border-color);
+}
+
+@media only screen and (min-width: 576px) {
+    div.card {
+        width: 45%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    div.card {
+        width: 30%;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    div.card {
+        width: 30%;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    div.card {
+        width: 24rem;
+    }
+}
+
+div.card img {
+    width: 100%;
+    max-width: 100%;
+    margin: 0px;
+
+    border-bottom: solid 1px var(--border-color);
+}
+
+div.card div.card-content {
+    padding: var(--baseline) calc(var(--baseline) * 3);
+}
+
+div.card div.card-content ul,
+div.card div.card-content ol {
+    list-style-type: decimal-leading-zero;
+}
+
+div.card div.card-content ul li,
+div.card div.card-content ol li {
+    margin-bottom: 1rem;
 }

@@ -1,11 +1,26 @@
 {{> _pageHeader}}
     {{& content}}
+    
+    <div class="card-container">
     {{#labs}}
-        <h2>{{title}}</h2>
-        <ul>
-        {{#pages}}
-            <li><a href="{{permalink}}">{{title}}</a></li>
-        {{/pages}}
-        </ul>       
+        <div class="card">
+            {{#image}}
+            <img src="{{image}}" alt="{{title}}">
+            {{/image}}
+
+            {{^image}}
+            <img src="../image/lab-imageless.jpg" alt="{{title}}">
+            {{/image}}      
+            <div class="card-content">
+                <h5>{{title}}</h5>
+                <ul>
+                {{#pages}}
+                    <li><a href="{{permalink}}">{{title}}</a></li>
+                {{/pages}}
+                </ul>
+            </div>
+        </div>  
     {{/labs}}
+    </div>
+    
 {{> _pageFooter}}

@@ -151,6 +151,21 @@ let fth = (function () {
         $btnFeedback.style.display = "inline-block";
     };
 
+    var handleResize = function () {
+        $main = document.getElementsByTagName("main")[0];
+
+        window.addEventListener("resize", function () {
+            var $p = document.createElement("p");
+            $p.innerHTML = "width: " + window.innerWidth + " height:" + window.innerHeight;
+
+            $main.prepend($p);
+
+            setTimeout(function () {
+                $main.removeChild($p);
+            }, 3000);
+        });
+    };
+
     return {
         bindMenu: function () {
             bindThemeButtons();
@@ -165,6 +180,7 @@ let fth = (function () {
             languageLoading();
             redirectCorrectLanguage();
             feedbackSurvey();
+            handleResize();
         }
     };
 })();

@@ -12,9 +12,11 @@ description: Verimli yük dengeleme için CentOS 7.X'te HAProxy'yi kurun. Hazır
 tags: haproxy ssl tls https sertifika pfx pem
 
 category: lab
+order: 4
+
 group: haproxy
 groupTitle: HAProxy
-order: 4
+groupImage: ../../../../image/lab-haproxy.png
 ---
 
 HAProxy, SSL yapılandırması geçerliyse SSL isteğini işleyebilir. Genellikle akış, isteğin `frontend` hizmetini karşılaması ve ardından `backend` hizmetine geçmesi şeklindedir. SSL/TLS sertifika tanımı `frontend` tarafında görülmektedir. HAProxy'yi yapılandırmadan önce SSL tanımlama stratejilerinin türlerini kontrol edelim.

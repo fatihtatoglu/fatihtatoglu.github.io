@@ -12,9 +12,11 @@ description: Verimli yük dengeleme için CentOS 7.X'te HAProxy'yi kurun. Hazır
 tags: haproxy redirect statik_içerik statik_yönlendirme
 
 category: lab
+order: 3
+
 group: haproxy
 groupTitle: HAProxy
-order: 3
+groupImage: ../../../../image/lab-haproxy.png
 ---
 
 HAProxy, doğru yönlendirme kuralını bulduktan sonra gelen istekleri `backend` servislerine yönlendirir. Öte yandan herhangi bir yönlendirme kuralı bulamadığında isteğin sonlandırılması gerekir. Bunun için sıradan bir yöntem statik içerik kullanmaktır. Statik içerik, sunucu maliyetlerini azaltmak için arama motorlarına karşı kullanılabilir.

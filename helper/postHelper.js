@@ -38,6 +38,7 @@ module.exports = {
             if (!labs[group]) {
                 labs[group] = {
                     "title": page["groupTitle"],
+                    "image": page["groupImage"],
                     "pages": []
                 };
             }
@@ -47,7 +48,6 @@ module.exports = {
             }
 
             labs[group]["pages"].push(page);
-
         });
 
         var result = [];
@@ -56,6 +56,7 @@ module.exports = {
             var item = {
                 id: key,
                 title: labs[key].title,
+                image: labs[key].image,
                 pages: labs[key].pages.sort((a, b) => a["order"] - b["order"])
             };
 
@@ -113,7 +114,7 @@ module.exports = {
 
             result.push(item);
         }
-        
+
         return result;
     }
 };

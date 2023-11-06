@@ -12,9 +12,11 @@ description: Fatih'in alışkanlık ve tercihlerine uygun bir yazılım gelişti
 tags: mint ubuntu linux_mint geliştirme geliştirme_ortamı
 
 category: lab
-group: environment
-groupTitle: Geliştirme Ortamı
 order: 3
+
+group: environment
+groupTitle: Geliştirme Ortamı Kurulumu
+groupImage: ../image/lab-environment.jpg
 ---
 
 Sanal makinelerle çok sayıda geliştirme ortamına sahip olmak, kişisel ve çalışma kurulumunu ayırmak veya farklı dilleri ve araçları denemek gibi ekstra avantajlar sağlar. Ancak sıfırdan bir ortam oluşturmak çok zaman alıyor. Bu yüzden her Linux sanal makinesi için bir temel kurulumum var.

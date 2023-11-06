@@ -12,9 +12,11 @@ description: Fatih'in alışkanlık ve tercihlerine uygun bir yazılım gelişti
 tags: mint ubuntu linux_mint apt update upgrade autoclean
 
 category: lab
-group: environment
-groupTitle: Geliştirme Ortamı
 order: 4
+
+group: environment
+groupTitle: Geliştirme Ortamı Kurulumu
+groupImage: ../image/lab-environment.jpg
 ---
 
 Her ne olursa olsun, bir işletim sistemi periyodik olarak güncel tutulmalıdır. Ancak bunun için zaman harcamak ekstra zaman gerektirebilir. Bu yüzden otomatik bir süreç tanımlamak faydalı olabilir. Bunu sağlamak için aşağıdaki komutlar yeterli olacaktır.

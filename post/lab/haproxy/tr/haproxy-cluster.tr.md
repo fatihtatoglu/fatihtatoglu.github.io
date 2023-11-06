@@ -12,9 +12,11 @@ description: Verimli yük dengeleme için CentOS 7.X'te HAProxy'yi kurun. Hazır
 tags: haproxy keepalived centos failover high_availability
 
 category: lab
+order: 2
+
 group: haproxy
 groupTitle: HAProxy
-order: 2
+groupImage: ../../../../image/lab-haproxy.png
 ---
 
 Bu not, iki HAProxy sunucusuna sahip bir cluster kurulumunu içerir.

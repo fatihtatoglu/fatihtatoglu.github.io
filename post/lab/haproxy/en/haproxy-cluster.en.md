@@ -12,9 +12,11 @@ description: Set up HAProxy on CentOS 7.X for efficient load balancing. Follow s
 tags: haproxy keepalived centos failover high_availability
 
 category: lab
+order: 2
+
 group: haproxy
 groupTitle: HAProxy
-order: 2
+groupImage: ../../../../image/lab-haproxy.png
 ---
 
 This note contains a cluster setup that has two HAProxy servers.

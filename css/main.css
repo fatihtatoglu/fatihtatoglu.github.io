@@ -517,10 +517,29 @@ pre {
     overflow: auto;
 }
 
-code {
+code,
+code span {
     font-family: monospace;
     color: var(--text-color);
     font-size: 1rem;
+}
+
+/*--------------------*\
+    # Code Highlight
+\*--------------------*/
+code.language-shell span.language-shell-user {
+    color: #00a800;
+    font-weight: 700;
+}
+
+code.language-shell span.language-shell-root {
+    color: var(--text-color);
+    font-weight: 400;
+}
+
+code.language-powershell span.language-powershell-user {
+    color: #fe5454;
+    font-weight: 700;
 }
 
 a,

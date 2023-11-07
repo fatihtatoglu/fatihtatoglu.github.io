@@ -24,7 +24,7 @@
     "gulp-sitemap": "^8.0.0",
     "gulp-version-number": "^0.1.6",
     "marked": "^9.1.2",
-    "node-html-parser": "^6.1.10"
+    "node-html-parser": "^6.1.11"
   },
   "overrides": {
     "graceful-fs": "^4.2.11"

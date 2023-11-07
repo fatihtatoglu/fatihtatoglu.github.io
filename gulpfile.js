@@ -140,7 +140,7 @@ function generateSiteMap() {
         "_lab_haproxy_default-routing": "2023-10-27T00:00:00Z",
         "_lab_haproxy_setup": "2023-10-27T00:00:00Z",
         "_lab_haproxy_ssl-certificate": "2023-10-27T00:00:00Z",
-        "_my-notes_republic-100th-anniversary":"2023-10-29T12:37:49Z",
+        "_my-notes_republic-100th-anniversary": "2023-10-29T12:37:49Z",
 
         // English
         "_en_about-me": "2023-10-27T00:00:00Z",
@@ -166,7 +166,7 @@ function generateSiteMap() {
         "_en_lab_haproxy_default-routing": "2023-10-27T00:00:00Z",
         "_en_lab_haproxy_setup": "2023-10-27T00:00:00Z",
         "_en_lab_haproxy_ssl-certificate": "2023-10-27T00:00:00Z",
-        "_en_my-notes_republic-100th-anniversary":"2023-10-29T12:37:49Z"
+        "_en_my-notes_republic-100th-anniversary": "2023-10-29T12:37:49Z"
     };
 
     let getLastMod = function (file) {

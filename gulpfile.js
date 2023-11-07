@@ -10,6 +10,8 @@ const versionNumber = require("gulp-version-number");
 const sitemap = require("gulp-sitemap");
 const minify = require("gulp-minify");
 
+const cssmin = require("gulp-cssmin");
+
 const os = require("os");
 
 const outputPath = "./dist/";
@@ -64,6 +66,12 @@ function jsMinify() {
             compress: true,
             mangle: true
         }))
+        .pipe(dest(outputPath));
+}
+
+function cssMinify() {
+    return src(["./css/*.css"], { base: "./" })
+        .pipe(cssmin({ showLog: true }))
         .pipe(dest(outputPath));
 }
 
@@ -197,7 +205,7 @@ function generateSiteMap() {
 
 exports.default = series(
     cleanAll,
-    parallel(copyAssets, jsMinify),
+    parallel(copyAssets, jsMinify, cssMinify),
     generate,
     generateSiteMap
 );

@@ -12,9 +12,11 @@ description: Preparing a software development environment with Fatih's habits an
 tags: mint ubuntu linux_mint development development_environment
 
 category: lab
-group: environment
-groupTitle: Development Environment
 order: 3
+
+group: environment
+groupTitle: Building Development Environment
+groupImage: ../image/lab-environment.jpg
 ---
 
 Having numerous development environments with virtual machines provides extra advantages, such as separating the personal and working setup or trying different languages and tools. However, building an environment from scratch takes so much time. So, I have a base installation for every Linux virtual machine.

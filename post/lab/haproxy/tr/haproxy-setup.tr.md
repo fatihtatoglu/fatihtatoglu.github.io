@@ -12,9 +12,11 @@ description: Verimli yük dengeleme için CentOS 7.X'te HAProxy'yi kurun. Hazır
 tags: haproxy centos lua kurulum kurma kaynak_kod install yükleme
 
 category: lab
+order: 1
+
 group: haproxy
 groupTitle: HAProxy
-order: 1
+groupImage: ../../../../image/lab-haproxy.png
 ---
 
 Bu not, CentOS 7.X Minimal üzerine kaynaktan tek sunucu kurulumu HAProxy adımlarını içerir. Bu kurulum, HAProxy ile ilgili aşağıdaki notlara yardımcı olmak için bazı ekstra adımlar da içerir.

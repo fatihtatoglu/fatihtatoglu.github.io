@@ -12,9 +12,11 @@ description: Fatih'in alışkanlık ve tercihlerine uygun bir yazılım gelişti
 tags: windows choco chocolatey powershell hyper-v ortam_kurulumu
 
 category: lab
-group: environment
-groupTitle: Geliştirme Ortamı
 order: 1
+
+group: environment
+groupTitle: Geliştirme Ortamı Kurulumu
+groupImage: ../image/lab-environment.jpg
 ---
 
 Ekip arkadaşlarımın ve dostlarımın tüm baskılarına rağmen işyeri olarak hala Microsoft Windows kullanıyorum. Neden bilmiyorum ama Windows kullanırken kendimi rahat hissediyorum. Ancak Windows'u Unix tabanlı bir işletim sistemi gibi Powershell ile kullanıyorum.

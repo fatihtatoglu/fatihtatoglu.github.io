@@ -12,9 +12,11 @@ description: Preparing a software development environment with Fatih's habits an
 tags: mint ubuntu linux_mint apt update upgrade autoclean
 
 category: lab
-group: environment
-groupTitle: Development Environment
 order: 4
+
+group: environment
+groupTitle: Building Development Environment
+groupImage: ../image/lab-environment.jpg
 ---
 
 Whatever happens, an OS must be kept up-to-dated periodically. However, spending time on this may be needed extra time. So, defining an automatic process can be helpful. To provide this the below commands can be enough.

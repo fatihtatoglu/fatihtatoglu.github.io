@@ -12,9 +12,11 @@ description: Set up HAProxy on CentOS 7.X for efficient load balancing. Follow s
 tags: haproxy ssl tls https certificate pfx pem
 
 category: lab
+order: 4
+
 group: haproxy
 groupTitle: HAProxy
-order: 4
+groupImage: ../../../../image/lab-haproxy.png
 ---
 
 HAProxy can handle the SSL request if the SSL configuration is valid. Usually, the flow is that the request meets the `frontend` service, then it moves to the `backend` service. The SSL / TLS certification definition is seen on the `frontend` side. Before configuring the HAProxy, let's check the types of SSL definition strategies.

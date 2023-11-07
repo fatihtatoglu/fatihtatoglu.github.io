@@ -12,9 +12,11 @@ description: Preparing a software development environment with Fatih's habits an
 tags: powershell hyper-v virtual_machine virtual_switch
 
 category: lab
-group: environment
-groupTitle: Development Environment
 order: 2
+
+group: environment
+groupTitle: Building Development Environment
+groupImage: ../image/lab-environment.jpg
 ---
 
 After completing the preparation of the environment installation, I need a virtual machine to start development. I prefer to use Powershell instead of clicking many buttons.

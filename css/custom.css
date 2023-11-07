@@ -5,6 +5,9 @@ time {
     display: none;
 }
 
+/*--------------------*\
+    # Lab Section
+\*--------------------*/
 main section {
     background-color: var(--background-color);
     padding: var(--baseline);
@@ -27,14 +30,24 @@ main section ul li.active {
     color: var(--secondary-color-text);
 }
 
-@media only screen and (min-width: 600px) {}
+@media only screen and (min-width: 576px) {}
 
 @media only screen and (min-width: 768px) {
+    main.labs {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    main article {
+        width: 100%;
+    }
+
     main section {
-        width: 16em;
+        width: 20em;
         float: right;
         margin-left: 1em;
         margin-bottom: 0em;
+        height: fit-content;
     }
 }
 
@@ -42,6 +55,10 @@ main section ul li.active {
 
 @media only screen and (min-width: 1200px) {}
 
+
+/*--------------------*\
+    # Feedback Panel
+\*--------------------*/
 #pnlFeedbackSurvey {
     display: none;
 
@@ -84,38 +101,4 @@ main section ul li.active {
 #btnTurkish,
 #btnEnglish {
     display: none;
-}
-
-
-/*--------------------*\
-    # ICONS
-\*--------------------*/
-button.icon.dark-theme,
-button.icon.light-theme,
-button.icon.turkish,
-button.icon.english,
-button.icon.feedback {
-    background-repeat: no-repeat;
-    background-size: 1.15em 1.15em;
-    background-position: center;
-}
-
-button.icon.dark-theme {
-    background-image: url(../image/moon.png);
-}
-
-button.icon.light-theme {
-    background-image: url(../image/sun.png);
-}
-
-button.icon.turkish {
-    background-image: url(../image/turkey.png);
-}
-
-button.icon.english {
-    background-image: url(../image/usa.png);
-}
-
-button.icon.feedback {
-    background-image: url(../image/arrows.png);
 }

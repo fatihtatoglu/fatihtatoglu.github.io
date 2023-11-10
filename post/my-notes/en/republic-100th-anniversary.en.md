@@ -6,7 +6,7 @@ date: 2023-10-29T12:37:49Z
 permalink: ./en/my-notes/republic-100th-anniversary.html
 language: en
 
-title: Happy Birthday Türkiye
+title: My Notes - Happy Birthday Türkiye
 header: Happy Birthday Türkiye
 description: Marking a century of the Turkish Republic and Atatürk's vision. A message of gratitude, responsibility, and commitment to protect the legacy for generations to come.
 tags: republic 100th atatürk mustafa_kemal mustafa_kemal_atatürk türkiye turkey turkish_republic

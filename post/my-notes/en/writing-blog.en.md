@@ -6,7 +6,7 @@ date: 2022-03-20T00:00:00.000Z
 permalink: ./en/my-notes/writing-blog.html
 language: en
 
-title: Writing Blog
+title: My Notes - Writing Blog
 header: Writing Blog
 description: Join the journey of a passionate blogger as they share their experiences and insights. Uncover the motivation to write, learn, and have fun. Plus, witness a surprising twist with my self-drawn cartoon.
 slogan: Fatih, when you lose your motivation to write a blog, just read that post.

@@ -6,7 +6,7 @@ date: 2022-03-20T00:00:00.000Z
 permalink: ./my-notes/writing-blog.html
 language: tr
 
-title: Blog Yazmak
+title: Notlarım - Blog Yazmak
 header: Blog Yazmak
 description: Deneyimlerini ve içgörülerini paylaşan tutkulu bir blog yazarının yolculuğuna katılın. Yazma, öğrenme ve eğlenme motivasyonunuzu ortaya çıkarın. Ayrıca kendi çizdiğim karikatürle şaşırtıcı bir değişime tanık olun.
 slogan: Blog yazmak için motivasyonunuzu kaybettiğinizde, sadece bu yazıyı okuyun.

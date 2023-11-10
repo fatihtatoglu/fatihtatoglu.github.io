@@ -6,7 +6,7 @@ date: 2022-06-12T20:43:39Z
 permalink: ./lab/environment/setup.html
 language: tr
 
-title: Ana Makine Kurulumu
+title: Geliştirme Ortamı - Ana Makine Kurulumu
 header: Ana Makine Kurulumu
 description: Fatih'in alışkanlık ve tercihlerine uygun bir yazılım geliştirme ortamı hazırlamak.
 tags: windows choco chocolatey powershell hyper-v ortam_kurulumu

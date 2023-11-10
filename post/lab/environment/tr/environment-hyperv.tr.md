@@ -6,7 +6,7 @@ date: 2023-10-27T21:37:00Z
 permalink: ./lab/environment/hyperv.html
 language: tr
 
-title: Hyper-V ile Sanal Makine Oluşturma
+title: Geliştirme Ortamı - Hyper-V ile Sanal Makine Oluşturma
 header: Hyper-V ile Sanal Makine Oluşturma
 description: Fatih'in alışkanlık ve tercihlerine uygun bir yazılım geliştirme ortamı hazırlamak.
 tags: powershell hyper-v sanal_makine

@@ -6,7 +6,7 @@ date: 2022-06-12T19:03:27Z
 permalink: ./lab/haproxy/ssl-certificate.html
 language: tr
 
-title: SSL Sertifika
+title: HAProxy - SSL Sertifika
 header: SSL Sertifika
 description: Verimli yük dengeleme için CentOS 7.X'te HAProxy'yi kurun. Hazırlık, kurulum, yapılandırma ve güvenlik için adım adım talimatları izleyin. Sorunsuz bir dağıtım sağlayın.
 tags: haproxy ssl tls https sertifika pfx pem

@@ -6,7 +6,7 @@ date: 2023-10-27T21:44:00Z
 permalink: ./lab/environment/dev-setup-mint.html
 language: tr
 
-title: Linux Mint ile Geliştirme Ortamı Oluşturma
+title: Geliştirme Ortamı - Linux Mint ile Geliştirme Ortamı Oluşturma
 header: Linux Mint ile Geliştirme Ortamı Oluşturma
 description: Fatih'in alışkanlık ve tercihlerine uygun bir yazılım geliştirme ortamı hazırlamak.
 tags: mint ubuntu linux_mint geliştirme geliştirme_ortamı

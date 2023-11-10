@@ -6,7 +6,7 @@ date: 2022-08-07T17:54:27Z
 permalink: ./lab/environment/auto-update.html
 language: tr
 
-title: Otomatik Güncellemeler
+title: Geliştirme Ortamı - Otomatik Güncellemeler
 header: Otomatik Güncellemeler
 description: Fatih'in alışkanlık ve tercihlerine uygun bir yazılım geliştirme ortamı hazırlamak.
 tags: mint ubuntu linux_mint apt update upgrade autoclean

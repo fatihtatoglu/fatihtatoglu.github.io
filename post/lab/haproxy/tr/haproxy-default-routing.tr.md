@@ -6,7 +6,7 @@ date: 2022-06-12T20:25:53Z
 permalink: ./lab/haproxy/default-routing.html
 language: tr
 
-title: Statik Yönlendirme
+title: HAProxy - Statik Yönlendirme
 header: Statik Yönlendirme
 description: Verimli yük dengeleme için CentOS 7.X'te HAProxy'yi kurun. Hazırlık, kurulum, yapılandırma ve güvenlik için adım adım talimatları izleyin. Sorunsuz bir dağıtım sağlayın.
 tags: haproxy redirect statik_içerik statik_yönlendirme

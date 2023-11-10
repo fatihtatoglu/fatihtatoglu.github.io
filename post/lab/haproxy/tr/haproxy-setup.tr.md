@@ -6,7 +6,7 @@ date: 2022-06-12T14:07:13Z
 permalink: ./lab/haproxy/setup.html
 language: tr
 
-title: Kurulum
+title: HAProxy - Kurulum
 header: Kurulum
 description: Verimli yük dengeleme için CentOS 7.X'te HAProxy'yi kurun. Hazırlık, kurulum, yapılandırma ve güvenlik için adım adım talimatları izleyin. Sorunsuz bir dağıtım sağlayın.
 tags: haproxy centos lua kurulum kurma kaynak_kod install yükleme

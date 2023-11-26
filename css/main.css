@@ -222,7 +222,11 @@ nav ul.show {
     display: block;
 }
 
-nav ul li a {
+nav ul li a,
+nav ul li a:link,
+nav ul li a:active,
+nav ul li a:focus,
+nav ul li a:visited {
     color: var(--text-color);
 }
 
@@ -236,12 +240,6 @@ nav ul li a:visited:hover {
 nav ul li a:focus {
     background-color: var(--primary-color-dark);
     color: var(--primary-color-text);
-}
-
-nav ul li a:active,
-nav ul li a:focus,
-nav ul li a:visited {
-    color: var(--text-color);
 }
 
 nav ul li a.active {
@@ -543,6 +541,7 @@ code.language-powershell span.language-powershell-user {
 }
 
 a,
+a.link,
 a:link,
 a.visited,
 a:visited {

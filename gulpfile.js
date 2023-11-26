@@ -17,7 +17,7 @@ const os = require("os");
 const outputPath = "./dist/";
 
 let baseUrl;
-if (os.platform() === "win32" || os.hostname() === "fth-dev") {
+if (os.platform() === "win32" || os.hostname() === "fth-dev" || os.hostname() === "eeepc") {
     baseUrl = "http://localhost:8080/";
 }
 else {

@@ -8,15 +8,8 @@ language: en
 
 title: HAProxy - Building Cluster
 header: Building Cluster
-description: Set up HAProxy on CentOS 7.X for efficient load balancing. Follow step-by-step instructions for preparation, installation, configuration, and security. Ensure a smooth deployment.
 tags: haproxy keepalived centos failover high_availability
-
-category: lab
 order: 2
-
-group: haproxy
-groupTitle: HAProxy
-groupImage: ../../../../image/lab-haproxy.png
 ---
 
 This note contains a cluster setup that has two HAProxy servers.

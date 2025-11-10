@@ -2,7 +2,7 @@
 
 ## XS Akışı
 
-- **Kontroller:** Tema (Light/Dark/System) ve dil (Türkçe/English) seçenekleri `.btn` tabanlı ikon butonlarıyla tanımlandı; arama alanı ve menü linkleri aynı utility katmanına bağlandı. Tema/dil tercihleri `localStorage` ile kalıcılaştırıldı (`src/index.html`, `src/css/button.css`, `src/js/main.js`).
+- **Kontroller:** Tema (Light/Dark/System) ve dil (Türkçe/English) seçenekleri `.btn` tabanlı ikon butonlarıyla tanımlandı; arama alanı ve menü linkleri aynı utility katmanına bağlandı. Tema/dil tercihleri birinci taraf çerezleriyle kalıcılaştırıldı (`src/index.html`, `src/css/button.css`, `src/js/main.js`).
 - **Sticky Shell:** Header`ı `site-header` olarak üstte, footer`ı `site-footer` olarak altta sabitleyip blur arka plan ve ekstra padding verdim; davranış `npm run build` ile doğrulandı.
 - **Toggle Yenilemesi:** Tema seçimi tek butonlu üç durumlu kaydırıcıya, dil seçimi bayrak ikonlu toggleda toplandı. Yeni görünüm CSS/JS tarafında desteklendi; hover/focus sadeleştirildi.
 - **Header Bar Refresh:** Markayı solda, tema/dil/menü butonlarını sağda tutan XS bar tasarlandı. Tüm kontroller `.btn btn--icon btn--md` varyantlarını kullanıyor; dil bayrakları border/box-shadow olmadan kapsülün içinde yüzüyor, güneş/ay ikonları 26 px. Menü kartı açılıp kapanıyor (`Escape` aramaya odaklıyor), linkler seçili durumu kaydediyor ve i18n altyapısı header metinlerini güncelliyor.
@@ -11,7 +11,7 @@
 
 ## Neler Oldu?
 
-- Tema/dil butonları tek tuşla döngüsel çalışıyor; `localStorage` ile kalıcılık sağlandı.
+- Tema/dil butonları tek tuşla döngüsel çalışıyor; çerez tabanlı kalıcılık sağlandı.
 - Menü butonu gizli çekmece açıyor, arama alanına odaklanıyor, `Escape` ve dış tıklamada kapanıyor.
 - Menü linkleri aktif durumda kalıyor, hover/odak stilleri ayrıştırıldı.
 - TR/EN JSON çevirileri (`src/lang/`) header metinlerine uygulandı, site adı linke dönüştürüldü.

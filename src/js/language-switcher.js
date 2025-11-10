@@ -1,4 +1,6 @@
-const STORAGE_KEY = "tat-lang";
+import { readCookie, setCookie } from "./utils/cookies.js";
+
+const LANGUAGE_COOKIE = "tat-lang";
 const DEFAULT_LANGUAGE = "tr";
 const FALLBACK_BASE_URL = "https://tat.fatihtatoglu.com/";
 const LANG_LABELS = {
@@ -24,6 +26,13 @@ const LANGUAGE_PATHS = {
   en: "/en/",
 };
 
+const LANGUAGE_ROUTE_MAP = [
+  {
+    tr: "/cerez-politikasi",
+    en: "/en/cookie-policy",
+  },
+];
+
 const root = document.documentElement;
 const translationCache = new Map();
 
@@ -32,19 +41,11 @@ function normalizeLang(value) {
 }
 
 function persistLang(value) {
-  try {
-    localStorage.setItem(STORAGE_KEY, value);
-  } catch {
-    /* storage might be disabled */
-  }
+  setCookie(LANGUAGE_COOKIE, value);
 }
 
 function readStoredLang() {
-  try {
-    return localStorage.getItem(STORAGE_KEY);
-  } catch {
-    return null;
-  }
+  return readCookie(LANGUAGE_COOKIE);
 }
 
 function getTranslation(dict, path) {
@@ -117,19 +118,31 @@ function getOrigin() {
 }
 
 function buildLangUrl(lang) {
-  const path = LANGUAGE_PATHS[lang] ?? LANGUAGE_PATHS[DEFAULT_LANGUAGE];
+  const path = getLanguagePath(lang);
   return getOrigin() + path;
+}
+
+function normalizePathname(pathname) {
+  if (!pathname) return "/";
+  return pathname.endsWith("/") ? pathname : `${pathname}/`;
 }
 
 function getPathLanguage() {
   if (typeof window === "undefined" || !window.location) return DEFAULT_LANGUAGE;
-  const pathname = window.location.pathname.endsWith("/")
-    ? window.location.pathname
-    : `${window.location.pathname}/`;
+  const pathname = normalizePathname(window.location.pathname);
   return pathname.startsWith(LANGUAGE_PATHS.en) ? "en" : DEFAULT_LANGUAGE;
 }
 
 function getLanguagePath(lang) {
+  if (typeof window !== "undefined" && window.location) {
+    const current = normalizePathname(window.location.pathname);
+    const route = LANGUAGE_ROUTE_MAP.find(
+      (entry) => normalizePathname(entry.tr) === current || normalizePathname(entry.en) === current,
+    );
+    if (route && route[lang]) {
+      return route[lang];
+    }
+  }
   return LANGUAGE_PATHS[lang] ?? LANGUAGE_PATHS[DEFAULT_LANGUAGE];
 }
 

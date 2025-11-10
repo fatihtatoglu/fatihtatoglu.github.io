@@ -1,4 +1,6 @@
-const THEME_STORAGE_KEY = "tat-theme";
+import { readCookie, setCookie } from "./utils/cookies.js";
+
+const THEME_COOKIE = "tat-theme";
 const THEME_CHANGE_EVENT = "tat-theme-change";
 const THEME_STATES = ["light", "dark", "system"];
 const THEME_LABELS = {
@@ -15,19 +17,11 @@ const THEME_COLORS = {
 const prefersDark = window.matchMedia ? window.matchMedia("(prefers-color-scheme: dark)") : null;
 
 function persistTheme(value) {
-  try {
-    localStorage.setItem(THEME_STORAGE_KEY, value);
-  } catch {
-    /* storage might be unavailable */
-  }
+  setCookie(THEME_COOKIE, value);
 }
 
 function readStoredTheme() {
-  try {
-    return localStorage.getItem(THEME_STORAGE_KEY);
-  } catch {
-    return null;
-  }
+  return readCookie(THEME_COOKIE);
 }
 
 function resolveTheme(pref) {

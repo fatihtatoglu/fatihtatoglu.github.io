@@ -51,7 +51,7 @@ Your mission is to create **production-ready, minimal, responsive** web designs 
 
 ### 🧱 Interaction Rules
 
-- Theme toggle and language toggle persist in `localStorage` (as defined in `design-rules.md`).
+- Theme toggle and language toggle persist using first-party cookies (as defined in `design-rules.md`).
 - Client-side enhancements only where necessary (progressive enhancement approach).
 - Output should be **ready to copy** into a `.html` file and render correctly.
 

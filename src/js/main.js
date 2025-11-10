@@ -1,7 +1,6 @@
 import "./theme-switcher.js";
 import "./language-switcher.js";
-
-const MENU_ACTIVE_KEY = "tat-menu-active";
+import { readCookie, setCookie } from "./utils/cookies.js";
 
 const siteHeader = document.querySelector(".site-header");
 const headerSentinel = document.querySelector("[data-header-sentinel]");
@@ -13,34 +12,26 @@ const yearEl = document.querySelector("[data-year]");
 const contentToggle = document.querySelector("[data-content-toggle]");
 const shortRegion = document.querySelector('[data-content-region="short"]');
 const longRegion = document.querySelector('[data-content-region="long"]');
+const SESSION_COOKIE = "tat-session";
+const SESSION_MAX_AGE = 60 * 60 * 2;
 
-function persist(key, value) {
-  try {
-    localStorage.setItem(key, value);
-  } catch {
-    /* storage might be disabled */
-  }
+function ensureSessionCookie() {
+  if (readCookie(SESSION_COOKIE)) return;
+  const sessionSeed =
+    typeof crypto !== "undefined" && typeof crypto.randomUUID === "function"
+      ? crypto.randomUUID()
+      : `${Date.now().toString(36)}-${Math.random().toString(36).slice(2)}`;
+  setCookie(SESSION_COOKIE, sessionSeed, { maxAge: SESSION_MAX_AGE });
 }
 
-function readPref(key) {
-  try {
-    return localStorage.getItem(key);
-  } catch {
-    return null;
-  }
-}
+ensureSessionCookie();
 
-function setActiveMenuLink(id, shouldPersist = true) {
+function setActiveMenuLink(id) {
   if (!id) return;
-  let matched = false;
   menuLinks.forEach((link) => {
     const isMatch = link.dataset.menuLink === id;
     link.classList.toggle("is-active", isMatch);
-    if (isMatch) matched = true;
   });
-  if (matched && shouldPersist) {
-    persist(MENU_ACTIVE_KEY, id);
-  }
 }
 
 function setMenuState(open, silent = false) {
@@ -94,8 +85,7 @@ menuPanel?.addEventListener("keydown", (event) => {
 menuOverlay?.addEventListener("click", () => setMenuState(false));
 menuLinks.forEach((link) => {
   link.addEventListener("click", () => {
-    const id = link.dataset.menuLink;
-    setActiveMenuLink(id);
+    setActiveMenuLink(link.dataset.menuLink);
     setMenuState(false, true);
   });
 });
@@ -133,11 +123,8 @@ if (siteHeader && headerSentinel && "IntersectionObserver" in window) {
   handleScrollFallback();
 }
 
-const savedMenu = readPref(MENU_ACTIVE_KEY);
-if (savedMenu) {
-  setActiveMenuLink(savedMenu, false);
-} else if (menuLinks.length) {
-  setActiveMenuLink(menuLinks[0].dataset.menuLink, false);
+if (menuLinks.length) {
+  setActiveMenuLink(menuLinks[0].dataset.menuLink);
 }
 
 setMenuState(false, true);

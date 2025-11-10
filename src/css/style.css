@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap");
 @import "tailwindcss";
 @import "./button.css";
+@import "./policy.css";
 
 @layer base {
   :root {
@@ -291,9 +292,6 @@
     width: 100%;
     border-bottom: 1px solid var(--brand-900);
     margin: 0.4rem 0 0.6rem;
-  }
-
-  .site-content {
   }
 
   @media (prefers-reduced-motion: reduce) {

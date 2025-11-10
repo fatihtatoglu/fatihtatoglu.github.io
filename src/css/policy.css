@@ -1,0 +1,80 @@
+@layer components {
+  article.policy {
+    @apply rounded-3xl border p-6 space-y-6 leading-relaxed;
+    border-color: var(--brand-900);
+    background-color: var(--bg);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 8px 24px rgba(0, 0, 0, 0.06);
+  }
+
+  article.policy h1 {
+    @apply font-mono text-3xl font-medium leading-tight;
+    color: var(--ink);
+  }
+
+  article.policy h2 {
+    @apply font-mono text-2xl font-medium mt-6;
+    color: var(--ink);
+  }
+
+  article.policy h3 {
+    @apply font-mono text-xl font-medium mt-4;
+    color: var(--ink);
+  }
+
+  article.policy p {
+    color: var(--ink);
+  }
+
+  article.policy p + p {
+    @apply mt-3;
+  }
+
+  article.policy ul,
+  article.policy ol {
+    @apply mt-4 pl-6 leading-relaxed;
+    color: var(--ink-dim);
+  }
+
+  article.policy ul {
+    list-style: disc;
+  }
+
+  article.policy ol {
+    list-style: decimal;
+  }
+
+  article.policy li + li {
+    @apply mt-2;
+  }
+
+  article.policy table {
+    @apply w-full text-sm;
+    border-collapse: collapse;
+    border: 1px solid var(--brand-300);
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+
+  article.policy thead {
+    @apply text-left uppercase;
+    letter-spacing: 0.2em;
+    font-size: 0.68rem;
+    color: var(--muted);
+  }
+
+  article.policy thead th {
+    background-color: var(--brand-50);
+  }
+
+  article.policy th,
+  article.policy td {
+    @apply px-3 py-2 text-left align-top;
+    border: 1px solid var(--border);
+  }
+
+  article.policy code {
+    @apply rounded px-1.5 py-0.5 font-mono;
+    font-size: 0.95em;
+    background-color: var(--brand-50);
+  }
+}

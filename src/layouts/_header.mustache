@@ -1,0 +1,45 @@
+<header class="site-header rounded-2xl border border-[var(--brand-900)] bg-[var(--bg-elev)] p-5 shadow-soft"
+  role="banner">
+  <div class="flex flex-col gap-6 relative">
+    <div class="header-bar">
+      <div>
+        <a href="{{{site.home}}}"
+          class="text-[11px] uppercase tracking-[0.3em] text-[var(--muted)] underline-offset-4 hover:underline"
+          data-i18n="site.owner">
+          {{site.owner}}
+        </a>
+        <p class="font-mono text-xl font-medium text-[var(--ink)]" data-i18n="site.role">
+          {{site.role}}
+        </p>
+      </div>
+      <div class="header-buttons">
+        <theme-switcher></theme-switcher>
+        <language-switcher></language-switcher>
+        <button type="button" class="btn btn--icon btn--md btn--thick btn--tone-neutral menu-button"
+          aria-label="{{i18n.menuToggle}}" data-menu-button aria-controls="primary-menu" aria-expanded="false">
+          <span class="icon-menu" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+    <div class="menu-drawer shadow-soft" data-menu-panel id="primary-menu" hidden>
+      <input id="site-search" type="search" placeholder="{{i18n.menu.searchPlaceholder}}" class="search-field"
+        data-i18n="menu.searchPlaceholder" />
+      <nav aria-label="{{i18n.menu.primary}}">
+        <ul class="menu-list">
+          {{#menu.items}}
+            <li>
+              <a class="btn btn--fill btn--thick btn--tone-neutral menu-link" href="{{{url}}}" data-menu-link="{{key}}"
+                data-i18n="menu.{{key}}">
+                {{label}}
+              </a>
+            </li>
+          {{/menu.items}}
+        </ul>
+      </nav>
+    </div>
+    <div class="menu-overlay" data-menu-overlay hidden></div>
+    <p class="font-mono text-sm text-center text-[var(--muted)]" data-i18n="site.quote">
+      {{site.quote}}
+    </p>
+  </div>
+</header>

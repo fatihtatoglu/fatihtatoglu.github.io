@@ -28,8 +28,8 @@ const LANGUAGE_PATHS = {
 
 const LANGUAGE_ROUTE_MAP = [
   {
-    tr: "/cerez-politikasi",
-    en: "/en/cookie-policy",
+    tr: "/tr/cerez-politikasi/",
+    en: "/en/cookie-policy/",
   },
 ];
 

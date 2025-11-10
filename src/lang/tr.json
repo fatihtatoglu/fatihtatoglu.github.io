@@ -1,0 +1,62 @@
+{
+  "site": {
+    "owner": "Fatih Tatoğlu",
+    "role": "Mühendis & Yazar",
+    "quote": "\"Hayat devam ediyor, bir ucundan tutmak lazım.\""
+  },
+  "status": {
+    "theme": "Tema:",
+    "language": "Dil:"
+  },
+  "menu": {
+    "technical": "Teknik Notlar",
+    "life": "Hayat & Öğrenme",
+    "about": "Hakkımda",
+    "contact": "İletişim",
+    "searchPlaceholder": "Başlık, konu, etiket…",
+    "buttonLabel": "Menüyü aç"
+  },
+  "content": {
+    "heading": "Günlük içerik notları",
+    "actions": {
+      "showMore": "Daha fazla içerik göster",
+      "showLess": "Kısa özete dön"
+    },
+    "sample": "Bu alan, çift dilli sayfa yapısını test edebilmeniz için kısa bir örnek paragraf içerir. İngilizceye geçtiğinizde otomatik olarak çevirisi gösterilir.",
+    "long": {
+      "lead": "Günlük gözlemler ve radar notları",
+      "imageCaption": "Sessiz sabah saatlerinde yazıya dökülen fikirler.",
+      "imageAlt": "Notebook ve kahve fincanı olan minimalist bir çalışma masası",
+      "p1": "Üretkenlik ritmi, kısa sprintler ile uzun soluklu düşünme seanslarının dengesi üzerine kurulu. Sabahları keskin zihnimle araştırma yapıyor, akşama doğru metinleri cilalıyorum.",
+      "p2": "Tasarım sistemleri üzerine çalışırken, renk teorisini nostaljik terminal hissiyle buluşturmayı seviyorum. Bu yaklaşım, okuyucunun zihninde hem tanıdık hem de özgün bir bağ kuruyor.",
+      "p3": "Yazının ritmi, kod akışını da etkiliyor. Bir paragrafın nefes aralığı nasıl önemliyse, bileşenlerin de ihtiyaç duyduğu boşluk aynı hassasiyetle ele alınmalı.",
+      "p4": "İki dilli içerik üretirken çeviriden öteye geçip, kavramsal karşılıkları araştırıyorum. Anlamın yolculuğu, kelimelerin ötesinde bağlamı da kapsıyor.",
+      "p5": "Haftalık radarımda, erişilebilirlik araçları ve minimal arayüz prototipleri var. Her yeni keşif, holografik bir defterde yeni bir sayfa açmak gibi.",
+      "p6": "Son olarak, deneyimleri paylaşmak kadar onları arşivlemek de önemli. Bu uzun form not, gelecekteki projelere rehberlik edecek bir bellek notu işlevi görüyor."
+    }
+  },
+  "footer": {
+    "policies": {
+      "cookies": "Çerez Politikası",
+      "disclaimer": "Sorumluluk Reddi"
+    },
+    "social": {
+      "rss": "RSS",
+      "github": "GITHUB",
+      "linkedin": "LINKEDIN"
+    },
+    "tags": {
+      "frontend": "Frontend",
+      "javascript": "JavaScript",
+      "css": "CSS",
+      "designSystems": "Design Systems",
+      "webPerformance": "Web Performansı",
+      "accessibility": "Erişilebilirlik",
+      "learningNotes": "Öğrenme Notları",
+      "productThinking": "Ürün Düşüncesi",
+      "writing": "Yazarlık",
+      "lifeLearning": "Yaşam & Öğrenme"
+    },
+    "tagline": "Her satır merakla başlar, disiplinle tamamlanır."
+  }
+}

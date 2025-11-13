@@ -2,6 +2,7 @@
 @import "tailwindcss";
 @import "./button.css";
 @import "./policy.css";
+@import "./post.css";
 
 @layer base {
   :root {

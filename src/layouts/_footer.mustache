@@ -14,7 +14,7 @@
     </div>
 
     <div
-      class="flex flex-wrap justify-center gap-x-6 gap-y-1 text-center text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-[var(--muted)] mt-1 mb-0">
+      class="flex flex-wrap justify-center gap-x-6 gap-y-1 mt-2 text-center text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-[var(--muted)] mb-0">
       {{#footer.policies}}
         <a class="btn btn--text btn--thin btn--tone-neutral policy-link" href="{{{url}}}"
           data-i18n="footer.policies.{{key}}">
@@ -23,7 +23,7 @@
       {{/footer.policies}}
     </div>
 
-    <div class="flex flex-wrap justify-center gap-3 text-sm text-[var(--ink)]">
+    <div class="flex flex-wrap justify-center gap-3 text-sm mt-2 text-[var(--ink)]">
       {{#footer.social}}
         <a class="btn btn--fill btn--sm btn--thick btn--tone-{{tone}}" data-social="{{key}}" href="{{{url}}}"
           {{#external}}rel="noopener noreferrer" target="_blank"{{/external}}>
@@ -33,7 +33,7 @@
       {{/footer.social}}
     </div>
 
-    <p class="text-xs text-center text-[var(--muted)]">
+    <p class="text-xs text-center mt-2 text-[var(--muted)]">
       © <span data-year>{{site.year}}</span> - <span data-i18n="footer.tagline">{{footer.tagline}}</span>
     </p>
   </div>

@@ -16,7 +16,8 @@
         <theme-switcher></theme-switcher>
         <language-switcher></language-switcher>
         <button type="button" class="btn btn--icon btn--md btn--thick btn--tone-neutral menu-button"
-          aria-label="{{i18n.menuToggle}}" data-menu-button aria-controls="primary-menu" aria-expanded="false">
+          aria-label="{{i18n.ui.menuToggle}}" data-menu-button aria-controls="primary-menu" aria-expanded="false"
+          data-i18n-attrs="aria-label:ui.menuToggle">
           <span class="icon-menu" aria-hidden="true"></span>
         </button>
       </div>
@@ -24,7 +25,7 @@
     <div class="menu-drawer shadow-soft" data-menu-panel id="primary-menu" hidden>
       <input id="site-search" type="search" placeholder="{{i18n.menu.searchPlaceholder}}" class="search-field"
         data-i18n="menu.searchPlaceholder" />
-      <nav aria-label="{{i18n.menu.primary}}">
+      <nav aria-label="{{i18n.menu.primary}}" data-i18n-attrs="aria-label:menu.primary">
         <ul class="menu-list">
           {{#menu.items}}
             <li>

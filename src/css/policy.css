@@ -31,28 +31,62 @@
 
   article.policy ul,
   article.policy ol {
-    @apply mt-4 pl-6 leading-relaxed;
+    margin: 1.25rem 0 1.5rem;
+    padding: 0;
     color: var(--ink-dim);
+    list-style: none;
   }
 
-  article.policy ul {
-    list-style: disc;
-  }
-
-  article.policy ol {
-    list-style: decimal;
+  article.policy li {
+    position: relative;
+    padding-left: 1.75rem;
+    line-height: 1.65;
   }
 
   article.policy li + li {
-    @apply mt-2;
+    margin-top: 0.6rem;
+  }
+
+  article.policy ul li::before {
+    content: "";
+    position: absolute;
+    left: 0.45rem;
+    top: 0.65rem;
+    width: 0.4rem;
+    height: 0.4rem;
+    border-radius: 999px;
+    background: var(--brand-500);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--brand-500) 30%, transparent);
+  }
+
+  article.policy ol {
+    counter-reset: policy-list-counter;
+  }
+
+  article.policy ol li {
+    counter-increment: policy-list-counter;
+  }
+
+  article.policy ol li::before {
+    content: counter(policy-list-counter) ".";
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    color: var(--muted);
   }
 
   article.policy table {
     @apply w-full text-sm;
     border-collapse: collapse;
-    border: 1px solid var(--brand-300);
+    border: 1px solid var(--border);
     border-radius: 1rem;
-    overflow: hidden;
+    overflow-x: auto;
+    overflow-y: hidden;
+    display: block;
+    margin: 2rem 0;
   }
 
   article.policy thead {
@@ -63,7 +97,13 @@
   }
 
   article.policy thead th {
-    background-color: var(--brand-50);
+    background-color: var(--bg-elev);
+    color: var(--muted);
+  }
+
+  .dark article.policy thead th {
+    background-color: rgba(255, 255, 255, 0.04);
+    color: var(--ink);
   }
 
   article.policy th,
@@ -76,5 +116,55 @@
     @apply rounded px-1.5 py-0.5 font-mono;
     font-size: 0.95em;
     background-color: var(--brand-50);
+    color: var(--brand-800);
+  }
+
+  .dark article.policy code {
+    background-color: #111827;
+    color: var(--brand-100);
+  }
+
+  article.policy pre {
+    @apply rounded-2xl border p-4 text-sm leading-relaxed;
+    font-family: var(--font-mono);
+    background-color: #111827;
+    color: #f8fbff;
+    border-color: rgba(17, 24, 39, 0.55);
+    overflow-x: auto;
+  }
+
+  .dark article.policy pre {
+    background-color: #050b18;
+    border-color: rgba(148, 163, 184, 0.35);
+    color: #e2e8f0;
+  }
+
+  article.policy a {
+    position: relative;
+    color: var(--brand-700);
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .dark article.policy a {
+    color: var(--brand-300);
+  }
+
+  article.policy a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -0.2em;
+    height: 2px;
+    background: currentColor;
+    opacity: 0.25;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+
+  article.policy a:hover::after,
+  article.policy a:focus-visible::after {
+    opacity: 0.7;
+    transform: translateY(1px);
   }
 }

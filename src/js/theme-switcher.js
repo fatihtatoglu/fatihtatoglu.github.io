@@ -1,13 +1,15 @@
 import { readCookie, setCookie } from "./utils/cookies.js";
+import {
+  DEFAULT_LANGUAGE,
+  loadDictionary,
+  getLocalizedString,
+  LANGUAGE_CHANGE_EVENT,
+  getRootLanguage,
+} from "./utils/i18n-client.js";
 
 const THEME_COOKIE = "tat-theme";
 const THEME_CHANGE_EVENT = "tat-theme-change";
 const THEME_STATES = ["light", "dark", "system"];
-const THEME_LABELS = {
-  light: "Light",
-  dark: "Dark",
-  system: "System",
-};
 
 const root = document.documentElement;
 const THEME_COLORS = {
@@ -76,8 +78,7 @@ const SWITCHER_TEMPLATE = /* html */ `
     class="btn btn--icon btn--md btn--thick btn--tone-neutral theme-button"
     data-theme-toggle
     data-theme-state="light"
-    aria-label="Tema: Light"
-    aria-describedby="theme-state"
+    aria-label=""
   >
     <!-- Light -->
     <svg viewBox="0 0 47.576 47.576" data-icon="light" class="theme-icon" fill="currentColor" aria-hidden="true">
@@ -122,11 +123,33 @@ const SWITCHER_TEMPLATE = /* html */ `
   </button>
 `;
 
+function toTitleCase(value) {
+  if (!value) return "";
+  return value.charAt(0).toUpperCase() + value.slice(1);
+}
+
+function getThemeLabel(locale) {
+  const fallback = locale === "tr" ? "Tema" : "Theme";
+  return getLocalizedString(locale, "switchers.theme.ariaLabel", fallback) ?? fallback;
+}
+
+function getThemeStateLabel(locale, state) {
+  const fallback = toTitleCase(state);
+  return getLocalizedString(locale, `themes.states.${state}.name`, fallback) ?? fallback;
+}
+
+function warmLanguageDictionary(locale) {
+  if (!locale) return Promise.resolve();
+  return loadDictionary(locale).catch(() => {});
+}
+
 class ThemeSwitcher extends HTMLElement {
   constructor() {
     super();
     this.handleClick = this.handleClick.bind(this);
     this.handleThemeBroadcast = this.handleThemeBroadcast.bind(this);
+    this.handleLanguageChange = this.handleLanguageChange.bind(this);
+    this.currentUiLanguage = getRootLanguage();
   }
 
   connectedCallback() {
@@ -139,11 +162,16 @@ class ThemeSwitcher extends HTMLElement {
     this.updateButton(themePreference);
     this.button?.addEventListener("click", this.handleClick);
     document.addEventListener(THEME_CHANGE_EVENT, this.handleThemeBroadcast);
+    document.addEventListener(LANGUAGE_CHANGE_EVENT, this.handleLanguageChange);
+    warmLanguageDictionary(this.currentUiLanguage).then(() => {
+      this.updateButton(themePreference);
+    });
   }
 
   disconnectedCallback() {
     this.button?.removeEventListener("click", this.handleClick);
     document.removeEventListener(THEME_CHANGE_EVENT, this.handleThemeBroadcast);
+    document.removeEventListener(LANGUAGE_CHANGE_EVENT, this.handleLanguageChange);
   }
 
   render() {
@@ -160,10 +188,23 @@ class ThemeSwitcher extends HTMLElement {
     this.updateButton(pref);
   }
 
+  handleLanguageChange(event) {
+    const nextLang = event?.detail?.lang ?? DEFAULT_LANGUAGE;
+    this.currentUiLanguage = nextLang;
+    this.updateButton(themePreference);
+    warmLanguageDictionary(nextLang).then(() => {
+      this.updateButton(themePreference);
+    });
+  }
+
   updateButton(pref) {
     if (!this.button) return;
-    this.button.setAttribute("data-theme-state", pref);
-    this.button.setAttribute("aria-label", `Tema: ${THEME_LABELS[pref] ?? "Light"}`);
+    const state = pref ?? themePreference;
+    this.button.setAttribute("data-theme-state", state);
+    const locale = this.currentUiLanguage ?? getRootLanguage() ?? DEFAULT_LANGUAGE;
+    const labelPrefix = getThemeLabel(locale);
+    const stateLabel = getThemeStateLabel(locale, state);
+    this.button.setAttribute("aria-label", `${labelPrefix}: ${stateLabel}`);
   }
 }
 

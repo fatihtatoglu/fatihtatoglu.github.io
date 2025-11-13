@@ -1,0 +1,14 @@
+{
+  "author": "Fatih Tatoğlu",
+  "url": "http://localhost:3000",
+  "themeColor": "#5a8df0",
+  "analytics": {
+    "gtmId": "GTM-XXXXXXX",
+    "gaId": "G-XXXXXXXXXX",
+    "clarityId": "CLARITY-ID"
+  },
+  "languages": {
+    "default": "tr",
+    "supported": ["tr", "en"]
+  }
+}

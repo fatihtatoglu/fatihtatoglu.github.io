@@ -1,0 +1,117 @@
+<article id="post-{{front.id}}" class="post" data-page-template="post" data-id="{{front.id}}">
+
+<!-- Post Header -->
+  <header class="post-header">
+
+{{#front.cover}}
+    <div class="post-cover">
+      
+        <figure class="post-cover">
+          <img src="{{.}}" alt="{{front.coverAlt}}">
+          {{#front.coverCaption}}
+            <figcaption>{{.}}</figcaption>
+          {{/front.coverCaption}}
+        </figure>
+    </div>
+    {{/front.cover}}
+
+    <div class="post-meta">
+      <dl class="post-meta__grid">
+        {{#front.date}}
+          <div class="post-meta__item">
+            <dt>{{#locale.isTr}}Yayın Tarihi{{/locale.isTr}}{{#locale.isEn}}Published{{/locale.isEn}}</dt>
+            <dd>{{front.dateDisplay}}</dd>
+          </div>
+        {{/front.date}}
+
+        {{#front.readingTime}}
+          <div class="post-meta__item">
+            <dt>{{#locale.isTr}}Okuma Süresi{{/locale.isTr}}{{#locale.isEn}}Reading Time{{/locale.isEn}}</dt>
+            <dd>
+              {{.}}
+              {{#locale.isTr}}dk okuma{{/locale.isTr}}
+              {{#locale.isEn}}min read{{/locale.isEn}}
+            </dd>
+          </div>
+        {{/front.readingTime}}
+
+                {{#front.category}}
+        <div class="post-meta__item">
+            <dt>{{#locale.isTr}}Kategori{{/locale.isTr}}{{#locale.isEn}}Category{{/locale.isEn}}</dt>
+            <dd>{{.}}</dd>
+        </div>
+        {{/front.category}}
+
+      {{#front.type}}
+        <div class="post-meta__item">
+            <dt>{{#locale.isTr}}Tip{{/locale.isTr}}{{#locale.isEn}}Type{{/locale.isEn}}</dt>
+            <dd>{{.}}</dd>
+        </div>
+        {{/front.type}}
+      </dl>
+    </div>
+
+    <div class="post-operations">
+        <button class="btn btn--sm btn--tone-neutral btn--icon" type="button" data-action="like" aria-label="{{#locale.isTr}}Beğen{{/locale.isTr}}{{#locale.isEn}}Like{{/locale.isEn}}">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M6 10v10H3.5A1.5 1.5 0 0 1 2 18.5V11A1 1 0 0 1 3 10h3Zm5.5 10H9V10l4.3-5a1 1 0 0 1 1.6 1v3H20a1 1 0 0 1 1 .87l.5 4a3 3 0 0 1 0 .26V15a5 5 0 0 1-5 5Z" />
+          </svg>
+        </button>
+        <button class="btn btn--sm btn--tone-neutral btn--icon" type="button" data-action="dislike" aria-label="{{#locale.isTr}}Beğenme{{/locale.isTr}}{{#locale.isEn}}Dislike{{/locale.isEn}}">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M6 14V4H3.5A1.5 1.5 0 0 0 2 5.5V13a1 1 0 0 0 1 1h3Zm5.5-10H9v10l4.3 5a1 1 0 0 0 1.6-1v-3H20a1 1 0 0 0 1-.87l.5-4a3 3 0 0 0 0-.26V9a5 5 0 0 0-5-5Z" />
+          </svg>
+        </button>
+        <button class="btn btn--sm btn--tone-neutral btn--icon" type="button" data-action="comment" aria-label="{{#locale.isTr}}Yorum Yap{{/locale.isTr}}{{#locale.isEn}}Comment{{/locale.isEn}}">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M5 4h14a2 2 0 0 1 2 2v9.5a2 2 0 0 1-2 2H9l-4 4v-4H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z" />
+          </svg>
+        </button>
+          <button class="btn btn--xs btn--tone-neutral btn--icon" type="button" data-share="whatsapp" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12.04 2a9.96 9.96 0 0 0-8.5 15.08L3 22l5.08-1.53A10 10 0 1 0 12.04 2Zm4.95 14.26c-.21.6-1.26 1.14-1.79 1.18-.46.04-1.02.18-3.48-.74-2.92-1.15-4.79-4-4.94-4.19-.14-.19-1.18-1.55-1.18-2.95 0-1.4.74-2.08 1.01-2.37.27-.29.6-.36.8-.36.2 0 .4.01.58.01.18 0 .45-.07.7.53.25.6.84 2.08.92 2.22.07.14.12.3.02.49-.1.19-.15.3-.3.46-.15.17-.32.38-.45.51-.15.15-.3.31-.13.6.18.29.78 1.28 1.67 2.07 1.15 1.02 2.11 1.34 2.4 1.49.29.15.46.13.64-.08.18-.21.74-.86.94-1.16.2-.29.39-.24.66-.14.27.1 1.71.8 2 .95.29.15.48.22.55.34.07.12.07.69-.14 1.29Z" />
+            </svg>
+          </button>
+          <button class="btn btn--xs btn--tone-neutral btn--icon" type="button" data-share="x" aria-label="X">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M19.95 2.5 13.6 10.3l3.14 11.2h-1.47L9.6 13.9 3.28 21.5h-1.5l6.7-8-3-11h1.46l5.03 11.1L17.3 2.5z" />
+            </svg>
+          </button>
+          <button class="btn btn--xs btn--tone-neutral btn--icon" type="button" data-share="linkedin" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4.5 9.25h3.5v11H4.5zM6.25 3.75A2.25 2.25 0 1 1 4 6a2.25 2.25 0 0 1 2.25-2.25M9.75 9.25h3.36v1.52h.05c.47-.89 1.62-1.82 3.34-1.82 3.57 0 4.23 2.35 4.23 5.42v5.88h-3.5v-5.21c0-1.24-.02-2.84-1.73-2.84s-2 1.35-2 2.74v5.31h-3.75z" />
+            </svg>
+          </button>
+          <button class="btn btn--xs btn--tone-neutral btn--icon" type="button" data-share="facebook" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M13.5 21v-7h2.26l.34-2.63H13.5V9.2c0-.76.21-1.28 1.32-1.28h1.41V5.54c-.71-.08-1.42-.12-2.14-.11-2.12 0-3.59 1.3-3.59 3.68v2.06H8v2.63h2.5v7Z" />
+            </svg>
+          </button>
+          <button class="btn btn--xs btn--tone-neutral btn--icon" type="button" data-share="copy" aria-label="{{#locale.isTr}}Link Kopyala{{/locale.isTr}}{{#locale.isEn}}Copy Link{{/locale.isEn}}">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M8 3h11a2 2 0 0 1 2 2v13h-2V5H8Zm-3 4h11a2 2 0 0 1 2 2v9H6a2 2 0 0 1-2-2V7Z" />
+            </svg>
+          </button>
+    </div>
+  </header>
+<!-- Post Header -->
+
+<!-- Post Content -->
+  <div class="post-body">
+    {{{content.html}}}
+  </div>
+<!-- Post Content -->
+
+
+<!-- Post Footer -->
+    <footer class="post-footer">
+       {{#front.hasTags}}<div class="post-tags">
+        {{#front.tags}}
+          <span class="btn btn--xs btn--thin btn--fill btn--tone-sage">{{.}}</span>
+        {{/front.tags}}
+      </div>
+      {{/front.hasTags}}
+    </footer>
+    <!-- Post Footer -->
+
+</article>

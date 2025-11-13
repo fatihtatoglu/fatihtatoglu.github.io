@@ -1,0 +1,254 @@
+{
+  "ui": {
+    "skipToContent": {
+      "tr": "İçeriğe geç",
+      "en": "Skip to content"
+    },
+    "menuToggle": {
+      "tr": "Menüyü aç",
+      "en": "Open menu"
+    }
+  },
+  "site": {
+    "title": {
+      "tr": "Fatih Tatoğlu",
+      "en": "Fatih Tatoğlu"
+    },
+    "description": {
+      "tr": "Fatih Tatoğlu'nun kişisel blogu. Disiplinli, sade ve retro bir teknik atmosferde üretkenlik notları.",
+      "en": "Fatih Tatoğlu's personal blog—disciplined, minimal, retro technical atmosphere."
+    },
+    "owner": {
+      "tr": "Fatih Tatoğlu",
+      "en": "Fatih Tatoğlu"
+    },
+    "role": {
+      "tr": "Mühendis & Yazar",
+      "en": "Engineer & Writer"
+    },
+    "quote": {
+      "tr": "Hayat devam ediyor, bir ucundan tutmak lazım.",
+      "en": "Life goes on—you just have to grab one end of it."
+    }
+  },
+  "languages": {
+    "tr": {
+      "name": {
+        "tr": "Türkçe",
+        "en": "Turkish"
+      }
+    },
+    "en": {
+      "name": {
+        "tr": "İngilizce",
+        "en": "English"
+      }
+    }
+  },
+  "switchers": {
+    "language": {
+      "ariaLabel": {
+        "tr": "Dil",
+        "en": "Language"
+      }
+    },
+    "theme": {
+      "ariaLabel": {
+        "tr": "Tema",
+        "en": "Theme"
+      }
+    }
+  },
+  "themes": {
+    "states": {
+      "light": {
+        "name": {
+          "tr": "Aydınlık",
+          "en": "Light"
+        }
+      },
+      "dark": {
+        "name": {
+          "tr": "Karanlık",
+          "en": "Dark"
+        }
+      },
+      "system": {
+        "name": {
+          "tr": "Sistem",
+          "en": "System"
+        }
+      }
+    }
+  },
+  "status": {
+    "theme": {
+      "tr": "Tema:",
+      "en": "Theme:"
+    },
+    "language": {
+      "tr": "Dil:",
+      "en": "Language:"
+    }
+  },
+  "menu": {
+    "technical": {
+      "tr": "Teknik Notlar",
+      "en": "Technical Notes"
+    },
+    "life": {
+      "tr": "Hayat & Öğrenme",
+      "en": "Life & Learning"
+    },
+    "about": {
+      "tr": "Hakkımda",
+      "en": "About"
+    },
+    "contact": {
+      "tr": "İletişim",
+      "en": "Contact"
+    },
+    "searchPlaceholder": {
+      "tr": "Başlık, konu, etiket…",
+      "en": "Search title, topic, tag…"
+    },
+    "primary": {
+      "tr": "Birincil menü",
+      "en": "Primary navigation"
+    },
+    "buttonLabel": {
+      "tr": "Menüyü aç",
+      "en": "Open menu"
+    }
+  },
+  "content": {
+    "heading": {
+      "tr": "Günlük içerik notları",
+      "en": "Daily content notes"
+    },
+    "actions": {
+      "showMore": {
+        "tr": "Daha fazla içerik göster",
+        "en": "Show extended content"
+      },
+      "showLess": {
+        "tr": "Kısa özete dön",
+        "en": "Back to summary"
+      }
+    },
+    "sample": {
+      "tr": "Bu alan, çift dilli sayfa yapısını test edebilmeniz için kısa bir örnek paragraf içerir. İngilizceye geçtiğinizde otomatik olarak çevirisi gösterilir.",
+      "en": "This block is a short sample paragraph to demonstrate the bilingual page structure. Switch to Turkish and the translation will appear instantly."
+    },
+    "long": {
+      "lead": {
+        "tr": "Günlük gözlemler ve radar notları",
+        "en": "Daily observations and radar notes"
+      },
+      "imageCaption": {
+        "tr": "Sessiz sabah saatlerinde yazıya dökülen fikirler.",
+        "en": "Ideas captured during a quiet, early-morning writing session."
+      },
+      "imageAlt": {
+        "tr": "Notebook ve kahve fincanı olan minimalist bir çalışma masası",
+        "en": "Minimal desk setup with a notebook and cup of coffee"
+      },
+      "p1": {
+        "tr": "Üretkenlik ritmi, kısa sprintler ile uzun soluklu düşünme seanslarının dengesi üzerine kurulu. Sabahları keskin zihnimle araştırma yapıyor, akşama doğru metinleri cilalıyorum.",
+        "en": "My productive rhythm balances short sprints with deep-thinking sessions. I research with a sharp morning mind and polish the prose toward evening."
+      },
+      "p2": {
+        "tr": "Tasarım sistemleri üzerine çalışırken, renk teorisini nostaljik terminal hissiyle buluşturmayı seviyorum. Bu yaklaşım, okuyucunun zihninde hem tanıdık hem de özgün bir bağ kuruyor.",
+        "en": "While refining design systems, I like weaving color theory together with a nostalgic terminal vibe, giving readers something both familiar and fresh."
+      },
+      "p3": {
+        "tr": "Yazının ritmi, kod akışını da etkiliyor. Bir paragrafın nefes aralığı nasıl önemliyse, bileşenlerin de ihtiyaç duyduğu boşluk aynı hassasiyetle ele alınmalı.",
+        "en": "The cadence of writing shapes the flow of code. Just as paragraphs need breathing room, components deserve carefully crafted spacing."
+      },
+      "p4": {
+        "tr": "İki dilli içerik üretirken çeviriden öteye geçip, kavramsal karşılıkları araştırıyorum. Anlamın yolculuğu, kelimelerin ötesinde bağlamı da kapsıyor.",
+        "en": "Creating bilingual content means going beyond literal translation and searching for conceptual counterparts so that meaning travels with context."
+      },
+      "p5": {
+        "tr": "Haftalık radarımda, erişilebilirlik araçları ve minimal arayüz prototipleri var. Her yeni keşif, holografik bir defterde yeni bir sayfa açmak gibi.",
+        "en": "Accessibility tools and minimal interface prototypes sit on my radar this week. Every discovery feels like opening a new page in a holographic notebook."
+      },
+      "p6": {
+        "tr": "Son olarak, deneyimleri paylaşmak kadar onları arşivlemek de önemli. Bu uzun form not, gelecekteki projelere rehberlik edecek bir bellek notu işlevi görüyor.",
+        "en": "Documenting experiences matters as much as sharing them. This long-form note becomes a memory marker that guides future projects."
+      }
+    }
+  },
+  "footer": {
+    "policies": {
+      "cookies": {
+        "tr": "Çerez Politikası",
+        "en": "Cookie Policy"
+      },
+      "disclaimer": {
+        "tr": "Sorumluluk Reddi",
+        "en": "Disclaimer"
+      }
+    },
+    "social": {
+      "rss": {
+        "tr": "RSS",
+        "en": "RSS"
+      },
+      "github": {
+        "tr": "GITHUB",
+        "en": "GITHUB"
+      },
+      "linkedin": {
+        "tr": "LINKEDIN",
+        "en": "LINKEDIN"
+      }
+    },
+    "tags": {
+      "frontend": {
+        "tr": "Frontend",
+        "en": "Frontend"
+      },
+      "javascript": {
+        "tr": "JavaScript",
+        "en": "JavaScript"
+      },
+      "css": {
+        "tr": "CSS",
+        "en": "CSS"
+      },
+      "designSystems": {
+        "tr": "Design Systems",
+        "en": "Design Systems"
+      },
+      "webPerformance": {
+        "tr": "Web Performansı",
+        "en": "Web Performance"
+      },
+      "accessibility": {
+        "tr": "Erişilebilirlik",
+        "en": "Accessibility"
+      },
+      "learningNotes": {
+        "tr": "Öğrenme Notları",
+        "en": "Learning Notes"
+      },
+      "productThinking": {
+        "tr": "Ürün Düşüncesi",
+        "en": "Product Thinking"
+      },
+      "writing": {
+        "tr": "Yazarlık",
+        "en": "Writing"
+      },
+      "lifeLearning": {
+        "tr": "Yaşam & Öğrenme",
+        "en": "Life & Learning"
+      }
+    },
+    "tagline": {
+      "tr": "Her satır merakla başlar, disiplinle tamamlanır.",
+      "en": "Every line starts with curiosity and ends with discipline."
+    }
+  }
+}

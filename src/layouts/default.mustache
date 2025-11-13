@@ -1,5 +1,6 @@
 <!doctype html>
-<html lang="{{lang}}" class="h-full" data-theme="{{theme}}">
+<html lang="{{lang}}" class="h-full" data-theme="{{theme}}" data-supported-languages="{{site.languagesCsv}}"
+  data-default-language="{{site.defaultLanguage}}" data-base-url="{{site.url}}">
 
 <head>
   {{> partials/_head }}
@@ -7,8 +8,8 @@
 
 <body class="min-h-dvh bg-[var(--bg)] font-sans text-base text-[var(--ink)] antialiased">
   {{> partials/_noscript }}
-  <a class="skip-link" href="#content">
-    {{i18n.skipToContent}}
+  <a class="skip-link" href="#content" data-i18n="ui.skipToContent">
+    {{i18n.ui.skipToContent}}
   </a>
 
   <div class="app-shell mx-auto flex min-h-dvh w-full max-w-[480px] flex-col">

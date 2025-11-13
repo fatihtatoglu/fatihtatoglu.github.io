@@ -1,12 +1,17 @@
 import { readCookie, setCookie } from "./utils/cookies.js";
+import {
+  SUPPORTED_LANGUAGES,
+  DEFAULT_LANGUAGE,
+  normalizeLanguage,
+  loadDictionary,
+  getDictionaryValue,
+  getLocalizedString,
+  LANGUAGE_CHANGE_EVENT,
+  setRootLanguage,
+} from "./utils/i18n-client.js";
 
 const LANGUAGE_COOKIE = "tat-lang";
-const DEFAULT_LANGUAGE = "tr";
-const FALLBACK_BASE_URL = "https://tat.fatihtatoglu.com/";
-const LANG_LABELS = {
-  tr: "Türkçe",
-  en: "English",
-};
+const root = document.documentElement;
 
 const LANGUAGE_METADATA = {
   tr: {
@@ -21,23 +26,55 @@ const LANGUAGE_METADATA = {
   },
 };
 
-const LANGUAGE_PATHS = {
-  tr: "/",
-  en: "/en/",
-};
+function getBaseUrl() {
+  const fromDataset = root?.dataset?.baseUrl;
+  if (fromDataset) {
+    return fromDataset.replace(/\/+$/, "");
+  }
+  if (typeof window !== "undefined" && window.location) {
+    return window.location.origin.replace(/\/+$/, "");
+  }
+  return "https://tatoglu.net";
+}
 
-const LANGUAGE_ROUTE_MAP = [
-  {
-    tr: "/tr/cerez-politikasi/",
-    en: "/en/cookie-policy/",
-  },
-];
+function getCanonicalHref() {
+  const canonical = document.querySelector('link[rel="canonical"][data-canonical]');
+  if (canonical && canonical.href) {
+    return canonical.href;
+  }
+  return `${getBaseUrl()}/`;
+}
 
-const root = document.documentElement;
-const translationCache = new Map();
+function getAlternateEntries() {
+  const entries = {};
+  document.querySelectorAll('link[rel="alternate"][data-lang]').forEach((link) => {
+    const code = link.getAttribute("data-lang");
+    if (!code) return;
+    entries[code] = link;
+  });
+  return entries;
+}
 
-function normalizeLang(value) {
-  return value === "en" ? "en" : DEFAULT_LANGUAGE;
+function buildFallbackUrl(lang) {
+  const base = getBaseUrl();
+  const normalized = normalizeLanguage(lang);
+  if (normalized === DEFAULT_LANGUAGE) {
+    return `${base}/`;
+  }
+  return `${base}/${normalized}/`;
+}
+
+function getLanguageUrl(lang) {
+  const normalized = normalizeLanguage(lang);
+  const entries = getAlternateEntries();
+  const link = entries[normalized];
+  if (link?.href) {
+    return link.href;
+  }
+  if (normalized === DEFAULT_LANGUAGE) {
+    return getCanonicalHref();
+  }
+  return buildFallbackUrl(normalized);
 }
 
 function persistLang(value) {
@@ -48,27 +85,23 @@ function readStoredLang() {
   return readCookie(LANGUAGE_COOKIE);
 }
 
-function getTranslation(dict, path) {
-  return path.split(".").reduce((acc, key) => (acc ? acc[key] : undefined), dict);
-}
-
 function applyTranslations(dict) {
   document.querySelectorAll("[data-i18n]").forEach((node) => {
-    const value = getTranslation(dict, node.dataset.i18n);
+    const value = getDictionaryValue(dict, node.dataset.i18n);
     if (typeof value === "string") {
       node.textContent = value;
     }
   });
 
   document.querySelectorAll("[data-i18n-aria]").forEach((node) => {
-    const value = getTranslation(dict, node.dataset.i18nAria);
+    const value = getDictionaryValue(dict, node.dataset.i18nAria);
     if (typeof value === "string") {
       node.setAttribute("aria-label", value);
     }
   });
 
   const search = document.getElementById("site-search");
-  const placeholder = getTranslation(dict, "menu.searchPlaceholder");
+  const placeholder = getDictionaryValue(dict, "menu.searchPlaceholder");
   if (search && typeof placeholder === "string") {
     search.placeholder = placeholder;
   }
@@ -79,7 +112,7 @@ function applyTranslations(dict) {
     attrMap.split(";").forEach((pair) => {
       const [attr, path] = pair.split(":").map((part) => part?.trim());
       if (!attr || !path) return;
-      const value = getTranslation(dict, path);
+      const value = getDictionaryValue(dict, path);
       if (typeof value === "string") {
         node.setAttribute(attr, value);
       }
@@ -87,63 +120,19 @@ function applyTranslations(dict) {
   });
 }
 
-async function loadTranslations(lang) {
-  if (translationCache.has(lang)) {
-    return translationCache.get(lang);
-  }
-  const response = await fetch(`/lang/${lang}.json`);
-  if (!response.ok) {
-    throw new Error(`Çeviri dosyası yüklenemedi: ${lang}`);
-  }
-  const data = await response.json();
-  translationCache.set(lang, data);
-  return data;
-}
-
 async function syncLanguage(lang) {
-  const normalized = normalizeLang(lang);
-  const dict = await loadTranslations(normalized);
-  root.lang = normalized;
+  const normalized = normalizeLanguage(lang);
+  const dict = await loadDictionary(normalized);
+  setRootLanguage(normalized);
   persistLang(normalized);
   applyTranslations(dict);
   updateLanguageMeta(normalized);
+  document.dispatchEvent(new CustomEvent(LANGUAGE_CHANGE_EVENT, { detail: { lang: normalized, dict } }));
   return normalized;
 }
 
-function getOrigin() {
-  if (typeof window !== "undefined" && window.location) {
-    return window.location.origin.replace(/\/$/, "");
-  }
-  return new URL(FALLBACK_BASE_URL).origin;
-}
-
 function buildLangUrl(lang) {
-  const path = getLanguagePath(lang);
-  return getOrigin() + path;
-}
-
-function normalizePathname(pathname) {
-  if (!pathname) return "/";
-  return pathname.endsWith("/") ? pathname : `${pathname}/`;
-}
-
-function getPathLanguage() {
-  if (typeof window === "undefined" || !window.location) return DEFAULT_LANGUAGE;
-  const pathname = normalizePathname(window.location.pathname);
-  return pathname.startsWith(LANGUAGE_PATHS.en) ? "en" : DEFAULT_LANGUAGE;
-}
-
-function getLanguagePath(lang) {
-  if (typeof window !== "undefined" && window.location) {
-    const current = normalizePathname(window.location.pathname);
-    const route = LANGUAGE_ROUTE_MAP.find(
-      (entry) => normalizePathname(entry.tr) === current || normalizePathname(entry.en) === current,
-    );
-    if (route && route[lang]) {
-      return route[lang];
-    }
-  }
-  return LANGUAGE_PATHS[lang] ?? LANGUAGE_PATHS[DEFAULT_LANGUAGE];
+  return getLanguageUrl(lang);
 }
 
 function updateLanguageMeta(lang) {
@@ -188,14 +177,26 @@ function updateLanguageMeta(lang) {
   });
 }
 
+function getLanguageLabel(locale) {
+  const fallback = locale === "tr" ? "Dil" : "Language";
+  return getLocalizedString(locale, "switchers.language.ariaLabel", fallback) ?? fallback;
+}
+
+function getLanguageName(locale, langCode) {
+  if (!langCode) {
+    return "";
+  }
+  const fallback = langCode.toUpperCase();
+  return getLocalizedString(locale, `languages.${langCode}.name`, fallback) ?? fallback;
+}
+
 const SWITCHER_TEMPLATE = /* html */ `
   <button
     type="button"
     class="btn btn--icon btn--md btn--thin btn--tone-neutral language-button"
     data-lang-toggle
     data-active-lang="tr"
-    aria-label="Dil: Türkçe"
-    aria-describedby="language-state"
+    aria-label=""
   >
     <!-- Turkish Language -->
     <svg data-flag="tr" class="lang-flag" xmlns="http://www.w3.org/2000/svg" viewBox="0 -30000 90000 60000" aria-hidden="true">
@@ -271,8 +272,8 @@ class LanguageSwitcher extends HTMLElement {
     super();
     this.handleClick = this.handleClick.bind(this);
     this.requestId = 0;
-    const pathLang = getPathLanguage();
-    this.currentLang = normalizeLang(readStoredLang() ?? pathLang ?? root.lang ?? DEFAULT_LANGUAGE);
+    const initialLang = root?.lang ?? DEFAULT_LANGUAGE;
+    this.currentLang = normalizeLanguage(readStoredLang() ?? initialLang);
   }
 
   connectedCallback() {
@@ -296,7 +297,7 @@ class LanguageSwitcher extends HTMLElement {
   }
 
   async applyLanguage(lang) {
-    const next = normalizeLang(lang);
+    const next = normalizeLanguage(lang);
     const requestId = ++this.requestId;
     this.updateButton(next);
     this.button?.setAttribute("aria-busy", "true");
@@ -304,6 +305,7 @@ class LanguageSwitcher extends HTMLElement {
       const applied = await syncLanguage(next);
       if (this.requestId === requestId) {
         this.currentLang = applied;
+        this.updateButton(applied);
       }
     } catch (error) {
       console.error("Dil değişimi başarısız:", error);
@@ -316,9 +318,11 @@ class LanguageSwitcher extends HTMLElement {
 
   handleClick(event) {
     event?.preventDefault?.();
-    const next = this.currentLang === "tr" ? "en" : "tr";
+    const currentIndex = SUPPORTED_LANGUAGES.indexOf(this.currentLang);
+    const nextIndex = currentIndex === -1 ? 0 : (currentIndex + 1) % SUPPORTED_LANGUAGES.length;
+    const next = SUPPORTED_LANGUAGES[nextIndex] ?? DEFAULT_LANGUAGE;
     persistLang(next);
-    const targetPath = getLanguagePath(next);
+    const targetPath = getLanguageUrl(next);
     if (typeof window !== "undefined" && window.location) {
       this.button?.setAttribute("aria-busy", "true");
       window.location.href = targetPath;
@@ -329,8 +333,12 @@ class LanguageSwitcher extends HTMLElement {
 
   updateButton(lang) {
     if (!this.button) return;
-    this.button.setAttribute("data-active-lang", lang);
-    this.button.setAttribute("aria-label", `Dil: ${LANG_LABELS[lang] ?? "Türkçe"}`);
+    const activeLang = lang ?? this.currentLang ?? DEFAULT_LANGUAGE;
+    const locale = activeLang;
+    this.button.setAttribute("data-active-lang", activeLang);
+    const labelPrefix = getLanguageLabel(locale);
+    const languageName = getLanguageName(locale, activeLang);
+    this.button.setAttribute("aria-label", `${labelPrefix}: ${languageName}`);
   }
 }
 

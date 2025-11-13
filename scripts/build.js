@@ -26,12 +26,48 @@ const DIST_DIR = join(ROOT_DIR, "dist");
 const CONTENT_DIR = join(SRC_DIR, "content");
 const LAYOUTS_DIR = join(SRC_DIR, "layouts");
 const TEMPLATES_DIR = join(SRC_DIR, "templates");
+const ASSETS_DIR = join(SRC_DIR, "assets");
+const SITE_CONFIG_PATH = join(SRC_DIR, "site.json");
+const I18N_CONFIG_PATH = join(SRC_DIR, "i18n.json");
+
+const SITE_CONFIG = loadSiteConfig();
 
 const versionToken = crypto.randomBytes(6).toString("hex");
-const BASE_URL = "https://tat.fatihtatoglu.com";
-const GTM_ID = "GTM-XXXXXXX";
-const GA_ID = "G-XXXXXXXXXX";
-const CLARITY_ID = "CLARITY-ID";
+const BASE_URL = SITE_CONFIG.url ?? "https://tatoglu.net";
+const GTM_ID = SITE_CONFIG.analytics?.gtmId ?? "GTM-XXXXXXX";
+const GA_ID = SITE_CONFIG.analytics?.gaId ?? "G-XXXXXXXXXX";
+const CLARITY_ID = SITE_CONFIG.analytics?.clarityId ?? "CLARITY-ID";
+const FALLBACK_ROLES = {
+  tr: "Mühendis & Yazar",
+  en: "Engineer & Writer",
+};
+const FALLBACK_QUOTES = {
+  tr: "“Hayat devam ediyor, bir ucundan tutmak lazım.”",
+  en: "“Life goes on—you just have to grab one end of it.”",
+};
+const FALLBACK_TITLES = {
+  tr: "Fatih Tatoğlu",
+  en: "Fatih Tatoğlu",
+};
+const FALLBACK_DESCRIPTIONS = {
+  tr: "Fatih Tatoğlu'nun kişisel blogu. Disiplinli, sade ve retro bir teknik atmosferde üretkenlik notları.",
+  en: "Fatih Tatoğlu's personal blog—disciplined, minimal, retro technical atmosphere.",
+};
+const FALLBACK_OWNER = "Fatih Tatoğlu";
+const FALLBACK_TAGLINES = {
+  tr: "Her satır merakla başlar, disiplinle tamamlanır.",
+  en: "Every line begins with curiosity and ends with discipline.",
+};
+const LANGUAGE_SETTINGS = SITE_CONFIG.languages ?? {};
+const SUPPORTED_LANGUAGES =
+  Array.isArray(LANGUAGE_SETTINGS.supported) && LANGUAGE_SETTINGS.supported.length
+    ? LANGUAGE_SETTINGS.supported
+    : ["tr", "en"];
+const DEFAULT_LANGUAGE = LANGUAGE_SETTINGS.default && SUPPORTED_LANGUAGES.includes(LANGUAGE_SETTINGS.default)
+  ? LANGUAGE_SETTINGS.default
+  : SUPPORTED_LANGUAGES[0] ?? "tr";
+const I18N_SOURCE = loadI18nConfig();
+const LANGUAGE_DICTIONARIES = buildLanguageDictionaries(I18N_SOURCE, SUPPORTED_LANGUAGES, DEFAULT_LANGUAGE);
 
 const LANGUAGE_BUILD_CONFIG = {
   tr: {
@@ -47,25 +83,6 @@ const LANGUAGE_BUILD_CONFIG = {
     canonical: `${BASE_URL}/en/`,
     ogLocale: "en_US",
     altLocale: "tr_TR",
-  },
-};
-
-const I18N = {
-  tr: {
-    skipToContent: "İçeriğe geç",
-    menuToggle: "Menüyü aç",
-    menu: {
-      primary: "Birincil menü",
-      searchPlaceholder: "Başlık, konu, etiket...",
-    },
-  },
-  en: {
-    skipToContent: "Skip to content",
-    menuToggle: "Open menu",
-    menu: {
-      primary: "Primary navigation",
-      searchPlaceholder: "Title, topic, tag...",
-    },
   },
 };
 
@@ -142,21 +159,6 @@ const FOOTER_SOCIAL = [
   { key: "linkedin", tone: "linkedin", url: "https://www.linkedin.com/in/fatihtatoglu/", external: true },
 ];
 
-const FOOTER_SOCIAL_LABELS = {
-  tr: { rss: "RSS", github: "GitHub", linkedin: "LinkedIn" },
-  en: { rss: "RSS", github: "GitHub", linkedin: "LinkedIn" },
-};
-
-const FOOTER_TAGLINES = {
-  tr: "Her satır merakla başlar, disiplinle tamamlanır.",
-  en: "Every line begins with curiosity and ends with discipline.",
-};
-
-const SITE_QUOTES = {
-  tr: "“Hayat devam ediyor, bir ucundan tutmak lazım.”",
-  en: "“Life goes on—you just have to grab one end of it.”",
-};
-
 const PARTIALS = loadPartials();
 const GENERATED_PAGES = new Set();
 const layoutCache = new Map();
@@ -188,17 +190,119 @@ function buildJs() {
   run("npx esbuild ./src/js/main.js --bundle --format=esm --target=es2018 --minify --sourcemap --outfile=./dist/output.js");
 }
 
-function copyLang() {
-  const srcLangDir = join(SRC_DIR, "lang");
-  if (existsSync(srcLangDir)) {
-    cpSync(srcLangDir, join(DIST_DIR, "lang"), { recursive: true });
-  }
+function writeLanguageBundles() {
+  const langDir = join(DIST_DIR, "lang");
+  mkdirSync(langDir, { recursive: true });
+  SUPPORTED_LANGUAGES.forEach((lang) => {
+    const dictionary = LANGUAGE_DICTIONARIES[lang];
+    if (!dictionary) return;
+    const targetPath = join(langDir, `${lang}.json`);
+    writeFileSync(targetPath, JSON.stringify(dictionary, null, 2), "utf8");
+  });
 }
 
 function transformHtml(html) {
   return html
     .replace(/\/output\.css(\?v=[^"']+)?/g, `/output.css?v=${versionToken}`)
     .replace(/\/output\.js(\?v=[^"']+)?/g, `/output.js?v=${versionToken}`);
+}
+
+function loadSiteConfig() {
+  try {
+    if (!existsSync(SITE_CONFIG_PATH)) {
+      return {};
+    }
+    const raw = readFileSync(SITE_CONFIG_PATH, "utf8");
+    return JSON.parse(raw);
+  } catch (error) {
+    console.warn(`Failed to read site config at ${SITE_CONFIG_PATH}:`, error);
+    return {};
+  }
+}
+
+function loadI18nConfig() {
+  try {
+    if (!existsSync(I18N_CONFIG_PATH)) {
+      return {};
+    }
+    const raw = readFileSync(I18N_CONFIG_PATH, "utf8");
+    return JSON.parse(raw);
+  } catch (error) {
+    console.warn(`Failed to read i18n config at ${I18N_CONFIG_PATH}:`, error);
+    return {};
+  }
+}
+
+function buildLanguageDictionaries(source, languages, defaultLang) {
+  const dictionaries = {};
+  const languageSet = new Set(languages);
+  languages.forEach((lang) => {
+    dictionaries[lang] = {};
+  });
+
+  function assignValue(target, pathSegments, value) {
+    let cursor = target;
+    pathSegments.forEach((segment, index) => {
+      if (index === pathSegments.length - 1) {
+        cursor[segment] = value;
+        return;
+      }
+      if (!cursor[segment] || typeof cursor[segment] !== "object") {
+        cursor[segment] = {};
+      }
+      cursor = cursor[segment];
+    });
+  }
+
+  function isLanguageLeaf(node) {
+    if (!node || typeof node !== "object" || Array.isArray(node)) return false;
+    const keys = Object.keys(node);
+    if (!keys.length) return false;
+    return keys.every((key) => languageSet.has(key));
+  }
+
+  function walk(node, path = []) {
+    if (isLanguageLeaf(node)) {
+      languages.forEach((lang) => {
+        const localizedValue = node[lang] ?? node[defaultLang];
+        if (localizedValue !== undefined) {
+          assignValue(dictionaries[lang], path, localizedValue);
+        }
+      });
+      return;
+    }
+    if (!node || typeof node !== "object") return;
+    Object.entries(node).forEach(([key, child]) => walk(child, path.concat(key)));
+  }
+
+  walk(source);
+  return dictionaries;
+}
+
+function getLanguageDictionary(lang) {
+  return LANGUAGE_DICTIONARIES[lang] ?? LANGUAGE_DICTIONARIES[DEFAULT_LANGUAGE] ?? {};
+}
+
+function getLocalizedValue(lang, path, fallback) {
+  const dict = getLanguageDictionary(lang);
+  const value = path.split(".").reduce((acc, segment) => {
+    if (acc === undefined || acc === null) return undefined;
+    return acc[segment];
+  }, dict);
+  if (value !== undefined) {
+    return value;
+  }
+  if (lang !== DEFAULT_LANGUAGE) {
+    const defaultDict = getLanguageDictionary(DEFAULT_LANGUAGE);
+    const defaultValue = path.split(".").reduce((acc, segment) => {
+      if (acc === undefined || acc === null) return undefined;
+      return acc[segment];
+    }, defaultDict);
+    if (defaultValue !== undefined) {
+      return defaultValue;
+    }
+  }
+  return fallback;
 }
 
 function writeHtmlFile(relativePath, html) {
@@ -266,37 +370,85 @@ function resolveUrl(value) {
 }
 
 function buildSiteData(lang) {
+  const fallbackOwner = FALLBACK_OWNER;
+  const author = SITE_CONFIG.author ?? fallbackOwner;
+  const owner = getLocalizedValue(lang, "site.owner", fallbackOwner);
+  const title = getLocalizedValue(
+    lang,
+    "site.title",
+    FALLBACK_TITLES[lang] ?? FALLBACK_TITLES[DEFAULT_LANGUAGE] ?? fallbackOwner,
+  );
+  const description = getLocalizedValue(
+    lang,
+    "site.description",
+    FALLBACK_DESCRIPTIONS[lang] ?? FALLBACK_DESCRIPTIONS[DEFAULT_LANGUAGE] ?? "",
+  );
+  const role = getLocalizedValue(
+    lang,
+    "site.role",
+    FALLBACK_ROLES[lang] ?? FALLBACK_ROLES[DEFAULT_LANGUAGE] ?? FALLBACK_ROLES.en,
+  );
+  const quote = getLocalizedValue(
+    lang,
+    "site.quote",
+    FALLBACK_QUOTES[lang] ?? FALLBACK_QUOTES[DEFAULT_LANGUAGE] ?? FALLBACK_QUOTES.en,
+  );
   return {
-    title: "Fatih Tatoğlu",
-    author: "Fatih Tatoğlu",
-    owner: "Fatih Tatoğlu",
-    role: "Engineer & Writer",
-    quote: SITE_QUOTES[lang] ?? SITE_QUOTES.tr,
+    title,
+    description,
+    author,
+    owner,
+    role,
+    quote,
     home: lang === "en" ? "/en/" : "/",
-    url: BASE_URL,
-    themeColor: "#5a8df0",
+    url: SITE_CONFIG.url ?? BASE_URL,
+    themeColor: SITE_CONFIG.themeColor ?? "#5a8df0",
     gtmId: GTM_ID,
     year: new Date().getFullYear(),
+    languages: {
+      supported: SUPPORTED_LANGUAGES,
+      default: DEFAULT_LANGUAGE,
+    },
+    languagesCsv: SUPPORTED_LANGUAGES.join(","),
+    defaultLanguage: DEFAULT_LANGUAGE,
   };
 }
 
 function getMenuData(lang) {
-  return { items: MENU_ITEMS[lang] ?? MENU_ITEMS.tr };
+  const baseItems = MENU_ITEMS[lang] ?? MENU_ITEMS[DEFAULT_LANGUAGE] ?? [];
+  const items = baseItems.map((item) => ({
+    ...item,
+    label: getLocalizedValue(lang, `menu.${item.key}`, item.label ?? item.key),
+  }));
+  return { items };
 }
 
 function getFooterData(lang) {
-  const tags = FOOTER_TAGS[lang] ?? FOOTER_TAGS.tr;
-  const policies = FOOTER_POLICIES[lang] ?? FOOTER_POLICIES.tr;
+  const tagsSource = FOOTER_TAGS[lang] ?? FOOTER_TAGS[DEFAULT_LANGUAGE] ?? [];
+  const policiesSource = FOOTER_POLICIES[lang] ?? FOOTER_POLICIES[DEFAULT_LANGUAGE] ?? [];
   const social = FOOTER_SOCIAL.map((item) => ({
     ...item,
     icon: FOOTER_SOCIAL_ICONS[item.key],
-    label: FOOTER_SOCIAL_LABELS[lang]?.[item.key] ?? FOOTER_SOCIAL_LABELS.tr[item.key],
+    label: getLocalizedValue(lang, `footer.social.${item.key}`, item.key.toUpperCase()),
   }));
+  const tags = tagsSource.map((tag) => ({
+    ...tag,
+    label: getLocalizedValue(lang, `footer.tags.${tag.key}`, tag.label ?? tag.key),
+  }));
+  const policies = policiesSource.map((policy) => ({
+    ...policy,
+    label: getLocalizedValue(lang, `footer.policies.${policy.key}`, policy.label ?? policy.key),
+  }));
+  const tagline = getLocalizedValue(
+    lang,
+    "footer.tagline",
+    FALLBACK_TAGLINES[lang] ?? FALLBACK_TAGLINES[DEFAULT_LANGUAGE] ?? FALLBACK_TAGLINES.en,
+  );
   return {
     tags,
     policies,
     social,
-    tagline: FOOTER_TAGLINES[lang] ?? FOOTER_TAGLINES.tr,
+    tagline,
   };
 }
 
@@ -335,6 +487,18 @@ function buildPageMeta(front, lang, slug) {
   };
 }
 
+function formatDate(value, lang) {
+  if (!value) return null;
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return value;
+  const locale = lang === "en" ? "en-US" : "tr-TR";
+  return new Intl.DateTimeFormat(locale, {
+    day: "2-digit",
+    month: "long",
+    year: "numeric",
+  }).format(date);
+}
+
 function defaultCanonical(lang, slug) {
   const cleanedSlug = (slug ?? "").replace(/^\/+/, "").replace(/\/+$/, "");
   const prefix = lang === "en" ? "en" : "";
@@ -359,10 +523,24 @@ function canonicalToRelativePath(value) {
 
 function renderContentTemplate(templateName, contentHtml, front, lang) {
   const template = getTemplate(templateName);
+  const normalizedTags = Array.isArray(front.tags)
+    ? front.tags.filter((tag) => typeof tag === "string" && tag.trim().length > 0)
+    : [];
+  const normalizedFront = {
+    ...front,
+    tags: normalizedTags,
+    hasTags: normalizedTags.length > 0,
+    dateDisplay: formatDate(front.date, lang),
+    updatedDisplay: formatDate(front.updated, lang),
+  };
   return Mustache.render(template, {
     content: { html: decorateHtml(contentHtml, templateName) },
-    front,
+    front: normalizedFront,
     lang,
+    locale: {
+      isTr: lang === "tr",
+      isEn: lang === "en",
+    },
   });
 }
 
@@ -377,8 +555,8 @@ function buildOutputPath(front, lang, slug) {
   }
   const cleaned = (slug ?? "").replace(/^\/+/, "");
   const segments = [];
-  if (lang === "en") {
-    segments.push("en");
+  if (lang && lang !== DEFAULT_LANGUAGE) {
+    segments.push(lang);
   }
   if (cleaned) {
     segments.push(cleaned);
@@ -408,7 +586,7 @@ function collectMarkdownFiles(dir) {
 function inferLangFromPath(filePath) {
   const relative = toPosixPath(filePath.replace(`${toPosixPath(CONTENT_DIR)}/`, ""));
   const [langFolder] = relative.split("/");
-  return langFolder === "en" ? "en" : "tr";
+  return SUPPORTED_LANGUAGES.includes(langFolder) ? langFolder : DEFAULT_LANGUAGE;
 }
 
 function buildContentPages() {
@@ -431,7 +609,7 @@ function buildContentPages() {
       site: buildSiteData(lang),
       menu: getMenuData(lang),
       footer: getFooterData(lang),
-      i18n: I18N[lang] ?? I18N.tr,
+      i18n: getLanguageDictionary(lang),
       page: pageMeta,
       content: contentHtml,
       scripts: {
@@ -453,8 +631,8 @@ function registerLegacyPaths(lang, slug) {
   if (!cleaned) return;
   const legacyFile = cleaned.endsWith(".html") ? cleaned : `${cleaned}.html`;
   GENERATED_PAGES.add(toPosixPath(legacyFile));
-  if (lang === "en") {
-    GENERATED_PAGES.add(toPosixPath(join("en", legacyFile)));
+  if (lang && lang !== DEFAULT_LANGUAGE) {
+    GENERATED_PAGES.add(toPosixPath(join(lang, legacyFile)));
   }
 }
 
@@ -472,19 +650,31 @@ function copyHtmlRecursive(currentDir = SRC_DIR, relative = "") {
     const raw = readFileSync(fullPath, "utf8");
     const transformed = transformHtml(raw);
     if (relPath === "index.html") {
-      const trHtml = applyLanguageMetadata(transformed, "tr");
-      writeHtmlFile("index.html", trHtml);
-      const enHtml = applyLanguageMetadata(transformed, "en");
-      writeHtmlFile(join("en", "index.html"), enHtml);
-    } else {
-      writeHtmlFile(relPath, transformed);
+      SUPPORTED_LANGUAGES.forEach((langCode) => {
+        const localized = applyLanguageMetadata(transformed, langCode);
+        const segments = [];
+        if (langCode !== DEFAULT_LANGUAGE) {
+          segments.push(langCode);
+        }
+        segments.push("index.html");
+        writeHtmlFile(join(...segments), localized);
+      });
+      return;
     }
+    writeHtmlFile(relPath, transformed);
   });
+}
+
+function copyStaticAssets() {
+  if (!existsSync(ASSETS_DIR)) return;
+  const targetDir = join(DIST_DIR, "assets");
+  cpSync(ASSETS_DIR, targetDir, { recursive: true });
 }
 
 ensureDist();
 buildCss();
 buildJs();
-copyLang();
+writeLanguageBundles();
 buildContentPages();
 copyHtmlRecursive();
+copyStaticAssets();

@@ -1,15 +1,27 @@
 ---
 id: fx84exoqk6
 lang: en
-title: Cookie Policy
+title: "Cookie Policy: Types, Usage & Preference Management"
 slug: cookie-policy
+category: policy
+type: guide
+tags:
+  - privacy
+  - cookie_policy
+  - data_processing
+  - analytics
+  - user_preferences
+  - security
+  - compliance
+  - web_tracking
+  - cookies
 readingTime: 2
 date: 2025-11-11
 updated: 2025-11-11
 pair: cerez-politikasi
 canonical: ~/en/cookie-policy/
 alternate: ~/cerez-politikasi/
-description: Learn what cookies are used on tatoglu.net, how long they are stored, and how to manage your preferences.
+description: Learn which cookies tatoglu.net uses, why they’re stored, and how to manage your privacy preferences effectively.
 keywords:
   - cookie policy
   - privacy
@@ -89,3 +101,10 @@ Announcements regarding significant changes will be made via the blog and social
 You can direct your questions to **[fatih@tatoglu.net](mailto:fatih@tatoglu.net)**.
 
 Responses to data processing requests are provided within a maximum of 30 days.
+
+## References and Further Reading
+
+- [Google Analytics Policies](https://policies.google.com/privacy)
+- [Microsoft Clarity Privacy](https://clarity.microsoft.com/privacy)
+- [Google Tag Manager](https://policies.google.com/technologies/cookies)
+- [Online privacy](https://europa.eu/youreurope/business/dealing-with-customers/data-protection/online-privacy/index_en.htm)

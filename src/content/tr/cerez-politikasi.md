@@ -1,20 +1,30 @@
 ---
 id: fx84exoqk6
 lang: tr
-title: Çerez Politikası
+title: Çerez Politikası ve Çerez Yönetimi Rehberi
 slug: cerez-politikasi
+category: policy
+type: guide
+tags:
+  - gizlilik
+  - veri_isleme
+  - cerez_politikas,
+  - cookie-policy
+  - analytics
+  - guvenlik
+  - kisisel_veri
 readingTime: 2
 date: 2025-11-11
 updated: 2025-11-11
 pair: cookie-policy
 canonical: ~/cerez-politikasi/
 alternate: ~/en/cookie-policy/
-description: tatoglu.net adresinde kullanılan çerezlerin türlerini, saklama sürelerini ve tercihlerinizi nasıl yönetebileceğinizi anlatan sayfa.
+description: tatoglu.net üzerinde kullanılan çerez türlerini, saklama sürelerini ve tercihlerinizi nasıl yönetebileceğinizi içeren güncel çerez politikası.
 keywords:
-  - cookie policy
-  - çerez
-  - veri işleme
+  - çerez politikası
   - gizlilik
+  - analytics
+  - veri işleme
   - analytics
 featured: false
 draft: false
@@ -89,3 +99,10 @@ Politika ihtiyaç halinde gözden geçirilir; sayfanın üstündeki tarih en gü
 Sorularınızı **[fatih@tatoglu.net](mailto:fatih@tatoglu.net)** adresine iletebilirsiniz.
 
 Veri işleme taleplerine en geç 30 gün içinde yanıt verilir.
+
+## Kaynaklar ve Ek Okumalar
+
+- [Google Analytics Policies](https://policies.google.com/privacy)
+- [Microsoft Clarity Privacy](https://clarity.microsoft.com/privacy)
+- [Google Tag Manager](https://policies.google.com/technologies/cookies)
+- [Çevrimiçi gizlilik](https://europa.eu/youreurope/business/dealing-with-customers/data-protection/online-privacy/index_en.htm)

@@ -1,7 +1,7 @@
 ---
 id: omkcrzd2oz
 lang: tr
-title: Sorumluluk Reddi
+title: "Sorumluluk Reddi ve Kullanım Şartları (2025 Güncel)"
 slug: sorumluluk-reddi
 category: policy
 type: guide
@@ -9,13 +9,19 @@ tags:
   - policy
   - legal
   - disclaimer
+  - terms_of_use
+  - privacy
+  - liability
+  - site_usage
+  - compliance
+  - data-protection
 readingTime: 3
 date: 2025-11-11
 updated: 2025-11-11
 pair: disclaimer
 canonical: ~/sorumluluk-reddi/
 alternate: ~/en/disclaimer/
-description: "Bu sayfa, Fatih Tatoğlu tarafından yayınlanan tüm içeriklere ilişkin yasal sorumluluk reddini ve kullanım şartlarını açıklar."
+description: "Bu sayfa, tatoglu.net üzerindeki tüm içerikler için geçerli sorumluluk reddi, kullanım şartları, üçüncü taraf bağlantılar ve telif hakları bilgilerini açıklar."
 keywords:
   - sorumluluk reddi
   - disclaimer
@@ -49,7 +55,7 @@ yerine geçmez.
 
 Paylaşılan her düşünce, tamamen kişisel yorum ve deneyimdir.
 
-## 2. Doğruluk ve Güncellik Garantisi Verilmez
+## 2. Doğruluk ve Güncellik Garantisi
 
 Teknik içeriklerde doğru ve güncel bilgi sunmak için özen gösterilse de:
 
@@ -62,7 +68,7 @@ garanti edilmez.
 
 Teknik konularda zamanla değişiklik olması olağandır. Kullanıcılar, kritik uygulamalar için mutlaka ek araştırma yapmalı veya profesyonel destek almalıdır.
 
-## 3. Teknik İçerik ve Kodlar Üzerinden Oluşabilecek Sonuçlar
+## 3. Teknik İçeriklerden Doğabilecek Riskler
 
 Bu blogda bulunan komutlar, kod parçacıkları, yapılandırmalar, mimari öneriler ve entegrasyon örnekleri **örnek amaçlıdır**.
 
@@ -90,7 +96,7 @@ Bu yazılar:
 
 Okuyucular tüm değerlendirmeleri kendi filtrelerinden geçirmelidir.
 
-## 5. Üçüncü Taraf Bağlantılar
+## 5. Üçüncü Taraf Bağlantılar ve Sorumluluk
 
 Bu sitede zaman zaman başka sitelere bağlantı verilebilir.
 
@@ -136,7 +142,7 @@ nedeniyle Fatih Tatoğlu **hiçbir şekilde sorumlu tutulamaz**.
 
 Blogun kullanımı, tamamen kullanıcının kendi risk ve inisiyatifi altındadır.
 
-## 8. Telif Hakları
+## 8. Telif Hakları ve Kullanım Koşulları
 
 Sitedeki tüm yazılar, görseller, diyagramlar ve içerikler **yazara aittir**.
 
@@ -158,3 +164,8 @@ Sitenin kullanımı bu politikaların kabul edildiği anlamına gelir.
 Fatih Tatoğlu, bu metni istediği zaman güncelleme hakkını saklı tutar.
 
 Değişiklikler yayımlandığı andan itibaren geçerlidir.
+
+## Kaynaklar ve Ek Okumalar (KVKK & GDPR)
+
+- [Kişisel Verilerin Korunması Kanunu](https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=6698&MevzuatTur=1&MevzuatTertip=5)
+- [General Data Protection Regulation](https://gdpr-info.eu/)

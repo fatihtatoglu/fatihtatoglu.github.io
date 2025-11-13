@@ -1,7 +1,7 @@
 ---
 id: omkcrzd2oz
 lang: en
-title: Disclaimer
+title: "Disclaimer & Terms of Use for tatoglu.net (2025)"
 slug: disclaimer
 category: policy
 type: guide
@@ -9,13 +9,19 @@ tags:
   - policy
   - legal
   - disclaimer
+  - terms_of_use
+  - privacy
+  - liability
+  - site_usage
+  - compliance
+  - data-protection
 readingTime: 3
 date: 2025-11-11
 updated: 2025-11-11
 pair: sorumluluk-reddi
 canonical: ~/en/disclaimer/
 alternate: ~/sorumluluk-reddi/
-description: "This page outlines the legal disclaimer and terms that apply to all content published by Fatih Tatoğlu."
+description: "Read the official disclaimer and terms of use for tatoglu.net, including liability limits, third-party responsibilities, and content usage."
 keywords:
   - disclaimer
   - legal notice
@@ -58,7 +64,7 @@ While every effort is made to provide accurate and up-to-date information in tec
 
 Changes to technical topics are naturally expected over time. Users should conduct additional research or seek professional support for critical applications.
 
-## 3. Consequences Arising from Technical Content and Code
+## 3. Risks Arising from Technical Content
 
 Commands, code snippets, configurations, architectural suggestions, and integration examples found on this blog are **provided for illustrative purposes only**.
 
@@ -84,7 +90,7 @@ These writings:
 
 Readers should filter all evaluations through their own perspectives.
 
-## 5. Third-Party Links
+## 5. Third-Party Links and Responsibility
 
 This site may occasionally provide links to other websites.
 
@@ -126,7 +132,7 @@ resulting from the use of this blog.
 
 The use of the blog is entirely at the user's own risk and initiative.
 
-## 8. Copyright
+## 8. Copyright and Usage Conditions
 
 All writings, visuals, diagrams, and content on the site **belong to the author**.
 
@@ -148,3 +154,8 @@ Using this site implies acceptance of these policies.
 Fatih Tatoğlu reserves the right to update this text at any time.
 
 Changes take effect upon publication.
+
+## Resources and Further Reading (KVKK & GDPR)
+
+- [Personal Data Protection Law](https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=6698&MevzuatTur=1&MevzuatTertip=5)
+- [General Data Protection Regulation](https://gdpr-info.eu/)

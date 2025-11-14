@@ -30,7 +30,7 @@ keywords:
   - cookies
 featured: false
 draft: false
-template: policy
+template: page
 layout: default
 status: published
 ---

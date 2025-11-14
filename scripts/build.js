@@ -14,6 +14,7 @@ import {
 import { dirname, join, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 import crypto from "node:crypto";
+import { parseHTML } from "linkedom";
 import matter from "gray-matter";
 import Mustache from "mustache";
 import { marked } from "marked";
@@ -29,6 +30,8 @@ const TEMPLATES_DIR = join(SRC_DIR, "templates");
 const ASSETS_DIR = join(SRC_DIR, "assets");
 const SITE_CONFIG_PATH = join(SRC_DIR, "site.json");
 const I18N_CONFIG_PATH = join(SRC_DIR, "i18n.json");
+const MERMAID_RENDER_CACHE = new Map();
+let mermaidReadyPromise = null;
 
 const SITE_CONFIG = loadSiteConfig();
 
@@ -188,6 +191,162 @@ function buildCss() {
 
 function buildJs() {
   run("npx esbuild ./src/js/main.js --bundle --format=esm --target=es2018 --minify --sourcemap --outfile=./dist/output.js");
+}
+
+function setGlobalValue(key, value) {
+  if (value === undefined) return;
+  try {
+    Object.defineProperty(globalThis, key, {
+      value,
+      configurable: true,
+      writable: true,
+    });
+  } catch {
+    globalThis[key] = value;
+  }
+}
+
+function copyWindowEnv(window) {
+  setGlobalValue("window", window);
+  const props = [
+    "document",
+    "navigator",
+    "Element",
+    "HTMLElement",
+    "HTMLDivElement",
+    "SVGElement",
+    "SVGPathElement",
+    "Node",
+    "Text",
+    "DOMParser",
+    "getComputedStyle",
+    "matchMedia",
+    "performance",
+  ];
+  props.forEach((key) => {
+    if (window[key]) {
+      setGlobalValue(key, window[key]);
+    }
+  });
+  const raf = typeof window.requestAnimationFrame === "function" ? window.requestAnimationFrame.bind(window) : (cb) => setTimeout(cb, 0);
+  const caf =
+    typeof window.cancelAnimationFrame === "function"
+      ? window.cancelAnimationFrame.bind(window)
+      : (handle) => clearTimeout(handle);
+  setGlobalValue("requestAnimationFrame", raf);
+  setGlobalValue("cancelAnimationFrame", caf);
+}
+
+function patchSvgGetBBox(window) {
+  const proto = window.SVGElement?.prototype;
+  if (!proto || typeof proto.getBBox === "function") return;
+  proto.getBBox = function getBBox() {
+    const tag = (this.tagName || "").toLowerCase();
+    if (tag === "text" || tag === "tspan") {
+      const fontSize = parseFloat(this.getAttribute("font-size") ?? "") || 16;
+      const textContent = (this.textContent ?? "").replace(/\s+/g, " ").trim();
+      const lines = textContent ? textContent.split(/\r?\n/) : [""];
+      const longestLine = lines.reduce((max, line) => Math.max(max, line.length), 0);
+      const charWidth = fontSize * 0.7;
+      const width = Math.max(longestLine * charWidth + fontSize * 2, fontSize * 6);
+      const height = Math.max((lines.length || 1) * fontSize * 1.5, fontSize * 2);
+      return { x: 0, y: -height * 0.7, width, height };
+    }
+    const widthAttr = parseFloat(this.getAttribute("width") ?? "") || 0;
+    const heightAttr = parseFloat(this.getAttribute("height") ?? "") || 0;
+    if (widthAttr && heightAttr) {
+      return { x: 0, y: 0, width: widthAttr, height: heightAttr };
+    }
+    return { x: 0, y: 0, width: 100, height: 40 };
+  };
+}
+
+function patchTextMeasurement(window) {
+  const proto = window.SVGElement?.prototype;
+  if (!proto) return;
+  if (typeof proto.getComputedTextLength !== "function") {
+    proto.getComputedTextLength = function getComputedTextLength() {
+      const box = this.getBBox();
+      return box?.width ?? 0;
+    };
+  }
+}
+
+async function ensureMermaidReady() {
+  if (!mermaidReadyPromise) {
+    mermaidReadyPromise = (async () => {
+      const { window } = parseHTML("<html><body><div id=\"__mermaid_root\"></div></body></html>");
+      copyWindowEnv(window);
+      patchSvgGetBBox(window);
+      patchTextMeasurement(window);
+      const { default: createDOMPurify } = await import("dompurify");
+      const DOMPurify = createDOMPurify(window);
+      window.DOMPurify = DOMPurify;
+      setGlobalValue("DOMPurify", DOMPurify);
+      const { default: mermaidModule } = await import("mermaid");
+      mermaidModule.initialize({
+        startOnLoad: false,
+        securityLevel: "strict",
+        theme: "default",
+        flowchart: {
+          htmlLabels: false,
+          useMaxWidth: true,
+        },
+      });
+      return mermaidModule;
+    })();
+  }
+  return mermaidReadyPromise;
+}
+
+async function renderMermaidDiagram(definition) {
+  const trimmed = (definition ?? "").trim();
+  if (!trimmed) return null;
+  const mermaidModule = await ensureMermaidReady();
+  const cacheKey = crypto.createHash("sha1").update(trimmed).digest("hex");
+  if (MERMAID_RENDER_CACHE.has(cacheKey)) {
+    return MERMAID_RENDER_CACHE.get(cacheKey);
+  }
+  try {
+    const tempContainer = document.createElement("div");
+    document.body.appendChild(tempContainer);
+    const renderId = `mermaid-${cacheKey}-${MERMAID_RENDER_CACHE.size}`;
+    const { svg } = await mermaidModule.render(renderId, trimmed, tempContainer);
+    tempContainer.remove();
+    const normalizedSvg = (svg ?? "")
+      .replace(/style="max-width:[^"]*"/, 'style="max-width: 100%;"')
+      .trim();
+    if (normalizedSvg) {
+      MERMAID_RENDER_CACHE.set(cacheKey, normalizedSvg);
+    }
+    return normalizedSvg || null;
+  } catch (error) {
+    console.warn("[mermaid] Failed to render diagram:", error?.message ?? error);
+    return null;
+  }
+}
+
+async function convertMermaidBlocks(markdown, sourcePath) {
+  if (!markdown || typeof markdown !== "string") return markdown;
+  if (!markdown.includes("```mermaid")) return markdown;
+  const regex = /```mermaid\s*\r?\n([\s\S]*?)```/g;
+  let cursor = 0;
+  let result = "";
+  let match;
+  while ((match = regex.exec(markdown)) !== null) {
+    result += markdown.slice(cursor, match.index);
+    const svg = await renderMermaidDiagram(match[1]);
+    if (svg) {
+      result += `\n\n<figure class="mermaid-diagram" data-diagram="mermaid">\n${svg}\n</figure>\n\n`;
+    } else {
+      const label = sourcePath ? ` in ${toPosixPath(sourcePath)}` : "";
+      console.warn(`[mermaid] Leaving code fence as-is because rendering failed${label}.`);
+      result += match[0];
+    }
+    cursor = match.index + match[0].length;
+  }
+  result += markdown.slice(cursor);
+  return result;
 }
 
 function writeLanguageBundles() {
@@ -589,17 +748,18 @@ function inferLangFromPath(filePath) {
   return SUPPORTED_LANGUAGES.includes(langFolder) ? langFolder : DEFAULT_LANGUAGE;
 }
 
-function buildContentPages() {
+async function buildContentPages() {
   if (!existsSync(CONTENT_DIR)) return;
   const files = collectMarkdownFiles(CONTENT_DIR);
-  files.forEach((filePath) => {
+  for (const filePath of files) {
     const raw = readFileSync(filePath, "utf8");
     const { data, content } = matter(raw);
     const lang = data.lang ?? inferLangFromPath(filePath);
     const slug = data.slug ?? crypto.randomBytes(4).toString("hex");
     const layoutName = data.layout ?? "default";
     const templateName = data.template ?? "page";
-    const markdownHtml = marked.parse(content ?? "");
+    const enrichedContent = await convertMermaidBlocks(content ?? "", filePath);
+    const markdownHtml = marked.parse(enrichedContent ?? "");
     const contentHtml = renderContentTemplate(templateName, markdownHtml, data, lang);
     const pageMeta = buildPageMeta(data, lang, slug);
     const layoutTemplate = getLayout(layoutName);
@@ -623,7 +783,7 @@ function buildContentPages() {
     writeHtmlFile(relativePath, finalHtml);
     GENERATED_PAGES.add(toPosixPath(relativePath));
     registerLegacyPaths(lang, slug);
-  });
+  }
 }
 
 function registerLegacyPaths(lang, slug) {
@@ -671,10 +831,17 @@ function copyStaticAssets() {
   cpSync(ASSETS_DIR, targetDir, { recursive: true });
 }
 
-ensureDist();
-buildCss();
-buildJs();
-writeLanguageBundles();
-buildContentPages();
-copyHtmlRecursive();
-copyStaticAssets();
+async function main() {
+  ensureDist();
+  buildCss();
+  buildJs();
+  writeLanguageBundles();
+  await buildContentPages();
+  copyHtmlRecursive();
+  copyStaticAssets();
+}
+
+main().catch((error) => {
+  console.error("Build failed:", error);
+  process.exitCode = 1;
+});

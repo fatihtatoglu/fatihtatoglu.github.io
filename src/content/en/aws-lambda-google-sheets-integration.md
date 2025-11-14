@@ -35,7 +35,7 @@ keywords:
   - iam security
 featured: true
 draft: false
-cover: ~/assets/images/standard-cover-terminal.webp
+cover: ../../assets/images/standard-cover-terminal.webp
 coverAlt: Minimal terminal-themed cover illustrating a serverless data flow
 coverCaption: "EventBridge -> Lambda -> (WIF) -> Google Sheets"
 template: post
@@ -163,7 +163,7 @@ resources:
                         - index/*
 ```
 
-![Summary screen of the IAM role created for Lambda](../assets/images/iam-role-lambda-readonly.webp)
+![Summary screen of the IAM role created for Lambda](../../assets/images/iam-role-lambda-readonly.webp)
 
 This role grants read-only access to Cognito and DynamoDB resources, considering the project's needs.
 
@@ -315,7 +315,7 @@ Now the bridge between AWS and Google Cloud is established.
 
 After the bridge is built, I need to return to AWS and complete the remaining connection steps.
 
-![WIF sağlayıcı eşlemesi: attribute.aws_role ve google.subject](../assets/images/gcp-wif-connected-service-account-config.webp)
+![WIF sağlayıcı eşlemesi: attribute.aws_role ve google.subject](../../assets/images/gcp-wif-connected-service-account-config.webp)
 
 For this, you will see a `Connected service account` tab in the details of the Workload Identity Pool. Click on this tab and download the configuration file.
 
@@ -342,7 +342,7 @@ It should be like the above JSON.
 
 After completing the definitions, let's move on to the last connection step.
 
-In my scenario, the data from AWS was planned to be transferred to a fixed Google Sheets file. Therefore, all I needed to do was authorize the service account email address as an **Editor** in that specific Google Sheets. This enabled a one-to-one connection. 
+In my scenario, the data from AWS was planned to be transferred to a fixed Google Sheets file. Therefore, all I needed to do was authorize the service account email address as an **Editor** in that specific Google Sheets. This enabled a one-to-one connection.
 
 I also recommend you proceed with this security consideration in mind. If other services are needed, add them as well.
 

@@ -1,7 +1,7 @@
 ---
 id: awe08f1q57
 lang: tr
-title: Windows’ta Hyper-V ile Linux Mint Geliştirme Ortamı
+title: Windows'ta Hyper-V ile Linux Mint Geliştirme Ortamı
 slug: gelistirme-ortami-kurulumu
 category: teknik-notlar
 type: guide

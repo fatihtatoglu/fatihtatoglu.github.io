@@ -35,7 +35,7 @@ keywords:
   - iam security
 featured: true
 draft: false
-cover: ~/assets/images/standard-cover-terminal.webp
+cover: ../assets/images/standard-cover-terminal.webp
 coverAlt: Sıcak tonlarda minimal terminal simgeli kapak görseli
 coverCaption: EventBridge -> Lambda -> (WIF) -> Google Sheets akışı için standart kapak.
 template: post

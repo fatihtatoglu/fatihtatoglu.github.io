@@ -1,53 +1,53 @@
 @layer components {
-  article.policy {
+  article.page {
     @apply rounded-3xl border p-6 space-y-6 leading-relaxed;
     border-color: var(--brand-900);
     background-color: var(--bg);
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 8px 24px rgba(0, 0, 0, 0.06);
   }
 
-  article.policy h1 {
+  article.page h1 {
     @apply font-mono text-3xl font-medium leading-tight;
     color: var(--ink);
   }
 
-  article.policy h2 {
+  article.page h2 {
     @apply font-mono text-2xl font-medium mt-6;
     color: var(--ink);
   }
 
-  article.policy h3 {
+  article.page h3 {
     @apply font-mono text-xl font-medium mt-4;
     color: var(--ink);
   }
 
-  article.policy p {
+  article.page p {
     color: var(--ink);
   }
 
-  article.policy p + p {
+  article.page p + p {
     @apply mt-3;
   }
 
-  article.policy ul,
-  article.policy ol {
+  article.page ul,
+  article.page ol {
     margin: 1.25rem 0 1.5rem;
     padding: 0;
     color: var(--ink-dim);
     list-style: none;
   }
 
-  article.policy li {
+  article.page li {
     position: relative;
     padding-left: 1.75rem;
     line-height: 1.65;
   }
 
-  article.policy li + li {
+  article.page li + li {
     margin-top: 0.6rem;
   }
 
-  article.policy ul li::before {
+  article.page ul li::before {
     content: "";
     position: absolute;
     left: 0.45rem;
@@ -59,16 +59,16 @@
     box-shadow: 0 0 0 3px color-mix(in srgb, var(--brand-500) 30%, transparent);
   }
 
-  article.policy ol {
-    counter-reset: policy-list-counter;
+  article.page ol {
+    counter-reset: page-list-counter;
   }
 
-  article.policy ol li {
-    counter-increment: policy-list-counter;
+  article.page ol li {
+    counter-increment: page-list-counter;
   }
 
-  article.policy ol li::before {
-    content: counter(policy-list-counter) ".";
+  article.page ol li::before {
+    content: counter(page-list-counter) ".";
     position: absolute;
     left: 0;
     top: 0;
@@ -78,7 +78,7 @@
     color: var(--muted);
   }
 
-  article.policy table {
+  article.page table {
     @apply w-full text-sm;
     border-collapse: collapse;
     border: 1px solid var(--border);
@@ -89,42 +89,42 @@
     margin: 2rem 0;
   }
 
-  article.policy thead {
+  article.page thead {
     @apply text-left uppercase;
     letter-spacing: 0.2em;
     font-size: 0.68rem;
     color: var(--muted);
   }
 
-  article.policy thead th {
+  article.page thead th {
     background-color: var(--bg-elev);
     color: var(--muted);
   }
 
-  .dark article.policy thead th {
+  .dark article.page thead th {
     background-color: rgba(255, 255, 255, 0.04);
     color: var(--ink);
   }
 
-  article.policy th,
-  article.policy td {
+  article.page th,
+  article.page td {
     @apply px-3 py-2 text-left align-top;
     border: 1px solid var(--border);
   }
 
-  article.policy code {
+  article.page code {
     @apply rounded px-1.5 py-0.5 font-mono;
     font-size: 0.95em;
     background-color: var(--brand-50);
     color: var(--brand-800);
   }
 
-  .dark article.policy code {
+  .dark article.page code {
     background-color: #111827;
     color: var(--brand-100);
   }
 
-  article.policy pre {
+  article.page pre {
     @apply rounded-2xl border p-4 text-sm leading-relaxed;
     font-family: var(--font-mono);
     background-color: #111827;
@@ -133,24 +133,24 @@
     overflow-x: auto;
   }
 
-  .dark article.policy pre {
+  .dark article.page pre {
     background-color: #050b18;
     border-color: rgba(148, 163, 184, 0.35);
     color: #e2e8f0;
   }
 
-  article.policy a {
+  article.page a {
     position: relative;
     color: var(--brand-700);
     font-weight: 600;
     text-decoration: none;
   }
 
-  .dark article.policy a {
+  .dark article.page a {
     color: var(--brand-300);
   }
 
-  article.policy a::after {
+  article.page a::after {
     content: "";
     position: absolute;
     left: 0;
@@ -162,8 +162,8 @@
     transition: opacity 0.2s ease, transform 0.2s ease;
   }
 
-  article.policy a:hover::after,
-  article.policy a:focus-visible::after {
+  article.page a:hover::after,
+  article.page a:focus-visible::after {
     opacity: 0.7;
     transform: translateY(1px);
   }

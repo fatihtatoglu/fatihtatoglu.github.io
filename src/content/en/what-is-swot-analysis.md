@@ -28,7 +28,7 @@ keywords:
   - strategic planning
 featured: true
 draft: false
-cover: ~/assets/images/swot-analysis-reflection.webp
+cover: ../assets/images/swot-analysis-reflection.webp
 coverAlt: A diagram showing the four components of SWOT analysis
 coverCaption: "SWOT Analysis: visualizing strengths, weaknesses, opportunities, and threats."
 template: post
@@ -54,7 +54,7 @@ A SWOT analysis focuses on 4 concepts:
 
 Each concept has its own set of questions.
 
-![SWOT Analiz](swot-analysis.webp)
+![SWOT Analiz](../assets/images/swot-analysis.webp)
 
 ### Strengths
 
@@ -112,7 +112,7 @@ So, what will we do in the evaluation phase? Essentially, the given answers will
 
 ### Internal & External Factors
 
-![SWOT Analizi iç ve Dış Faktörler](swot-internal-external-factors.webp)
+![SWOT Analizi iç ve Dış Faktörler](../assets/images/swot-internal-external-factors.webp)
 
 This grouping is a fundamental method derived from the definition of a SWOT analysis. According to this method, strengths and weaknesses are used as internal factors, while opportunities and threats are used as external factors.
 
@@ -120,7 +120,7 @@ The purpose of this grouping is to distinguish between internal factors that the
 
 ### Helpful & Harmful Factors
 
-![SWOT Analizi Yardımcı ve Zararlı Faktörler](swot-helpful-harmful-factors.webp)
+![SWOT Analizi Yardımcı ve Zararlı Faktörler](../assets/images/swot-helpful-harmful-factors.webp)
 
 This is a grouping method I learned later on. I wanted to include it in the application because it makes the implementer's "pain points" much more visible.
 

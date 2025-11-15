@@ -3,9 +3,12 @@ id: m1f7g2zbli
 lang: tr
 title: "Hakkımda"
 slug: "hakkimda"
-category: "yasam-ogrenme"
-type: "about-me"
+category: meta
+type: meta
 tags: ["hakkimda", "kisisel", "muhendislik", "ogrenme", "babalik"]
+menu: "Hakkımda"
+order: 3
+show: true
 readingTime: 3
 date: 2025-11-14
 updated: 2025-11-14

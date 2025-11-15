@@ -3,8 +3,8 @@ id: m1f7g2zbli
 lang: en
 title: About Me - Fatih Tatoğlu's Journey in Tech & Learning
 slug: about-fatih-tatoglu
-category: life-learning
-type: about-me
+category: meta
+type: meta
 tags:
   - about
   - fatih-tatoglu
@@ -13,6 +13,9 @@ tags:
   - learning
   - ai-productivity
   - career-story
+menu: "About Me"
+order: 3
+show: true
 readingTime: 3
 date: 2025-11-14
 updated: 2025-11-14

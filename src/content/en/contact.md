@@ -4,7 +4,7 @@ lang: en
 title: Contact Fatih Tatoğlu - Get in Touch
 slug: contact
 category: meta
-type: page
+type: meta
 tags:
   - contact
   - get-in-touch
@@ -14,6 +14,9 @@ tags:
   - communication
   - support
   - message
+menu: "Contact"
+order: 4
+show: true
 readingTime: 1
 date: 2025-11-14
 updated: 2025-11-14

@@ -74,20 +74,7 @@ const LANGUAGE_BUILD_CONFIG = {
   },
 };
 
-const MENU_ITEMS = {
-  tr: [
-    { key: "technical", label: "Teknik Notlar", url: "#teknik-notlar" },
-    { key: "life", label: "Hayat & Öğrenme", url: "#hayat-ogrenme" },
-    { key: "about", label: "Hakkımda", url: "#hakkimda" },
-    { key: "contact", label: "İletişim", url: "#iletisim" },
-  ],
-  en: [
-    { key: "technical", label: "Technical Notes", url: "#technical-notes" },
-    { key: "life", label: "Life & Learning", url: "#life-learning" },
-    { key: "about", label: "About", url: "#about" },
-    { key: "contact", label: "Contact", url: "#contact" },
-  ],
-};
+const MENU_ITEMS = buildMenuItemsFromContent();
 
 const FOOTER_TAGS = {
   tr: [
@@ -731,7 +718,7 @@ function inferSlugFromPath(filePath) {
   return lastPart.replace(/\.md$/i, "");
 }
 
-function buildPolicyUrl(canonical, lang, slug) {
+function buildContentUrl(canonical, lang, slug) {
   const normalizedLang = lang ?? DEFAULT_LANGUAGE;
   if (typeof canonical === "string" && canonical.trim().length > 0) {
     const relative = canonicalToRelativePath(canonical.trim());
@@ -778,7 +765,7 @@ function buildFooterPoliciesFromContent() {
       lang,
       key,
       label: labelSource,
-      url: buildPolicyUrl(data.canonical, lang, slug),
+      url: buildContentUrl(data.canonical, lang, slug),
     };
     if (!Array.isArray(policiesByLang[lang])) {
       policiesByLang[lang] = [];
@@ -789,6 +776,73 @@ function buildFooterPoliciesFromContent() {
     policiesByLang[lang].sort((a, b) => a.label.localeCompare(b.label, lang));
   });
   return policiesByLang;
+}
+
+function parseBoolean(value) {
+  if (typeof value === "boolean") return value;
+  if (typeof value === "string") {
+    const normalized = value.trim().toLowerCase();
+    if (normalized === "true") return true;
+    if (normalized === "false") return false;
+  }
+  return Boolean(value);
+}
+
+function parseOrder(value) {
+  const num = typeof value === "number" ? value : Number.parseFloat(value);
+  return Number.isFinite(num) ? num : Number.MAX_SAFE_INTEGER;
+}
+
+function buildMenuItemsFromContent() {
+  const itemsByLang = {};
+  if (!existsSync(CONTENT_DIR)) return itemsByLang;
+  const files = collectMarkdownFiles(CONTENT_DIR);
+  for (const filePath of files) {
+    let data;
+    try {
+      ({ data } = matter(readFileSync(filePath, "utf8")));
+    } catch {
+      continue;
+    }
+    if (!data) continue;
+    const showValue = parseBoolean(data.show);
+    if (!showValue) continue;
+    const status = typeof data.status === "string" ? data.status.trim().toLowerCase() : "";
+    if (status !== "published") continue;
+    const lang = data.lang ?? inferLangFromPath(filePath);
+    const slug = data.slug ?? inferSlugFromPath(filePath);
+    const key =
+      (typeof data.id === "string" && data.id.trim().length > 0 ? data.id.trim() : slug || "menu").trim();
+    const label =
+      (typeof data.menu === "string" && data.menu.trim().length > 0
+        ? data.menu.trim()
+        : typeof data.title === "string" && data.title.trim().length > 0
+          ? data.title.trim()
+          : key) ?? key;
+    const url = buildContentUrl(data.canonical, lang, slug);
+    if (!Array.isArray(itemsByLang[lang])) {
+      itemsByLang[lang] = [];
+    }
+    itemsByLang[lang].push({
+      key,
+      label,
+      url,
+      order: parseOrder(data.order),
+    });
+  }
+  Object.keys(itemsByLang).forEach((lang) => {
+    itemsByLang[lang]
+      .sort((a, b) => {
+        if (a.order === b.order) {
+          return a.label.localeCompare(b.label, lang);
+        }
+        return a.order - b.order;
+      })
+      .forEach((item) => {
+        delete item.order;
+      });
+  });
+  return itemsByLang;
 }
 
 async function buildContentPages() {

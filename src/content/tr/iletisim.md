@@ -3,11 +3,14 @@ id: vdvajfgg5x
 lang: tr
 title: "İletişim"
 slug: iletisim
-category: contact
-type: page
+category: meta
+type: meta
 tags:
   - iletisim
   - contact
+menu: "İletişim"
+order: 4
+show: true
 readingTime: 1
 date: 2025-11-14
 updated: 2025-11-14
@@ -25,7 +28,6 @@ template: page
 layout: default
 status: published
 ---
-
 # İletişim
 
 Bana ulaşmak isterseniz memnuniyetle cevaplarım.

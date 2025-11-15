@@ -4,7 +4,8 @@ lang: tr
 title: Çerez Politikası ve Çerez Yönetimi Rehberi
 slug: cerez-politikasi
 category: policy
-type: guide
+type: document
+menu: "Çerez Politikası"
 tags:
   - gizlilik
   - veri_isleme

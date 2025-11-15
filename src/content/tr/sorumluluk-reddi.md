@@ -4,7 +4,8 @@ lang: tr
 title: "Sorumluluk Reddi ve Kullanım Şartları (2025 Güncel)"
 slug: sorumluluk-reddi
 category: policy
-type: guide
+type: document
+menu: "Sorumluluk Reddi"
 tags:
   - policy
   - legal

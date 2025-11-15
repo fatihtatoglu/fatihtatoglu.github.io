@@ -131,16 +131,7 @@ const FOOTER_TAGS = {
   ],
 };
 
-const FOOTER_POLICIES = {
-  tr: [
-    { key: "cookies", label: "Çerez Politikası", url: "/cerez-politikasi" },
-    { key: "disclaimer", label: "Sorumluluk Reddi", url: "/sorumluluk-reddi" },
-  ],
-  en: [
-    { key: "cookies", label: "Cookie Policy", url: "/en/cookie-policy" },
-    { key: "disclaimer", label: "Disclaimer", url: "/en/disclaimer" },
-  ],
-};
+const FOOTER_POLICIES = buildFooterPoliciesFromContent();
 
 const FOOTER_SOCIAL_ICONS = {
   rss: `<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -746,6 +737,73 @@ function inferLangFromPath(filePath) {
   const relative = toPosixPath(filePath.replace(`${toPosixPath(CONTENT_DIR)}/`, ""));
   const [langFolder] = relative.split("/");
   return SUPPORTED_LANGUAGES.includes(langFolder) ? langFolder : DEFAULT_LANGUAGE;
+}
+
+function inferSlugFromPath(filePath) {
+  const relative = toPosixPath(filePath.replace(`${toPosixPath(CONTENT_DIR)}/`, ""));
+  const parts = relative.split("/");
+  const lastPart = parts[parts.length - 1] ?? "";
+  return lastPart.replace(/\.md$/i, "");
+}
+
+function buildPolicyUrl(canonical, lang, slug) {
+  const normalizedLang = lang ?? DEFAULT_LANGUAGE;
+  if (typeof canonical === "string" && canonical.trim().length > 0) {
+    const relative = canonicalToRelativePath(canonical.trim());
+    if (relative) {
+      return `/${relative}`.replace(/\/+/g, "/");
+    }
+    return canonical.trim();
+  }
+  const fallback = canonicalToRelativePath(defaultCanonical(normalizedLang, slug));
+  if (fallback) {
+    return `/${fallback}`.replace(/\/+/g, "/");
+  }
+  const slugSegment = slug ? `/${slug}` : "/";
+  if (normalizedLang !== DEFAULT_LANGUAGE) {
+    return `/${normalizedLang}${slugSegment}`.replace(/\/+/g, "/");
+  }
+  return slugSegment.replace(/\/+/g, "/");
+}
+
+function buildFooterPoliciesFromContent() {
+  const policiesByLang = {};
+  if (!existsSync(CONTENT_DIR)) return policiesByLang;
+  const files = collectMarkdownFiles(CONTENT_DIR);
+  for (const filePath of files) {
+    let data;
+    try {
+      ({ data } = matter(readFileSync(filePath, "utf8")));
+    } catch {
+      continue;
+    }
+    const category = typeof data?.category === "string" ? data.category.trim().toLowerCase() : "";
+    if (category !== "policy") continue;
+    const lang = data.lang ?? inferLangFromPath(filePath);
+    const slug = data.slug ?? inferSlugFromPath(filePath);
+    const key =
+      (typeof data.id === "string" && data.id.trim().length > 0 ? data.id.trim() : slug || "policy").trim();
+    const labelSource =
+      (typeof data.menu === "string" && data.menu.trim().length > 0
+        ? data.menu.trim()
+        : typeof data.title === "string" && data.title.trim().length > 0
+          ? data.title.trim()
+          : key) ?? key;
+    const policy = {
+      lang,
+      key,
+      label: labelSource,
+      url: buildPolicyUrl(data.canonical, lang, slug),
+    };
+    if (!Array.isArray(policiesByLang[lang])) {
+      policiesByLang[lang] = [];
+    }
+    policiesByLang[lang].push(policy);
+  }
+  Object.keys(policiesByLang).forEach((lang) => {
+    policiesByLang[lang].sort((a, b) => a.label.localeCompare(b.label, lang));
+  });
+  return policiesByLang;
 }
 
 async function buildContentPages() {

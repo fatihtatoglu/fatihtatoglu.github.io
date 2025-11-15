@@ -4,7 +4,8 @@ lang: en
 title: "Cookie Policy: Types, Usage & Preference Management"
 slug: cookie-policy
 category: policy
-type: guide
+type: document
+menu: "Cookie Policy"
 tags:
   - privacy
   - cookie_policy

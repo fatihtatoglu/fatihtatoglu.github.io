@@ -40,27 +40,12 @@ const BASE_URL = SITE_CONFIG.url ?? "https://tatoglu.net";
 const GTM_ID = SITE_CONFIG.analytics?.gtmId ?? "GTM-XXXXXXX";
 const GA_ID = SITE_CONFIG.analytics?.gaId ?? "G-XXXXXXXXXX";
 const CLARITY_ID = SITE_CONFIG.analytics?.clarityId ?? "CLARITY-ID";
-const FALLBACK_ROLES = {
-  tr: "Mühendis & Yazar",
-  en: "Engineer & Writer",
-};
-const FALLBACK_QUOTES = {
-  tr: "“Hayat devam ediyor, bir ucundan tutmak lazım.”",
-  en: "“Life goes on—you just have to grab one end of it.”",
-};
-const FALLBACK_TITLES = {
-  tr: "Fatih Tatoğlu",
-  en: "Fatih Tatoğlu",
-};
-const FALLBACK_DESCRIPTIONS = {
-  tr: "Fatih Tatoğlu'nun kişisel blogu. Disiplinli, sade ve retro bir teknik atmosferde üretkenlik notları.",
-  en: "Fatih Tatoğlu's personal blog—disciplined, minimal, retro technical atmosphere.",
-};
-const FALLBACK_OWNER = "Fatih Tatoğlu";
-const FALLBACK_TAGLINES = {
-  tr: "Her satır merakla başlar, disiplinle tamamlanır.",
-  en: "Every line begins with curiosity and ends with discipline.",
-};
+const FALLBACK_ROLES = { tr: "-", en: "-", };
+const FALLBACK_QUOTES = { tr: "-", en: "-", };
+const FALLBACK_TITLES = { tr: "-", en: "-", };
+const FALLBACK_DESCRIPTIONS = { tr: "-", en: "-", };
+const FALLBACK_OWNER = "-";
+const FALLBACK_TAGLINES = { tr: "-", en: "-", };
 const LANGUAGE_SETTINGS = SITE_CONFIG.languages ?? {};
 const SUPPORTED_LANGUAGES =
   Array.isArray(LANGUAGE_SETTINGS.supported) && LANGUAGE_SETTINGS.supported.length

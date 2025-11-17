@@ -29,8 +29,8 @@
         <ul class="menu-list">
           {{#menu.items}}
             <li>
-              <a class="btn btn--fill btn--thick btn--tone-neutral menu-link" href="{{{url}}}" data-menu-link="{{key}}"
-                data-i18n="menu.{{key}}">
+              <a class="btn btn--fill btn--thick btn--tone-neutral menu-link{{#isActive}} is-active{{/isActive}}"
+                href="{{{url}}}" data-menu-link="{{key}}" data-i18n="menu.{{key}}"{{#isActive}} aria-current="page"{{/isActive}}>
                 {{label}}
               </a>
             </li>

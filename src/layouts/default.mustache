@@ -6,7 +6,8 @@
   {{> partials/_head }}
 </head>
 
-<body class="min-h-dvh bg-[var(--bg)] font-sans text-base text-[var(--ink)] antialiased">
+<body class="min-h-dvh bg-[var(--bg)] font-sans text-base text-[var(--ink)] antialiased"
+  data-active-menu="{{menu.activeKey}}">
   {{> partials/_noscript }}
   <a class="skip-link" href="#content" data-i18n="ui.skipToContent">
     {{i18n.ui.skipToContent}}

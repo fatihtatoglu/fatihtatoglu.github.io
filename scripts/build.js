@@ -536,13 +536,33 @@ function buildSiteData(lang) {
   };
 }
 
-function getMenuData(lang) {
+function getMenuData(lang, activeKey) {
   const baseItems = MENU_ITEMS[lang] ?? MENU_ITEMS[DEFAULT_LANGUAGE] ?? [];
+  const normalizedActiveKey =
+    typeof activeKey === "string" && activeKey.trim().length > 0 ? activeKey.trim() : null;
+  const hasExplicitMatch = normalizedActiveKey
+    ? baseItems.some((item) => item.key === normalizedActiveKey)
+    : false;
+  const resolvedActiveKey = hasExplicitMatch
+    ? normalizedActiveKey
+    : baseItems[0]?.key ?? "";
   const items = baseItems.map((item) => ({
     ...item,
     label: getLocalizedValue(lang, `menu.${item.key}`, item.label ?? item.key),
+    isActive: item.key === resolvedActiveKey,
   }));
-  return { items };
+  return { items, activeKey: resolvedActiveKey };
+}
+
+function resolveActiveMenuKey(frontMatter) {
+  if (!frontMatter) return null;
+  if (typeof frontMatter.id === "string" && frontMatter.id.trim().length > 0) {
+    return frontMatter.id.trim();
+  }
+  if (typeof frontMatter.slug === "string" && frontMatter.slug.trim().length > 0) {
+    return frontMatter.slug.trim();
+  }
+  return null;
 }
 
 function getFooterData(lang) {
@@ -860,11 +880,12 @@ async function buildContentPages() {
     const contentHtml = renderContentTemplate(templateName, markdownHtml, data, lang);
     const pageMeta = buildPageMeta(data, lang, slug);
     const layoutTemplate = getLayout(layoutName);
+    const activeMenuKey = resolveActiveMenuKey(data);
     const view = {
       lang,
       theme: "light",
       site: buildSiteData(lang),
-      menu: getMenuData(lang),
+      menu: getMenuData(lang, activeMenuKey),
       footer: getFooterData(lang),
       i18n: getLanguageDictionary(lang),
       page: pageMeta,

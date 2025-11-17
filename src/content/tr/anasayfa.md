@@ -3,7 +3,10 @@ id: djb3ulcx2f
 lang: tr
 title: ""
 slug: ""
-type: "home"
+type: "meta"
+menu: "Anasayfa"
+order: 1
+show: true
 date: 2025-11-14
 updated: 2025-11-14
 pair: ""

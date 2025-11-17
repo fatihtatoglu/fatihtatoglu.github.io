@@ -32,6 +32,9 @@ function setActiveMenuLink(id) {
     const isMatch = link.dataset.menuLink === id;
     link.classList.toggle("is-active", isMatch);
   });
+  if (document.body) {
+    document.body.dataset.activeMenu = id;
+  }
 }
 
 function setMenuState(open, silent = false) {
@@ -123,7 +126,10 @@ if (siteHeader && headerSentinel && "IntersectionObserver" in window) {
   handleScrollFallback();
 }
 
-if (menuLinks.length) {
+const initialMenuSelection = document.body?.dataset.activeMenu;
+if (initialMenuSelection) {
+  setActiveMenuLink(initialMenuSelection);
+} else if (menuLinks.length) {
   setActiveMenuLink(menuLinks[0].dataset.menuLink);
 }
 

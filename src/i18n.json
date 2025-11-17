@@ -7,6 +7,10 @@
     "menuToggle": {
       "tr": "Menüyü aç",
       "en": "Open menu"
+    },
+    "close": {
+      "tr": "Kapat",
+      "en": "Close"
     }
   },
   "site": {
@@ -176,6 +180,154 @@
       "p6": {
         "tr": "Son olarak, deneyimleri paylaşmak kadar onları arşivlemek de önemli. Bu uzun form not, gelecekteki projelere rehberlik edecek bir bellek notu işlevi görüyor.",
         "en": "Documenting experiences matters as much as sharing them. This long-form note becomes a memory marker that guides future projects."
+      }
+    }
+  },
+  "contactForm": {
+    "fields": {
+      "fullname": {
+        "label": {
+          "tr": "Adınız Soyadınız",
+          "en": "Full name"
+        },
+        "placeholder": {
+          "tr": "Örn. Fatih Tatoğlu",
+          "en": "e.g. Fatih Tatoğlu"
+        }
+      },
+      "email": {
+        "label": {
+          "tr": "E-posta adresiniz",
+          "en": "Email address"
+        },
+        "placeholder": {
+          "tr": "ornek@domain.com",
+          "en": "name@example.com"
+        }
+      },
+      "subject": {
+        "label": {
+          "tr": "Konu",
+          "en": "Subject"
+        },
+        "placeholder": {
+          "tr": "Bir konu seçin",
+          "en": "Pick a topic"
+        }
+      },
+      "message": {
+        "label": {
+          "tr": "Mesajınız",
+          "en": "Message"
+        },
+        "placeholder": {
+          "tr": "Kısaca neler konuşmak istediğinizi yazın…",
+          "en": "Tell me briefly what you’d like to talk about…"
+        }
+      }
+    },
+    "subjectOptions": {
+      "general": {
+        "tr": "Genel merhaba",
+        "en": "General hello"
+      },
+      "content": {
+        "tr": "İçerik / düzeltme",
+        "en": "Content / correction"
+      },
+      "suggestion": {
+        "tr": "Öneri",
+        "en": "Suggestion"
+      },
+      "question": {
+        "tr": "Soru",
+        "en": "Question"
+      },
+      "collab": {
+        "tr": "İş birliği / davet",
+        "en": "Collaboration / invitation"
+      },
+      "other": {
+        "tr": "Diğer",
+        "en": "Other"
+      }
+    },
+    "privacy": {
+      "label": {
+        "tr": "Bu mesajın yanıtlanması için iletişim bilgilerimin kullanılmasını onaylıyorum.",
+        "en": "I agree that my details may be used to reply to this message."
+      },
+      "helper": {
+        "tr": "Bilgileriniz hiçbir zaman üçüncü taraflarla paylaşılmaz.",
+        "en": "Your details are never shared with third parties."
+      }
+    },
+    "actions": {
+      "submit": {
+        "tr": "Gönder",
+        "en": "Send message"
+      },
+      "reset": {
+        "tr": "Formu temizle",
+        "en": "Clear form"
+      },
+      "loading": {
+        "tr": "Gönderiliyor...",
+        "en": "Sending..."
+      }
+    },
+    "validation": {
+      "fullnameRequired": {
+        "tr": "Lütfen adınızı yazın.",
+        "en": "Please enter your full name."
+      },
+      "emailRequired": {
+        "tr": "Lütfen e-posta adresinizi yazın.",
+        "en": "Please enter your email address."
+      },
+      "emailInvalid": {
+        "tr": "Geçerli bir e-posta girin.",
+        "en": "Please enter a valid email address."
+      },
+      "subjectRequired": {
+        "tr": "Lütfen bir konu seçin.",
+        "en": "Please choose a subject."
+      },
+      "messageRequired": {
+        "tr": "Mesajınızı en az 20 karakter olacak şekilde yazın.",
+        "en": "Please write at least 20 characters."
+      },
+      "privacyRequired": {
+        "tr": "Devam etmek için onay vermelisiniz.",
+        "en": "You must accept the privacy notice to continue."
+      }
+    },
+    "modal": {
+      "successTitle": {
+        "tr": "Mesajınız ulaştı!",
+        "en": "Your message arrived!"
+      },
+      "successMessage": {
+        "tr": "Teşekkür ederim. En kısa sürede dönüş yapacağım.",
+        "en": "Thanks so much—I’ll respond as soon as possible."
+      },
+      "errorTitle": {
+        "tr": "Bir sorun oluştu",
+        "en": "Something went wrong"
+      },
+      "errorMessage": {
+        "tr": "Mesajınız şu anda gönderilemedi. Lütfen tekrar deneyin.",
+        "en": "Your message could not be sent right now. Please try again."
+      }
+    },
+    "service": {
+      "success": {
+        "tr": "Mesajınız başarıyla kaydedildi.",
+        "en": "Your message was saved successfully."
+      },
+      "error": {
+        "tr": "Beklenmeyen bir hata oluştu.",
+        "en": "An unexpected error occurred."
       }
     }
   },

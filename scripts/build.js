@@ -26,6 +26,7 @@ const SRC_DIR = join(ROOT_DIR, "src");
 const DIST_DIR = join(ROOT_DIR, "dist");
 const CONTENT_DIR = join(SRC_DIR, "content");
 const LAYOUTS_DIR = join(SRC_DIR, "layouts");
+const COMPONENTS_DIR = join(SRC_DIR, "components");
 const TEMPLATES_DIR = join(SRC_DIR, "templates");
 const ASSETS_DIR = join(SRC_DIR, "assets");
 const SITE_CONFIG_PATH = join(SRC_DIR, "site.json");
@@ -126,6 +127,7 @@ const FOOTER_SOCIAL = [
 ];
 
 const PARTIALS = loadPartials();
+const COMPONENT_PARTIALS = loadComponentPartials();
 const GENERATED_PAGES = new Set();
 const layoutCache = new Map();
 const templateCache = new Map();
@@ -457,6 +459,17 @@ function loadPartials() {
   return partials;
 }
 
+function loadComponentPartials() {
+  const partials = {};
+  if (!existsSync(COMPONENTS_DIR)) return partials;
+  readdirSync(COMPONENTS_DIR).forEach((entry) => {
+    if (!entry.endsWith(".mustache")) return;
+    const key = `components/${entry.replace(/\.mustache$/, "")}`;
+    partials[key] = readFileSync(join(COMPONENTS_DIR, entry), "utf8");
+  });
+  return partials;
+}
+
 function getLayout(name) {
   if (layoutCache.has(name)) return layoutCache.get(name);
   const filePath = join(LAYOUTS_DIR, `${name}.mustache`);
@@ -686,6 +699,54 @@ function renderContentTemplate(templateName, contentHtml, front, lang) {
   });
 }
 
+function buildContentComponentContext(frontMatter, lang, dictionary) {
+  return {
+    front: frontMatter ?? {},
+    lang,
+    i18n: dictionary ?? {},
+  };
+}
+
+function renderMarkdownComponents(markdown, context = {}) {
+  if (!markdown || typeof markdown !== "string") {
+    return { markdown: markdown ?? "", placeholders: [] };
+  }
+  const placeholders = [];
+  const componentPattern = /{{>\s*components\/([A-Za-z0-9_\-./]+)\s*}}/g;
+  let working = markdown;
+  working = working.replace(componentPattern, (_, componentName) => {
+    const partialKey = componentName.startsWith("components/")
+      ? componentName
+      : `components/${componentName}`;
+    const template = COMPONENT_PARTIALS[partialKey];
+    if (!template) return "";
+    const tokenId = `COMPONENT_SLOT_${placeholders.length}_${componentName.replace(/[^A-Za-z0-9_-]/g, "_")}_${crypto.randomBytes(4).toString("hex")}`;
+    const marker = `\n<!--${tokenId}-->\n`;
+    const html = Mustache.render(template, context, {
+      ...PARTIALS,
+      ...COMPONENT_PARTIALS,
+    });
+    placeholders.push({ marker, html });
+    return marker;
+  });
+  const renderedMarkdown = Mustache.render(working, context, {
+    ...PARTIALS,
+    ...COMPONENT_PARTIALS,
+  });
+  return { markdown: renderedMarkdown, placeholders };
+}
+
+function injectMarkdownComponents(html, placeholders) {
+  if (!html || !placeholders || !placeholders.length) {
+    return html;
+  }
+  let output = html;
+  placeholders.forEach(({ marker, html: snippet }) => {
+    output = output.split(marker).join(snippet);
+  });
+  return output;
+}
+
 function decorateHtml(html, templateName) {
   return html;
 }
@@ -876,8 +937,15 @@ async function buildContentPages() {
     const layoutName = data.layout ?? "default";
     const templateName = data.template ?? "page";
     const enrichedContent = await convertMermaidBlocks(content ?? "", filePath);
-    const markdownHtml = marked.parse(enrichedContent ?? "");
-    const contentHtml = renderContentTemplate(templateName, markdownHtml, data, lang);
+    const dictionary = getLanguageDictionary(lang);
+    const componentContext = buildContentComponentContext(data, lang, dictionary);
+    const { markdown: markdownSource, placeholders } = renderMarkdownComponents(
+      enrichedContent ?? "",
+      componentContext,
+    );
+    const markdownHtml = marked.parse(markdownSource ?? "");
+    const hydratedHtml = injectMarkdownComponents(markdownHtml ?? "", placeholders);
+    const contentHtml = renderContentTemplate(templateName, hydratedHtml, data, lang);
     const pageMeta = buildPageMeta(data, lang, slug);
     const layoutTemplate = getLayout(layoutName);
     const activeMenuKey = resolveActiveMenuKey(data);
@@ -887,7 +955,7 @@ async function buildContentPages() {
       site: buildSiteData(lang),
       menu: getMenuData(lang, activeMenuKey),
       footer: getFooterData(lang),
-      i18n: getLanguageDictionary(lang),
+      i18n: dictionary,
       page: pageMeta,
       content: contentHtml,
       scripts: {

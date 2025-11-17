@@ -28,6 +28,8 @@ status: "published"
 ---
 # Hakkımda
 
+![Fatih Tatoğlu](../assets/images/fatih_tatoglu.webp "Fatih Tatoğlu")
+
 Merhaba, ben **Fatih Tatoğlu**.
 
 Yaklaşık **20 yıldır teknoloji sektörünün içinde** olan bir mühendis, bir öğrenme meraklısı ve bir babayım.

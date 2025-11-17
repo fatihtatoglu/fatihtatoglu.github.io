@@ -42,6 +42,8 @@ status: published
 ---
 # About Me
 
+![Fatih Tatoğlu](../../assets/images/fatih_tatoglu.webp "Fatih Tatoğlu")
+
 Hello, I'm **Fatih Tatoğlu**.
 
 I'm an engineer who's been in the technology sector for about **20 years**, a lifelong learner, and a dad.

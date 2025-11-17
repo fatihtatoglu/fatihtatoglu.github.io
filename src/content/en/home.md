@@ -1,7 +1,7 @@
 ---
 id: djb3ulcx2f
 lang: en
-title: ""
+title: "Home"
 slug: ""
 type: "meta"
 menu: "Home"

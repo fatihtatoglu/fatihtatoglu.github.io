@@ -1,7 +1,7 @@
 ---
 id: djb3ulcx2f
 lang: tr
-title: ""
+title: "Anasayfa"
 slug: ""
 type: "meta"
 menu: "Anasayfa"

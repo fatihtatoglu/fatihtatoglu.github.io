@@ -20,7 +20,7 @@ readingTime: 3
 date: 2025-11-11
 updated: 2025-11-11
 pair: sorumluluk-reddi
-canonical: ~/en/disclaimer/
+canonical: ~/disclaimer/
 alternate: ~/sorumluluk-reddi/
 description: "Read the official disclaimer and terms of use for tatoglu.net, including liability limits, third-party responsibilities, and content usage."
 keywords:

@@ -19,7 +19,7 @@ readingTime: 7
 date: 2021-05-24
 updated: 2025-10-15
 pair: swot-analizi-nedir
-canonical: ~/en/what-is-swot-analysis/
+canonical: ~/what-is-swot-analysis/
 alternate: ~/swot-analizi-nedir/
 description: Discover what SWOT analysis is and learn how to identify strengths, weaknesses, opportunities, and threats to plan smarter business strategies.
 keywords:

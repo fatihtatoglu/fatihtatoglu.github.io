@@ -14,7 +14,7 @@ date: 2025-11-14
 updated: 2025-11-14
 pair: "about-me"                      
 canonical: "~/hakkimda/"
-alternate: "~/en/about-fatih-tatoglu/"
+alternate: "~/about-fatih-tatoglu/"
 description: "Fatih Tatoğlu'nun 20+ yıllık mühendislik serüveni, öğrenmeye olan merakı ve hayat yolculuğuna dair samimi bir hikaye."
 keywords: ["Fatih Tatoğlu", "hakkımda", "mühendis", "kişisel blog", "öğrenme", "babalık"]
 featured: false

@@ -19,7 +19,7 @@ date: 2025-11-11
 updated: 2025-11-11
 pair: cookie-policy
 canonical: ~/cerez-politikasi/
-alternate: ~/en/cookie-policy/
+alternate: ~/cookie-policy/
 description: tatoglu.net üzerinde kullanılan çerez türlerini, saklama sürelerini ve tercihlerinizi nasıl yönetebileceğinizi içeren güncel çerez politikası.
 keywords:
   - çerez politikası

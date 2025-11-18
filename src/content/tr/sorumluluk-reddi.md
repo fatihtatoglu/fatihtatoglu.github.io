@@ -21,7 +21,7 @@ date: 2025-11-11
 updated: 2025-11-11
 pair: disclaimer
 canonical: ~/sorumluluk-reddi/
-alternate: ~/en/disclaimer/
+alternate: ~/disclaimer/
 description: "Bu sayfa, tatoglu.net üzerindeki tüm içerikler için geçerli sorumluluk reddi, kullanım şartları, üçüncü taraf bağlantılar ve telif hakları bilgilerini açıklar."
 keywords:
   - sorumluluk reddi

@@ -20,7 +20,7 @@ readingTime: 18
 date: 2022-12-06
 updated: 2025-10-28
 pair: gelistirme-ortami-kurulumu
-canonical: ~/en/hyper-v-linux-mint-setup/
+canonical: ~/hyper-v-linux-mint-setup/
 alternate: ~/gelistirme-ortami-kurulumu/
 description: "Build a clean Linux Mint dev VM on Windows with Hyper-V: NAT networking, VHDX tuning, Docker, VS Code, Node/Go/.NET, plus SSH & UFW hardening."
 keywords:

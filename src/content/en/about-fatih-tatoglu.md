@@ -20,7 +20,7 @@ readingTime: 3
 date: 2025-11-14
 updated: 2025-11-14
 pair: hakkimda
-canonical: ~/en/about-fatih-tatoglu/
+canonical: ~/about-fatih-tatoglu/
 alternate: ~/hakkimda/
 description: Discover the story of engineer and lifelong learner Fatih Tatoğlu - exploring technology, AI, creativity, and personal growth across 20+ years.
 keywords:
@@ -42,7 +42,7 @@ status: published
 ---
 # About Me
 
-![Fatih Tatoğlu](../../assets/images/fatih_tatoglu.webp "Fatih Tatoğlu")
+![Fatih Tatoğlu](../assets/images/fatih_tatoglu.webp "Fatih Tatoğlu")
 
 Hello, I'm **Fatih Tatoğlu**.
 

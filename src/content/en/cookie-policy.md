@@ -20,7 +20,7 @@ readingTime: 2
 date: 2025-11-11
 updated: 2025-11-11
 pair: cerez-politikasi
-canonical: ~/en/cookie-policy/
+canonical: ~/cookie-policy/
 alternate: ~/cerez-politikasi/
 description: Learn which cookies tatoglu.net uses, why they’re stored, and how to manage your privacy preferences effectively.
 keywords:

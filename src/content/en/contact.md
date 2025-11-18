@@ -21,7 +21,7 @@ readingTime: 1
 date: 2025-11-14
 updated: 2025-11-14
 pair: iletisim
-canonical: ~/en/contact/
+canonical: ~/contact/
 alternate: ~/iletisim/
 description: Reach Fatih Tatoğlu for technical questions, feedback, collaboration requests, or simply to say hello. Get in touch easily through the form or email.
 keywords:

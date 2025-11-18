@@ -16,7 +16,7 @@ date: 2025-11-14
 updated: 2025-11-14
 pair: contact
 canonical: ~/iletisim/
-alternate: ~/en/contact/
+alternate: ~/contact/
 description: "Teknik sorularınız, geri bildirimleriniz veya sadece merhaba demek için Fatih Tatoğlu ile iletişime geçebileceğiniz sayfa."
 keywords:
   - iletişim

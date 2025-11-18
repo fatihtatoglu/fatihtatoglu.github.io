@@ -20,7 +20,7 @@ date: 2022-05-24
 updated: 2025-10-15
 pair: what-is-swot-analysis
 canonical: ~/swot-analizi-nedir/
-alternate: ~/en/what-is-swot-analysis/
+alternate: ~/what-is-swot-analysis/
 description: SWOT analiziyle güçlü ve zayıf yönlerinizi belirleyin, fırsatları ve tehditleri analiz ederek stratejik farkındalık kazanın. Basit ama etkili rehber.
 keywords:
   - SWOT analizi

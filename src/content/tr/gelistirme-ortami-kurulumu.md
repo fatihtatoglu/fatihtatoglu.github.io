@@ -21,7 +21,7 @@ date: 2022-12-06
 updated: 2025-10-28
 pair: hyper-v-linux-mint-setup
 canonical: ~/gelistirme-ortami-kurulumu/
-alternate: ~/en/hyper-v-linux-mint-setup/
+alternate: ~/hyper-v-linux-mint-setup/
 description: Windows 10/11’de Hyper-V kullanarak Linux Mint sanal geliştirme ortamı kurma, ağ ayarları, Docker/Node/Go/.NET ve VS Code kurulumu adım adım.
 keywords:
   - geliştirme ortamı

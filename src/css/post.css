@@ -10,6 +10,7 @@
     @apply space-y-5 rounded-3xl;
     background-color: var(--bg);
     background-color: color-mix(in srgb, var(--bg) 85%, transparent);
+    padding: var(--spacing);
   }
 
   .dark .post-header {
@@ -74,7 +75,6 @@
 
   .post-cover img {
     @apply w-full rounded-3xl object-cover border-0;
-    /* border-color: var(--brand-200); */
   }
 
   .post-cover figcaption {

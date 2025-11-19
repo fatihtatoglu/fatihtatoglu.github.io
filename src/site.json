@@ -8,7 +8,7 @@
     "clarityId": "CLARITY-ID"
   },
   "pagination": {
-    "pageSize": 2,
+    "pageSize": 5,
     "maxPages": 100
   },
   "languages": {

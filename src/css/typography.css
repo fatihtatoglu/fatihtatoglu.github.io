@@ -37,7 +37,7 @@
   }
 
   pre {
-    @apply w-full font-mono text-sm my-8 p-2 border rounded-2xl border-[var(--sage-900)] bg-[var(--bg)] leading-relaxed;
+    @apply w-full font-mono text-sm my-8 p-2 border rounded-2xl border-[var(--sage-900)] bg-[var(--bg-elev)] leading-relaxed;
     overflow-x: auto;
     overflow-y: hidden;
     display: block;

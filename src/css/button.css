@@ -381,4 +381,8 @@
     --btn-color-active: var(--brand-900);
     box-shadow: var(--btn-shadow-hover);
   }
+
+  a.btn {
+    text-decoration: none;
+  }
 }

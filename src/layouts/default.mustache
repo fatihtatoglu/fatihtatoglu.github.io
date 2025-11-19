@@ -6,19 +6,17 @@
   {{> partials/_head }}
 </head>
 
-<body class="min-h-dvh bg-[var(--bg)] font-sans text-base text-[var(--ink)] antialiased"
-  data-active-menu="{{menu.activeKey}}">
+<body data-active-menu="{{menu.activeKey}}">
   {{> partials/_noscript }}
   <a class="skip-link" href="#content" data-i18n="ui.skipToContent">
     {{i18n.ui.skipToContent}}
   </a>
 
-  <div class="app-shell mx-auto flex min-h-dvh w-full max-w-[480px] flex-col">
+  <div class="app-shell max-w-[480px]">
     <div class="header-sentinel" data-header-sentinel aria-hidden="true"></div>
     {{> partials/_header }}
 
-    <main id="content"
-      class="site-content flex-1">
+    <main id="content" class="site-content flex-1">
       {{{content}}}
     </main>
 

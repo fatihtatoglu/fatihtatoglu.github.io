@@ -1,12 +1,12 @@
 @layer components {
   section.category {
-    @apply rounded-2xl border border-[var(--border)] bg-[var(--bg-elev)] p-4;
+    @apply rounded-2xl border border-[var(--border)] bg-[var(--bg)] p-4;
 
     article.post-card {
-      @apply rounded-2xl border border-[var(--border)] bg-[var(--bg)] p-4 mb-4;
+      @apply rounded-2xl border border-[var(--border)] bg-[var(--bg-elev)] p-4 mb-4;
 
       header.post-header {
-        @apply bg-[var(--bg)];
+        @apply bg-[var(--bg-elev)];
 
         div.post-cover {
           /* @apply p-4; */

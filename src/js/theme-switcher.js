@@ -63,6 +63,7 @@ function nextThemeValue(current) {
   if (index === -1) {
     return THEME_STATES[0];
   }
+
   return THEME_STATES[(index + 1) % THEME_STATES.length];
 }
 
@@ -75,7 +76,7 @@ prefersDark?.addEventListener("change", () => {
 const SWITCHER_TEMPLATE = /* html */ `
   <button
     type="button"
-    class="btn btn--icon btn--md btn--thick btn--tone-neutral theme-button"
+    class="btn btn--md btn--tone-neutral btn--icon theme-button"
     data-theme-toggle
     data-theme-state="light"
     aria-label=""
@@ -140,7 +141,7 @@ function getThemeStateLabel(locale, state) {
 
 function warmLanguageDictionary(locale) {
   if (!locale) return Promise.resolve();
-  return loadDictionary(locale).catch(() => {});
+  return loadDictionary(locale).catch(() => { });
 }
 
 class ThemeSwitcher extends HTMLElement {
@@ -158,6 +159,7 @@ class ThemeSwitcher extends HTMLElement {
       this.render();
       this.rendered = true;
     }
+
     this.button = this.querySelector("[data-theme-toggle]");
     this.updateButton(themePreference);
     this.button?.addEventListener("click", this.handleClick);

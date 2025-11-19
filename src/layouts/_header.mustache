@@ -1,35 +1,37 @@
-<header class="site-header rounded-2xl border border-[var(--brand-900)] bg-[var(--bg-elev)] p-5 shadow-soft"
-  role="banner">
-  <div class="flex flex-col gap-6 relative">
+<header class="site-header" role="banner">
+  <div class="header-wrapper">
+
     <div class="header-bar">
-      <div>
-        <a href="{{{site.home}}}"
-          class="text-[11px] uppercase tracking-[0.3em] text-[var(--muted)] underline-offset-4 hover:underline"
-          data-i18n="site.owner">
+      <div class="header-bar-wrapper">
+        <a href="{{{site.home}}}" class="owner" data-i18n="site.owner">
           {{site.owner}}
         </a>
-        <p class="font-mono text-xl font-medium text-[var(--ink)]" data-i18n="site.role">
+        <p class="role" data-i18n="site.role">
           {{site.role}}
         </p>
       </div>
+      
       <div class="header-buttons">
         <theme-switcher></theme-switcher>
         <language-switcher></language-switcher>
-        <button type="button" class="btn btn--icon btn--md btn--thick btn--tone-neutral menu-button"
-          aria-label="{{i18n.ui.menuToggle}}" data-menu-button aria-controls="primary-menu" aria-expanded="false"
-          data-i18n-attrs="aria-label:ui.menuToggle">
-          <span class="icon-menu" aria-hidden="true"></span>
+        <button type="button" class="btn btn--md btn--tone-neutral btn--icon" aria-label="{{i18n.ui.menuToggle}}" data-menu-button aria-controls="primary-menu" aria-expanded="false" data-i18n-attrs="aria-label:ui.menuToggle">
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 32 32">
+              <line x1="2" y1="16" x2="30" y2="16" fill="none" stroke="currentColor" stroke-linecap="square" stroke-miterlimit="10" stroke-width="2" data-color="color-2"></line>
+              <line x1="2" y1="7" x2="30" y2="7" fill="none" stroke="currentColor" stroke-linecap="square" stroke-miterlimit="10" stroke-width="2"></line>
+              <line x1="2" y1="25" x2="30" y2="25" fill="none" stroke="currentColor" stroke-linecap="square" stroke-miterlimit="10" stroke-width="2"></line>
+            </svg>
         </button>
       </div>
     </div>
-    <div class="menu-drawer shadow-soft" data-menu-panel id="primary-menu" hidden>
+
+    <div class="menu-drawer" data-menu-panel id="primary-menu" hidden>
       <input id="site-search" type="search" placeholder="{{i18n.menu.searchPlaceholder}}" class="search-field"
         data-i18n="menu.searchPlaceholder" />
       <nav aria-label="{{i18n.menu.primary}}" data-i18n-attrs="aria-label:menu.primary">
         <ul class="menu-list">
           {{#menu.items}}
             <li>
-              <a class="btn btn--fill btn--thick btn--tone-neutral menu-link{{#isActive}} is-active{{/isActive}}"
+              <a class="btn btn--tone-neutral menu-link{{#isActive}} is-active{{/isActive}}"
                 href="{{{url}}}" data-menu-link="{{key}}" data-i18n="menu.{{key}}"{{#isActive}} aria-current="page"{{/isActive}}>
                 {{label}}
               </a>
@@ -38,9 +40,9 @@
         </ul>
       </nav>
     </div>
+
     <div class="menu-overlay" data-menu-overlay hidden></div>
-    <p class="font-mono text-sm text-center text-[var(--muted)]" data-i18n="site.quote">
-      {{site.quote}}
-    </p>
+
+    <p class="slogan" data-i18n="site.quote">{{site.quote}}</p>
   </div>
 </header>

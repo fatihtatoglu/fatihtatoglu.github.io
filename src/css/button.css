@@ -43,8 +43,8 @@
     text-transform: uppercase;
     line-height: 1.1;
     box-shadow: var(--btn-shadow);
-    transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease,
-      box-shadow 0.2s ease, transform 0.15s ease;
+    transition: border-color 0.2s ease, color 0.2s ease,
+      background-color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
     cursor: pointer;
     text-decoration: none;
   }
@@ -168,6 +168,11 @@
     height: 26px;
   }
 
+  .btn--icon.btn--xs svg {
+    width: 20px;
+    height: 20px;
+  }
+
   .btn--icon.btn--xs {
     --btn-icon-size: 34px;
   }
@@ -186,6 +191,15 @@
 
   .btn--icon.btn--xl {
     --btn-icon-size: 64px;
+  }
+
+  /* Icon placement helpers */
+  .btn--icon-left {
+    flex-direction: row;
+  }
+
+  .btn--icon-right {
+    flex-direction: unset;
   }
 
   /* Tone / color tokens */

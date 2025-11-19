@@ -1,0 +1,46 @@
+@layer base {
+  a {
+    @apply font-medium no-underline;
+    color: var(--brand-700);
+  }
+
+  a:hover {
+    @apply underline opacity-75;
+  }
+
+  p {
+    margin: 0 0 1.25rem;
+  }
+
+  h1 {
+    @apply font-mono text-3xl font-medium leading-tight;
+    color: var(--ink);
+    margin: 0 0 1.5rem;
+  }
+
+  h2 {
+    @apply font-mono text-2xl font-medium;
+    color: var(--ink);
+    margin: 2rem 0 1rem;
+  }
+
+  h3 {
+    @apply font-mono text-xl font-medium;
+    color: var(--ink);
+    margin: 1.75rem 0 0.75rem;
+  }
+
+  h4 {
+    @apply font-mono text-lg font-medium;
+    color: var(--ink);
+    margin: 1.5rem 0 0.5rem;
+  }
+
+  pre {
+    @apply w-full font-mono text-sm my-8 p-2 border rounded-2xl border-[var(--sage-900)] bg-[var(--bg)] leading-relaxed;
+    overflow-x: auto;
+    overflow-y: hidden;
+    display: block;
+  }
+}
+

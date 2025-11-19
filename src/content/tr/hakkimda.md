@@ -7,7 +7,7 @@ category: meta
 type: meta
 tags: ["hakkimda", "kisisel", "muhendislik", "ogrenme", "babalik"]
 menu: "Hakkımda"
-order: 3
+order: 4
 show: true
 readingTime: 3
 date: 2025-11-14

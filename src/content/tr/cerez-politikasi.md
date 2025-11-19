@@ -6,6 +6,7 @@ slug: cerez-politikasi
 category: policy
 type: document
 menu: "Çerez Politikası"
+listKey: policy
 tags:
   - gizlilik
   - veri_isleme

@@ -1,0 +1,311 @@
+<style>
+    .demo-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .demo-section {
+      border: 1px dashed var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      background: color-mix(in srgb, var(--bg) 92%, transparent);
+    }
+
+    .demo-section h2 {
+      font-family: var(--font-mono);
+      font-size: 0.9rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .demo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+    }
+
+    .demo-token {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      background: var(--bg);
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .demo-token code {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .demo-swatch {
+      width: 100%;
+      height: 64px;
+      border-radius: var(--radius-md);
+      border: 1px solid color-mix(in srgb, var(--border) 60%, transparent);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+    }
+
+    .demo-font-sample {
+      font-size: 1.1rem;
+      line-height: 1.3;
+    }
+
+    .demo-radius {
+      width: 72px;
+      height: 40px;
+      border: 1px solid var(--border);
+      background: var(--bg-elev);
+    }
+
+    .demo-spacing {
+      height: 12px;
+      border-radius: 999px;
+      background: var(--brand-300);
+    }
+
+    .demo-shell {
+      border: 1px solid var(--brand-200);
+      border-radius: var(--radius-lg);
+      padding: var(--shell-gutter);
+      display: inline-flex;
+      flex-direction: column;
+      gap: var(--shell-footer-gap);
+      background: var(--bg);
+    }
+</style>
+
+  <article class="page demo-wrapper" data-page-template="demo">
+    <header>
+      <h1 class="text-3xl font-semibold">Base Parametreleri Önizleme</h1>
+      <p class="text-[var(--muted)]">
+        Bu sayfa <code>base.css</code> içerisinde tanımlanan tasarım değişkenlerinin nasıl
+        göründüğünü hızlıca kontrol etmek için hazırlandı.
+      </p>
+    </header>
+
+    <section class="demo-section">
+      <h2>Brand Tonları</h2>
+      <div class="demo-grid">
+        <div class="demo-token"><div class="demo-swatch" style="background: var(--brand-50);"></div><code>--brand-50</code></div>
+        <div class="demo-token"><div class="demo-swatch" style="background: var(--brand-100);"></div><code>--brand-100</code></div>
+        <div class="demo-token"><div class="demo-swatch" style="background: var(--brand-200);"></div><code>--brand-200</code></div>
+        <div class="demo-token"><div class="demo-swatch" style="background: var(--brand-300);"></div><code>--brand-300</code></div>
+        <div class="demo-token"><div class="demo-swatch" style="background: var(--brand-400);"></div><code>--brand-400</code></div>
+        <div class="demo-token"><div class="demo-swatch" style="background: var(--brand-500);"></div><code>--brand-500</code></div>
+        <div class="demo-token"><div class="demo-swatch" style="background: var(--brand-600);"></div><code>--brand-600</code></div>
+        <div class="demo-token"><div class="demo-swatch" style="background: var(--brand-700);"></div><code>--brand-700</code></div>
+        <div class="demo-token"><div class="demo-swatch" style="background: var(--brand-800);"></div><code>--brand-800</code></div>
+        <div class="demo-token"><div class="demo-swatch" style="background: var(--brand-900);"></div><code>--brand-900</code></div>
+      </div>
+    </section>
+
+    <section class="demo-section">
+      <h2>Sage Tonları</h2>
+      <div class="demo-grid">
+        <div class="demo-token"><div class="demo-swatch" style="background: var(--sage-50);"></div><code>--sage-50</code></div>
+        <div class="demo-token"><div class="demo-swatch" style="background: var(--sage-100);"></div><code>--sage-100</code></div>
+        <div class="demo-token"><div class="demo-swatch" style="background: var(--sage-200);"></div><code>--sage-200</code></div>
+        <div class="demo-token"><div class="demo-swatch" style="background: var(--sage-300);"></div><code>--sage-300</code></div>
+        <div class="demo-token"><div class="demo-swatch" style="background: var(--sage-400);"></div><code>--sage-400</code></div>
+        <div class="demo-token"><div class="demo-swatch" style="background: var(--sage-500);"></div><code>--sage-500</code></div>
+        <div class="demo-token"><div class="demo-swatch" style="background: var(--sage-600);"></div><code>--sage-600</code></div>
+        <div class="demo-token"><div class="demo-swatch" style="background: var(--sage-700);"></div><code>--sage-700</code></div>
+        <div class="demo-token"><div class="demo-swatch" style="background: var(--sage-800);"></div><code>--sage-800</code></div>
+        <div class="demo-token"><div class="demo-swatch" style="background: var(--sage-900);"></div><code>--sage-900</code></div>
+      </div>
+    </section>
+
+    <section class="demo-section">
+      <h2>Nötrler</h2>
+      <div class="demo-grid">
+        <div class="demo-token"><div class="demo-swatch" style="background: var(--bg);"></div><code>--bg</code></div>
+        <div class="demo-token"><div class="demo-swatch" style="background: var(--bg-elev);"></div><code>--bg-elev</code></div>
+        <div class="demo-token"><div class="demo-swatch" style="background: var(--ink);"></div><code>--ink</code></div>
+        <div class="demo-token"><div class="demo-swatch" style="background: var(--ink-dim);"></div><code>--ink-dim</code></div>
+        <div class="demo-token"><div class="demo-swatch" style="background: var(--muted);"></div><code>--muted</code></div>
+        <div class="demo-token"><div class="demo-swatch" style="background: var(--border);"></div><code>--border</code></div>
+      </div>
+    </section>
+
+    <section class="demo-section">
+      <h2>Semantik Durumlar</h2>
+      <div class="demo-grid">
+        <div class="demo-token"><div class="demo-swatch" style="background: var(--ok);"></div><code>--ok</code></div>
+        <div class="demo-token"><div class="demo-swatch" style="background: var(--warn);"></div><code>--warn</code></div>
+        <div class="demo-token"><div class="demo-swatch" style="background: var(--err);"></div><code>--err</code></div>
+      </div>
+    </section>
+
+    <section class="demo-section">
+      <h2>Tipografi</h2>
+      <div class="demo-grid">
+        <div class="demo-token">
+          <p class="demo-font-sample" style="font-family: var(--font-body);">
+            The quick brown fox jumps over the lazy dog.
+          </p>
+          <code>--font-body</code>
+        </div>
+        <div class="demo-token">
+          <p class="demo-font-sample" style="font-family: var(--font-mono);">
+            const curiosity = discipline + iteration;
+          </p>
+          <code>--font-mono</code>
+        </div>
+        <div class="demo-token">
+          <header>
+            <h1 class="text-4xl font-semibold">Heading 1</h1>
+            <h2 class="text-3xl font-semibold mt-2">Heading 2</h2>
+            <h3 class="text-2xl font-semibold mt-1">Heading 3</h3>
+            <h4 class="text-xl font-semibold mt-1">Heading 4</h4>
+          </header>
+          <code>Başlık örnekleri</code>
+        </div>
+        <div class="demo-token">
+          <p>
+            Paragraf örneği. Base tipografi ayarlarıyla gövde metni nasıl görünür
+            hızlıca görebilmek için sade bir örnek.
+          </p>
+          <p>
+            İkinci paragraf satırı da satırlar arası boşluğu ve renk kullanımını göstermek için eklendi.
+          </p>
+          <code>Paragraf</code>
+        </div>
+        <div class="demo-token">
+          <blockquote class="border-l-4 pl-4 italic" style="border-color: var(--brand-300);">
+            "Disiplin ilhamı takip eder."
+          </blockquote>
+          <code>blockquote</code>
+        </div>
+      </div>
+    </section>
+
+    <section class="demo-section">
+      <h2>Code Bloğu</h2>
+      <div class="demo-token" style="border: none; padding: 0; background: transparent;">
+        <pre style="margin: 0; font-family: var(--font-mono); background: #111827; color: #e2e8f0; padding: 1rem; border-radius: var(--radius-lg); overflow: auto; max-height: 18rem;">
+<code>// base.css içindeki değişkenleri kullanarak
+const colors = {
+  brand: "var(--brand-500)",
+  sage: "var(--sage-500)",
+};
+
+function applyTheme() {
+  document.body.style.setProperty("--brand-active", colors.brand);
+}
+</code>
+        </pre>
+      </div>
+    </section>
+
+    <section class="demo-section">
+      <h2>Radius & Spacing</h2>
+      <div class="demo-grid">
+        <div class="demo-token">
+          <div class="demo-radius" style="border-radius: var(--radius-md);"></div>
+          <code>--radius-md</code>
+        </div>
+        <div class="demo-token">
+          <div class="demo-radius" style="border-radius: var(--radius-lg);"></div>
+          <code>--radius-lg</code>
+        </div>
+        <div class="demo-token">
+          <div class="demo-spacing" style="width: var(--spacing);"></div>
+          <code>--spacing</code>
+        </div>
+        <div class="demo-token">
+          <div style="width: 100%; border: 1px solid var(--brand-200); border-radius: var(--radius-md); padding: var(--shell-gutter);">
+            Shell gutter padding örneği
+          </div>
+          <code>--shell-gutter</code>
+        </div>
+        <div class="demo-token">
+          <div style="width: 100%; border-radius: var(--radius-md); background: color-mix(in srgb, var(--brand-400) 20%, transparent); height: var(--shell-footer-gap);"></div>
+          <code>--shell-footer-gap</code>
+        </div>
+      </div>
+    </section>
+
+    <section class="demo-section">
+      <h2>Shell Parametreleri</h2>
+      <div class="demo-token demo-shell">
+        <div style="background: var(--brand-50); padding: var(--shell-gutter); border-radius: var(--radius-md);">
+          Shell Gutter alanı örneği
+        </div>
+        <div style="height: 2px; width: 100%; background: color-mix(in srgb, var(--brand-500) 40%, transparent);"></div>
+        <div style="padding-bottom: var(--shell-footer-gap); text-align: right;">
+          <code>--shell-footer-gap</code>
+        </div>
+      </div>
+    </section>
+
+    <section class="demo-section">
+      <h2>Buton Sistemleri</h2>
+      <div class="demo-grid">
+        <div class="demo-token">
+          <button class="btn btn--sm btn--tone-neutral">Neutral</button>
+          <code>.btn.btn--tone-neutral</code>
+        </div>
+        <div class="demo-token">
+          <button class="btn btn--sm btn--tone-brand">Brand</button>
+          <code>.btn.btn--tone-brand</code>
+        </div>
+        <div class="demo-token">
+          <button class="btn btn--sm btn--tone-sage">Sage</button>
+          <code>.btn.btn--tone-sage</code>
+        </div>
+        <div class="demo-token">
+          <button class="btn btn--sm btn--tone-neutral btn--icon" aria-label="icon button">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 4v16m8-8H4" stroke="currentColor" stroke-width="2" fill="none" />
+            </svg>
+          </button>
+          <code>.btn.btn--icon</code>
+        </div>
+        <div class="demo-token">
+          <div class="flex flex-wrap gap-2">
+            <button class="btn btn--xs">XS</button>
+            <button class="btn btn--sm">SM</button>
+            <button class="btn btn--md">MD</button>
+            <button class="btn btn--lg">LG</button>
+          </div>
+          <code>btn--xs/sm/md/lg boyutları</code>
+        </div>
+        <div class="demo-token">
+          <button class="btn btn--sm btn--tone-brand btn--icon-left">
+            <svg viewBox="0 0 20 20" aria-hidden="true">
+              <path
+                d="M7 4l6 6-6 6"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <span>İkon solda</span>
+          </button>
+          <button class="btn btn--sm btn--tone-brand btn--icon-right">
+            <span>İkon sağda</span>
+            <svg viewBox="0 0 20 20" aria-hidden="true">
+              <path
+                d="M7 4l6 6-6 6"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+
+  </article>

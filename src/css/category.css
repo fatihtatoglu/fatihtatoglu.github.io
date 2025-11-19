@@ -1,0 +1,57 @@
+@layer components {
+  section.category {
+    @apply rounded-2xl border border-[var(--border)] bg-[var(--bg-elev)] p-4;
+
+    article.post-card {
+      @apply rounded-2xl border border-[var(--border)] bg-[var(--bg)] p-4 mb-4;
+
+      header.post-header {
+        @apply bg-[var(--bg)];
+
+        div.post-cover {
+          /* @apply p-4; */
+
+          figure.post-cover img {
+            @apply rounded-2xl;
+          }
+
+          figure.post-cover figcaption {
+            @apply text-xs text-center p-2;
+            font-family: var(--font-body);
+          }
+        }
+
+        div.post-meta {
+          @apply p-4;
+
+          dl.post-meta__grid {
+            @apply flex gap-4 justify-around;
+
+            div.post-meta__item {
+              @apply flex flex-col gap-2;
+
+              dt {
+                @apply uppercase text-center font-mono text-sm;
+                color: var(--muted);
+              }
+
+              dd {
+                @apply text-center text-sm font-semibold;
+              }
+            }
+          }
+        }
+      }
+
+      div.post-body {
+        font-family: var(--font-body);
+        color: var(--ink);
+        line-height: 1.7;
+      }
+    }
+
+    article.post-card:last-child {
+      margin-bottom: 0px;
+    }
+  }
+}

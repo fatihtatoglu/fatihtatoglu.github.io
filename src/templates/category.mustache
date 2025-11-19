@@ -1,0 +1,64 @@
+<section class="category" data-page-template="category">
+  {{#listing.hasItems}}
+    {{#listing.items}}
+    <article id="post-{{id}}" class="post-card" data-page-template="post" data-id="{{id}}">
+    <!-- Post Header -->
+    <header class="post-header">
+
+      {{#cover}}
+      <div class="post-cover">
+        <figure class="post-cover">
+          <img src="{{.}}" alt="{{coverAlt}}">
+          {{#coverCaption}}
+          <figcaption>{{.}}</figcaption>
+          {{/coverCaption}}
+        </figure>
+      </div>
+      {{/cover}}
+
+      <div class="post-meta">
+        <dl class="post-meta__grid">
+          {{#dateDisplay}}
+          <div class="post-meta__item">
+            <dt>{{i18n.category.meta.publishedLabel}}</dt>
+            <dd>{{.}}</dd>
+          </div>
+          {{/dateDisplay}}
+
+          {{#readingTime}}
+          <div class="post-meta__item">
+            <dt>{{i18n.category.meta.readingTimeLabel}}</dt>
+            <dd>{{.}} {{i18n.category.readingTimeSuffix}}</dd>
+          </div>
+          {{/readingTime}}
+        </dl>
+      </div>
+    </header>
+    <!-- Post Header -->
+
+    <!-- Post Content -->
+    <div class="post-body">
+      <h2 class="text-lg">
+        <a href="{{{canonical}}}">{{title}}</a>
+      </h2>
+
+      {{#description}}
+      <p class="text-sm">
+        {{.}}
+      </p>
+      {{/description}}
+    </div>
+    <!-- Post Content -->
+    </article>
+    {{/listing.items}}
+  {{/listing.hasItems}}
+
+  {{^listing.hasItems}}
+    <p class="text-sm text-center text-[var(--muted)] italic">
+      {{#listing.emptyMessage}}{{.}}{{/listing.emptyMessage}}
+      {{^listing.emptyMessage}}
+        {{i18n.category.emptyFallback}}
+      {{/listing.emptyMessage}}
+    </p>
+  {{/listing.hasItems}}
+</section>

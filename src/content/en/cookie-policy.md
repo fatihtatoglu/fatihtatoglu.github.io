@@ -6,6 +6,7 @@ slug: cookie-policy
 category: policy
 type: document
 menu: "Cookie Policy"
+listKey: policy
 tags:
   - privacy
   - cookie_policy

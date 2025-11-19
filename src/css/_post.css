@@ -23,9 +23,9 @@
   }
 
   .post-meta__grid {
-    display: grid;
-    gap: 0.85rem;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
   }
 
   .post-meta__item {
@@ -272,8 +272,7 @@
   .post-body a:focus-visible {
     text-decoration: underline;
   }
-}
-@layer components {
+
   article.post {
     @apply rounded-3xl border p-6 space-y-6 leading-relaxed;
     border-color: var(--brand-900);
@@ -297,9 +296,9 @@
   }
 
   .post-meta__grid {
-    display: grid;
-    gap: 0.85rem;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
   }
 
   .post-meta__item {

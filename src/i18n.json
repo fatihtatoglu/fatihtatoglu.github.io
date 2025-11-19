@@ -101,7 +101,7 @@
       "en": "Technical Notes"
     },
     "life": {
-      "tr": "Hayat & Öğrenme",
+      "tr": "Yaşam & Öğrenme",
       "en": "Life & Learning"
     },
     "about": {
@@ -180,6 +180,26 @@
       "p6": {
         "tr": "Son olarak, deneyimleri paylaşmak kadar onları arşivlemek de önemli. Bu uzun form not, gelecekteki projelere rehberlik edecek bir bellek notu işlevi görüyor.",
         "en": "Documenting experiences matters as much as sharing them. This long-form note becomes a memory marker that guides future projects."
+      }
+    }
+  },
+  "category": {
+    "readingTimeSuffix": {
+      "tr": "dk okuma",
+      "en": "min read"
+    },
+    "emptyFallback": {
+      "tr": "Bu kategori için yakında içerik paylaşacağım.",
+      "en": "New essays will be added soon. Stay tuned."
+    },
+    "meta": {
+      "publishedLabel": {
+        "tr": "Yayın Tarihi",
+        "en": "Published"
+      },
+      "readingTimeLabel": {
+        "tr": "Okuma Süresi",
+        "en": "Reading Time"
       }
     }
   },

@@ -10,7 +10,9 @@ const DEFAULT_LANGUAGE =
     ? root.dataset.defaultLanguage
     : SUPPORTED_LANGUAGES[0]) ?? "tr";
 
+const EMBEDDED_DICTIONARIES = readEmbeddedDictionaries();
 const translationCache = new Map();
+primeTranslationCache();
 export const LANGUAGE_CHANGE_EVENT = "tat-language-change";
 
 export { SUPPORTED_LANGUAGES, DEFAULT_LANGUAGE };
@@ -23,22 +25,12 @@ export function normalizeLanguage(value) {
 }
 
 export function getDictionarySync(lang) {
-  if (!lang) return translationCache.get(DEFAULT_LANGUAGE);
-  return translationCache.get(normalizeLanguage(lang));
+  if (!lang) return ensureDictionary(DEFAULT_LANGUAGE);
+  return ensureDictionary(lang);
 }
 
 export async function loadDictionary(lang) {
-  const normalized = normalizeLanguage(lang);
-  if (translationCache.has(normalized)) {
-    return translationCache.get(normalized);
-  }
-  const response = await fetch(`/lang/${normalized}.json`);
-  if (!response.ok) {
-    throw new Error(`Çeviri dosyası yüklenemedi: ${normalized}`);
-  }
-  const data = await response.json();
-  translationCache.set(normalized, data);
-  return data;
+  return ensureDictionary(lang);
 }
 
 export function getDictionaryValue(dict, path) {
@@ -75,4 +67,40 @@ export function setRootLanguage(lang) {
 
 export function getRootElement() {
   return root;
+}
+
+function readEmbeddedDictionaries() {
+  if (typeof document === "undefined") return {};
+  const script = document.querySelector("[data-i18n-dictionaries]");
+  if (!script) return {};
+  const raw = script.textContent ?? "";
+  if (!raw) return {};
+  try {
+    return JSON.parse(raw);
+  } catch (error) {
+    console.error("[i18n] Failed to parse embedded dictionaries:", error);
+    return {};
+  }
+}
+
+function primeTranslationCache() {
+  Object.entries(EMBEDDED_DICTIONARIES).forEach(([lang, dict]) => {
+    translationCache.set(lang, dict);
+  });
+  if (!translationCache.has(DEFAULT_LANGUAGE)) {
+    translationCache.set(DEFAULT_LANGUAGE, {});
+  }
+}
+
+function ensureDictionary(lang) {
+  const normalized = normalizeLanguage(lang);
+  if (!translationCache.has(normalized)) {
+    const fallback = EMBEDDED_DICTIONARIES[normalized];
+    if (fallback) {
+      translationCache.set(normalized, fallback);
+    } else {
+      translationCache.set(normalized, translationCache.get(DEFAULT_LANGUAGE) ?? {});
+    }
+  }
+  return translationCache.get(normalized);
 }

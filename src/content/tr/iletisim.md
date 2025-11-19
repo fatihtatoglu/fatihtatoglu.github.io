@@ -9,7 +9,7 @@ tags:
   - iletisim
   - contact
 menu: "İletişim"
-order: 4
+order: 5
 show: true
 readingTime: 1
 date: 2025-11-14

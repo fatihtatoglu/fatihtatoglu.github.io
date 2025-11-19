@@ -16,7 +16,8 @@ description: ""
 keywords: ["static site generator", "tailwind", "markdown parser"]
 featured: true
 draft: false
-template: "demo"
+template: "home"
+listKey: "home"
 layout: "default"
 status: "published"
 ---

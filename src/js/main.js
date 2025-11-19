@@ -56,6 +56,100 @@ let contactFormPending = false;
 const contactSubmitDefaultLabel = contactSubmitButton?.textContent.trim() ?? "Gönder";
 const contactSubmitLoadingLabel = contactSubmitButton?.dataset.contactSubmitLoading ?? "Gönderiliyor...";
 
+// Pagination config (from site metadata)
+const DEFAULT_PAGE_SIZE =
+  Number.parseInt(document.documentElement.dataset.paginationPageSize ?? "", 10) || 5;
+const MAX_PAGES =
+  Number.parseInt(document.documentElement.dataset.paginationMaxPages ?? "", 10) || 50;
+
+function getCurrentPage() {
+  try {
+    const url = new URL(window.location.href);
+    const value = url.searchParams.get("page");
+    const parsed = value ? Number.parseInt(value, 10) : 1;
+    if (!Number.isFinite(parsed) || parsed < 1) return 1;
+    if (parsed > MAX_PAGES) return MAX_PAGES;
+    return parsed;
+  } catch {
+    return 1;
+  }
+}
+
+function applyPagination() {
+  const listRoot = document.querySelector("[data-paginated-list]");
+  if (!listRoot) return;
+  const items = Array.from(listRoot.querySelectorAll("[data-paginated-item]"));
+  if (!items.length) return;
+
+  const pageSize = DEFAULT_PAGE_SIZE > 0 ? DEFAULT_PAGE_SIZE : 5;
+  const totalPages = Math.max(1, Math.min(MAX_PAGES, Math.ceil(items.length / pageSize)));
+  const currentPage = Math.min(getCurrentPage(), totalPages);
+  const startIndex = (currentPage - 1) * pageSize;
+  const endIndex = startIndex + pageSize;
+
+  items.forEach((item, index) => {
+    const visible = index >= startIndex && index < endIndex;
+    item.hidden = !visible;
+  });
+
+   listRoot.dataset.currentPage = String(currentPage);
+   listRoot.dataset.totalPages = String(totalPages);
+
+   updatePaginationControls(currentPage, totalPages);
+}
+
+function updatePaginationControls(currentPage, totalPages) {
+  const prevButton = document.querySelector("[data-page-prev]");
+  const nextButton = document.querySelector("[data-page-next]");
+  if (!prevButton && !nextButton) return;
+
+  const buildPageUrl = (page) => {
+    try {
+      const url = new URL(window.location.href);
+      if (page <= 1) {
+        url.searchParams.delete("page");
+      } else {
+        url.searchParams.set("page", String(page));
+      }
+      return url.toString();
+    } catch {
+      return window.location.href;
+    }
+  };
+
+  const current = Number(currentPage) || 1;
+  const total = Number(totalPages) || 1;
+
+  if (prevButton) {
+    const hasPrev = current > 1;
+    prevButton.disabled = !hasPrev;
+    prevButton.setAttribute("aria-disabled", hasPrev ? "false" : "true");
+    prevButton.dataset.targetPage = hasPrev ? String(current - 1) : "";
+  }
+
+  if (nextButton) {
+    const hasNext = current < total;
+    nextButton.disabled = !hasNext;
+    nextButton.setAttribute("aria-disabled", hasNext ? "false" : "true");
+    nextButton.dataset.targetPage = hasNext ? String(current + 1) : "";
+  }
+
+  const handleClick = (event) => {
+    const target = event.currentTarget;
+    const page = Number.parseInt(target.dataset.targetPage ?? "", 10);
+    if (!Number.isFinite(page) || page < 1 || page > total) return;
+    const href = buildPageUrl(page);
+    window.location.href = href;
+  };
+
+  if (prevButton) {
+    prevButton.addEventListener("click", handleClick);
+  }
+  if (nextButton) {
+    nextButton.addEventListener("click", handleClick);
+  }
+}
+
 function ensureSessionCookie() {
   if (readCookie(SESSION_COOKIE)) return;
   const sessionSeed =
@@ -358,3 +452,6 @@ if (contactForm) {
 }
 
 setMenuState(false, true);
+
+// Apply pagination for home and category listings based on ?page=
+applyPagination();

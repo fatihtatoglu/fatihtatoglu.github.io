@@ -5,6 +5,10 @@
     header.post-header {
       @apply rounded-2xl border border-[var(--border)] mb-6 bg-[var(--bg-elev)];
 
+      div.post-back {
+        @apply bg-[var(--bg)] w-full p-4 rounded-t-2xl;
+      }
+
       div.post-cover {
         @apply p-4;
 

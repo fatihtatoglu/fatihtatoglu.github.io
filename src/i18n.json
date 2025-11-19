@@ -11,6 +11,26 @@
     "close": {
       "tr": "Kapat",
       "en": "Close"
+    },
+    "backButton": {
+      "label": {
+        "tr": "Geri Dön",
+        "en": "Back"
+      },
+      "aria": {
+        "tr": "Bir önceki sayfaya dön",
+        "en": "Go back to previous page"
+      }
+    },
+    "pagination": {
+      "previous": {
+        "tr": "Önceki",
+        "en": "Previous"
+      },
+      "next": {
+        "tr": "Sonraki",
+        "en": "Next"
+      }
     }
   },
   "site": {

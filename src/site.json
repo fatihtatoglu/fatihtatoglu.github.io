@@ -7,6 +7,10 @@
     "gaId": "G-XXXXXXXXXX",
     "clarityId": "CLARITY-ID"
   },
+  "pagination": {
+    "pageSize": 2,
+    "maxPages": 100
+  },
   "languages": {
     "default": "tr",
     "supported": ["tr", "en"]

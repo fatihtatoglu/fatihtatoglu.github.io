@@ -47,6 +47,7 @@ const FALLBACK_TITLES = { tr: "-", en: "-", };
 const FALLBACK_DESCRIPTIONS = { tr: "-", en: "-", };
 const FALLBACK_OWNER = "-";
 const FALLBACK_TAGLINES = { tr: "-", en: "-", };
+const PAGINATION_SETTINGS = SITE_CONFIG.pagination ?? {};
 const LANGUAGE_SETTINGS = SITE_CONFIG.languages ?? {};
 const SUPPORTED_LANGUAGES =
   Array.isArray(LANGUAGE_SETTINGS.supported) && LANGUAGE_SETTINGS.supported.length
@@ -538,6 +539,14 @@ function buildSiteData(lang) {
     },
     languagesCsv: SUPPORTED_LANGUAGES.join(","),
     defaultLanguage: DEFAULT_LANGUAGE,
+    pagination: {
+      pageSize: Number.isFinite(PAGINATION_SETTINGS.pageSize)
+        ? PAGINATION_SETTINGS.pageSize
+        : 5,
+      maxPages: Number.isFinite(PAGINATION_SETTINGS.maxPages)
+        ? PAGINATION_SETTINGS.maxPages
+        : 50,
+    },
   };
 }
 
@@ -877,6 +886,14 @@ function buildCategoryTagCollections() {
     const slug = data.slug ?? inferSlugFromPath(filePath);
     const summary = buildCollectionEntrySummary(data, lang, slug);
     const langStore = pagesByLang[lang] ?? (pagesByLang[lang] = {});
+
+    // Home collection: featured posts across the site
+    const isPostTemplate = typeof data.template === "string" && data.template.trim() === "post";
+    const isFeatured = parseBoolean(data.featured);
+    if (isPostTemplate && isFeatured) {
+      addCollectionEntry(langStore, "home", summary, "home");
+    }
+
     const categoryKey = normalizeCollectionKey(data.category);
     if (categoryKey) {
       addCollectionEntry(langStore, categoryKey, summary, "category");

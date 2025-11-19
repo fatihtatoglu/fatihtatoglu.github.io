@@ -62,7 +62,3 @@ I do my best to read every message and generally try to get back to you within a
 Your messages will not be shared with third parties; they are used only to respond, maintain contact when necessary, and improve content.
 
 I won't automatically add you to any newsletter or list.
-
-## Contact Form
-
-{{> components/contact-form }}

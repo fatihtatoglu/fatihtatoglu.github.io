@@ -3,6 +3,19 @@
   <!-- Post Header -->
   <header class="post-header">
 
+    <div class="post-back">
+      <button
+        class="btn btn--xs btn--tone-neutral btn--icon-left"
+        type="button"
+        onclick="window.history.back()"
+        aria-label="{{i18n.ui.backButton.aria}}">
+        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 20 20">
+          <path d="M13 4l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>{{i18n.ui.backButton.label}}</span>
+      </button>
+    </div>
+
     {{#front.cover}}
     <div class="post-cover">
       <figure class="post-cover">
@@ -125,9 +138,6 @@
         </svg>
         <span>{{.}}</span>
       </button>
-
-
-
       {{/front.tags}}
     </div>
     {{/front.hasTags}}

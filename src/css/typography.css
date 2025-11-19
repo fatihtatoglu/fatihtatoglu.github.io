@@ -42,5 +42,13 @@
     overflow-y: hidden;
     display: block;
   }
-}
 
+  code {
+    @apply bg-[var(--sage-200)] font-mono text-sm;
+  }
+
+  pre > code {
+    @apply font-mono text-sm;
+    background-color: unset;
+  }
+}

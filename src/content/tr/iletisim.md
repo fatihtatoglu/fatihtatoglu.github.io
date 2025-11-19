@@ -55,7 +55,3 @@ Her mesajı elimden geldiğince okuyorum ve genelde birkaç gün içinde geri d�
 Gönderdiğiniz mesajlar üçüncü taraflarla paylaşılmaz; sadece yanıt vermek, gerektiğinde sizinle iletişimde kalmak ve içerikleri geliştirmek için kullanılır.
 
 Herhangi bir bültene veya listeye sizi otomatik olarak eklemem.
-
-## İletişim Formu
-
-{{> components/contact-form }}

@@ -12,7 +12,7 @@ updated: 2025-11-14
 pair: ""
 canonical: /
 alternate: /en/
-description: ""
+description: "Fatih Tatoğlu'nun kişisel blogu. Disiplinli, sade ve retro bir teknik atmosferde üretkenlik notları."
 keywords: ["static site generator", "tailwind", "markdown parser"]
 featured: true
 draft: false

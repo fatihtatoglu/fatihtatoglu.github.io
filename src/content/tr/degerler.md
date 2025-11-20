@@ -19,7 +19,7 @@ date: 2025-10-16
 updated: 2025-10-16
 pair: core-values
 canonical: ~/degerler/
-alternate: ~/core-values/
+alternate: ~/en/core-values/
 description: Değerlerin ne olduğunu, nasıl belirleneceğini ve farkındalıkla nasıl yaşanacağını öğren. İkili kıyaslama yöntemiyle çekirdek değerlerini keşfet.
 keywords:
   - değerler

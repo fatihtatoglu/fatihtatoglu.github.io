@@ -23,7 +23,7 @@
       }
 
       div.post-meta {
-        @apply p-4;
+        @apply py-4 mx-4 rounded-2xl bg-[var(--bg)];
 
         dl.post-meta__grid {
           @apply flex gap-4 justify-around;

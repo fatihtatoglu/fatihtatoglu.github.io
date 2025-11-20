@@ -6,21 +6,11 @@ slug: disclaimer
 category: policy
 type: document
 menu: "Disclaimer"
-tags:
-  - policy
-  - legal
-  - disclaimer
-  - terms_of_use
-  - privacy
-  - liability
-  - site_usage
-  - compliance
-  - data-protection
 readingTime: 3
 date: 2025-11-11
 updated: 2025-11-11
 pair: sorumluluk-reddi
-canonical: ~/disclaimer/
+canonical: ~/en/disclaimer/
 alternate: ~/sorumluluk-reddi/
 description: "Read the official disclaimer and terms of use for tatoglu.net, including liability limits, third-party responsibilities, and content usage."
 keywords:

@@ -20,7 +20,7 @@ readingTime: 15
 date: 2025-11-07
 updated: 2025-11-07
 pair: aws-lambda-google-sheets-baglantisi
-canonical: ~/aws-lambda-google-sheets-integration/
+canonical: ~/en/aws-lambda-google-sheets-integration/
 alternate: ~/aws-lambda-google-sheets-baglantisi/
 description: "Push AWS data to Google Sheets every 6 hours using Workload Identity Federation-no GCP keys, least-privilege IAM, and a simple serverless setup."
 keywords:

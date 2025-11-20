@@ -6,22 +6,11 @@ slug: cookie-policy
 category: policy
 type: document
 menu: "Cookie Policy"
-listKey: policy
-tags:
-  - privacy
-  - cookie_policy
-  - data_processing
-  - analytics
-  - user_preferences
-  - security
-  - compliance
-  - web_tracking
-  - cookies
 readingTime: 2
 date: 2025-11-11
 updated: 2025-11-11
 pair: cerez-politikasi
-canonical: ~/cookie-policy/
+canonical: ~/en/cookie-policy/
 alternate: ~/cerez-politikasi/
 description: Learn which cookies tatoglu.net uses, why they’re stored, and how to manage your privacy preferences effectively.
 keywords:

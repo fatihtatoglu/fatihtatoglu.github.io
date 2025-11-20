@@ -1,7 +1,7 @@
 ---
 id: ikewf66woi
 lang: en
-title: "Technical Notes"
+title: "Technical Notes | Category"
 slug: technical-notes
 type: category
 menu: "Teknik Notlar"
@@ -11,14 +11,14 @@ readingTime: 1
 date: 2025-11-14
 updated: 2025-11-14
 pair: teknik-notlar
-canonical: ~/technical-notes/
+canonical: ~/en/technical-notes/
 alternate: ~/teknik-notlar/
 description: "Deep-dive articles, debugging stories, and architecture notes collected in one feed."
 keywords:
   - 
 featured: false
 draft: false
-template: category
+template: collection
 layout: default
 status: published
 ---

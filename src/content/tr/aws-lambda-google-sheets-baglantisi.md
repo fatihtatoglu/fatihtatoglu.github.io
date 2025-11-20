@@ -21,7 +21,7 @@ date: 2025-11-07
 updated: 2025-11-07
 pair: aws-lambda-google-sheets-integration
 canonical: ~/aws-lambda-google-sheets-baglantisi/
-alternate: ~/aws-lambda-google-sheets-integration/
+alternate: ~/en/aws-lambda-google-sheets-integration/
 description: AWS Lambda'dan Workload Identity Federation ile Google Sheets'e 6 saatte bir güvenli, anahtarsız ve düşük maliyetli veri aktarımı kurulum rehberi.
 keywords:
   - AWS Lambda

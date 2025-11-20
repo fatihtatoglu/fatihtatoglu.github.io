@@ -1,18 +1,60 @@
 {
   "author": "Fatih Tatoğlu",
+  "email": "fatih@tatoglu.net",
   "url": "http://localhost:3000",
   "themeColor": "#5a8df0",
   "analytics": {
+    "enabled": false,
     "gtmId": "GTM-XXXXXXX",
     "gaId": "G-XXXXXXXXXX",
     "clarityId": "CLARITY-ID"
   },
+  "seo": {
+    "defaultImage": "~/assets/images/fatih_tatoglu_cover.webp",
+    "includeCollections": true,
+    "includePaging": false
+  },
+  "robots": {
+    "allow": [
+      "/"
+    ],
+    "disallow": [
+      "/drafts/"
+    ]
+  },
+  "build": {
+    "minify": true
+  },
   "pagination": {
-    "pageSize": 5,
-    "maxPages": 100
+    "pageSize": 2,
+    "segment": {
+      "tr": "sayfa",
+      "en": "page"
+    }
   },
   "languages": {
     "default": "tr",
-    "supported": ["tr", "en"]
+    "supported": [
+      "tr",
+      "en"
+    ]
+  },
+  "collections": {
+    "tags": {
+      "template": "collection",
+      "types": [
+        "tag"
+      ],
+      "slugPattern": {
+        "tr": "etiket/{{key}}",
+        "en": "tag/{{key}}"
+      },
+      "pairs": {
+        "docker": {
+          "tr": "docker",
+          "en": "docker"
+        }
+      }
+    }
   }
 }

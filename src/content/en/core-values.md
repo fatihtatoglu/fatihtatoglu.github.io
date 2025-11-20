@@ -20,7 +20,7 @@ readingTime: 8
 date: 2025-10-16
 updated: 2025-10-16
 pair: degerler
-canonical: ~/core-values/
+canonical: ~/en/core-values/
 alternate: ~/degerler/
 description: Learn what core values are, how to identify your personal values using the pairwise method, and how they shape your decisions and self-awareness.
 keywords:

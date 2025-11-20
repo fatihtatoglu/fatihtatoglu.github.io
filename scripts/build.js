@@ -18,6 +18,7 @@ import { parseHTML } from "linkedom";
 import matter from "gray-matter";
 import Mustache from "mustache";
 import { marked } from "marked";
+import { minify as minifyHtml } from "html-minifier-terser";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -38,9 +39,17 @@ const SITE_CONFIG = loadSiteConfig();
 
 const versionToken = crypto.randomBytes(6).toString("hex");
 const BASE_URL = SITE_CONFIG.url ?? "https://tatoglu.net";
+const SEO_CONFIG = SITE_CONFIG.seo ?? {};
+const SEO_INCLUDE_COLLECTIONS = parseBoolean(SEO_CONFIG.includeCollections);
+const SEO_INCLUDE_PAGING = parseBoolean(SEO_CONFIG.includePaging);
+const DEFAULT_IMAGE =
+  typeof SEO_CONFIG.defaultImage === "string" && SEO_CONFIG.defaultImage.trim().length > 0
+    ? SEO_CONFIG.defaultImage.trim()
+    : "~/assets/images/fatih_tatoglu_cover.webp";
 const GTM_ID = SITE_CONFIG.analytics?.gtmId ?? "GTM-XXXXXXX";
 const GA_ID = SITE_CONFIG.analytics?.gaId ?? "G-XXXXXXXXXX";
 const CLARITY_ID = SITE_CONFIG.analytics?.clarityId ?? "CLARITY-ID";
+const ANALYTICS_ENABLED = SITE_CONFIG.analytics?.enabled !== false;
 const FALLBACK_ROLES = { tr: "-", en: "-", };
 const FALLBACK_QUOTES = { tr: "-", en: "-", };
 const FALLBACK_TITLES = { tr: "-", en: "-", };
@@ -48,6 +57,9 @@ const FALLBACK_DESCRIPTIONS = { tr: "-", en: "-", };
 const FALLBACK_OWNER = "-";
 const FALLBACK_TAGLINES = { tr: "-", en: "-", };
 const PAGINATION_SETTINGS = SITE_CONFIG.pagination ?? {};
+const BUILD_SETTINGS = SITE_CONFIG.build ?? {};
+const MINIFY_OUTPUT = BUILD_SETTINGS.minify === true;
+const COLLECTION_CONFIG = SITE_CONFIG.collections ?? {};
 const LANGUAGE_SETTINGS = SITE_CONFIG.languages ?? {};
 const SUPPORTED_LANGUAGES =
   Array.isArray(LANGUAGE_SETTINGS.supported) && LANGUAGE_SETTINGS.supported.length
@@ -79,34 +91,6 @@ const LANGUAGE_BUILD_CONFIG = {
 
 const MENU_ITEMS = buildMenuItemsFromContent();
 const PAGES = buildCategoryTagCollections();
-
-const FOOTER_TAGS = {
-  tr: [
-    { key: "frontend", label: "Frontend", url: "/etiket/frontend" },
-    { key: "javascript", label: "JavaScript", url: "/etiket/javascript" },
-    { key: "css", label: "CSS", url: "/etiket/css" },
-    { key: "designSystems", label: "Design Systems", url: "/etiket/design-systems" },
-    { key: "webPerformance", label: "Web Performansı", url: "/etiket/web-performansi" },
-    { key: "accessibility", label: "Erişilebilirlik", url: "/etiket/erisilebilirlik" },
-    { key: "learningNotes", label: "Öğrenme Notları", url: "/etiket/ogrenme-notlari" },
-    { key: "productThinking", label: "Ürün Düşüncesi", url: "/etiket/urun-dusuncesi" },
-    { key: "writing", label: "Yazarlık", url: "/etiket/yazarlik" },
-    { key: "lifeLearning", label: "Yaşam & Öğrenme", url: "/etiket/yasam-ogrenme" },
-  ],
-  en: [
-    { key: "frontend", label: "Frontend", url: "/en/tag/frontend" },
-    { key: "javascript", label: "JavaScript", url: "/en/tag/javascript" },
-    { key: "css", label: "CSS", url: "/en/tag/css" },
-    { key: "designSystems", label: "Design Systems", url: "/en/tag/design-systems" },
-    { key: "webPerformance", label: "Web Performance", url: "/en/tag/web-performance" },
-    { key: "accessibility", label: "Accessibility", url: "/en/tag/accessibility" },
-    { key: "learningNotes", label: "Learning Notes", url: "/en/tag/learning-notes" },
-    { key: "productThinking", label: "Product Thinking", url: "/en/tag/product-thinking" },
-    { key: "writing", label: "Writing", url: "/en/tag/writing" },
-    { key: "lifeLearning", label: "Life & Learning", url: "/en/tag/life-learning" },
-  ],
-};
-
 const FOOTER_POLICIES = buildFooterPoliciesFromContent();
 
 const FOOTER_SOCIAL_ICONS = {
@@ -146,11 +130,38 @@ function ensureDist() {
 }
 
 function buildCss() {
-  run("npx @tailwindcss/cli -c tailwind.config.js -i ./src/css/style.css -o ./dist/output.css --minify");
+  const minifyFlag = MINIFY_OUTPUT ? "--minify" : "";
+  const command = [
+    "npx",
+    "@tailwindcss/cli",
+    "-c",
+    "tailwind.config.js",
+    "-i",
+    "./src/css/style.css",
+    "-o",
+    "./dist/output.css",
+  ];
+  if (minifyFlag) {
+    command.push(minifyFlag);
+  }
+  run(command.join(" "));
 }
 
 function buildJs() {
-  run("npx esbuild ./src/js/main.js --bundle --format=esm --target=es2018 --minify --sourcemap --outfile=./dist/output.js");
+  const args = [
+    "npx",
+    "esbuild",
+    "./src/js/main.js",
+    "--bundle",
+    "--format=esm",
+    "--target=es2018",
+    "--sourcemap",
+    "--outfile=./dist/output.js",
+  ];
+  if (MINIFY_OUTPUT) {
+    args.push("--minify");
+  }
+  run(args.join(" "));
 }
 
 function setGlobalValue(key, value) {
@@ -309,10 +320,36 @@ async function convertMermaidBlocks(markdown, sourcePath) {
   return result;
 }
 
-function transformHtml(html) {
-  return html
+async function transformHtml(html) {
+  let output = html
     .replace(/\/output\.css(\?v=[^"']+)?/g, `/output.css?v=${versionToken}`)
-    .replace(/\/output\.js(\?v=[^"']+)?/g, `/output.js?v=${versionToken}`);
+    .replace(/\/output\.js(\?v=[^"']+)?/g, `/output.js?v=${versionToken}`)
+    .replace(/\b(src|href)="~\//g, '$1="/');
+
+  if (!MINIFY_OUTPUT) {
+    return output;
+  }
+
+  try {
+    output = await minifyHtml(output, {
+      collapseWhitespace: true,
+      collapseBooleanAttributes: true,
+      decodeEntities: true,
+      removeComments: true,
+      removeRedundantAttributes: true,
+      removeScriptTypeAttributes: true,
+      removeStyleLinkTypeAttributes: true,
+      removeEmptyAttributes: false,
+      sortAttributes: true,
+      sortClassName: true,
+      minifyCSS: true,
+      minifyJS: true,
+    });
+  } catch (error) {
+    console.warn("[build] Failed to minify HTML:", error?.message ?? error);
+  }
+
+  return output;
 }
 
 function loadSiteConfig() {
@@ -543,9 +580,6 @@ function buildSiteData(lang) {
       pageSize: Number.isFinite(PAGINATION_SETTINGS.pageSize)
         ? PAGINATION_SETTINGS.pageSize
         : 5,
-      maxPages: Number.isFinite(PAGINATION_SETTINGS.maxPages)
-        ? PAGINATION_SETTINGS.maxPages
-        : 50,
     },
   };
 }
@@ -579,14 +613,60 @@ function resolveActiveMenuKey(frontMatter) {
   return null;
 }
 
+function buildFooterTags(lang, limit = 10) {
+  const tagsConfig = COLLECTION_CONFIG.tags;
+  const results = [];
+  if (!tagsConfig) return results;
+
+  const langCollections = PAGES[lang] ?? {};
+  const slugPattern =
+    tagsConfig.slugPattern && typeof tagsConfig.slugPattern === "object" ? tagsConfig.slugPattern : {};
+  const langSlugPattern = typeof slugPattern[lang] === "string" ? slugPattern[lang] : null;
+
+  Object.keys(langCollections).forEach((key) => {
+    const items = langCollections[key] ?? [];
+    if (!Array.isArray(items) || items.length === 0) return;
+    const count = items.filter((entry) => entry.type === "tag").length;
+    if (count === 0) return;
+
+    const slug = langSlugPattern
+      ? langSlugPattern.replace("{{key}}", key)
+      : lang === "en"
+        ? `tag/${key}`
+        : `etiket/${key}`;
+
+    const url = buildContentUrl(null, lang, slug);
+    results.push({ key, count, url });
+  });
+
+  results.sort((a, b) => {
+    if (b.count !== a.count) {
+      return b.count - a.count;
+    }
+    return a.key.localeCompare(b.key, lang);
+  });
+
+  if (limit && Number.isFinite(limit) && limit > 0) {
+    return results.slice(0, limit);
+  }
+  return results;
+}
+
 function getFooterData(lang) {
-  const tagsSource = FOOTER_TAGS[lang] ?? FOOTER_TAGS[DEFAULT_LANGUAGE] ?? [];
   const policiesSource = FOOTER_POLICIES[lang] ?? FOOTER_POLICIES[DEFAULT_LANGUAGE] ?? [];
-  const social = FOOTER_SOCIAL.map((item) => ({
-    ...item,
-    icon: FOOTER_SOCIAL_ICONS[item.key],
-    label: getLocalizedValue(lang, `footer.social.${item.key}`, item.key.toUpperCase()),
-  }));
+  const tagsSource = buildFooterTags(lang, 10);
+  const social = FOOTER_SOCIAL.map((item) => {
+    let url = item.url;
+    if (item.key === "rss") {
+      url = lang === "en" ? "/en/feed.xml" : "/feed.xml";
+    }
+    return {
+      ...item,
+      url,
+      icon: FOOTER_SOCIAL_ICONS[item.key],
+      label: getLocalizedValue(lang, `footer.social.${item.key}`, item.key.toUpperCase()),
+    };
+  });
   const tags = tagsSource.map((tag) => ({
     ...tag,
     label: getLocalizedValue(lang, `footer.tags.${tag.key}`, tag.label ?? tag.key),
@@ -610,10 +690,42 @@ function getFooterData(lang) {
 
 function buildPageMeta(front, lang, slug) {
   const canonicalUrl = resolveUrl(front.canonical ?? defaultCanonical(lang, slug));
-  const alternateUrl = resolveUrl(front.alternate ?? canonicalUrl);
   const ogLocale = lang === "en" ? "en_US" : "tr_TR";
   const altLocale = lang === "en" ? "tr_TR" : "en_US";
-  const ogImage = resolveUrl(front.ogImage ?? "/og-image.jpg");
+  const coverSource =
+    typeof front.cover === "string" && front.cover.trim().length > 0
+      ? front.cover.trim()
+      : DEFAULT_IMAGE;
+  const ogImage = resolveUrl(coverSource);
+  const altLang = lang === "en" ? "tr" : "en";
+  let alternateUrl;
+  if (typeof front.alternate === "string" && front.alternate.trim().length > 0) {
+    alternateUrl = resolveUrl(front.alternate.trim());
+  } else {
+    const altLangConfig = LANGUAGE_BUILD_CONFIG[altLang];
+    alternateUrl = altLangConfig?.canonical ?? resolveUrl(altLang === DEFAULT_LANGUAGE ? "/" : `/${altLang}/`);
+  }
+  const twitterImage = resolveUrl(coverSource);
+
+  const typeValue = typeof front.type === "string" ? front.type.trim().toLowerCase() : "";
+  const templateValue = typeof front.template === "string" ? front.template.trim().toLowerCase() : "";
+  const isArticle =
+    templateValue === "post" ||
+    typeValue === "article" ||
+    typeValue === "guide" ||
+    typeValue === "post";
+
+  let structuredData = null;
+  if (isArticle) {
+    structuredData = buildArticleStructuredData(front, lang, canonicalUrl, ogImage);
+  } else if (templateValue === "home") {
+    structuredData = buildHomeStructuredData(front, lang, canonicalUrl);
+  } else if (templateValue === "page") {
+    structuredData = buildWebPageStructuredData(front, lang, canonicalUrl);
+  }
+
+  const ogType = front.ogType ?? (isArticle ? "article" : "website");
+
   return {
     title: front.title ?? "Untitled",
     description: front.description ?? "",
@@ -626,8 +738,8 @@ function buildPageMeta(front, lang, slug) {
     },
     og: {
       title: front.ogTitle ?? front.title ?? "",
-      description: front.ogDescription ?? front.description ?? "",
-      type: front.ogType ?? "article",
+      description: front.description ?? "",
+      type: ogType,
       url: canonicalUrl,
       image: ogImage,
       locale: front.ogLocale ?? ogLocale,
@@ -636,11 +748,107 @@ function buildPageMeta(front, lang, slug) {
     twitter: {
       card: front.twitterCard ?? "summary_large_image",
       title: front.twitterTitle ?? front.title ?? "",
-      description: front.twitterDescription ?? front.description ?? "",
-      image: resolveUrl(front.twitterImage ?? "/og-image.jpg"),
+      description: front.description ?? "",
+      image: twitterImage,
       url: canonicalUrl,
     },
+    structuredData,
   };
+}
+
+function resolveArticleSection(front, lang) {
+  const rawCategory = typeof front.category === "string" ? front.category.trim().toLowerCase() : "";
+  if (!rawCategory) return "";
+  if (lang === "tr") {
+    if (rawCategory === "yasam-ogrenme") return "Yaşam & Öğrenme";
+    if (rawCategory === "teknik-notlar") return "Teknik Notlar";
+  }
+  if (lang === "en") {
+    if (rawCategory === "life-learning") return "Life & Learning";
+    if (rawCategory === "technical-notes") return "Technical Notes";
+  }
+  return rawCategory;
+}
+
+function buildArticleStructuredData(front, lang, canonicalUrl, ogImageUrl) {
+  const authorName = SITE_CONFIG.author ?? FALLBACK_OWNER;
+  const articleSection = resolveArticleSection(front, lang);
+  const keywordsArray = Array.isArray(front.keywords) && front.keywords.length
+    ? front.keywords
+    : Array.isArray(front.tags) && front.tags.length
+      ? front.tags
+      : [];
+
+  const structured = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: front.title ?? "",
+    description: front.description ?? "",
+    author: { "@type": "Person", name: authorName },
+    inLanguage: lang,
+    mainEntityOfPage: canonicalUrl,
+  };
+
+  if (front.date) {
+    structured.datePublished = front.date;
+  }
+  if (front.updated) {
+    structured.dateModified = front.updated;
+  }
+  if (ogImageUrl) {
+    structured.image = [ogImageUrl];
+  }
+  if (articleSection) {
+    structured.articleSection = articleSection;
+  }
+  if (keywordsArray.length) {
+    structured.keywords = keywordsArray;
+  }
+
+  return serializeForInlineScript(structured);
+}
+
+function buildHomeStructuredData(front, lang, canonicalUrl) {
+  const siteData = buildSiteData(lang);
+  const authorName = SITE_CONFIG.author ?? FALLBACK_OWNER;
+  const structured = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: siteData.title ?? "",
+    description: siteData.description ?? "",
+    url: canonicalUrl,
+    inLanguage: lang,
+    publisher: {
+      "@type": "Person",
+      name: authorName,
+    },
+  };
+  return serializeForInlineScript(structured);
+}
+
+function buildWebPageStructuredData(front, lang, canonicalUrl) {
+  const authorName = SITE_CONFIG.author ?? FALLBACK_OWNER;
+  const keywordsArray = Array.isArray(front.keywords) && front.keywords.length
+    ? front.keywords
+    : Array.isArray(front.tags) && front.tags.length
+      ? front.tags
+      : [];
+
+  const structured = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    headline: front.title ?? "",
+    description: front.description ?? "",
+    author: { "@type": "Person", name: authorName },
+    inLanguage: lang,
+    mainEntityOfPage: canonicalUrl,
+  };
+
+  if (keywordsArray.length) {
+    structured.keywords = keywordsArray;
+  }
+
+  return serializeForInlineScript(structured);
 }
 
 function formatDate(value, lang) {
@@ -677,7 +885,7 @@ function canonicalToRelativePath(value) {
   return path.replace(/^\/+/, "").replace(/\/+$/, "");
 }
 
-function renderContentTemplate(templateName, contentHtml, front, lang, dictionary) {
+function renderContentTemplate(templateName, contentHtml, front, lang, dictionary, listingOverride) {
   const template = getTemplate(templateName);
   const normalizedTags = Array.isArray(front.tags)
     ? front.tags.filter((tag) => typeof tag === "string" && tag.trim().length > 0)
@@ -689,12 +897,15 @@ function renderContentTemplate(templateName, contentHtml, front, lang, dictionar
     hasTags: normalizedTags.length > 0,
     dateDisplay: formatDate(front.date, lang),
     updatedDisplay: formatDate(front.updated, lang),
+    cover: front.cover ?? DEFAULT_IMAGE,
+    coverAlt: front.coverAlt ?? "",
   };
+  const listing = listingOverride ?? buildCollectionListing(normalizedFront, lang);
   return Mustache.render(template, {
     content: { html: decorateHtml(contentHtml, templateName) },
     front: normalizedFront,
     lang,
-    listing: buildCollectionListing(normalizedFront, lang),
+    listing,
     locale: {
       isTr: lang === "tr",
       isEn: lang === "en",
@@ -920,7 +1131,7 @@ function buildCollectionEntrySummary(front, lang, slug) {
     date: front.date ?? null,
     canonical: buildContentUrl(front.canonical, lang, slug),
     description: front.description ?? "",
-    cover: front.cover ?? "",
+    cover: front.cover ?? DEFAULT_IMAGE,
     coverAlt: front.coverAlt ?? "",
     coverCaption: front.coverCaption ?? "",
     readingTime: normalizeReadingTime(front.readingTime),
@@ -1027,6 +1238,408 @@ function sortCollectionEntries(collections) {
   return sorted;
 }
 
+function formatRssDate(date) {
+  if (!(date instanceof Date)) {
+    // eslint-disable-next-line no-param-reassign
+    date = new Date(date);
+  }
+  if (Number.isNaN(date.getTime())) {
+    return new Date().toUTCString();
+  }
+  return date.toUTCString();
+}
+
+function escapeXml(value) {
+  if (value == null) return "";
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&apos;");
+}
+
+function formatLastmod(date) {
+  if (!(date instanceof Date)) {
+    // eslint-disable-next-line no-param-reassign
+    date = new Date(date);
+  }
+  if (Number.isNaN(date.getTime())) {
+    return null;
+  }
+  return date.toISOString().split("T")[0];
+}
+
+function collectRssEntriesForLang(lang, limit = 50) {
+  const entries = [];
+  if (!existsSync(CONTENT_DIR)) return entries;
+  const files = collectMarkdownFiles(CONTENT_DIR);
+  for (const filePath of files) {
+    let data;
+    try {
+      ({ data } = matter(readFileSync(filePath, "utf8")));
+    } catch {
+      continue;
+    }
+    if (!data) continue;
+    const status = typeof data.status === "string" ? data.status.trim().toLowerCase() : "";
+    if (status && status !== "published") continue;
+    const isDraft = parseBoolean(data.draft);
+    if (isDraft) continue;
+    const entryLang = data.lang ?? inferLangFromPath(filePath);
+    if (entryLang !== lang) continue;
+    const template = typeof data.template === "string" ? data.template.trim() : "";
+    if (template !== "post") continue;
+    const slug = data.slug ?? inferSlugFromPath(filePath);
+    const canonical = buildContentUrl(data.canonical, entryLang, slug);
+    const absoluteLink = resolveUrl(canonical);
+    const date = data.date ? new Date(data.date) : null;
+    entries.push({
+      title: data.title ?? slug ?? canonical,
+      description: data.description ?? "",
+      link: absoluteLink,
+      guid: absoluteLink,
+      date,
+      category:
+        typeof data.category === "string" && data.category.trim().length > 0
+          ? data.category.trim()
+          : "",
+    });
+  }
+  entries.sort((a, b) => {
+    const aTime = a.date ? Date.parse(a.date) || 0 : 0;
+    const bTime = b.date ? Date.parse(b.date) || 0 : 0;
+    return bTime - aTime;
+  });
+  if (limit && Number.isFinite(limit) && limit > 0) {
+    return entries.slice(0, limit);
+  }
+  return entries;
+}
+
+function collectSitemapEntriesFromContent() {
+  const urls = [];
+  if (!existsSync(CONTENT_DIR)) return urls;
+  const files = collectMarkdownFiles(CONTENT_DIR);
+  for (const filePath of files) {
+    let data;
+    try {
+      ({ data } = matter(readFileSync(filePath, "utf8")));
+    } catch {
+      continue;
+    }
+    if (!data) continue;
+    const status = typeof data.status === "string" ? data.status.trim().toLowerCase() : "";
+    if (status && status !== "published") continue;
+    const isDraft = parseBoolean(data.draft);
+    if (isDraft) continue;
+    const lang = data.lang ?? inferLangFromPath(filePath);
+    const slug = data.slug ?? inferSlugFromPath(filePath);
+    const canonical = buildContentUrl(data.canonical, lang, slug);
+    const absoluteLoc = resolveUrl(canonical);
+    const updated = data.updated ?? data.date ?? null;
+    const baseLastmod = updated ? formatLastmod(updated) : null;
+    urls.push({
+      loc: absoluteLoc,
+      lastmod: baseLastmod,
+    });
+
+    // Optionally include paginated listing pages (e.g. /sayfa-2)
+    const template = typeof data.template === "string" ? data.template.trim() : "";
+    if (SEO_INCLUDE_PAGING && (template === "collection" || template === "home")) {
+      const langCollections = PAGES[lang] ?? {};
+      const key = resolveListingKey(data);
+      const allItems = key && Array.isArray(langCollections[key]) ? langCollections[key] : [];
+      const pageSizeSetting = Number.isFinite(PAGINATION_SETTINGS.pageSize)
+        ? PAGINATION_SETTINGS.pageSize
+        : 5;
+      const pageSize = pageSizeSetting > 0 ? pageSizeSetting : 5;
+      const totalPages = Math.max(1, pageSize > 0 ? Math.ceil(allItems.length / pageSize) : 1);
+
+      if (totalPages > 1) {
+        const segmentConfig =
+          PAGINATION_SETTINGS.segment && typeof PAGINATION_SETTINGS.segment === "object"
+            ? PAGINATION_SETTINGS.segment
+            : {};
+        const segment =
+          typeof segmentConfig[lang] === "string" && segmentConfig[lang].trim().length > 0
+            ? segmentConfig[lang].trim()
+            : lang === "tr"
+              ? "sayfa"
+              : "page";
+
+        const baseSlug = slug.replace(/\/+$/, "");
+
+        // Derive lastmod for listing pages from the newest item in the collection
+        let latestTimestamp = null;
+        if (Array.isArray(allItems)) {
+          allItems.forEach((item) => {
+            if (!item || !item.date) return;
+            const ts = Date.parse(item.date);
+            if (!Number.isNaN(ts)) {
+              if (latestTimestamp == null || ts > latestTimestamp) {
+                latestTimestamp = ts;
+              }
+            }
+          });
+        }
+        const listingLastmod =
+          latestTimestamp != null ? formatLastmod(new Date(latestTimestamp)) : baseLastmod;
+
+        for (let pageIndex = 2; pageIndex <= totalPages; pageIndex += 1) {
+          const pageSlug = baseSlug
+            ? `${baseSlug}/${segment}-${pageIndex}`
+            : `${segment}-${pageIndex}`;
+
+          let canonicalOverride;
+          if (typeof data.canonical === "string" && data.canonical.trim().length > 0) {
+            const trimmed = data.canonical.trim().replace(/\/+$/, "");
+            canonicalOverride = `${trimmed}/${segment}-${pageIndex}/`;
+          } else {
+            canonicalOverride = undefined;
+          }
+
+          const pageCanonical = buildContentUrl(canonicalOverride, lang, pageSlug);
+          const pageAbsoluteLoc = resolveUrl(pageCanonical);
+          urls.push({
+            loc: pageAbsoluteLoc,
+            lastmod: listingLastmod,
+          });
+        }
+      }
+    }
+  }
+  urls.sort((a, b) => (a.loc || "").localeCompare(b.loc || ""));
+  return urls;
+}
+
+function buildRssFeeds() {
+  const email = typeof SITE_CONFIG.email === "string" ? SITE_CONFIG.email.trim() : "";
+  const authorName = SITE_CONFIG.author ?? FALLBACK_OWNER;
+  const languages = SUPPORTED_LANGUAGES.length ? SUPPORTED_LANGUAGES : [DEFAULT_LANGUAGE];
+
+  languages.forEach((lang) => {
+    const rssEntries = collectRssEntriesForLang(lang, 50);
+    if (!rssEntries.length) {
+      return;
+    }
+    const dict = getLanguageDictionary(lang);
+    const siteTitle = getLocalizedValue(lang, "site.title", SITE_CONFIG.author ?? "Site");
+    const siteDescription = getLocalizedValue(lang, "site.description", "");
+    const langConfig = LANGUAGE_BUILD_CONFIG[lang] ?? LANGUAGE_BUILD_CONFIG[DEFAULT_LANGUAGE];
+    const channelLink = langConfig?.canonical ?? BASE_URL;
+    const languageCode = lang === "en" ? "en-US" : "tr-TR";
+    const lastBuildDate = formatRssDate(new Date());
+
+    const itemsXml = rssEntries
+      .map((entry) => {
+        const description = entry.description ? entry.description.trim() : "";
+        const descriptionCdata = description ? `<![CDATA[ ${description} ]]>` : "";
+        const authorField =
+          email && authorName ? `${email} (${authorName})` : email || authorName || "";
+        const categoryLine =
+          entry.category && entry.category.length
+            ? `    <category>${escapeXml(entry.category)}</category>`
+            : "";
+        return [
+          "  <item>",
+          `    <title>${escapeXml(entry.title)}</title>`,
+          `    <link>${escapeXml(entry.link)}</link>`,
+          `    <guid isPermaLink="true">${escapeXml(entry.guid)}</guid>`,
+          entry.date ? `    <pubDate>${formatRssDate(entry.date)}</pubDate>` : "",
+          descriptionCdata ? `    <description>${descriptionCdata}</description>` : "",
+          authorField ? `    <author>${escapeXml(authorField)}</author>` : "",
+          categoryLine,
+          "  </item>",
+        ]
+          .filter(Boolean)
+          .join("\n");
+      })
+      .join("\n");
+
+    const rssXml = [
+      '<?xml version="1.0" encoding="UTF-8"?>',
+      '<?xml-stylesheet type="text/xsl" href="/assets/rss.xsl"?>',
+      '<rss version="2.0">',
+      "  <channel>",
+      `    <title>${escapeXml(siteTitle)}</title>`,
+      `    <link>${escapeXml(channelLink)}</link>`,
+      `    <description>${escapeXml(siteDescription)}</description>`,
+      `    <language>${escapeXml(languageCode)}</language>`,
+      `    <lastBuildDate>${lastBuildDate}</lastBuildDate>`,
+      itemsXml,
+      "  </channel>",
+      "</rss>",
+      "",
+    ].join("\n");
+
+    const relativePath =
+      lang === DEFAULT_LANGUAGE ? "feed.xml" : join(lang, "feed.xml");
+    writeHtmlFile(relativePath, rssXml);
+  });
+}
+
+function buildSitemap() {
+  const contentEntries = collectSitemapEntriesFromContent();
+  const collectionEntries = SEO_INCLUDE_COLLECTIONS ? collectSitemapEntriesFromDynamicCollections() : [];
+
+  const combined = [...contentEntries, ...collectionEntries];
+  if (!combined.length) return;
+
+  const entryByLoc = new Map();
+  combined.forEach((entry) => {
+    if (!entry || !entry.loc) return;
+    const key = entry.loc;
+    const existing = entryByLoc.get(key);
+    if (!existing) {
+      entryByLoc.set(key, entry);
+      return;
+    }
+    const existingDate = existing.lastmod ? Date.parse(existing.lastmod) : null;
+    const incomingDate = entry.lastmod ? Date.parse(entry.lastmod) : null;
+    if (
+      incomingDate != null
+      && !Number.isNaN(incomingDate)
+      && (existingDate == null || Number.isNaN(existingDate) || incomingDate > existingDate)
+    ) {
+      entryByLoc.set(key, entry);
+    }
+  });
+
+  const entries = Array.from(entryByLoc.values()).sort((a, b) =>
+    (a.loc || "").localeCompare(b.loc || ""),
+  );
+
+  const urlset = entries
+    .map((entry) => {
+      const parts = [
+        "  <url>",
+        `    <loc>${escapeXml(entry.loc)}</loc>`,
+      ];
+      if (entry.lastmod) {
+        parts.push(`    <lastmod>${escapeXml(entry.lastmod)}</lastmod>`);
+      }
+      parts.push("  </url>");
+      return parts.join("\n");
+    })
+    .join("\n");
+
+  const sitemapXml = [
+    '<?xml version="1.0" encoding="UTF-8"?>',
+    '<?xml-stylesheet type="text/xsl" href="/assets/sitemap.xsl"?>',
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+    urlset,
+    "</urlset>",
+    "",
+  ].join("\n");
+
+  writeHtmlFile("sitemap.xml", sitemapXml);
+}
+
+function collectSitemapEntriesFromDynamicCollections() {
+  const urls = [];
+  if (!COLLECTION_CONFIG || typeof COLLECTION_CONFIG !== "object") return urls;
+
+  const configKeys = Object.keys(COLLECTION_CONFIG);
+  for (const configKey of configKeys) {
+    const config = COLLECTION_CONFIG[configKey];
+    if (!config || typeof config !== "object") {
+      continue;
+    }
+
+    const slugPattern =
+      config.slugPattern && typeof config.slugPattern === "object" ? config.slugPattern : {};
+
+    const types =
+      Array.isArray(config.types) && config.types.length > 0
+        ? config.types
+            .map((value) => (typeof value === "string" ? value.trim() : ""))
+            .filter((value) => value.length > 0)
+        : null;
+
+    if (!types || types.length === 0) {
+      continue;
+    }
+
+    const languages = Object.keys(PAGES);
+    for (const lang of languages) {
+      const langCollections = PAGES[lang] ?? {};
+      const langSlugPattern = typeof slugPattern[lang] === "string" ? slugPattern[lang] : null;
+
+      const collectionKeys = Object.keys(langCollections);
+      for (const key of collectionKeys) {
+        const items = langCollections[key] ?? [];
+        if (!Array.isArray(items) || items.length === 0) {
+          continue;
+        }
+
+        const hasMatchingType = items.some((entry) => types.includes(entry.type));
+        if (!hasMatchingType) {
+          continue;
+        }
+
+        const slug =
+          langSlugPattern && langSlugPattern.includes("{{key}}")
+            ? langSlugPattern.replace("{{key}}", key)
+            : (langSlugPattern ?? key);
+
+        const canonical = buildContentUrl(null, lang, slug);
+        const absoluteLoc = resolveUrl(canonical);
+
+        let latestTimestamp = null;
+        items.forEach((item) => {
+          if (!item || !item.date) return;
+          const ts = Date.parse(item.date);
+          if (!Number.isNaN(ts)) {
+            if (latestTimestamp == null || ts > latestTimestamp) {
+              latestTimestamp = ts;
+            }
+          }
+        });
+        const lastmod =
+          latestTimestamp != null ? formatLastmod(new Date(latestTimestamp)) : null;
+
+        urls.push({
+          loc: absoluteLoc,
+          lastmod,
+        });
+      }
+    }
+  }
+
+  urls.sort((a, b) => (a.loc || "").localeCompare(b.loc || ""));
+  return urls;
+}
+
+function buildRobotsTxt() {
+  const base = (SITE_CONFIG.url ?? BASE_URL).replace(/\/+$/, "");
+  const robots = SITE_CONFIG.robots ?? {};
+  const allowList = Array.isArray(robots.allow) && robots.allow.length
+    ? robots.allow
+    : ["/"];
+  const disallowList = Array.isArray(robots.disallow) ? robots.disallow : [];
+
+  const lines = ["User-agent: *"];
+
+  allowList.forEach((path) => {
+    if (typeof path === "string" && path.trim().length > 0) {
+      lines.push(`Allow: ${path.trim()}`);
+    }
+  });
+
+  disallowList.forEach((path) => {
+    if (typeof path === "string" && path.trim().length > 0) {
+      lines.push(`Disallow: ${path.trim()}`);
+    }
+  });
+
+  lines.push("");
+  lines.push(`Sitemap: ${base}/sitemap.xml`);
+  lines.push("");
+
+  writeHtmlFile("robots.txt", lines.join("\n"));
+}
+
 function parseBoolean(value) {
   if (typeof value === "boolean") return value;
   if (typeof value === "string") {
@@ -1113,6 +1726,21 @@ async function buildContentPages() {
     );
     const markdownHtml = marked.parse(markdownSource ?? "");
     const hydratedHtml = injectMarkdownComponents(markdownHtml ?? "", placeholders);
+
+    // Static pagination for collection listings (e.g. category/tag pages, home)
+    if (templateName === "collection" || templateName === "home") {
+      await buildPaginatedCollectionPages({
+        frontMatter: data,
+        lang,
+        baseSlug: slug,
+        layoutName,
+        templateName,
+        contentHtml: hydratedHtml,
+        dictionary,
+      });
+      continue;
+    }
+
     const contentHtml = renderContentTemplate(templateName, hydratedHtml, data, lang, dictionary);
     const pageMeta = buildPageMeta(data, lang, slug);
     const layoutTemplate = getLayout(layoutName);
@@ -1129,16 +1757,270 @@ async function buildContentPages() {
       page: pageMeta,
       content: contentHtml,
       scripts: {
-        analytics: ANALYTICS_SNIPPETS,
+        analytics: ANALYTICS_ENABLED ? ANALYTICS_SNIPPETS : [],
         body: [],
       },
     };
     const rendered = Mustache.render(layoutTemplate, view, PARTIALS);
-    const finalHtml = transformHtml(rendered);
+    const finalHtml = await transformHtml(rendered);
     const relativePath = buildOutputPath(data, lang, slug);
     writeHtmlFile(relativePath, finalHtml);
     GENERATED_PAGES.add(toPosixPath(relativePath));
     registerLegacyPaths(lang, slug);
+  }
+
+  await buildDynamicCollectionPages();
+}
+
+async function buildPaginatedCollectionPages(options) {
+  const {
+    frontMatter,
+    lang,
+    baseSlug,
+    layoutName,
+    templateName,
+    contentHtml,
+    dictionary,
+  } = options;
+
+  const langCollections = PAGES[lang] ?? {};
+  const key = resolveListingKey(frontMatter);
+  const allItems = key && Array.isArray(langCollections[key]) ? langCollections[key] : [];
+  const pageSizeSetting = Number.isFinite(PAGINATION_SETTINGS.pageSize)
+    ? PAGINATION_SETTINGS.pageSize
+    : 5;
+  const pageSize = pageSizeSetting > 0 ? pageSizeSetting : 5;
+  const totalPages = Math.max(1, pageSize > 0 ? Math.ceil(allItems.length / pageSize) : 1);
+  const emptyMessage = resolveListingEmpty(frontMatter, lang);
+
+  for (let pageIndex = 1; pageIndex <= totalPages; pageIndex += 1) {
+    const startIndex = (pageIndex - 1) * pageSize;
+    const endIndex = startIndex + pageSize;
+    const items = allItems.slice(startIndex, endIndex);
+    const hasItems = items.length > 0;
+    const hasPrev = pageIndex > 1;
+    const hasNext = pageIndex < totalPages;
+
+    const segmentConfig =
+      PAGINATION_SETTINGS.segment && typeof PAGINATION_SETTINGS.segment === "object"
+        ? PAGINATION_SETTINGS.segment
+        : {};
+    const segment =
+      typeof segmentConfig[lang] === "string" && segmentConfig[lang].trim().length > 0
+        ? segmentConfig[lang].trim()
+        : lang === "tr"
+          ? "sayfa"
+          : "page";
+
+    const base = baseSlug.replace(/\/+$/, "");
+
+    const pageSlug =
+      pageIndex === 1
+        ? baseSlug
+        : base
+          ? `${base}/${segment}-${pageIndex}`
+          : `${segment}-${pageIndex}`;
+
+    const prevSlug =
+      pageIndex > 2
+        ? base
+          ? `${base}/${segment}-${pageIndex - 1}`
+          : `${segment}-${pageIndex - 1}`
+        : baseSlug;
+
+    const nextSlug = base ? `${base}/${segment}-${pageIndex + 1}` : `${segment}-${pageIndex + 1}`;
+
+    const listing = {
+      key,
+      lang,
+      items,
+      hasItems,
+      emptyMessage,
+      page: pageIndex,
+      totalPages,
+      hasPrev,
+      hasNext,
+      hasPagination: totalPages > 1,
+      prevUrl: hasPrev ? buildContentUrl(null, lang, prevSlug) : "",
+      nextUrl: hasNext ? buildContentUrl(null, lang, nextSlug) : "",
+    };
+
+    let canonical = frontMatter.canonical;
+    if (pageIndex > 1) {
+      if (typeof frontMatter.canonical === "string" && frontMatter.canonical.trim().length > 0) {
+        const trimmed = frontMatter.canonical.trim().replace(/\/+$/, "");
+        canonical = `${trimmed}/${segment}-${pageIndex}/`;
+      } else {
+        canonical = undefined;
+      }
+    }
+
+    const frontForPage = {
+      ...frontMatter,
+      slug: pageSlug,
+      canonical,
+    };
+
+    const renderedContent = renderContentTemplate(
+      templateName,
+      contentHtml,
+      frontForPage,
+      lang,
+      dictionary,
+      listing,
+    );
+    const pageMeta = buildPageMeta(frontForPage, lang, pageSlug);
+    const layoutTemplate = getLayout(layoutName);
+    const activeMenuKey = resolveActiveMenuKey(frontForPage);
+    const view = {
+      lang,
+      theme: "light",
+      site: buildSiteData(lang),
+      menu: getMenuData(lang, activeMenuKey),
+      footer: getFooterData(lang),
+      pages: PAGES,
+      i18n: dictionary,
+      i18nInline: I18N_INLINE_JSON,
+      page: pageMeta,
+      content: renderedContent,
+      scripts: {
+        analytics: ANALYTICS_ENABLED ? ANALYTICS_SNIPPETS : [],
+        body: [],
+      },
+    };
+    const rendered = Mustache.render(layoutTemplate, view, PARTIALS);
+    const finalHtml = await transformHtml(rendered);
+    const relativePath = buildOutputPath(frontForPage, lang, pageSlug);
+    writeHtmlFile(relativePath, finalHtml);
+    GENERATED_PAGES.add(toPosixPath(relativePath));
+    registerLegacyPaths(lang, pageSlug);
+  }
+}
+
+async function buildDynamicCollectionPages() {
+  if (!COLLECTION_CONFIG || typeof COLLECTION_CONFIG !== "object") return;
+
+  const configKeys = Object.keys(COLLECTION_CONFIG);
+  for (const configKey of configKeys) {
+    const config = COLLECTION_CONFIG[configKey];
+    if (!config || typeof config !== "object") {
+      continue;
+    }
+
+    const templateName =
+      typeof config.template === "string" && config.template.trim().length > 0
+        ? config.template.trim()
+        : "category";
+
+    const slugPattern =
+      config.slugPattern && typeof config.slugPattern === "object" ? config.slugPattern : {};
+    const pairs =
+      config.pairs && typeof config.pairs === "object" ? config.pairs : null;
+
+    const types =
+      Array.isArray(config.types) && config.types.length > 0
+        ? config.types
+            .map((value) => (typeof value === "string" ? value.trim() : ""))
+            .filter((value) => value.length > 0)
+        : null;
+
+    if (!types || types.length === 0) {
+      continue;
+    }
+
+    const languages = Object.keys(PAGES);
+    for (const lang of languages) {
+      const langCollections = PAGES[lang] ?? {};
+      const dictionary = getLanguageDictionary(lang);
+      const langSlugPattern = typeof slugPattern[lang] === "string" ? slugPattern[lang] : null;
+      const titleSuffix = getLocalizedValue(
+        lang,
+        `seo.collections.${configKey}.titleSuffix`,
+        "",
+      );
+
+      const collectionKeys = Object.keys(langCollections);
+      for (const key of collectionKeys) {
+        const items = langCollections[key] ?? [];
+        if (!Array.isArray(items) || items.length === 0) {
+          continue;
+        }
+
+        const hasMatchingType = items.some((entry) => types.includes(entry.type));
+        if (!hasMatchingType) {
+          continue;
+        }
+
+        const slug =
+          langSlugPattern && langSlugPattern.includes("{{key}}")
+            ? langSlugPattern.replace("{{key}}", key)
+            : (langSlugPattern ?? key);
+
+        let alternate;
+        if (pairs) {
+          const altLang = lang === "en" ? "tr" : "en";
+          const pairEntry = pairs[key];
+          const altKey =
+            pairEntry && typeof pairEntry[altLang] === "string"
+              ? pairEntry[altLang].trim()
+              : "";
+          if (altKey) {
+            const altSlugPattern =
+              typeof slugPattern[altLang] === "string" ? slugPattern[altLang] : null;
+            const altSlug =
+              altSlugPattern && altSlugPattern.includes("{{key}}")
+                ? altSlugPattern.replace("{{key}}", altKey)
+                : (altSlugPattern ?? altKey);
+            alternate = buildContentUrl(null, altLang, altSlug);
+          }
+        }
+
+        const baseTitle = key;
+        const normalizedTitleSuffix =
+          typeof titleSuffix === "string" && titleSuffix.trim().length > 0
+            ? titleSuffix.trim()
+            : "";
+        const effectiveTitle = normalizedTitleSuffix
+          ? `${baseTitle} | ${normalizedTitleSuffix}`
+          : baseTitle;
+
+        const front = {
+          title: effectiveTitle,
+          slug,
+          template: templateName,
+          listKey: key,
+          ...(alternate ? { alternate } : {}),
+        };
+
+        const contentHtml = renderContentTemplate(templateName, "", front, lang, dictionary);
+        const pageMeta = buildPageMeta(front, lang, slug);
+        const layoutName = "default";
+        const layoutTemplate = getLayout(layoutName);
+        const activeMenuKey = resolveActiveMenuKey(front);
+        const view = {
+          lang,
+          theme: "light",
+          site: buildSiteData(lang),
+          menu: getMenuData(lang, activeMenuKey),
+          footer: getFooterData(lang),
+          pages: PAGES,
+          i18n: dictionary,
+          i18nInline: I18N_INLINE_JSON,
+          page: pageMeta,
+          content: contentHtml,
+          scripts: {
+            analytics: ANALYTICS_ENABLED ? ANALYTICS_SNIPPETS : [],
+            body: [],
+          },
+        };
+        const rendered = Mustache.render(layoutTemplate, view, PARTIALS);
+        const finalHtml = await transformHtml(rendered);
+        const relativePath = buildOutputPath(front, lang, slug);
+        writeHtmlFile(relativePath, finalHtml);
+        GENERATED_PAGES.add(toPosixPath(relativePath));
+        registerLegacyPaths(lang, slug);
+      }
+    }
   }
 }
 
@@ -1152,19 +2034,20 @@ function registerLegacyPaths(lang, slug) {
   }
 }
 
-function copyHtmlRecursive(currentDir = SRC_DIR, relative = "") {
-  readdirSync(currentDir).forEach((entry) => {
+async function copyHtmlRecursive(currentDir = SRC_DIR, relative = "") {
+  const entries = readdirSync(currentDir);
+  for (const entry of entries) {
     const fullPath = join(currentDir, entry);
     const relPath = relative ? join(relative, entry) : entry;
     const stats = statSync(fullPath);
     if (stats.isDirectory()) {
-      copyHtmlRecursive(fullPath, relPath);
-      return;
+      await copyHtmlRecursive(fullPath, relPath);
+      continue;
     }
-    if (!entry.endsWith(".html")) return;
-    if (GENERATED_PAGES.has(toPosixPath(relPath))) return;
+    if (!entry.endsWith(".html")) continue;
+    if (GENERATED_PAGES.has(toPosixPath(relPath))) continue;
     const raw = readFileSync(fullPath, "utf8");
-    const transformed = transformHtml(raw);
+    const transformed = await transformHtml(raw);
     if (relPath === "index.html") {
       SUPPORTED_LANGUAGES.forEach((langCode) => {
         const localized = applyLanguageMetadata(transformed, langCode);
@@ -1175,10 +2058,10 @@ function copyHtmlRecursive(currentDir = SRC_DIR, relative = "") {
         segments.push("index.html");
         writeHtmlFile(join(...segments), localized);
       });
-      return;
+      continue;
     }
     writeHtmlFile(relPath, transformed);
-  });
+  }
 }
 
 function copyStaticAssets() {
@@ -1192,8 +2075,11 @@ async function main() {
   buildCss();
   buildJs();
   await buildContentPages();
-  copyHtmlRecursive();
+  await copyHtmlRecursive();
   copyStaticAssets();
+  buildRssFeeds();
+  buildSitemap();
+  buildRobotsTxt();
 }
 
 main().catch((error) => {

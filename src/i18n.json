@@ -223,6 +223,16 @@
       }
     }
   },
+  "seo": {
+    "collections": {
+      "tags": {
+        "titleSuffix": {
+          "tr": "Etiket",
+          "en": "Tag"
+        }
+      }
+    }
+  },
   "contactForm": {
     "fields": {
       "fullname": {

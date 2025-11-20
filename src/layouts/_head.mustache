@@ -1,11 +1,17 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>{{page.title}} - {{site.title}}</title>
   <meta name="description" content="{{page.description}}" />
   <meta name="author" content="{{site.author}}" />
   <meta name="robots" content="{{page.robots}}" />
   <meta name="theme-color" content="{{site.themeColor}}" />
   <meta name="language" content="{{lang}}" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta
+    http-equiv="Content-Security-Policy"
+    content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.clarity.ms; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://www.clarity.ms; frame-ancestors 'self'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests"
+  />
   <link rel="canonical" href="{{{page.canonical}}}" data-canonical />
   <link rel="alternate" href="{{{page.alternates.tr}}}" hreflang="tr" data-lang="tr" />
   <link rel="alternate" href="{{{page.alternates.en}}}" hreflang="en" data-lang="en" />
@@ -27,6 +33,18 @@
   <meta name="twitter:description" content="{{page.twitter.description}}" />
   <meta name="twitter:image" content="{{{page.twitter.image}}}" />
   <meta name="twitter:url" content="{{{page.twitter.url}}}" data-twitter-url />
+
+  {{#page.structuredData}}
+  <script type="application/ld+json">
+    {{{page.structuredData}}}
+  </script>
+  {{/page.structuredData}}
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png" />
+  <link rel="manifest" href="/assets/favicon/site.webmanifest" />
+  <link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
 
   {{#scripts.analytics}}
     {{{.}}}

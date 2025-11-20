@@ -1,7 +1,7 @@
 ---
 id: ikewf66woi
 lang: tr
-title: "Teknik Notlar"
+title: "Teknik Notlar | Kategori"
 slug: teknik-notlar
 type: category
 menu: "Teknik Notlar"
@@ -12,13 +12,13 @@ date: 2025-11-14
 updated: 2025-11-14
 pair: technical-notes
 canonical: ~/teknik-notlar/
-alternate: ~/technical-notes/
+alternate: ~/en/technical-notes/
 description: "Mimari notlar, debug hikayeleri ve teknik keşiflerin tek akışı."
 keywords:
   - 
 featured: false
 draft: false
-template: category
+template: collection
 layout: default
 status: published
 ---

@@ -1,7 +1,7 @@
 ---
 id: n9pxj201h9
 lang: en
-title: "Life & Learning"
+title: "Life & Learning | Category"
 slug: life-learning
 type: category
 menu: "Life & Learning"
@@ -11,7 +11,7 @@ readingTime: 1
 date: 2025-11-14
 updated: 2025-11-14
 pair: yasam-ogrenme
-canonical: ~/life-learning/
+canonical: ~/en/life-learning/
 alternate: ~/yasam-ogrenme/
 description: "Collected essays, observations, and guides that explore habits, learning systems, and everyday reflections."
 keywords:
@@ -21,7 +21,7 @@ keywords:
   - routines
 featured: false
 draft: false
-template: category
+template: collection
 layout: default
 status: published
 ---

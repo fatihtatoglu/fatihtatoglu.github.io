@@ -1,9 +1,9 @@
-<section class="category" data-page-template="category" data-paginated-list>
+<section class="category" data-page-template="category">
   {{{content.html}}}
   
   {{#listing.hasItems}}
     {{#listing.items}}
-    <article id="post-{{id}}" class="post-card" data-page-template="post" data-id="{{id}}" data-paginated-item>
+    <article id="post-{{id}}" class="post-card" data-page-template="post" data-id="{{id}}">
     <!-- Post Header -->
     <header class="post-header">
 
@@ -65,42 +65,48 @@
   {{/listing.hasItems}}
 
   {{#listing.hasItems}}
-  <nav class="mt-6 flex justify-between items-center" aria-label="Sayfa geçişleri">
-    <button
-      type="button"
-      class="btn btn--sm btn--tone-neutral btn--icon-left"
-      data-page-prev
-    >
-      <svg viewBox="0 0 20 20" aria-hidden="true">
-        <path
-          d="M13 4l-6 6 6 6"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.8"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-      </svg>
-      <span>{{i18n.ui.pagination.previous}}</span>
-    </button>
+    {{#listing.hasPagination}}
+    <nav class="mt-6 flex justify-between items-center" aria-label="Sayfa geçişleri">
+      {{#listing}}
+        {{#hasPrev}}
+        <a
+          class="btn btn--sm btn--tone-neutral btn--icon-left"
+          href="{{prevUrl}}"
+        >
+          <svg viewBox="0 0 20 20" aria-hidden="true">
+            <path
+              d="M13 4l-6 6 6 6"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+          <span>{{i18n.ui.pagination.previous}}</span>
+        </a>
+        {{/hasPrev}}
 
-    <button
-      type="button"
-      class="btn btn--sm btn--tone-neutral btn--icon-right"
-      data-page-next
-    >
-      <span>{{i18n.ui.pagination.next}}</span>
-      <svg viewBox="0 0 20 20" aria-hidden="true">
-        <path
-          d="M7 4l6 6-6 6"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.8"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-      </svg>
-    </button>
-  </nav>
+        {{#hasNext}}
+        <a
+          class="btn btn--sm btn--tone-neutral btn--icon-right"
+          href="{{nextUrl}}"
+        >
+          <span>{{i18n.ui.pagination.next}}</span>
+          <svg viewBox="0 0 20 20" aria-hidden="true">
+            <path
+              d="M7 4l6 6-6 6"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </a>
+        {{/hasNext}}
+      {{/listing}}
+    </nav>
+    {{/listing.hasPagination}}
   {{/listing.hasItems}}
 </section>

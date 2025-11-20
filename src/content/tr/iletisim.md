@@ -5,9 +5,6 @@ title: "İletişim"
 slug: iletisim
 category: meta
 type: meta
-tags:
-  - iletisim
-  - contact
 menu: "İletişim"
 order: 5
 show: true
@@ -16,7 +13,7 @@ date: 2025-11-14
 updated: 2025-11-14
 pair: contact
 canonical: ~/iletisim/
-alternate: ~/contact/
+alternate: ~/en/contact/
 description: "Teknik sorularınız, geri bildirimleriniz veya sadece merhaba demek için Fatih Tatoğlu ile iletişime geçebileceğiniz sayfa."
 keywords:
   - iletişim

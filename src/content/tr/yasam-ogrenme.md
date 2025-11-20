@@ -1,7 +1,7 @@
 ---
 id: n9pxj201h9
 lang: tr
-title: "Yaşam & Öğrenme"
+title: "Yaşam & Öğrenme | Kategori"
 slug: yasam-ogrenme
 type: category
 menu: "Yaşam & Öğrenme"
@@ -12,7 +12,7 @@ date: 2025-11-14
 updated: 2025-11-14
 pair: life-learning
 canonical: ~/yasam-ogrenme/
-alternate: ~/life-learning/
+alternate: ~/en/life-learning/
 description: "Gündelik pratikler, öğrenme ritüelleri ve zihni açık tutan deneyimlerin bir arşivi."
 keywords:
   - hayat
@@ -21,7 +21,7 @@ keywords:
   - farkındalık
 featured: false
 draft: false
-template: category
+template: collection
 layout: default
 status: published
 ---

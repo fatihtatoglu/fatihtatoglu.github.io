@@ -1,0 +1,55 @@
+@layer base {
+  :root {
+    --yml-bg: #22272e;
+    --yml-fg: #adbac7;
+    --yml-string: #96d0ff;
+    --yml-attr: #6cb6ff;
+    --yml-bullet: #eac55f;
+    --yml-type: #f47067;
+    --yml-number: #6cb6ff;
+    --yml-boolean: #6cb6ff;
+    --yml-comment: #768390;
+  }
+}
+
+@layer components {
+  pre.code-block[data-code-language="yml"] {
+    @apply bg-[var(--yml-bg)];
+
+    code.language-yml::before {
+      content: "yml";
+    }
+
+    code.language-yml {
+      @apply font-sans text-[var(--yml-fg)];
+
+      span.hljs-string {
+        @apply text-[var(--yml-string)];
+      }
+
+      span.hljs-attr {
+        @apply text-[var(--yml-attr)];
+      }
+
+      span.hljs-bullet {
+        @apply text-[var(--yml-bullet)];
+      }
+
+      span.hljs-type {
+        @apply text-[var(--yml-type)];
+      }
+
+      span.hljs-number {
+        @apply text-[var(--yml-number)];
+      }
+
+      span.hljs-literal {
+        @apply text-[var(--yml-boolean)];
+      }
+
+      span.hljs-comment {
+        @apply text-[var(--yml-comment)];
+      }
+    }
+  }
+}

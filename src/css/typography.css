@@ -44,11 +44,22 @@
   }
 
   code {
-    @apply bg-[var(--sage-200)] font-mono text-sm;
+    @apply bg-[var(--sage-200)] font-mono text-xs p-0.5 px-1 font-medium border rounded-2xl;
+    color: var(--sage-900);
   }
 
   pre > code {
     @apply font-mono text-sm;
     background-color: unset;
+    padding: unset;
+    font-weight: unset;
+    border: unset;
+    color: unset;
+  }
+
+  pre > code::before {
+    @apply flex items-end justify-end px-2 pb-2 text-xs border-b border-dashed mb-2 sticky left-0;
+    color: var(--ink-dim);
+    content: "txt";
   }
 }

@@ -78,7 +78,75 @@
       gap: var(--shell-footer-gap);
       background: var(--bg);
     }
-</style>
+
+    .demo-alert-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .demo-alert {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      border-radius: var(--radius-md);
+      padding: 0.85rem 1rem;
+      border: 1px solid var(--border);
+      background: var(--bg-elev);
+      font-size: 0.95rem;
+    }
+
+    .demo-alert[data-tone="success"] {
+      border-color: color-mix(in srgb, var(--ok) 60%, transparent);
+      background: color-mix(in srgb, var(--ok) 15%, transparent);
+    }
+
+    .demo-alert[data-tone="warning"] {
+      border-color: color-mix(in srgb, var(--warn) 60%, transparent);
+      background: color-mix(in srgb, var(--warn) 15%, transparent);
+    }
+
+    .demo-alert[data-tone="error"] {
+      border-color: color-mix(in srgb, var(--err) 60%, transparent);
+      background: color-mix(in srgb, var(--err) 15%, transparent);
+    }
+
+    .demo-alert-icon {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      color: var(--invert-ink);
+    }
+
+    .demo-alert[data-tone="success"] .demo-alert-icon {
+      background: var(--ok);
+    }
+
+    .demo-alert[data-tone="warning"] .demo-alert-icon {
+      background: var(--warn);
+      color: var(--ink);
+    }
+
+    .dark .demo-alert[data-tone="warning"] .demo-alert-icon {
+      color: var(--invert-ink);
+    }
+
+    .demo-alert[data-tone="error"] .demo-alert-icon {
+      background: var(--err);
+    }
+
+    .demo-alert strong {
+      display: block;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.25rem;
+    }
+  </style>
 
   <article class="page demo-wrapper">
     <header>
@@ -139,6 +207,48 @@
         <div class="demo-token"><div class="demo-swatch" style="background: var(--ok);"></div><code>--ok</code></div>
         <div class="demo-token"><div class="demo-swatch" style="background: var(--warn);"></div><code>--warn</code></div>
         <div class="demo-token"><div class="demo-swatch" style="background: var(--err);"></div><code>--err</code></div>
+      </div>
+    </section>
+
+    <section class="demo-section">
+      <h2>İkonlu Uyarılar</h2>
+      <div class="demo-alert-list">
+        <div class="demo-alert" data-tone="success">
+          <div class="demo-alert-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 32 32">
+              <polyline points="3 17 11 26 29 6" fill="none" stroke="currentColor" stroke-linecap="square" stroke-miterlimit="10" stroke-width="4"></polyline>
+            </svg>
+          </div>
+          <div>
+            <strong>Success</strong>
+            <span>Başarılı işlemler için kullanılan onay stili.</span>
+          </div>
+        </div>
+        <div class="demo-alert" data-tone="warning">
+          <div class="demo-alert-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20px" height="20px" viewBox="0 0 48 48">
+              <path d="M20.1049 7.15552L3.60955 34.5335C1.87754 37.4075 4.04293 41 7.50544 41H40.4946C43.9571 41 46.1225 37.4075 44.3905 34.5335L27.8966 7.15552C26.1646 4.28149 21.8369 4.28149 20.1049 7.15552Z" stroke="currentColor" stroke-width="4" stroke-miterlimit="10" stroke-linecap="square" fill="none"></path>
+              <path d="M24 15V27" stroke="currentColor" stroke-width="4" stroke-miterlimit="10" stroke-linecap="square" data-color="color-2" fill="none"></path>
+              <path d="M24 34C24.5523 34 25 33.5523 25 33C25 32.4477 24.5523 32 24 32C23.4477 32 23 32.4477 23 33C23 33.5523 23.4477 34 24 34Z" fill="currentColor" stroke="currentColor" stroke-width="4" stroke-miterlimit="10" stroke-linecap="square" data-color="color-2"></path>
+            </svg>
+          </div>
+          <div>
+            <strong>Warning</strong>
+            <span>Dikkat gerektiren durumlar için nötr uyarı.</span>
+          </div>
+        </div>
+        <div class="demo-alert" data-tone="error">
+          <div class="demo-alert-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 48 48">
+              <path d="M39 9L9 39" stroke="currentColor" stroke-width="4" stroke-miterlimit="10" stroke-linecap="square" data-color="color-2" fill="none"></path>
+              <path d="M39 39L9 9" stroke="currentColor" stroke-width="4" stroke-miterlimit="10" stroke-linecap="square" fill="none"></path>
+            </svg>
+          </div>
+          <div>
+            <strong>Error</strong>
+            <span>Hataları belirginleştirmek için kırmızı ton.</span>
+          </div>
+        </div>
       </div>
     </section>
 

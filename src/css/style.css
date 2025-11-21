@@ -1,8 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap");
 @import "tailwindcss";
+
+/* Styles */
 @import "./base.css";
 @import "./layout.css";
 @import "./typography.css";
 @import "./button.css";
 @import "./page.css";
 @import "./category.css";
+
+
+/* Code Styles */
+@import "./code_powershell.css";
+@import "./code_bash.css";
+@import "./code_yml.css";
+@import "./code_python.css";
+@import "./code_json.css";

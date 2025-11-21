@@ -1,0 +1,61 @@
+@layer base {
+  :root {
+    --bash-bg: #22272e;
+    --bash-fg: #adbac7;
+    --bash-command: #f69d50;
+    --bash-keyword: #f47067;
+    --bash-variable: #6cb6ff;
+    --bash-string: #96d0ff;
+    --bash-boolean: #6cb6ff;
+    --bash-comment: #768390;
+    --bash-title: #dcbdfb;
+  }
+}
+
+@layer components {
+  pre.code-block[data-code-language="bash"],
+  pre.code-block[data-code-language="shell"] {
+    @apply bg-[var(--bash-bg)];
+
+    code.language-bash::before {
+      content: "bash";
+    }
+
+    code.language-shell::before {
+      content: "shell";
+    }
+
+    code.language-bash,
+    code.language-shell {
+      @apply font-sans text-[var(--bash-fg)];
+
+      span.hljs-built_in {
+        @apply text-[var(--bash-command)];
+      }
+
+      span.hljs-keyword {
+        @apply text-[var(--bash-keyword)];
+      }
+
+      span.hljs-variable {
+        @apply text-[var(--bash-variable)];
+      }
+
+      span.hljs-string {
+        @apply text-[var(--bash-string)];
+      }
+
+      span.hljs-literal {
+        @apply text-[var(--bash-boolean)];
+      }
+
+      span.hljs-comment {
+        @apply text-[var(--bash-comment)];
+      }
+
+      span.hljs-function > span.hljs-title {
+        @apply text-[var(--bash-title)];
+      }
+    }
+  }
+}

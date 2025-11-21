@@ -39,6 +39,8 @@
       system-ui, sans-serif;
     --font-mono: "IBM Plex Mono", "JetBrains Mono", "Fira Code", ui-monospace,
       SFMono-Regular, Menlo, Consolas, monospace;
+    --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+      "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --radius-md: 12px;
     --radius-lg: 16px;
     --spacing: 0.25rem;
@@ -71,26 +73,12 @@
     line-height: 1.6;
   }
 
-  ::selection {
-    background-color: var(--sage-200);
-    color: var(--ink);
-  }
-
-  .dark ::selection {
-    background-color: var(--sage-700);
-    color: var(--bg);
-  }
-
   .font-sans {
     font-family: var(--font-body);
   }
 
   .font-mono {
     font-family: var(--font-mono);
-  }
-
-  .shadow-soft {
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 8px 24px rgba(0, 0, 0, 0.06);
   }
 
   @media (prefers-reduced-motion: reduce) {

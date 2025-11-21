@@ -1,0 +1,62 @@
+@layer base {
+  :root {
+    --python-bg: #22272e;
+    --python-fg: #adbac7;
+
+    --python-keyword: #f47067;
+    --python-type: #f47067;
+    --python-function: #dcbdfb;
+    --python-params: #f69d50;
+    --python-string: #96d0ff;
+    --python-subst: #adbac7;
+    --python-meta: #6cb6ff;
+    --python-comment: #768390;
+  }
+}
+
+@layer components {
+  pre.code-block[data-code-language="python"] {
+    @apply bg-[var(--python-bg)];
+
+    code.language-python::before {
+      content: "python";
+    }
+
+    code.language-python {
+      @apply font-sans text-[var(--python-fg)];
+
+      span.hljs-keyword {
+        @apply text-[var(--python-keyword)];
+      }
+
+      span.hljs-type {
+        @apply text-[var(--python-type)];
+      }
+
+      span.hljs-title.function_ {
+        @apply text-[var(--python-function)];
+      }
+
+      span.hljs-built_in,
+      span.hljs-params > span.hljs-built_in {
+        @apply text-[var(--python-params)];
+      }
+
+      span.hljs-string {
+        @apply text-[var(--python-string)];
+      }
+
+      span.hljs-string > span.hljs-subst {
+        @apply text-[var(--python-subst)];
+      }
+
+      span.hljs-meta {
+        @apply text-[var(--python-meta)];
+      }
+
+      span.hljs-comment {
+        @apply text-[var(--python-comment)];
+      }
+    }
+  }
+}

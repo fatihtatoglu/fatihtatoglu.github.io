@@ -1,0 +1,46 @@
+@layer base {
+  :root {
+    --json-bg: #22272e;
+    --json-fg: #adbac7;
+
+    --json-punctuation: #adbac7;
+    --json-attr: #6cb6ff;
+    --json-string: #96d0ff;
+    --json-number: #6cb6ff;
+    --json-keyword: #f47067;
+  }
+}
+
+@layer components {
+  pre.code-block[data-code-language="json"] {
+    @apply bg-[var(--json-bg)];
+
+    code.language-json::before {
+      content: "json";
+    }
+
+    code.language-json {
+      @apply font-sans text-[var(--json-fg)];
+
+      span.hljs-punctuation {
+        @apply text-[var(--json-punctuation)];
+      }
+
+      span.hljs-attr {
+        @apply text-[var(--json-attr)];
+      }
+
+      span.hljs-string {
+        @apply text-[var(--json-string)];
+      }
+
+      span.hljs-literal > span.hljs-keyword {
+        @apply text-[var(--json-keyword)];
+      }
+
+      span.hljs-number {
+        @apply text-[var(--json-number)];
+      }
+    }
+  }
+}

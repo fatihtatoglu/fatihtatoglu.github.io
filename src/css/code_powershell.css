@@ -1,0 +1,94 @@
+@layer base {
+  :root {
+    --pwsh-bg: #0000aa;
+    --pwsh-fg: #ffffff;
+
+    --pwsh-command: #ffff5f;
+    --pwsh-selected-command: #0000aa;
+
+    --pwsh-parameter: #aaaaaa;
+    --pwsh-selected-parameter: #5f5f5f;
+
+    --pwsh-string: #00aaaa;
+    --pwsh-selected-string: #ff5f5f;
+
+    --pwsh-variable: #5fff55;
+    --pwsh-selected-variable: #aa00aa;
+
+    --pwsh-number: #ffffff;
+    --pwsh-selected-number: #000000;
+
+    --pwsh-selected-bg: #fedba9;
+    --pwsh-selected-fg: #000000;
+
+    --pwsh-comment: #00aa00;
+    --pwsh-selected-comment: #ff5fff;
+  }
+}
+
+@layer components {
+  pre.code-block[data-code-language="powershell"] {
+    @apply bg-[var(--pwsh-bg)];
+
+    code.language-powershell::before {
+      content: "powershell";
+      color: var(--pwsh-parameter);
+    }
+
+    code.language-powershell {
+      @apply font-sans text-[var(--pwsh-fg)];
+
+      span.hljs-built_in {
+        @apply text-[var(--pwsh-command)];
+      }
+
+      span.hljs-built_in::selection {
+        @apply text-[var(--pwsh-selected-command)] bg-[var(--pwsh-selected-bg)];
+      }
+
+      span.hljs-literal {
+        @apply text-[var(--pwsh-parameter)];
+      }
+
+      span.hljs-literal::selection {
+        @apply text-[var(--pwsh-selected-parameter)] bg-[var(--pwsh-selected-bg)];
+      }
+
+      span.hljs-string {
+        @apply text-[var(--pwsh-string)];
+      }
+
+      span.hljs-string::selection {
+        @apply text-[var(--pwsh-selected-string)] bg-[var(--pwsh-selected-bg)];
+      }
+
+      span.hljs-variable {
+        @apply text-[var(--pwsh-variable)];
+      }
+
+      span.hljs-variable::selection {
+        @apply text-[var(--pwsh-selected-variable)] bg-[var(--pwsh-selected-bg)];
+      }
+
+      span.hljs-number {
+        @apply text-[var(--pwsh-number)];
+      }
+
+      span.hljs-number::selection {
+        @apply text-[var(--pwsh-selected-number)] bg-[var(--pwsh-selected-bg)];
+      }
+
+      span.hljs-comment {
+        @apply text-[var(--pwsh-comment)];
+      }
+
+      span.hljs-comment::selection {
+        @apply text-[var(--pwsh-selected-comment)] bg-[var(--pwsh-selected-bg)];
+      }
+    }
+
+    code.language-powershell::selection {
+      @apply bg-[var(--pwsh-selected-bg)] text-[var(--pwsh-selected-fg)];
+    }
+  }
+}

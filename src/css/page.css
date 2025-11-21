@@ -137,6 +137,7 @@
 
       tr:nth-child(even) {
         background-color: var(--sage-100);
+        color: var(--ink);
       }
 
       tr {
@@ -231,7 +232,7 @@
 
     thead {
       @apply font-mono text-left uppercase bg-[var(--sage-500)] border-b border-[var(--sage-900)];
-      color: var(--invert-ink);
+      color: var(--ink);
     }
 
     th,
@@ -255,5 +256,10 @@
     tr:last-child {
       @apply border-b-0;
     }
+  }
+
+  html.dark .post-body > table > tbody > tr:nth-child(even) {
+    background-color: var(--sage-100);
+    color: var(--invert-ink);
   }
 }

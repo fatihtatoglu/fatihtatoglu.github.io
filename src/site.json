@@ -1,8 +1,10 @@
 {
-  "author": "Fatih Tatoğlu",
-  "email": "fatih@tatoglu.net",
-  "url": "http://localhost:3000",
-  "themeColor": "#5a8df0",
+  "identity": {
+    "author": "Fatih Tatoğlu",
+    "email": "fatih@tatoglu.net",
+    "url": "http://localhost:3000",
+    "themeColor": "#5a8df0"
+  },
   "analytics": {
     "enabled": false,
     "gtmId": "GTM-XXXXXXX",
@@ -23,36 +25,41 @@
     ]
   },
   "build": {
-    "minify": true
+    "minify": false
   },
-  "pagination": {
-    "pageSize": 2,
-    "segment": {
-      "tr": "sayfa",
-      "en": "page"
-    }
+  "markdown": {
+    "highlight": true
   },
-  "languages": {
-    "default": "tr",
-    "supported": [
-      "tr",
-      "en"
-    ]
-  },
-  "collections": {
-    "tags": {
-      "template": "collection",
-      "types": [
-        "tag"
-      ],
-      "slugPattern": {
-        "tr": "etiket/{{key}}",
-        "en": "tag/{{key}}"
-      },
-      "pairs": {
-        "docker": {
-          "tr": "docker",
-          "en": "docker"
+  "content": {
+    "pagination": {
+      "pageSize": 5,
+      "segment": {
+        "tr": "sayfa",
+        "en": "page"
+      }
+    },
+    "languages": {
+      "default": "tr",
+      "supported": [
+        "tr",
+        "en"
+      ]
+    },
+    "collections": {
+      "tags": {
+        "template": "collection",
+        "types": [
+          "tag"
+        ],
+        "slugPattern": {
+          "tr": "etiket/{{key}}",
+          "en": "tag/{{key}}"
+        },
+        "pairs": {
+          "docker": {
+            "tr": "docker",
+            "en": "docker"
+          }
         }
       }
     }

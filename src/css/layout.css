@@ -55,11 +55,31 @@
 
         div.header-bar-wrapper {
           a.owner {
-            @apply text-lg uppercase text-[var(--muted)];
+            @apply text-3xl uppercase text-[var(--muted)];
           }
 
           p.role {
             @apply font-mono text-xl font-medium text-[var(--ink)] hidden;
+          }
+
+          @media (min-width: 640px) {
+            a.owner {
+              @apply text-lg;
+            }
+            p.role {
+              @apply block;
+            }
+          }
+
+          @media (min-width: 1024px) {
+          }
+        }
+
+        div.header-buttons {
+          button.menu-button {
+            @media (min-width: 640px) {
+              @apply hidden;
+            }
           }
         }
       }
@@ -134,6 +154,10 @@
             --btn-border: var(--brand-400);
           }
         }
+
+        @media (min-width: 640px) {
+          @apply hidden;
+        }
       }
 
       .dark div.menu-drawer {
@@ -152,11 +176,40 @@
         display: none;
       }
 
+      nav.line-menu {
+        @apply hidden;
+
+        ul.menu-list {
+          @apply gap-4 flex justify-center;
+
+          li:first-child {
+            @apply hidden;
+          }
+
+          li > a {
+            @apply p-3;
+          }
+        }
+
+        @media (min-width: 640px) {
+          @apply block;
+        }
+
+        @media (min-width: 1024px) {
+        }
+      }
+
       p.slogan {
         @apply font-mono text-sm text-center m-0;
         color: var(--ink-dim);
       }
     }
+  }
+
+  @media (min-width: 640px) {
+  }
+
+  @media (min-width: 1024px) {
   }
 
   header.site-header--pinned {

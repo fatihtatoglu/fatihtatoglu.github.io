@@ -5,6 +5,53 @@
       gap: 2rem;
     }
 
+    .demo-breakpoint-indicator {
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 0.4rem 1.05rem;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.35rem;
+      background: var(--bg);
+      color: var(--muted);
+      width: fit-content;
+      margin: 0 auto 1.5rem;
+    }
+
+    .demo-breakpoint-indicator span {
+      display: none;
+      color: var(--ink);
+    }
+
+    .demo-breakpoint-indicator span[data-breakpoint="mobile"] {
+      display: inline;
+    }
+
+    @media (min-width: 640px) {
+      .demo-breakpoint-indicator span[data-breakpoint="mobile"] {
+        display: none;
+      }
+
+      .demo-breakpoint-indicator span[data-breakpoint="tablet"] {
+        display: inline;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .demo-breakpoint-indicator span[data-breakpoint="tablet"] {
+        display: none;
+      }
+
+      .demo-breakpoint-indicator span[data-breakpoint="laptop"] {
+        display: inline;
+      }
+    }
+
     .demo-section {
       border: 1px dashed var(--border);
       border-radius: var(--radius-lg);
@@ -149,6 +196,11 @@
   </style>
 
   <article class="page demo-wrapper">
+    <div class="demo-breakpoint-indicator" role="status" aria-live="polite">
+      <span data-breakpoint="mobile">mobile -> mobile</span>
+      <span data-breakpoint="tablet">tablet -> tablet</span>
+      <span data-breakpoint="laptop">laptop -> laptop</span>
+    </div>
     <header>
       <h1 class="text-3xl font-semibold">Base Parametreleri Önizleme</h1>
       <p class="text-[var(--muted)]">

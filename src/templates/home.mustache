@@ -1,9 +1,9 @@
-<section class="category" data-page-template="home">
+<section class="category">
   {{{content.html}}}
 
   {{#listing.hasItems}}
     {{#listing.items}}
-    <article id="post-{{id}}" class="post-card" data-page-template="post" data-id="{{id}}">
+    <article id="post-{{id}}" class="post-card">
       <!-- Post Header -->
       <header class="post-header">
 
@@ -68,10 +68,9 @@
     {{#listing.hasPagination}}
     <nav class="mt-6 flex justify-between items-center" aria-label="Sayfa geçişleri">
       {{#listing}}
-        {{#hasPrev}}
-        <a
+        <button
           class="btn btn--sm btn--tone-neutral btn--icon-left"
-          href="{{prevUrl}}"
+          data-href="{{prevUrl}}" {{^hasPrev}}disabled{{/hasPrev}}
         >
           <svg viewBox="0 0 20 20" aria-hidden="true">
             <path
@@ -84,13 +83,11 @@
             />
           </svg>
           <span>{{i18n.ui.pagination.previous}}</span>
-        </a>
-        {{/hasPrev}}
-
-        {{#hasNext}}
-        <a
+        </button>
+        
+        <button
           class="btn btn--sm btn--tone-neutral btn--icon-right"
-          href="{{nextUrl}}"
+          data-href="{{nextUrl}}" {{^hasNext}}disabled{{/hasNext}}
         >
           <span>{{i18n.ui.pagination.next}}</span>
           <svg viewBox="0 0 20 20" aria-hidden="true">
@@ -103,8 +100,7 @@
               stroke-linejoin="round"
             />
           </svg>
-        </a>
-        {{/hasNext}}
+        </button>
       {{/listing}}
     </nav>
     {{/listing.hasPagination}}

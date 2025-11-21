@@ -64,6 +64,7 @@ const BUILD_SETTINGS = SITE_CONFIG.build ?? {};
 const MINIFY_OUTPUT = BUILD_SETTINGS.minify === true;
 const MARKDOWN_SETTINGS = SITE_CONFIG.markdown ?? {};
 const MARKDOWN_HIGHLIGHT_ENABLED = MARKDOWN_SETTINGS.highlight !== false;
+const FEATURE_FLAGS = SITE_CONFIG.features ?? {};
 const COLLECTION_CONFIG = SITE_CONFIG.content?.collections ?? {};
 const LANGUAGE_SETTINGS = SITE_CONFIG.content?.languages ?? {};
 const SUPPORTED_LANGUAGES =
@@ -613,6 +614,12 @@ function buildSiteData(lang) {
         ? PAGINATION_SETTINGS.pageSize
         : 5,
     },
+    features: {
+      postOperations: parseBoolean(FEATURE_FLAGS.postOperations) !== false,
+      search: parseBoolean(
+        FEATURE_FLAGS.search ?? SITE_CONFIG.search ?? true,
+      ) !== false,
+    },
   };
 }
 
@@ -968,11 +975,13 @@ function renderContentTemplate(templateName, contentHtml, front, lang, dictionar
     coverAlt: front.coverAlt ?? "",
   };
   const listing = listingOverride ?? buildCollectionListing(normalizedFront, lang);
+  const site = buildSiteData(lang);
   return Mustache.render(template, {
     content: { html: decorateHtml(contentHtml, templateName) },
     front: normalizedFront,
     lang,
     listing,
+    site,
     locale: {
       isTr: lang === "tr",
       isEn: lang === "en",

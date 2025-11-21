@@ -4,7 +4,7 @@ lang: en
 title: "Technical Notes | Category"
 slug: technical-notes
 type: category
-menu: "Teknik Notlar"
+menu: "Technical Notes"
 order: 3
 show: true
 readingTime: 1

@@ -6,7 +6,7 @@ slug: contact
 category: meta
 type: meta
 menu: "Contact"
-order: 4
+order: 5
 show: true
 readingTime: 1
 date: 2025-11-14

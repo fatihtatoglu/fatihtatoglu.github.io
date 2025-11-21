@@ -45,7 +45,8 @@
       </dl>
     </div>
 
-    <div class="post-operations">
+    <div class="post-operations {{^site.features.postOperations}}py-2{{/site.features.postOperations}}">
+    {{#site.features.postOperations}}
       <button class="btn btn--xs btn--icon btn--tone-sage" type="button" data-action="like"
         aria-label="{{#locale.isTr}}Beğen{{/locale.isTr}}{{#locale.isEn}}Like{{/locale.isEn}}">
         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 48 48" >
@@ -107,7 +108,9 @@
           </g>
         </svg>
       </button>
+      {{/site.features.postOperations}}
     </div>
+    
   </header>
   <!-- Post Header -->
 

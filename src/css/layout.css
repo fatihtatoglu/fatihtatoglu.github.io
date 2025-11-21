@@ -55,11 +55,11 @@
 
         div.header-bar-wrapper {
           a.owner {
-            @apply text-xs uppercase text-[var(--muted)];
+            @apply text-lg uppercase text-[var(--muted)];
           }
 
           p.role {
-            @apply font-mono text-xl font-medium text-[var(--ink)];
+            @apply font-mono text-xl font-medium text-[var(--ink)] hidden;
           }
         }
       }

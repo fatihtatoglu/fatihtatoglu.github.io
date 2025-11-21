@@ -27,6 +27,10 @@
   "build": {
     "minify": false
   },
+  "features": {
+    "postOperations": false,
+    "search": false
+  },
   "markdown": {
     "highlight": true
   },

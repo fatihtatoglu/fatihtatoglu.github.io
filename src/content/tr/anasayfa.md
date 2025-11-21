@@ -16,7 +16,7 @@ description: "Fatih Tatoğlu'nun kişisel blogu. Disiplinli, sade ve retro bir t
 keywords: ["static site generator", "tailwind", "markdown parser"]
 featured: true
 draft: false
-template: "home"
+template: "demo"
 listKey: "home"
 layout: "default"
 status: "published"

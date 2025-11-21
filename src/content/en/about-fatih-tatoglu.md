@@ -6,7 +6,7 @@ slug: about-fatih-tatoglu
 category: meta
 type: meta
 menu: "About Me"
-order: 3
+order: 4
 show: true
 readingTime: 3
 date: 2025-11-14

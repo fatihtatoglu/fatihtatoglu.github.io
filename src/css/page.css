@@ -1,4 +1,159 @@
 @layer components {
+  figure.post-cover img {
+    @apply rounded-2xl;
+  }
+
+  figure.post-cover figcaption {
+    @apply text-xs text-center p-2;
+    font-family: var(--font-body);
+  }
+
+  .post-meta {
+    @apply py-4 rounded-2xl bg-[var(--bg)];
+  }
+
+  .post-meta__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+  }
+
+  .post-meta__item {
+    @apply flex flex-col gap-2 text-center;
+  }
+
+  .post-meta__item dt {
+    @apply uppercase font-mono text-sm;
+    color: var(--muted);
+  }
+
+  .post-meta__item dd {
+    @apply text-sm font-semibold;
+  }
+
+  .post-body,
+  article.page {
+    font-family: var(--font-body);
+    color: var(--ink);
+    line-height: 1.7;
+  }
+
+  article.post .post-body img,
+  article.page img {
+    @apply rounded-2xl;
+    display: block;
+    margin: 1.75rem auto;
+  }
+
+  article.post .post-body ul,
+  article.post .post-body ol,
+  article.page ul,
+  article.page ol {
+    margin: 1.25rem 0 1.5rem;
+    padding: 0;
+    color: var(--ink);
+    list-style: none;
+  }
+
+  article.post .post-body ol,
+  article.page ol {
+    counter-reset: post-list-counter;
+  }
+
+  article.post .post-body li,
+  article.page li {
+    position: relative;
+    padding-left: 1.75rem;
+  }
+
+  article.post .post-body li + li,
+  article.page li + li {
+    margin-top: 0.75rem;
+  }
+
+  article.post .post-body ul li::before,
+  article.page ul li::before {
+    content: "";
+    position: absolute;
+    left: 0.45rem;
+    top: 0.65rem;
+    width: 0.4rem;
+    height: 0.4rem;
+    border-radius: 999px;
+    background: var(--brand-500);
+    box-shadow: 0 0 0 3px
+      color-mix(in srgb, var(--brand-500) 30%, transparent);
+  }
+
+  article.post .post-body ol li,
+  article.page ol li {
+    counter-increment: post-list-counter;
+  }
+
+  article.post .post-body ol li::before,
+  article.page ol li::before {
+    content: counter(post-list-counter) ".";
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+  }
+
+  article.post .post-body table,
+  article.page table {
+    @apply w-full text-sm my-8 border rounded-2xl border-[var(--sage-900)] bg-[var(--bg)];
+    overflow-x: auto;
+    overflow-y: hidden;
+    display: block;
+    border-collapse: collapse;
+  }
+
+  article.post .post-body th,
+  article.post .post-body td,
+  article.page th,
+  article.page td {
+    @apply text-left align-top border-0 p-2;
+  }
+
+  article.post .post-body thead,
+  article.page thead {
+    @apply font-mono text-left uppercase bg-[var(--sage-500)] border-b border-[var(--sage-900)];
+    color: var(--invert-ink);
+  }
+
+  article.post .post-body th,
+  article.post .post-body td,
+  article.page th,
+  article.page td {
+    @apply border-r border-dashed border-[var(--sage-900)];
+  }
+
+  article.post .post-body th:last-child,
+  article.post .post-body td:last-child,
+  article.page th:last-child,
+  article.page td:last-child {
+    @apply border-r-0;
+  }
+
+  article.post .post-body tr:nth-child(even),
+  article.page tr:nth-child(even) {
+    background-color: var(--sage-100);
+    color: var(--ink);
+  }
+
+  article.post .post-body tr,
+  article.page tr {
+    @apply border-b border-dashed border-[var(--sage-900)];
+  }
+
+  article.post .post-body tr:last-child,
+  article.page tr:last-child {
+    @apply border-b-0;
+  }
+
   article.post {
     @apply rounded-2xl border border-[var(--border)] bg-[var(--bg)] p-4;
 
@@ -11,141 +166,14 @@
 
       div.post-cover {
         @apply p-4;
-
-        figure.post-cover img {
-          @apply rounded-2xl;
-        }
-
-        figure.post-cover figcaption {
-          @apply text-xs text-center p-2;
-          font-family: var(--font-body);
-        }
       }
 
       div.post-meta {
-        @apply py-4 mx-4 rounded-2xl bg-[var(--bg)];
-
-        dl.post-meta__grid {
-          @apply flex gap-4 justify-around;
-
-          div.post-meta__item {
-            @apply flex flex-col gap-2;
-
-            dt {
-              @apply uppercase text-center font-mono text-sm;
-              color: var(--muted);
-            }
-
-            dd {
-              @apply text-center text-sm font-semibold;
-            }
-          }
-        }
+        @apply mx-4;
       }
 
       div.post-operations {
         @apply rounded-b-2xl flex flex-wrap gap-2 items-center justify-center py-4 bg-[var(--bg-elev)];
-      }
-    }
-
-    div.post-body {
-      font-family: var(--font-body);
-      color: var(--ink);
-      line-height: 1.7;
-
-      img {
-        display: block;
-        margin: 1.75rem auto;
-      }
-
-      ul,
-      ol {
-        margin: 1.25rem 0 1.5rem;
-        padding: 0;
-        color: var(--ink);
-        list-style: none;
-      }
-
-      li {
-        position: relative;
-        padding-left: 1.75rem;
-      }
-
-      li + li {
-        margin-top: 0.75rem;
-      }
-
-      ul li::before {
-        content: "";
-        position: absolute;
-        left: 0.45rem;
-        top: 0.65rem;
-        width: 0.4rem;
-        height: 0.4rem;
-        border-radius: 999px;
-        background: var(--brand-500);
-        box-shadow: 0 0 0 3px
-          color-mix(in srgb, var(--brand-500) 30%, transparent);
-      }
-
-      ol {
-        counter-reset: post-list-counter;
-
-        li li {
-          counter-increment: post-list-counter;
-        }
-      }
-
-      ol li::before {
-        content: counter(post-list-counter) ".";
-        position: absolute;
-        left: 0;
-        top: 0;
-        font-family: var(--font-mono);
-        font-size: 0.85rem;
-        letter-spacing: 0.1em;
-        color: var(--muted);
-      }
-
-      table {
-        @apply w-full text-sm my-8 border rounded-2xl border-[var(--sage-900)] bg-[var(--bg)];
-        overflow-x: auto;
-        overflow-y: hidden;
-        display: block;
-        border-collapse: collapse;
-      }
-
-      th,
-      td {
-        @apply text-left align-top border-0 p-2;
-      }
-
-      thead {
-        @apply font-mono text-left uppercase bg-[var(--sage-500)] border-b border-[var(--sage-900)];
-        color: var(--invert-ink);
-      }
-
-      th,
-      td {
-        @apply border-r border-dashed border-[var(--sage-900)];
-      }
-
-      th:last-child,
-      td:last-child {
-        @apply border-r-0;
-      }
-
-      tr:nth-child(even) {
-        background-color: var(--sage-100);
-        color: var(--ink);
-      }
-
-      tr {
-        @apply border-b border-dashed border-[var(--sage-900)];
-      }
-
-      tr:last-child {
-        @apply border-b-0;
       }
     }
 
@@ -158,107 +186,10 @@
 
   article.page {
     @apply rounded-2xl border border-[var(--border)] bg-[var(--bg)] p-4;
-
-    font-family: var(--font-body);
-    color: var(--ink);
-    line-height: 1.7;
-
-    img {
-      @apply rounded-2xl;
-      margin: 1.75rem auto;
-    }
-
-    ul,
-    ol {
-      margin: 1.25rem 0 1.5rem;
-      padding: 0;
-      color: var(--ink);
-      list-style: none;
-    }
-
-    li {
-      position: relative;
-      padding-left: 1.75rem;
-    }
-
-    li + li {
-      margin-top: 0.75rem;
-    }
-
-    ul li::before {
-      content: "";
-      position: absolute;
-      left: 0.45rem;
-      top: 0.65rem;
-      width: 0.4rem;
-      height: 0.4rem;
-      border-radius: 999px;
-      background: var(--brand-500);
-      box-shadow: 0 0 0 3px
-        color-mix(in srgb, var(--brand-500) 30%, transparent);
-    }
-
-    ol {
-      counter-reset: post-list-counter;
-
-      li li {
-        counter-increment: post-list-counter;
-      }
-    }
-
-    ol li::before {
-      content: counter(post-list-counter) ".";
-      position: absolute;
-      left: 0;
-      top: 0;
-      font-family: var(--font-mono);
-      font-size: 0.85rem;
-      letter-spacing: 0.1em;
-      color: var(--muted);
-    }
-
-    table {
-      @apply w-full text-sm my-8 border rounded-2xl border-[var(--sage-900)] bg-[var(--bg)];
-      overflow-x: auto;
-      overflow-y: hidden;
-      display: block;
-      border-collapse: collapse;
-    }
-
-    th,
-    td {
-      @apply text-left align-top border-0 p-2;
-    }
-
-    thead {
-      @apply font-mono text-left uppercase bg-[var(--sage-500)] border-b border-[var(--sage-900)];
-      color: var(--ink);
-    }
-
-    th,
-    td {
-      @apply border-r border-dashed border-[var(--sage-900)];
-    }
-
-    th:last-child,
-    td:last-child {
-      @apply border-r-0;
-    }
-
-    tr:nth-child(even) {
-      background-color: var(--sage-100);
-    }
-
-    tr {
-      @apply border-b border-dashed border-[var(--sage-900)];
-    }
-
-    tr:last-child {
-      @apply border-b-0;
-    }
   }
 
-  html.dark .post-body > table > tbody > tr:nth-child(even) {
+  html.dark article.post .post-body > table > tbody > tr:nth-child(even),
+  html.dark article.page > table > tbody > tr:nth-child(even) {
     background-color: var(--sage-100);
     color: var(--invert-ink);
   }

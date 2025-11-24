@@ -52,6 +52,7 @@
         align-items: center;
         justify-content: space-between;
         gap: 1rem;
+        flex-wrap: wrap;
 
         div.header-bar-wrapper {
           a.owner {
@@ -179,8 +180,8 @@
     @apply rounded-2xl;
 
     top: var(--shell-gutter);
-    margin: 0 calc(-1 * var(--shell-gutter));
-    width: calc(100% + (var(--shell-gutter) * 2));
+    margin: 0 calc(-1 * var(--shell-gutter) + 0.25rem);
+    width: calc(100% + (var(--shell-gutter) * 2) - 0.5rem);
     display: block;
   }
 

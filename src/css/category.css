@@ -8,45 +8,9 @@
       header.post-header {
         @apply bg-[var(--bg-elev)];
 
-        div.post-cover {
-          /* @apply p-4; */
-
-          figure.post-cover img {
-            @apply rounded-2xl;
-          }
-
-          figure.post-cover figcaption {
-            @apply text-xs text-center p-2;
-            font-family: var(--font-body);
-          }
-        }
-
         div.post-meta {
-          @apply py-4 mt-1 rounded-2xl bg-[var(--bg)];
-
-          dl.post-meta__grid {
-            @apply flex gap-4 justify-around;
-
-            div.post-meta__item {
-              @apply flex flex-col gap-2;
-
-              dt {
-                @apply uppercase text-center font-mono text-sm;
-                color: var(--muted);
-              }
-
-              dd {
-                @apply text-center text-sm font-semibold;
-              }
-            }
-          }
+          @apply mt-1;
         }
-      }
-
-      div.post-body {
-        font-family: var(--font-body);
-        color: var(--ink);
-        line-height: 1.7;
       }
     }
 

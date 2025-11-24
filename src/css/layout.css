@@ -30,19 +30,10 @@
     padding: var(--shell-gutter);
   }
 
-  div.header-sentinel {
-    height: 0;
-    pointer-events: none;
-  }
-
   header.site-header {
     @apply rounded-2xl border border-[var(--border)] bg-[var(--bg)] p-5;
-    position: sticky;
-    top: var(--shell-gutter);
-    margin-top: calc(-1 * var(--shell-gutter));
     transition: margin 0.2s ease, top 0.2s ease, border-radius 0.2s ease,
       width 0.2s ease;
-    z-index: 25;
 
     div.header-wrapper {
       @apply flex flex-col gap-6 relative;
@@ -55,6 +46,8 @@
         flex-wrap: wrap;
 
         div.header-bar-wrapper {
+          @apply w-full text-center;
+
           a.owner {
             @apply text-3xl uppercase text-[var(--muted)];
           }
@@ -62,6 +55,10 @@
           p.role {
             @apply font-mono text-xl font-medium text-[var(--ink)] hidden;
           }
+        }
+
+        div.header-buttons {
+          @apply flex gap-4 mx-auto;
         }
       }
 
@@ -176,20 +173,10 @@
     }
   }
 
-  header.site-header--pinned {
-    @apply rounded-2xl;
-
-    top: var(--shell-gutter);
-    margin: 0 calc(-1 * var(--shell-gutter) + 0.25rem);
-    width: calc(100% + (var(--shell-gutter) * 2) - 0.5rem);
-    display: block;
-  }
-
   footer.site-footer {
     @apply text-sm text-[var(--muted)] rounded-t-3xl;
     position: static;
     border-radius: 24px 24px 0 0;
-    padding-bottom: var(--shell-footer-gap);
 
     div.footer-wrapper {
       @apply flex flex-col gap-3 rounded-2xl border border-[var(--border)] bg-[var(--bg)] p-4 backdrop-blur;

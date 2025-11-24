@@ -229,7 +229,7 @@
           display: block !important;
 
           nav ul.menu-list {
-            @apply flex-row gap-3 justify-center;
+            @apply flex-row gap-1 justify-center;
           }
         }
 

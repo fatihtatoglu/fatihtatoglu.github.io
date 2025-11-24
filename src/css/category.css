@@ -3,9 +3,7 @@
     @apply rounded-2xl border border-[var(--border)] bg-[var(--bg)] p-4;
 
     div.category-listing {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
+      @apply flex flex-col gap-4 justify-around;
     }
 
     article.post-card {
@@ -32,9 +30,7 @@
   @media (min-width: 768px) {
     section.category {
       div.category-listing {
-        flex-direction: row-reverse;
-        flex-wrap: wrap;
-        gap: 1.5rem;
+        @apply flex-row-reverse flex-wrap gap-6;
       }
 
       div.category-listing article.post-card {
@@ -47,10 +43,7 @@
   @media (min-width: 1024px) {
     section.category {
       div.category-listing {
-        flex-direction: row-reverse;
-        flex-wrap: wrap-reverse;
-        gap: 1.5rem;
-        justify-content: flex-end;
+        @apply flex-row-reverse flex-wrap gap-4;
       }
 
       div.category-listing article.post-card {

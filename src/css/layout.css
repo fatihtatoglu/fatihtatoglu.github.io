@@ -31,7 +31,7 @@
   }
 
   header.site-header {
-    @apply rounded-2xl border border-[var(--border)] bg-[var(--bg)] p-5;
+    @apply rounded-2xl border border-[var(--border)] bg-[var(--bg)] p-4;
     transition: margin 0.2s ease, top 0.2s ease, border-radius 0.2s ease,
       width 0.2s ease;
 
@@ -39,11 +39,7 @@
       @apply flex flex-col gap-6 relative;
 
       div.header-bar {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 1rem;
-        flex-wrap: wrap;
+        @apply flex items-center justify-between gap-4 flex-wrap;
 
         div.header-bar-wrapper {
           @apply w-full text-center;
@@ -129,6 +125,11 @@
             --btn-color: var(--brand-700);
             --btn-border: var(--brand-400);
           }
+
+          li.theme-button,
+          li.language-button {
+            @apply hidden;
+          }
         }
       }
 
@@ -172,7 +173,6 @@
   }
 
   @media (min-width: 480px) {
-
     header.site-header {
       div.header-wrapper {
         div.menu-drawer {
@@ -181,8 +181,14 @@
 
         div.header-bar {
           div.header-bar-wrapper {
+            @apply flex flex-row gap-4 items-center;
+
             width: unset;
             text-align: left;
+
+            p.role {
+              @apply block m-0;
+            }
           }
 
           div.header-buttons {
@@ -190,6 +196,105 @@
             margin-inline: unset;
           }
         }
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    header.site-header {
+      div.header-wrapper {
+        @apply gap-0;
+
+        div.header-bar {
+          @apply items-start;
+
+          div.header-bar-wrapper {
+
+            @apply flex-col gap-0;
+            align-items: unset;
+
+            a.owner {
+              @apply text-lg;
+            }
+          }
+
+          div.header-buttons {
+            button.menu-button {
+              @apply hidden;
+            }
+          }
+        }
+
+        div.menu-drawer {
+          @apply left-0 right-0 relative m-0 z-0 p-0 border-0 mt-4;
+          display: block !important;
+
+          nav ul.menu-list {
+            @apply flex-row gap-3 justify-center;
+          }
+        }
+
+        p.slogan {
+          @apply mt-4;
+        }
+      }
+    }
+  }
+
+  @media (min-width: 960px) {
+    header.site-header {
+      div.header-wrapper {
+
+
+        div.header-bar {
+
+
+          div.header-bar-wrapper {
+            a.owner {
+              @apply text-base;
+            }
+
+            p.role {
+              @apply text-base;
+            }
+          }
+
+          div.header-buttons {
+            @apply hidden;
+          }
+        }
+
+        div.menu-drawer {
+
+          @apply flex mt-0 absolute bg-transparent z-30 justify-self-end;
+
+          nav ul.menu-list {
+
+            li a.menu-link {
+              --btn-padding-y: 1rem;
+
+              --btn-bg: transparent;
+              --btn-border: transparent;
+              --btn-border-hover: transparent;
+              --btn-border-active: transparent;
+              --btn-letter-spacing: 0.08em;
+            }
+
+            li:first-child {
+              @apply hidden;
+            }
+
+            li.theme-button {
+              @apply flex;
+            }
+
+            li.language-button {
+              @apply flex;
+            }
+          }
+        }
+
+        p.slogan {}
       }
     }
   }
@@ -220,6 +325,40 @@
 
       p.copyright {
         @apply text-xs text-center my-2 text-[var(--muted)];
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    footer.site-footer {
+      div.footer-wrapper {
+        @apply flex-row flex-wrap gap-3 justify-between;
+
+        div.footer-policies {
+          @apply flex-col justify-start m-0;
+        }
+
+        p.copyright {
+          @apply w-full;
+        }
+
+        div.footer-tags {
+          @apply mb-0 flex w-1/2;
+        }
+
+        div.footer-social {
+          @apply my-0 flex-col justify-start content-start gap-2;
+        }
+      }
+    }
+  }
+
+  @media (min-width: 960px) {
+    footer.site-footer {
+      div.footer-wrapper {
+        div.footer-tags {
+          width: 60%;
+        }
       }
     }
   }

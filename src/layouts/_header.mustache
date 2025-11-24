@@ -39,22 +39,11 @@
               </a>
             </li>
           {{/menu.items}}
+          <li class="theme-button"><theme-switcher></theme-switcher></li>
+          <li class="language-button"><language-switcher></language-switcher></li>
         </ul>
       </nav>
     </div>
-
-    <nav class="line-menu" aria-label="{{i18n.menu.primary}}" data-i18n-attrs="aria-label:menu.primary">
-      <ul class="menu-list">
-        {{#menu.items}}
-          <li>
-            <a class="btn btn--tone-brand btn--text btn--lg {{#isActive}} is-active{{/isActive}}"
-              href="{{{url}}}" data-menu-link="{{key}}" data-i18n="menu.{{key}}"{{#isActive}} aria-current="page"{{/isActive}}>
-              {{label}}
-            </a>
-          </li>
-        {{/menu.items}}
-      </ul>
-    </nav>
 
     <div class="menu-overlay" data-menu-overlay hidden></div>
 

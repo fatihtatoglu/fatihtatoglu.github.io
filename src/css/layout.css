@@ -159,7 +159,7 @@
             @apply hidden;
           }
 
-          li>a {
+          li > a {
             @apply p-3;
           }
         }
@@ -185,10 +185,6 @@
 
             width: unset;
             text-align: left;
-
-            p.role {
-              @apply block m-0;
-            }
           }
 
           div.header-buttons {
@@ -209,12 +205,15 @@
           @apply items-start;
 
           div.header-bar-wrapper {
-
             @apply flex-col gap-0;
             align-items: unset;
 
             a.owner {
               @apply text-lg;
+            }
+
+            p.role {
+              @apply block m-0;
             }
           }
 
@@ -244,11 +243,7 @@
   @media (min-width: 960px) {
     header.site-header {
       div.header-wrapper {
-
-
         div.header-bar {
-
-
           div.header-bar-wrapper {
             a.owner {
               @apply text-base;
@@ -265,11 +260,9 @@
         }
 
         div.menu-drawer {
-
           @apply flex mt-0 absolute bg-transparent z-30 justify-self-end;
 
           nav ul.menu-list {
-
             li a.menu-link {
               --btn-padding-y: 1rem;
 
@@ -294,7 +287,8 @@
           }
         }
 
-        p.slogan {}
+        p.slogan {
+        }
       }
     }
   }

@@ -61,26 +61,6 @@
           p.role {
             @apply font-mono text-xl font-medium text-[var(--ink)] hidden;
           }
-
-          @media (min-width: 640px) {
-            a.owner {
-              @apply text-lg;
-            }
-            p.role {
-              @apply block;
-            }
-          }
-
-          @media (min-width: 1024px) {
-          }
-        }
-
-        div.header-buttons {
-          button.menu-button {
-            @media (min-width: 640px) {
-              @apply hidden;
-            }
-          }
         }
       }
 
@@ -154,10 +134,6 @@
             --btn-border: var(--brand-400);
           }
         }
-
-        @media (min-width: 640px) {
-          @apply hidden;
-        }
       }
 
       .dark div.menu-drawer {
@@ -190,13 +166,6 @@
             @apply p-3;
           }
         }
-
-        @media (min-width: 640px) {
-          @apply block;
-        }
-
-        @media (min-width: 1024px) {
-        }
       }
 
       p.slogan {
@@ -204,12 +173,6 @@
         color: var(--ink-dim);
       }
     }
-  }
-
-  @media (min-width: 640px) {
-  }
-
-  @media (min-width: 1024px) {
   }
 
   header.site-header--pinned {

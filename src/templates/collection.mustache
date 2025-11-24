@@ -2,6 +2,7 @@
   {{{content.html}}}
   
   {{#listing.hasItems}}
+    <div class="category-listing">
     {{#listing.items}}
     <article id="post-{{id}}" class="post-card">
     <!-- Post Header -->
@@ -53,6 +54,7 @@
     <!-- Post Content -->
     </article>
     {{/listing.items}}
+    </div>
   {{/listing.hasItems}}
 
   {{^listing.hasItems}}

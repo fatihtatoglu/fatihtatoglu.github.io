@@ -1565,11 +1565,31 @@ function buildRssFeeds() {
   });
 }
 
+function collectSitemapEntriesFromFeeds() {
+  const urls = [];
+  const languages = SUPPORTED_LANGUAGES.length ? SUPPORTED_LANGUAGES : [DEFAULT_LANGUAGE];
+  languages.forEach((lang) => {
+    const rssEntries = collectRssEntriesForLang(lang, 1);
+    if (!rssEntries.length) {
+      return;
+    }
+    const latest = rssEntries[0];
+    const relativeUrl = lang === DEFAULT_LANGUAGE ? "/feed.xml" : `/${lang}/feed.xml`;
+    const lastmod = latest?.date ? formatLastmod(latest.date) : null;
+    urls.push({
+      loc: resolveUrl(relativeUrl),
+      ...(lastmod ? { lastmod } : {}),
+    });
+  });
+  return urls;
+}
+
 function buildSitemap() {
   const contentEntries = collectSitemapEntriesFromContent();
   const collectionEntries = SEO_INCLUDE_COLLECTIONS ? collectSitemapEntriesFromDynamicCollections() : [];
 
-  const combined = [...contentEntries, ...collectionEntries];
+  const feedEntries = collectSitemapEntriesFromFeeds();
+  const combined = [...contentEntries, ...collectionEntries, ...feedEntries];
   if (!combined.length) return;
 
   const entryByLoc = new Map();

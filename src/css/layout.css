@@ -299,6 +299,12 @@
     }
   }
 
+  @media (min-width: 768px) {
+    main {
+      @apply flex justify-center;
+    }
+  }
+
   footer.site-footer {
     @apply text-sm text-[var(--muted)] rounded-t-3xl;
     position: static;

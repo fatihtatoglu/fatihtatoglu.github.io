@@ -223,6 +223,34 @@
       }
     }
   },
+  "post": {
+    "operations": {
+      "like": {
+        "aria": {
+          "tr": "Beğen",
+          "en": "Like"
+        }
+      },
+      "dislike": {
+        "aria": {
+          "tr": "Beğenme",
+          "en": "Dislike"
+        }
+      },
+      "comment": {
+        "aria": {
+          "tr": "Yorum Yap",
+          "en": "Comment"
+        }
+      },
+      "copyLink": {
+        "aria": {
+          "tr": "Link Kopyala",
+          "en": "Copy Link"
+        }
+      }
+    }
+  },
   "seo": {
     "collections": {
       "tags": {

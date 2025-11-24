@@ -81,8 +81,7 @@
     height: 0.4rem;
     border-radius: 999px;
     background: var(--brand-500);
-    box-shadow: 0 0 0 3px
-      color-mix(in srgb, var(--brand-500) 30%, transparent);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--brand-500) 30%, transparent);
   }
 
   article.post .post-body ol li,
@@ -192,5 +191,22 @@
   html.dark article.page > table > tbody > tr:nth-child(even) {
     background-color: var(--sage-100);
     color: var(--invert-ink);
+  }
+
+  @media (min-width: 768px) {
+    article.post,
+    article.page {
+      @apply max-w-[680px];
+
+      header.post-header {
+        div.post-cover {
+          @apply flex justify-center;
+
+          figure.post-cover {
+            max-width: 75%;
+          }
+        }
+      }
+    }
   }
 }

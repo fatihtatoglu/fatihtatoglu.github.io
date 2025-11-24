@@ -337,3 +337,150 @@ document.querySelectorAll("button[data-href]").forEach((b) => {
     window.location.href = href;
   });
 });
+
+function getShareMetadata() {
+  const canonicalLink = document.querySelector('link[rel="canonical"]');
+  const metaTitle = document.querySelector('meta[property="og:title"]');
+  const metaDescription = document.querySelector('meta[property="og:description"]');
+  const htmlLang = document.documentElement?.getAttribute("lang")?.trim().toLowerCase();
+  const langCandidate = htmlLang && htmlLang.length ? htmlLang.split("-")[0] : "";
+  const normalizedLang = langCandidate === "en" ? "en" : "tr";
+  const url = canonicalLink?.href?.trim() || window.location.href;
+  const title = metaTitle?.getAttribute("content")?.trim() || document.title || url;
+  const description = metaDescription?.getAttribute("content")?.trim()
+    || document.querySelector('meta[name="description"]')?.getAttribute("content")?.trim()
+    || "";
+  return { url, title, description, lang: normalizedLang };
+}
+
+function appendTrackingParams(rawUrl, params = {}) {
+  try {
+    const trackedUrl = new URL(rawUrl, window.location.origin);
+    Object.entries(params).forEach(([key, value]) => {
+      if (value != null && value !== "") {
+        trackedUrl.searchParams.set(key, value);
+      }
+    });
+    return trackedUrl.toString();
+  } catch (error) {
+    console.warn("Unable to apply tracking params", error);
+    return rawUrl;
+  }
+}
+
+function buildShareUrl(target, meta) {
+  const sourceMap = {
+    x: "twitter",
+    twitter: "twitter",
+    facebook: "facebook",
+    linkedin: "linkedin",
+    whatsapp: "whatsapp",
+  };
+  const shareSource = sourceMap[target] ?? target;
+  const trackedUrl = appendTrackingParams(meta.url, {
+    utm_source: shareSource,
+    utm_medium: "social",
+    utm_lang: meta.lang,
+  });
+  const encodedUrl = encodeURIComponent(trackedUrl);
+  const encodedTitle = encodeURIComponent(meta.title);
+  switch (target) {
+    case "x":
+      return `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`;
+    case "facebook":
+      return `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`;
+    case "linkedin":
+      return `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`;
+    case "whatsapp": {
+      const whatsappText = encodeURIComponent(`${meta.title} ${trackedUrl}`.trim());
+      return `https://wa.me/?text=${whatsappText}`;
+    }
+    default:
+      if (navigator.share) {
+        navigator.share({ title: meta.title, text: meta.description, url: meta.url }).catch(() => {});
+      }
+      return null;
+  }
+}
+
+function openSharePopup(url) {
+  if (!url) return;
+  const width = 640;
+  const height = 480;
+  const dualScreenLeft = window.screenLeft ?? window.screenX ?? 0;
+  const dualScreenTop = window.screenTop ?? window.screenY ?? 0;
+  const screenWidth = window.innerWidth ?? document.documentElement.clientWidth ?? screen.width;
+  const screenHeight = window.innerHeight ?? document.documentElement.clientHeight ?? screen.height;
+  const left = dualScreenLeft + Math.max(0, (screenWidth - width) / 2);
+  const top = dualScreenTop + Math.max(0, (screenHeight - height) / 2);
+  window.open(
+    url,
+    "share-dialog",
+    `scrollbars=yes,width=${width},height=${height},top=${Math.round(top)},left=${Math.round(left)}`,
+  );
+}
+
+async function copyShareLink(text) {
+  if (!text) return false;
+  if (navigator.clipboard?.writeText) {
+    try {
+      await navigator.clipboard.writeText(text);
+      return true;
+    } catch (error) {
+      console.warn("Clipboard API failed, falling back to execCommand", error);
+    }
+  }
+  const textarea = document.createElement("textarea");
+  textarea.value = text;
+  textarea.setAttribute("readonly", "readonly");
+  textarea.style.position = "fixed";
+  textarea.style.opacity = "0";
+  document.body.appendChild(textarea);
+  textarea.select();
+  textarea.setSelectionRange(0, textarea.value.length);
+  let success = false;
+  try {
+    success = document.execCommand("copy");
+  } catch (error) {
+    console.error("execCommand copy failed", error);
+  } finally {
+    document.body.removeChild(textarea);
+  }
+  return success;
+}
+
+function setCopyFeedback(button, state) {
+  if (!button) return;
+  button.dataset.shareState = state;
+  setTimeout(() => {
+    if (button.dataset.shareState === state) {
+      delete button.dataset.shareState;
+    }
+  }, 2000);
+}
+
+const shareButtons = document.querySelectorAll("[data-share]");
+if (shareButtons.length) {
+  const shareMeta = getShareMetadata();
+  shareButtons.forEach((button) => {
+    button.addEventListener("click", async (event) => {
+      event.preventDefault();
+      const target = button.dataset.share;
+      if (!target) return;
+      if (target === "copy") {
+        const trackedCopyUrl = appendTrackingParams(shareMeta.url, {
+          utm_source: "copy",
+          utm_medium: "web_site",
+          utm_lang: shareMeta.lang,
+        });
+        const copied = await copyShareLink(trackedCopyUrl);
+        setCopyFeedback(button, copied ? "copied" : "error");
+        return;
+      }
+      const shareUrl = buildShareUrl(target, shareMeta);
+      if (shareUrl) {
+        openSharePopup(shareUrl);
+      }
+    });
+  });
+}

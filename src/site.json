@@ -28,7 +28,7 @@
     "minify": false
   },
   "features": {
-    "postOperations": false,
+    "postOperations": true,
     "search": false
   },
   "markdown": {

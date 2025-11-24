@@ -158,7 +158,7 @@
             @apply hidden;
           }
 
-          li > a {
+          li>a {
             @apply p-3;
           }
         }
@@ -167,6 +167,29 @@
       p.slogan {
         @apply font-mono text-sm text-center m-0;
         color: var(--ink-dim);
+      }
+    }
+  }
+
+  @media (min-width: 480px) {
+
+    header.site-header {
+      div.header-wrapper {
+        div.menu-drawer {
+          @apply left-12 right-12;
+        }
+
+        div.header-bar {
+          div.header-bar-wrapper {
+            width: unset;
+            text-align: left;
+          }
+
+          div.header-buttons {
+            display: unset;
+            margin-inline: unset;
+          }
+        }
       }
     }
   }

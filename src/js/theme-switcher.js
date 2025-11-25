@@ -1,4 +1,4 @@
-import { readCookie, setCookie } from "./utils/cookies.js";
+import cookieApi from "./utils/cookies.js";
 import {
   DEFAULT_LANGUAGE,
   loadDictionary,
@@ -19,11 +19,11 @@ const THEME_COLORS = {
 const prefersDark = window.matchMedia ? window.matchMedia("(prefers-color-scheme: dark)") : null;
 
 function persistTheme(value) {
-  setCookie(THEME_COOKIE, value);
+  cookieApi.write(THEME_COOKIE, value);
 }
 
 function readStoredTheme() {
-  return readCookie(THEME_COOKIE);
+  return cookieApi.read(THEME_COOKIE);
 }
 
 function resolveTheme(pref) {

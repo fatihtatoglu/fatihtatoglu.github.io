@@ -1,4 +1,4 @@
-import { readCookie, setCookie } from "./utils/cookies.js";
+import cookieApi from "./utils/cookies.js";
 import {
   SUPPORTED_LANGUAGES,
   DEFAULT_LANGUAGE,
@@ -85,11 +85,11 @@ function getLanguageUrl(lang) {
 }
 
 function persistLang(value) {
-  setCookie(LANGUAGE_COOKIE, value);
+  cookieApi.write(LANGUAGE_COOKIE, value);
 }
 
 function readStoredLang() {
-  return readCookie(LANGUAGE_COOKIE);
+  return cookieApi.read(LANGUAGE_COOKIE);
 }
 
 function applyTranslations(dict) {

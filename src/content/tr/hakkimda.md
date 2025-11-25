@@ -18,7 +18,7 @@ description: "Fatih Tatoğlu'nun 20+ yıllık mühendislik serüveni, öğrenmey
 keywords: ["Fatih Tatoğlu", "hakkımda", "mühendis", "kişisel blog", "öğrenme", "babalık"]
 featured: false
 draft: false
-cover: "../assets/images/standard-cover-terminal.webp"
+cover: "/assets/images/standard-cover-terminal.webp"
 coverAlt: "Minimal terminal temalı kapak görüntüsü"
 coverCaption: "Fatih Tatoğlu - öğrenme, üretme ve mühendislik yolculuğu."
 template: "page"
@@ -27,7 +27,7 @@ status: "published"
 ---
 # Hakkımda
 
-![Fatih Tatoğlu](../assets/images/fatih_tatoglu.webp "Fatih Tatoğlu")
+![Fatih Tatoğlu](/assets/images/fatih_tatoglu.webp "Fatih Tatoğlu")
 
 Merhaba, ben **Fatih Tatoğlu**.
 

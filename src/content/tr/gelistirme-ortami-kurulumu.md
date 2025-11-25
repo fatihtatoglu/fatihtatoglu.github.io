@@ -36,7 +36,7 @@ keywords:
   - powershell
 featured: true
 draft: false
-cover: ../assets/images/development-environment.webp
+cover: /assets/images/development-environment.webp
 coverAlt: Windows üzerinde Hyper-V sanal penceresinde çalışan Linux Mint masaüstü, üzerinde Docker, Python, Go, NodeJS, .NET ve GitHub ikonlarıyla
 coverCaption: Windows ana makinede Hyper-V üzerinden izole edilmiş Linux Mint geliştirici ortamı
 template: post

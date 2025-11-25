@@ -32,7 +32,7 @@ keywords:
   - tehditler
 featured: true
 draft: false
-cover: ../assets/images/swot-analysis-reflection.webp
+cover: /assets/images/swot-analysis-reflection.webp
 coverAlt: SWOT analizinin dört bileşenini gösteren diyagram
 coverCaption: "SWOT Analizi: güçlü, zayıf, fırsat ve tehditlerin görünür hale gelmesi."
 template: post
@@ -58,7 +58,7 @@ SWOT analizi 4 kavrama odaklanmaktadır. Bunlar;
 
 şeklindedir. Her kavramın kendine ait soruları bulunmaktadır.
 
-![SWOT Analiz](../assets/images/swot-analysis.webp)
+![SWOT Analiz](/assets/images/swot-analysis.webp)
 
 ### SWOT Analizinde Güçlü Yönler
 
@@ -116,7 +116,7 @@ Değerlendirmeye geçmeden önce ufak bir uyarı yapmak istiyorum. SWOT analizi 
 
 ### İç ve Dış Faktör Gruplaması
 
-![SWOT Analizi iç ve Dış Faktörler](../assets/images/swot-internal-external-factors.webp)
+![SWOT Analizi iç ve Dış Faktörler](/assets/images/swot-internal-external-factors.webp)
 
 Bu gruplama SWOT analizinin tanımından gelen temel gruplama yöntemidir. Bu yönteme göre; iç faktör olarak, güçlü ve zayıf yönler kullanılırken, dış faktör olarak, fırsatlar ve tehditler kullanılmaktadır.
 
@@ -124,7 +124,7 @@ Bu gruplamadaki amaç, uygulayıcının kontrolünde olan iç faktörler ile dah
 
 ### Yardımcı ve Zararlı Faktörler
 
-![SWOT Analizi Yardımcı ve Zararlı Faktörler](../assets/images/swot-helpful-harmful-factors.webp)
+![SWOT Analizi Yardımcı ve Zararlı Faktörler](/assets/images/swot-helpful-harmful-factors.webp)
 
 Bu aslında benim de sonradan öğrendiğim bir gruplama yöntemi. Bu yöntem uygulayıcının acı noktası dediğim noktalarını çok daha görünür kılmasını sağladığı için uygulama aşamasına eklemek istedim.
 

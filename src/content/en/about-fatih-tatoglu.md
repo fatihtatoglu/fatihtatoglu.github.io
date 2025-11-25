@@ -25,7 +25,7 @@ keywords:
   - career-story
 featured: false
 draft: false
-cover: ../assets/images/fatih_tatoglu_cover.webp
+cover: /assets/images/fatih_tatoglu_cover.webp
 coverAlt: Minimal retro-style illustrated cover for Fatih Tatoğlu
 coverCaption: Fatih Tatoğlu - learning, building, exploring.
 template: page
@@ -34,7 +34,7 @@ status: published
 ---
 # About Me
 
-![Fatih Tatoğlu](../assets/images/fatih_tatoglu.webp "Fatih Tatoğlu")
+![Fatih Tatoğlu](/assets/images/fatih_tatoglu.webp "Fatih Tatoğlu")
 
 Hello, I'm **Fatih Tatoğlu**.
 

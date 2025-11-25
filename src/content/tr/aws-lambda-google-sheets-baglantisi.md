@@ -35,7 +35,7 @@ keywords:
   - iam security
 featured: true
 draft: false
-cover: ../assets/images/standard-cover-terminal.webp
+cover: /assets/images/standard-cover-terminal.webp
 coverAlt: Sıcak tonlarda minimal terminal simgeli kapak görseli
 coverCaption: EventBridge -> Lambda -> (WIF) -> Google Sheets akışı için standart kapak.
 template: post
@@ -163,7 +163,7 @@ resources:
                         - index/*
 ```
 
-![Lambda için oluşturulmuş IAM rolü özet ekranı](../assets/images/iam-role-lambda-readonly.webp)
+![Lambda için oluşturulmuş IAM rolü özet ekranı](/assets/images/iam-role-lambda-readonly.webp)
 
 Bu rol, projedeki ihtiyaçları gözeterek Cognito ve DynamoDB kaynaklarına salt okuma şeklinde erişir.
 
@@ -315,7 +315,7 @@ Artık AWS ve Google Cloud arasındaki köprü kurulmuş oldu.
 
 Köprü kurulduktan sonra tekrar AWS'ye dönüp gereken tanımları yapmam ve bağlantı doğrulamasını yapmam gerekiyor.
 
-![WIF sağlayıcı eşlemesi: attribute.aws_role ve google.subject](../assets/images/gcp-wif-connected-service-account-config.webp)
+![WIF sağlayıcı eşlemesi: attribute.aws_role ve google.subject](/assets/images/gcp-wif-connected-service-account-config.webp)
 
 Bunun için Workload Identity Pool detayında `Connected service account` sekmesini göreceksiniz. Bu sekmeye tıklayın ve tanımladığınız servis hesabının yanındaki `Client library config` dosyasını indirin.
 

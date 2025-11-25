@@ -616,6 +616,7 @@ function buildSiteData(lang) {
     home: lang === "en" ? "/en/" : "/",
     url: IDENTITY_CONFIG.url ?? BASE_URL,
     themeColor: IDENTITY_CONFIG.themeColor ?? "#5a8df0",
+    analyticsEnabled: ANALYTICS_ENABLED,
     gtmId: GTM_ID,
     year: new Date().getFullYear(),
     languages: {

@@ -34,7 +34,8 @@
           {{#menu.items}}
             <li>
               <a class="btn btn--tone-neutral menu-link{{#isActive}} is-active{{/isActive}}"
-                href="{{{url}}}" data-menu-link="{{key}}" data-i18n="menu.{{key}}"{{#isActive}} aria-current="page"{{/isActive}}>
+                href="{{{url}}}" data-menu-link="{{key}}" data-i18n="menu.{{key}}"{{#isActive}} aria-current="page"{{/isActive}}
+                data-analytics="open_page">
                 {{label}}
               </a>
             </li>

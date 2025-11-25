@@ -65,6 +65,21 @@ const MINIFY_OUTPUT = BUILD_SETTINGS.minify === true;
 const MARKDOWN_SETTINGS = SITE_CONFIG.markdown ?? {};
 const MARKDOWN_HIGHLIGHT_ENABLED = MARKDOWN_SETTINGS.highlight !== false;
 const FEATURE_FLAGS = SITE_CONFIG.features ?? {};
+const POST_OPERATION_SHARE_KEYS = ["whatsapp", "x", "linkedin", "facebook", "copy"];
+const POST_OPERATIONS_DEFAULTS = {
+  enabled: true,
+  like: true,
+  dislike: true,
+  comment: true,
+  share: {
+    enabled: true,
+    whatsapp: true,
+    x: true,
+    linkedin: true,
+    facebook: true,
+    copy: true,
+  },
+};
 const COLLECTION_CONFIG = SITE_CONFIG.content?.collections ?? {};
 const LANGUAGE_SETTINGS = SITE_CONFIG.content?.languages ?? {};
 const SUPPORTED_LANGUAGES =
@@ -615,10 +630,71 @@ function buildSiteData(lang) {
         : 5,
     },
     features: {
-      postOperations: parseBoolean(FEATURE_FLAGS.postOperations) !== false,
+      postOperations: buildPostOperationsFeatures(FEATURE_FLAGS.postOperations),
       search: parseBoolean(
         FEATURE_FLAGS.search ?? SITE_CONFIG.search ?? true,
       ) !== false,
+    },
+  };
+}
+
+function buildPostOperationsFeatures(rawConfig) {
+  const defaults = POST_OPERATIONS_DEFAULTS;
+  const shareDefaults = defaults.share;
+  const shareKeys = POST_OPERATION_SHARE_KEYS;
+  const isObjectConfig =
+    rawConfig != null && typeof rawConfig === "object" && !Array.isArray(rawConfig);
+
+  if (!isObjectConfig) {
+    const enabled = resolveFeatureFlag(rawConfig, defaults.enabled);
+    const shareEnabled = enabled && shareKeys.some(() => enabled);
+    const shareButtons = {};
+    shareKeys.forEach((key) => {
+      shareButtons[key] = shareEnabled;
+    });
+    return {
+      enabled,
+      like: enabled,
+      dislike: enabled,
+      comment: enabled,
+      share: {
+        enabled: shareEnabled,
+        ...shareButtons,
+      },
+    };
+  }
+
+  const baseEnabled = resolveFeatureFlag(rawConfig.enabled, defaults.enabled);
+  const like = resolveFeatureFlag(rawConfig.like, defaults.like);
+  const dislike = resolveFeatureFlag(rawConfig.dislike, defaults.dislike);
+  const comment = resolveFeatureFlag(rawConfig.comment, defaults.comment);
+
+  const shareRaw = typeof rawConfig.share === "object" && rawConfig.share ? rawConfig.share : {};
+  let shareEnabled = resolveFeatureFlag(shareRaw.enabled, shareDefaults.enabled);
+  const shareFlags = {};
+  shareKeys.forEach((key) => {
+    shareFlags[key] = resolveFeatureFlag(shareRaw[key], shareDefaults[key]);
+  });
+  const hasShareButton = shareKeys.some((key) => shareFlags[key]);
+  shareEnabled = shareEnabled && hasShareButton;
+
+  const anyButtonEnabled = [like, dislike, comment, shareEnabled].some(Boolean);
+  const enabled = baseEnabled && anyButtonEnabled;
+
+  const finalShareEnabled = enabled ? shareEnabled : false;
+  const finalShareFlags = {};
+  shareKeys.forEach((key) => {
+    finalShareFlags[key] = finalShareEnabled ? shareFlags[key] : false;
+  });
+
+  return {
+    enabled,
+    like: enabled ? like : false,
+    dislike: enabled ? dislike : false,
+    comment: enabled ? comment : false,
+    share: {
+      enabled: finalShareEnabled,
+      ...finalShareFlags,
     },
   };
 }
@@ -1754,6 +1830,11 @@ function parseBoolean(value) {
     if (normalized === "false") return false;
   }
   return Boolean(value);
+}
+
+function resolveFeatureFlag(value, fallback = true) {
+  if (value == null) return fallback;
+  return parseBoolean(value) !== false;
 }
 
 function parseOrder(value) {

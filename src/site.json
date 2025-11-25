@@ -28,7 +28,20 @@
     "minify": false
   },
   "features": {
-    "postOperations": true,
+    "postOperations": {
+      "enabled": true,
+      "like": false,
+      "dislike": false,
+      "comment": false,
+      "share": {
+        "enabled": true,
+        "whatsapp": true,
+        "x": true,
+        "linkedin": true,
+        "facebook": true,
+        "copy": true
+      }
+    },
     "search": false
   },
   "markdown": {

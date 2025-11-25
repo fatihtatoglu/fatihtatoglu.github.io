@@ -29,6 +29,8 @@
 
   @media (min-width: 768px) {
     section.category {
+      @apply max-w-[680px];
+
       div.category-listing {
         @apply flex-row-reverse flex-wrap gap-6;
       }
@@ -40,15 +42,34 @@
     }
   }
 
-  @media (min-width: 1024px) {
-    section.category {
-      div.category-listing {
-        @apply flex-row-reverse flex-wrap gap-4;
+  @media (min-width: 600px) {
+    section.category.home {
+      article {
+        header.post-header {
+          width: 70%;
+          margin-inline: auto;
+        }
       }
+    }
+  }
 
-      div.category-listing article.post-card {
-        flex-basis: calc(33.3% - 0.75rem);
-        max-width: calc(33.3% - 0.75rem);
+  @media (min-width: 768px) {
+    section.category.home {
+      article {
+        @apply flex justify-between;
+
+        header.post-header {
+          flex-basis: calc(50% - 0.75rem);
+          max-width: calc(50% - 0.75rem);
+          margin-inline: unset;
+          width: unset;
+        }
+
+        div.post-body {
+          @apply flex flex-col rounded-2xl  p-4 justify-start bg-[var(--bg)];
+          flex-basis: calc(50% - 0.75rem);
+          max-width: calc(50% - 0.75rem);
+        }
       }
     }
   }

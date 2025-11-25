@@ -6,10 +6,10 @@
     "themeColor": "#5a8df0"
   },
   "analytics": {
-    "enabled": false,
-    "gtmId": "GTM-XXXXXXX",
-    "gaId": "G-XXXXXXXXXX",
-    "clarityId": "CLARITY-ID"
+    "enabled": true,
+    "gtmId": "GTM-5WHLJZ6Z",
+    "gaId": "G-R2SETB688N",
+    "clarityId": "ubkn3xooz5"
   },
   "seo": {
     "defaultImage": "~/assets/images/fatih_tatoglu_cover.webp",

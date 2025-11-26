@@ -16,3 +16,10 @@ cookieApi.init();
 menuApi.init();
 shareApi.init();
 
+document.querySelectorAll("p img").forEach(image => {
+  image.addEventListener("click", function (e) {
+    if (e.target && e.target.classList) {
+      e.target.classList.toggle("zoom");
+    }
+  });
+});

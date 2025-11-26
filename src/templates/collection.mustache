@@ -1,5 +1,9 @@
 <section class="category">
-  {{{content.html}}}
+  {{#content.html}}
+  <div class="collection-content">
+  {{{.}}}
+  </div>
+  {{/content.html}}
   
   {{#listing.hasItems}}
     <div class="category-listing">

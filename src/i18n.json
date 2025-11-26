@@ -205,8 +205,8 @@
   },
   "category": {
     "readingTimeSuffix": {
-      "tr": "dk okuma",
-      "en": "min read"
+      "tr": "dakika",
+      "en": "minutes"
     },
     "emptyFallback": {
       "tr": "Bu kategori için yakında içerik paylaşacağım.",

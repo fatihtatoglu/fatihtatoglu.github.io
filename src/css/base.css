@@ -90,4 +90,9 @@
       scroll-behavior: auto !important;
     }
   }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
 }

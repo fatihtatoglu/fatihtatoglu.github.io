@@ -185,6 +185,10 @@
 
   article.page {
     @apply rounded-2xl border border-[var(--border)] bg-[var(--bg)] p-4;
+
+    div.external-content {
+      @apply rounded-2xl border border-[var(--border)] bg-[var(--bg-elev)] overflow-x-scroll w-full;
+    }
   }
 
   html.dark article.post .post-body > table > tbody > tr:nth-child(even),
@@ -193,17 +197,106 @@
     color: var(--invert-ink);
   }
 
+  @keyframes zoom-in {
+    from {
+      transform: translate(-50%, -50%) scale(0.95);
+      opacity: 0;
+    }
+
+    to {
+      transform: translate(-50%, -50%) scale(1.02);
+      opacity: 1;
+    }
+  }
+
+  @keyframes overlay-fade {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  @media (min-width: 768px) {
+    article.post .post-body p > img,
+    article.page p > img {
+      cursor: zoom-in;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    article.post .post-body p > img.zoom,
+    article.page p > img.zoom {
+      cursor: zoom-out;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(1.02);
+      max-width: min(90vw, 60rem);
+      max-height: 90vh;
+      width: auto;
+      height: auto;
+      z-index: 1001;
+      box-shadow: 0 25px 80px color-mix(in srgb, var(--ink) 25%, transparent);
+      animation: zoom-in 0.25s ease;
+    }
+
+    body:has(article.post .post-body p > img.zoom)::after,
+    body:has(article.page p > img.zoom)::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: color-mix(in srgb, var(--ink) 65%, transparent);
+      backdrop-filter: blur(18px);
+      z-index: 1000;
+      animation: overlay-fade 0.2s ease;
+      pointer-events: none;
+    }
+
+    article.post,
+    article.page {
+      max-width: 70ch;
+      margin-inline: auto;
+
+      header.post-header {
+        @apply flex flex-row flex-wrap items-start;
+
+        div.post-back {
+          @apply w-full;
+        }
+
+        div.post-meta,
+        div.post-cover {
+          @apply flex justify-center;
+        }
+
+        div.post-meta {
+          @apply mx-0 mt-4;
+        }
+
+        div.post-operations {
+          @apply w-full;
+        }
+      }
+    }
+  }
+
   @media (min-width: 768px) {
     article.post,
     article.page {
-      @apply max-w-[680px];
-
       header.post-header {
         div.post-cover {
-          @apply flex justify-center;
+          flex-basis: calc(75% - 0.75rem);
+          max-width: calc(75% - 0.75rem);
+        }
 
-          figure.post-cover {
-            max-width: 75%;
+        div.post-meta {
+          flex-basis: calc(25% - 0.75rem);
+          max-width: calc(25% - 0.75rem);
+
+          dl.post-meta__grid {
+            @apply flex-col;
           }
         }
       }

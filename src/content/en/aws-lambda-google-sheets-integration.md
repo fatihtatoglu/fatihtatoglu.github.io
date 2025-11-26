@@ -56,21 +56,7 @@ Let me say upfront what I'll be saying at the end: I'm connecting AWS and GCP us
 
 On the AWS side, a **Lambda** triggered by **EventBridge** obtains short-lived credentials from GCP's **Workload Identity Federation (WIF)** without using a permanent key, and writes data to the **Google Sheets API**. The diagram below summarizes this flow at a glance.
 
-```mermaid
-flowchart TB
-    A["EventBridge (schedule)"] --> B["Lambda (IAM role)"]
-    B --> C["AWS STS (assume role)"]
-    C --> D["GCP WIF (short-lived creds)"]
-    D --> E["Google Sheets API (append / batchupdate)"]
-
-    classDef aws fill:#f5b041,stroke:#d68910,color:#fff,stroke-width:1px;
-    classDef gcp fill:#5dade2,stroke:#2e86c1,color:#fff,stroke-width:1px;
-    classDef sheets fill:#58d68d,stroke:#239b56,color:#fff,stroke-width:1px;
-
-    class A,B,C aws;
-    class D gcp;
-    class E sheets;
-```
+![Flow Diagram between AWS and GCP](/assets/images/aws-gcp-architecture-diagram.webp)
 
 - **Trigger:** Lambda runs with EventBridge `rate(6 hours)`.
 - **Computation:** Lambda reads from DynamoDB/Cognito using an IAM role with **read-only** permissions.

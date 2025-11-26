@@ -56,21 +56,7 @@ En sonda söyleyeceğimi başta paylaşmış olayım: Workload Identity Federati
 
 AWS tarafında **EventBridge** tarafından zamanlanarak tetiklenen **Lambda**, kalıcı anahtar kullanmadan GCP'deki **Workload Identity Federation (WIF)** üzerinden kısa ömürlü kimlik alır ve verileri **Google Sheets API**'ye yazar. Aşağıdaki diyagram bu akışı tek bakışta özetliyor.
 
-```mermaid
-flowchart TB
-    A["EventBridge (schedule)"] --> B["Lambda (IAM role)"]
-    B --> C["AWS STS (assume role)"]
-    C --> D["GCP WIF (short-lived creds)"]
-    D --> E["Google Sheets API (append / batchupdate)"]
-
-    classDef aws fill:#f5b041,stroke:#d68910,color:#fff,stroke-width:1px;
-    classDef gcp fill:#5dade2,stroke:#2e86c1,color:#fff,stroke-width:1px;
-    classDef sheets fill:#58d68d,stroke:#239b56,color:#fff,stroke-width:1px;
-
-    class A,B,C aws;
-    class D gcp;
-    class E sheets;
-```
+![AWS arasındaki GCP Akış Diagramı](/assets/images/aws-gcp-architecture-diagram.webp)
 
 - **Tetikleyici:** EventBridge `rate(6 hours)` ile Lambda çalışır.
 - **Hesaplama:** Lambda, **salt-okur** izinli IAM rolüyle DynamoDB/Cognito'dan okur.

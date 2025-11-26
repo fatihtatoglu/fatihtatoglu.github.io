@@ -48,7 +48,7 @@ Yakın zamanda bir AI startup firması için bir proje geliştiren bir ekibin i�
 
 Uzun lafın kısası, AWS kaynaklarındaki verileri Google Sheets üzerine aktararak bir dashboard oluşturma ihtiyacımız oldu. Bu yazıda, AWS üzerindeki verilerimizi nasıl Google Sheets dosyasına taşıdığımızı detaylı şekilde anlatacağım. Karmaşık bir ETL yerine, anahtarsız kimlik federasyonu ile **6 saatte bir** Google Sheets'e akan minimal bir çizgi izledim.
 
-## TL;DR
+## Özet
 
 En sonda söyleyeceğimi başta paylaşmış olayım: Workload Identity Federation ile AWS ve GCP'yi birbirine bağlıyorum. 6 saatte bir çalışan bir Lambda fonksiyonu ile Google Sheets üzerine veri aktarıyorum. Hem hızlı hem de düşük maliyetli bir çözüm üretmiş oluyorum.
 

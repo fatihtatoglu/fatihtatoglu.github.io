@@ -4,7 +4,16 @@
   {{{.}}}
   </div>
   {{/content.html}}
-  
+
+  {{^content.html}}
+  <div class="collection-content no-content">
+    <h1>
+      {{#front.title}}{{.}}{{/front.title}}
+      {{^front.title}}{{listing.heading}}{{/front.title}}
+    </h1>
+  </div>
+  {{/content.html}}
+
   {{#listing.hasItems}}
     <div class="category-listing">
     {{#listing.items}}

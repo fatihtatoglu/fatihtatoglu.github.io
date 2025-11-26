@@ -62,6 +62,7 @@ const FALLBACK_TAGLINES = { tr: "-", en: "-", };
 const PAGINATION_SETTINGS = SITE_CONFIG.content?.pagination ?? {};
 const BUILD_SETTINGS = SITE_CONFIG.build ?? {};
 const MINIFY_OUTPUT = BUILD_SETTINGS.minify === true;
+const DEBUG = BUILD_SETTINGS.debug === true;
 const MARKDOWN_SETTINGS = SITE_CONFIG.markdown ?? {};
 const MARKDOWN_HIGHLIGHT_ENABLED = MARKDOWN_SETTINGS.highlight !== false;
 const FEATURE_FLAGS = SITE_CONFIG.features ?? {};
@@ -479,6 +480,22 @@ function serializeForInlineScript(value) {
     .replace(/&/g, "\\u0026")
     .replace(/\u2028/g, "\\u2028")
     .replace(/\u2029/g, "\\u2029");
+}
+
+function buildEasterEggPayload(view) {
+  if (!DEBUG) {
+    return "{}";
+  }
+
+  if (!view || typeof view !== "object") {
+    return "{}";
+  }
+
+  try {
+    return serializeForInlineScript(view);
+  } catch {
+    return "{}";
+  }
 }
 
 function getLanguageDictionary(lang) {
@@ -1949,6 +1966,7 @@ async function buildContentPages() {
         body: [],
       },
     };
+    view.easterEgg = buildEasterEggPayload(view);
     const rendered = Mustache.render(layoutTemplate, view, PARTIALS);
     const finalHtml = await transformHtml(rendered);
     const relativePath = buildOutputPath(data, lang, slug);
@@ -2076,6 +2094,7 @@ async function buildPaginatedCollectionPages(options) {
         body: [],
       },
     };
+    view.easterEgg = buildEasterEggPayload(view);
     const rendered = Mustache.render(layoutTemplate, view, PARTIALS);
     const finalHtml = await transformHtml(rendered);
     const relativePath = buildOutputPath(frontForPage, lang, pageSlug);
@@ -2201,6 +2220,7 @@ async function buildDynamicCollectionPages() {
             body: [],
           },
         };
+        view.easterEgg = buildEasterEggPayload(view);
         const rendered = Mustache.render(layoutTemplate, view, PARTIALS);
         const finalHtml = await transformHtml(rendered);
         const relativePath = buildOutputPath(front, lang, slug);

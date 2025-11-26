@@ -13,6 +13,10 @@
       margin-bottom: 1rem;
     }
 
+    div.collection-content.no-content h1 {
+      @apply m-0 uppercase;
+    }
+
     div.category-listing {
       @apply flex flex-col gap-4 justify-around;
 

@@ -21,7 +21,7 @@ keywords:
   - fatih tatoğlu
 featured: false
 draft: false
-template: page
+template: contact
 layout: default
 status: published
 ---

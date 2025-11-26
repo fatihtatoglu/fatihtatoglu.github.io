@@ -22,7 +22,7 @@ keywords:
   - contact page
 featured: false
 draft: false
-template: page
+template: contact
 layout: default
 status: published
 ---

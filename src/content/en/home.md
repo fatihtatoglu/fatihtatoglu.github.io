@@ -1,7 +1,7 @@
 ---
 id: djb3ulcx2f
 lang: en
-title: "Home"
+title: "Engineer & Curious Personal Blog"
 slug: ""
 type: "meta"
 menu: "Home"
@@ -12,7 +12,7 @@ updated: 2025-11-14
 pair: ""
 canonical: /en/
 alternate: /
-description: "Fatih Tatoğlu's personal blog—disciplined, minimal, retro technical atmosphere."
+description: "Fatih Tatoğlu’s personal blog - disciplined, minimal, retro-tech atmosphere sharing productivity and engineering insights."
 keywords: ["static site generator", "tailwind", "markdown parser"]
 featured: true
 draft: false
@@ -21,3 +21,4 @@ listKey: "home"
 layout: "default"
 status: "published"
 ---
+# Fatih Tatoğlu – Personal Notes on Engineering, Learning, and Craftsmanship

@@ -21,7 +21,7 @@
       @apply flex flex-col gap-4 justify-around;
 
       article.post-card {
-        @apply items-start;
+        @apply items-stretch;
       }
     }
 
@@ -35,6 +35,14 @@
           @apply mt-1;
         }
       }
+
+      div.post-body {
+        @apply flex flex-col rounded-2xl p-4 justify-start bg-[var(--bg)] mt-4;
+
+        h2 {
+          @apply mt-0;
+        }
+      }
     }
 
     article.post-card:last-child {
@@ -43,7 +51,13 @@
 
     div.category-listing article.post-card {
       margin-bottom: 0;
-      height: fit-content;
+      height: auto;
+    }
+  }
+
+  section.category.home {
+    h1 {
+      @apply sr-only;
     }
   }
 
@@ -60,17 +74,9 @@
         }
 
         div.post-body {
-          @apply flex flex-col rounded-2xl p-4 justify-start bg-[var(--bg)];
+          margin-top: 0px !important;
           flex-basis: calc(50% - 0.75rem);
           max-width: calc(50% - 0.75rem);
-        }
-      }
-
-      article.post-card {
-        div.post-body {
-          h2 {
-            @apply mt-0;
-          }
         }
       }
     }
@@ -89,7 +95,7 @@
       }
 
       div.category-listing {
-        @apply flex-row justify-center;
+        @apply flex-row justify-center flex-wrap;
 
         article {
           flex-basis: calc(50% - 0.75rem);

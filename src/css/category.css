@@ -55,6 +55,12 @@
     }
   }
 
+  section.category.home {
+    h1 {
+      @apply sr-only;
+    }
+  }
+
   @media (min-width: 600px) {
     section.category {
       article {
@@ -68,6 +74,7 @@
         }
 
         div.post-body {
+          margin-top: 0px !important;
           flex-basis: calc(50% - 0.75rem);
           max-width: calc(50% - 0.75rem);
         }

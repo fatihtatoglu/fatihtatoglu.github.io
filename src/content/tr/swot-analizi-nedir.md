@@ -32,7 +32,7 @@ keywords:
   - tehditler
 featured: true
 draft: false
-cover: /assets/images/swot-analysis-reflection.webp
+cover: /assets/images/what-is-swot-analysis.webp
 coverAlt: SWOT analizinin dört bileşenini gösteren diyagram
 coverCaption: "SWOT Analizi: güçlü, zayıf, fırsat ve tehditlerin görünür hale gelmesi."
 template: post

@@ -144,7 +144,7 @@
       justify-content: center;
 
       div.category-listing {
-        @apply justify-start;
+        @apply justify-center;
 
         article {
           flex-basis: calc(33% - 0.75rem);

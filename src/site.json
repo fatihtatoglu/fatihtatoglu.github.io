@@ -6,7 +6,7 @@
     "themeColor": "#5a8df0"
   },
   "analytics": {
-    "enabled": true,
+    "enabled": false,
     "gtmId": "GTM-5WHLJZ6Z",
     "gaId": "G-R2SETB688N",
     "clarityId": "ubkn3xooz5"
@@ -78,6 +78,16 @@
             "tr": "docker",
             "en": "docker"
           }
+        }
+      },
+      "series": {
+        "template": "collection",
+        "types": [
+          "series"
+        ],
+        "slugPattern": {
+          "tr": "series/{{key}}",
+          "en": "series/{{key}}"
         }
       }
     }

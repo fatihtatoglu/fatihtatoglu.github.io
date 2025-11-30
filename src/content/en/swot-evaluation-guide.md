@@ -37,6 +37,9 @@ coverCaption: A minimalist scene symbolizing the reflection and evaluation proce
 template: post
 layout: default
 status: published
+series: "swot"
+seriesTitle: "SWOT Analysis"
+related: ["mxzxdguji8", "meebjnw1ox", ""]
 ---
 # SWOT Evaluation Guide: How to Assess SWOT Results
 

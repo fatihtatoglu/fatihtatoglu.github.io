@@ -220,6 +220,14 @@
       "readingTimeLabel": {
         "tr": "Okuma Süresi",
         "en": "Reading Time"
+      },
+      "series": {
+        "tr": "Yazı Dizisi",
+        "en": "Series"
+      },
+      "seriesTitle": {
+        "tr": "Yazı Dizisinin Tüm Bölümleri",
+        "en": "All Chapters in This Series"
       }
     }
   },
@@ -257,6 +265,12 @@
         "titleSuffix": {
           "tr": "Etiket",
           "en": "Tag"
+        }
+      },
+      "series": {
+        "titleSuffix": {
+          "tr": "Yazı Dizisi",
+          "en": "Series"
         }
       }
     }

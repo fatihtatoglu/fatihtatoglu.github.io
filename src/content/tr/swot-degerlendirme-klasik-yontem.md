@@ -6,6 +6,7 @@ slug: swot-degerlendirme-klasik-yontem
 category: yasam-ogrenme
 type: guide
 tags:
+  - swot
   - swot-degerlendirme
   - swot-analizi
   - klasik-yontem
@@ -38,6 +39,9 @@ coverCaption: Güçlü ve zayıf yanlarla yüzleşirken; fırsatlar ve tehditler
 template: post
 layout: default
 status: published
+series: "swot"
+seriesTitle: "SWOT Analizi"
+related: ["mxzxdguji8", "meebjnw1ox", ""]
 ---
 # SWOT Değerlendirme: Klasik Yöntemle Adım Adım Rehber
 

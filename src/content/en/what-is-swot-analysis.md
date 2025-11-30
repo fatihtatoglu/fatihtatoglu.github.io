@@ -34,6 +34,9 @@ coverCaption: "SWOT Analysis: visualizing strengths, weaknesses, opportunities, 
 template: post
 layout: default
 status: published
+series: "swot"
+seriesTitle: "SWOT Analysis"
+related: ["mxzxdguji8", "meebjnw1ox", ""]
 ---
 # What is SWOT Analysis?
 

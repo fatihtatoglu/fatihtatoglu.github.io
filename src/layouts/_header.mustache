@@ -3,10 +3,10 @@
 
     <div class="header-bar">
       <div class="header-bar-wrapper">
-        <a href="{{{site.home}}}" class="owner" data-i18n="site.owner">
+        <a href="{{{site.home}}}" class="owner" data-i18n="site.owner" lang="{{lang}}">
           {{site.owner}}
         </a>
-        <p class="role" data-i18n="site.role">
+        <p class="role" data-i18n="site.role" lang="{{lang}}">
           {{site.role}}
         </p>
       </div>
@@ -35,7 +35,7 @@
             <li>
               <a class="btn btn--tone-neutral menu-link{{#isActive}} is-active{{/isActive}}"
                 href="{{{url}}}" data-menu-link="{{key}}" data-i18n="menu.{{key}}"{{#isActive}} aria-current="page"{{/isActive}}
-                data-analytics="open_page">
+                data-analytics="open_page" lang="{{lang}}">
                 {{label}}
               </a>
             </li>

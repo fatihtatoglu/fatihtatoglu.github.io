@@ -110,7 +110,9 @@ const LANGUAGE_BUILD_CONFIG = {
 
 const MENU_ITEMS = buildMenuItemsFromContent();
 const PAGES = buildCategoryTagCollections();
+console.log("PAGES sample", PAGES.tr?.swot);
 const FOOTER_POLICIES = buildFooterPoliciesFromContent();
+const CONTENT_INDEX = buildContentIndex();
 
 const FOOTER_SOCIAL_ICONS = {
   rss: `<svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 32 32"><g class="nc-icon-wrapper" fill="currentColor"><circle cx="6.566" cy="25.434" r="3.566"></circle><path d="M20.234,29h-5.051c0-6.728-5.454-12.183-12.183-12.183h0v-5.051c9.518,0,17.234,7.716,17.234,17.234Z"></path><path d="M23.8,29c0-11.488-9.312-20.8-20.8-20.8V3c14.359,0,26,11.641,26,26h-5.2Z"></path></g></svg>`,
@@ -682,6 +684,12 @@ function getFooterData(lang) {
 
 function buildPageMeta(front, lang, slug) {
   const canonicalUrl = resolveUrl(front.canonical ?? defaultCanonical(lang, slug));
+  const pageTitleSource =
+    typeof front.metaTitle === "string" && front.metaTitle.trim().length > 0
+      ? front.metaTitle.trim()
+      : typeof front.title === "string" && front.title.trim().length > 0
+        ? front.title.trim()
+        : "Untitled";
   const ogLocale = lang === "en" ? "en_US" : "tr_TR";
   const altLocale = lang === "en" ? "tr_TR" : "en_US";
   const coverSource =
@@ -719,7 +727,7 @@ function buildPageMeta(front, lang, slug) {
   const ogType = front.ogType ?? (isArticle ? "article" : "website");
 
   return {
-    title: front.title ?? "Untitled",
+    title: pageTitleSource,
     description: front.description ?? "",
     robots: front.robots ?? "index,follow",
     canonical: canonicalUrl,
@@ -729,7 +737,7 @@ function buildPageMeta(front, lang, slug) {
       default: canonicalUrl,
     },
     og: {
-      title: front.ogTitle ?? front.title ?? "",
+      title: front.ogTitle ?? pageTitleSource,
       description: front.description ?? "",
       type: ogType,
       url: canonicalUrl,
@@ -739,7 +747,7 @@ function buildPageMeta(front, lang, slug) {
     },
     twitter: {
       card: front.twitterCard ?? "summary_large_image",
-      title: front.twitterTitle ?? front.title ?? "",
+      title: front.twitterTitle ?? pageTitleSource,
       description: front.description ?? "",
       image: twitterImage,
       url: canonicalUrl,
@@ -908,7 +916,9 @@ function renderContentTemplate(templateName, contentHtml, front, lang, dictionar
     updatedDisplay: formatDate(front.updated, lang),
     cover: front.cover ?? DEFAULT_IMAGE,
     coverAlt: front.coverAlt ?? "",
+    lang,
   };
+  normalizedFront.seriesListing = buildSeriesListing(normalizedFront, lang);
   const listing = listingOverride ?? buildCollectionListing(normalizedFront, lang);
   const site = buildSiteData(lang);
   return Mustache.render(template, {
@@ -1088,6 +1098,39 @@ function buildFooterPoliciesFromContent() {
   return policiesByLang;
 }
 
+function buildContentIndex() {
+  const index = {};
+  if (!existsSync(CONTENT_DIR)) return index;
+  const files = collectMarkdownFiles(CONTENT_DIR);
+  for (const filePath of files) {
+    let data;
+    try {
+      ({ data } = matter(readFileSync(filePath, "utf8")));
+    } catch {
+      continue;
+    }
+    if (!data) continue;
+    const isDraft = parseBoolean(data.draft);
+    if (isDraft) continue;
+    const status = typeof data.status === "string" ? data.status.trim().toLowerCase() : "";
+    if (status && status !== "published") continue;
+    const id = typeof data.id === "string" ? data.id.trim() : "";
+    if (!id) continue;
+    const lang = data.lang ?? inferLangFromPath(filePath);
+    const slug = data.slug ?? inferSlugFromPath(filePath);
+    if (!index[id]) {
+      index[id] = {};
+    }
+    index[id][lang] = {
+      id,
+      lang,
+      title: data.title ?? slug ?? id,
+      canonical: buildContentUrl(data.canonical, lang, slug),
+    };
+  }
+  return index;
+}
+
 function buildCategoryTagCollections() {
   const pagesByLang = {};
   if (!existsSync(CONTENT_DIR)) return pagesByLang;
@@ -1127,6 +1170,19 @@ function buildCategoryTagCollections() {
         addCollectionEntry(langStore, tagKey, summary, "tag");
       }
     });
+
+    const seriesKey = normalizeCollectionKey(data.series);
+    if (seriesKey) {
+      const seriesSummary = {
+        ...summary,
+        seriesTitle:
+          typeof data.seriesTitle === "string" && data.seriesTitle.trim().length > 0
+            ? data.seriesTitle.trim()
+            : data.series ?? seriesKey,
+      };
+      addCollectionEntry(langStore, seriesKey, seriesSummary, "series");
+      console.log("[series-add]", lang, seriesKey, seriesSummary.seriesTitle);
+    }
   }
   return sortCollectionEntries(pagesByLang);
 }
@@ -1154,13 +1210,67 @@ function buildCollectionListing(front, lang) {
   const normalizedLang = lang ?? DEFAULT_LANGUAGE;
   const langCollections = PAGES[normalizedLang] ?? {};
   const key = resolveListingKey(front);
-  const items = key && Array.isArray(langCollections[key]) ? langCollections[key] : [];
+  const sourceItems = key && Array.isArray(langCollections[key]) ? langCollections[key] : [];
+  const items = dedupeCollectionItems(sourceItems);
   return {
     key,
     lang: normalizedLang,
     items,
     hasItems: items.length > 0,
     emptyMessage: resolveListingEmpty(front, normalizedLang),
+    heading: resolveListingHeading(front),
+  };
+}
+
+function buildSeriesListing(front, lang) {
+  const relatedSource = Array.isArray(front?.related) ? front.related : [];
+  const seriesName = typeof front?.seriesTitle === "string" && front.seriesTitle.trim().length > 0
+    ? front.seriesTitle.trim()
+    : typeof front?.series === "string"
+      ? front.series.trim()
+      : "";
+  const currentId = typeof front?.id === "string" ? front.id.trim() : "";
+  const items = [];
+
+  relatedSource.forEach((entry) => {
+    const value = typeof entry === "string" ? entry.trim() : "";
+    if (!value) {
+      items.push({
+        id: "",
+        label: "...",
+        url: "",
+        isCurrent: false,
+        isPlaceholder: true,
+      });
+      return;
+    }
+
+    const isCurrent = value === currentId;
+    const summaryLookup = CONTENT_INDEX[value];
+    const summaryLang = lang || front?.lang;
+    let summary = null;
+    if (summaryLookup) {
+      summary = summaryLookup[summaryLang] ?? summaryLookup[front?.lang] ?? Object.values(summaryLookup)[0];
+    }
+    const label = summary?.title ?? (isCurrent ? front?.title ?? value : value);
+    const url = summary?.canonical ?? "";
+
+    const hasUrl = typeof url === "string" && url.length > 0;
+    items.push({
+      id: value,
+      label,
+      url,
+      hasUrl,
+      isCurrent,
+      isPlaceholder: false,
+    });
+  });
+
+  return {
+    label: seriesName,
+    hasLabel: Boolean(seriesName),
+    hasItems: items.length > 0,
+    items,
   };
 }
 
@@ -1197,6 +1307,17 @@ function resolveListingEmpty(front, lang) {
     if (typeof fallback === "string" && fallback.trim().length > 0) {
       return fallback.trim();
     }
+  }
+  return "";
+}
+
+function resolveListingHeading(front) {
+  if (!front) return "";
+  if (typeof front.listHeading === "string" && front.listHeading.trim().length > 0) {
+    return front.listHeading.trim();
+  }
+  if (typeof front.title === "string" && front.title.trim().length > 0) {
+    return front.title.trim();
   }
   return "";
 }
@@ -1609,8 +1730,12 @@ function collectSitemapEntriesFromDynamicCollections() {
 
       const collectionKeys = Object.keys(langCollections);
       for (const key of collectionKeys) {
-        const items = langCollections[key] ?? [];
-        if (!Array.isArray(items) || items.length === 0) {
+        const sourceItems = langCollections[key] ?? [];
+        if (!Array.isArray(sourceItems) || sourceItems.length === 0) {
+          continue;
+        }
+        const items = dedupeCollectionItems(sourceItems);
+        if (items.length === 0) {
           continue;
         }
 
@@ -1832,7 +1957,8 @@ async function buildPaginatedCollectionPages(options) {
 
   const langCollections = PAGES[lang] ?? {};
   const key = resolveListingKey(frontMatter);
-  const allItems = key && Array.isArray(langCollections[key]) ? langCollections[key] : [];
+  const sourceItems = key && Array.isArray(langCollections[key]) ? langCollections[key] : [];
+  const allItems = dedupeCollectionItems(sourceItems);
   const pageSizeSetting = Number.isFinite(PAGINATION_SETTINGS.pageSize)
     ? PAGINATION_SETTINGS.pageSize
     : 5;
@@ -1945,6 +2071,44 @@ async function buildPaginatedCollectionPages(options) {
   }
 }
 
+function resolveCollectionDisplayKey(configKey, defaultKey, items) {
+  if (configKey === "series" && Array.isArray(items)) {
+    const entryWithTitle = items.find((entry) =>
+      entry && typeof entry.seriesTitle === "string" && entry.seriesTitle.trim().length > 0,
+    );
+    if (entryWithTitle) {
+      return entryWithTitle.seriesTitle.trim();
+    }
+  }
+  return defaultKey;
+}
+
+function dedupeCollectionItems(items) {
+  if (!Array.isArray(items) || items.length === 0) return items;
+  const seen = new Map();
+  const order = [];
+  items.forEach((item) => {
+    const id = item?.id;
+    if (!id) {
+      order.push(item);
+      return;
+    }
+    const existingIndex = seen.get(id);
+    const hasSeriesTitle = Boolean(item?.seriesTitle);
+    if (existingIndex == null) {
+      seen.set(id, order.length);
+      order.push(item);
+      return;
+    }
+    const existing = order[existingIndex];
+    const existingHasSeries = Boolean(existing?.seriesTitle);
+    if (hasSeriesTitle && !existingHasSeries) {
+      order[existingIndex] = item;
+    }
+  });
+  return order;
+}
+
 async function buildDynamicCollectionPages() {
   if (!COLLECTION_CONFIG || typeof COLLECTION_CONFIG !== "object") return;
 
@@ -1999,6 +2163,14 @@ async function buildDynamicCollectionPages() {
           continue;
         }
 
+        const dedupedItems = dedupeCollectionItems(items);
+        if (!dedupedItems.length) {
+          continue;
+        }
+        if (configKey === "series") {
+          console.log("[series]", lang, key, dedupedItems.map((item) => ({ id: item.id, title: item.title, seriesTitle: item.seriesTitle })));
+        }
+
         const slug =
           langSlugPattern && langSlugPattern.includes("{{key}}")
             ? langSlugPattern.replace("{{key}}", key)
@@ -2023,7 +2195,8 @@ async function buildDynamicCollectionPages() {
           }
         }
 
-        const baseTitle = key;
+        const displayKey = resolveCollectionDisplayKey(configKey, key, dedupedItems);
+        const baseTitle = displayKey;
         const normalizedTitleSuffix =
           typeof titleSuffix === "string" && titleSuffix.trim().length > 0
             ? titleSuffix.trim()
@@ -2031,14 +2204,23 @@ async function buildDynamicCollectionPages() {
         const effectiveTitle = normalizedTitleSuffix
           ? `${baseTitle} | ${normalizedTitleSuffix}`
           : baseTitle;
-
+        const frontTitle =
+          configKey === "series"
+            ? displayKey
+            : effectiveTitle;
         const front = {
-          title: effectiveTitle,
+          title: frontTitle,
+          metaTitle: effectiveTitle,
           slug,
           template: templateName,
           listKey: key,
           ...(alternate ? { alternate } : {}),
         };
+        front.listHeading = effectiveTitle;
+        if (configKey === "series") {
+          front.series = key;
+          front.seriesTitle = displayKey;
+        }
 
         const contentHtml = renderContentTemplate(templateName, "", front, lang, dictionary);
         const pageMeta = buildPageMeta(front, lang, slug);

@@ -7,9 +7,12 @@
 
   {{^content.html}}
   <div class="collection-content no-content">
-    <h1>
-      {{#front.title}}{{.}}{{/front.title}}
-      {{^front.title}}{{listing.heading}}{{/front.title}}
+    <h1 lang="{{lang}}">
+      {{#front.listHeading}}{{.}}{{/front.listHeading}}
+      {{^front.listHeading}}
+        {{#front.title}}{{.}}{{/front.title}}
+        {{^front.title}}{{listing.heading}}{{/front.title}}
+      {{/front.listHeading}}
     </h1>
   </div>
   {{/content.html}}
@@ -36,14 +39,14 @@
         <dl class="post-meta__grid">
           {{#dateDisplay}}
           <div class="post-meta__item">
-            <dt>{{i18n.category.meta.publishedLabel}}</dt>
+            <dt lang="{{lang}}">{{i18n.category.meta.publishedLabel}}</dt>
             <dd>{{.}}</dd>
           </div>
           {{/dateDisplay}}
 
           {{#readingTime}}
           <div class="post-meta__item">
-            <dt>{{i18n.category.meta.readingTimeLabel}}</dt>
+            <dt lang="{{lang}}">{{i18n.category.meta.readingTimeLabel}}</dt>
             <dd>{{.}} {{i18n.category.readingTimeSuffix}}</dd>
           </div>
           {{/readingTime}}

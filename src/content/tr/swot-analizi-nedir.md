@@ -38,6 +38,9 @@ coverCaption: "SWOT Analizi: güçlü, zayıf, fırsat ve tehditlerin görünür
 template: post
 layout: default
 status: published
+series: "swot"
+seriesTitle: "SWOT Analizi"
+related: ["mxzxdguji8", "meebjnw1ox", ""]
 ---
 # SWOT Analizi Nedir?
 
@@ -166,4 +169,4 @@ Bu yazıyı hazırlarken faydalandığım ve SWOT analizini daha derin anlamak i
 - [Harvard Business Review – Are You Doing the SWOT Analysis Backwards?](https://hbr.org/2021/02/are-you-doing-the-swot-analysis-backwards) - SWOT analizine eleştirel, modern bakış.
 - [MindTools – SWOT Analysis: Discover New Opportunities, Manage and Eliminate Threats](https://www.mindtools.com/amtbj63/swot-analysis) - SWOT analizinin uygulama adımları ve örnekleri.
 
- _Yakında kendi geliştirdiğim SWOT değerlendirme aracını da burada paylaşacağım. Kendi analizlerinizi uygulamalı olarak yapmak için bu sayfayı yer imlerine ekleyin_
+ _Yakında kendi geliştirdiğim SWOT değerlendirme aracını da burada paylaşacağım. Kendi analizlerinizi uygulamalı olarak yapmak için bu sayfayı yer imlerine ekleyin._

@@ -42,7 +42,7 @@ series: "swot"
 seriesTitle: "SWOT Analizi"
 related: ["mxzxdguji8", "meebjnw1ox", ""]
 ---
-# SWOT Analizi Nedir?
+# SWOT Analizi Nedir? Güçlü ve Zayıf Yönlerinizi Keşfedin
 
 SWOT analizi, bir şirketin, kuruluşun veya bireyin mevcut durumunu gösteren önemli bir araçtır. Stratejik bir adım atmadan önce yapılması ve o anki durumun görünür olmasını sağladığı için herkesin bilmesi ve uygulamasını şiddetle tavsiye ettiğim bir araçtır.
 

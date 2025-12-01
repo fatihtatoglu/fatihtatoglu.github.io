@@ -51,7 +51,7 @@ I am calling it the **classic method** because I see it so frequently while brow
 
 A SWOT analysis provides us with a situation evaluation. If we're satisfied with our current position (or not), we can choose to **do nothing**. But if our situation is harming us or hindering progress, then **doing nothing** isn't a choice anymore; it's a risk.
 
-![BlackBerry & Nokia out - iPhone & Android in](why-swot-is-required-blackberry-nokia.webp)
+![BlackBerry & Nokia out - iPhone & Android in](/assets/images/why-swot-is-required-blackberry-nokia.webp)
 
 The stories of once-dominant tech giants like BlackBerry and Nokia perfectly illustrate the consequences of inaction. Today, we hardly hear about those brands. In contrast, we constantly hear the names iPhone and Android. Even the lack of response from these former leaders created wonderful opportunities for many of today's well-known brands.
 

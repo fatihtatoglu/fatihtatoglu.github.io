@@ -53,7 +53,7 @@ related: ["mxzxdguji8", "meebjnw1ox", ""]
 
 SWOT analizi bizim için bir durum değerlendirmesi yapar. Eğer bulunduğumuz durumu beğeniyorsak (veya beğenmiyorsak), **aksiyon almama** kararını verebiliriz. Ama bulunduğumuz durum bize zarar veriyor ya da ilerlememizi engelliyorsa o zaman, **hiçbir şey yapmamak** artık bir tercih değil, risk olur.
 
-![BlackBerry & Nokia out - iPhone & Android in](why-swot-is-required-blackberry-nokia.webp)
+![BlackBerry & Nokia out - iPhone & Android in](/assets/images/why-swot-is-required-blackberry-nokia.webp)
 
 Bir zamanların en büyük teknoloji devlerinden olan BlackBerry'nin ve Nokia'nın hikayeleri tam olarak aksiyon almamanın sonucuna harika birer örnektir. Bugün bu markaları neredeyse hiç duymuyoruz. Bu markaların aksine, iPhone ve Android isimlerini her gün duyar olduk. Hatta zamanın büyük oyuncularının tepkisiz kalması, bugün adını duyduğumuz çoğu marka için çok güzel bir fırsat bile oldu.
 

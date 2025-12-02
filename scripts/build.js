@@ -862,6 +862,24 @@ function formatDate(value, lang) {
   }).format(date);
 }
 
+function buildLanguageFlags(lang) {
+  const normalized = SUPPORTED_LANGUAGES.includes(lang) ? lang : DEFAULT_LANGUAGE;
+  const isEnglish = normalized === "en";
+  const isTurkish = normalized === "tr";
+  return {
+    locale: {
+      code: normalized,
+      isEn: isEnglish,
+      isTr: isTurkish,
+      isEnglish,
+      isTurkish,
+      isDefault: normalized === DEFAULT_LANGUAGE,
+    },
+    isEnglish,
+    isTurkish,
+  };
+}
+
 function defaultCanonical(lang, slug) {
   const cleanedSlug = (slug ?? "").replace(/^\/+/, "").replace(/\/+$/, "");
   const prefix = lang === "en" ? "en" : "";
@@ -920,28 +938,32 @@ function renderContentTemplate(templateName, contentHtml, front, lang, dictionar
   normalizedFront.seriesListing = buildSeriesListing(normalizedFront, lang);
   const listing = listingOverride ?? buildCollectionListing(normalizedFront, lang);
   const site = buildSiteData(lang);
+  const languageFlags = buildLanguageFlags(lang);
   return Mustache.render(template, {
     content: { html: decorateHtml(contentHtml, templateName) },
     front: normalizedFront,
     lang,
     listing,
     site,
-    locale: {
-      isTr: lang === "tr",
-      isEn: lang === "en",
-    },
+    locale: languageFlags.locale,
+    isEnglish: languageFlags.isEnglish,
+    isTurkish: languageFlags.isTurkish,
     i18n: resolvedDictionary,
   });
 }
 
 function buildContentComponentContext(frontMatter, lang, dictionary) {
   const normalizedLang = lang ?? DEFAULT_LANGUAGE;
+  const languageFlags = buildLanguageFlags(normalizedLang);
   return {
     front: frontMatter ?? {},
     lang: normalizedLang,
     i18n: dictionary ?? {},
     pages: PAGES[normalizedLang] ?? {},
     allPages: PAGES,
+    locale: languageFlags.locale,
+    isEnglish: languageFlags.isEnglish,
+    isTurkish: languageFlags.isTurkish,
   };
 }
 
@@ -1914,8 +1936,12 @@ async function buildContentPages() {
     const pageMeta = buildPageMeta(data, lang, slug);
     const layoutTemplate = getLayout(layoutName);
     const activeMenuKey = resolveActiveMenuKey(data);
+    const languageFlags = buildLanguageFlags(lang);
     const view = {
       lang,
+      locale: languageFlags.locale,
+      isEnglish: languageFlags.isEnglish,
+      isTurkish: languageFlags.isTurkish,
       theme: "light",
       site: buildSiteData(lang),
       menu: getMenuData(lang, activeMenuKey),
@@ -2043,8 +2069,12 @@ async function buildPaginatedCollectionPages(options) {
     const pageMeta = buildPageMeta(frontForPage, lang, pageSlug);
     const layoutTemplate = getLayout(layoutName);
     const activeMenuKey = resolveActiveMenuKey(frontForPage);
+    const languageFlags = buildLanguageFlags(lang);
     const view = {
       lang,
+      locale: languageFlags.locale,
+      isEnglish: languageFlags.isEnglish,
+      isTurkish: languageFlags.isTurkish,
       theme: "light",
       site: buildSiteData(lang),
       menu: getMenuData(lang, activeMenuKey),
@@ -2222,8 +2252,12 @@ async function buildDynamicCollectionPages() {
         const layoutName = "default";
         const layoutTemplate = getLayout(layoutName);
         const activeMenuKey = resolveActiveMenuKey(front);
+        const languageFlags = buildLanguageFlags(lang);
         const view = {
           lang,
+          locale: languageFlags.locale,
+          isEnglish: languageFlags.isEnglish,
+          isTurkish: languageFlags.isTurkish,
           theme: "light",
           site: buildSiteData(lang),
           menu: getMenuData(lang, activeMenuKey),

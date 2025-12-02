@@ -50,6 +50,7 @@
         </div>
         {{/front.seriesTitle}}
 
+        {{#isEnglish}}
         {{#front.aiTranslated}}
         <div class="post-meta__item">
             <dt lang="{{lang}}">{{i18n.category.meta.translatedBy}}</dt>
@@ -63,6 +64,7 @@
             <dd>{{site.author}}</dd>
         </div>
         {{/front.aiTranslated}}
+        {{/isEnglish}}
       </dl>
     </div>
 

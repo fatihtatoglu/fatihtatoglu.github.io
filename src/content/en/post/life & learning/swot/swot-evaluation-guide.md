@@ -18,7 +18,7 @@ tags:
   - self-assessment
 readingTime: 7
 date: 2025-10-28
-updated: 2025-11-28
+updated: 2025-12-02
 pair: swot-degerlendirme-klasik-yontem
 canonical: ~/en/swot-evaluation-guide/
 alternate: ~/swot-degerlendirme-klasik-yontem/
@@ -39,7 +39,7 @@ layout: default
 status: published
 series: "swot"
 seriesTitle: "SWOT Analysis"
-related: ["mxzxdguji8", "meebjnw1ox", ""]
+related: ["mxzxdguji8", "meebjnw1ox", "y62dvrtos5"]
 ---
 # SWOT Evaluation Guide: How to Assess SWOT Results
 
@@ -51,7 +51,7 @@ I am calling it the **classic method** because I see it so frequently while brow
 
 A SWOT analysis provides us with a situation evaluation. If we're satisfied with our current position (or not), we can choose to **do nothing**. But if our situation is harming us or hindering progress, then **doing nothing** isn't a choice anymore; it's a risk.
 
-![BlackBerry & Nokia out - iPhone & Android in](/assets/images/why-swot-is-required-blackberry-nokia.webp)
+![BlackBerry & Nokia out - iPhone & Android in](why-swot-is-required-blackberry-nokia.webp)
 
 The stories of once-dominant tech giants like BlackBerry and Nokia perfectly illustrate the consequences of inaction. Today, we hardly hear about those brands. In contrast, we constantly hear the names iPhone and Android. Even the lack of response from these former leaders created wonderful opportunities for many of today's well-known brands.
 
@@ -140,8 +140,8 @@ If you are curious about my assessment approach, you can look at my other articl
 
 ## References and Further Reading
 
-- [The origins of SWOT analysis](https://doi.org/10.1016/j.lrp.2023.102304)
-- [SWOT Analysis With SWOT Templates and Examples](https://members.mindtools.com/amtbj63/swot-analysis)
-- [BlackBerry's success led to its failure](https://www.theverge.com/2016/9/30/13119924/blackberry-failure-success)
-- [The Strategic Decisions That Caused Nokia's Failure](https://knowledge.insead.edu/strategy/strategic-decisions-caused-nokias-failure)
-- [Case Study: Strategic Backstory of Nokia's Rise and Fall](https://cdotimes.com/2025/08/13/case-study-strategic-backstory-nokias-rise-and-fall/)
+- [The origins of SWOT analysis](https://doi.org/10.1016/j.lrp.2023.102304) A powerful reference explaining the origins of SWOT.
+- [SWOT Analysis With SWOT Templates and Examples](https://members.mindtools.com/amtbj63/swot-analysis) Application-based, simple and understandable application example.
+- [BlackBerry's success led to its failure](https://www.theverge.com/2016/9/30/13119924/blackberry-failure-success) The story of BlackBerry. A beautiful breakdown from a technical and strategic perspective.
+- [The Strategic Decisions That Caused Nokia's Failure](https://knowledge.insead.edu/strategy/strategic-decisions-caused-nokias-failure) The story of Nokia.
+- [Case Study: Strategic Backstory of Nokia's Rise and Fall](https://cdotimes.com/2025/08/13/case-study-strategic-backstory-nokias-rise-and-fall/) The story of Nokia.

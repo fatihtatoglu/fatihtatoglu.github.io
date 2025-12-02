@@ -110,7 +110,6 @@ const LANGUAGE_BUILD_CONFIG = {
 
 const MENU_ITEMS = buildMenuItemsFromContent();
 const PAGES = buildCategoryTagCollections();
-console.log("PAGES sample", PAGES.tr?.swot);
 const FOOTER_POLICIES = buildFooterPoliciesFromContent();
 const CONTENT_INDEX = buildContentIndex();
 
@@ -1181,7 +1180,6 @@ function buildCategoryTagCollections() {
             : data.series ?? seriesKey,
       };
       addCollectionEntry(langStore, seriesKey, seriesSummary, "series");
-      console.log("[series-add]", lang, seriesKey, seriesSummary.seriesTitle);
     }
   }
   return sortCollectionEntries(pagesByLang);
@@ -2166,9 +2164,6 @@ async function buildDynamicCollectionPages() {
         const dedupedItems = dedupeCollectionItems(items);
         if (!dedupedItems.length) {
           continue;
-        }
-        if (configKey === "series") {
-          console.log("[series]", lang, key, dedupedItems.map((item) => ({ id: item.id, title: item.title, seriesTitle: item.seriesTitle })));
         }
 
         const slug =

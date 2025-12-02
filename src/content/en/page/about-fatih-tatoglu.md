@@ -10,7 +10,7 @@ order: 4
 show: true
 readingTime: 3
 date: 2025-11-14
-updated: 2025-11-14
+updated: 2025-12-02
 pair: hakkimda
 canonical: ~/en/about-fatih-tatoglu/
 alternate: ~/hakkimda/
@@ -119,3 +119,5 @@ I am someone who ;
 - A curious engineer and dad.
 
 And I'm continuing to share all of this journey right here on this blog.
+
+**Note:** I'm translating some English posts on this blog using AI. My main goal is to reach more readers, speed up the process, and make the content accessible. I manually review the translated texts before publishing, so the meaning and tone are preserved as much as possible. If you see a strange phrasing somewhere, it's likely a small AI tweak.

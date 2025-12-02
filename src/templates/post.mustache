@@ -49,6 +49,20 @@
             <dd>{{.}}</dd>
         </div>
         {{/front.seriesTitle}}
+
+        {{#front.aiTranslated}}
+        <div class="post-meta__item">
+            <dt lang="{{lang}}">{{i18n.category.meta.translatedBy}}</dt>
+            <dd>{{.}}</dd>
+        </div>
+        {{/front.aiTranslated}}
+
+        {{^front.aiTranslated}}
+        <div class="post-meta__item">
+            <dt lang="{{lang}}">{{i18n.category.meta.translatedBy}}</dt>
+            <dd>{{site.author}}</dd>
+        </div>
+        {{/front.aiTranslated}}
       </dl>
     </div>
 

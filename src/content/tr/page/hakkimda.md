@@ -10,7 +10,7 @@ order: 4
 show: true
 readingTime: 3
 date: 2025-11-14
-updated: 2025-11-14
+updated: 2025-12-02
 pair: "about-me"                      
 canonical: "~/hakkimda/"
 alternate: "~/en/about-fatih-tatoglu/"
@@ -99,7 +99,7 @@ için burada.
 
 Eğer bir yazı bir kişinin bile işini kolaylaştırırsa veya birine küçük bir ilham olursa, bu benim için fazlasıyla yeterli.
 
-## Kısacası...
+## Kısacası
 
 Ben;
 
@@ -114,3 +114,5 @@ Ben;
 - meraklı bir mühendis ve babayım.
 
 Ve tüm bu yolculuğu da burada, bu blogda paylaşmaya devam ediyorum.
+
+**Not:** Blog içerisinde yer alan bazı İngilizce yazıları AI desteği ile çeviriyorum. Ana amacım daha fazla okura ulaşmak, süreci hızlandırmak ve içeriği erişilebilir kılmak. Çeviri metinleri yayınlamadan önce manuel olarak gözden geçiriyorum; dolayısıyla anlam ve ton mümkün olduğunca korunuyor. Eğer bir yerde garip bir ifade görürsen, muhtemelen AI'ın küçük bir dokunuşudur.

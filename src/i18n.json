@@ -228,6 +228,10 @@
       "seriesTitle": {
         "tr": "Yazı Dizisinin Tüm Bölümleri",
         "en": "All Chapters in This Series"
+      },
+      "translatedBy":{
+        "tr": "Çeviri Yapan",
+        "en": "Translated By"
       }
     }
   },

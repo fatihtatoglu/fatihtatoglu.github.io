@@ -17,7 +17,7 @@ tags:
   - risk-management
 readingTime: 7
 date: 2021-05-24
-updated: 2025-10-15
+updated: 2025-12-02
 pair: swot-analizi-nedir
 canonical: ~/en/what-is-swot-analysis/
 alternate: ~/swot-analizi-nedir/
@@ -36,7 +36,7 @@ layout: default
 status: published
 series: "swot"
 seriesTitle: "SWOT Analysis"
-related: ["mxzxdguji8", "meebjnw1ox", ""]
+related: ["mxzxdguji8", "meebjnw1ox", "y62dvrtos5"]
 ---
 # What is SWOT Analysis?
 
@@ -164,5 +164,3 @@ Here are some resources I used while preparing this article, and which I recomme
 - [Wikipedia – SWOT Analysis](https://en.wikipedia.org/wiki/SWOT_analysis) - The definition and historical origins of SWOT analysis.
 - [Harvard Business Review – Are You Doing the SWOT Analysis Backwards?](https://hbr.org/2021/02/are-you-doing-the-swot-analysis-backwards) - A critical, modern perspective on SWOT analysis.
 - [MindTools – SWOT Analysis: Discover New Opportunities, Manage and Eliminate Threats](https://www.mindtools.com/amtbj63/swot-analysis) - Steps for implementing a SWOT analysis and examples.
-
-_I’ll also be sharing the SWOT assessment tool I've developed here soon. Bookmark this page to put your analyses into practice._

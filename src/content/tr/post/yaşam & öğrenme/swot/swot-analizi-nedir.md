@@ -17,7 +17,7 @@ tags:
   - tehditler
 readingTime: 7
 date: 2022-05-24
-updated: 2025-10-15
+updated: 2025-12-02
 pair: what-is-swot-analysis
 canonical: ~/swot-analizi-nedir/
 alternate: ~/en/what-is-swot-analysis/
@@ -40,7 +40,7 @@ layout: default
 status: published
 series: "swot"
 seriesTitle: "SWOT Analizi"
-related: ["mxzxdguji8", "meebjnw1ox", ""]
+related: ["mxzxdguji8", "meebjnw1ox", "y62dvrtos5"]
 ---
 # SWOT Analizi Nedir? Güçlü ve Zayıf Yönlerinizi Keşfedin
 
@@ -168,5 +168,3 @@ Bu yazıyı hazırlarken faydalandığım ve SWOT analizini daha derin anlamak i
 - [Wikipedia – SWOT Analysis](https://en.wikipedia.org/wiki/SWOT_analysis) - SWOT analizinin tanımı ve tarihsel kökeni.
 - [Harvard Business Review – Are You Doing the SWOT Analysis Backwards?](https://hbr.org/2021/02/are-you-doing-the-swot-analysis-backwards) - SWOT analizine eleştirel, modern bakış.
 - [MindTools – SWOT Analysis: Discover New Opportunities, Manage and Eliminate Threats](https://www.mindtools.com/amtbj63/swot-analysis) - SWOT analizinin uygulama adımları ve örnekleri.
-
- _Yakında kendi geliştirdiğim SWOT değerlendirme aracını da burada paylaşacağım. Kendi analizlerinizi uygulamalı olarak yapmak için bu sayfayı yer imlerine ekleyin._

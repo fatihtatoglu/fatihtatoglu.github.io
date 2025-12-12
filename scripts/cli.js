@@ -20,6 +20,16 @@ function getCliOptionDefinitions() {
             name: "build",
             type: Boolean,
             description: "Build the project and prepare the deployable artifact."
+        },
+        {
+            name: "watch",
+            type: Boolean,
+            description: "Rebuild the project when files under src/ change."
+        },
+        {
+            name: "dev",
+            type: Boolean,
+            description: "Build the project and serve dist/ at http://localhost:3000."
         }
     ];
 

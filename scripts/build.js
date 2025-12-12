@@ -1,138 +1,63 @@
 #!/usr/bin/env node
 
-import { execSync } from "node:child_process";
-import {
-  cpSync,
-  existsSync,
-  mkdirSync,
-  readFileSync,
-  readdirSync,
-  rmSync,
-  statSync,
-  writeFileSync,
-} from "node:fs";
-import { dirname, join, sep } from "node:path";
-import { fileURLToPath } from "node:url";
 import crypto from "node:crypto";
-import matter from "gray-matter";
 import Mustache from "mustache";
 import { marked } from "marked";
 import { markedHighlight } from "marked-highlight";
 import hljs from "highlight.js";
 import { minify as minifyHtml } from "html-minifier-terser";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-const ROOT_DIR = join(__dirname, "..");
-const SRC_DIR = join(ROOT_DIR, "src");
-const DIST_DIR = join(ROOT_DIR, "dist");
-const CONTENT_DIR = join(SRC_DIR, "content");
-const LAYOUTS_DIR = join(SRC_DIR, "layouts");
-const COMPONENTS_DIR = join(SRC_DIR, "components");
-const TEMPLATES_DIR = join(SRC_DIR, "templates");
-const ASSETS_DIR = join(SRC_DIR, "assets");
-const SITE_CONFIG_PATH = join(SRC_DIR, "site.json");
-const I18N_CONFIG_PATH = join(SRC_DIR, "i18n.json");
+import _io from "./io.js";
+import _cfg from "./config.js";
+import _i18n from "./i18n.js";
+import _npm from "./npm.js";
+import _fmt from "./format.js";
+import _analytics from "./analytics.js";
+import _core from "./core.js";
+import _social from "./social.js";
 
-const SITE_CONFIG = loadSiteConfig();
-const IDENTITY_CONFIG = SITE_CONFIG.identity ?? {};
+const __filename = _io.url.toPath(import.meta.url);
+const __dirname = _io.path.name(__filename);
+const ROOT_DIR = _io.path.combine(__dirname, "..");
+const SRC_DIR = _io.path.combine(ROOT_DIR, "src");
+const DIST_DIR = _io.path.combine(ROOT_DIR, "dist");
+const CONTENT_DIR = _io.path.combine(SRC_DIR, "content");
+const LAYOUTS_DIR = _io.path.combine(SRC_DIR, "layouts");
+const COMPONENTS_DIR = _io.path.combine(SRC_DIR, "components");
+const TEMPLATES_DIR = _io.path.combine(SRC_DIR, "templates");
+const ASSETS_DIR = _io.path.combine(SRC_DIR, "assets");
+const SITE_CONFIG_PATH = _io.path.combine(SRC_DIR, "site.json");
+const I18N_CONFIG_PATH = _io.path.combine(SRC_DIR, "i18n.json");
+
+await _i18n.load(I18N_CONFIG_PATH);
+await _cfg.load(SITE_CONFIG_PATH);
+await _core.contents.load(CONTENT_DIR);
+await _core.partials.load(LAYOUTS_DIR);
+await _core.components.load(COMPONENTS_DIR);
+await _core.layouts.load(LAYOUTS_DIR);
+await _core.templates.load(TEMPLATES_DIR);
 
 const versionToken = crypto.randomBytes(6).toString("hex");
-const BASE_URL = IDENTITY_CONFIG.url ?? "https://tatoglu.net";
-const SEO_CONFIG = SITE_CONFIG.seo ?? {};
-const SEO_INCLUDE_COLLECTIONS = parseBoolean(SEO_CONFIG.includeCollections);
-const SEO_INCLUDE_PAGING = parseBoolean(SEO_CONFIG.includePaging);
-const DEFAULT_IMAGE =
-  typeof SEO_CONFIG.defaultImage === "string" && SEO_CONFIG.defaultImage.trim().length > 0
-    ? SEO_CONFIG.defaultImage.trim()
-    : "~/assets/images/fatih_tatoglu_cover.webp";
-const GTM_ID = SITE_CONFIG.analytics?.gtmId ?? "GTM-XXXXXXX";
-const GA_ID = SITE_CONFIG.analytics?.gaId ?? "G-XXXXXXXXXX";
-const CLARITY_ID = SITE_CONFIG.analytics?.clarityId ?? "CLARITY-ID";
-const ANALYTICS_ENABLED = SITE_CONFIG.analytics?.enabled !== false;
+const BASE_URL = _cfg.identity.url;
+const SEO_INCLUDE_COLLECTIONS = _cfg.seo.includeCollections;
+const DEFAULT_IMAGE = _cfg.seo.defaultImage;
 const FALLBACK_ROLES = { tr: "-", en: "-", };
 const FALLBACK_QUOTES = { tr: "-", en: "-", };
 const FALLBACK_TITLES = { tr: "-", en: "-", };
 const FALLBACK_DESCRIPTIONS = { tr: "-", en: "-", };
 const FALLBACK_OWNER = "-";
 const FALLBACK_TAGLINES = { tr: "-", en: "-", };
-const PAGINATION_SETTINGS = SITE_CONFIG.content?.pagination ?? {};
-const BUILD_SETTINGS = SITE_CONFIG.build ?? {};
-const MINIFY_OUTPUT = BUILD_SETTINGS.minify === true;
-const DEBUG = BUILD_SETTINGS.debug === true;
-const MARKDOWN_SETTINGS = SITE_CONFIG.markdown ?? {};
-const MARKDOWN_HIGHLIGHT_ENABLED = MARKDOWN_SETTINGS.highlight !== false;
-const FEATURE_FLAGS = SITE_CONFIG.features ?? {};
-const POST_OPERATION_SHARE_KEYS = ["whatsapp", "x", "linkedin", "facebook", "copy"];
-const POST_OPERATIONS_DEFAULTS = {
-  enabled: true,
-  like: true,
-  dislike: true,
-  comment: true,
-  share: {
-    enabled: true,
-    whatsapp: true,
-    x: true,
-    linkedin: true,
-    facebook: true,
-    copy: true,
-  },
-};
-const COLLECTION_CONFIG = SITE_CONFIG.content?.collections ?? {};
-const LANGUAGE_SETTINGS = SITE_CONFIG.content?.languages ?? {};
-const SUPPORTED_LANGUAGES =
-  Array.isArray(LANGUAGE_SETTINGS.supported) && LANGUAGE_SETTINGS.supported.length
-    ? LANGUAGE_SETTINGS.supported
-    : ["tr", "en"];
-const DEFAULT_LANGUAGE = LANGUAGE_SETTINGS.default && SUPPORTED_LANGUAGES.includes(LANGUAGE_SETTINGS.default)
-  ? LANGUAGE_SETTINGS.default
-  : SUPPORTED_LANGUAGES[0] ?? "tr";
-const I18N_SOURCE = loadI18nConfig();
-const LANGUAGE_DICTIONARIES = buildLanguageDictionaries(I18N_SOURCE, SUPPORTED_LANGUAGES, DEFAULT_LANGUAGE);
-const I18N_INLINE_JSON = serializeForInlineScript(LANGUAGE_DICTIONARIES);
+const COLLECTION_CONFIG = _cfg.content.collections;
 
-const LANGUAGE_BUILD_CONFIG = {
-  tr: {
-    langAttr: "tr",
-    metaLanguage: "tr",
-    canonical: `${BASE_URL}/`,
-    ogLocale: "tr_TR",
-    altLocale: "en_US",
-  },
-  en: {
-    langAttr: "en",
-    metaLanguage: "en",
-    canonical: `${BASE_URL}/en/`,
-    ogLocale: "en_US",
-    altLocale: "tr_TR",
-  },
-};
+const MENU_ITEMS = await buildMenuItemsFromContent();
+const PAGES = await buildCategoryTagCollections();
+const FOOTER_POLICIES = await buildFooterPoliciesFromContent();
+const CONTENT_INDEX = await buildContentIndex();
 
-const MENU_ITEMS = buildMenuItemsFromContent();
-const PAGES = buildCategoryTagCollections();
-const FOOTER_POLICIES = buildFooterPoliciesFromContent();
-const CONTENT_INDEX = buildContentIndex();
-
-const FOOTER_SOCIAL_ICONS = {
-  rss: `<svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 32 32"><g class="nc-icon-wrapper" fill="currentColor"><circle cx="6.566" cy="25.434" r="3.566"></circle><path d="M20.234,29h-5.051c0-6.728-5.454-12.183-12.183-12.183h0v-5.051c9.518,0,17.234,7.716,17.234,17.234Z"></path><path d="M23.8,29c0-11.488-9.312-20.8-20.8-20.8V3c14.359,0,26,11.641,26,26h-5.2Z"></path></g></svg>`,
-  github: `<svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 32 32"><g class="nc-icon-wrapper" fill="currentColor"><path d="M16,2.345c7.735,0,14,6.265,14,14-.002,6.015-3.839,11.359-9.537,13.282-.7,.14-.963-.298-.963-.665,0-.473,.018-1.978,.018-3.85,0-1.312-.437-2.152-.945-2.59,3.115-.35,6.388-1.54,6.388-6.912,0-1.54-.543-2.783-1.435-3.762,.14-.35,.63-1.785-.14-3.71,0,0-1.173-.385-3.85,1.435-1.12-.315-2.31-.472-3.5-.472s-2.38,.157-3.5,.472c-2.677-1.802-3.85-1.435-3.85-1.435-.77,1.925-.28,3.36-.14,3.71-.892,.98-1.435,2.24-1.435,3.762,0,5.355,3.255,6.563,6.37,6.913-.403,.35-.77,.963-.893,1.872-.805,.368-2.818,.963-4.077-1.155-.263-.42-1.05-1.452-2.152-1.435-1.173,.018-.472,.665,.017,.927,.595,.332,1.277,1.575,1.435,1.978,.28,.787,1.19,2.293,4.707,1.645,0,1.173,.018,2.275,.018,2.607,0,.368-.263,.787-.963,.665-5.719-1.904-9.576-7.255-9.573-13.283,0-7.735,6.265-14,14-14Z"></path></g></svg>`,
-  linkedin: `<svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 32 32"><g class="nc-icon-wrapper" fill="currentColor"><path d="M26.111,3H5.889c-1.595,0-2.889,1.293-2.889,2.889V26.111c0,1.595,1.293,2.889,2.889,2.889H26.111c1.595,0,2.889-1.293,2.889-2.889V5.889c0-1.595-1.293-2.889-2.889-2.889ZM10.861,25.389h-3.877V12.87h3.877v12.519Zm-1.957-14.158c-1.267,0-2.293-1.034-2.293-2.31s1.026-2.31,2.293-2.31,2.292,1.034,2.292,2.31-1.026,2.31-2.292,2.31Zm16.485,14.158h-3.858v-6.571c0-1.802-.685-2.809-2.111-2.809-1.551,0-2.362,1.048-2.362,2.809v6.571h-3.718V12.87h3.718v1.686s1.118-2.069,3.775-2.069,4.556,1.621,4.556,4.975v7.926Z" fill-rule="evenodd"></path></g></svg>`,
-};
-
-const FOOTER_SOCIAL = [
-  { key: "rss", tone: "rss", url: "/feed.xml", external: false },
-  { key: "github", tone: "github", url: "https://github.com/fatihtatoglu", external: true },
-  { key: "linkedin", tone: "linkedin", url: "https://www.linkedin.com/in/fatihtatoglu/", external: true },
-];
-
-const PARTIALS = loadPartials();
-const COMPONENT_PARTIALS = loadComponentPartials();
 const GENERATED_PAGES = new Set();
-const layoutCache = new Map();
-const templateCache = new Map();
 
 marked.setOptions({ mangle: false, headerIds: false, gfm: true });
-if (MARKDOWN_HIGHLIGHT_ENABLED) {
+if (_cfg.markdown.highlight) {
   marked.use(
     markedHighlight({
       langPrefix: "hljs language-",
@@ -155,60 +80,50 @@ markdownRenderer.code = (token, infostring) => {
   const langClass = language ? ` class="language-${language}"` : "";
   const value = isTokenObject ? token.text ?? "" : token ?? "";
   const alreadyEscaped = Boolean(isTokenObject && token.escaped);
-  const content = alreadyEscaped ? value : escapeHtml(value);
+  const content = alreadyEscaped ? value : _fmt.escape(value);
   return `<pre class="code-block" data-code-language="${language}"><code${langClass}>${content}</code></pre>`;
 };
 marked.use({ renderer: markdownRenderer });
 
-const ANALYTICS_SNIPPETS = [
-  `<script>(function (w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l !== "dataLayer" ? "&l=" + l : ""; j.async = true; j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl; f.parentNode.insertBefore(j, f); })(window, document, "script", "dataLayer", "${GTM_ID}");</script>`,
-  `<script async src="https://www.googletagmanager.com/gtag/js?id=${GA_ID}"></script>`,
-  `<script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag("js", new Date()); gtag("config", "${GA_ID}");</script>`,
-  `<script>(function(c,l,a,r,i,t,y){ c[a]=c[a]||function(){ (c[a].q=c[a].q||[]).push(arguments); }; t=l.createElement(r); t.async=1; t.src="https://www.clarity.ms/tag/"+i; y=l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t,y); })(window, document, "clarity", "script", "${CLARITY_ID}");</script>`,
-];
-
-function run(command) {
-  execSync(command, { stdio: "inherit", cwd: ROOT_DIR });
+async function ensureDist() {
+  await _io.directory.remove(DIST_DIR);
+  await _io.directory.create(DIST_DIR);
 }
 
-function ensureDist() {
-  rmSync(DIST_DIR, { recursive: true, force: true });
-  mkdirSync(DIST_DIR, { recursive: true });
-}
-
-function buildCss() {
-  const minifyFlag = MINIFY_OUTPUT ? "--minify" : "";
-  const command = [
-    "npx",
-    "@tailwindcss/cli",
-    "-c",
-    "tailwind.config.js",
-    "-i",
-    "./src/css/style.css",
-    "-o",
-    "./dist/output.css",
-  ];
-  if (minifyFlag) {
-    command.push(minifyFlag);
-  }
-  run(command.join(" "));
-}
-
-function buildJs() {
+async function buildCss() {
+  const configPath = _io.path.combine(ROOT_DIR, "tailwind.config.js");
+  const sourePath = _io.path.combine(SRC_DIR, "css", "app.css");
+  const distPath = _io.path.combine(DIST_DIR, "output.css");
   const args = [
-    "npx",
-    "esbuild",
-    "./src/js/main.js",
-    "--bundle",
-    "--format=esm",
-    "--target=es2018",
-    "--sourcemap",
-    "--outfile=./dist/output.js",
+    "@tailwindcss/cli",
+    "-c", configPath,
+    "-i", sourePath,
+    "-o", distPath
   ];
-  if (MINIFY_OUTPUT) {
+
+  if (_cfg.build.minify) {
     args.push("--minify");
   }
-  run(args.join(" "));
+
+  await _npm.executeNpx(args, ROOT_DIR);
+}
+
+async function buildJs() {
+  const sourePath = _io.path.combine(SRC_DIR, "js", "app.js");
+  const distPath = _io.path.combine(DIST_DIR, "output.js");
+
+  const args = [
+    "esbuild",
+    sourePath,
+    "--bundle", "--format=esm", "--target=es2018", "--sourcemap",
+    "--outfile=" + distPath,
+  ];
+
+  if (_cfg.build.minify) {
+    args.push("--minify");
+  }
+
+  await _npm.executeNpx(args, ROOT_DIR);
 }
 
 async function transformHtml(html) {
@@ -217,7 +132,7 @@ async function transformHtml(html) {
     .replace(/\/output\.js(\?v=[^"']+)?/g, `/output.js?v=${versionToken}`)
     .replace(/\b(src|href)="~\//g, '$1="/');
 
-  if (!MINIFY_OUTPUT) {
+  if (!_cfg.build.minify) {
     return output;
   }
 
@@ -243,78 +158,6 @@ async function transformHtml(html) {
   return output;
 }
 
-function loadSiteConfig() {
-  try {
-    if (!existsSync(SITE_CONFIG_PATH)) {
-      return {};
-    }
-    const raw = readFileSync(SITE_CONFIG_PATH, "utf8");
-    return JSON.parse(raw);
-  } catch (error) {
-    console.warn(`Failed to read site config at ${SITE_CONFIG_PATH}:`, error);
-    return {};
-  }
-}
-
-function loadI18nConfig() {
-  try {
-    if (!existsSync(I18N_CONFIG_PATH)) {
-      return {};
-    }
-    const raw = readFileSync(I18N_CONFIG_PATH, "utf8");
-    return JSON.parse(raw);
-  } catch (error) {
-    console.warn(`Failed to read i18n config at ${I18N_CONFIG_PATH}:`, error);
-    return {};
-  }
-}
-
-function buildLanguageDictionaries(source, languages, defaultLang) {
-  const dictionaries = {};
-  const languageSet = new Set(languages);
-  languages.forEach((lang) => {
-    dictionaries[lang] = {};
-  });
-
-  function assignValue(target, pathSegments, value) {
-    let cursor = target;
-    pathSegments.forEach((segment, index) => {
-      if (index === pathSegments.length - 1) {
-        cursor[segment] = value;
-        return;
-      }
-      if (!cursor[segment] || typeof cursor[segment] !== "object") {
-        cursor[segment] = {};
-      }
-      cursor = cursor[segment];
-    });
-  }
-
-  function isLanguageLeaf(node) {
-    if (!node || typeof node !== "object" || Array.isArray(node)) return false;
-    const keys = Object.keys(node);
-    if (!keys.length) return false;
-    return keys.every((key) => languageSet.has(key));
-  }
-
-  function walk(node, path = []) {
-    if (isLanguageLeaf(node)) {
-      languages.forEach((lang) => {
-        const localizedValue = node[lang] ?? node[defaultLang];
-        if (localizedValue !== undefined) {
-          assignValue(dictionaries[lang], path, localizedValue);
-        }
-      });
-      return;
-    }
-    if (!node || typeof node !== "object") return;
-    Object.entries(node).forEach(([key, child]) => walk(child, path.concat(key)));
-  }
-
-  walk(source);
-  return dictionaries;
-}
-
 function serializeForInlineScript(value) {
   return JSON.stringify(value ?? {})
     .replace(/</g, "\\u003c")
@@ -324,8 +167,175 @@ function serializeForInlineScript(value) {
     .replace(/\u2029/g, "\\u2029");
 }
 
+function toLocaleArray(value) {
+  if (Array.isArray(value)) {
+    return value;
+  }
+
+  if (typeof value === "string" && value.trim().length > 0) {
+    return value.split(",").map((item) => item.trim());
+  }
+
+  return [];
+}
+
+function normalizeAlternateLocales(value, fallback = []) {
+  const primary = toLocaleArray(value);
+  const fallbackList = toLocaleArray(fallback);
+  const source = primary.length ? primary : fallbackList;
+  const seen = new Set();
+
+  return source
+    .map((item) => (typeof item === "string" ? item.trim() : ""))
+    .filter((item) => {
+      if (!item || seen.has(item)) {
+        return false;
+      }
+
+      seen.add(item);
+      return true;
+    });
+}
+
+function injectAlternateLocaleMeta(html, locales) {
+  const cleanupPattern =
+    /[^\S\r\n]*<meta property="og:locale:alternate" content=".*?" data-og-locale-alt\s*\/?>\s*/g;
+  const indentMatch = html.match(
+    /([^\S\r\n]*)<meta property="og:locale:alternate" content=".*?" data-og-locale-alt\s*\/?>/,
+  );
+  const indent = indentMatch?.[1] ?? "  ";
+  let output = html.replace(cleanupPattern, "");
+
+  if (!locales.length) {
+    return output;
+  }
+
+  const tags = locales
+    .map(
+      (locale) =>
+        `${indent}<meta property="og:locale:alternate" content="${locale}" data-og-locale-alt />`,
+    )
+    .join("\n");
+  const anchorPattern = /(<meta property="og:locale" content=".*?" data-og-locale\s*\/?>)/;
+
+  if (anchorPattern.test(output)) {
+    return output.replace(anchorPattern, `$1\n${tags}`);
+  }
+
+  return `${tags}\n${output}`;
+}
+
+function pickFallbackAlternateLang(lang) {
+  const supported = _i18n.supported;
+  if (!supported.length) {
+    return null;
+  }
+
+  if (supported.length === 1) {
+    return supported[0];
+  }
+
+  if (lang && lang !== _i18n.default) {
+    return _i18n.default;
+  }
+
+  return supported.find((code) => code !== lang) ?? null;
+}
+
+function normalizeAlternateOverrides(alternate, lang) {
+  if (!alternate) {
+    return {};
+  }
+
+  if (typeof alternate === "string" && alternate.trim().length > 0) {
+    const fallbackLang = pickFallbackAlternateLang(lang);
+    if (!fallbackLang) {
+      return {};
+    }
+
+    return { [fallbackLang]: resolveUrl(alternate.trim()) };
+  }
+
+  if (typeof alternate === "object" && !Array.isArray(alternate)) {
+    const map = {};
+    Object.keys(alternate).forEach((code) => {
+      if (!_i18n.supported.includes(code)) {
+        return;
+      }
+      const value = alternate[code];
+      if (typeof value === "string" && value.trim().length > 0) {
+        map[code] = resolveUrl(value.trim());
+      }
+    });
+    return map;
+  }
+
+  return {};
+}
+
+function resolvePaginationSegment(lang) {
+  const segmentConfig = _cfg?.content?.pagination?.segment ?? {};
+  if (
+    typeof segmentConfig[lang] === "string" &&
+    segmentConfig[lang].trim().length > 0
+  ) {
+    return segmentConfig[lang].trim();
+  }
+
+  const defaultSegment = segmentConfig[_i18n.default];
+  if (
+    typeof defaultSegment === "string" &&
+    defaultSegment.trim().length > 0
+  ) {
+    return defaultSegment.trim();
+  }
+
+  return "page";
+}
+
+function buildAlternateUrlMap(front, lang, canonicalUrl) {
+  const overrides = normalizeAlternateOverrides(front?.alternate, lang);
+  const result = {};
+
+  _i18n.supported.forEach((code) => {
+    if (code === lang) {
+      result[code] = canonicalUrl;
+      return;
+    }
+
+    if (overrides[code]) {
+      result[code] = overrides[code];
+      return;
+    }
+
+    const langConfig = _i18n.build[code];
+    if (langConfig?.canonical) {
+      result[code] = langConfig.canonical;
+      return;
+    }
+
+    const fallbackPath = code === _i18n.default ? "/" : `/${code}/`;
+    result[code] = resolveUrl(fallbackPath);
+  });
+
+  result.default = canonicalUrl;
+  return result;
+}
+
+function buildAlternateLinkList(alternateMap) {
+  if (!alternateMap) {
+    return [];
+  }
+
+  return _i18n.supported.map((code) => ({
+    lang: code,
+    hreflang: code,
+    url: alternateMap[code] ?? alternateMap.default ?? "",
+  }));
+}
+
 function buildEasterEggPayload(view) {
-  if (!DEBUG) {
+  if (!_cfg.build.debug) {
     return "{}";
   }
 
@@ -340,93 +350,56 @@ function buildEasterEggPayload(view) {
   }
 }
 
-function getLanguageDictionary(lang) {
-  return LANGUAGE_DICTIONARIES[lang] ?? LANGUAGE_DICTIONARIES[DEFAULT_LANGUAGE] ?? {};
-}
-
 function getLocalizedValue(lang, path, fallback) {
-  const dict = getLanguageDictionary(lang);
+  const dict = _i18n.get(lang);
   const value = path.split(".").reduce((acc, segment) => {
     if (acc === undefined || acc === null) return undefined;
     return acc[segment];
   }, dict);
+
   if (value !== undefined) {
     return value;
   }
-  if (lang !== DEFAULT_LANGUAGE) {
-    const defaultDict = getLanguageDictionary(DEFAULT_LANGUAGE);
+
+  if (lang !== _i18n.default) {
+    const defaultDict = _i18n.get(_i18n.default);
     const defaultValue = path.split(".").reduce((acc, segment) => {
       if (acc === undefined || acc === null) return undefined;
       return acc[segment];
     }, defaultDict);
+
     if (defaultValue !== undefined) {
       return defaultValue;
     }
   }
+
   return fallback;
 }
 
-function writeHtmlFile(relativePath, html) {
-  const destPath = join(DIST_DIR, relativePath);
-  mkdirSync(dirname(destPath), { recursive: true });
-  writeFileSync(destPath, html, "utf8");
+async function writeHtmlFile(relativePath, html) {
+  const destPath = _io.path.combine(DIST_DIR, relativePath);
+  await _io.directory.create(_io.path.name(destPath));
+  await _io.file.write(destPath, html);
 }
 
 function applyLanguageMetadata(html, langKey) {
-  const config = LANGUAGE_BUILD_CONFIG[langKey];
-  if (!config) return html;
-  return html
+  const config = _i18n.build[langKey];
+  if (!config) {
+    return html;
+  }
+
+  const altLocales = normalizeAlternateLocales(config.altLocale);
+
+  let output = html
     .replace(/(<html\b[^>]*\slang=")(.*?)"/, `$1${config.langAttr}"`)
     .replace(/(<meta name="language" content=")(.*?)"/, `$1${config.metaLanguage}"`)
     .replace(/(<link rel="canonical" href=")(.*?)" data-canonical/, `$1${config.canonical}" data-canonical`)
     .replace(/(<meta property="og:url" content=")(.*?)" data-og-url/, `$1${config.canonical}" data-og-url`)
     .replace(/(<meta name="twitter:url" content=")(.*?)" data-twitter-url/, `$1${config.canonical}" data-twitter-url`)
-    .replace(/(<meta property="og:locale" content=")(.*?)" data-og-locale/, `$1${config.ogLocale}" data-og-locale`)
-    .replace(/(<meta property="og:locale:alternate" content=")(.*?)" data-og-locale-alt/, `$1${config.altLocale}" data-og-locale-alt`);
-}
+    .replace(/(<meta property="og:locale" content=")(.*?)" data-og-locale/, `$1${config.ogLocale}" data-og-locale`);
 
-function loadPartials() {
-  const partials = {};
-  if (!existsSync(LAYOUTS_DIR)) return partials;
-  readdirSync(LAYOUTS_DIR).forEach((entry) => {
-    if (!entry.startsWith("_") || !entry.endsWith(".mustache")) return;
-    const key = `partials/${entry.replace(/\.mustache$/, "")}`;
-    partials[key] = readFileSync(join(LAYOUTS_DIR, entry), "utf8");
-  });
-  return partials;
-}
-
-function loadComponentPartials() {
-  const partials = {};
-  if (!existsSync(COMPONENTS_DIR)) return partials;
-  readdirSync(COMPONENTS_DIR).forEach((entry) => {
-    if (!entry.endsWith(".mustache")) return;
-    const key = `components/${entry.replace(/\.mustache$/, "")}`;
-    partials[key] = readFileSync(join(COMPONENTS_DIR, entry), "utf8");
-  });
-  return partials;
-}
-
-function getLayout(name) {
-  if (layoutCache.has(name)) return layoutCache.get(name);
-  const filePath = join(LAYOUTS_DIR, `${name}.mustache`);
-  if (!existsSync(filePath)) {
-    throw new Error(`Layout not found: ${name}`);
-  }
-  const template = readFileSync(filePath, "utf8");
-  layoutCache.set(name, template);
-  return template;
-}
-
-function getTemplate(name) {
-  if (templateCache.has(name)) return templateCache.get(name);
-  const filePath = join(TEMPLATES_DIR, `${name}.mustache`);
-  if (!existsSync(filePath)) {
-    throw new Error(`Template not found: ${name}`);
-  }
-  const template = readFileSync(filePath, "utf8");
-  templateCache.set(name, template);
-  return template;
+  output = injectAlternateLocaleMeta(output, altLocales);
+  return output;
 }
 
 function resolveUrl(value) {
@@ -443,28 +416,32 @@ function resolveUrl(value) {
 
 function buildSiteData(lang) {
   const fallbackOwner = FALLBACK_OWNER;
-  const author = IDENTITY_CONFIG.author ?? fallbackOwner;
+  const author = _cfg.identity.author;
   const owner = getLocalizedValue(lang, "site.owner", fallbackOwner);
   const title = getLocalizedValue(
     lang,
     "site.title",
-    FALLBACK_TITLES[lang] ?? FALLBACK_TITLES[DEFAULT_LANGUAGE] ?? fallbackOwner,
+    FALLBACK_TITLES[lang] ?? FALLBACK_TITLES[_i18n.default] ?? fallbackOwner,
   );
+
   const description = getLocalizedValue(
     lang,
     "site.description",
-    FALLBACK_DESCRIPTIONS[lang] ?? FALLBACK_DESCRIPTIONS[DEFAULT_LANGUAGE] ?? "",
+    FALLBACK_DESCRIPTIONS[lang] ?? FALLBACK_DESCRIPTIONS[_i18n.default] ?? "",
   );
+
   const role = getLocalizedValue(
     lang,
     "site.role",
-    FALLBACK_ROLES[lang] ?? FALLBACK_ROLES[DEFAULT_LANGUAGE] ?? FALLBACK_ROLES.en,
+    FALLBACK_ROLES[lang] ?? FALLBACK_ROLES[_i18n.default] ?? FALLBACK_ROLES.en,
   );
+
   const quote = getLocalizedValue(
     lang,
     "site.quote",
-    FALLBACK_QUOTES[lang] ?? FALLBACK_QUOTES[DEFAULT_LANGUAGE] ?? FALLBACK_QUOTES.en,
+    FALLBACK_QUOTES[lang] ?? FALLBACK_QUOTES[_i18n.default] ?? FALLBACK_QUOTES.en,
   );
+
   return {
     title,
     description,
@@ -472,95 +449,30 @@ function buildSiteData(lang) {
     owner,
     role,
     quote,
-    home: lang === "en" ? "/en/" : "/",
-    url: IDENTITY_CONFIG.url ?? BASE_URL,
-    themeColor: IDENTITY_CONFIG.themeColor ?? "#5a8df0",
-    analyticsEnabled: ANALYTICS_ENABLED,
-    gtmId: GTM_ID,
+    home: resolveLanguageHomePath(lang),
+    url: _cfg.identity.url,
+    themeColor: _cfg.identity.themeColor,
+    analyticsEnabled: _analytics.enabled,
+    gtmId: _analytics.google.gtm,
     year: new Date().getFullYear(),
     languages: {
-      supported: SUPPORTED_LANGUAGES,
-      default: DEFAULT_LANGUAGE,
+      supported: _i18n.supported,
+      default: _i18n.default,
     },
-    languagesCsv: SUPPORTED_LANGUAGES.join(","),
-    defaultLanguage: DEFAULT_LANGUAGE,
+    languagesCsv: _i18n.supported.join(","),
+    defaultLanguage: _i18n.default,
     pagination: {
-      pageSize: Number.isFinite(PAGINATION_SETTINGS.pageSize)
-        ? PAGINATION_SETTINGS.pageSize
-        : 5,
+      pageSize: _cfg.content.pagination.pageSize
     },
     features: {
-      postOperations: buildPostOperationsFeatures(FEATURE_FLAGS.postOperations),
-      search: parseBoolean(
-        FEATURE_FLAGS.search ?? SITE_CONFIG.search ?? true,
-      ) !== false,
-    },
-  };
-}
-
-function buildPostOperationsFeatures(rawConfig) {
-  const defaults = POST_OPERATIONS_DEFAULTS;
-  const shareDefaults = defaults.share;
-  const shareKeys = POST_OPERATION_SHARE_KEYS;
-  const isObjectConfig =
-    rawConfig != null && typeof rawConfig === "object" && !Array.isArray(rawConfig);
-
-  if (!isObjectConfig) {
-    const enabled = resolveFeatureFlag(rawConfig, defaults.enabled);
-    const shareEnabled = enabled && shareKeys.some(() => enabled);
-    const shareButtons = {};
-    shareKeys.forEach((key) => {
-      shareButtons[key] = shareEnabled;
-    });
-    return {
-      enabled,
-      like: enabled,
-      dislike: enabled,
-      comment: enabled,
-      share: {
-        enabled: shareEnabled,
-        ...shareButtons,
-      },
-    };
-  }
-
-  const baseEnabled = resolveFeatureFlag(rawConfig.enabled, defaults.enabled);
-  const like = resolveFeatureFlag(rawConfig.like, defaults.like);
-  const dislike = resolveFeatureFlag(rawConfig.dislike, defaults.dislike);
-  const comment = resolveFeatureFlag(rawConfig.comment, defaults.comment);
-
-  const shareRaw = typeof rawConfig.share === "object" && rawConfig.share ? rawConfig.share : {};
-  let shareEnabled = resolveFeatureFlag(shareRaw.enabled, shareDefaults.enabled);
-  const shareFlags = {};
-  shareKeys.forEach((key) => {
-    shareFlags[key] = resolveFeatureFlag(shareRaw[key], shareDefaults[key]);
-  });
-  const hasShareButton = shareKeys.some((key) => shareFlags[key]);
-  shareEnabled = shareEnabled && hasShareButton;
-
-  const anyButtonEnabled = [like, dislike, comment, shareEnabled].some(Boolean);
-  const enabled = baseEnabled && anyButtonEnabled;
-
-  const finalShareEnabled = enabled ? shareEnabled : false;
-  const finalShareFlags = {};
-  shareKeys.forEach((key) => {
-    finalShareFlags[key] = finalShareEnabled ? shareFlags[key] : false;
-  });
-
-  return {
-    enabled,
-    like: enabled ? like : false,
-    dislike: enabled ? dislike : false,
-    comment: enabled ? comment : false,
-    share: {
-      enabled: finalShareEnabled,
-      ...finalShareFlags,
+      postOperations: _cfg.features.postOperations,
+      search: _cfg.features.search
     },
   };
 }
 
 function getMenuData(lang, activeKey) {
-  const baseItems = MENU_ITEMS[lang] ?? MENU_ITEMS[DEFAULT_LANGUAGE] ?? [];
+  const baseItems = MENU_ITEMS[lang] ?? MENU_ITEMS[_i18n.default] ?? [];
   const normalizedActiveKey =
     typeof activeKey === "string" && activeKey.trim().length > 0 ? activeKey.trim() : null;
   const hasExplicitMatch = normalizedActiveKey
@@ -589,46 +501,67 @@ function resolveActiveMenuKey(frontMatter) {
 }
 
 function buildTagSlug(key, lang) {
-  if (!key) return null;
-  const tagsConfig = COLLECTION_CONFIG.tags;
+  if (!key) {
+    return null;
+  }
+
+  const tagsConfig = _cfg.content.collections.tags;
   const slugPattern =
     tagsConfig && typeof tagsConfig.slugPattern === "object" ? tagsConfig.slugPattern : {};
+
   const langPattern = typeof slugPattern[lang] === "string" ? slugPattern[lang] : null;
   if (langPattern) {
     return langPattern.includes("{{key}}") ? langPattern.replace("{{key}}", key) : langPattern;
   }
+
   if (lang === "en") {
     return `tag/${key}`;
   }
+
   if (lang === "tr") {
     return `etiket/${key}`;
   }
+
   return key;
 }
 
 function buildTagUrlFromKey(key, lang) {
   const slug = buildTagSlug(key, lang);
-  if (!slug) return null;
+  if (!slug) {
+    return null;
+  }
+
   return buildContentUrl(null, lang, slug);
 }
 
 function buildTagUrlFromLabel(label, lang) {
-  const key = normalizeCollectionKey(label);
-  if (!key) return null;
+  const key = _fmt.slugify(label);
+  if (!key) {
+    return null;
+  }
+
   return buildTagUrlFromKey(key, lang);
 }
 
-function buildFooterTags(lang, limit = 10) {
+function buildFooterTags(lang, limit = 20) {
   const langCollections = PAGES[lang] ?? {};
   const results = [];
   Object.keys(langCollections).forEach((key) => {
     const items = langCollections[key] ?? [];
-    if (!Array.isArray(items) || items.length === 0) return;
+    if (!Array.isArray(items) || items.length === 0) {
+      return;
+    }
+
     const count = items.filter((entry) => entry.type === "tag").length;
-    if (count === 0) return;
+    if (count === 0) {
+      return;
+    }
 
     const url = buildTagUrlFromKey(key, lang);
-    if (!url) return;
+    if (!url) {
+      return;
+    }
+
     results.push({ key, count, url });
   });
 
@@ -636,43 +569,50 @@ function buildFooterTags(lang, limit = 10) {
     if (b.count !== a.count) {
       return b.count - a.count;
     }
+
     return a.key.localeCompare(b.key, lang);
   });
 
   if (limit && Number.isFinite(limit) && limit > 0) {
     return results.slice(0, limit);
   }
+
   return results;
 }
 
 function getFooterData(lang) {
-  const policiesSource = FOOTER_POLICIES[lang] ?? FOOTER_POLICIES[DEFAULT_LANGUAGE] ?? [];
-  const tagsSource = buildFooterTags(lang, 10);
-  const social = FOOTER_SOCIAL.map((item) => {
+  const policiesSource = FOOTER_POLICIES[lang] ?? FOOTER_POLICIES[_i18n.default] ?? [];
+  const tagsSource = buildFooterTags(lang, 20);
+  const social = _social.get().map((item) => {
     let url = item.url;
     if (item.key === "rss") {
-      url = lang === "en" ? "/en/feed.xml" : "/feed.xml";
+      url = lang === _i18n.default ? "/feed.xml" : `/${lang}/feed.xml`;
     }
+
     return {
       ...item,
       url,
-      icon: FOOTER_SOCIAL_ICONS[item.key],
+      icon: item.icon,
       label: getLocalizedValue(lang, `footer.social.${item.key}`, item.key.toUpperCase()),
     };
   });
+
   const tags = tagsSource.map((tag) => ({
     ...tag,
     label: getLocalizedValue(lang, `footer.tags.${tag.key}`, tag.label ?? tag.key),
   }));
+
   const policies = policiesSource.map((policy) => ({
     ...policy,
     label: getLocalizedValue(lang, `footer.policies.${policy.key}`, policy.label ?? policy.key),
   }));
+
   const tagline = getLocalizedValue(
     lang,
     "footer.tagline",
-    FALLBACK_TAGLINES[lang] ?? FALLBACK_TAGLINES[DEFAULT_LANGUAGE] ?? FALLBACK_TAGLINES.en,
+    FALLBACK_TAGLINES[lang] ?? FALLBACK_TAGLINES[_i18n.default] ?? FALLBACK_TAGLINES.en,
   );
+
   return {
     tags,
     policies,
@@ -683,27 +623,27 @@ function getFooterData(lang) {
 
 function buildPageMeta(front, lang, slug) {
   const canonicalUrl = resolveUrl(front.canonical ?? defaultCanonical(lang, slug));
+  const langConfig = _i18n.build[lang] ?? {};
   const pageTitleSource =
     typeof front.metaTitle === "string" && front.metaTitle.trim().length > 0
       ? front.metaTitle.trim()
       : typeof front.title === "string" && front.title.trim().length > 0
         ? front.title.trim()
         : "Untitled";
-  const ogLocale = lang === "en" ? "en_US" : "tr_TR";
-  const altLocale = lang === "en" ? "tr_TR" : "en_US";
+  const ogLocale = langConfig.ogLocale ?? _i18n.culture(lang);
+  const defaultAltLocales =
+    langConfig.altLocale ??
+    _i18n.supported
+      .filter((code) => code !== lang)
+      .map((code) => _i18n.culture(code));
+  const altLocales = normalizeAlternateLocales(front.ogAltLocale, defaultAltLocales);
   const coverSource =
     typeof front.cover === "string" && front.cover.trim().length > 0
       ? front.cover.trim()
       : DEFAULT_IMAGE;
   const ogImage = resolveUrl(coverSource);
-  const altLang = lang === "en" ? "tr" : "en";
-  let alternateUrl;
-  if (typeof front.alternate === "string" && front.alternate.trim().length > 0) {
-    alternateUrl = resolveUrl(front.alternate.trim());
-  } else {
-    const altLangConfig = LANGUAGE_BUILD_CONFIG[altLang];
-    alternateUrl = altLangConfig?.canonical ?? resolveUrl(altLang === DEFAULT_LANGUAGE ? "/" : `/${altLang}/`);
-  }
+  const alternates = buildAlternateUrlMap(front, lang, canonicalUrl);
+  const alternateLinks = buildAlternateLinkList(alternates);
   const twitterImage = resolveUrl(coverSource);
 
   const typeValue = typeof front.type === "string" ? front.type.trim().toLowerCase() : "";
@@ -730,11 +670,8 @@ function buildPageMeta(front, lang, slug) {
     description: front.description ?? "",
     robots: front.robots ?? "index,follow",
     canonical: canonicalUrl,
-    alternates: {
-      tr: lang === "tr" ? canonicalUrl : alternateUrl,
-      en: lang === "en" ? canonicalUrl : alternateUrl,
-      default: canonicalUrl,
-    },
+    alternates,
+    alternateLinks,
     og: {
       title: front.ogTitle ?? pageTitleSource,
       description: front.description ?? "",
@@ -742,7 +679,7 @@ function buildPageMeta(front, lang, slug) {
       url: canonicalUrl,
       image: ogImage,
       locale: front.ogLocale ?? ogLocale,
-      altLocale: front.ogAltLocale ?? altLocale,
+      altLocale: altLocales,
     },
     twitter: {
       card: front.twitterCard ?? "summary_large_image",
@@ -770,7 +707,7 @@ function resolveArticleSection(front, lang) {
 }
 
 function buildArticleStructuredData(front, lang, canonicalUrl, ogImageUrl) {
-  const authorName = IDENTITY_CONFIG.author ?? FALLBACK_OWNER;
+  const authorName = _cfg.identity.author;
   const articleSection = resolveArticleSection(front, lang);
   const keywordsArray = Array.isArray(front.keywords) && front.keywords.length
     ? front.keywords
@@ -809,7 +746,7 @@ function buildArticleStructuredData(front, lang, canonicalUrl, ogImageUrl) {
 
 function buildHomeStructuredData(front, lang, canonicalUrl) {
   const siteData = buildSiteData(lang);
-  const authorName = IDENTITY_CONFIG.author ?? FALLBACK_OWNER;
+  const authorName = _cfg.identity.author;
   const structured = {
     "@context": "https://schema.org",
     "@type": "WebSite",
@@ -826,7 +763,7 @@ function buildHomeStructuredData(front, lang, canonicalUrl) {
 }
 
 function buildWebPageStructuredData(front, lang, canonicalUrl) {
-  const authorName = IDENTITY_CONFIG.author ?? FALLBACK_OWNER;
+  const authorName = _cfg.identity.author;
   const keywordsArray = Array.isArray(front.keywords) && front.keywords.length
     ? front.keywords
     : Array.isArray(front.tags) && front.tags.length
@@ -850,43 +787,21 @@ function buildWebPageStructuredData(front, lang, canonicalUrl) {
   return serializeForInlineScript(structured);
 }
 
-function formatDate(value, lang) {
-  if (!value) return null;
-  const date = new Date(value);
-  if (Number.isNaN(date.getTime())) return value;
-  const locale = lang === "en" ? "en-US" : "tr-TR";
-  return new Intl.DateTimeFormat(locale, {
-    day: "2-digit",
-    month: "long",
-    year: "numeric",
-  }).format(date);
-}
-
-function buildLanguageFlags(lang) {
-  const normalized = SUPPORTED_LANGUAGES.includes(lang) ? lang : DEFAULT_LANGUAGE;
-  const isEnglish = normalized === "en";
-  const isTurkish = normalized === "tr";
-  return {
-    locale: {
-      code: normalized,
-      isEn: isEnglish,
-      isTr: isTurkish,
-      isEnglish,
-      isTurkish,
-      isDefault: normalized === DEFAULT_LANGUAGE,
-    },
-    isEnglish,
-    isTurkish,
-  };
-}
-
 function defaultCanonical(lang, slug) {
   const cleanedSlug = (slug ?? "").replace(/^\/+/, "").replace(/\/+$/, "");
-  const prefix = lang === "en" ? "en" : "";
-  const segments = [BASE_URL];
-  if (prefix) segments.push(prefix);
-  if (cleanedSlug) segments.push(cleanedSlug);
-  return segments.join("/") + "/";
+  const langConfig = _i18n.build[lang];
+  let base = langConfig?.canonical;
+  if (!base) {
+    const fallbackPath = lang === _i18n.default ? "/" : `/${lang}/`;
+    base = resolveUrl(fallbackPath);
+  }
+
+  const normalizedBase = base.replace(/\/+$/, "/");
+  if (!cleanedSlug) {
+    return normalizedBase;
+  }
+
+  return `${normalizedBase}${cleanedSlug}/`;
 }
 
 function canonicalToRelativePath(value) {
@@ -902,8 +817,23 @@ function canonicalToRelativePath(value) {
   return path.replace(/^\/+/, "").replace(/\/+$/, "");
 }
 
-function renderContentTemplate(templateName, contentHtml, front, lang, dictionary, listingOverride) {
-  const template = getTemplate(templateName);
+function resolveLanguageHomePath(lang) {
+  if (typeof _i18n.homePath === "function") {
+    const resolved = _i18n.homePath(lang);
+    if (resolved && typeof resolved === "string") {
+      return resolved;
+    }
+  }
+
+  if (!lang || lang === _i18n.default) {
+    return "/";
+  }
+
+  return `/${lang}/`.replace(/\/+/g, "/");
+}
+
+async function renderContentTemplate(templateName, contentHtml, front, lang, dictionary, listingOverride) {
+  const template = _core.templates.get(templateName);
   const normalizedTags = Array.isArray(front.tags)
     ? front.tags.filter((tag) => typeof tag === "string" && tag.trim().length > 0)
     : [];
@@ -915,10 +845,10 @@ function renderContentTemplate(templateName, contentHtml, front, lang, dictionar
     .filter(Boolean);
   const categorySlug =
     typeof front.category === "string" && front.category.trim().length > 0
-      ? normalizeCollectionKey(front.category)
+      ? _fmt.slugify(front.category)
       : "";
   const categoryUrl = categorySlug ? buildContentUrl(null, lang, categorySlug) : null;
-  const resolvedDictionary = dictionary ?? getLanguageDictionary(lang);
+  const resolvedDictionary = dictionary ?? _i18n.get(lang);
   const normalizedFront = {
     ...front,
     tags: normalizedTags,
@@ -929,8 +859,8 @@ function renderContentTemplate(templateName, contentHtml, front, lang, dictionar
       typeof front.category === "string" && front.category.trim().length > 0
         ? front.category.trim()
         : "",
-    dateDisplay: formatDate(front.date, lang),
-    updatedDisplay: formatDate(front.updated, lang),
+    dateDisplay: _fmt.date(front.date, lang),
+    updatedDisplay: _fmt.date(front.updated, lang),
     cover: front.cover ?? DEFAULT_IMAGE,
     coverAlt: front.coverAlt ?? "",
     lang,
@@ -938,7 +868,7 @@ function renderContentTemplate(templateName, contentHtml, front, lang, dictionar
   normalizedFront.seriesListing = buildSeriesListing(normalizedFront, lang);
   const listing = listingOverride ?? buildCollectionListing(normalizedFront, lang);
   const site = buildSiteData(lang);
-  const languageFlags = buildLanguageFlags(lang);
+  const languageFlags = _i18n.flags(lang);
   return Mustache.render(template, {
     content: { html: decorateHtml(contentHtml, templateName) },
     front: normalizedFront,
@@ -953,8 +883,8 @@ function renderContentTemplate(templateName, contentHtml, front, lang, dictionar
 }
 
 function buildContentComponentContext(frontMatter, lang, dictionary) {
-  const normalizedLang = lang ?? DEFAULT_LANGUAGE;
-  const languageFlags = buildLanguageFlags(normalizedLang);
+  const normalizedLang = lang ?? _i18n.default;
+  const languageFlags = _i18n.flags(normalizedLang);
   return {
     front: frontMatter ?? {},
     lang: normalizedLang,
@@ -974,25 +904,30 @@ function renderMarkdownComponents(markdown, context = {}) {
   const placeholders = [];
   const componentPattern = /{{>\s*components\/([A-Za-z0-9_\-./]+)\s*}}/g;
   let working = markdown;
+
   working = working.replace(componentPattern, (_, componentName) => {
     const partialKey = componentName.startsWith("components/")
       ? componentName
       : `components/${componentName}`;
-    const template = COMPONENT_PARTIALS[partialKey];
+    const template = _core.components.files[partialKey];
     if (!template) return "";
     const tokenId = `COMPONENT_SLOT_${placeholders.length}_${componentName.replace(/[^A-Za-z0-9_-]/g, "_")}_${crypto.randomBytes(4).toString("hex")}`;
     const marker = `\n<!--${tokenId}-->\n`;
+
     const html = Mustache.render(template, context, {
-      ...PARTIALS,
-      ...COMPONENT_PARTIALS,
+      ..._core.partials.files,
+      ..._core.components.files,
     });
+
     placeholders.push({ marker, html });
     return marker;
   });
+
   const renderedMarkdown = Mustache.render(working, context, {
-    ...PARTIALS,
-    ...COMPONENT_PARTIALS,
+    ..._core.partials.files,
+    ..._core.components.files,
   });
+
   return { markdown: renderedMarkdown, placeholders };
 }
 
@@ -1014,58 +949,31 @@ function decorateHtml(html, templateName) {
 function buildOutputPath(front, lang, slug) {
   const canonicalRelative = canonicalToRelativePath(front.canonical);
   if (canonicalRelative) {
-    return join(canonicalRelative, "index.html");
+    return _io.path.combine(canonicalRelative, "index.html");
   }
   const cleaned = (slug ?? "").replace(/^\/+/, "");
   const segments = [];
-  if (lang && lang !== DEFAULT_LANGUAGE) {
+  if (lang && lang !== _i18n.default) {
     segments.push(lang);
   }
   if (cleaned) {
     segments.push(cleaned);
   }
-  return join(...segments.filter(Boolean), "index.html");
+  return _io.path.combine(...segments.filter(Boolean), "index.html");
 }
 
 function toPosixPath(value) {
-  return value.split(sep).join("/");
-}
-
-function collectMarkdownFiles(dir) {
-  const files = [];
-  if (!existsSync(dir)) return files;
-  readdirSync(dir).forEach((entry) => {
-    const fullPath = join(dir, entry);
-    const stats = statSync(fullPath);
-    if (stats.isDirectory()) {
-      files.push(...collectMarkdownFiles(fullPath));
-    } else if (entry.endsWith(".md")) {
-      files.push(fullPath);
-    }
-  });
-  return files;
-}
-
-function inferLangFromPath(filePath) {
-  const relative = toPosixPath(filePath.replace(`${toPosixPath(CONTENT_DIR)}/`, ""));
-  const [langFolder] = relative.split("/");
-  return SUPPORTED_LANGUAGES.includes(langFolder) ? langFolder : DEFAULT_LANGUAGE;
-}
-
-function inferSlugFromPath(filePath) {
-  const relative = toPosixPath(filePath.replace(`${toPosixPath(CONTENT_DIR)}/`, ""));
-  const parts = relative.split("/");
-  const lastPart = parts[parts.length - 1] ?? "";
-  return lastPart.replace(/\.md$/i, "");
+  return value.split(_io.path.seperator).join("/");
 }
 
 function buildContentUrl(canonical, lang, slug) {
-  const normalizedLang = lang ?? DEFAULT_LANGUAGE;
+  const normalizedLang = lang ?? _i18n.default;
   if (typeof canonical === "string" && canonical.trim().length > 0) {
     const relative = canonicalToRelativePath(canonical.trim());
     if (relative) {
       return `/${relative}`.replace(/\/+/g, "/");
     }
+
     return canonical.trim();
   }
   const fallback = canonicalToRelativePath(defaultCanonical(normalizedLang, slug));
@@ -1073,161 +981,113 @@ function buildContentUrl(canonical, lang, slug) {
     return `/${fallback}`.replace(/\/+/g, "/");
   }
   const slugSegment = slug ? `/${slug}` : "/";
-  if (normalizedLang !== DEFAULT_LANGUAGE) {
+  if (normalizedLang !== _i18n.default) {
     return `/${normalizedLang}${slugSegment}`.replace(/\/+/g, "/");
   }
+
   return slugSegment.replace(/\/+/g, "/");
 }
 
-function buildFooterPoliciesFromContent() {
+async function buildFooterPoliciesFromContent() {
+  if (_core.contents.count === 0) {
+    return {};
+  }
+
   const policiesByLang = {};
-  if (!existsSync(CONTENT_DIR)) return policiesByLang;
-  const files = collectMarkdownFiles(CONTENT_DIR);
-  for (const filePath of files) {
-    let data;
-    try {
-      ({ data } = matter(readFileSync(filePath, "utf8")));
-    } catch {
+  for (const file of _core.contents.filess) {
+    if (!file.isValid || file.isDraft || !file.isPublished || file.category !== "policy") {
       continue;
     }
-    const category = typeof data?.category === "string" ? data.category.trim().toLowerCase() : "";
-    if (category !== "policy") continue;
-    const lang = data.lang ?? inferLangFromPath(filePath);
-    const slug = data.slug ?? inferSlugFromPath(filePath);
-    const key =
-      (typeof data.id === "string" && data.id.trim().length > 0 ? data.id.trim() : slug || "policy").trim();
-    const labelSource =
-      (typeof data.menu === "string" && data.menu.trim().length > 0
-        ? data.menu.trim()
-        : typeof data.title === "string" && data.title.trim().length > 0
-          ? data.title.trim()
-          : key) ?? key;
+
     const policy = {
-      lang,
-      key,
-      label: labelSource,
-      url: buildContentUrl(data.canonical, lang, slug),
+      lang: file.lang,
+      key: file.id,
+      label: file.menuLabel,
+      url: buildContentUrl(file.canonical, file.lang, file.slug),
     };
-    if (!Array.isArray(policiesByLang[lang])) {
-      policiesByLang[lang] = [];
+
+    if (!Array.isArray(policiesByLang[file.lang])) {
+      policiesByLang[file.lang] = [];
     }
-    policiesByLang[lang].push(policy);
+
+    policiesByLang[file.lang].push(policy);
   }
+
   Object.keys(policiesByLang).forEach((lang) => {
     policiesByLang[lang].sort((a, b) => a.label.localeCompare(b.label, lang));
   });
+
   return policiesByLang;
 }
 
-function buildContentIndex() {
+async function buildContentIndex() {
+  if (_core.contents.count === 0) {
+    return {};
+  }
+
   const index = {};
-  if (!existsSync(CONTENT_DIR)) return index;
-  const files = collectMarkdownFiles(CONTENT_DIR);
-  for (const filePath of files) {
-    let data;
-    try {
-      ({ data } = matter(readFileSync(filePath, "utf8")));
-    } catch {
+  for (const file of _core.contents.filess) {
+    if (!file.isValid || file.isDraft || !file.isPublished || !file.id) {
       continue;
     }
-    if (!data) continue;
-    const isDraft = parseBoolean(data.draft);
-    if (isDraft) continue;
-    const status = typeof data.status === "string" ? data.status.trim().toLowerCase() : "";
-    if (status && status !== "published") continue;
-    const id = typeof data.id === "string" ? data.id.trim() : "";
-    if (!id) continue;
-    const lang = data.lang ?? inferLangFromPath(filePath);
-    const slug = data.slug ?? inferSlugFromPath(filePath);
-    if (!index[id]) {
-      index[id] = {};
+
+    if (!index[file.id]) {
+      index[file.id] = {};
     }
-    index[id][lang] = {
-      id,
-      lang,
-      title: data.title ?? slug ?? id,
-      canonical: buildContentUrl(data.canonical, lang, slug),
+
+    index[file.id][file.lang] = {
+      id: file.id,
+      lang: file.lang,
+      title: file.title,
+      canonical: buildContentUrl(file.canonical, file.lang, file.slug),
     };
   }
+
   return index;
 }
 
-function buildCategoryTagCollections() {
+async function buildCategoryTagCollections() {
+  if (_core.contents.count === 0) {
+    return {};
+  }
+
   const pagesByLang = {};
-  if (!existsSync(CONTENT_DIR)) return pagesByLang;
-  const files = collectMarkdownFiles(CONTENT_DIR);
-  for (const filePath of files) {
-    let data;
-    try {
-      ({ data } = matter(readFileSync(filePath, "utf8")));
-    } catch {
+  for (const file of _core.contents.filess) {
+    if (!file.isValid || file.isDraft || !file.isPublished) {
       continue;
     }
-    if (!data) continue;
-    const isDraft = parseBoolean(data.draft);
-    if (isDraft) continue;
-    const status = typeof data.status === "string" ? data.status.trim().toLowerCase() : "";
-    if (status && status !== "published") continue;
-    const lang = data.lang ?? inferLangFromPath(filePath);
-    const slug = data.slug ?? inferSlugFromPath(filePath);
-    const summary = buildCollectionEntrySummary(data, lang, slug);
-    const langStore = pagesByLang[lang] ?? (pagesByLang[lang] = {});
 
-    // Home collection: featured posts across the site
-    const isPostTemplate = typeof data.template === "string" && data.template.trim() === "post";
-    const isFeatured = parseBoolean(data.featured);
-    if (isPostTemplate && isFeatured) {
+    const summary = {
+      ...file.summary,
+      canonical: buildContentUrl(file.canonical, file.lang, file.slug)
+    };
+    const langStore = pagesByLang[file.lang] ?? (pagesByLang[file.lang] = {});
+
+    if (file.isPostTemplate && file.isFeatured) {
       addCollectionEntry(langStore, "home", summary, "home");
     }
 
-    const categoryKey = normalizeCollectionKey(data.category);
-    if (categoryKey) {
-      addCollectionEntry(langStore, categoryKey, summary, "category");
+    if (file.category) {
+      addCollectionEntry(langStore, file.category, summary, "category");
     }
-    const tags = normalizeTagList(data.tags);
-    tags.forEach((tag) => {
-      const tagKey = normalizeCollectionKey(tag);
-      if (tagKey) {
-        addCollectionEntry(langStore, tagKey, summary, "tag");
-      }
-    });
 
-    const seriesKey = normalizeCollectionKey(data.series);
-    if (seriesKey) {
-      const seriesSummary = {
+    for (const tag of file.tags) {
+      addCollectionEntry(langStore, tag, summary, "tag");
+    }
+
+    if (file.series) {
+      addCollectionEntry(langStore, file.series, {
         ...summary,
-        seriesTitle:
-          typeof data.seriesTitle === "string" && data.seriesTitle.trim().length > 0
-            ? data.seriesTitle.trim()
-            : data.series ?? seriesKey,
-      };
-      addCollectionEntry(langStore, seriesKey, seriesSummary, "series");
+        seriesTitle: file.seriesTitle
+      }, "series");
     }
   }
+
   return sortCollectionEntries(pagesByLang);
 }
 
-function buildCollectionEntrySummary(front, lang, slug) {
-  const id =
-    typeof front.id === "string" && front.id.trim().length > 0
-      ? front.id.trim()
-      : slug || crypto.randomBytes(4).toString("hex");
-  return {
-    id,
-    title: front.title ?? slug ?? id,
-    date: front.date ?? null,
-    canonical: buildContentUrl(front.canonical, lang, slug),
-    description: front.description ?? "",
-    cover: front.cover ?? DEFAULT_IMAGE,
-    coverAlt: front.coverAlt ?? "",
-    coverCaption: front.coverCaption ?? "",
-    readingTime: normalizeReadingTime(front.readingTime),
-    dateDisplay: formatDate(front.date, lang),
-  };
-}
-
 function buildCollectionListing(front, lang) {
-  const normalizedLang = lang ?? DEFAULT_LANGUAGE;
+  const normalizedLang = lang ?? _i18n.default;
   const langCollections = PAGES[normalizedLang] ?? {};
   const key = resolveListingKey(front);
   const sourceItems = key && Array.isArray(langCollections[key]) ? langCollections[key] : [];
@@ -1304,7 +1164,7 @@ function resolveListingKey(front) {
   ];
   for (const value of candidates) {
     if (typeof value !== "string") continue;
-    const normalized = normalizeCollectionKey(value);
+    const normalized = _fmt.slugify(value);
     if (normalized) {
       return normalized;
     }
@@ -1323,7 +1183,7 @@ function resolveListingEmpty(front, lang) {
     if (typeof localized === "string" && localized.trim().length > 0) {
       return localized.trim();
     }
-    const fallback = listingEmpty[DEFAULT_LANGUAGE];
+    const fallback = listingEmpty[_i18n.default];
     if (typeof fallback === "string" && fallback.trim().length > 0) {
       return fallback.trim();
     }
@@ -1340,24 +1200,6 @@ function resolveListingHeading(front) {
     return front.title.trim();
   }
   return "";
-}
-
-function normalizeReadingTime(value) {
-  const num = typeof value === "number" ? value : Number.parseFloat(value);
-  if (!Number.isFinite(num) || num <= 0) return 0;
-  return Math.round(num);
-}
-
-function normalizeCollectionKey(value) {
-  if (!value || typeof value !== "string") return "";
-  return value.trim().toLowerCase().replace(/\s+/g, "-").replace(/-+/g, "-").replace(/^-+|-+$/g, "");
-}
-
-function normalizeTagList(value) {
-  if (!Array.isArray(value)) return [];
-  return value
-    .map((tag) => (typeof tag === "string" ? tag.trim() : ""))
-    .filter((tag) => tag.length > 0);
 }
 
 function addCollectionEntry(store, key, entry, type) {
@@ -1390,149 +1232,73 @@ function sortCollectionEntries(collections) {
   return sorted;
 }
 
-function formatRssDate(date) {
-  if (!(date instanceof Date)) {
-    // eslint-disable-next-line no-param-reassign
-    date = new Date(date);
+async function collectRssEntriesForLang(lang, limit = 50) {
+  if (_core.contents.count === 0) {
+    return [];
   }
-  if (Number.isNaN(date.getTime())) {
-    return new Date().toUTCString();
-  }
-  return date.toUTCString();
-}
 
-function escapeXml(value) {
-  if (value == null) return "";
-  return String(value)
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&apos;");
-}
-
-function escapeHtml(value) {
-  if (value == null) return "";
-  return String(value)
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#39;");
-}
-
-function formatLastmod(date) {
-  if (!(date instanceof Date)) {
-    // eslint-disable-next-line no-param-reassign
-    date = new Date(date);
-  }
-  if (Number.isNaN(date.getTime())) {
-    return null;
-  }
-  return date.toISOString().split("T")[0];
-}
-
-function collectRssEntriesForLang(lang, limit = 50) {
   const entries = [];
-  if (!existsSync(CONTENT_DIR)) return entries;
-  const files = collectMarkdownFiles(CONTENT_DIR);
-  for (const filePath of files) {
-    let data;
-    try {
-      ({ data } = matter(readFileSync(filePath, "utf8")));
-    } catch {
+  for (const file of _core.contents.filess) {
+    if (!file.isValid || file.isDraft || !file.isPublished || !file.isPostTemplate || file.lang !== lang) {
       continue;
     }
-    if (!data) continue;
-    const status = typeof data.status === "string" ? data.status.trim().toLowerCase() : "";
-    if (status && status !== "published") continue;
-    const isDraft = parseBoolean(data.draft);
-    if (isDraft) continue;
-    const entryLang = data.lang ?? inferLangFromPath(filePath);
-    if (entryLang !== lang) continue;
-    const template = typeof data.template === "string" ? data.template.trim() : "";
-    if (template !== "post") continue;
-    const slug = data.slug ?? inferSlugFromPath(filePath);
-    const canonical = buildContentUrl(data.canonical, entryLang, slug);
-    const absoluteLink = resolveUrl(canonical);
-    const date = data.date ? new Date(data.date) : null;
+
     entries.push({
-      title: data.title ?? slug ?? canonical,
-      description: data.description ?? "",
-      link: absoluteLink,
-      guid: absoluteLink,
-      date,
-      category:
-        typeof data.category === "string" && data.category.trim().length > 0
-          ? data.category.trim()
-          : "",
+      title: file.title,
+      description: file.description,
+      link: resolveUrl(file.canonical),
+      guid: resolveUrl(file.canonical),
+      date: file.date,
+      category: file.category
     });
   }
+
   entries.sort((a, b) => {
     const aTime = a.date ? Date.parse(a.date) || 0 : 0;
     const bTime = b.date ? Date.parse(b.date) || 0 : 0;
     return bTime - aTime;
   });
+
   if (limit && Number.isFinite(limit) && limit > 0) {
     return entries.slice(0, limit);
   }
+
   return entries;
 }
 
-function collectSitemapEntriesFromContent() {
+async function collectSitemapEntriesFromContent() {
+  if (_core.contents.count === 0) {
+    return [];
+  }
+
   const urls = [];
-  if (!existsSync(CONTENT_DIR)) return urls;
-  const files = collectMarkdownFiles(CONTENT_DIR);
-  for (const filePath of files) {
-    let data;
-    try {
-      ({ data } = matter(readFileSync(filePath, "utf8")));
-    } catch {
+  for (const file of _core.contents.filess) {
+    if (!file.isValid || file.isDraft || !file.isPublished) {
       continue;
     }
-    if (!data) continue;
-    const status = typeof data.status === "string" ? data.status.trim().toLowerCase() : "";
-    if (status && status !== "published") continue;
-    const isDraft = parseBoolean(data.draft);
-    if (isDraft) continue;
-    const lang = data.lang ?? inferLangFromPath(filePath);
-    const slug = data.slug ?? inferSlugFromPath(filePath);
-    const canonical = buildContentUrl(data.canonical, lang, slug);
-    const absoluteLoc = resolveUrl(canonical);
-    const updated = data.updated ?? data.date ?? null;
-    const baseLastmod = updated ? formatLastmod(updated) : null;
+
+    const absoluteLoc = resolveUrl(file.canonical);
+    const updated = file.updated ?? file.date;
+    const baseLastmod = _fmt.lastMod(updated);
+
     urls.push({
       loc: absoluteLoc,
       lastmod: baseLastmod,
     });
 
-    // Optionally include paginated listing pages (e.g. /sayfa-2)
-    const template = typeof data.template === "string" ? data.template.trim() : "";
-    if (SEO_INCLUDE_PAGING && (template === "collection" || template === "home")) {
-      const langCollections = PAGES[lang] ?? {};
-      const key = resolveListingKey(data);
+    if (_cfg.seo.includePaging && (file.template === "collection" || file.template === "home")) {
+      const langCollections = PAGES[file.lang] ?? {};
+      const key = resolveListingKey(file.header);
       const allItems = key && Array.isArray(langCollections[key]) ? langCollections[key] : [];
-      const pageSizeSetting = Number.isFinite(PAGINATION_SETTINGS.pageSize)
-        ? PAGINATION_SETTINGS.pageSize
-        : 5;
+      const pageSizeSetting = _cfg.content.pagination.pageSize;
       const pageSize = pageSizeSetting > 0 ? pageSizeSetting : 5;
       const totalPages = Math.max(1, pageSize > 0 ? Math.ceil(allItems.length / pageSize) : 1);
 
       if (totalPages > 1) {
-        const segmentConfig =
-          PAGINATION_SETTINGS.segment && typeof PAGINATION_SETTINGS.segment === "object"
-            ? PAGINATION_SETTINGS.segment
-            : {};
-        const segment =
-          typeof segmentConfig[lang] === "string" && segmentConfig[lang].trim().length > 0
-            ? segmentConfig[lang].trim()
-            : lang === "tr"
-              ? "sayfa"
-              : "page";
+        const segment = resolvePaginationSegment(file.lang);
 
-        const baseSlug = slug.replace(/\/+$/, "");
+        const baseSlug = file.slug.replace(/\/+$/, "");
 
-        // Derive lastmod for listing pages from the newest item in the collection
         let latestTimestamp = null;
         if (Array.isArray(allItems)) {
           allItems.forEach((item) => {
@@ -1546,7 +1312,7 @@ function collectSitemapEntriesFromContent() {
           });
         }
         const listingLastmod =
-          latestTimestamp != null ? formatLastmod(new Date(latestTimestamp)) : baseLastmod;
+          latestTimestamp != null ? _fmt.lastMod(new Date(latestTimestamp)) : baseLastmod;
 
         for (let pageIndex = 2; pageIndex <= totalPages; pageIndex += 1) {
           const pageSlug = baseSlug
@@ -1561,7 +1327,7 @@ function collectSitemapEntriesFromContent() {
             canonicalOverride = undefined;
           }
 
-          const pageCanonical = buildContentUrl(canonicalOverride, lang, pageSlug);
+          const pageCanonical = buildContentUrl(canonicalOverride, file.lang, pageSlug);
           const pageAbsoluteLoc = resolveUrl(pageCanonical);
           urls.push({
             loc: pageAbsoluteLoc,
@@ -1571,27 +1337,30 @@ function collectSitemapEntriesFromContent() {
       }
     }
   }
+
   urls.sort((a, b) => (a.loc || "").localeCompare(b.loc || ""));
+
   return urls;
 }
 
-function buildRssFeeds() {
-  const email = typeof IDENTITY_CONFIG.email === "string" ? IDENTITY_CONFIG.email.trim() : "";
-  const authorName = IDENTITY_CONFIG.author ?? FALLBACK_OWNER;
-  const languages = SUPPORTED_LANGUAGES.length ? SUPPORTED_LANGUAGES : [DEFAULT_LANGUAGE];
+async function buildRssFeeds() {
+  const email = _cfg.identity.email;
+  const authorName = _cfg.identity.author;
+  const languages = _i18n.supported.length ? _i18n.supported : [_i18n.default];
 
-  languages.forEach((lang) => {
-    const rssEntries = collectRssEntriesForLang(lang, 50);
+  for (const lang of languages) {
+    const rssEntries = await collectRssEntriesForLang(lang, 50);
     if (!rssEntries.length) {
       return;
     }
-    const dict = getLanguageDictionary(lang);
-    const siteTitle = getLocalizedValue(lang, "site.title", IDENTITY_CONFIG.author ?? "Site");
+
+    const siteTitle = getLocalizedValue(lang, "site.title", _cfg.identity.author);
     const siteDescription = getLocalizedValue(lang, "site.description", "");
-    const langConfig = LANGUAGE_BUILD_CONFIG[lang] ?? LANGUAGE_BUILD_CONFIG[DEFAULT_LANGUAGE];
+    const langConfig = _i18n.build[lang] ?? _i18n.build[_i18n.default];
     const channelLink = langConfig?.canonical ?? BASE_URL;
-    const languageCode = lang === "en" ? "en-US" : "tr-TR";
-    const lastBuildDate = formatRssDate(new Date());
+    const languageCulture = _i18n.culture(lang) ?? lang;
+    const languageCode = languageCulture.replace("_", "-");
+    const lastBuildDate = _fmt.rssDate(new Date());
 
     const itemsXml = rssEntries
       .map((entry) => {
@@ -1601,16 +1370,16 @@ function buildRssFeeds() {
           email && authorName ? `${email} (${authorName})` : email || authorName || "";
         const categoryLine =
           entry.category && entry.category.length
-            ? `    <category>${escapeXml(entry.category)}</category>`
+            ? `    <category>${_fmt.escape(entry.category)}</category>`
             : "";
         return [
           "  <item>",
-          `    <title>${escapeXml(entry.title)}</title>`,
-          `    <link>${escapeXml(entry.link)}</link>`,
-          `    <guid isPermaLink="true">${escapeXml(entry.guid)}</guid>`,
-          entry.date ? `    <pubDate>${formatRssDate(entry.date)}</pubDate>` : "",
+          `    <title>${_fmt.escape(entry.title)}</title>`,
+          `    <link>${_fmt.escape(entry.link)}</link>`,
+          `    <guid isPermaLink="true">${_fmt.escape(entry.guid)}</guid>`,
+          entry.date ? `    <pubDate>${_fmt.rssDate(entry.date)}</pubDate>` : "",
           descriptionCdata ? `    <description>${descriptionCdata}</description>` : "",
-          authorField ? `    <author>${escapeXml(authorField)}</author>` : "",
+          authorField ? `    <author>${_fmt.escape(authorField)}</author>` : "",
           categoryLine,
           "  </item>",
         ]
@@ -1624,10 +1393,10 @@ function buildRssFeeds() {
       '<?xml-stylesheet type="text/xsl" href="/assets/rss.xsl"?>',
       '<rss version="2.0">',
       "  <channel>",
-      `    <title>${escapeXml(siteTitle)}</title>`,
-      `    <link>${escapeXml(channelLink)}</link>`,
-      `    <description>${escapeXml(siteDescription)}</description>`,
-      `    <language>${escapeXml(languageCode)}</language>`,
+      `    <title>${_fmt.escape(siteTitle)}</title>`,
+      `    <link>${_fmt.escape(channelLink)}</link>`,
+      `    <description>${_fmt.escape(siteDescription)}</description>`,
+      `    <language>${_fmt.escape(languageCode)}</language>`,
       `    <lastBuildDate>${lastBuildDate}</lastBuildDate>`,
       itemsXml,
       "  </channel>",
@@ -1636,37 +1405,47 @@ function buildRssFeeds() {
     ].join("\n");
 
     const relativePath =
-      lang === DEFAULT_LANGUAGE ? "feed.xml" : join(lang, "feed.xml");
-    writeHtmlFile(relativePath, rssXml);
-  });
+      lang === _i18n.default ? "feed.xml" : _io.path.combine(lang, "feed.xml");
+    await writeHtmlFile(relativePath, rssXml);
+  }
 }
 
-function collectSitemapEntriesFromFeeds() {
+async function collectSitemapEntriesFromFeeds() {
   const urls = [];
-  const languages = SUPPORTED_LANGUAGES.length ? SUPPORTED_LANGUAGES : [DEFAULT_LANGUAGE];
-  languages.forEach((lang) => {
-    const rssEntries = collectRssEntriesForLang(lang, 1);
+  const languages = _i18n.supported.length ? _i18n.supported : [_i18n.default];
+
+  for (const lang of languages) {
+    const rssEntries = await collectRssEntriesForLang(lang, 1);
     if (!rssEntries.length) {
       return;
     }
+
     const latest = rssEntries[0];
-    const relativeUrl = lang === DEFAULT_LANGUAGE ? "/feed.xml" : `/${lang}/feed.xml`;
-    const lastmod = latest?.date ? formatLastmod(latest.date) : null;
+    const relativeUrl = lang === _i18n.default ? "/feed.xml" : `/${lang}/feed.xml`;
+    const lastmod = latest?.date ? _fmt.lastMod(latest.date) : null;
+
     urls.push({
       loc: resolveUrl(relativeUrl),
       ...(lastmod ? { lastmod } : {}),
     });
-  });
+  }
+
   return urls;
 }
 
-function buildSitemap() {
-  const contentEntries = collectSitemapEntriesFromContent();
+async function buildSitemap() {
+  const contentEntries = await collectSitemapEntriesFromContent();
   const collectionEntries = SEO_INCLUDE_COLLECTIONS ? collectSitemapEntriesFromDynamicCollections() : [];
 
-  const feedEntries = collectSitemapEntriesFromFeeds();
+  let feedEntries = await collectSitemapEntriesFromFeeds();
+  if (!feedEntries) {
+    feedEntries = [];
+  }
+
   const combined = [...contentEntries, ...collectionEntries, ...feedEntries];
-  if (!combined.length) return;
+  if (!combined.length) {
+    return;
+  }
 
   const entryByLoc = new Map();
   combined.forEach((entry) => {
@@ -1696,10 +1475,10 @@ function buildSitemap() {
     .map((entry) => {
       const parts = [
         "  <url>",
-        `    <loc>${escapeXml(entry.loc)}</loc>`,
+        `    <loc>${_fmt.escape(entry.loc)}</loc>`,
       ];
       if (entry.lastmod) {
-        parts.push(`    <lastmod>${escapeXml(entry.lastmod)}</lastmod>`);
+        parts.push(`    <lastmod>${_fmt.escape(entry.lastmod)}</lastmod>`);
       }
       parts.push("  </url>");
       return parts.join("\n");
@@ -1715,12 +1494,14 @@ function buildSitemap() {
     "",
   ].join("\n");
 
-  writeHtmlFile("sitemap.xml", sitemapXml);
+  await writeHtmlFile("sitemap.xml", sitemapXml);
 }
 
 function collectSitemapEntriesFromDynamicCollections() {
   const urls = [];
-  if (!COLLECTION_CONFIG || typeof COLLECTION_CONFIG !== "object") return urls;
+  if (!COLLECTION_CONFIG || typeof COLLECTION_CONFIG !== "object") {
+    return urls;
+  }
 
   const configKeys = Object.keys(COLLECTION_CONFIG);
   for (const configKey of configKeys) {
@@ -1783,7 +1564,7 @@ function collectSitemapEntriesFromDynamicCollections() {
           }
         });
         const lastmod =
-          latestTimestamp != null ? formatLastmod(new Date(latestTimestamp)) : null;
+          latestTimestamp != null ? _fmt.lastMod(new Date(latestTimestamp)) : null;
 
         urls.push({
           loc: absoluteLoc,
@@ -1797,13 +1578,10 @@ function collectSitemapEntriesFromDynamicCollections() {
   return urls;
 }
 
-function buildRobotsTxt() {
-  const base = (IDENTITY_CONFIG.url ?? BASE_URL).replace(/\/+$/, "");
-  const robots = SITE_CONFIG.robots ?? {};
-  const allowList = Array.isArray(robots.allow) && robots.allow.length
-    ? robots.allow
-    : ["/"];
-  const disallowList = Array.isArray(robots.disallow) ? robots.disallow : [];
+async function buildRobotsTxt() {
+  const base = (_cfg.identity.url).replace(/\/+$/, "");
+  const allowList = _cfg.robots.allow;
+  const disallowList = _cfg.robots.disallow;
 
   const lines = ["User-agent: *"];
 
@@ -1823,66 +1601,34 @@ function buildRobotsTxt() {
   lines.push(`Sitemap: ${base}/sitemap.xml`);
   lines.push("");
 
-  writeHtmlFile("robots.txt", lines.join("\n"));
+  await writeHtmlFile("robots.txt", lines.join("\n"));
 }
 
-function parseBoolean(value) {
-  if (typeof value === "boolean") return value;
-  if (typeof value === "string") {
-    const normalized = value.trim().toLowerCase();
-    if (normalized === "true") return true;
-    if (normalized === "false") return false;
+async function buildMenuItemsFromContent() {
+  if (_core.contents.count === 0) {
+    return {};
   }
-  return Boolean(value);
-}
 
-function resolveFeatureFlag(value, fallback = true) {
-  if (value == null) return fallback;
-  return parseBoolean(value) !== false;
-}
-
-function parseOrder(value) {
-  const num = typeof value === "number" ? value : Number.parseFloat(value);
-  return Number.isFinite(num) ? num : Number.MAX_SAFE_INTEGER;
-}
-
-function buildMenuItemsFromContent() {
   const itemsByLang = {};
-  if (!existsSync(CONTENT_DIR)) return itemsByLang;
-  const files = collectMarkdownFiles(CONTENT_DIR);
-  for (const filePath of files) {
-    let data;
-    try {
-      ({ data } = matter(readFileSync(filePath, "utf8")));
-    } catch {
+  for (const file of _core.contents.filess) {
+    if (!file.isValid || file.isDraft || !file.isPublished || file.isHiddenOnMenu) {
       continue;
     }
-    if (!data) continue;
-    const showValue = parseBoolean(data.show);
-    if (!showValue) continue;
-    const status = typeof data.status === "string" ? data.status.trim().toLowerCase() : "";
-    if (status !== "published") continue;
-    const lang = data.lang ?? inferLangFromPath(filePath);
-    const slug = data.slug ?? inferSlugFromPath(filePath);
-    const key =
-      (typeof data.id === "string" && data.id.trim().length > 0 ? data.id.trim() : slug || "menu").trim();
-    const label =
-      (typeof data.menu === "string" && data.menu.trim().length > 0
-        ? data.menu.trim()
-        : typeof data.title === "string" && data.title.trim().length > 0
-          ? data.title.trim()
-          : key) ?? key;
-    const url = buildContentUrl(data.canonical, lang, slug);
-    if (!Array.isArray(itemsByLang[lang])) {
-      itemsByLang[lang] = [];
+
+    const url = buildContentUrl(file.canonical, file.lang, file.slug);
+
+    if (!Array.isArray(itemsByLang[file.lang])) {
+      itemsByLang[file.lang] = [];
     }
-    itemsByLang[lang].push({
-      key,
-      label,
+
+    itemsByLang[file.lang].push({
+      key: file.id,
+      label: file.menuLabel,
       url,
-      order: parseOrder(data.order),
+      order: file.menuOrder,
     });
   }
+
   Object.keys(itemsByLang).forEach((lang) => {
     itemsByLang[lang]
       .sort((a, b) => {
@@ -1895,74 +1641,68 @@ function buildMenuItemsFromContent() {
         delete item.order;
       });
   });
+
   return itemsByLang;
 }
 
 async function buildContentPages() {
-  if (!existsSync(CONTENT_DIR)) return;
-  const files = collectMarkdownFiles(CONTENT_DIR);
-  for (const filePath of files) {
-    const raw = readFileSync(filePath, "utf8");
-    const { data, content } = matter(raw);
-    const lang = data.lang ?? inferLangFromPath(filePath);
-    const slug = data.slug ?? crypto.randomBytes(4).toString("hex");
-    const layoutName = data.layout ?? "default";
-    const templateName = data.template ?? "page";
-    const enrichedContent = content ?? "";
-    const dictionary = getLanguageDictionary(lang);
-    const componentContext = buildContentComponentContext(data, lang, dictionary);
-    const { markdown: markdownSource, placeholders } = renderMarkdownComponents(
-      enrichedContent ?? "",
-      componentContext,
-    );
+  if (!_core.contents.count === 0) {
+    return;
+  }
+
+  for (const file of _core.contents.filess) {
+    const dictionary = _i18n.get(file.lang);
+    const componentContext = buildContentComponentContext(file.header, file.lang, dictionary);
+    const { markdown: markdownSource, placeholders } = renderMarkdownComponents(file.content, componentContext);
+
     const markdownHtml = marked.parse(markdownSource ?? "");
     const hydratedHtml = injectMarkdownComponents(markdownHtml ?? "", placeholders);
 
-    // Static pagination for collection listings (e.g. category/tag pages, home)
-    if (templateName === "collection" || templateName === "home") {
+    if (file.template === "collection" || file.template === "home") {
       await buildPaginatedCollectionPages({
-        frontMatter: data,
-        lang,
-        baseSlug: slug,
-        layoutName,
-        templateName,
+        frontMatter: file.header,
+        lang: file.lang,
+        baseSlug: file.slug,
+        layoutName: file.layout,
+        templateName: file.template,
         contentHtml: hydratedHtml,
         dictionary,
       });
+
       continue;
     }
 
-    const contentHtml = renderContentTemplate(templateName, hydratedHtml, data, lang, dictionary);
-    const pageMeta = buildPageMeta(data, lang, slug);
-    const layoutTemplate = getLayout(layoutName);
-    const activeMenuKey = resolveActiveMenuKey(data);
-    const languageFlags = buildLanguageFlags(lang);
+    const contentHtml = await renderContentTemplate(file.template, hydratedHtml, file.header, file.lang, dictionary);
+    const pageMeta = buildPageMeta(file.header, file.lang, file.slug);
+    const layoutTemplate = _core.layouts.get(file.layout);
+    const activeMenuKey = resolveActiveMenuKey(file.header);
+    const languageFlags = _i18n.flags(file.lang);
     const view = {
-      lang,
+      lang: file.lang,
       locale: languageFlags.locale,
       isEnglish: languageFlags.isEnglish,
       isTurkish: languageFlags.isTurkish,
       theme: "light",
-      site: buildSiteData(lang),
-      menu: getMenuData(lang, activeMenuKey),
-      footer: getFooterData(lang),
+      site: buildSiteData(file.lang),
+      menu: getMenuData(file.lang, activeMenuKey),
+      footer: getFooterData(file.lang),
       pages: PAGES,
       i18n: dictionary,
-      i18nInline: I18N_INLINE_JSON,
+      i18nInline: _i18n.serialize(),
       page: pageMeta,
       content: contentHtml,
       scripts: {
-        analytics: ANALYTICS_ENABLED ? ANALYTICS_SNIPPETS : [],
+        analytics: _analytics.snippets,
         body: [],
       },
     };
     view.easterEgg = buildEasterEggPayload(view);
-    const rendered = Mustache.render(layoutTemplate, view, PARTIALS);
+    const rendered = Mustache.render(layoutTemplate, view, _core.partials.files);
     const finalHtml = await transformHtml(rendered);
-    const relativePath = buildOutputPath(data, lang, slug);
-    writeHtmlFile(relativePath, finalHtml);
+    const relativePath = buildOutputPath(file.header, file.lang, file.slug);
+    await writeHtmlFile(relativePath, finalHtml);
     GENERATED_PAGES.add(toPosixPath(relativePath));
-    registerLegacyPaths(lang, slug);
+    registerLegacyPaths(file.lang, file.slug);
   }
 
   await buildDynamicCollectionPages();
@@ -1983,9 +1723,7 @@ async function buildPaginatedCollectionPages(options) {
   const key = resolveListingKey(frontMatter);
   const sourceItems = key && Array.isArray(langCollections[key]) ? langCollections[key] : [];
   const allItems = dedupeCollectionItems(sourceItems);
-  const pageSizeSetting = Number.isFinite(PAGINATION_SETTINGS.pageSize)
-    ? PAGINATION_SETTINGS.pageSize
-    : 5;
+  const pageSizeSetting = _cfg.content.pagination.pageSize;
   const pageSize = pageSizeSetting > 0 ? pageSizeSetting : 5;
   const totalPages = Math.max(1, pageSize > 0 ? Math.ceil(allItems.length / pageSize) : 1);
   const emptyMessage = resolveListingEmpty(frontMatter, lang);
@@ -1998,16 +1736,7 @@ async function buildPaginatedCollectionPages(options) {
     const hasPrev = pageIndex > 1;
     const hasNext = pageIndex < totalPages;
 
-    const segmentConfig =
-      PAGINATION_SETTINGS.segment && typeof PAGINATION_SETTINGS.segment === "object"
-        ? PAGINATION_SETTINGS.segment
-        : {};
-    const segment =
-      typeof segmentConfig[lang] === "string" && segmentConfig[lang].trim().length > 0
-        ? segmentConfig[lang].trim()
-        : lang === "tr"
-          ? "sayfa"
-          : "page";
+    const segment = resolvePaginationSegment(lang);
 
     const base = baseSlug.replace(/\/+$/, "");
 
@@ -2058,7 +1787,7 @@ async function buildPaginatedCollectionPages(options) {
       canonical,
     };
 
-    const renderedContent = renderContentTemplate(
+    const renderedContent = await renderContentTemplate(
       templateName,
       contentHtml,
       frontForPage,
@@ -2067,9 +1796,9 @@ async function buildPaginatedCollectionPages(options) {
       listing,
     );
     const pageMeta = buildPageMeta(frontForPage, lang, pageSlug);
-    const layoutTemplate = getLayout(layoutName);
+    const layoutTemplate = _core.layouts.get(layoutName);
     const activeMenuKey = resolveActiveMenuKey(frontForPage);
-    const languageFlags = buildLanguageFlags(lang);
+    const languageFlags = _i18n.flags(lang);
     const view = {
       lang,
       locale: languageFlags.locale,
@@ -2081,19 +1810,19 @@ async function buildPaginatedCollectionPages(options) {
       footer: getFooterData(lang),
       pages: PAGES,
       i18n: dictionary,
-      i18nInline: I18N_INLINE_JSON,
+      i18nInline: _i18n.serialize(),
       page: pageMeta,
       content: renderedContent,
       scripts: {
-        analytics: ANALYTICS_ENABLED ? ANALYTICS_SNIPPETS : [],
+        analytics: _analytics.snippets,
         body: [],
       },
     };
     view.easterEgg = buildEasterEggPayload(view);
-    const rendered = Mustache.render(layoutTemplate, view, PARTIALS);
+    const rendered = Mustache.render(layoutTemplate, view, _core.partials.files);
     const finalHtml = await transformHtml(rendered);
     const relativePath = buildOutputPath(frontForPage, lang, pageSlug);
-    writeHtmlFile(relativePath, finalHtml);
+    await writeHtmlFile(relativePath, finalHtml);
     GENERATED_PAGES.add(toPosixPath(relativePath));
     registerLegacyPaths(lang, pageSlug);
   }
@@ -2138,7 +1867,9 @@ function dedupeCollectionItems(items) {
 }
 
 async function buildDynamicCollectionPages() {
-  if (!COLLECTION_CONFIG || typeof COLLECTION_CONFIG !== "object") return;
+  if (!COLLECTION_CONFIG || typeof COLLECTION_CONFIG !== "object") {
+    return;
+  }
 
   const configKeys = Object.keys(COLLECTION_CONFIG);
   for (const configKey of configKeys) {
@@ -2171,7 +1902,7 @@ async function buildDynamicCollectionPages() {
     const languages = Object.keys(PAGES);
     for (const lang of languages) {
       const langCollections = PAGES[lang] ?? {};
-      const dictionary = getLanguageDictionary(lang);
+      const dictionary = _i18n.get(lang);
       const langSlugPattern = typeof slugPattern[lang] === "string" ? slugPattern[lang] : null;
       const titleSuffix = getLocalizedValue(
         lang,
@@ -2203,20 +1934,30 @@ async function buildDynamicCollectionPages() {
 
         let alternate;
         if (pairs) {
-          const altLang = lang === "en" ? "tr" : "en";
           const pairEntry = pairs[key];
-          const altKey =
-            pairEntry && typeof pairEntry[altLang] === "string"
-              ? pairEntry[altLang].trim()
-              : "";
-          if (altKey) {
-            const altSlugPattern =
-              typeof slugPattern[altLang] === "string" ? slugPattern[altLang] : null;
-            const altSlug =
-              altSlugPattern && altSlugPattern.includes("{{key}}")
-                ? altSlugPattern.replace("{{key}}", altKey)
-                : (altSlugPattern ?? altKey);
-            alternate = buildContentUrl(null, altLang, altSlug);
+          if (pairEntry && typeof pairEntry === "object") {
+            const altMap = {};
+            _i18n.supported.forEach((altLang) => {
+              if (altLang === lang) {
+                return;
+              }
+              const altKey =
+                typeof pairEntry[altLang] === "string" ? pairEntry[altLang].trim() : "";
+              if (!altKey) {
+                return;
+              }
+              const altSlugPattern =
+                typeof slugPattern[altLang] === "string" ? slugPattern[altLang] : null;
+              const altSlug =
+                altSlugPattern && altSlugPattern.includes("{{key}}")
+                  ? altSlugPattern.replace("{{key}}", altKey)
+                  : (altSlugPattern ?? altKey);
+              altMap[altLang] = buildContentUrl(null, altLang, altSlug);
+            });
+
+            if (Object.keys(altMap).length > 0) {
+              alternate = altMap;
+            }
           }
         }
 
@@ -2247,12 +1988,12 @@ async function buildDynamicCollectionPages() {
           front.seriesTitle = displayKey;
         }
 
-        const contentHtml = renderContentTemplate(templateName, "", front, lang, dictionary);
+        const contentHtml = await renderContentTemplate(templateName, "", front, lang, dictionary);
         const pageMeta = buildPageMeta(front, lang, slug);
         const layoutName = "default";
-        const layoutTemplate = getLayout(layoutName);
+        const layoutTemplate = _core.layouts.get(layoutName);
         const activeMenuKey = resolveActiveMenuKey(front);
-        const languageFlags = buildLanguageFlags(lang);
+        const languageFlags = _i18n.flags(lang);
         const view = {
           lang,
           locale: languageFlags.locale,
@@ -2264,19 +2005,19 @@ async function buildDynamicCollectionPages() {
           footer: getFooterData(lang),
           pages: PAGES,
           i18n: dictionary,
-          i18nInline: I18N_INLINE_JSON,
+          i18nInline: _i18n.serialize(),
           page: pageMeta,
           content: contentHtml,
           scripts: {
-            analytics: ANALYTICS_ENABLED ? ANALYTICS_SNIPPETS : [],
+            analytics: _analytics.snippets,
             body: [],
           },
         };
         view.easterEgg = buildEasterEggPayload(view);
-        const rendered = Mustache.render(layoutTemplate, view, PARTIALS);
+        const rendered = Mustache.render(layoutTemplate, view, _core.partials.files);
         const finalHtml = await transformHtml(rendered);
         const relativePath = buildOutputPath(front, lang, slug);
-        writeHtmlFile(relativePath, finalHtml);
+        await writeHtmlFile(relativePath, finalHtml);
         GENERATED_PAGES.add(toPosixPath(relativePath));
         registerLegacyPaths(lang, slug);
       }
@@ -2289,57 +2030,68 @@ function registerLegacyPaths(lang, slug) {
   if (!cleaned) return;
   const legacyFile = cleaned.endsWith(".html") ? cleaned : `${cleaned}.html`;
   GENERATED_PAGES.add(toPosixPath(legacyFile));
-  if (lang && lang !== DEFAULT_LANGUAGE) {
-    GENERATED_PAGES.add(toPosixPath(join(lang, legacyFile)));
+  if (lang && lang !== _i18n.default) {
+    GENERATED_PAGES.add(toPosixPath(_io.path.combine(lang, legacyFile)));
   }
 }
 
 async function copyHtmlRecursive(currentDir = SRC_DIR, relative = "") {
-  const entries = readdirSync(currentDir);
+  const entries = await _io.directory.read(currentDir);
   for (const entry of entries) {
-    const fullPath = join(currentDir, entry);
-    const relPath = relative ? join(relative, entry) : entry;
-    const stats = statSync(fullPath);
-    if (stats.isDirectory()) {
-      await copyHtmlRecursive(fullPath, relPath);
+    const fullPath = _io.path.combine(currentDir, entry);
+    const relPath = relative ? _io.path.combine(relative, entry) : entry;
+
+    if (!entry.endsWith(".html")) {
       continue;
     }
-    if (!entry.endsWith(".html")) continue;
-    if (GENERATED_PAGES.has(toPosixPath(relPath))) continue;
-    const raw = readFileSync(fullPath, "utf8");
+
+    if (GENERATED_PAGES.has(toPosixPath(relPath))) {
+      continue;
+    }
+
+    const raw = await _io.file.read(fullPath);
     const transformed = await transformHtml(raw);
     if (relPath === "index.html") {
-      SUPPORTED_LANGUAGES.forEach((langCode) => {
+      _i18n.supported.forEach(async (langCode) => {
         const localized = applyLanguageMetadata(transformed, langCode);
         const segments = [];
-        if (langCode !== DEFAULT_LANGUAGE) {
+
+        if (langCode !== _i18n.default) {
           segments.push(langCode);
         }
+
         segments.push("index.html");
-        writeHtmlFile(join(...segments), localized);
+        await writeHtmlFile(_io.path.combine(...segments), localized);
       });
+
       continue;
     }
-    writeHtmlFile(relPath, transformed);
+
+    await writeHtmlFile(relPath, transformed);
   }
 }
 
-function copyStaticAssets() {
-  if (!existsSync(ASSETS_DIR)) return;
-  const targetDir = join(DIST_DIR, "assets");
-  cpSync(ASSETS_DIR, targetDir, { recursive: true });
+async function copyStaticAssets() {
+  if (!(await _io.directory.exists(ASSETS_DIR))) {
+    return;
+  }
+
+  const targetDir = _io.path.combine(DIST_DIR, "assets");
+
+  await _io.directory.copy(ASSETS_DIR, targetDir);
 }
 
 async function main() {
-  ensureDist();
-  buildCss();
-  buildJs();
+  await ensureDist();
+  await buildCss();
+  await buildJs();
+  await copyStaticAssets();
+
   await buildContentPages();
   await copyHtmlRecursive();
-  copyStaticAssets();
-  buildRssFeeds();
-  buildSitemap();
-  buildRobotsTxt();
+  await buildRssFeeds();
+  await buildSitemap();
+  await buildRobotsTxt();
 }
 
 main().catch((error) => {

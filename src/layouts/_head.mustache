@@ -13,8 +13,9 @@
     content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.clarity.ms; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://www.clarity.ms; frame-src 'self' https://docs.google.com https://www.google.com; frame-ancestors 'self'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests"
   />
   <link rel="canonical" href="{{{page.canonical}}}" data-canonical />
-  <link rel="alternate" href="{{{page.alternates.tr}}}" hreflang="tr" data-lang="tr" />
-  <link rel="alternate" href="{{{page.alternates.en}}}" hreflang="en" data-lang="en" />
+  {{#page.alternateLinks}}
+  <link rel="alternate" href="{{{url}}}" hreflang="{{hreflang}}" data-lang="{{lang}}" />
+  {{/page.alternateLinks}}
   <link rel="alternate" href="{{{page.alternates.default}}}" hreflang="x-default" />
 
   <!-- Open Graph -->
@@ -25,7 +26,9 @@
   <meta property="og:image" content="{{{page.og.image}}}" />
   <meta property="og:site_name" content="{{site.title}}" />
   <meta property="og:locale" content="{{page.og.locale}}" data-og-locale />
-  <meta property="og:locale:alternate" content="{{page.og.altLocale}}" data-og-locale-alt />
+  {{#page.og.altLocale}}
+  <meta property="og:locale:alternate" content="{{.}}" data-og-locale-alt />
+  {{/page.og.altLocale}}
 
   <!-- Twitter -->
   <meta name="twitter:card" content="{{page.twitter.card}}" />

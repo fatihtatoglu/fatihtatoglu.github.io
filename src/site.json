@@ -3,7 +3,11 @@
     "author": "Fatih Tatoğlu",
     "email": "fatih@tatoglu.net",
     "url": "https://tatoglu.net",
-    "themeColor": "#5a8df0"
+    "themeColor": "#5a8df0",
+    "social": {
+      "github": "https://github.com/fatihtatoglu",
+      "linkedin": "https://www.linkedin.com/in/fatihtatoglu/"
+    }
   },
   "analytics": {
     "enabled": true,
@@ -25,7 +29,7 @@
     ]
   },
   "build": {
-    "minify": true,
+    "minify": false,
     "debug": false
   },
   "features": {
@@ -61,7 +65,11 @@
       "supported": [
         "tr",
         "en"
-      ]
+      ],
+      "canonical": {
+        "tr": "{base}/",
+        "en": "{base}/en/"
+      }
     },
     "collections": {
       "tags": {
@@ -86,7 +94,7 @@
           "series"
         ],
         "slugPattern": {
-          "tr": "series/{{key}}",
+          "tr": "yazi-dizisi/{{key}}",
           "en": "series/{{key}}"
         }
       }

@@ -265,7 +265,7 @@ async function loadTemplate(directoryPath) {
 const API = {
     contents: {
         load: loadContentFiles,
-        get files() {
+        get filePaths() {
             return container.contents.cache;
         },
         get count() {
@@ -307,7 +307,7 @@ const API = {
          *   readonly summary: ContentSummary
          * }>}
          */
-        get filess() {
+        get files() {
             return container.contents.files;
         }
     },

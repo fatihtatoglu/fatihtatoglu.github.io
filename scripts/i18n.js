@@ -226,7 +226,12 @@ function getCulture(lang) {
     }
 }
 
-const API = {
+function getLanguage(lang) {
+    const context = getLanguageContext();
+    return cache[lang] ?? cache[context.defaultLang] ?? {};
+}
+
+const out = {
     load: loadLanguage,
 
     dictionary: cache,
@@ -239,10 +244,7 @@ const API = {
         return [...getLanguageContext().supported];
     },
 
-    get: function (lang) {
-        const context = getLanguageContext();
-        return cache[lang] ?? cache[context.defaultLang] ?? {};
-    },
+    get: getLanguage,
 
     serialize: function () {
         return JSON.stringify(cache)
@@ -318,7 +320,32 @@ const API = {
             isTurkish,
             isGerman
         };
+    },
+
+    getValue: function (lang, path) {
+        const dictionary = getLanguage(lang);
+        const value = path.split(".").reduce((acc, segment) => {
+            if (acc === undefined || acc === null) return undefined;
+            return acc[segment];
+        }, dictionary);
+
+        return value;
     }
+};
+
+const API = out;
+API.t = function (lang, path, fallback) {
+    const value = out.getValue(lang, path);
+    if (value !== undefined) {
+        return value;
+    }
+
+    const defaultValue = out.getValue(out.default, path);
+    if (defaultValue !== undefined) {
+        return defaultValue;
+    }
+
+    return fallback;
 };
 
 export default API;

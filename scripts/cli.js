@@ -17,11 +17,6 @@ function getCliOptionDefinitions() {
             description: "Print version information."
         },
         {
-            name: "init",
-            type: Boolean,
-            description: "Initialize the project structure with sample content."
-        },
-        {
             name: "build",
             type: Boolean,
             description: "Build the project and prepare the deployable artifact."
@@ -45,7 +40,7 @@ function help() {
 
     /** @type commandLineUsage.Section */
     const commandSections = [{
-        header: "Enginær",
+        header: "Shevky",
         content: "A minimal, dependency-light static site generator."
     },
     {
@@ -54,10 +49,10 @@ function help() {
     },
     {
         header: "Project Details",
-        content: "Project Home: {underline https://tatoglu.net/project/enginær}"
+        content: "Project Home: {underline https://tatoglu.net/project/shevky}"
     },
     {
-        content: "GitHub: {underline https://github.com/fatihtatoglu/enginær}"
+        content: "GitHub: {underline https://github.com/fatihtatoglu/shevky}"
     }];
 
     const usage = commandLineUsage(commandSections);
@@ -66,7 +61,7 @@ function help() {
 
 function version(version_number) {
     const version = commandLineUsage({
-        header: "Enginær v" + version_number,
+        header: "Shevky v" + version_number,
         content: "A minimal, dependency-light static site generator.",
     });
 

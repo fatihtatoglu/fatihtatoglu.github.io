@@ -38,7 +38,6 @@ await _core.layouts.load(LAYOUTS_DIR);
 await _core.templates.load(TEMPLATES_DIR);
 
 const versionToken = crypto.randomBytes(6).toString("hex");
-const BASE_URL = _cfg.identity.url;
 const SEO_INCLUDE_COLLECTIONS = _cfg.seo.includeCollections;
 const DEFAULT_IMAGE = _cfg.seo.defaultImage;
 const FALLBACK_ROLES = { tr: "-", en: "-", };
@@ -350,32 +349,6 @@ function buildEasterEggPayload(view) {
   }
 }
 
-function getLocalizedValue(lang, path, fallback) {
-  const dict = _i18n.get(lang);
-  const value = path.split(".").reduce((acc, segment) => {
-    if (acc === undefined || acc === null) return undefined;
-    return acc[segment];
-  }, dict);
-
-  if (value !== undefined) {
-    return value;
-  }
-
-  if (lang !== _i18n.default) {
-    const defaultDict = _i18n.get(_i18n.default);
-    const defaultValue = path.split(".").reduce((acc, segment) => {
-      if (acc === undefined || acc === null) return undefined;
-      return acc[segment];
-    }, defaultDict);
-
-    if (defaultValue !== undefined) {
-      return defaultValue;
-    }
-  }
-
-  return fallback;
-}
-
 async function writeHtmlFile(relativePath, html) {
   const destPath = _io.path.combine(DIST_DIR, relativePath);
   await _io.directory.create(_io.path.name(destPath));
@@ -403,40 +376,40 @@ function applyLanguageMetadata(html, langKey) {
 }
 
 function resolveUrl(value) {
-  if (!value) return BASE_URL;
+  if (!value) return _cfg.identity.url;
   if (value.startsWith("http://") || value.startsWith("https://")) return value;
   if (value.startsWith("~/")) {
-    return `${BASE_URL}/${value.slice(2)}`.replace(/([^:]\/)\/+/g, "$1");
+    return `${_cfg.identity.url}/${value.slice(2)}`.replace(/([^:]\/)\/+/g, "$1");
   }
   if (value.startsWith("/")) {
-    return `${BASE_URL}${value}`.replace(/([^:]\/)\/+/g, "$1");
+    return `${_cfg.identity.url}${value}`.replace(/([^:]\/)\/+/g, "$1");
   }
-  return `${BASE_URL}/${value}`.replace(/([^:]\/)\/+/g, "$1");
+  return `${_cfg.identity.url}/${value}`.replace(/([^:]\/)\/+/g, "$1");
 }
 
 function buildSiteData(lang) {
   const fallbackOwner = FALLBACK_OWNER;
   const author = _cfg.identity.author;
-  const owner = getLocalizedValue(lang, "site.owner", fallbackOwner);
-  const title = getLocalizedValue(
+  const owner = _i18n.t(lang, "site.owner", fallbackOwner);
+  const title = _i18n.t(
     lang,
     "site.title",
     FALLBACK_TITLES[lang] ?? FALLBACK_TITLES[_i18n.default] ?? fallbackOwner,
   );
 
-  const description = getLocalizedValue(
+  const description = _i18n.t(
     lang,
     "site.description",
     FALLBACK_DESCRIPTIONS[lang] ?? FALLBACK_DESCRIPTIONS[_i18n.default] ?? "",
   );
 
-  const role = getLocalizedValue(
+  const role = _i18n.t(
     lang,
     "site.role",
     FALLBACK_ROLES[lang] ?? FALLBACK_ROLES[_i18n.default] ?? FALLBACK_ROLES.en,
   );
 
-  const quote = getLocalizedValue(
+  const quote = _i18n.t(
     lang,
     "site.quote",
     FALLBACK_QUOTES[lang] ?? FALLBACK_QUOTES[_i18n.default] ?? FALLBACK_QUOTES.en,
@@ -483,7 +456,7 @@ function getMenuData(lang, activeKey) {
     : baseItems[0]?.key ?? "";
   const items = baseItems.map((item) => ({
     ...item,
-    label: getLocalizedValue(lang, `menu.${item.key}`, item.label ?? item.key),
+    label: _i18n.t(lang, `menu.${item.key}`, item.label ?? item.key),
     isActive: item.key === resolvedActiveKey,
   }));
   return { items, activeKey: resolvedActiveKey };
@@ -593,21 +566,21 @@ function getFooterData(lang) {
       ...item,
       url,
       icon: item.icon,
-      label: getLocalizedValue(lang, `footer.social.${item.key}`, item.key.toUpperCase()),
+      label: _i18n.t(lang, `footer.social.${item.key}`, item.key.toUpperCase()),
     };
   });
 
   const tags = tagsSource.map((tag) => ({
     ...tag,
-    label: getLocalizedValue(lang, `footer.tags.${tag.key}`, tag.label ?? tag.key),
+    label: _i18n.t(lang, `footer.tags.${tag.key}`, tag.label ?? tag.key),
   }));
 
   const policies = policiesSource.map((policy) => ({
     ...policy,
-    label: getLocalizedValue(lang, `footer.policies.${policy.key}`, policy.label ?? policy.key),
+    label: _i18n.t(lang, `footer.policies.${policy.key}`, policy.label ?? policy.key),
   }));
 
-  const tagline = getLocalizedValue(
+  const tagline = _i18n.t(
     lang,
     "footer.tagline",
     FALLBACK_TAGLINES[lang] ?? FALLBACK_TAGLINES[_i18n.default] ?? FALLBACK_TAGLINES.en,
@@ -994,7 +967,7 @@ async function buildFooterPoliciesFromContent() {
   }
 
   const policiesByLang = {};
-  for (const file of _core.contents.filess) {
+  for (const file of _core.contents.files) {
     if (!file.isValid || file.isDraft || !file.isPublished || file.category !== "policy") {
       continue;
     }
@@ -1026,7 +999,7 @@ async function buildContentIndex() {
   }
 
   const index = {};
-  for (const file of _core.contents.filess) {
+  for (const file of _core.contents.files) {
     if (!file.isValid || file.isDraft || !file.isPublished || !file.id) {
       continue;
     }
@@ -1052,7 +1025,7 @@ async function buildCategoryTagCollections() {
   }
 
   const pagesByLang = {};
-  for (const file of _core.contents.filess) {
+  for (const file of _core.contents.files) {
     if (!file.isValid || file.isDraft || !file.isPublished) {
       continue;
     }
@@ -1238,7 +1211,7 @@ async function collectRssEntriesForLang(lang, limit = 50) {
   }
 
   const entries = [];
-  for (const file of _core.contents.filess) {
+  for (const file of _core.contents.files) {
     if (!file.isValid || file.isDraft || !file.isPublished || !file.isPostTemplate || file.lang !== lang) {
       continue;
     }
@@ -1272,7 +1245,7 @@ async function collectSitemapEntriesFromContent() {
   }
 
   const urls = [];
-  for (const file of _core.contents.filess) {
+  for (const file of _core.contents.files) {
     if (!file.isValid || file.isDraft || !file.isPublished) {
       continue;
     }
@@ -1354,10 +1327,10 @@ async function buildRssFeeds() {
       return;
     }
 
-    const siteTitle = getLocalizedValue(lang, "site.title", _cfg.identity.author);
-    const siteDescription = getLocalizedValue(lang, "site.description", "");
+    const siteTitle = _i18n.t(lang, "site.title", _cfg.identity.author);
+    const siteDescription = _i18n.t(lang, "site.description", "");
     const langConfig = _i18n.build[lang] ?? _i18n.build[_i18n.default];
-    const channelLink = langConfig?.canonical ?? BASE_URL;
+    const channelLink = langConfig?.canonical ?? _cfg.identity.url;
     const languageCulture = _i18n.culture(lang) ?? lang;
     const languageCode = languageCulture.replace("_", "-");
     const lastBuildDate = _fmt.rssDate(new Date());
@@ -1610,7 +1583,7 @@ async function buildMenuItemsFromContent() {
   }
 
   const itemsByLang = {};
-  for (const file of _core.contents.filess) {
+  for (const file of _core.contents.files) {
     if (!file.isValid || file.isDraft || !file.isPublished || file.isHiddenOnMenu) {
       continue;
     }
@@ -1650,7 +1623,7 @@ async function buildContentPages() {
     return;
   }
 
-  for (const file of _core.contents.filess) {
+  for (const file of _core.contents.files) {
     const dictionary = _i18n.get(file.lang);
     const componentContext = buildContentComponentContext(file.header, file.lang, dictionary);
     const { markdown: markdownSource, placeholders } = renderMarkdownComponents(file.content, componentContext);
@@ -1904,7 +1877,7 @@ async function buildDynamicCollectionPages() {
       const langCollections = PAGES[lang] ?? {};
       const dictionary = _i18n.get(lang);
       const langSlugPattern = typeof slugPattern[lang] === "string" ? slugPattern[lang] : null;
-      const titleSuffix = getLocalizedValue(
+      const titleSuffix = _i18n.t(
         lang,
         `seo.collections.${configKey}.titleSuffix`,
         "",
@@ -2094,7 +2067,8 @@ async function main() {
   await buildRobotsTxt();
 }
 
-main().catch((error) => {
-  console.error("Build failed:", error);
-  process.exitCode = 1;
-});
+const API = {
+  execute: main
+};
+
+export default API;

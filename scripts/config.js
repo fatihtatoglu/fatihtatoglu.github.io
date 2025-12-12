@@ -160,7 +160,8 @@ const FALLBACKS = {
         author: "<name> <surname>",
         email: "<name>@<surname>.net",
         url: "http://localhost:3000",
-        "themeColor": "#5a8df0"
+        themeColor: "#5a8df0",
+        social: {}
     },
     robots: {
         allow: ["/"],

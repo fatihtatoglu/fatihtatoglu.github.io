@@ -4,7 +4,6 @@ lang: tr
 title: Windows'ta Hyper-V ile Linux Mint Geliştirme Ortamı
 slug: gelistirme-ortami-kurulumu
 category: teknik-notlar
-type: guide
 tags:
   - windows
   - hyper-v

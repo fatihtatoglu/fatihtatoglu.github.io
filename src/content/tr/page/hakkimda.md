@@ -4,7 +4,6 @@ lang: tr
 title: "Hakkımda"
 slug: "hakkimda"
 category: meta
-type: meta
 menu: "Hakkımda"
 order: 4
 show: true

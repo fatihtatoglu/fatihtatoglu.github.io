@@ -4,7 +4,6 @@ lang: en
 title: "Discover Your Core Values: A Practical Guide"
 slug: core-values
 category: life-learning
-type: guide
 tags:
   - personal-development
   - core-values

@@ -3,7 +3,6 @@ id: djb3ulcx2f
 lang: en
 title: "Engineer & Curious Personal Blog"
 slug: ""
-type: "meta"
 menu: "Home"
 order: 1
 show: true

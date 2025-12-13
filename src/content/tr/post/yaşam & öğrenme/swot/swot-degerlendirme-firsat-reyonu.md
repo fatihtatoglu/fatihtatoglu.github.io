@@ -4,7 +4,6 @@ lang: tr
 title: "SWOT Değerlendirme Yöntemi: Fırsat Reyonu Yaklaşımı"
 slug: swot-degerlendirme-firsat-reyonu
 category: yasam-ogrenme
-type: guide
 tags:
   - swot
   - swot-analizi

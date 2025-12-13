@@ -4,7 +4,6 @@ lang: tr
 title: SWOT Analizi Nedir? Güçlü ve Zayıf Yönlerinizi Keşfedin
 slug: swot-analizi-nedir
 category: yasam-ogrenme
-type: guide
 tags:
   - swot
   - stratejik-planlama

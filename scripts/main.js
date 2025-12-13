@@ -9,9 +9,9 @@ const VERSION = "0.0.1";
 const __filename = _io.url.toPath(import.meta.url);
 const __dirname = _io.path.name(__filename);
 const ROOT_DIR = _io.path.combine(__dirname, "..");
-const SRC_DIR = _io.path.combine(ROOT_DIR, "src");
-const DIST_DIR = _io.path.combine(ROOT_DIR, "dist");
-const BUILD_SCRIPT = _io.path.combine(ROOT_DIR, "scripts", "build.js");
+const SHEVKY_ENTRY = "shevky.js";
+const WATCH_PATH = "src";
+const DIST_DIR = "dist";
 
 function printHelp() {
     console.log(_cli.help());
@@ -19,23 +19,17 @@ function printHelp() {
 
 async function runWatch() {
     _log.info("Watching src for changes and rebuilding...");
-    
-    await _npm.watch({
-        scriptPath: BUILD_SCRIPT,
-        watchPath: SRC_DIR,
-        cwd: ROOT_DIR
-    });
+
+    const args = ["--watch", "--watch-path", WATCH_PATH, SHEVKY_ENTRY, "--build"];
+    await _npm.execute(process.execPath, args, ROOT_DIR);
 }
 
 async function runDev() {
-    await _build.execute();
+    await _npm.execute(process.execPath, [SHEVKY_ENTRY, "--build"], ROOT_DIR);
     _log.info("Serving dist on http://localhost:3000");
 
-    await _npm.serve({
-        distPath: DIST_DIR,
-        port: 3000,
-        cwd: ROOT_DIR
-    });
+    const npxCommand = process.platform === "win32" ? "npx.cmd" : "npx";
+    await _npm.execute(npxCommand, ["-y", "serve@14", DIST_DIR], ROOT_DIR);
 }
 
 (async function main() {
@@ -46,6 +40,7 @@ async function runDev() {
         console.log(_cli.version(VERSION));
     }
     else if (_cli.options.watch) {
+        _log.info("Watching src for changes and rebuilding...");
         await runWatch();
     }
     else if (_cli.options.dev) {

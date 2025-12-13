@@ -3,7 +3,6 @@ id: n9pxj201h9
 lang: en
 title: "Life & Learning | Category"
 slug: life-learning
-type: category
 menu: "Life & Learning"
 order: 2
 show: true

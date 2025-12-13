@@ -46,7 +46,7 @@ function run(command, options, cwd) {
     });
 }
 
-function watch({ scriptPath, watchPath, cwd = process.cwd() }) {
+function watch(scriptPath, watchPath, cwd = process.cwd()) {
     if (!scriptPath) {
         throw new Error("watch requires a scriptPath to execute");
     }
@@ -60,7 +60,7 @@ function watch({ scriptPath, watchPath, cwd = process.cwd() }) {
     return run(process.execPath, options, cwd);
 }
 
-function serve({ distPath, port = 3000, cwd = process.cwd() }) {
+function serve(distPath, port = 3000, cwd = process.cwd()) {
     if (!distPath) {
         throw new Error("serve requires a distPath to host");
     }

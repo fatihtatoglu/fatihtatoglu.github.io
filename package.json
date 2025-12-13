@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "node scripts/build.js",
+    "build": "node ./shevky.js --build",
     "dev": "npm run build && npx -y serve@14 dist",
     "watch": "node --watch --watch-path src scripts/rebuild.mjs",
     "auto-build": "node --watch --watch-path src scripts/rebuild.mjs"

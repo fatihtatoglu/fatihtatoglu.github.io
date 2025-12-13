@@ -4,7 +4,6 @@ lang: tr
 title: "İletişim"
 slug: iletisim
 category: meta
-type: meta
 menu: "İletişim"
 order: 5
 show: true

@@ -4,7 +4,6 @@ lang: tr
 title: Çerez Politikası ve Çerez Yönetimi Rehberi
 slug: cerez-politikasi
 category: policy
-type: document
 menu: "Çerez Politikası"
 readingTime: 2
 date: 2025-11-11

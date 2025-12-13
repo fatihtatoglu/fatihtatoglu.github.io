@@ -3,7 +3,6 @@ id: djb3ulcx2f
 lang: tr
 title: "Mühendis & Meraklı Kişisel Blog"
 slug: ""
-type: "meta"
 menu: "Anasayfa"
 order: 1
 show: true

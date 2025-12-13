@@ -3,7 +3,6 @@ id: ikewf66woi
 lang: tr
 title: "Teknik Notlar | Kategori"
 slug: teknik-notlar
-type: category
 menu: "Teknik Notlar"
 order: 3
 show: true

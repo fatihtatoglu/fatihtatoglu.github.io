@@ -3,7 +3,6 @@ id: n9pxj201h9
 lang: tr
 title: "Yaşam & Öğrenme | Kategori"
 slug: yasam-ogrenme
-type: category
 menu: "Yaşam & Öğrenme"
 order: 2
 show: true

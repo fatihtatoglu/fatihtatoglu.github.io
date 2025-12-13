@@ -4,7 +4,6 @@ lang: en
 title: "Cookie Policy: Types, Usage & Preference Management"
 slug: cookie-policy
 category: policy
-type: document
 menu: "Cookie Policy"
 readingTime: 2
 date: 2025-11-11

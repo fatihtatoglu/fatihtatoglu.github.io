@@ -4,7 +4,6 @@ lang: en
 title: "AWS Lambda to Google Sheets with Keyless WIF"
 slug: aws-lambda-google-sheets-integration
 category: technical-notes
-type: technical
 tags:
   - aws
   - lambda

@@ -4,7 +4,6 @@ lang: en
 title: "Disclaimer & Terms of Use for tatoglu.net (2025)"
 slug: disclaimer
 category: policy
-type: document
 menu: "Disclaimer"
 readingTime: 3
 date: 2025-11-11

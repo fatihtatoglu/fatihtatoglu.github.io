@@ -4,7 +4,6 @@ lang: en
 title: About Me - Fatih Tatoğlu's Journey in Tech & Learning
 slug: about-fatih-tatoglu
 category: meta
-type: meta
 menu: "About Me"
 order: 4
 show: true

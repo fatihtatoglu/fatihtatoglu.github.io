@@ -3,18 +3,15 @@
   "name": "tat-blog",
   "version": "1.0.0",
   "private": true,
-  "scripts": {
-    "build": "node ./shevky.js --build",
-    "dev": "npm run build && npx -y serve@14 dist",
-    "watch": "node --watch --watch-path src scripts/rebuild.mjs",
-    "auto-build": "node --watch --watch-path src scripts/rebuild.mjs"
-  },
+  "scripts": {},
   "license": "MIT",
   "devDependencies": {
-    "@tailwindcss/cli": "^4.1.14",
+    "@tailwindcss/cli": "^4.1.18",
     "@tailwindcss/typography": "^0.5.19",
-    "autoprefixer": "^10.4.21",
-    "esbuild": "^0.27.0",
+    "autoprefixer": "^10.4.23",
+    "command-line-args": "^6.0.1",
+    "command-line-usage": "^7.0.3",
+    "esbuild": "^0.27.1",
     "gray-matter": "^4.0.3",
     "highlight.js": "^11.11.1",
     "html-minifier-terser": "^6.1.0",
@@ -22,8 +19,7 @@
     "marked-highlight": "^2.2.3",
     "mustache": "^4.2.0",
     "postcss": "^8.5.6",
-    "tailwindcss": "^4.1.14",
-    "command-line-args": "^6.0.1",
-    "command-line-usage": "^7.0.3"
+    "shevky": "^0.0.1",
+    "tailwindcss": "^4.1.18"
   }
 }

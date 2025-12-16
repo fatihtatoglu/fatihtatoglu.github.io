@@ -58,8 +58,10 @@ Bundan sonra, her şey kasıtlı olarak sıkıcıdır.
 **SHEVKY**, sıfırdan bir web sitesi başlatmak ve oluşturmak için bir CLI aracıdır.
 
 ```bash
+npm init -y
 npm install --save-dev shevky
 ```
+
 Yüklemek için yukarıdaki komut yeterlidir. Kullanım, `npx shevky` komutuyla devam eder.
 
 ## Kullanım

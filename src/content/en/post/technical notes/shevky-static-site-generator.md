@@ -59,6 +59,7 @@ From this point on, everything is intentionally boring.
 **SHEVKY** is a CLI tool to initialize and build the website from scratch.
 
 ```bash
+npm init -y
 npm install --save-dev shevky
 ```
 

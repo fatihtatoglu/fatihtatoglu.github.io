@@ -1,41 +1,72 @@
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>{{page.title}} - {{site.title}}</title>
-  <meta name="description" content="{{page.description}}" />
-  <meta name="author" content="{{site.author}}" />
-  <meta name="robots" content="{{page.robots}}" />
-  <meta name="theme-color" content="{{site.themeColor}}" />
-  <meta name="language" content="{{lang}}" />
-  <meta name="referrer" content="strict-origin-when-cross-origin" />
-  <meta
-    http-equiv="Content-Security-Policy"
-    content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.clarity.ms; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://www.clarity.ms; frame-src 'self' https://docs.google.com https://www.google.com; frame-ancestors 'self'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests"
-  />
-  <link rel="canonical" href="{{{page.canonical}}}" data-canonical />
+  <meta name="description" content="{{page.description}}">
+  <meta name="author" content="{{site.author}}">
+  <meta name="robots" content="{{page.robots}}">
+  <meta name="theme-color" content="{{site.themeColor}}">
+  <meta name="language" content="{{lang}}">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Content-Security-Policy"
+  content="
+    default-src 'self';
+
+    script-src 'self' 'unsafe-inline'
+      https://www.googletagmanager.com
+      https://www.clarity.ms
+      https://scripts.clarity.ms
+      https://static.cloudflareinsights.com;
+
+    style-src 'self' 'unsafe-inline'
+      https://fonts.googleapis.com;
+
+    font-src 'self'
+      https://fonts.gstatic.com
+      https://res-1.cdn.office.net;
+
+    img-src 'self' data: https:;
+
+    connect-src 'self'
+      https://www.google-analytics.com
+      https://www.googletagmanager.com
+      https://www.clarity.ms
+      https://static.cloudflareinsights.com;
+
+    frame-src 'self'
+      https://docs.google.com
+      https://www.google.com;
+
+    frame-ancestors 'self';
+    base-uri 'self';
+    form-action 'self';
+    upgrade-insecure-requests;
+  ">
+
+  <link rel="canonical" href="{{{page.canonical}}}" data-canonical>
   {{#page.alternateLinks}}
-  <link rel="alternate" href="{{{url}}}" hreflang="{{hreflang}}" data-lang="{{lang}}" />
+  <link rel="alternate" href="{{{url}}}" hreflang="{{hreflang}}" data-lang="{{lang}}">
   {{/page.alternateLinks}}
-  <link rel="alternate" href="{{{page.alternates.default}}}" hreflang="x-default" />
+  <link rel="alternate" href="{{{page.alternates.default}}}" hreflang="x-default">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="{{page.og.title}}" />
-  <meta property="og:description" content="{{page.og.description}}" />
-  <meta property="og:type" content="{{page.og.type}}" />
-  <meta property="og:url" content="{{{page.og.url}}}" data-og-url />
-  <meta property="og:image" content="{{{page.og.image}}}" />
-  <meta property="og:site_name" content="{{site.title}}" />
-  <meta property="og:locale" content="{{page.og.locale}}" data-og-locale />
+  <meta property="og:title" content="{{page.og.title}}">
+  <meta property="og:description" content="{{page.og.description}}">
+  <meta property="og:type" content="{{page.og.type}}">
+  <meta property="og:url" content="{{{page.og.url}}}" data-og-url>
+  <meta property="og:image" content="{{{page.og.image}}}">
+  <meta property="og:site_name" content="{{site.title}}">
+  <meta property="og:locale" content="{{page.og.locale}}" data-og-locale>
   {{#page.og.altLocale}}
-  <meta property="og:locale:alternate" content="{{.}}" data-og-locale-alt />
+  <meta property="og:locale:alternate" content="{{.}}" data-og-locale-alt>
   {{/page.og.altLocale}}
 
   <!-- Twitter -->
-  <meta name="twitter:card" content="{{page.twitter.card}}" />
-  <meta name="twitter:title" content="{{page.twitter.title}}" />
-  <meta name="twitter:description" content="{{page.twitter.description}}" />
-  <meta name="twitter:image" content="{{{page.twitter.image}}}" />
-  <meta name="twitter:url" content="{{{page.twitter.url}}}" data-twitter-url />
+  <meta name="twitter:card" content="{{page.twitter.card}}">
+  <meta name="twitter:title" content="{{page.twitter.title}}">
+  <meta name="twitter:description" content="{{page.twitter.description}}">
+  <meta name="twitter:image" content="{{{page.twitter.image}}}">
+  <meta name="twitter:url" content="{{{page.twitter.url}}}" data-twitter-url>
 
   {{#page.structuredData}}
   <script type="application/ld+json">
@@ -43,16 +74,16 @@
   </script>
   {{/page.structuredData}}
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png" />
-  <link rel="manifest" href="/assets/favicon/site.webmanifest" />
-  <link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/assets/favicon/site.webmanifest">
+  <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
 
   {{#scripts.analytics}}
     {{{.}}}
   {{/scripts.analytics}}
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="/output.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="/output.css">

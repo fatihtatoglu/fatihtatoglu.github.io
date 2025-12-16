@@ -3,7 +3,9 @@
   "name": "tat-blog",
   "version": "1.0.0",
   "private": true,
-  "scripts": {},
+  "scripts": {
+    "build": "npx shevky --build"
+  },
   "license": "MIT",
   "devDependencies": {
     "@tailwindcss/cli": "^4.1.18",

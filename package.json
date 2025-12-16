@@ -21,7 +21,7 @@
     "marked-highlight": "^2.2.3",
     "mustache": "^4.2.0",
     "postcss": "^8.5.6",
-    "shevky": "^0.0.1",
+    "shevky": "^0.0.2",
     "tailwindcss": "^4.1.18"
   }
 }

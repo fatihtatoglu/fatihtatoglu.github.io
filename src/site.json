@@ -29,7 +29,7 @@
     ]
   },
   "build": {
-    "minify": false,
+    "minify": true,
     "debug": false
   },
   "features": {

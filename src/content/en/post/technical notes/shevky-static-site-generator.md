@@ -28,7 +28,6 @@ keywords:
   - markdown ssg
   - developer blogging
 featured: false                       
-draft: false
 cover: "/assets/images/shevky-cover.webp"
 coverAlt: "Minimal static site generator workflow focused on writing"
 coverCaption: "SHEVKY focuses on removing friction, not adding features."

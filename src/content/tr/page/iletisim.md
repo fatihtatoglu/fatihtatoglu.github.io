@@ -4,6 +4,7 @@ lang: tr
 title: "İletişim"
 slug: iletisim
 category: meta
+type: contact
 menu: "İletişim"
 order: 5
 show: true
@@ -19,7 +20,6 @@ keywords:
   - contact
   - fatih tatoğlu
 featured: false
-draft: false
 template: contact
 layout: default
 status: published

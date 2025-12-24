@@ -38,7 +38,6 @@ keywords:
   - github gpg
   - aws cli v2
 featured: true
-draft: false
 cover: /assets/images/development-environment.webp
 coverAlt: Linux Mint desktop in a Hyper-V window on Windows, with Docker, Python, Go, NodeJS, .NET and GitHub icons as desktop items
 coverCaption: Isolated Linux Mint development environment on Windows via Hyper-V

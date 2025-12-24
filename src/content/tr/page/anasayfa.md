@@ -1,7 +1,7 @@
 ---
 id: djb3ulcx2f
 lang: tr
-title: "Mühendis & Meraklı Kişisel Blog"
+title: "Öğrenen Bir Mühendisin Teknoloji, Öğrenme ve Hayat Üzerine Kişisel Notları"
 slug: ""
 menu: "Anasayfa"
 order: 1
@@ -11,14 +11,13 @@ updated: 2025-11-14
 pair: ""
 canonical: /
 alternate: /en/
-description: "Fatih Tatoğlu'nun kişisel blogu. Disiplinli, sade, retro teknik atmosferde üretkenlik notları."
+description: "Yazılım ve hayat üzerine deneyerek öğrenen, sadeleştiren ve paylaşan 20+ yıldır teknolojiyle iç içe olan bir mühendisin kişisel blogu."
 keywords: ["static site generator", "tailwind", "markdown parser"]
 featured: true
-draft: false
 template: "home"
 listKey: "home"
 layout: "default"
 status: "published"
 ---
 
-# Fatih Tatoğlu – Mühendislik, Öğrenme ve Üretkenlik Üzerine Kişisel Notlar
+# Fatih Tatoğlu – Öğrenen Bir Mühendisin Teknoloji, Öğrenme ve Hayat Üzerine Kişisel Notları

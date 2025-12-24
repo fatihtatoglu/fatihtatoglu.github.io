@@ -74,7 +74,7 @@
   {{/listing.hasItems}}
 
   {{^listing.hasItems}}
-    <p class="text-sm text-center text-[var(--muted)] italic">
+    <p class="text-sm text-center text-[--muted] italic">
       {{#listing.emptyMessage}}{{.}}{{/listing.emptyMessage}}
       {{^listing.emptyMessage}}
         {{i18n.category.emptyFallback}}

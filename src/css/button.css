@@ -270,6 +270,126 @@
     --btn-color-active: #ffffff;
   }
 
+  .btn--tone-x {
+    --btn-bg: #0f1419;
+    --btn-bg-hover: #1c2530;
+    --btn-bg-active: #06090c;
+    --btn-border: #0f1419;
+    --btn-border-hover: #1c2530;
+    --btn-border-active: #06090c;
+    --btn-color: #f8fafc;
+    --btn-color-hover: #ffffff;
+    --btn-color-active: #ffffff;
+  }
+
+  .btn--tone-facebook {
+    --btn-bg: #1877f2;
+    --btn-bg-hover: #2b87ff;
+    --btn-bg-active: #0f62d1;
+    --btn-border: #1877f2;
+    --btn-border-hover: #2b87ff;
+    --btn-border-active: #0f62d1;
+    --btn-color: #f5fbff;
+    --btn-color-hover: #ffffff;
+    --btn-color-active: #ffffff;
+  }
+
+  .btn--tone-instagram {
+    --btn-bg: #e4405f;
+    --btn-bg-hover: #ec5c78;
+    --btn-bg-active: #c5304c;
+    --btn-border: #e4405f;
+    --btn-border-hover: #ec5c78;
+    --btn-border-active: #c5304c;
+    --btn-color: #fff6f8;
+    --btn-color-hover: #ffffff;
+    --btn-color-active: #ffffff;
+  }
+
+  .btn--tone-youtube {
+    --btn-bg: #ff0000;
+    --btn-bg-hover: #ff1a1a;
+    --btn-bg-active: #d40000;
+    --btn-border: #ff0000;
+    --btn-border-hover: #ff1a1a;
+    --btn-border-active: #d40000;
+    --btn-color: #fff7f7;
+    --btn-color-hover: #ffffff;
+    --btn-color-active: #ffffff;
+  }
+
+  .btn--tone-tiktok {
+    --btn-bg: #fe2c55;
+    --btn-bg-hover: #ff4c6f;
+    --btn-bg-active: #e52147;
+    --btn-border: #fe2c55;
+    --btn-border-hover: #ff4c6f;
+    --btn-border-active: #e52147;
+    --btn-color: #fff7f9;
+    --btn-color-hover: #ffffff;
+    --btn-color-active: #ffffff;
+  }
+
+  .btn--tone-substack {
+    --btn-bg: #ff6719;
+    --btn-bg-hover: #ff833e;
+    --btn-bg-active: #e05a13;
+    --btn-border: #ff6719;
+    --btn-border-hover: #ff833e;
+    --btn-border-active: #e05a13;
+    --btn-color: #fff8f3;
+    --btn-color-hover: #ffffff;
+    --btn-color-active: #ffffff;
+  }
+
+  .btn--tone-medium {
+    --btn-bg: #00ab6c;
+    --btn-bg-hover: #00c27a;
+    --btn-bg-active: #00975f;
+    --btn-border: #00ab6c;
+    --btn-border-hover: #00c27a;
+    --btn-border-active: #00975f;
+    --btn-color: #f2fff8;
+    --btn-color-hover: #ffffff;
+    --btn-color-active: #ffffff;
+  }
+
+  .btn--tone-devto {
+    --btn-bg: #0a0a0a;
+    --btn-bg-hover: #1a1a1a;
+    --btn-bg-active: #000000;
+    --btn-border: #0a0a0a;
+    --btn-border-hover: #1a1a1a;
+    --btn-border-active: #000000;
+    --btn-color: #f8fafc;
+    --btn-color-hover: #ffffff;
+    --btn-color-active: #ffffff;
+  }
+
+  .btn--tone-stackoverflow {
+    --btn-bg: #f58025;
+    --btn-bg-hover: #ff933d;
+    --btn-bg-active: #db6c1c;
+    --btn-border: #f58025;
+    --btn-border-hover: #ff933d;
+    --btn-border-active: #db6c1c;
+    --btn-color: #2b1400;
+    --btn-color-hover: #1f0f00;
+    --btn-color-active: #190c00;
+  }
+
+  .btn--tone-mastodon {
+    --btn-bg: #563acc;
+    --btn-bg-hover: #6a5de6;
+    --btn-bg-active: #4430aa;
+    --btn-border: #563acc;
+    --btn-border-hover: #6a5de6;
+    --btn-border-active: #4430aa;
+    --btn-color: #f6f4ff;
+    --btn-color-hover: #ffffff;
+    --btn-color-active: #ffffff;
+  }
+
   /* Header specific buttons */
   .theme-icon {
     display: none;

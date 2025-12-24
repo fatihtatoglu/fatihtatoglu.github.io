@@ -18,7 +18,6 @@ keywords:
   - kullanım şartları
   - fatih tatoğlu
 featured: false
-draft: false
 template: page
 layout: default
 status: published

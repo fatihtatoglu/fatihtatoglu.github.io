@@ -27,7 +27,6 @@ keywords:
   - yazma süreci
   - nodejs
 featured: false
-draft: false
 cover: "/assets/images/shevky-cover.webp"
 coverAlt: "Yazma odaklı minimal bir statik site üreticinin çalışma akışını gösteren sade bir görsel"
 coverCaption: "SHEVKY, özellik eklemek yerine yazma sürecindeki engelleri kaldırmaya odaklanır."

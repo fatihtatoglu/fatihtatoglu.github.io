@@ -26,7 +26,6 @@ keywords:
   - static site generator
   - teknik dokümantasyon
 featured: false
-draft: false
 cover: /assets/images/projects.webp
 coverAlt: "Terminal temalı kapak görseli"
 coverCaption: "Shevky teknik dokümantasyonu (hazırlanıyor)"

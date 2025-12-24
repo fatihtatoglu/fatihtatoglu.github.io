@@ -17,7 +17,7 @@ tags:
   - iam-security
 readingTime: 16
 date: 2025-11-07
-updated: 2025-11-07
+updated: 2025-12-23
 pair: aws-lambda-google-sheets-integration
 canonical: ~/aws-lambda-google-sheets-baglantisi/
 alternate: ~/en/aws-lambda-google-sheets-integration/
@@ -31,17 +31,16 @@ keywords:
   - Python
   - Cognito
   - EventBridge
-  - iam security
+  - IAM Security
 featured: true
-draft: false
 cover: /assets/images/standard-cover-terminal.webp
-coverAlt: Sıcak tonlarda minimal terminal simgeli kapak görseli
+coverAlt: AWS Lambda ve Google Sheets entegrasyonunu temsil eden minimal terminal temalı kapak görseli.
 coverCaption: EventBridge -> Lambda -> (WIF) -> Google Sheets akışı için standart kapak.
 template: post
 layout: default
 status: published
 ---
-# AWS Lambda ve Google Sheets Bağlantısı
+# AWS Lambda -> Google Sheets: WIF ile Anahtarsız Kurulum
 
 Yakın zamanda bir AI startup firması için bir proje geliştiren bir ekibin içerisinde yer aldım. Startup olmasından kaynaklı bazı şeyleri hızlı yapmak adına bir boilerplate satın aldık ve üstüne işin ihtiyacı olan geliştirmeleri yaptık. Boilerplate'i ihtiyaçlarımıza göre esnettik. Boilerplate bize AWS üzerinde bir startup'ın ihtiyacı olan teknik altyapıyı AWS dahilindeki ürünleri kullanarak sağlıyor. Biz de esnetme işlemi sırasında yine AWS kaynaklarını kullanmayı tercih ettik. Ama boilerplate'te bir raporlama yapısı yoktu ki olmasını da beklememiştik seçim yaparken.
 
@@ -55,7 +54,7 @@ En sonda söyleyeceğimi başta paylaşmış olayım: Workload Identity Federati
 
 AWS tarafında **EventBridge** tarafından zamanlanarak tetiklenen **Lambda**, kalıcı anahtar kullanmadan GCP'deki **Workload Identity Federation (WIF)** üzerinden kısa ömürlü kimlik alır ve verileri **Google Sheets API**'ye yazar. Aşağıdaki diyagram bu akışı tek bakışta özetliyor.
 
-![AWS arasındaki GCP Akış Diagramı](/assets/images/aws-gcp-architecture-diagram.webp)
+![AWS EventBridge Lambda ve Workload Identity Federation ile Google Sheets veri akış diyagramı](/assets/images/aws-gcp-architecture-diagram.webp "AWS EventBridge Lambda ve Workload Identity Federation ile Google Sheets veri akış diyagramı")
 
 - **Tetikleyici:** EventBridge `rate(6 hours)` ile Lambda çalışır.
 - **Hesaplama:** Lambda, **salt-okur** izinli IAM rolüyle DynamoDB/Cognito'dan okur.
@@ -148,7 +147,7 @@ resources:
                         - index/*
 ```
 
-![Lambda için oluşturulmuş IAM rolü özet ekranı](/assets/images/iam-role-lambda-readonly.webp)
+![Lambda için oluşturulmuş IAM rolü özet ekranı](/assets/images/iam-role-lambda-readonly.webp "Lambda için oluşturulmuş IAM rolü özet ekranı")
 
 Bu rol, projedeki ihtiyaçları gözeterek Cognito ve DynamoDB kaynaklarına salt okuma şeklinde erişir.
 

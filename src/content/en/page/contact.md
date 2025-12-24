@@ -4,6 +4,7 @@ lang: en
 title: Contact Fatih Tatoğlu - Get in Touch
 slug: contact
 category: meta
+type: contact
 menu: "Contact"
 order: 5
 show: true
@@ -20,7 +21,6 @@ keywords:
   - fatih tatoglu
   - contact page
 featured: false
-draft: false
 template: contact
 layout: default
 status: published

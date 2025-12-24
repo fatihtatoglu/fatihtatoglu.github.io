@@ -16,7 +16,6 @@ description: "Mimari notlar, debug hikayeleri ve teknik keşiflerin tek akışı
 keywords:
   - 
 featured: false
-draft: false
 template: collection
 layout: default
 status: published

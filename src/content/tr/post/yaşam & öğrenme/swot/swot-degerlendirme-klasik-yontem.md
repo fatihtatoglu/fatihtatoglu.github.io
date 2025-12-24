@@ -31,7 +31,6 @@ keywords:
   - fırsatlar
   - tehditler
 featured: true
-draft: false
 cover: /assets/images/swot-classic-evaluation.webp
 coverAlt: SWOT değerlendirmesini temsil eden, dört bölümlü zeminin önünde kendi yansımasıyla yüzleşen bir siluetin yer aldığı, retro tonlarda yatay illüstrasyon.
 coverCaption: Güçlü ve zayıf yanlarla yüzleşirken; fırsatlar ve tehditleri aynı çerçevede yeniden düşünmeyi simgeleyen minimalist bir değerlendirme sahnesi.

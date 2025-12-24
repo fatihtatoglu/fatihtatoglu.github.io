@@ -26,7 +26,6 @@ keywords:
   - technical documentation
   - SSG
 featured: false
-draft: false
 cover: /assets/images/projects.webp
 coverAlt: "Project category cover illustration"
 coverCaption: "Shevky technical documentation (preparing)"

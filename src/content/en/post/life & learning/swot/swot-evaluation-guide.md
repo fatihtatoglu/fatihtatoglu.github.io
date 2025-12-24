@@ -29,7 +29,6 @@ keywords:
   - strengths and weaknesses
   - opportunities and threats
 featured: true
-draft: false
 cover: /assets/images/swot-classic-evaluation.webp
 coverAlt: A retro-styled flat illustration representing the evaluation of SWOT by showing a silhouette facing its reflection in four-toned color blocks.
 coverCaption: A minimalist scene symbolizing the reflection and evaluation process behind SWOT analysis.

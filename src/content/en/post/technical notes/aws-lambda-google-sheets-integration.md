@@ -17,7 +17,7 @@ tags:
   - iam-security
 readingTime: 15
 date: 2025-11-07
-updated: 2025-11-07
+updated: 2025-12-23
 pair: aws-lambda-google-sheets-baglantisi
 canonical: ~/en/aws-lambda-google-sheets-integration/
 alternate: ~/aws-lambda-google-sheets-baglantisi/
@@ -31,9 +31,8 @@ keywords:
   - Python
   - Cognito
   - EventBridge
-  - iam security
+  - IAM Security
 featured: true
-draft: false
 cover: /assets/images/standard-cover-terminal.webp
 coverAlt: Minimal terminal-themed cover illustrating a serverless data flow
 coverCaption: "EventBridge -> Lambda -> (WIF) -> Google Sheets"

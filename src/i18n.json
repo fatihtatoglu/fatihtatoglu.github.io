@@ -8,10 +8,6 @@
       "tr": "Menüyü aç",
       "en": "Open menu"
     },
-    "close": {
-      "tr": "Kapat",
-      "en": "Close"
-    },
     "backButton": {
       "label": {
         "tr": "Geri Dön",
@@ -40,7 +36,7 @@
     },
     "description": {
       "tr": "Fatih Tatoğlu'nun kişisel blogu. Disiplinli, sade ve retro bir teknik atmosferde üretkenlik notları.",
-      "en": "Fatih Tatoğlu's personal blog—disciplined, minimal, retro technical atmosphere."
+      "en": "Fatih Tatoğlu's personal blog-disciplined, minimal, retro technical atmosphere."
     },
     "owner": {
       "tr": "Fatih Tatoğlu",
@@ -75,63 +71,9 @@
         "tr": "Dil",
         "en": "Language"
       }
-    },
-    "theme": {
-      "ariaLabel": {
-        "tr": "Tema",
-        "en": "Theme"
-      }
-    }
-  },
-  "themes": {
-    "states": {
-      "light": {
-        "name": {
-          "tr": "Aydınlık",
-          "en": "Light"
-        }
-      },
-      "dark": {
-        "name": {
-          "tr": "Karanlık",
-          "en": "Dark"
-        }
-      },
-      "system": {
-        "name": {
-          "tr": "Sistem",
-          "en": "System"
-        }
-      }
-    }
-  },
-  "status": {
-    "theme": {
-      "tr": "Tema:",
-      "en": "Theme:"
-    },
-    "language": {
-      "tr": "Dil:",
-      "en": "Language:"
     }
   },
   "menu": {
-    "technical": {
-      "tr": "Teknik Notlar",
-      "en": "Technical Notes"
-    },
-    "life": {
-      "tr": "Yaşam & Öğrenme",
-      "en": "Life & Learning"
-    },
-    "about": {
-      "tr": "Hakkımda",
-      "en": "About"
-    },
-    "contact": {
-      "tr": "İletişim",
-      "en": "Contact"
-    },
     "searchPlaceholder": {
       "tr": "Başlık, konu, etiket…",
       "en": "Search title, topic, tag…"
@@ -139,68 +81,6 @@
     "primary": {
       "tr": "Birincil menü",
       "en": "Primary navigation"
-    },
-    "buttonLabel": {
-      "tr": "Menüyü aç",
-      "en": "Open menu"
-    }
-  },
-  "content": {
-    "heading": {
-      "tr": "Günlük içerik notları",
-      "en": "Daily content notes"
-    },
-    "actions": {
-      "showMore": {
-        "tr": "Daha fazla içerik göster",
-        "en": "Show extended content"
-      },
-      "showLess": {
-        "tr": "Kısa özete dön",
-        "en": "Back to summary"
-      }
-    },
-    "sample": {
-      "tr": "Bu alan, çift dilli sayfa yapısını test edebilmeniz için kısa bir örnek paragraf içerir. İngilizceye geçtiğinizde otomatik olarak çevirisi gösterilir.",
-      "en": "This block is a short sample paragraph to demonstrate the bilingual page structure. Switch to Turkish and the translation will appear instantly."
-    },
-    "long": {
-      "lead": {
-        "tr": "Günlük gözlemler ve radar notları",
-        "en": "Daily observations and radar notes"
-      },
-      "imageCaption": {
-        "tr": "Sessiz sabah saatlerinde yazıya dökülen fikirler.",
-        "en": "Ideas captured during a quiet, early-morning writing session."
-      },
-      "imageAlt": {
-        "tr": "Notebook ve kahve fincanı olan minimalist bir çalışma masası",
-        "en": "Minimal desk setup with a notebook and cup of coffee"
-      },
-      "p1": {
-        "tr": "Üretkenlik ritmi, kısa sprintler ile uzun soluklu düşünme seanslarının dengesi üzerine kurulu. Sabahları keskin zihnimle araştırma yapıyor, akşama doğru metinleri cilalıyorum.",
-        "en": "My productive rhythm balances short sprints with deep-thinking sessions. I research with a sharp morning mind and polish the prose toward evening."
-      },
-      "p2": {
-        "tr": "Tasarım sistemleri üzerine çalışırken, renk teorisini nostaljik terminal hissiyle buluşturmayı seviyorum. Bu yaklaşım, okuyucunun zihninde hem tanıdık hem de özgün bir bağ kuruyor.",
-        "en": "While refining design systems, I like weaving color theory together with a nostalgic terminal vibe, giving readers something both familiar and fresh."
-      },
-      "p3": {
-        "tr": "Yazının ritmi, kod akışını da etkiliyor. Bir paragrafın nefes aralığı nasıl önemliyse, bileşenlerin de ihtiyaç duyduğu boşluk aynı hassasiyetle ele alınmalı.",
-        "en": "The cadence of writing shapes the flow of code. Just as paragraphs need breathing room, components deserve carefully crafted spacing."
-      },
-      "p4": {
-        "tr": "İki dilli içerik üretirken çeviriden öteye geçip, kavramsal karşılıkları araştırıyorum. Anlamın yolculuğu, kelimelerin ötesinde bağlamı da kapsıyor.",
-        "en": "Creating bilingual content means going beyond literal translation and searching for conceptual counterparts so that meaning travels with context."
-      },
-      "p5": {
-        "tr": "Haftalık radarımda, erişilebilirlik araçları ve minimal arayüz prototipleri var. Her yeni keşif, holografik bir defterde yeni bir sayfa açmak gibi.",
-        "en": "Accessibility tools and minimal interface prototypes sit on my radar this week. Every discovery feels like opening a new page in a holographic notebook."
-      },
-      "p6": {
-        "tr": "Son olarak, deneyimleri paylaşmak kadar onları arşivlemek de önemli. Bu uzun form not, gelecekteki projelere rehberlik edecek bir bellek notu işlevi görüyor.",
-        "en": "Documenting experiences matters as much as sharing them. This long-form note becomes a memory marker that guides future projects."
-      }
     }
   },
   "category": {
@@ -229,7 +109,7 @@
         "tr": "Yazı Dizisinin Tüm Bölümleri",
         "en": "All Chapters in This Series"
       },
-      "translatedBy":{
+      "translatedBy": {
         "tr": "Çeviri Yapan",
         "en": "Translated By"
       }
@@ -269,175 +149,25 @@
         "titleSuffix": {
           "tr": "Etiket",
           "en": "Tag"
+        },
+        "description": {
+          "tr": "\"{{label}}\" etiketiyle işaretlenmiş tüm yazıları burada bulabilirsiniz. Fatih Tatoğlu'nun teknoloji, öğrenme ve kişisel deneyim notlarından derlenmiştir.",
+          "en": "Browse all posts tagged with \"{{label}}\". A curated collection of Fatih Tatoğlu's notes on technology, learning, and personal experience."
         }
       },
       "series": {
         "titleSuffix": {
           "tr": "Yazı Dizisi",
           "en": "Series"
-        }
-      }
-    }
-  },
-  "contactForm": {
-    "fields": {
-      "fullname": {
-        "label": {
-          "tr": "Adınız Soyadınız",
-          "en": "Full name"
         },
-        "placeholder": {
-          "tr": "Örn. Fatih Tatoğlu",
-          "en": "e.g. Fatih Tatoğlu"
+        "description": {
+          "tr": "\"{{label}}\" yazı dizisi, belirli bir tema etrafında yazılmış çok bölümlü içerikleri bir araya getirir. Fatih Tatoğlu'nun bu serideki tüm yazılarını kronolojik olarak burada bulabilirsiniz.",
+          "en": "The \"{{label}}\" series brings together multi-part writings focused on a single theme. Explore all posts in this series by Fatih Tatoğlu in chronological order."
         }
-      },
-      "email": {
-        "label": {
-          "tr": "E-posta adresiniz",
-          "en": "Email address"
-        },
-        "placeholder": {
-          "tr": "ornek@domain.com",
-          "en": "name@example.com"
-        }
-      },
-      "subject": {
-        "label": {
-          "tr": "Konu",
-          "en": "Subject"
-        },
-        "placeholder": {
-          "tr": "Bir konu seçin",
-          "en": "Pick a topic"
-        }
-      },
-      "message": {
-        "label": {
-          "tr": "Mesajınız",
-          "en": "Message"
-        },
-        "placeholder": {
-          "tr": "Kısaca neler konuşmak istediğinizi yazın…",
-          "en": "Tell me briefly what you’d like to talk about…"
-        }
-      }
-    },
-    "subjectOptions": {
-      "general": {
-        "tr": "Genel merhaba",
-        "en": "General hello"
-      },
-      "content": {
-        "tr": "İçerik / düzeltme",
-        "en": "Content / correction"
-      },
-      "suggestion": {
-        "tr": "Öneri",
-        "en": "Suggestion"
-      },
-      "question": {
-        "tr": "Soru",
-        "en": "Question"
-      },
-      "collab": {
-        "tr": "İş birliği / davet",
-        "en": "Collaboration / invitation"
-      },
-      "other": {
-        "tr": "Diğer",
-        "en": "Other"
-      }
-    },
-    "privacy": {
-      "label": {
-        "tr": "Bu mesajın yanıtlanması için iletişim bilgilerimin kullanılmasını onaylıyorum.",
-        "en": "I agree that my details may be used to reply to this message."
-      },
-      "helper": {
-        "tr": "Bilgileriniz hiçbir zaman üçüncü taraflarla paylaşılmaz.",
-        "en": "Your details are never shared with third parties."
-      }
-    },
-    "actions": {
-      "submit": {
-        "tr": "Gönder",
-        "en": "Send message"
-      },
-      "reset": {
-        "tr": "Formu temizle",
-        "en": "Clear form"
-      },
-      "loading": {
-        "tr": "Gönderiliyor...",
-        "en": "Sending..."
-      }
-    },
-    "validation": {
-      "fullnameRequired": {
-        "tr": "Lütfen adınızı yazın.",
-        "en": "Please enter your full name."
-      },
-      "emailRequired": {
-        "tr": "Lütfen e-posta adresinizi yazın.",
-        "en": "Please enter your email address."
-      },
-      "emailInvalid": {
-        "tr": "Geçerli bir e-posta girin.",
-        "en": "Please enter a valid email address."
-      },
-      "subjectRequired": {
-        "tr": "Lütfen bir konu seçin.",
-        "en": "Please choose a subject."
-      },
-      "messageRequired": {
-        "tr": "Mesajınızı en az 20 karakter olacak şekilde yazın.",
-        "en": "Please write at least 20 characters."
-      },
-      "privacyRequired": {
-        "tr": "Devam etmek için onay vermelisiniz.",
-        "en": "You must accept the privacy notice to continue."
-      }
-    },
-    "modal": {
-      "successTitle": {
-        "tr": "Mesajınız ulaştı!",
-        "en": "Your message arrived!"
-      },
-      "successMessage": {
-        "tr": "Teşekkür ederim. En kısa sürede dönüş yapacağım.",
-        "en": "Thanks so much—I’ll respond as soon as possible."
-      },
-      "errorTitle": {
-        "tr": "Bir sorun oluştu",
-        "en": "Something went wrong"
-      },
-      "errorMessage": {
-        "tr": "Mesajınız şu anda gönderilemedi. Lütfen tekrar deneyin.",
-        "en": "Your message could not be sent right now. Please try again."
-      }
-    },
-    "service": {
-      "success": {
-        "tr": "Mesajınız başarıyla kaydedildi.",
-        "en": "Your message was saved successfully."
-      },
-      "error": {
-        "tr": "Beklenmeyen bir hata oluştu.",
-        "en": "An unexpected error occurred."
       }
     }
   },
   "footer": {
-    "policies": {
-      "cookies": {
-        "tr": "Çerez Politikası",
-        "en": "Cookie Policy"
-      },
-      "disclaimer": {
-        "tr": "Sorumluluk Reddi",
-        "en": "Disclaimer"
-      }
-    },
     "social": {
       "rss": {
         "tr": "RSS",
@@ -450,48 +180,6 @@
       "linkedin": {
         "tr": "LINKEDIN",
         "en": "LINKEDIN"
-      }
-    },
-    "tags": {
-      "frontend": {
-        "tr": "Frontend",
-        "en": "Frontend"
-      },
-      "javascript": {
-        "tr": "JavaScript",
-        "en": "JavaScript"
-      },
-      "css": {
-        "tr": "CSS",
-        "en": "CSS"
-      },
-      "designSystems": {
-        "tr": "Design Systems",
-        "en": "Design Systems"
-      },
-      "webPerformance": {
-        "tr": "Web Performansı",
-        "en": "Web Performance"
-      },
-      "accessibility": {
-        "tr": "Erişilebilirlik",
-        "en": "Accessibility"
-      },
-      "learningNotes": {
-        "tr": "Öğrenme Notları",
-        "en": "Learning Notes"
-      },
-      "productThinking": {
-        "tr": "Ürün Düşüncesi",
-        "en": "Product Thinking"
-      },
-      "writing": {
-        "tr": "Yazarlık",
-        "en": "Writing"
-      },
-      "lifeLearning": {
-        "tr": "Yaşam & Öğrenme",
-        "en": "Life & Learning"
       }
     },
     "tagline": {

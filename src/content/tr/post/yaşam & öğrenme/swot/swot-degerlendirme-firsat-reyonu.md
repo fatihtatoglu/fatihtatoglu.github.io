@@ -31,7 +31,6 @@ keywords:
   - yöneticilik
   - liderlik gelişimi
 featured: true
-draft: false
 cover: /assets/images/swot-special-evaluation.webp
 coverAlt: SWOT analizi için yolculuk ve fırsat kapısını temsil eden minimal siluet ve ok görseli.
 coverCaption: SWOT analizinde ilerleme ve fırsatlara açılan kapıyı simgeleyen illüstrasyon.

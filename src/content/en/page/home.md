@@ -1,7 +1,7 @@
 ---
 id: djb3ulcx2f
 lang: en
-title: "Engineer & Curious Personal Blog"
+title: "Personal Notes on Technology, Learning, and Life from a Learning Engineer"
 slug: ""
 menu: "Home"
 order: 1
@@ -11,13 +11,12 @@ updated: 2025-11-14
 pair: ""
 canonical: /en/
 alternate: /
-description: "Fatih Tatoğlu’s personal blog - disciplined, minimal, retro-tech atmosphere sharing productivity and engineering insights."
+description: "A personal blog by an engineer with 20+ years in technology, sharing lessons learned through building, simplifying, and experimenting with software and life."
 keywords: ["static site generator", "tailwind", "markdown parser"]
 featured: true
-draft: false
 template: "home"
 listKey: "home"
 layout: "default"
 status: "published"
 ---
-# Fatih Tatoğlu – Personal Notes on Engineering, Learning, and Craftsmanship
+# Fatih Tatoğlu – Personal Notes on Technology, Learning, and Life from a Learning Engineer

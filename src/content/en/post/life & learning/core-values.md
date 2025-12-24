@@ -30,7 +30,6 @@ keywords:
   - pairwise comparison
   - value inventory
 featured: true
-draft: false
 cover: /assets/images/core-values-light-path-horizontal.webp
 coverAlt: A minimalist pastel illustration of a person walking toward light on a soft path, symbolizing awareness and inner growth.
 coverCaption: Discovering your values is a journey from darkness into light.

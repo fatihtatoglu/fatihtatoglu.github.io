@@ -4,6 +4,7 @@ lang: en
 title: About Me - Fatih Tatoğlu's Journey in Tech & Learning
 slug: about-fatih-tatoglu
 category: meta
+type: about
 menu: "About Me"
 order: 4
 show: true
@@ -23,7 +24,6 @@ keywords:
   - ai-productivity
   - career-story
 featured: false
-draft: false
 cover: /assets/images/fatih_tatoglu_cover.webp
 coverAlt: Minimal retro-style illustrated cover for Fatih Tatoğlu
 coverCaption: Fatih Tatoğlu - learning, building, exploring.

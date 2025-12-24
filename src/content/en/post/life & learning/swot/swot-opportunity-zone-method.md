@@ -28,7 +28,6 @@ keywords:
   - "personal SWOT"
   - "leadership development"
 featured: true
-draft: false
 cover: /assets/images/swot-special-evaluation.webp
 coverAlt: Minimal silhouette and arrow illustration representing the journey toward opportunities in SWOT analysis.
 coverCaption: Illustration symbolizing progress and opportunity within the SWOT framework.

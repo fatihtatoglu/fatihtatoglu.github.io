@@ -19,7 +19,6 @@ keywords:
   - rutinler
   - farkındalık
 featured: false
-draft: false
 template: collection
 layout: default
 status: published

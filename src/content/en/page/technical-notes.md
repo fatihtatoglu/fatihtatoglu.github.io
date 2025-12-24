@@ -16,7 +16,6 @@ description: "Deep-dive articles, debugging stories, and architecture notes coll
 keywords:
   - 
 featured: false
-draft: false
 template: collection
 layout: default
 status: published

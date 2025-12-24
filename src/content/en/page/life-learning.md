@@ -19,7 +19,6 @@ keywords:
   - values
   - routines
 featured: false
-draft: false
 template: collection
 layout: default
 status: published

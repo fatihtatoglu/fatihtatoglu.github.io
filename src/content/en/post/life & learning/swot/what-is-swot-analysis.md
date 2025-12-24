@@ -26,7 +26,6 @@ keywords:
   - strengths and weaknesses
   - strategic planning
 featured: true
-draft: false
 cover: /assets/images/what-is-swot-analysis.webp
 coverAlt: A diagram showing the four components of SWOT analysis
 coverCaption: "SWOT Analysis: visualizing strengths, weaknesses, opportunities, and threats."

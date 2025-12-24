@@ -28,7 +28,6 @@ keywords:
   - kişisel gelişim
   - karar verme
 featured: true
-draft: false
 cover: /assets/images/core-values-light-path-horizontal.webp
 coverAlt: Işığa doğru yürüyen bir figürün yer aldığı minimalist pastel illüstrasyon, farkındalık ve içsel yolculuğu temsil ediyor.
 coverCaption: Değerlerini keşfetmek, karanlıktan aydınlığa çıkan bir yolculuktur.

@@ -19,7 +19,6 @@ keywords:
   - veri işleme
   - analytics
 featured: false
-draft: false
 template: page
 layout: default
 status: published

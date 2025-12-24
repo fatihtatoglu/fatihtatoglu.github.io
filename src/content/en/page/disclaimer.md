@@ -18,7 +18,6 @@ keywords:
   - terms of use
   - fatih tatoglu
 featured: false
-draft: false
 template: page
 layout: default
 status: published

@@ -7,7 +7,7 @@ category: policy
 menu: "Çerez Politikası"
 readingTime: 2
 date: 2025-11-11
-updated: 2025-11-11
+updated: 2025-12-31
 pair: cookie-policy
 canonical: ~/cerez-politikasi/
 alternate: ~/en/cookie-policy/
@@ -25,7 +25,7 @@ status: published
 ---
 # Çerez Politikası
 
-_Güncellendi: 11 Kasım 2025_
+_Güncellendi: 31 Aralık 2025_
 
 tatoglu.net üzerinde kullanılan çerezler; deneyimi sorunsuz kılmak, içerik üretimini planlamak ve güvenliği sağlamak için işlenir.
 
@@ -55,12 +55,14 @@ Bazı çerezler kişisel veri içerebilir; bu nedenle hangi verilerin işlendiğ
 - `tat-theme` - seçtiğiniz tema durumunu 12 ay boyunca saklar.
 - `tat-lang` - arayüz dilini 12 ay boyunca hatırlar.
 - `tat-session` - oturum sürekliliğini 2 saat boyunca korur ve başka amaçla kullanılmaz.
+- `tat-user` - tarayıcıyı anonim şekilde tanımlamak için kullanılır ve yaklaşık 20 yıl saklanır.
 
 ## Çerezlerin Amaçları
 
 - **Deneyim:** Tema, dil ve içerik yoğunluk tercihlerini hatırlamak.
 - **Analitik:** Hangi yazıların ilgi gördüğünü ölçerek üretim takvimini planlamak.
 - **Güvenlik:** Şüpheli oturumları tespit edip kötüye kullanımı engellemek.
+- **Devamlılık:** `tat-user` ile tekrar gelen ziyaretleri anonim biçimde ilişkilendirmek.
 - **İletişim:** Geri bildirim ve iletişim taleplerini yönetmek.
 
 ## Üçüncü Taraf Araçlar

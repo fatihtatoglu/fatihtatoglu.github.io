@@ -7,7 +7,7 @@ category: policy
 menu: "Cookie Policy"
 readingTime: 2
 date: 2025-11-11
-updated: 2025-11-11
+updated: 2025-12-31
 pair: cerez-politikasi
 canonical: ~/en/cookie-policy/
 alternate: ~/cerez-politikasi/
@@ -25,7 +25,7 @@ status: published
 ---
 # Cookie Policy
 
-_Updated: November 11, 2025_
+_Updated: December 31, 2025_
 
 The cookies used on tatoglu.net are processed in order to ensure a seamless experience, plan content production, and maintain security.
 
@@ -55,12 +55,14 @@ Some cookies may contain personal data; therefore, it's important for you to kno
 - `tat-theme` — Stores your selected theme status for 12 months.
 - `tat-lang` — Remembers the interface language for 12 months.
 - `tat-session` — Maintains session continuity for 2 hours and is not used for any other purpose.
+- `tat-user` — Used to anonymously identify the browser and is stored for about 20 years.
 
 ## Purposes of Cookies
 
 - **Experience:** Remembering theme, language, and content density preferences.
 - **Analytics:** Planning the production schedule by measuring which articles are of interest.
 - **Security:** Detecting suspicious sessions and preventing misuse.
+- **Continuity:** Anonymously linking returning visits with `tat-user`.
 - **Communication:** Managing feedback and communication requests.
 
 ## Third-Party Tools

@@ -188,6 +188,18 @@
     --btn-icon-size: 64px;
   }
 
+  .btn--has-badge {
+    @apply relative;
+  }
+
+  .btn__badge {
+    @apply absolute -top-2.5 -right-2.5 min-w-5 h-5 px-1.5 rounded-full bg-[var(--sage-500)] text-white text-[0.6rem] font-bold leading-5 text-center tracking-normal opacity-0 scale-[0.85] transition-[opacity,transform] duration-200 ease-in pointer-events-none;
+  }
+
+  .btn--has-badge[data-has-count="true"] .btn__badge {
+    @apply opacity-100 scale-100;
+  }
+
   /* Icon placement helpers */
   .btn--icon-left {
     flex-direction: row;

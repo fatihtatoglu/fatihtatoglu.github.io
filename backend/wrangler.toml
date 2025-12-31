@@ -1,0 +1,7 @@
+name = "post-ops"
+main = "worker.js"
+compatibility_date = "2024-12-01"
+
+kv_namespaces = [
+  { binding = "RATE", id = "d54fc16c77c24b36a1fce76461221025" }
+]

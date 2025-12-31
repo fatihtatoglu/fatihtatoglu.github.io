@@ -1,3 +1,6 @@
+import analyticsApi from "./analytics.js";
+import cookieApi from "./utils/cookies.js";
+
 const doc = typeof document !== "undefined" ? document : null;
 
 const shareState = {
@@ -172,6 +175,8 @@ function initShare(options = {}) {
   }
 
   const metadata = normalizeMetadata(options.metadata);
+  const sessionId = cookieApi.getSessionId?.() || "";
+  const userId = cookieApi.getUserId?.() || "";
   const buttons = Array.from(doc.querySelectorAll("[data-share]"));
   shareState.metadata = metadata;
   shareState.buttons = buttons;
@@ -187,6 +192,11 @@ function initShare(options = {}) {
       const target = button.dataset.share;
       if (!target) return;
       const meta = shareState.metadata ?? metadata;
+      analyticsApi.track(`tat-share-${target}`, {
+        tat_session: sessionId,
+        tat_user: userId,
+        url: meta.url
+      });
       if (target === "copy") {
         const trackedCopyUrl = appendTrackingParams(meta.url, {
           utm_source: "copy",

@@ -12,7 +12,7 @@
     }
   },
   "analytics": {
-    "enabled": false,
+    "enabled": true,
     "gtmId": "GTM-5WHLJZ6Z",
     "gaId": "G-R2SETB688N",
     "clarityId": "ubkn3xooz5"
@@ -38,8 +38,9 @@
   "features": {
     "postOperations": {
       "enabled": true,
-      "like": false,
-      "dislike": false,
+      "apiBase": "https://post-ops.fatihtatoglu.workers.dev",
+      "like": true,
+      "dislike": true,
       "comment": false,
       "share": {
         "enabled": true,

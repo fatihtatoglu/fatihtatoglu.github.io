@@ -72,7 +72,7 @@
     {{#site.features.postOperations}}
       {{#enabled}}
         {{#like}}
-        <button class="btn btn--xs btn--icon btn--tone-sage" type="button" data-action="like"
+        <button class="btn btn--xs btn--icon btn--tone-sage btn--has-badge" type="button" data-action="like"
           aria-label="{{i18n.post.operations.like.aria}}"
           data-post-id="{{front.id}}">
           <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 48 48" >
@@ -81,10 +81,11 @@
               <path d="M12.0119 43.7366H7.46274C6.16545 43.7366 4.97062 42.9005 4.59246 41.616C2.47945 34.4394 2.45894 27.1074 4.59245 19.8582C4.97037 18.5745 6.16463 17.7366 7.46274 17.7366H11.4571C10.0171 26.4299 10.202 35.0157 12.0119 43.7366Z" fill="currentColor" data-color="color-2"></path>
             </g>
           </svg>
+          <span class="btn__badge" data-count="like" aria-hidden="true">0</span>
         </button>
         {{/like}}
         {{#dislike}}
-        <button class="btn btn--xs btn--icon btn--tone-sage" type="button" data-action="dislike"
+        <button class="btn btn--xs btn--icon btn--tone-sage btn--has-badge" type="button" data-action="dislike"
           aria-label="{{i18n.post.operations.dislike.aria}}"
           data-post-id="{{front.id}}">
           <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 48 48" >
@@ -93,6 +94,7 @@
               <path d="M12.0119 43.7366H7.46274C6.16545 43.7366 4.97062 42.9005 4.59246 41.616C2.47945 34.4394 2.45894 27.1074 4.59245 19.8582C4.97037 18.5745 6.16463 17.7366 7.46274 17.7366H11.4571C10.0171 26.4299 10.202 35.0157 12.0119 43.7366Z" fill="currentColor" data-color="color-2"></path>
             </g>
           </svg>
+          <span class="btn__badge" data-count="dislike" aria-hidden="true">0</span>
         </button>
         {{/dislike}}
         {{#comment}}

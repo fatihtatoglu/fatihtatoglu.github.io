@@ -15,6 +15,21 @@ function resolveAnalyticsFlag() {
 }
 
 const ANALYTICS_ENABLED = resolveAnalyticsFlag();
+const DEBUG_ENABLED = resolveDebugFlag();
+
+function resolveDebugFlag() {
+  if (!root || !root.dataset) {
+    return false;
+  }
+
+  const raw = root.dataset.debug;
+  if (raw == null) {
+    return false;
+  }
+
+  const normalized = String(raw).toLowerCase();
+  return normalized === "true" || normalized === "1" || normalized === "on";
+}
 
 function toPlainObject(value) {
   if (value && typeof value === "object" && !Array.isArray(value)) {
@@ -61,6 +76,10 @@ function sendToClarity(eventName, payload) {
 }
 
 function trackAnalyticsEvent(eventName, payload = {}) {
+  if (DEBUG_ENABLED && typeof console !== "undefined") {
+    console.log("[analytics]", eventName, payload);
+  }
+
   if (!ANALYTICS_ENABLED) {
     return false;
   }

@@ -36,6 +36,17 @@
     margin: 1.5rem 0 0.5rem;
   }
 
+  blockquote {
+    @apply my-8 rounded-2xl border-l-4 px-6 py-4 italic leading-relaxed;
+    background-color: var(--bg-elev);
+    border-color: var(--sage-400);
+    color: var(--ink);
+  }
+
+  blockquote p:last-child {
+    margin-bottom: 0;
+  }
+
   pre {
     @apply w-full font-mono text-sm my-8 p-2 border rounded-2xl border-[var(--sage-900)] bg-[var(--bg-elev)] leading-relaxed;
     overflow-x: auto;

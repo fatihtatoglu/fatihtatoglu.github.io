@@ -17,7 +17,7 @@ readingTime: 13
 date: 2026-01-06
 updated: 2026-01-06
 pair: debate-experiment-with-ai
-canonical: "~/munazara-deneyi-yapay-zeka/"
+canonical: ~/munazara-deneyi-yapay-zeka/
 alternate: ~/en/debate-experiment-with-ai/
 description: "WEF Future of Jobs 2025'ten ilhamla, iki yapay zekâ modeli arasında kurgulanan dört turlu münazara deneyi ve jüri değerlendirmesi."
 keywords:

@@ -28,7 +28,8 @@
       "/"
     ],
     "disallow": [
-      "/drafts/"
+      "/drafts/",
+      "/assets/files/"
     ]
   },
   "build": {

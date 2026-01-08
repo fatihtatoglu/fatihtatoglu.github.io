@@ -109,12 +109,12 @@ Bu sınırlar, modellerin "uzun ama boş" cevaplar üretmesini engellemek için 
 
 Kuralları ve konuyu da belirlendikten sonra en önemli konu tarafsız bir şekilde çıktıların değerlendirilmesi olacaktı. Bu kısım için; 
 
-- kavramsal açıklık
-- mantıksal tutarlılık
-- argümanların gücü
-- karşıt argümanların kalitesi
-- pratik gerçekçilik
-- toparlama ve çıkarım yapma
+- Kavramsal Açıklık
+- Mantıksal Tutarlılık
+- Argümanların Gücü
+- Karşıt Argümanların Kalitesi
+- Pratik Gerçekçilik
+- Toparlama ve Çıkarım yapma
 
 becerileri üzerinden bir puanlama yapılabileceğini düşündüm. Belirlediğim altı kategoride ayrı ayrı verilen puanların toplamına göre bir kazanan olacak. 
 

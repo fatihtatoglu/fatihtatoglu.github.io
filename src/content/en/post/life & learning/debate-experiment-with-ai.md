@@ -107,12 +107,12 @@ For the first experiment, I chose a topic we all experienced during the pandemic
 
 After defining the rules and topic, the most important part was evaluating the outputs in an unbiased way. For this, I thought scoring could be done based on the following skills:
 
-- conceptual clarity  
-- logical consistency  
-- strength of arguments  
-- quality of counterarguments  
-- practical realism  
-- summarization and inference  
+- Conceptual Clarity  
+- Logical Consistency  
+- Strength of Arguments  
+- Quality of Counterarguments  
+- Practical Realism  
+- Summarization and Inference  
 
 There would be a winner based on the total score across these six categories.
 

@@ -213,6 +213,14 @@
         "tr": "Yazar",
         "en": "Author"
       },
+      "authorNameFallback": {
+        "tr": "Yazar",
+        "en": "Author"
+      },
+      "anonymousName": {
+        "tr": "Anonim",
+        "en": "Anonymous"
+      },
       "status": {
         "sending": {
           "tr": "Gönderiliyor...",

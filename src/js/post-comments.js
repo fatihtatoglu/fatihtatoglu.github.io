@@ -4,6 +4,8 @@ import { getLocalizedString, getRootLanguage } from "./utils/i18n-client.js";
 
 const doc = typeof document !== "undefined" ? document : null;
 const ICON_SPRITE = "/assets/svg/icons.svg";
+const TURNSTILE_SCRIPT_SRC = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
+let turnstileScriptPromise = null;
 
 const commentsState = {
   initialized: false,
@@ -17,6 +19,8 @@ const commentsState = {
   status: null,
   submit: null,
   loading: false,
+  loaded: false,
+  loadingList: false,
 };
 
 function resolveApiBase() {
@@ -47,7 +51,28 @@ function resolveTurnstileKey() {
     return "";
   }
 
+  const baseUrl = String(doc.documentElement.dataset.baseUrl || "").trim();
+  if (baseUrl) {
+    try {
+      const hostname = new URL(baseUrl).hostname;
+      if (hostname === "localhost" || hostname === "127.0.0.1") {
+        return "";
+      }
+    } catch {
+      // Ignore invalid base URL and continue with turnstile key.
+    }
+  }
+
   const raw = doc.documentElement.dataset.turnstileSiteKey || "";
+  return raw.trim();
+}
+
+function resolveAuthorName() {
+  if (!doc?.documentElement?.dataset) {
+    return "";
+  }
+
+  const raw = doc.documentElement.dataset.authorName || "";
   return raw.trim();
 }
 
@@ -99,6 +124,100 @@ function toggleEmpty(show) {
   commentsState.empty.hidden = !show;
 }
 
+function loadTurnstileScript() {
+  if (!doc) {
+    return Promise.resolve(false);
+  }
+
+  if (!resolveTurnstileKey()) {
+    return Promise.resolve(false);
+  }
+
+  if (typeof window !== "undefined" && window.turnstile) {
+    return Promise.resolve(true);
+  }
+
+  if (turnstileScriptPromise) {
+    return turnstileScriptPromise;
+  }
+
+  const existing = doc.querySelector(`script[src^="${TURNSTILE_SCRIPT_SRC}"]`);
+  if (existing) {
+    turnstileScriptPromise = new Promise((resolve) => {
+      if (typeof window !== "undefined" && window.turnstile) {
+        resolve(true);
+        return;
+      }
+      existing.addEventListener("load", () => resolve(true), { once: true });
+      existing.addEventListener("error", () => resolve(false), { once: true });
+    });
+    return turnstileScriptPromise;
+  }
+
+  turnstileScriptPromise = new Promise((resolve) => {
+    const script = doc.createElement("script");
+    script.src = TURNSTILE_SCRIPT_SRC;
+    script.async = true;
+    script.defer = true;
+    script.addEventListener("load", () => resolve(true), { once: true });
+    script.addEventListener("error", () => resolve(false), { once: true });
+    doc.head.appendChild(script);
+  });
+
+  return turnstileScriptPromise;
+}
+
+function renderTurnstileWidget() {
+  if (!doc || typeof window === "undefined") {
+    return;
+  }
+  if (!window.turnstile || typeof window.turnstile.render !== "function") {
+    return;
+  }
+
+  const widget = doc.querySelector(".cf-turnstile");
+  if (!widget || widget.dataset.turnstileRendered === "true") {
+    return;
+  }
+
+  window.turnstile.render(widget);
+  widget.dataset.turnstileRendered = "true";
+}
+
+async function loadComments(apiBase, postId) {
+  if (!commentsState.list || commentsState.loaded || commentsState.loadingList) {
+    return;
+  }
+
+  commentsState.loadingList = true;
+  try {
+    const payload = await fetchComments(apiBase, postId);
+    renderComments(payload.comments || []);
+    commentsState.loaded = true;
+  } catch (error) {
+    console.warn("post comments failed", error);
+    toggleEmpty(true);
+  } finally {
+    commentsState.loadingList = false;
+  }
+}
+
+function openCommentsSection() {
+  if (!commentsState.section) {
+    return;
+  }
+
+  commentsState.section.hidden = false;
+  loadTurnstileScript().then((ok) => {
+    if (ok) {
+      renderTurnstileWidget();
+    }
+  });
+  if (commentsState.apiBase && commentsState.postId) {
+    loadComments(commentsState.apiBase, commentsState.postId);
+  }
+}
+
 async function fetchComments(apiBase, postId) {
   const url = `${apiBase}/${encodeURIComponent(postId)}/comment`;
   const res = await fetch(url);
@@ -109,16 +228,17 @@ async function fetchComments(apiBase, postId) {
   return res.json();
 }
 
-function buildActionButton(action, count) {
+function buildActionButton(action, count, isAuthor) {
   const button = document.createElement("button");
   button.type = "button";
-  button.className = "btn btn--xs btn--tone-neutral btn--icon-left comment-card__action";
+  const tone = isAuthor ? "btn--tone-sage" : "btn--tone-brand";
+  button.className = `btn btn--xs ${tone} btn--icon-left comment-card__action`;
   button.dataset.commentAction = action;
   button.setAttribute(
     "aria-label",
     action === "like"
-      ? t("post.comments.actions.like.aria", "Like comment")
-      : t("post.comments.actions.dislike.aria", "Dislike comment")
+      ? t("post.comments.actions.like.aria", "")
+      : t("post.comments.actions.dislike.aria", "")
   );
 
   const icon = createIcon(action === "like" ? "icon-like" : "icon-dislike");
@@ -135,20 +255,30 @@ function buildCommentCard(comment) {
   const card = document.createElement("article");
   card.className = "comment-card";
   card.dataset.commentId = comment.id || "";
+  if (comment.commentType === "author") {
+    card.classList.add("author");
+  }
 
   const header = document.createElement("header");
   header.className = "comment-card__header";
 
   const name = document.createElement("span");
   name.className = "comment-card__name";
-  name.textContent = comment.name || "Anonymous";
+  if (comment.commentType === "author") {
+    name.textContent = resolveAuthorName() || t("post.comments.authorNameFallback", "");
+  } else {
+    name.textContent = comment.name || t("post.comments.anonymousName", "");
+  }
   header.appendChild(name);
 
   if (comment.commentType === "author") {
     const badge = document.createElement("span");
     badge.className = "comment-card__badge";
-    badge.textContent = t("post.comments.authorBadge", "Author");
-    header.appendChild(badge);
+    const badgeText = t("post.comments.authorBadge", "");
+    if (badgeText) {
+      badge.textContent = badgeText;
+      header.appendChild(badge);
+    }
   }
 
   const message = document.createElement("p");
@@ -158,8 +288,9 @@ function buildCommentCard(comment) {
   const actions = document.createElement("div");
   actions.className = "comment-card__actions";
 
-  const likeButton = buildActionButton("like", comment.like);
-  const dislikeButton = buildActionButton("dislike", comment.dislike);
+  const isAuthor = comment.commentType === "author";
+  const likeButton = buildActionButton("like", comment.like, isAuthor);
+  const dislikeButton = buildActionButton("dislike", comment.dislike, isAuthor);
   likeButton.dataset.commentId = comment.id || "";
   dislikeButton.dataset.commentId = comment.id || "";
 
@@ -256,7 +387,7 @@ function bindForm(apiBase, postId) {
     }
 
     if (typeof commentsState.form.reportValidity === "function" && !commentsState.form.reportValidity()) {
-      setStatus(t("post.comments.status.validation", "Please fill out all fields."), "error");
+      setStatus(t("post.comments.status.validation", ""), "error");
       return;
     }
 
@@ -265,14 +396,14 @@ function bindForm(apiBase, postId) {
     const message = commentsState.form.querySelector("textarea[name='message']")?.value.trim() || "";
 
     if (!name || !email || !message) {
-      setStatus(t("post.comments.status.validation", "Please fill out all fields."), "error");
+      setStatus(t("post.comments.status.validation", ""), "error");
       return;
     }
 
     const turnstileKey = resolveTurnstileKey();
     const token = getTurnstileToken(commentsState.form);
     if (turnstileKey && !token) {
-      setStatus(t("post.comments.status.captchaMissing", "Please complete the captcha."), "error");
+      setStatus(t("post.comments.status.captchaMissing", ""), "error");
       return;
     }
 
@@ -286,7 +417,7 @@ function bindForm(apiBase, postId) {
       commentsState.submit.disabled = true;
     }
     clearStatus();
-    setStatus(t("post.comments.status.sending", "Submitting..."), "info");
+    setStatus(t("post.comments.status.sending", ""), "info");
 
     try {
       await sendComment(apiBase, postId, {
@@ -305,15 +436,12 @@ function bindForm(apiBase, postId) {
       });
       commentsState.form.reset();
       resetTurnstile();
-      setStatus(
-        t("post.comments.status.success", "Your comment was received and will appear after approval."),
-        "success"
-      );
+      setStatus(t("post.comments.status.success", ""), "success");
       const payload = await fetchComments(apiBase, postId);
       renderComments(payload.comments || []);
     } catch (error) {
       console.warn("comment submit failed", error);
-      setStatus(t("post.comments.status.error", "Something went wrong. Please try again."), "error");
+    setStatus(t("post.comments.status.error", ""), "error");
     } finally {
       commentsState.loading = false;
       if (commentsState.submit) {
@@ -371,6 +499,7 @@ function bindScrollButton(section) {
   buttons.forEach((button) => {
     button.addEventListener("click", (event) => {
       event.preventDefault();
+      openCommentsSection();
       section.scrollIntoView({ behavior: "smooth", block: "start" });
     });
   });
@@ -411,21 +540,11 @@ function initPostComments() {
     return postCommentsApi;
   }
 
+  section.hidden = true;
   bindForm(apiBase, commentsState.postId);
   bindReactions(apiBase, commentsState.postId);
   bindScrollButton(section);
   commentsState.initialized = true;
-
-  if (commentsState.postId) {
-    fetchComments(apiBase, commentsState.postId)
-      .then((payload) => {
-        renderComments(payload.comments || []);
-      })
-      .catch((error) => {
-        console.warn("post comments failed", error);
-        toggleEmpty(true);
-      });
-  }
 
   return postCommentsApi;
 }

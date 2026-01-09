@@ -1,19 +1,11 @@
 @layer components {
   article.post .post-operations {
-    @apply rounded-2xl border border-[var(--border)] flex flex-wrap gap-3 items-center justify-center p-4 bg-[var(--bg-elev)];
-  }
-
-  .post-operations__comment {
-    @apply hidden;
+    @apply rounded-2xl border border-[var(--border)] flex flex-wrap gap-3 items-center justify-center p-2 bg-[var(--bg-elev)];
   }
 
   @media (min-width: 960px) {
     article.post .post-operations {
       @apply fixed top-37.5 left-[calc(50%+35ch+1rem)] p-3 grid grid-cols-2 gap-2;
-    }
-
-    .post-operations__comment {
-      @apply inline-flex;
     }
   }
 }

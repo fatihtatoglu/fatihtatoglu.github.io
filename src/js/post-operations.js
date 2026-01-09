@@ -6,10 +6,12 @@ const doc = typeof document !== "undefined" ? document : null;
 const postOpsState = {
   initialized: false,
   apiBase: "",
-  buttons: [],
+  actionButtons: [],
+  countButtons: [],
   counts: {
     like: 0,
     dislike: 0,
+    comment: 0,
   },
 };
 
@@ -93,13 +95,12 @@ function applyCount(button, count) {
 
 function applyCounts(buttons, counts) {
   buttons.forEach((button) => {
-    const action = getAction(button);
-    if (action === "like") {
-      applyCount(button, counts.like ?? 0);
+    const badge = getBadge(button);
+    const key = badge?.dataset?.count || "";
+    if (!key) {
+      return;
     }
-    if (action === "dislike") {
-      applyCount(button, counts.dislike ?? 0);
-    }
+    applyCount(button, counts[key] ?? 0);
   });
 }
 
@@ -139,7 +140,8 @@ function bindButton(button, apiBase, identity) {
       const payload = await fetchCounts(apiBase, postId);
       postOpsState.counts.like = Number(payload?.like) || 0;
       postOpsState.counts.dislike = Number(payload?.dislike) || 0;
-      applyCounts(postOpsState.buttons, postOpsState.counts);
+      postOpsState.counts.comment = Number(payload?.comment) || 0;
+      applyCounts(postOpsState.countButtons, postOpsState.counts);
       setButtonState(button, "done");
       setTimeout(() => setButtonState(button, "idle"), 1200);
     } catch (error) {
@@ -162,7 +164,8 @@ function initPostOperations() {
 
   const likeEnabled = resolveFeatureFlag("postOpsLike");
   const dislikeEnabled = resolveFeatureFlag("postOpsDislike");
-  if (!likeEnabled && !dislikeEnabled) {
+  const commentEnabled = resolveFeatureFlag("postOpsComment");
+  if (!likeEnabled && !dislikeEnabled && !commentEnabled) {
     postOpsState.initialized = true;
     return postOpsApi;
   }
@@ -182,14 +185,14 @@ function initPostOperations() {
       }
       return false;
     });
-  if (!buttons.length) {
-    postOpsState.initialized = true;
-    return postOpsApi;
-  }
+  const countButtons = Array.from(doc.querySelectorAll("[data-count]"))
+    .map((badge) => badge.closest("button"))
+    .filter(Boolean);
 
-  const postId = getPostId(buttons[0]);
+  const postId = getPostId(buttons[0] || countButtons[0]);
   postOpsState.apiBase = apiBase;
-  postOpsState.buttons = buttons;
+  postOpsState.actionButtons = buttons;
+  postOpsState.countButtons = countButtons;
   buttons.forEach((button) => bindButton(button, apiBase, identity));
   postOpsState.initialized = true;
 
@@ -198,7 +201,8 @@ function initPostOperations() {
       .then((payload) => {
         postOpsState.counts.like = Number(payload?.like) || 0;
         postOpsState.counts.dislike = Number(payload?.dislike) || 0;
-        applyCounts(buttons, postOpsState.counts);
+        postOpsState.counts.comment = Number(payload?.comment) || 0;
+        applyCounts(countButtons, postOpsState.counts);
       })
       .catch((error) => {
         console.warn("post-ops counts failed", error);

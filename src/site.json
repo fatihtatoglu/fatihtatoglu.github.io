@@ -43,7 +43,7 @@
       "like": true,
       "dislike": true,
       "comment": true,
-      "turnstileSiteKey": "",
+      "turnstileSiteKey": "0x4AAAAAACLgAWMMwkeVPTUK",
       "share": {
         "enabled": true,
         "whatsapp": true,

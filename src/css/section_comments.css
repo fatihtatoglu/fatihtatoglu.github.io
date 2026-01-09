@@ -30,7 +30,11 @@
   }
 
   .comment-card {
-    @apply border border-[var(--border)] rounded-2xl bg-[var(--bg-elev)] px-5 py-4 flex flex-col gap-3;
+    @apply border border-[var(--brand-500)] rounded-2xl bg-[var(--brand-200)] px-5 py-4 flex flex-col gap-3 w-[90%] mr-[10%];
+  }
+
+  .comment-card.author {
+    @apply ml-[10%] mr-0 bg-[var(--sage-200)] border-[var(--sage-500)];
   }
 
   .comment-card__header {

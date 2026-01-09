@@ -5,6 +5,7 @@ import menuApi from "./menu.js";
 import shareApi from "./share.js";
 import analyticsApi from "./analytics.js";
 import postOpsApi from "./post-operations.js";
+import postCommentsApi from "./post-comments.js";
 
 const yearEl = document.querySelector("[data-year]");
 const PAGE_OPEN_EVENT = "open_page";
@@ -17,6 +18,7 @@ const cookieInit = cookieApi.init();
 menuApi.init();
 shareApi.init();
 postOpsApi.init();
+postCommentsApi.init();
 
 const sessionId = cookieApi.getSessionId?.() || "";
 const userId = cookieApi.getUserId?.() || "";

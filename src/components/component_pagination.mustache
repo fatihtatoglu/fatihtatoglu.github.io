@@ -1,0 +1,27 @@
+{{#listing.hasItems}}
+  {{#listing.hasPagination}}
+  <nav class="flex justify-between items-center w-full p-2" aria-label="Sayfa geçişleri">
+    {{#listing}}
+      <button
+        class="btn btn--sm btn--tone-neutral btn--icon-left"
+        data-href="{{prevUrl}}" {{^hasPrev}}disabled{{/hasPrev}}
+      >
+        <svg aria-hidden="true">
+          <use href="/assets/svg/icons.svg#icon-arrow-left"></use>
+        </svg>
+        <span>{{i18n.ui.pagination.previous}}</span>
+      </button>
+
+      <button
+        class="btn btn--sm btn--tone-neutral btn--icon-right"
+        data-href="{{nextUrl}}" {{^hasNext}}disabled{{/hasNext}}
+      >
+        <span>{{i18n.ui.pagination.next}}</span>
+        <svg aria-hidden="true">
+          <use href="/assets/svg/icons.svg#icon-arrow-right"></use>
+        </svg>
+      </button>
+    {{/listing}}
+  </nav>
+  {{/listing.hasPagination}}
+{{/listing.hasItems}}

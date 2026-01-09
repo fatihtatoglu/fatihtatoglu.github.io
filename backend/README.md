@@ -55,6 +55,7 @@ Worker vars:
 - `SHEET_ID`
 - `GOOGLE_CLIENT_EMAIL`
 - `GOOGLE_PRIVATE_KEY`
+- `TURNSTILE_SECRET` (optional, enables Turnstile validation for comments)
 
 KV:
 
@@ -83,8 +84,10 @@ For comments:
 ```json
 {
   "name": "Fatih",
+  "email": "fatih@tatoglu.net",
   "message": "Nice post",
   "lang": "tr",
+  "turnstileToken": "token-from-turnstile",
   "tatSession": "session-id",
   "tatUser": "user-id"
 }

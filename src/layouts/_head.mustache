@@ -17,7 +17,8 @@
       https://www.clarity.ms
       https://scripts.clarity.ms
       https://static.cloudflareinsights.com
-      https://connect.facebook.net;
+      https://connect.facebook.net
+      https://challenges.cloudflare.com;
 
     style-src 'self' 'unsafe-inline'
       https://fonts.googleapis.com;
@@ -37,11 +38,13 @@
       https://static.cloudflareinsights.com
       https://connect.facebook.net
       https://www.facebook.com
+      https://challenges.cloudflare.com
       {{site.features.postOperations.apiBase}};
 
     frame-src 'self'
       https://docs.google.com
-      https://www.google.com;
+      https://www.google.com
+      https://challenges.cloudflare.com;
 
     base-uri 'self';
     form-action 'self';
@@ -83,6 +86,10 @@
     {{{page.structuredData}}}
   </script>
   {{/page.structuredData}}
+
+  {{#site.features.postOperations.turnstileSiteKey}}
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  {{/site.features.postOperations.turnstileSiteKey}}
 
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">

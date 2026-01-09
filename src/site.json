@@ -43,6 +43,7 @@
       "like": true,
       "dislike": true,
       "comment": true,
+      "turnstileSiteKey": "",
       "share": {
         "enabled": true,
         "whatsapp": true,

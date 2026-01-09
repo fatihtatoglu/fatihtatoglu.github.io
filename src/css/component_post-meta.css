@@ -1,0 +1,21 @@
+@layer components {
+  .post-meta {
+    @apply py-4 rounded-2xl bg-[var(--bg)];
+  }
+
+  .post-meta__grid {
+    @apply flex gap-4 justify-around;
+  }
+
+  .post-meta__item {
+    @apply flex flex-col gap-2 text-center;
+  }
+
+  .post-meta__item dt {
+    @apply uppercase font-mono text-sm text-[var(--muted)];
+  }
+
+  .post-meta__item dd {
+    @apply text-sm font-semibold;
+  }
+}

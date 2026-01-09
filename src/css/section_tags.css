@@ -1,0 +1,5 @@
+@layer components {
+  article.post footer.post-footer section.post-tags {
+    @apply flex flex-wrap gap-2 items-center justify-center;
+  }
+}

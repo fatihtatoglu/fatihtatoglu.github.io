@@ -4,10 +4,7 @@
   <header class="post-header">
 
     <div class="post-back">
-      <button
-        class="btn btn--xs btn--tone-neutral btn--icon-left"
-        type="button"
-        onclick="window.history.back()"
+      <button class="btn btn--xs btn--tone-neutral btn--icon-left" type="button" onclick="window.history.back()"
         aria-label="{{i18n.ui.backButton.aria}}">
         <svg aria-hidden="true">
           <use href="/assets/svg/icons.svg#icon-arrow-left"></use>
@@ -31,37 +28,37 @@
       <dl class="post-meta__grid">
         {{#front.dateDisplay}}
         <div class="post-meta__item">
-            <dt lang="{{lang}}">{{i18n.category.meta.publishedLabel}}</dt>
-            <dd>{{.}}</dd>
+          <dt lang="{{lang}}">{{i18n.category.meta.publishedLabel}}</dt>
+          <dd>{{.}}</dd>
         </div>
         {{/front.dateDisplay}}
 
         {{#front.readingTime}}
         <div class="post-meta__item">
-            <dt lang="{{lang}}">{{i18n.category.meta.readingTimeLabel}}</dt>
-            <dd>{{.}} {{i18n.category.readingTimeSuffix}}</dd>
+          <dt lang="{{lang}}">{{i18n.category.meta.readingTimeLabel}}</dt>
+          <dd>{{.}} {{i18n.category.readingTimeSuffix}}</dd>
         </div>
         {{/front.readingTime}}
 
         {{#front.seriesTitle}}
         <div class="post-meta__item">
-            <dt lang="{{lang}}">{{i18n.category.meta.series}}</dt>
-            <dd>{{.}}</dd>
+          <dt lang="{{lang}}">{{i18n.category.meta.series}}</dt>
+          <dd>{{.}}</dd>
         </div>
         {{/front.seriesTitle}}
 
         {{#isEnglish}}
         {{#front.aiTranslated}}
         <div class="post-meta__item">
-            <dt lang="{{lang}}">{{i18n.category.meta.translatedBy}}</dt>
-            <dd>{{.}}</dd>
+          <dt lang="{{lang}}">{{i18n.category.meta.translatedBy}}</dt>
+          <dd>{{.}}</dd>
         </div>
         {{/front.aiTranslated}}
 
         {{^front.aiTranslated}}
         <div class="post-meta__item">
-            <dt lang="{{lang}}">{{i18n.category.meta.translatedBy}}</dt>
-            <dd>{{site.author}}</dd>
+          <dt lang="{{lang}}">{{i18n.category.meta.translatedBy}}</dt>
+          <dd>{{site.author}}</dd>
         </div>
         {{/front.aiTranslated}}
         {{/isEnglish}}
@@ -77,146 +74,15 @@
   </div>
   <!-- Post Content -->
 
-  <div class="post-operations {{#site.features.postOperations}}{{^enabled}}py-2{{/enabled}}{{/site.features.postOperations}}">
-  {{#site.features.postOperations}}
-    {{#enabled}}
-      {{#like}}
-      <button class="btn btn--xs btn--icon btn--tone-sage btn--has-badge" type="button" data-action="like"
-        aria-label="{{i18n.post.operations.like.aria}}"
-        data-post-id="{{front.id}}">
-        <svg aria-hidden="true">
-          <use href="/assets/svg/icons.svg#icon-like"></use>
-        </svg>
-        <span class="btn__badge" data-count="like" aria-hidden="true">0</span>
-      </button>
-      {{/like}}
-      {{#dislike}}
-      <button class="btn btn--xs btn--icon btn--tone-sage btn--has-badge" type="button" data-action="dislike"
-        aria-label="{{i18n.post.operations.dislike.aria}}"
-        data-post-id="{{front.id}}">
-        <svg aria-hidden="true">
-          <use href="/assets/svg/icons.svg#icon-dislike"></use>
-        </svg>
-        <span class="btn__badge" data-count="dislike" aria-hidden="true">0</span>
-      </button>
-      {{/dislike}}
-      {{#comment}}
-      <button class="btn btn--xs btn--icon btn--tone-sage" type="button" data-action="comment"
-        aria-label="{{i18n.post.operations.comment.aria}}"
-        data-post-id="{{front.id}}">
-        <svg aria-hidden="true">
-          <use href="/assets/svg/icons.svg#icon-comment"></use>
-        </svg>
-      </button>
-      {{/comment}}
-      {{#share}}
-        {{#enabled}}
-          {{#whatsapp}}
-          <button class="btn btn--xs btn--icon btn--tone-sage" type="button" data-share="whatsapp" aria-label="WhatsApp"
-          data-post-id="{{front.id}}">
-            <svg aria-hidden="true">
-              <use href="/assets/svg/icons.svg#icon-whatsapp"></use>
-            </svg>
-          </button>
-          {{/whatsapp}}
-          {{#x}}
-          <button class="btn btn--xs btn--icon btn--tone-sage" type="button" data-share="x" aria-label="X"
-          data-post-id="{{front.id}}">
-            <svg aria-hidden="true">
-              <use href="/assets/svg/icons.svg#icon-x"></use>
-            </svg>
-          </button>
-          {{/x}}
-          {{#linkedin}}
-          <button class="btn btn--xs btn--icon btn--tone-sage" type="button" data-share="linkedin" aria-label="LinkedIn"
-          data-post-id="{{front.id}}">
-            <svg aria-hidden="true">
-              <use href="/assets/svg/icons.svg#icon-linkedin"></use>
-            </svg>
-          </button>
-          {{/linkedin}}
-          {{#facebook}}
-          <button class="btn btn--xs btn--icon btn--tone-sage" type="button" data-share="facebook" aria-label="Facebook"
-          data-post-id="{{front.id}}">
-            <svg aria-hidden="true">
-              <use href="/assets/svg/icons.svg#icon-facebook"></use>
-            </svg>
-          </button>
-          {{/facebook}}
-          {{#copy}}
-          <button class="btn btn--xs btn--icon btn--tone-sage" type="button" data-share="copy"
-            aria-label="{{i18n.post.operations.copyLink.aria}}"
-            data-post-id="{{front.id}}">
-            <svg aria-hidden="true">
-              <use href="/assets/svg/icons.svg#icon-copy"></use>
-            </svg>
-          </button>
-          {{/copy}}
-        {{/enabled}}
-      {{/share}}
-    {{/enabled}}
-  {{/site.features.postOperations}}
-  </div>
-
   <!-- Post Footer -->
   <footer class="post-footer">
-    {{#front.hasTags}}
-    <div class="post-tags">
+    {{> components/section_tags }}
 
-      {{#front.categoryUrl}}
-      <a class="btn btn--xs btn--tone-brand btn--icon-left" href="{{{front.categoryUrl}}}">
-        <svg aria-hidden="true">
-          <use href="/assets/svg/icons.svg#icon-category"></use>
-        </svg>
-        <span lang="{{lang}}">{{front.categoryLabel}}</span>
-      </a>
-      {{/front.categoryUrl}}
+    {{> components/section_series }}
 
-      {{#front.tagLinks}}
-      <a class="btn btn--xs btn--tone-sage btn--icon-left" href="{{{url}}}">
-        <svg aria-hidden="true">
-          <use href="/assets/svg/icons.svg#icon-tag"></use>
-        </svg>
-        <span lang="{{lang}}">{{label}}</span>
-      </a>
-      {{/front.tagLinks}}
-    </div>
-    {{/front.hasTags}}
+    {{> components/section_operations }}
 
-    {{#front.seriesListing.hasItems}}
-    <section class="post-series" {{#front.seriesListing.hasLabel}}aria-label="{{front.seriesListing.label}}"{{/front.seriesListing.hasLabel}}>
-      {{#front.seriesListing.hasLabel}}
-      <p class="post-series__title" lang="{{lang}}">
-        <svg aria-hidden="true">
-          <use href="/assets/svg/icons.svg#icon-series"></use>
-        </svg>
-        {{i18n.category.meta.seriesTitle}}
-      </p>
-      {{/front.seriesListing.hasLabel}}
-      <ol class="post-series__list">
-        {{#front.seriesListing.items}}
-        <li class="post-series__item{{#isCurrent}} is-current{{/isCurrent}}">
-          {{#isPlaceholder}}
-          <span class="post-series__placeholder" lang="{{lang}}">{{label}}</span>
-          {{/isPlaceholder}}
-          {{^isPlaceholder}}
-            {{#isCurrent}}
-            <span class="post-series__current" lang="{{lang}}">{{label}}</span>
-            {{/isCurrent}}
-            {{^isCurrent}}
-              {{#hasUrl}}
-              <a class="post-series__link" href="{{{url}}}" lang="{{lang}}">{{label}}</a>
-              {{/hasUrl}}
-              {{^hasUrl}}
-              <span class="post-series__link" lang="{{lang}}">{{label}}</span>
-              {{/hasUrl}}
-            {{/isCurrent}}
-          {{/isPlaceholder}}
-        </li>
-        {{/front.seriesListing.items}}
-      </ol>
-    </section>
-    {{/front.seriesListing.hasItems}}
+    {{> components/section_comments }}
   </footer>
   <!-- Post Footer -->
 

@@ -62,14 +62,12 @@
 
   html,
   body {
-    height: 100%;
+    @apply h-full;
   }
 
   body {
-    background-color: var(--bg);
-    color: var(--ink);
+    @apply bg-[var(--bg)] text-[var(--ink)] leading-[1.6];
     font-family: var(--font-body);
-    line-height: 1.6;
   }
 
   .font-sans {
@@ -92,7 +90,6 @@
   }
 
   img {
-    max-width: 100%;
-    height: auto;
+    @apply max-w-full h-auto;
   }
 }

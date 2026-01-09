@@ -8,51 +8,23 @@
     font-family: var(--font-body);
   }
 
-  .post-meta {
-    @apply py-4 rounded-2xl bg-[var(--bg)];
-  }
-
-  .post-meta__grid {
-    display: flex;
-    gap: 1rem;
-    justify-content: space-around;
-  }
-
-  .post-meta__item {
-    @apply flex flex-col gap-2 text-center;
-  }
-
-  .post-meta__item dt {
-    @apply uppercase font-mono text-sm;
-    color: var(--muted);
-  }
-
-  .post-meta__item dd {
-    @apply text-sm font-semibold;
-  }
 
   .post-body,
   article.page {
+    @apply text-[var(--ink)] leading-[1.7];
     font-family: var(--font-body);
-    color: var(--ink);
-    line-height: 1.7;
   }
 
   article.post .post-body img,
   article.page img {
-    @apply rounded-2xl;
-    display: block;
-    margin: 1.75rem auto;
+    @apply rounded-2xl block my-7 mx-auto;
   }
 
   article.post .post-body ul,
   article.post .post-body ol,
   article.page ul,
   article.page ol {
-    margin: 1.25rem 0 1.5rem;
-    padding: 0;
-    color: var(--ink);
-    list-style: none;
+    @apply mt-5 mb-6 p-0 text-[var(--ink)] list-none;
   }
 
   article.post .post-body ol,
@@ -62,25 +34,18 @@
 
   article.post .post-body li,
   article.page li {
-    position: relative;
-    padding-left: 1.75rem;
+    @apply relative pl-7;
   }
 
   article.post .post-body li + li,
   article.page li + li {
-    margin-top: 0.75rem;
+    @apply mt-3;
   }
 
   article.post .post-body ul li::before,
   article.page ul li::before {
     content: "";
-    position: absolute;
-    left: 0.45rem;
-    top: 0.65rem;
-    width: 0.4rem;
-    height: 0.4rem;
-    border-radius: 999px;
-    background: var(--brand-500);
+    @apply absolute left-[0.45rem] top-[0.65rem] w-[0.4rem] h-[0.4rem] rounded-full bg-[var(--brand-500)];
     box-shadow: 0 0 0 3px color-mix(in srgb, var(--brand-500) 30%, transparent);
   }
 
@@ -92,22 +57,14 @@
   article.post .post-body ol li::before,
   article.page ol li::before {
     content: counter(post-list-counter) ".";
-    position: absolute;
-    left: 0;
-    top: 0;
+    @apply absolute left-0 top-0 text-[0.85rem] tracking-[0.1em] text-[var(--muted)];
     font-family: var(--font-mono);
-    font-size: 0.85rem;
-    letter-spacing: 0.1em;
-    color: var(--muted);
   }
 
   article.post .post-body table,
   article.page table {
     @apply w-full text-sm my-8 border rounded-2xl border-[var(--sage-900)] bg-[var(--bg)];
-    overflow-x: auto;
-    overflow-y: hidden;
-    display: block;
-    border-collapse: collapse;
+    @apply overflow-x-auto overflow-y-hidden block border-collapse;
   }
 
   article.post .post-body th,
@@ -139,8 +96,7 @@
 
   article.post .post-body tr:nth-child(even),
   article.page tr:nth-child(even) {
-    background-color: var(--sage-100);
-    color: var(--ink);
+    @apply bg-[var(--sage-100)] text-[var(--ink)];
   }
 
   article.post .post-body tr,
@@ -173,72 +129,8 @@
 
     }
 
-    .post-operations {
-      @apply rounded-2xl border border-[var(--border)] flex flex-wrap gap-3 items-center justify-center py-4 bg-[var(--bg-elev)] my-6;
-    }
-
     footer.post-footer {
-      div.post-tags {
-        @apply flex flex-wrap gap-2 items-center justify-center;
-      }
-
-      .post-series {
-        @apply mt-8 rounded-2xl border border-[var(--border)] bg-[var(--bg-elev)] p-4;
-      }
-
-      .post-series__title {
-        @apply flex font-semibold tracking-wide uppercase text-base mb-3 pl-2 gap-2 items-center justify-start;
-        color: var(--ink-dim);
-
-        svg {
-          @apply h-6;
-        }
-      }
-
-      .post-series__list {
-        list-style: decimal;
-        padding-left: 1.5rem;
-        margin: 0;
-        display: flex;
-        flex-direction: column;
-        gap: 0.4rem;
-      }
-
-      .post-series__item {
-        @apply text-sm;
-        color: var(--ink);
-      }
-
-      .post-series__item.is-current {
-        @apply font-semibold;
-      }
-
-      .post-series__link,
-      .post-series__current,
-      .post-series__placeholder {
-        font-family: var(--font-body);
-      }
-
-      .post-series__link {
-        color: var(--brand-600);
-        text-decoration: underline;
-        text-decoration-thickness: 2px;
-        text-decoration-color: color-mix(
-          in srgb,
-          var(--brand-600) 50%,
-          transparent
-        );
-      }
-
-      .post-series__link:hover {
-        color: var(--brand-700);
-        text-decoration-color: var(--brand-700);
-      }
-
-      .post-series__placeholder {
-        color: var(--muted);
-        font-style: italic;
-      }
+      @apply flex flex-col gap-4;
     }
   }
 
@@ -252,8 +144,7 @@
 
   html.dark article.post .post-body > table > tbody > tr:nth-child(even),
   html.dark article.page > table > tbody > tr:nth-child(even) {
-    background-color: var(--sage-100);
-    color: var(--invert-ink);
+    @apply bg-[var(--sage-100)] text-[var(--invert-ink)];
   }
 
   @keyframes zoom-in {
@@ -281,22 +172,16 @@
   @media (min-width: 768px) {
     article.post .post-body p > img,
     article.page p > img {
-      cursor: zoom-in;
+      @apply cursor-zoom-in;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     article.post .post-body p > img.zoom,
     article.page p > img.zoom {
-      cursor: zoom-out;
-      position: fixed;
-      top: 50%;
-      left: 50%;
+      @apply cursor-zoom-out fixed top-1/2 left-1/2 z-[1001] w-auto h-auto;
       transform: translate(-50%, -50%) scale(1.02);
       max-width: min(90vw, 60rem);
       max-height: 90vh;
-      width: auto;
-      height: auto;
-      z-index: 1001;
       box-shadow: 0 25px 80px color-mix(in srgb, var(--ink) 25%, transparent);
       animation: zoom-in 0.25s ease;
     }
@@ -304,19 +189,15 @@
     body:has(article.post .post-body p > img.zoom)::after,
     body:has(article.page p > img.zoom)::after {
       content: "";
-      position: fixed;
-      inset: 0;
+      @apply fixed inset-0 z-[1000] pointer-events-none;
       background: color-mix(in srgb, var(--ink) 65%, transparent);
       backdrop-filter: blur(18px);
-      z-index: 1000;
       animation: overlay-fade 0.2s ease;
-      pointer-events: none;
     }
 
     article.post,
     article.page {
-      max-width: 70ch;
-      margin-inline: auto;
+      @apply max-w-[70ch] mx-auto;
 
       header.post-header {
         @apply flex flex-row flex-wrap items-start;
@@ -334,14 +215,6 @@
           @apply mx-0 mt-4;
         }
 
-      }
-    }
-  }
-
-  @media (min-width: 768px) {
-    article.post,
-    article.page {
-      header.post-header {
         div.post-cover {
           flex-basis: calc(75% - 0.75rem);
           max-width: calc(75% - 0.75rem);

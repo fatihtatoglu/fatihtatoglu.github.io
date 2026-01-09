@@ -1,0 +1,57 @@
+{{#site.features.postOperations}}
+{{#comment}}
+<section class="post-comments" data-comments data-post-id="{{front.id}}">
+  <header class="post-comments__header">
+    <div>
+      <h2 class="post-comments__title" data-i18n="post.comments.title">{{i18n.post.comments.title}}</h2>
+      <p class="post-comments__subtitle" data-i18n="post.comments.subtitle">{{i18n.post.comments.subtitle}}</p>
+    </div>
+    <div class="post-comments__count">
+      <span data-comment-count>0</span>
+      <span data-i18n="post.comments.countLabel">{{i18n.post.comments.countLabel}}</span>
+    </div>
+  </header>
+
+  <div class="post-comments__list" data-comment-list aria-live="polite"></div>
+  <p class="post-comments__empty" data-comment-empty hidden data-i18n="post.comments.empty">{{i18n.post.comments.empty}}</p>
+
+  <form class="post-comments__form" data-comment-form>
+    <div class="post-comments__fields">
+      <label class="post-comments__field">
+        <span data-i18n="post.comments.form.name.label">{{i18n.post.comments.form.name.label}}</span>
+        <input type="text" name="name" required autocomplete="name"
+          placeholder="{{i18n.post.comments.form.name.placeholder}}"
+          data-i18n-attrs="placeholder:post.comments.form.name.placeholder">
+      </label>
+
+      <label class="post-comments__field">
+        <span data-i18n="post.comments.form.email.label">{{i18n.post.comments.form.email.label}}</span>
+        <input type="email" name="email" required autocomplete="email"
+          placeholder="{{i18n.post.comments.form.email.placeholder}}"
+          data-i18n-attrs="placeholder:post.comments.form.email.placeholder">
+      </label>
+
+      <label class="post-comments__field post-comments__field--full">
+        <span data-i18n="post.comments.form.message.label">{{i18n.post.comments.form.message.label}}</span>
+        <textarea name="message" rows="4" required
+          placeholder="{{i18n.post.comments.form.message.placeholder}}"
+          data-i18n-attrs="placeholder:post.comments.form.message.placeholder"></textarea>
+      </label>
+    </div>
+
+    {{#site.features.postOperations.turnstileSiteKey}}
+    <div class="post-comments__captcha">
+      <div class="cf-turnstile" data-sitekey="{{site.features.postOperations.turnstileSiteKey}}"></div>
+    </div>
+    {{/site.features.postOperations.turnstileSiteKey}}
+
+    <div class="post-comments__actions">
+      <button class="btn btn--sm btn--tone-brand btn--third" type="submit" data-comment-submit data-i18n="post.comments.form.submit">
+        {{i18n.post.comments.form.submit}}
+      </button>
+      <span class="post-comments__status" data-comment-status aria-live="polite"></span>
+    </div>
+  </form>
+</section>
+{{/comment}}
+{{/site.features.postOperations}}

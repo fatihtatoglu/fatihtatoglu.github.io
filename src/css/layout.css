@@ -4,29 +4,16 @@
   }
 
   a.skip-link {
-    position: absolute;
-    top: 0.5rem;
-    left: 0.5rem;
-    padding: 0.35rem 0.9rem;
-    border-radius: 999px;
-    background-color: var(--brand-500);
-    color: white;
-    font-size: 0.85rem;
-    font-weight: 500;
-    transform: translateY(-150%);
-    transition: transform 0.2s ease;
-    z-index: 10;
+    @apply absolute top-2 left-2 px-[0.9rem] py-[0.35rem] rounded-full bg-[var(--brand-500)] text-white text-[0.85rem] font-medium -translate-y-[150%] transition-transform z-10;
   }
 
   a.skip-link:focus-visible {
-    transform: translateY(0);
-    outline: 2px solid var(--brand-300);
-    outline-offset: 2px;
+    @apply translate-y-0 outline outline-2 outline-offset-2;
+    outline-color: var(--brand-300);
   }
 
   div.app-shell {
-    @apply mx-auto flex min-h-dvh w-full flex-col;
-    row-gap: 1rem;
+    @apply mx-auto flex min-h-dvh w-full flex-col gap-4;
     padding: var(--shell-gutter);
   }
 
@@ -62,31 +49,21 @@
         @apply border border-[--border] bg-[--bg] fixed rounded-2xl p-5 flex flex-col z-30 right-4 left-4 mx-auto mt-24;
 
         input[type="search"].search-field {
-          width: 100%;
-          border-radius: 12px;
-          border: 1px solid var(--border);
-          background-color: var(--bg);
-          padding: 0.6rem 0.9rem;
+          @apply w-full rounded-[12px] border border-[var(--border)] bg-[var(--bg)] px-[0.9rem] py-[0.6rem] text-[0.85rem] text-[var(--ink)];
           font-family: var(--font-mono);
-          font-size: 0.85rem;
-          color: var(--ink);
         }
 
         input[type="search"].search-field::placeholder {
-          color: var(--muted);
-          letter-spacing: 0.08em;
+          @apply text-[var(--muted)] tracking-[0.08em];
         }
 
         input[type="search"].search-field:focus-visible {
-          outline: 2px solid var(--brand-400);
-          outline-offset: 2px;
+          @apply outline outline-2 outline-offset-2;
+          outline-color: var(--brand-400);
         }
 
         nav ul.menu-list {
-          list-style: none;
-          display: flex;
-          flex-direction: column;
-          gap: 0.35rem;
+          @apply list-none flex flex-col gap-[0.35rem];
 
           li {
             @apply mb-1;
@@ -97,9 +74,7 @@
           }
 
           li a.menu-link {
-            width: 100%;
-            justify-content: flex-start;
-            text-align: left;
+            @apply w-full justify-start text-left;
             --btn-letter-spacing: 0.25em;
             --btn-font-size: 0.75rem;
             --btn-padding-y: 1rem;
@@ -127,7 +102,7 @@
           }
 
           li a.menu-link:focus-visible {
-            outline: none;
+            @apply outline-none;
             box-shadow: 0 0 0 2px rgba(90, 141, 240, 0.25);
             --btn-bg: var(--bg);
             --btn-color: var(--brand-700);
@@ -146,15 +121,12 @@
       }
 
       div.menu-overlay {
-        position: fixed;
-        inset: 0;
+        @apply fixed inset-0 z-[15] backdrop-blur-[8px];
         background: rgba(6, 11, 20, 0.4);
-        backdrop-filter: blur(8px);
-        z-index: 15;
       }
 
       div.menu-overlay[hidden] {
-        display: none;
+        @apply hidden;
       }
 
       nav.line-menu {
@@ -174,8 +146,7 @@
       }
 
       p.slogan {
-        @apply font-mono text-sm text-center m-0;
-        color: var(--ink-dim);
+        @apply font-mono text-sm text-center m-0 text-[var(--ink-dim)];
       }
     }
   }
@@ -307,14 +278,13 @@
   }
 
   main {
-    max-width: 100%;
-    margin: 0px auto;
+    @apply max-w-full mx-auto;
   }
 
   @media (min-width: 768px) {
     main {
       /* max-width: 95%; */
-      margin: 0px auto;
+      @apply mx-auto;
     }
   }
 

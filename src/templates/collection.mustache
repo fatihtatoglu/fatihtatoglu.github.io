@@ -20,55 +20,7 @@
   {{#listing.hasItems}}
     <div class="category-listing">
     {{#listing.items}}
-    <article id="post-{{id}}" class="post-card">
-    <!-- Post Header -->
-    <header class="post-header">
-
-      {{#cover}}
-      <div class="post-cover">
-        <figure class="post-cover">
-          <img src="{{.}}" alt="{{coverAlt}}">
-          {{#coverCaption}}
-          <figcaption>{{.}}</figcaption>
-          {{/coverCaption}}
-        </figure>
-      </div>
-      {{/cover}}
-
-      <div class="post-meta">
-        <dl class="post-meta__grid">
-          {{#dateDisplay}}
-          <div class="post-meta__item">
-            <dt lang="{{lang}}">{{i18n.category.meta.publishedLabel}}</dt>
-            <dd>{{.}}</dd>
-          </div>
-          {{/dateDisplay}}
-
-          {{#readingTime}}
-          <div class="post-meta__item">
-            <dt lang="{{lang}}">{{i18n.category.meta.readingTimeLabel}}</dt>
-            <dd>{{.}} {{i18n.category.readingTimeSuffix}}</dd>
-          </div>
-          {{/readingTime}}
-        </dl>
-      </div>
-    </header>
-    <!-- Post Header -->
-
-    <!-- Post Content -->
-    <div class="post-body">
-      <h2 class="text-lg">
-        <a href="{{{canonical}}}">{{title}}</a>
-      </h2>
-
-      {{#description}}
-      <p class="text-sm mb-0">
-        {{.}}
-      </p>
-      {{/description}}
-    </div>
-    <!-- Post Content -->
-    </article>
+    {{> components/component_post-card }}
     {{/listing.items}}
     </div>
   {{/listing.hasItems}}
@@ -82,35 +34,5 @@
     </p>
   {{/listing.hasItems}}
 
-  {{#listing.hasItems}}
-    {{#listing.hasPagination}}
-    <nav class="flex justify-between items-center w-full p-2" aria-label="Sayfa geçişleri">
-      {{#listing}}
-        {{#hasPrev}}
-        <a
-          class="btn btn--sm btn--tone-neutral btn--icon-left"
-          href="{{prevUrl}}"
-        >
-          <svg aria-hidden="true">
-            <use href="/assets/svg/icons.svg#icon-arrow-left"></use>
-          </svg>
-          <span>{{i18n.ui.pagination.previous}}</span>
-        </a>
-        {{/hasPrev}}
-
-        {{#hasNext}}
-        <a
-          class="btn btn--sm btn--tone-neutral btn--icon-right"
-          href="{{nextUrl}}"
-        >
-          <span>{{i18n.ui.pagination.next}}</span>
-          <svg aria-hidden="true">
-            <use href="/assets/svg/icons.svg#icon-arrow-right"></use>
-          </svg>
-        </a>
-        {{/hasNext}}
-      {{/listing}}
-    </nav>
-    {{/listing.hasPagination}}
-  {{/listing.hasItems}}
+  {{> components/component_pagination }}
 </section>

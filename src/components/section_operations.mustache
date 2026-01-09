@@ -21,6 +21,15 @@
       <span class="btn__badge" data-count="dislike" aria-hidden="true">0</span>
     </button>
     {{/dislike}}
+    {{#comment}}
+    <button class="btn btn--xs btn--icon btn--tone-sage post-operations__comment" type="button"
+      aria-label="{{i18n.post.operations.comment.aria}}"
+      data-comment-scroll>
+      <svg aria-hidden="true">
+        <use href="/assets/svg/icons.svg#icon-comment"></use>
+      </svg>
+    </button>
+    {{/comment}}
     {{#share}}
       {{#enabled}}
         {{#whatsapp}}

@@ -1,6 +1,6 @@
 {{#site.features.postOperations}}
 {{#comment}}
-<section class="post-comments" data-comments data-post-id="{{front.id}}">
+<section class="post-comments" data-comments data-post-id="{{front.id}}" id="post-comments">
   <header class="post-comments__header">
     <div>
       <h2 class="post-comments__title" data-i18n="post.comments.title">{{i18n.post.comments.title}}</h2>
@@ -46,7 +46,7 @@
     {{/site.features.postOperations.turnstileSiteKey}}
 
     <div class="post-comments__actions">
-      <button class="btn btn--sm btn--tone-brand btn--third" type="submit" data-comment-submit data-i18n="post.comments.form.submit">
+      <button class="btn btn--md btn--tone-brand btn--third" type="submit" data-comment-submit data-i18n="post.comments.form.submit">
         {{i18n.post.comments.form.submit}}
       </button>
       <span class="post-comments__status" data-comment-status aria-live="polite"></span>

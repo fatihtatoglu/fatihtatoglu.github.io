@@ -4,7 +4,7 @@
   }
 
   figure.post-cover figcaption {
-    @apply text-xs text-center p-2;
+    @apply text-xs text-center p-2 font-semibold;
     font-family: var(--font-body);
   }
 
@@ -45,7 +45,7 @@
   article.post .post-body ul li::before,
   article.page ul li::before {
     content: "";
-    @apply absolute left-[0.45rem] top-[0.65rem] w-[0.4rem] h-[0.4rem] rounded-full bg-[var(--brand-500)];
+    @apply absolute left-[0.45rem] top-[0.65rem] w-[0.4rem] h-[0.4rem] rounded-2xl bg-[var(--brand-500)];
     box-shadow: 0 0 0 3px color-mix(in srgb, var(--brand-500) 30%, transparent);
   }
 
@@ -124,13 +124,13 @@
       }
 
       div.post-meta {
-        @apply mx-4;
+        @apply mx-4 border border-[var(--border)];
       }
 
     }
 
     footer.post-footer {
-      @apply flex flex-col gap-4;
+      @apply flex flex-col gap-4 pt-4 border-t border-[var(--border)];
     }
   }
 

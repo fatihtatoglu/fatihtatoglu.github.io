@@ -7,7 +7,7 @@
 
     .demo-breakpoint-indicator {
       border: 1px solid var(--border);
-      border-radius: 999px;
+      border-radius: var(--radius-lg);
       padding: 0.4rem 1.05rem;
       font-family: var(--font-mono);
       font-size: 0.85rem;
@@ -76,7 +76,7 @@
 
     .demo-token {
       border: 1px solid var(--border);
-      border-radius: var(--radius-md);
+      border-radius: var(--radius-lg);
       padding: 1rem;
       background: var(--bg);
       display: flex;
@@ -93,7 +93,7 @@
     .demo-swatch {
       width: 100%;
       height: 64px;
-      border-radius: var(--radius-md);
+      border-radius: var(--radius-lg);
       border: 1px solid color-mix(in srgb, var(--border) 60%, transparent);
       box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
     }
@@ -112,7 +112,7 @@
 
     .demo-spacing {
       height: 12px;
-      border-radius: 999px;
+      border-radius: var(--radius-lg);
       background: var(--brand-300);
     }
 
@@ -136,7 +136,7 @@
       display: flex;
       align-items: center;
       gap: 0.75rem;
-      border-radius: var(--radius-md);
+      border-radius: var(--radius-lg);
       padding: 0.85rem 1rem;
       border: 1px solid var(--border);
       background: var(--bg-elev);
@@ -162,7 +162,7 @@
       flex-shrink: 0;
       width: 32px;
       height: 32px;
-      border-radius: 999px;
+      border-radius: var(--radius-lg);
       display: grid;
       place-items: center;
       color: var(--invert-ink);
@@ -366,7 +366,7 @@ function applyTheme() {
       <h2>Radius & Spacing</h2>
       <div class="demo-grid">
         <div class="demo-token">
-          <div class="demo-radius" style="border-radius: var(--radius-md);"></div>
+          <div class="demo-radius" style="border-radius: var(--radius-lg);"></div>
           <code>--radius-md</code>
         </div>
         <div class="demo-token">
@@ -378,13 +378,13 @@ function applyTheme() {
           <code>--spacing</code>
         </div>
         <div class="demo-token">
-          <div style="width: 100%; border: 1px solid var(--brand-200); border-radius: var(--radius-md); padding: var(--shell-gutter);">
+          <div style="width: 100%; border: 1px solid var(--brand-200); border-radius: var(--radius-lg); padding: var(--shell-gutter);">
             Shell gutter padding örneği
           </div>
           <code>--shell-gutter</code>
         </div>
         <div class="demo-token">
-          <div style="width: 100%; border-radius: var(--radius-md); background: color-mix(in srgb, var(--brand-400) 20%, transparent); height: var(--shell-footer-gap);"></div>
+          <div style="width: 100%; border-radius: var(--radius-lg); background: color-mix(in srgb, var(--brand-400) 20%, transparent); height: var(--shell-footer-gap);"></div>
           <code>--shell-footer-gap</code>
         </div>
       </div>
@@ -393,7 +393,7 @@ function applyTheme() {
     <section class="demo-section">
       <h2>Shell Parametreleri</h2>
       <div class="demo-token demo-shell">
-        <div style="background: var(--brand-50); padding: var(--shell-gutter); border-radius: var(--radius-md);">
+        <div style="background: var(--brand-50); padding: var(--shell-gutter); border-radius: var(--radius-lg);">
           Shell Gutter alanı örneği
         </div>
         <div style="height: 2px; width: 100%; background: color-mix(in srgb, var(--brand-500) 40%, transparent);"></div>

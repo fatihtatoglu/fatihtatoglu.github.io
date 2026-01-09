@@ -1,9 +1,9 @@
 {{#listing.hasItems}}
   {{#listing.hasPagination}}
-  <nav class="flex justify-between items-center w-full p-2" aria-label="Sayfa geçişleri">
+  <nav class="pagination" aria-label="Sayfa geçişleri">
     {{#listing}}
       <button
-        class="btn btn--sm btn--tone-neutral btn--icon-left"
+        class="btn btn--sm btn--quarter {{#hasPrev}}btn--tone-brand{{/hasPrev}} {{^hasPrev}}btn--tone-neutral{{/hasPrev}} btn--icon-left"
         data-href="{{prevUrl}}" {{^hasPrev}}disabled{{/hasPrev}}
       >
         <svg aria-hidden="true">
@@ -13,7 +13,7 @@
       </button>
 
       <button
-        class="btn btn--sm btn--tone-neutral btn--icon-right"
+        class="btn btn--sm btn--quarter {{#hasNext}}btn--tone-brand{{/hasNext}} {{^hasNext}}btn--tone-neutral{{/hasNext}} btn--icon-right"
         data-href="{{nextUrl}}" {{^hasNext}}disabled{{/hasNext}}
       >
         <span>{{i18n.ui.pagination.next}}</span>

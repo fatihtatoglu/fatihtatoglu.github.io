@@ -12,6 +12,7 @@
 /* Components */
 @import "./component_post-meta.css";
 @import "./component_post-card.css";
+@import "./component_pagination.css";
 @import "./section_operations.css";
 @import "./section_tags.css";
 @import "./section_series.css";

@@ -18,7 +18,7 @@
     --btn-font-size: 0.75rem;
     --btn-font-weight: 600;
     --btn-gap: 0.35rem;
-    --btn-radius: 12px;
+    --btn-radius: 16px;
     --btn-border-width: 1.5px;
     --btn-icon-size: 48px;
 
@@ -75,7 +75,7 @@
     --btn-padding-x: 0.55rem;
     --btn-font-size: 0.62rem;
     --btn-letter-spacing: 0.2em;
-    --btn-radius: 8px;
+    --btn-radius: 16px;
   }
 
   .btn--sm {
@@ -94,7 +94,7 @@
     --btn-padding-y: 0.55rem;
     --btn-padding-x: 1.1rem;
     --btn-font-size: 0.85rem;
-    --btn-radius: 14px;
+    --btn-radius: 16px;
   }
 
   .btn--xl {
@@ -168,7 +168,7 @@
     --btn-padding-x: 0;
     --btn-padding-y: 0;
     --btn-gap: 0.15rem;
-    @apply w-[var(--btn-icon-size)] h-[var(--btn-icon-size)] rounded-[12px];
+    @apply w-[var(--btn-icon-size)] h-[var(--btn-icon-size)] rounded-2xl;
   }
 
   .btn--icon svg {
@@ -204,7 +204,7 @@
   }
 
   .btn__badge {
-    @apply absolute -top-2.5 -right-2.5 min-w-5 h-5 px-1.5 rounded-full bg-[var(--sage-500)] text-white text-[0.6rem] font-bold leading-5 text-center tracking-normal opacity-0 scale-[0.85] transition-[opacity,transform] duration-200 ease-in pointer-events-none;
+    @apply absolute -top-2.5 -right-2.5 min-w-5 h-5 px-1.5 rounded-2xl bg-[var(--sage-500)] text-white text-[0.6rem] font-bold leading-5 text-center tracking-normal opacity-0 scale-[0.85] transition-[opacity,transform] duration-200 ease-in pointer-events-none;
   }
 
   .btn--has-badge[data-has-count="true"] .btn__badge {
@@ -445,11 +445,11 @@
 
   .language-button {
     --btn-gap: 0;
-    border-radius: 10px;
+    @apply rounded-2xl;
   }
 
   .lang-flag {
-    @apply hidden w-[30px] h-[22px] rounded-[6px] overflow-hidden;
+    @apply hidden w-7.5 h-5.5 overflow-hidden;
   }
 
   .language-button[data-active-lang="tr"] [data-flag="tr"],
@@ -474,7 +474,7 @@
   .icon-menu,
   .icon-menu::before,
   .icon-menu::after {
-    @apply block w-[18px] h-[2px] rounded-full bg-current;
+    @apply block w-[18px] h-[2px] rounded-2xl bg-current;
     transition: background-color 0.2s ease;
   }
 

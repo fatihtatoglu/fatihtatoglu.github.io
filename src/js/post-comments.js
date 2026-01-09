@@ -358,6 +358,24 @@ function bindReactions(apiBase, postId) {
   });
 }
 
+function bindScrollButton(section) {
+  if (!doc || !section) {
+    return;
+  }
+
+  const buttons = doc.querySelectorAll("[data-comment-scroll]");
+  if (!buttons.length) {
+    return;
+  }
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", (event) => {
+      event.preventDefault();
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  });
+}
+
 function initPostComments() {
   if (!doc || commentsState.initialized) {
     return postCommentsApi;
@@ -395,6 +413,7 @@ function initPostComments() {
 
   bindForm(apiBase, commentsState.postId);
   bindReactions(apiBase, commentsState.postId);
+  bindScrollButton(section);
   commentsState.initialized = true;
 
   if (commentsState.postId) {

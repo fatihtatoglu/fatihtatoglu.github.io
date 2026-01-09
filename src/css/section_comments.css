@@ -1,6 +1,6 @@
 @layer components {
   article.post .post-comments {
-    @apply border border-[var(--border)] rounded-3xl bg-[var(--bg)] p-6 flex flex-col gap-6;
+    @apply border border-[var(--border)] rounded-2xl bg-[var(--bg-elev)] p-6 flex flex-col gap-6;
   }
 
   .post-comments__header {
@@ -8,16 +8,16 @@
   }
 
   .post-comments__title {
-    @apply m-0 text-[1.4rem] font-semibold;
+    @apply m-0 text-[1.55rem] font-semibold text-[var(--ink)];
   }
 
   .post-comments__subtitle {
-    @apply mt-[0.4rem] mb-0 text-[0.95rem] text-[var(--muted)];
+    @apply mt-[0.4rem] mb-0 text-[0.95rem] text-[var(--ink-dim)];
     font-family: var(--font-body);
   }
 
   .post-comments__count {
-    @apply flex items-center gap-[0.4rem] text-[0.75rem] uppercase tracking-[0.15em] text-[var(--muted)];
+    @apply flex items-center gap-[0.4rem] text-[0.75rem] uppercase tracking-[0.15em] text-[var(--ink-dim)];
     font-family: var(--font-mono);
   }
 
@@ -26,7 +26,7 @@
   }
 
   .post-comments__empty {
-    @apply m-0 text-[var(--muted)] italic;
+    @apply m-0 text-[0.95rem] text-[var(--ink-dim)] italic;
   }
 
   .comment-card {
@@ -42,7 +42,7 @@
   }
 
   .comment-card__badge {
-    @apply text-[0.65rem] uppercase tracking-[0.12em] text-[var(--brand-700)] px-2 py-[0.2rem] rounded-full;
+    @apply text-[0.65rem] uppercase tracking-[0.12em] text-[var(--brand-700)] px-2 py-[0.2rem] rounded-2xl;
     background: color-mix(in srgb, var(--brand-500) 15%, transparent);
     font-family: var(--font-mono);
   }
@@ -79,12 +79,12 @@
   }
 
   .post-comments__field span {
-    @apply text-[0.85rem] font-semibold text-[var(--ink-dim)] tracking-[0.04em];
+    @apply text-[0.9rem] font-semibold text-[var(--ink)] tracking-[0.03em];
   }
 
   .post-comments__field input,
   .post-comments__field textarea {
-    @apply border border-[var(--border)] rounded-[12px] px-[0.85rem] py-[0.65rem] bg-[var(--bg)] text-[var(--ink)];
+    @apply border border-[var(--border)] rounded-2xl px-[0.95rem] py-[0.75rem] bg-[var(--bg)] text-[var(--ink)];
     font-family: var(--font-body);
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
   }

@@ -1,10 +1,10 @@
 @layer base {
   body {
-    @apply min-h-dvh bg-[--bg] font-sans text-base text-[--ink] antialiased;
+    @apply min-h-dvh bg-[var(--bg)] font-sans text-base text-[var(--ink)] antialiased;
   }
 
   a.skip-link {
-    @apply absolute top-2 left-2 px-[0.9rem] py-[0.35rem] rounded-full bg-[var(--brand-500)] text-white text-[0.85rem] font-medium -translate-y-[150%] transition-transform z-10;
+    @apply absolute top-2 left-2 px-[0.9rem] py-[0.35rem] rounded-2xl bg-[var(--brand-500)] text-white text-[0.85rem] font-medium -translate-y-[150%] transition-transform z-10;
   }
 
   a.skip-link:focus-visible {
@@ -13,12 +13,11 @@
   }
 
   div.app-shell {
-    @apply mx-auto flex min-h-dvh w-full flex-col gap-4;
-    padding: var(--shell-gutter);
+    @apply mx-auto flex min-h-dvh w-full flex-col gap-4 p-[var(--shell-gutter)];
   }
 
   header.site-header {
-    @apply rounded-2xl border border-[--border] bg-[--bg] p-4;
+    @apply rounded-2xl border border-[var(--border)] bg-[var(--bg)] p-4;
     transition: margin 0.2s ease, top 0.2s ease, border-radius 0.2s ease,
       width 0.2s ease;
 
@@ -32,11 +31,11 @@
           @apply w-full text-center;
 
           a.owner {
-            @apply text-3xl uppercase text-[--muted];
+            @apply text-3xl uppercase text-[var(--muted)];
           }
 
           p.role {
-            @apply font-mono text-xl font-medium text-[--ink] hidden;
+            @apply font-mono text-xl font-medium text-[var(--ink)] hidden;
           }
         }
 
@@ -46,10 +45,10 @@
       }
 
       div.menu-drawer {
-        @apply border border-[--border] bg-[--bg] fixed rounded-2xl p-5 flex flex-col z-30 right-4 left-4 mx-auto mt-24;
+        @apply border border-[var(--border)] bg-[var(--bg)] fixed rounded-2xl p-5 flex flex-col z-30 right-4 left-4 mx-auto mt-24;
 
         input[type="search"].search-field {
-          @apply w-full rounded-[12px] border border-[var(--border)] bg-[var(--bg)] px-[0.9rem] py-[0.6rem] text-[0.85rem] text-[var(--ink)];
+          @apply w-full rounded-2xl border border-[var(--border)] bg-[var(--bg)] px-[0.9rem] py-[0.6rem] text-[0.85rem] text-[var(--ink)];
           font-family: var(--font-mono);
         }
 
@@ -117,7 +116,7 @@
       }
 
       .dark div.menu-drawer {
-        @apply bg-[--bg-elev];
+        @apply bg-[var(--bg-elev)];
       }
 
       div.menu-overlay {
@@ -161,14 +160,11 @@
         div.header-bar {
           div.header-bar-wrapper {
             @apply flex flex-row gap-4 items-center;
-
-            width: unset;
-            text-align: left;
+            @apply w-auto text-left;
           }
 
           div.header-buttons {
-            display: unset;
-            margin-inline: unset;
+            @apply block mx-0;
           }
         }
       }
@@ -185,7 +181,7 @@
 
           div.header-bar-wrapper {
             @apply flex-col gap-0;
-            align-items: unset;
+            @apply items-start;
 
             a.owner {
               @apply text-lg;
@@ -283,21 +279,18 @@
 
   @media (min-width: 768px) {
     main {
-      /* max-width: 95%; */
       @apply mx-auto;
     }
   }
 
   footer.site-footer {
-    @apply text-sm text-[--muted] rounded-t-3xl;
-    position: static;
-    border-radius: 24px 24px 0 0;
+    @apply text-sm text-[var(--muted)] static;
 
     div.footer-wrapper {
-      @apply flex flex-col gap-3 rounded-2xl border border-[--border] bg-[--bg] p-4 backdrop-blur;
+      @apply flex flex-col gap-6 rounded-2xl border border-[var(--border)] bg-[var(--bg)] p-4 backdrop-blur;
 
       div.footer-tags {
-        @apply mb-2 items-start;
+        @apply items-start;
 
         ul {
           @apply flex flex-wrap items-center justify-center gap-3 text-xs font-medium;
@@ -305,15 +298,15 @@
       }
 
       div.footer-policies {
-        @apply flex flex-wrap justify-center my-2 gap-2 text-center text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-[--muted];
+        @apply flex flex-wrap justify-center gap-2 text-center text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-[var(--muted)];
       }
 
       div.footer-social {
-        @apply flex flex-wrap justify-center gap-3 text-sm my-2 text-[--ink];
+        @apply flex flex-wrap justify-center gap-3 text-sm text-[var(--ink)];
       }
 
       p.copyright {
-        @apply text-xs text-center my-2 text-[--muted];
+        @apply m-0 text-xs text-center text-[var(--muted)];
       }
     }
   }
@@ -321,55 +314,40 @@
   @media (min-width: 768px) {
     footer.site-footer {
       div.footer-wrapper {
-        @apply flex-row flex-wrap gap-3 justify-between;
+        div.footer-tags {
+          @apply flex-1 w-full;
+        }
+        div.footer-policies {
+          @apply w-full;
+        }
+        div.footer-social {
+          @apply w-full flex flex-row justify-center;
+        }
+      }
+    }
+  }
+
+  @media (min-width: 1280px) {
+    footer.site-footer {
+      div.footer-wrapper {
+        @apply flex flex-row flex-wrap gap-8;
+
+        div.footer-tags {
+          @apply w-1/4;
+        }
 
         div.footer-policies {
-          @apply flex-col justify-start m-0;
+          @apply w-1/4;
+          @apply flex-col justify-start;
+        }
+
+        div.footer-social {
+          @apply w-1/4 py-0;
+          @apply gap-2 justify-center content-start;
         }
 
         p.copyright {
           @apply w-full;
-        }
-
-        div.footer-tags {
-          @apply mb-0 flex w-1/2;
-        }
-
-        div.footer-social {
-          @apply my-0 flex-col justify-start content-start gap-2;
-        }
-      }
-    }
-  }
-
-  @media (min-width: 960px) {
-    footer.site-footer {
-      div.footer-wrapper {
-        div.footer-tags {
-          flex-grow: 1;
-          width: 45%;
-        }
-        div.footer-policies {
-          width: max-content;
-        }
-        div.footer-social {
-          @apply w-full py-4 flex-row justify-center;
-        }
-      }
-    }
-  }
-
-  @media (min-width: 1536px) {
-    footer.site-footer {
-      div.footer-wrapper {
-        div.footer-tags {
-          @apply w-1/4;
-        }
-        div.footer-policies {
-          @apply w-1/4;
-        }
-        div.footer-social {
-          @apply w-1/4 py-0;
         }
       }
     }

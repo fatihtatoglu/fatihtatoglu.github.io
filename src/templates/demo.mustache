@@ -7,7 +7,7 @@
 
     .demo-breakpoint-indicator {
       border: 1px solid var(--border);
-      border-radius: 999px;
+      border-radius: var(--radius-lg);
       padding: 0.4rem 1.05rem;
       font-family: var(--font-mono);
       font-size: 0.85rem;
@@ -76,7 +76,7 @@
 
     .demo-token {
       border: 1px solid var(--border);
-      border-radius: var(--radius-md);
+      border-radius: var(--radius-lg);
       padding: 1rem;
       background: var(--bg);
       display: flex;
@@ -93,7 +93,7 @@
     .demo-swatch {
       width: 100%;
       height: 64px;
-      border-radius: var(--radius-md);
+      border-radius: var(--radius-lg);
       border: 1px solid color-mix(in srgb, var(--border) 60%, transparent);
       box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
     }
@@ -112,7 +112,7 @@
 
     .demo-spacing {
       height: 12px;
-      border-radius: 999px;
+      border-radius: var(--radius-lg);
       background: var(--brand-300);
     }
 
@@ -136,7 +136,7 @@
       display: flex;
       align-items: center;
       gap: 0.75rem;
-      border-radius: var(--radius-md);
+      border-radius: var(--radius-lg);
       padding: 0.85rem 1rem;
       border: 1px solid var(--border);
       background: var(--bg-elev);
@@ -162,7 +162,7 @@
       flex-shrink: 0;
       width: 32px;
       height: 32px;
-      border-radius: 999px;
+      border-radius: var(--radius-lg);
       display: grid;
       place-items: center;
       color: var(--invert-ink);
@@ -267,8 +267,8 @@
       <div class="demo-alert-list">
         <div class="demo-alert" data-tone="success">
           <div class="demo-alert-icon" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 32 32">
-              <polyline points="3 17 11 26 29 6" fill="none" stroke="currentColor" stroke-linecap="square" stroke-miterlimit="10" stroke-width="4"></polyline>
+            <svg aria-hidden="true" width="16" height="16">
+              <use href="/assets/svg/icons.svg#icon-check"></use>
             </svg>
           </div>
           <div>
@@ -278,10 +278,8 @@
         </div>
         <div class="demo-alert" data-tone="warning">
           <div class="demo-alert-icon" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20px" height="20px" viewBox="0 0 48 48">
-              <path d="M20.1049 7.15552L3.60955 34.5335C1.87754 37.4075 4.04293 41 7.50544 41H40.4946C43.9571 41 46.1225 37.4075 44.3905 34.5335L27.8966 7.15552C26.1646 4.28149 21.8369 4.28149 20.1049 7.15552Z" stroke="currentColor" stroke-width="4" stroke-miterlimit="10" stroke-linecap="square" fill="none"></path>
-              <path d="M24 15V27" stroke="currentColor" stroke-width="4" stroke-miterlimit="10" stroke-linecap="square" data-color="color-2" fill="none"></path>
-              <path d="M24 34C24.5523 34 25 33.5523 25 33C25 32.4477 24.5523 32 24 32C23.4477 32 23 32.4477 23 33C23 33.5523 23.4477 34 24 34Z" fill="currentColor" stroke="currentColor" stroke-width="4" stroke-miterlimit="10" stroke-linecap="square" data-color="color-2"></path>
+            <svg aria-hidden="true" width="20" height="20">
+              <use href="/assets/svg/icons.svg#icon-warning"></use>
             </svg>
           </div>
           <div>
@@ -291,9 +289,8 @@
         </div>
         <div class="demo-alert" data-tone="error">
           <div class="demo-alert-icon" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 48 48">
-              <path d="M39 9L9 39" stroke="currentColor" stroke-width="4" stroke-miterlimit="10" stroke-linecap="square" data-color="color-2" fill="none"></path>
-              <path d="M39 39L9 9" stroke="currentColor" stroke-width="4" stroke-miterlimit="10" stroke-linecap="square" fill="none"></path>
+            <svg aria-hidden="true" width="16" height="16">
+              <use href="/assets/svg/icons.svg#icon-error"></use>
             </svg>
           </div>
           <div>
@@ -369,7 +366,7 @@ function applyTheme() {
       <h2>Radius & Spacing</h2>
       <div class="demo-grid">
         <div class="demo-token">
-          <div class="demo-radius" style="border-radius: var(--radius-md);"></div>
+          <div class="demo-radius" style="border-radius: var(--radius-lg);"></div>
           <code>--radius-md</code>
         </div>
         <div class="demo-token">
@@ -381,13 +378,13 @@ function applyTheme() {
           <code>--spacing</code>
         </div>
         <div class="demo-token">
-          <div style="width: 100%; border: 1px solid var(--brand-200); border-radius: var(--radius-md); padding: var(--shell-gutter);">
+          <div style="width: 100%; border: 1px solid var(--brand-200); border-radius: var(--radius-lg); padding: var(--shell-gutter);">
             Shell gutter padding örneği
           </div>
           <code>--shell-gutter</code>
         </div>
         <div class="demo-token">
-          <div style="width: 100%; border-radius: var(--radius-md); background: color-mix(in srgb, var(--brand-400) 20%, transparent); height: var(--shell-footer-gap);"></div>
+          <div style="width: 100%; border-radius: var(--radius-lg); background: color-mix(in srgb, var(--brand-400) 20%, transparent); height: var(--shell-footer-gap);"></div>
           <code>--shell-footer-gap</code>
         </div>
       </div>
@@ -396,7 +393,7 @@ function applyTheme() {
     <section class="demo-section">
       <h2>Shell Parametreleri</h2>
       <div class="demo-token demo-shell">
-        <div style="background: var(--brand-50); padding: var(--shell-gutter); border-radius: var(--radius-md);">
+        <div style="background: var(--brand-50); padding: var(--shell-gutter); border-radius: var(--radius-lg);">
           Shell Gutter alanı örneği
         </div>
         <div style="height: 2px; width: 100%; background: color-mix(in srgb, var(--brand-500) 40%, transparent);"></div>
@@ -423,8 +420,8 @@ function applyTheme() {
         </div>
         <div class="demo-token">
           <button class="btn btn--sm btn--tone-neutral btn--icon" aria-label="icon button">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M12 4v16m8-8H4" stroke="currentColor" stroke-width="2" fill="none" />
+            <svg aria-hidden="true">
+              <use href="/assets/svg/icons.svg#icon-plus"></use>
             </svg>
           </button>
           <code>.btn.btn--icon</code>
@@ -440,29 +437,15 @@ function applyTheme() {
         </div>
         <div class="demo-token">
           <button class="btn btn--sm btn--tone-brand btn--icon-left">
-            <svg viewBox="0 0 20 20" aria-hidden="true">
-              <path
-                d="M7 4l6 6-6 6"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.8"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
+            <svg aria-hidden="true">
+              <use href="/assets/svg/icons.svg#icon-arrow-right"></use>
             </svg>
             <span>İkon solda</span>
           </button>
           <button class="btn btn--sm btn--tone-brand btn--icon-right">
             <span>İkon sağda</span>
-            <svg viewBox="0 0 20 20" aria-hidden="true">
-              <path
-                d="M7 4l6 6-6 6"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.8"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
+            <svg aria-hidden="true">
+              <use href="/assets/svg/icons.svg#icon-arrow-right"></use>
             </svg>
           </button>
         </div>

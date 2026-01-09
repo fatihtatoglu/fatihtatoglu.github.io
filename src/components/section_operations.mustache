@@ -1,0 +1,80 @@
+<section class="post-operations {{#site.features.postOperations}}{{^enabled}}py-2{{/enabled}}{{/site.features.postOperations}}">
+{{#site.features.postOperations}}
+  {{#enabled}}
+    {{#like}}
+    <button class="btn btn--xs btn--icon btn--tone-sage btn--has-badge" type="button" data-action="like"
+      aria-label="{{i18n.post.operations.like.aria}}"
+      data-post-id="{{front.id}}">
+      <svg aria-hidden="true">
+        <use href="/assets/svg/icons.svg#icon-like"></use>
+      </svg>
+      <span class="btn__badge" data-count="like" aria-hidden="true">0</span>
+    </button>
+    {{/like}}
+    {{#dislike}}
+    <button class="btn btn--xs btn--icon btn--tone-sage btn--has-badge" type="button" data-action="dislike"
+      aria-label="{{i18n.post.operations.dislike.aria}}"
+      data-post-id="{{front.id}}">
+      <svg aria-hidden="true">
+        <use href="/assets/svg/icons.svg#icon-dislike"></use>
+      </svg>
+      <span class="btn__badge" data-count="dislike" aria-hidden="true">0</span>
+    </button>
+    {{/dislike}}
+    <button class="btn btn--xs btn--icon btn--tone-sage btn--has-badge post-operations__comment" type="button"
+      aria-label="{{i18n.post.operations.comment.aria}}"
+      data-comment-scroll
+      data-post-id="{{front.id}}">
+      <svg aria-hidden="true">
+        <use href="/assets/svg/icons.svg#icon-comment"></use>
+      </svg>
+      <span class="btn__badge" data-count="comment" aria-hidden="true">0</span>
+    </button>
+    {{#share}}
+      {{#enabled}}
+        {{#whatsapp}}
+        <button class="btn btn--xs btn--icon btn--tone-sage" type="button" data-share="whatsapp" aria-label="WhatsApp"
+        data-post-id="{{front.id}}">
+          <svg aria-hidden="true">
+            <use href="/assets/svg/icons.svg#icon-whatsapp"></use>
+          </svg>
+        </button>
+        {{/whatsapp}}
+        {{#x}}
+        <button class="btn btn--xs btn--icon btn--tone-sage" type="button" data-share="x" aria-label="X"
+        data-post-id="{{front.id}}">
+          <svg aria-hidden="true">
+            <use href="/assets/svg/icons.svg#icon-x"></use>
+          </svg>
+        </button>
+        {{/x}}
+        {{#linkedin}}
+        <button class="btn btn--xs btn--icon btn--tone-sage" type="button" data-share="linkedin" aria-label="LinkedIn"
+        data-post-id="{{front.id}}">
+          <svg aria-hidden="true">
+            <use href="/assets/svg/icons.svg#icon-linkedin"></use>
+          </svg>
+        </button>
+        {{/linkedin}}
+        {{#facebook}}
+        <button class="btn btn--xs btn--icon btn--tone-sage" type="button" data-share="facebook" aria-label="Facebook"
+        data-post-id="{{front.id}}">
+          <svg aria-hidden="true">
+            <use href="/assets/svg/icons.svg#icon-facebook"></use>
+          </svg>
+        </button>
+        {{/facebook}}
+        {{#copy}}
+        <button class="btn btn--xs btn--icon btn--tone-sage" type="button" data-share="copy"
+          aria-label="{{i18n.post.operations.copyLink.aria}}"
+          data-post-id="{{front.id}}">
+          <svg aria-hidden="true">
+            <use href="/assets/svg/icons.svg#icon-copy"></use>
+          </svg>
+        </button>
+        {{/copy}}
+      {{/enabled}}
+    {{/share}}
+  {{/enabled}}
+{{/site.features.postOperations}}
+</section>

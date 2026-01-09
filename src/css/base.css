@@ -22,9 +22,9 @@
     --sage-800: #40554b;
     --sage-900: #35463e;
 
-    --bg: #f8fafc;
-    --bg-elev: #eef2f7;
-    --border: #d2d8e3;
+    --bg: #f6f8fc;
+    --bg-elev: #e0e6f0;
+    --border: #b8c2d1;
     --ink: #111827;
     --ink-dim: #4b5563;
     --invert-ink: #f1f5f9;
@@ -41,7 +41,7 @@
       SFMono-Regular, Menlo, Consolas, monospace;
     --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    --radius-md: 12px;
+    --radius-md: 16px;
     --radius-lg: 16px;
     --spacing: 0.25rem;
     --shell-gutter: 1rem;
@@ -49,9 +49,9 @@
   }
 
   :root.dark {
-    --bg: #020617;
-    --bg-elev: #070f1f;
-    --border: #1f2937;
+    --bg: #09101c;
+    --bg-elev: #182233;
+    --border: #344055;
     --ink: #f1f5f9;
     --ink-dim: #cbd5e1;
     --muted: #64748b;
@@ -62,14 +62,12 @@
 
   html,
   body {
-    height: 100%;
+    @apply h-full;
   }
 
   body {
-    background-color: var(--bg);
-    color: var(--ink);
+    @apply bg-[var(--bg)] text-[var(--ink)] leading-[1.6];
     font-family: var(--font-body);
-    line-height: 1.6;
   }
 
   .font-sans {
@@ -92,7 +90,6 @@
   }
 
   img {
-    max-width: 100%;
-    height: auto;
+    @apply max-w-full h-auto;
   }
 }

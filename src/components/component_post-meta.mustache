@@ -1,0 +1,17 @@
+<div class="post-meta">
+  <dl class="post-meta__grid">
+    {{#dateDisplay}}
+    <div class="post-meta__item">
+      <dt lang="{{lang}}">{{i18n.category.meta.publishedLabel}}</dt>
+      <dd>{{.}}</dd>
+    </div>
+    {{/dateDisplay}}
+
+    {{#readingTime}}
+    <div class="post-meta__item">
+      <dt lang="{{lang}}">{{i18n.category.meta.readingTimeLabel}}</dt>
+      <dd>{{.}} {{i18n.category.readingTimeSuffix}}</dd>
+    </div>
+    {{/readingTime}}
+  </dl>
+</div>

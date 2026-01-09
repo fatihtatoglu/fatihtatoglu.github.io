@@ -1,0 +1,29 @@
+@layer components {
+  section.category article.post-card {
+    @apply rounded-2xl border border-[var(--border)] bg-[var(--bg-elev)] p-4 mb-4;
+
+    header.post-header {
+      @apply bg-[var(--bg-elev)];
+
+      div.post-meta {
+        @apply mt-1;
+      }
+    }
+
+    div.post-body {
+      @apply flex flex-col rounded-2xl p-4 justify-start bg-[var(--bg)] mt-4;
+
+      h2 {
+        @apply mt-0;
+      }
+    }
+  }
+
+  section.category article.post-card:last-child {
+    @apply mb-0;
+  }
+
+  section.category div.category-listing article.post-card {
+    @apply mb-0 h-auto;
+  }
+}

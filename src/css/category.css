@@ -1,16 +1,15 @@
 @layer components {
   section.category {
-    @apply bg-[var(--bg)];
-    max-width: 100%;
+    @apply bg-[var(--bg)] max-w-full;
 
     div.collection-content {
       padding: calc(var(--spacing) * 4);
-      border-radius: var(--radius-2xl);
+      border-radius: var(--radius-lg);
       border-style: var(--tw-border-style);
       border-width: 1px;
       border-color: var(--border);
       background-color: var(--bg);
-      margin-bottom: 1rem;
+      @apply mb-4;
     }
 
     div.collection-content.no-content h1 {
@@ -25,34 +24,6 @@
       }
     }
 
-    article.post-card {
-      @apply rounded-2xl border border-[var(--border)] bg-[var(--bg-elev)] p-4 mb-4;
-
-      header.post-header {
-        @apply bg-[var(--bg-elev)];
-
-        div.post-meta {
-          @apply mt-1;
-        }
-      }
-
-      div.post-body {
-        @apply flex flex-col rounded-2xl p-4 justify-start bg-[var(--bg)] mt-4;
-
-        h2 {
-          @apply mt-0;
-        }
-      }
-    }
-
-    article.post-card:last-child {
-      margin-bottom: 0px;
-    }
-
-    div.category-listing article.post-card {
-      margin-bottom: 0;
-      height: auto;
-    }
   }
 
   section.category.home {
@@ -84,14 +55,10 @@
 
   @media (min-width: 960px) {
     section.category {
-      flex-wrap: wrap;
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
+      @apply flex flex-wrap gap-4 justify-center;
 
       div.collection-content {
-        margin-bottom: unset;
-        width: 100%;
+        @apply mb-0 w-full;
       }
 
       div.category-listing {
@@ -100,7 +67,7 @@
         article {
           flex-basis: calc(50% - 0.75rem);
           max-width: calc(50% - 0.75rem);
-          margin-bottom: unset;
+          @apply mb-0;
 
           header.post-header {
             div.post-meta {
@@ -117,13 +84,13 @@
       article:first-of-type {
         flex-basis: calc(100% - 0.75rem);
         max-width: calc(100% - 0.75rem);
-        margin-bottom: unset;
+        @apply mb-0;
       }
 
       article:not(:first-of-type) {
         flex-basis: calc(50% - 0.75rem);
         max-width: calc(50% - 0.75rem);
-        margin-bottom: unset;
+        @apply mb-0;
 
         header.post-header {
           div.post-meta {
@@ -138,10 +105,7 @@
 
   @media (min-width: 1280px) {
     section.category {
-      flex-wrap: wrap;
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
+      @apply flex flex-wrap gap-4 justify-center;
 
       div.category-listing {
         @apply justify-center;
@@ -149,7 +113,7 @@
         article {
           flex-basis: calc(33% - 0.75rem);
           max-width: calc(33% - 0.75rem);
-          margin-bottom: unset;
+          @apply mb-0;
         }
       }
     }
@@ -158,29 +122,26 @@
       article:first-of-type {
         flex-basis: calc(66% - 0.75rem);
         max-width: calc(66% - 0.75rem);
-        margin-bottom: unset;
+        @apply mb-0;
       }
 
       article:not(:first-of-type) {
         flex-basis: calc(33% - 0.75rem);
         max-width: calc(33% - 0.75rem);
-        margin-bottom: unset;
+        @apply mb-0;
       }
     }
   }
 
   @media (min-width: 1536px) {
     section.category {
-      flex-wrap: wrap;
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
+      @apply flex flex-wrap gap-4 justify-center;
 
       div.category-listing {
         article {
           flex-basis: calc(33% - 0.75rem);
           max-width: calc(33% - 0.75rem);
-          margin-bottom: unset;
+          @apply mb-0;
 
           header.post-header {
             div.post-meta {
@@ -197,13 +158,13 @@
       article:first-of-type {
         flex-basis: calc(66% - 0.75rem);
         max-width: calc(66% - 0.75rem);
-        margin-bottom: unset;
+        @apply mb-0;
       }
 
       article:not(:first-of-type) {
         flex-basis: calc(33% - 0.75rem);
         max-width: calc(33% - 0.75rem);
-        margin-bottom: unset;
+        @apply mb-0;
 
         header.post-header {
           div.post-meta {

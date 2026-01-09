@@ -1,37 +1,23 @@
 @layer base {
   body {
-    @apply min-h-dvh bg-[--bg] font-sans text-base text-[--ink] antialiased;
+    @apply min-h-dvh bg-[var(--bg)] font-sans text-base text-[var(--ink)] antialiased;
   }
 
   a.skip-link {
-    position: absolute;
-    top: 0.5rem;
-    left: 0.5rem;
-    padding: 0.35rem 0.9rem;
-    border-radius: 999px;
-    background-color: var(--brand-500);
-    color: white;
-    font-size: 0.85rem;
-    font-weight: 500;
-    transform: translateY(-150%);
-    transition: transform 0.2s ease;
-    z-index: 10;
+    @apply absolute top-2 left-2 px-[0.9rem] py-[0.35rem] rounded-2xl bg-[var(--brand-500)] text-white text-[0.85rem] font-medium -translate-y-[150%] transition-transform z-10;
   }
 
   a.skip-link:focus-visible {
-    transform: translateY(0);
-    outline: 2px solid var(--brand-300);
-    outline-offset: 2px;
+    @apply translate-y-0 outline outline-2 outline-offset-2;
+    outline-color: var(--brand-300);
   }
 
   div.app-shell {
-    @apply mx-auto flex min-h-dvh w-full flex-col;
-    row-gap: 1rem;
-    padding: var(--shell-gutter);
+    @apply mx-auto flex min-h-dvh w-full flex-col gap-4 p-[var(--shell-gutter)];
   }
 
   header.site-header {
-    @apply rounded-2xl border border-[--border] bg-[--bg] p-4;
+    @apply rounded-2xl border border-[var(--border)] bg-[var(--bg)] p-4;
     transition: margin 0.2s ease, top 0.2s ease, border-radius 0.2s ease,
       width 0.2s ease;
 
@@ -45,11 +31,11 @@
           @apply w-full text-center;
 
           a.owner {
-            @apply text-3xl uppercase text-[--muted];
+            @apply text-3xl uppercase text-[var(--muted)];
           }
 
           p.role {
-            @apply font-mono text-xl font-medium text-[--ink] hidden;
+            @apply font-mono text-xl font-medium text-[var(--ink)] hidden;
           }
         }
 
@@ -59,34 +45,24 @@
       }
 
       div.menu-drawer {
-        @apply border border-[--border] bg-[--bg] fixed rounded-2xl p-5 flex flex-col z-30 right-4 left-4 mx-auto mt-24;
+        @apply border border-[var(--border)] bg-[var(--bg)] fixed rounded-2xl p-5 flex flex-col z-30 right-4 left-4 mx-auto mt-24;
 
         input[type="search"].search-field {
-          width: 100%;
-          border-radius: 12px;
-          border: 1px solid var(--border);
-          background-color: var(--bg);
-          padding: 0.6rem 0.9rem;
+          @apply w-full rounded-2xl border border-[var(--border)] bg-[var(--bg)] px-[0.9rem] py-[0.6rem] text-[0.85rem] text-[var(--ink)];
           font-family: var(--font-mono);
-          font-size: 0.85rem;
-          color: var(--ink);
         }
 
         input[type="search"].search-field::placeholder {
-          color: var(--muted);
-          letter-spacing: 0.08em;
+          @apply text-[var(--muted)] tracking-[0.08em];
         }
 
         input[type="search"].search-field:focus-visible {
-          outline: 2px solid var(--brand-400);
-          outline-offset: 2px;
+          @apply outline outline-2 outline-offset-2;
+          outline-color: var(--brand-400);
         }
 
         nav ul.menu-list {
-          list-style: none;
-          display: flex;
-          flex-direction: column;
-          gap: 0.35rem;
+          @apply list-none flex flex-col gap-[0.35rem];
 
           li {
             @apply mb-1;
@@ -97,9 +73,7 @@
           }
 
           li a.menu-link {
-            width: 100%;
-            justify-content: flex-start;
-            text-align: left;
+            @apply w-full justify-start text-left;
             --btn-letter-spacing: 0.25em;
             --btn-font-size: 0.75rem;
             --btn-padding-y: 1rem;
@@ -127,7 +101,7 @@
           }
 
           li a.menu-link:focus-visible {
-            outline: none;
+            @apply outline-none;
             box-shadow: 0 0 0 2px rgba(90, 141, 240, 0.25);
             --btn-bg: var(--bg);
             --btn-color: var(--brand-700);
@@ -142,19 +116,16 @@
       }
 
       .dark div.menu-drawer {
-        @apply bg-[--bg-elev];
+        @apply bg-[var(--bg-elev)];
       }
 
       div.menu-overlay {
-        position: fixed;
-        inset: 0;
+        @apply fixed inset-0 z-[15] backdrop-blur-[8px];
         background: rgba(6, 11, 20, 0.4);
-        backdrop-filter: blur(8px);
-        z-index: 15;
       }
 
       div.menu-overlay[hidden] {
-        display: none;
+        @apply hidden;
       }
 
       nav.line-menu {
@@ -174,8 +145,7 @@
       }
 
       p.slogan {
-        @apply font-mono text-sm text-center m-0;
-        color: var(--ink-dim);
+        @apply font-mono text-sm text-center m-0 text-[var(--ink-dim)];
       }
     }
   }
@@ -190,14 +160,11 @@
         div.header-bar {
           div.header-bar-wrapper {
             @apply flex flex-row gap-4 items-center;
-
-            width: unset;
-            text-align: left;
+            @apply w-auto text-left;
           }
 
           div.header-buttons {
-            display: unset;
-            margin-inline: unset;
+            @apply block mx-0;
           }
         }
       }
@@ -214,7 +181,7 @@
 
           div.header-bar-wrapper {
             @apply flex-col gap-0;
-            align-items: unset;
+            @apply items-start;
 
             a.owner {
               @apply text-lg;
@@ -307,27 +274,23 @@
   }
 
   main {
-    max-width: 100%;
-    margin: 0px auto;
+    @apply max-w-full mx-auto;
   }
 
   @media (min-width: 768px) {
     main {
-      /* max-width: 95%; */
-      margin: 0px auto;
+      @apply mx-auto;
     }
   }
 
   footer.site-footer {
-    @apply text-sm text-[--muted] rounded-t-3xl;
-    position: static;
-    border-radius: 24px 24px 0 0;
+    @apply text-sm text-[var(--muted)] static;
 
     div.footer-wrapper {
-      @apply flex flex-col gap-3 rounded-2xl border border-[--border] bg-[--bg] p-4 backdrop-blur;
+      @apply flex flex-col gap-6 rounded-2xl border border-[var(--border)] bg-[var(--bg)] p-4 backdrop-blur;
 
       div.footer-tags {
-        @apply mb-2 items-start;
+        @apply items-start;
 
         ul {
           @apply flex flex-wrap items-center justify-center gap-3 text-xs font-medium;
@@ -335,15 +298,15 @@
       }
 
       div.footer-policies {
-        @apply flex flex-wrap justify-center my-2 gap-2 text-center text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-[--muted];
+        @apply flex flex-wrap justify-center gap-2 text-center text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-[var(--muted)];
       }
 
       div.footer-social {
-        @apply flex flex-wrap justify-center gap-3 text-sm my-2 text-[--ink];
+        @apply flex flex-wrap justify-center gap-3 text-sm text-[var(--ink)];
       }
 
       p.copyright {
-        @apply text-xs text-center my-2 text-[--muted];
+        @apply m-0 text-xs text-center text-[var(--muted)];
       }
     }
   }
@@ -351,55 +314,40 @@
   @media (min-width: 768px) {
     footer.site-footer {
       div.footer-wrapper {
-        @apply flex-row flex-wrap gap-3 justify-between;
+        div.footer-tags {
+          @apply flex-1 w-full;
+        }
+        div.footer-policies {
+          @apply w-full;
+        }
+        div.footer-social {
+          @apply w-full flex flex-row justify-center;
+        }
+      }
+    }
+  }
+
+  @media (min-width: 1280px) {
+    footer.site-footer {
+      div.footer-wrapper {
+        @apply flex flex-row flex-wrap gap-8;
+
+        div.footer-tags {
+          @apply w-1/4;
+        }
 
         div.footer-policies {
-          @apply flex-col justify-start m-0;
+          @apply w-1/4;
+          @apply flex-col justify-start;
+        }
+
+        div.footer-social {
+          @apply w-1/4 py-0;
+          @apply gap-2 justify-center content-start;
         }
 
         p.copyright {
           @apply w-full;
-        }
-
-        div.footer-tags {
-          @apply mb-0 flex w-1/2;
-        }
-
-        div.footer-social {
-          @apply my-0 flex-col justify-start content-start gap-2;
-        }
-      }
-    }
-  }
-
-  @media (min-width: 960px) {
-    footer.site-footer {
-      div.footer-wrapper {
-        div.footer-tags {
-          flex-grow: 1;
-          width: 45%;
-        }
-        div.footer-policies {
-          width: max-content;
-        }
-        div.footer-social {
-          @apply w-full py-4 flex-row justify-center;
-        }
-      }
-    }
-  }
-
-  @media (min-width: 1536px) {
-    footer.site-footer {
-      div.footer-wrapper {
-        div.footer-tags {
-          @apply w-1/4;
-        }
-        div.footer-policies {
-          @apply w-1/4;
-        }
-        div.footer-social {
-          @apply w-1/4 py-0;
         }
       }
     }

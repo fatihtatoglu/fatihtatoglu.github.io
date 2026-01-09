@@ -3,9 +3,10 @@ import { SUPPORTED_LANGUAGES, DEFAULT_LANGUAGE, normalizeLanguage, getLocalizedS
 
 const LANGUAGE_COOKIE = "tat-lang";
 const root = document.documentElement;
-const FLAG_PATHS = {
-  tr: "/assets/svg/turkey_flag.svg",
-  en: "/assets/svg/english_flag.svg",
+const ICON_SPRITE = "/assets/svg/icons.svg";
+const FLAG_IDS = {
+  tr: "icon-turkey-flag",
+  en: "icon-english-flag",
 };
 
 function getBaseUrl() {
@@ -93,47 +94,14 @@ function getLanguageName(locale, langCode) {
 
 const SWITCHER_TEMPLATE = /* html */ `
   <button type="button" class="btn btn--md btn--tone-neutral btn--icon language-button" data-lang-toggle data-active-lang="tr" aria-label="">
-    <span data-flag-slot="tr"></span>
-    <span data-flag-slot="en"></span>
+    <svg aria-hidden="true" data-flag="tr" class="lang-flag">
+      <use href="${ICON_SPRITE}#${FLAG_IDS.tr}"></use>
+    </svg>
+    <svg aria-hidden="true" data-flag="en" class="lang-flag">
+      <use href="${ICON_SPRITE}#${FLAG_IDS.en}"></use>
+    </svg>
   </button>
 `;
-
-const flagMarkupCache = {};
-const flagRequests = {};
-
-function loadFlagMarkup(flagCode) {
-  if (!flagCode) {
-    return Promise.resolve("");
-  }
-
-  if (flagMarkupCache[flagCode]) {
-    return Promise.resolve(flagMarkupCache[flagCode]);
-  }
-
-  if (flagRequests[flagCode]) {
-    return flagRequests[flagCode];
-  }
-
-  const path = FLAG_PATHS[flagCode];
-  if (!path) {
-    return Promise.resolve("");
-  }
-
-  const request = fetch(path)
-    .then((response) => (response.ok ? response.text() : ""))
-    .then((markup) => {
-      flagMarkupCache[flagCode] = markup;
-      flagRequests[flagCode] = null;
-      return markup;
-    })
-    .catch(() => {
-      flagRequests[flagCode] = null;
-      return "";
-    });
-
-  flagRequests[flagCode] = request;
-  return request;
-}
 
 
 class LanguageSwitcher extends HTMLElement {
@@ -164,29 +132,6 @@ class LanguageSwitcher extends HTMLElement {
 
   render() {
     this.innerHTML = SWITCHER_TEMPLATE;
-    this.injectFlags();
-  }
-
-  injectFlags() {
-    const slots = this.querySelectorAll("[data-flag-slot]");
-    slots.forEach((slot) => {
-      const flagCode = slot.dataset.flagSlot;
-      loadFlagMarkup(flagCode).then((markup) => {
-        if (!markup) {
-          return;
-        }
-
-        const template = document.createElement("template");
-        template.innerHTML = markup.trim();
-        const svg = template.content.firstElementChild;
-        if (svg) {
-          svg.dataset.flag = flagCode;
-          svg.classList.add("lang-flag");
-          svg.setAttribute("aria-hidden", svg.getAttribute("aria-hidden") ?? "true");
-          slot.replaceWith(svg);
-        }
-      });
-    });
   }
 
   handleClick(event) {

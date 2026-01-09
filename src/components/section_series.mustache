@@ -1,0 +1,34 @@
+{{#front.seriesListing.hasItems}}
+<section class="post-series" {{#front.seriesListing.hasLabel}}aria-label="{{front.seriesListing.label}}"{{/front.seriesListing.hasLabel}}>
+  {{#front.seriesListing.hasLabel}}
+  <p class="post-series__title" lang="{{lang}}">
+    <svg aria-hidden="true">
+      <use href="/assets/svg/icons.svg#icon-series"></use>
+    </svg>
+    {{i18n.category.meta.seriesTitle}}
+  </p>
+  {{/front.seriesListing.hasLabel}}
+  <ol class="post-series__list">
+    {{#front.seriesListing.items}}
+    <li class="post-series__item{{#isCurrent}} is-current{{/isCurrent}}">
+      {{#isPlaceholder}}
+      <span class="post-series__placeholder" lang="{{lang}}">{{label}}</span>
+      {{/isPlaceholder}}
+      {{^isPlaceholder}}
+      {{#isCurrent}}
+      <span class="post-series__current" lang="{{lang}}">{{label}}</span>
+      {{/isCurrent}}
+      {{^isCurrent}}
+      {{#hasUrl}}
+      <a class="post-series__link" href="{{{url}}}" lang="{{lang}}">{{label}}</a>
+      {{/hasUrl}}
+      {{^hasUrl}}
+      <span class="post-series__link" lang="{{lang}}">{{label}}</span>
+      {{/hasUrl}}
+      {{/isCurrent}}
+      {{/isPlaceholder}}
+    </li>
+    {{/front.seriesListing.items}}
+  </ol>
+</section>
+{{/front.seriesListing.hasItems}}

@@ -9,31 +9,31 @@
   }
 
   p {
-    margin: 0 0 1.25rem;
+    @apply mb-5;
   }
 
   h1 {
     @apply font-mono text-3xl font-medium leading-tight;
     color: var(--ink);
-    margin: 0 0 1.5rem;
+    @apply mb-6;
   }
 
   h2 {
     @apply font-mono text-2xl font-medium;
     color: var(--ink);
-    margin: 2rem 0 1rem;
+    @apply mt-8 mb-4;
   }
 
   h3 {
     @apply font-mono text-xl font-medium;
     color: var(--ink);
-    margin: 1.75rem 0 0.75rem;
+    @apply mt-7 mb-3;
   }
 
   h4 {
     @apply font-mono text-lg font-medium;
     color: var(--ink);
-    margin: 1.5rem 0 0.5rem;
+    @apply mt-6 mb-2;
   }
 
   blockquote {
@@ -49,9 +49,7 @@
 
   pre {
     @apply w-full font-mono text-sm my-8 p-2 border rounded-2xl border-[var(--sage-900)] bg-[var(--bg-elev)] leading-relaxed;
-    overflow-x: auto;
-    overflow-y: hidden;
-    display: block;
+    @apply overflow-x-auto overflow-y-hidden block;
   }
 
   code {

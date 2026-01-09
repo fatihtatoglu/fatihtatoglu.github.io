@@ -1,0 +1,33 @@
+<article id="post-{{id}}" class="post-card">
+  <!-- Post Header -->
+  <header class="post-header">
+
+    {{#cover}}
+    <div class="post-cover">
+      <figure class="post-cover">
+        <img src="{{.}}" alt="{{coverAlt}}">
+        {{#coverCaption}}
+        <figcaption lang="{{lang}}">{{.}}</figcaption>
+        {{/coverCaption}}
+      </figure>
+    </div>
+    {{/cover}}
+
+    {{> components/component_post-meta }}
+  </header>
+  <!-- Post Header -->
+
+  <!-- Post Content -->
+  <div class="post-body">
+    <h2 class="text-lg">
+      <a href="{{{canonical}}}" lang="{{lang}}">{{title}}</a>
+    </h2>
+
+    {{#description}}
+    <p class="text-sm mb-0" lang="{{lang}}">
+      {{.}}
+    </p>
+    {{/description}}
+  </div>
+  <!-- Post Content -->
+</article>

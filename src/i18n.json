@@ -141,6 +141,112 @@
           "en": "Copy Link"
         }
       }
+    },
+    "comments": {
+      "title": {
+        "tr": "Yorumlar",
+        "en": "Comments"
+      },
+      "subtitle": {
+        "tr": "Düşünceni paylaş, katkıda bulun.",
+        "en": "Share your thoughts and join the discussion."
+      },
+      "countLabel": {
+        "tr": "yorum",
+        "en": "comments"
+      },
+      "empty": {
+        "tr": "Henüz yorum yok. İlk yorumu sen bırak.",
+        "en": "No comments yet. Be the first to comment."
+      },
+      "form": {
+        "name": {
+          "label": {
+            "tr": "İsim",
+            "en": "Name"
+          },
+          "placeholder": {
+            "tr": "Adın ve soyadın",
+            "en": "Your name"
+          }
+        },
+        "email": {
+          "label": {
+            "tr": "E-posta",
+            "en": "Email"
+          },
+          "placeholder": {
+            "tr": "ornek@posta.com",
+            "en": "you@example.com"
+          }
+        },
+        "message": {
+          "label": {
+            "tr": "Yorum",
+            "en": "Comment"
+          },
+          "placeholder": {
+            "tr": "Paylaşmak istediğin düşünce...",
+            "en": "Write your thoughts..."
+          }
+        },
+        "submit": {
+          "tr": "Gönder",
+          "en": "Submit"
+        }
+      },
+      "actions": {
+        "like": {
+          "aria": {
+            "tr": "Yorumu beğen",
+            "en": "Like comment"
+          }
+        },
+        "dislike": {
+          "aria": {
+            "tr": "Yorumu beğenme",
+            "en": "Dislike comment"
+          }
+        }
+      },
+      "authorBadge": {
+        "tr": "Yazar",
+        "en": "Author"
+      },
+      "authorNameFallback": {
+        "tr": "Yazar",
+        "en": "Author"
+      },
+      "anonymousName": {
+        "tr": "Anonim",
+        "en": "Anonymous"
+      },
+      "status": {
+        "sending": {
+          "tr": "Gönderiliyor...",
+          "en": "Submitting..."
+        },
+        "success": {
+          "tr": "Yorumun alındı. Onaydan sonra yayınlanacak.",
+          "en": "Your comment was received and will appear after approval."
+        },
+        "error": {
+          "tr": "Bir hata oluştu. Lütfen tekrar deneyin.",
+          "en": "Something went wrong. Please try again."
+        },
+        "captchaMissing": {
+          "tr": "Captcha doğrulamasını tamamlayın.",
+          "en": "Please complete the captcha."
+        },
+        "captchaFailed": {
+          "tr": "Captcha doğrulaması başarısız.",
+          "en": "Captcha verification failed."
+        },
+        "validation": {
+          "tr": "Lütfen tüm alanları doldurun.",
+          "en": "Please fill out all fields."
+        }
+      }
     }
   },
   "seo": {

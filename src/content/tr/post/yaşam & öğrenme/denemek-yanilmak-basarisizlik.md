@@ -17,9 +17,9 @@ tags:
 readingTime: 8
 date: 2025-12-31
 updated: 2026-01-01
-pair: trying-and-failing
+pair: learning-from-failure
 canonical: ~/denemek-yanilmak-basarisizlik
-alternate: ~/en/trying-and-failing
+alternate: ~/en/learning-from-failure
 description: "Denemek, yanılmak ve bazen başarısız olmak üzerine mutfaktan başlayan kişisel bir farkındalık yazısı. Yeni yıla küçük bir not."
 keywords:
   - denemek

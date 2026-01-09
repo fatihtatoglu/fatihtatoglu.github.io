@@ -1,0 +1,22 @@
+{{#front.hasTags}}
+<section class="post-tags">
+
+  {{#front.categoryUrl}}
+  <a class="btn btn--xs btn--tone-brand btn--icon-left" href="{{{front.categoryUrl}}}">
+    <svg aria-hidden="true">
+      <use href="/assets/svg/icons.svg#icon-category"></use>
+    </svg>
+    <span lang="{{lang}}">{{front.categoryLabel}}</span>
+  </a>
+  {{/front.categoryUrl}}
+
+  {{#front.tagLinks}}
+  <a class="btn btn--xs btn--tone-sage btn--icon-left" href="{{{url}}}">
+    <svg aria-hidden="true">
+      <use href="/assets/svg/icons.svg#icon-tag"></use>
+    </svg>
+    <span lang="{{lang}}">{{label}}</span>
+  </a>
+  {{/front.tagLinks}}
+</section>
+{{/front.hasTags}}

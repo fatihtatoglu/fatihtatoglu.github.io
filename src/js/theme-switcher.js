@@ -3,10 +3,11 @@ import cookieApi from "./utils/cookies.js";
 const THEME_COOKIE = "tat-theme";
 const THEME_CHANGE_EVENT = "tat-theme-change";
 const THEME_STATES = ["light", "dark", "system"];
-const ICON_PATHS = {
-  light: "/assets/svg/sun.svg",
-  dark: "/assets/svg/moon.svg",
-  system: "/assets/svg/computer.svg",
+const ICON_SPRITE = "/assets/svg/icons.svg";
+const ICON_IDS = {
+  light: "icon-sun",
+  dark: "icon-moon",
+  system: "icon-computer",
 };
 
 const root = document.documentElement;
@@ -81,16 +82,19 @@ prefersDark?.addEventListener("change", () => {
 const SWITCHER_TEMPLATE = /* html */ `
   <button type="button" class="btn btn--md btn--tone-neutral btn--icon theme-button" data-theme-toggle data-theme-state="light" aria-label="">
     <!-- Light -->
-    <span data-icon-slot="light"></span>
+    <svg aria-hidden="true" data-icon="light" class="theme-icon">
+      <use href="${ICON_SPRITE}#${ICON_IDS.light}"></use>
+    </svg>
     <!-- Dark -->
-    <span data-icon-slot="dark"></span>
+    <svg aria-hidden="true" data-icon="dark" class="theme-icon">
+      <use href="${ICON_SPRITE}#${ICON_IDS.dark}"></use>
+    </svg>
     <!-- System -->
-    <span data-icon-slot="system"></span>
+    <svg aria-hidden="true" data-icon="system" class="theme-icon">
+      <use href="${ICON_SPRITE}#${ICON_IDS.system}"></use>
+    </svg>
   </button>
 `;
-
-const iconMarkupCache = {};
-const iconRequests = {};
 
 function toTitleCase(value) {
   if (!value) {
@@ -99,39 +103,6 @@ function toTitleCase(value) {
   return value.charAt(0).toUpperCase() + value.slice(1);
 }
 
-function loadIconMarkup(iconName) {
-  if (!iconName) {
-    return Promise.resolve("");
-  }
-
-  if (iconMarkupCache[iconName]) {
-    return Promise.resolve(iconMarkupCache[iconName]);
-  }
-
-  if (iconRequests[iconName]) {
-    return iconRequests[iconName];
-  }
-
-  const path = ICON_PATHS[iconName];
-  if (!path) {
-    return Promise.resolve("");
-  }
-
-  const request = fetch(path)
-    .then((response) => (response.ok ? response.text() : ""))
-    .then((markup) => {
-      iconMarkupCache[iconName] = markup;
-      iconRequests[iconName] = null;
-      return markup;
-    })
-    .catch(() => {
-      iconRequests[iconName] = null;
-      return "";
-    });
-
-  iconRequests[iconName] = request;
-  return request;
-}
 
 class ThemeSwitcher extends HTMLElement {
   constructor() {
@@ -147,7 +118,6 @@ class ThemeSwitcher extends HTMLElement {
 
     if (!this.rendered) {
       this.render();
-      this.injectIcons();
       this.rendered = true;
     }
 
@@ -164,25 +134,6 @@ class ThemeSwitcher extends HTMLElement {
 
   render() {
     this.innerHTML = SWITCHER_TEMPLATE;
-  }
-
-  injectIcons() {
-    const slots = this.querySelectorAll("[data-icon-slot]");
-    slots.forEach((slot) => {
-      const iconName = slot.dataset.iconSlot;
-      loadIconMarkup(iconName).then((markup) => {
-        if (!markup) return;
-        const template = document.createElement("template");
-        template.innerHTML = markup.trim();
-        const svg = template.content.firstElementChild;
-        if (svg) {
-          svg.dataset.icon = iconName;
-          svg.classList.add("theme-icon");
-          svg.setAttribute("aria-hidden", svg.getAttribute("aria-hidden") ?? "true");
-          slot.replaceWith(svg);
-        }
-      });
-    });
   }
 
   handleClick() {

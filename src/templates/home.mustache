@@ -72,15 +72,8 @@
           class="btn btn--sm btn--tone-neutral btn--icon-left"
           data-href="{{prevUrl}}" {{^hasPrev}}disabled{{/hasPrev}}
         >
-          <svg viewBox="0 0 20 20" aria-hidden="true">
-            <path
-              d="M13 4l-6 6 6 6"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.8"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
+          <svg aria-hidden="true">
+            <use href="/assets/svg/icons.svg#icon-arrow-left"></use>
           </svg>
           <span>{{i18n.ui.pagination.previous}}</span>
         </button>
@@ -90,15 +83,8 @@
           data-href="{{nextUrl}}" {{^hasNext}}disabled{{/hasNext}}
         >
           <span>{{i18n.ui.pagination.next}}</span>
-          <svg viewBox="0 0 20 20" aria-hidden="true">
-            <path
-              d="M7 4l6 6-6 6"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.8"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
+          <svg aria-hidden="true">
+            <use href="/assets/svg/icons.svg#icon-arrow-right"></use>
           </svg>
         </button>
       {{/listing}}

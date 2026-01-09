@@ -9,8 +9,8 @@
         type="button"
         onclick="window.history.back()"
         aria-label="{{i18n.ui.backButton.aria}}">
-        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 20 20">
-          <path d="M13 4l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <svg aria-hidden="true">
+          <use href="/assets/svg/icons.svg#icon-arrow-left"></use>
         </svg>
         <span>{{i18n.ui.backButton.label}}</span>
       </button>
@@ -84,11 +84,8 @@
       <button class="btn btn--xs btn--icon btn--tone-sage btn--has-badge" type="button" data-action="like"
         aria-label="{{i18n.post.operations.like.aria}}"
         data-post-id="{{front.id}}">
-        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 48 48" >
-          <g data-transform-wrapper="on">
-            <path d="M14.6459 16.9194C14.7329 16.4489 14.9081 15.9988 15.1642 15.5946C15.951 14.3526 16.7918 13.1328 17.6141 11.9475L17.8532 11.603C19.9259 8.61717 21.8309 5.87284 22.7392 3.34714C23.0983 2.34841 24.1873 1.74615 25.2589 2.10403C28.4977 3.18567 30.4166 6.76112 29.3829 10.1197L27.3471 16.7365H39.3282C41.5585 16.7365 43.6577 18.3225 43.9561 20.6557C44.1004 21.7841 43.8138 22.8407 43.2493 23.693C44.3066 24.5107 44.9932 25.787 44.9932 27.2365C44.9932 28.9956 43.9834 30.5014 42.5205 31.2376C42.8215 31.8377 42.9932 32.5157 42.9932 33.2365C42.9932 34.9331 42.0549 36.405 40.6714 37.171C40.8479 37.5819 40.9581 38.029 40.9864 38.4995L40.9864 38.5006C41.128 40.8984 39.044 42.7365 36.8042 42.7365H24.9932C20.8644 42.7365 17.7171 41.9555 15.5855 41.1611C15.3479 41.0725 14.9237 40.9508 14.5111 40.8298C13.1194 32.825 13.1644 24.9314 14.6459 16.9194Z" fill="currentColor"></path>
-            <path d="M12.0119 43.7366H7.46274C6.16545 43.7366 4.97062 42.9005 4.59246 41.616C2.47945 34.4394 2.45894 27.1074 4.59245 19.8582C4.97037 18.5745 6.16463 17.7366 7.46274 17.7366H11.4571C10.0171 26.4299 10.202 35.0157 12.0119 43.7366Z" fill="currentColor" data-color="color-2"></path>
-          </g>
+        <svg aria-hidden="true">
+          <use href="/assets/svg/icons.svg#icon-like"></use>
         </svg>
         <span class="btn__badge" data-count="like" aria-hidden="true">0</span>
       </button>
@@ -97,11 +94,8 @@
       <button class="btn btn--xs btn--icon btn--tone-sage btn--has-badge" type="button" data-action="dislike"
         aria-label="{{i18n.post.operations.dislike.aria}}"
         data-post-id="{{front.id}}">
-        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 48 48" >
-          <g data-transform-wrapper="on" transform="rotate(180, 24, 24)">
-            <path d="M14.6459 16.9194C14.7329 16.4489 14.9081 15.9988 15.1642 15.5946C15.951 14.3526 16.7918 13.1328 17.6141 11.9475L17.8532 11.603C19.9259 8.61717 21.8309 5.87284 22.7392 3.34714C23.0983 2.34841 24.1873 1.74615 25.2589 2.10403C28.4977 3.18567 30.4166 6.76112 29.3829 10.1197L27.3471 16.7365H39.3282C41.5585 16.7365 43.6577 18.3225 43.9561 20.6557C44.1004 21.7841 43.8138 22.8407 43.2493 23.693C44.3066 24.5107 44.9932 25.787 44.9932 27.2365C44.9932 28.9956 43.9834 30.5014 42.5205 31.2376C42.8215 31.8377 42.9932 32.5157 42.9932 33.2365C42.9932 34.9331 42.0549 36.405 40.6714 37.171C40.8479 37.5819 40.9581 38.029 40.9864 38.4995L40.9864 38.5006C41.128 40.8984 39.044 42.7365 36.8042 42.7365H24.9932C20.8644 42.7365 17.7171 41.9555 15.5855 41.1611C15.3479 41.0725 14.9237 40.9508 14.5111 40.8298C13.1194 32.825 13.1644 24.9314 14.6459 16.9194Z" fill="currentColor"></path>
-            <path d="M12.0119 43.7366H7.46274C6.16545 43.7366 4.97062 42.9005 4.59246 41.616C2.47945 34.4394 2.45894 27.1074 4.59245 19.8582C4.97037 18.5745 6.16463 17.7366 7.46274 17.7366H11.4571C10.0171 26.4299 10.202 35.0157 12.0119 43.7366Z" fill="currentColor" data-color="color-2"></path>
-          </g>
+        <svg aria-hidden="true">
+          <use href="/assets/svg/icons.svg#icon-dislike"></use>
         </svg>
         <span class="btn__badge" data-count="dislike" aria-hidden="true">0</span>
       </button>
@@ -110,8 +104,8 @@
       <button class="btn btn--xs btn--icon btn--tone-sage" type="button" data-action="comment"
         aria-label="{{i18n.post.operations.comment.aria}}"
         data-post-id="{{front.id}}">
-        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 24 24" >
-          <path d="m20,3H4c-1.105,0-2,.895-2,2v11c0,1.105.895,2,2,2h5l3,4,3-4h5c1.105,0,2-.895,2-2V5c0-1.105-.895-2-2-2Z" fill="none" stroke="currentColor" stroke-linecap="square" stroke-miterlimit="10" stroke-width="2"></path>
+        <svg aria-hidden="true">
+          <use href="/assets/svg/icons.svg#icon-comment"></use>
         </svg>
       </button>
       {{/comment}}
@@ -120,40 +114,32 @@
           {{#whatsapp}}
           <button class="btn btn--xs btn--icon btn--tone-sage" type="button" data-share="whatsapp" aria-label="WhatsApp"
           data-post-id="{{front.id}}">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 32 32" >
-              <g class="nc-icon-wrapper" fill="currentColor">
-                <path d="M25.873,6.069c-2.619-2.623-6.103-4.067-9.814-4.069C8.411,2,2.186,8.224,2.184,15.874c-.001,2.446,.638,4.833,1.852,6.936l-1.969,7.19,7.355-1.929c2.026,1.106,4.308,1.688,6.63,1.689h.006c7.647,0,13.872-6.224,13.874-13.874,.001-3.708-1.44-7.193-4.06-9.815h0Zm-9.814,21.347h-.005c-2.069,0-4.099-.557-5.87-1.607l-.421-.25-4.365,1.145,1.165-4.256-.274-.436c-1.154-1.836-1.764-3.958-1.763-6.137,.003-6.358,5.176-11.531,11.537-11.531,3.08,.001,5.975,1.202,8.153,3.382,2.177,2.179,3.376,5.077,3.374,8.158-.003,6.359-5.176,11.532-11.532,11.532h0Zm6.325-8.636c-.347-.174-2.051-1.012-2.369-1.128-.318-.116-.549-.174-.78,.174-.231,.347-.895,1.128-1.098,1.359-.202,.232-.405,.26-.751,.086-.347-.174-1.464-.54-2.788-1.72-1.03-.919-1.726-2.054-1.929-2.402-.202-.347-.021-.535,.152-.707,.156-.156,.347-.405,.52-.607,.174-.202,.231-.347,.347-.578,.116-.232,.058-.434-.029-.607-.087-.174-.78-1.88-1.069-2.574-.281-.676-.567-.584-.78-.595-.202-.01-.433-.012-.665-.012s-.607,.086-.925,.434c-.318,.347-1.213,1.186-1.213,2.892s1.242,3.355,1.416,3.587c.174,.232,2.445,3.733,5.922,5.235,.827,.357,1.473,.571,1.977,.73,.83,.264,1.586,.227,2.183,.138,.666-.1,2.051-.839,2.34-1.649,.289-.81,.289-1.504,.202-1.649s-.318-.232-.665-.405h0Z" fill-rule="evenodd"></path>
-              </g>
+            <svg aria-hidden="true">
+              <use href="/assets/svg/icons.svg#icon-whatsapp"></use>
             </svg>
           </button>
           {{/whatsapp}}
           {{#x}}
           <button class="btn btn--xs btn--icon btn--tone-sage" type="button" data-share="x" aria-label="X"
           data-post-id="{{front.id}}">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 32 32" >
-              <g class="nc-icon-wrapper" fill="currentColor">
-                <path d="M18.42,14.009L27.891,3h-2.244l-8.224,9.559L10.855,3H3.28l9.932,14.455L3.28,29h2.244l8.684-10.095,6.936,10.095h7.576l-10.301-14.991h0Zm-3.074,3.573l-1.006-1.439L6.333,4.69h3.447l6.462,9.243,1.006,1.439,8.4,12.015h-3.447l-6.854-9.804h0Z"></path>
-              </g>
+            <svg aria-hidden="true">
+              <use href="/assets/svg/icons.svg#icon-x"></use>
             </svg>
           </button>
           {{/x}}
           {{#linkedin}}
           <button class="btn btn--xs btn--icon btn--tone-sage" type="button" data-share="linkedin" aria-label="LinkedIn"
           data-post-id="{{front.id}}">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 32 32" >
-              <g class="nc-icon-wrapper" fill="currentColor">
-                <path d="M26.111,3H5.889c-1.595,0-2.889,1.293-2.889,2.889V26.111c0,1.595,1.293,2.889,2.889,2.889H26.111c1.595,0,2.889-1.293,2.889-2.889V5.889c0-1.595-1.293-2.889-2.889-2.889ZM10.861,25.389h-3.877V12.87h3.877v12.519Zm-1.957-14.158c-1.267,0-2.293-1.034-2.293-2.31s1.026-2.31,2.293-2.31,2.292,1.034,2.292,2.31-1.026,2.31-2.292,2.31Zm16.485,14.158h-3.858v-6.571c0-1.802-.685-2.809-2.111-2.809-1.551,0-2.362,1.048-2.362,2.809v6.571h-3.718V12.87h3.718v1.686s1.118-2.069,3.775-2.069,4.556,1.621,4.556,4.975v7.926Z" fill-rule="evenodd"></path>
-              </g>
+            <svg aria-hidden="true">
+              <use href="/assets/svg/icons.svg#icon-linkedin"></use>
             </svg>
           </button>
           {{/linkedin}}
           {{#facebook}}
           <button class="btn btn--xs btn--icon btn--tone-sage" type="button" data-share="facebook" aria-label="Facebook"
           data-post-id="{{front.id}}">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 32 32" >
-              <g class="nc-icon-wrapper" fill="currentColor">
-                <path d="M16,2c-7.732,0-14,6.268-14,14,0,6.566,4.52,12.075,10.618,13.588v-9.31h-2.887v-4.278h2.887v-1.843c0-4.765,2.156-6.974,6.835-6.974,.887,0,2.417,.174,3.043,.348v3.878c-.33-.035-.904-.052-1.617-.052-2.296,0-3.183,.87-3.183,3.13v1.513h4.573l-.786,4.278h-3.787v9.619c6.932-.837,12.304-6.74,12.304-13.897,0-7.732-6.268-14-14-14Z"></path>
-              </g>
+            <svg aria-hidden="true">
+              <use href="/assets/svg/icons.svg#icon-facebook"></use>
             </svg>
           </button>
           {{/facebook}}
@@ -161,11 +147,8 @@
           <button class="btn btn--xs btn--icon btn--tone-sage" type="button" data-share="copy"
             aria-label="{{i18n.post.operations.copyLink.aria}}"
             data-post-id="{{front.id}}">
-            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 20 20">
-              <g data-transform-wrapper="on">
-                <path d="m13,7h2c1.105,0,2,.895,2,2v6c0,1.105-.895,2-2,2h-6c-1.105,0-2-.895-2-2v-2" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" data-color="color-2"></path>
-                <rect x="3" y="3" width="10" height="10" rx="2" ry="2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" fill="currentColor"></rect>
-              </g>
+            <svg aria-hidden="true">
+              <use href="/assets/svg/icons.svg#icon-copy"></use>
             </svg>
           </button>
           {{/copy}}
@@ -182,9 +165,8 @@
 
       {{#front.categoryUrl}}
       <a class="btn btn--xs btn--tone-brand btn--icon-left" href="{{{front.categoryUrl}}}">
-        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 18 18">
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M15.298 7C16.7769 7 17.8526 8.40119 17.4717 9.82923L16.3708 13.9578C16.0503 15.1626 14.9597 16 13.714 16H4.28698C3.04143 16 1.95093 15.1628 1.63032 13.9582L0.529335 9.82933C0.148492 8.40165 1.22442 7.00141 2.70077 7L15.298 7Z" fill="currentColor" fill-opacity="0.4" data-color="color-2"></path>
-          <path d="M4.25 2C2.73079 2 1.5 3.23079 1.5 4.75V7.34742C1.8441 7.12889 2.25411 7.00043 2.70077 7L15.298 7C15.7452 7 16.1556 7.12816 16.5 7.34646V6.25C16.5 4.73079 15.2692 3.5 13.75 3.5H8.72395L8.34568 3.02826C7.82345 2.37824 7.0355 2 6.20099 2H4.25Z" fill="currentColor"></path>
+        <svg aria-hidden="true">
+          <use href="/assets/svg/icons.svg#icon-category"></use>
         </svg>
         <span lang="{{lang}}">{{front.categoryLabel}}</span>
       </a>
@@ -192,10 +174,8 @@
 
       {{#front.tagLinks}}
       <a class="btn btn--xs btn--tone-sage btn--icon-left" href="{{{url}}}">
-        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 18 18">
-          <path d="M14.3662 9.80569L8.57321 4.0127C8.24311 3.6821 7.80371 3.5 7.33591 3.5H2.75C1.7852 3.5 1 4.2852 1 5.25V9.83591C1 10.3032 1.1816 10.7426 1.5127 11.0732L7.30569 16.8662C7.84179 17.4023 8.5459 17.6699 9.25 17.6699C9.9541 17.6699 10.6582 17.4018 11.1943 16.8662L14.3662 13.6943C14.8857 13.1753 15.1719 12.4848 15.1719 11.75C15.1719 11.0152 14.8858 10.3247 14.3662 9.80569Z" fill="currentColor" fill-opacity="0.4" data-color="color-2"></path>
-          <path d="M10.0732 1.0127L15.8662 6.80569C16.3858 7.32469 16.6718 8.0152 16.6718 8.75C16.6718 9.4848 16.3856 10.1753 15.8661 10.6943L15.1511 11.4093C15.0768 10.8036 14.8046 10.2436 14.3662 9.80569L8.57321 4.0127C8.24311 3.6821 7.80371 3.5 7.33591 3.5H2.75C2.66514 3.5 2.58167 3.50607 2.5 3.51781V2.25C2.5 1.2852 3.2852 0.5 4.25 0.5H8.83591C9.30371 0.5 9.74311 0.682095 10.0732 1.0127Z" fill="currentColor"></path>
-          <path d="M4 7.75C4 8.4404 4.5596 9 5.25 9C5.9404 9 6.5 8.4404 6.5 7.75C6.5 7.0596 5.9404 6.5 5.25 6.5C4.5596 6.5 4 7.0596 4 7.75Z" fill="currentColor"></path>
+        <svg aria-hidden="true">
+          <use href="/assets/svg/icons.svg#icon-tag"></use>
         </svg>
         <span lang="{{lang}}">{{label}}</span>
       </a>
@@ -207,11 +187,8 @@
     <section class="post-series" {{#front.seriesListing.hasLabel}}aria-label="{{front.seriesListing.label}}"{{/front.seriesListing.hasLabel}}>
       {{#front.seriesListing.hasLabel}}
       <p class="post-series__title" lang="{{lang}}">
-        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 18 18">
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M2 7.25C2 5.73128 3.23069 4.5 4.75 4.5H13.25C14.7693 4.5 16 5.73128 16 7.25V13.25C16 14.7687 14.7693 16 13.25 16H4.75C3.23069 16 2 14.7687 2 13.25V7.25Z" fill="currentColor" fill-opacity="0.4" data-color="color-2"></path>
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M4.5 12.75C4.5 12.3358 4.83579 12 5.25 12H7.25C7.66421 12 8 12.3358 8 12.75C8 13.1642 7.66421 13.5 7.25 13.5H5.25C4.83579 13.5 4.5 13.1642 4.5 12.75Z" fill="currentColor"></path>
-          <path d="M15.6445 5.89654C15.1723 5.06272 14.2771 4.5 13.25 4.5H4.75C3.71996 4.5 2.82259 5.06594 2.35143 5.9037L3.77709 3.0288C4.24151 2.09309 5.1956 1.5 6.241 1.5H11.759C12.8044 1.5 13.7584 2.09285 14.2228 3.02856L15.6445 5.89654Z" fill="currentColor"></path>
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M9.00002 3.5C9.41423 3.5 9.75002 3.83579 9.75002 4.25V7.25C9.75002 7.66421 9.41423 8 9.00002 8C8.5858 8 8.25002 7.66421 8.25002 7.25V4.25C8.25002 3.83579 8.5858 3.5 9.00002 3.5Z" fill="currentColor"></path>
+        <svg aria-hidden="true">
+          <use href="/assets/svg/icons.svg#icon-series"></use>
         </svg>
         {{i18n.category.meta.seriesTitle}}
       </p>

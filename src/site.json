@@ -2,7 +2,7 @@
   "identity": {
     "author": "Fatih Tatoğlu",
     "email": "fatih@tatoglu.net",
-    "url": "https://tatoglu.net",
+    "url": "http://localhost:3000",
     "themeColor": "#5a8df0",
     "social": {
       "github": "https://github.com/fatihtatoglu",
@@ -12,7 +12,7 @@
     }
   },
   "analytics": {
-    "enabled": true,
+    "enabled": false,
     "gtmId": "GTM-5WHLJZ6Z",
     "gaId": "G-R2SETB688N",
     "clarityId": "ubkn3xooz5"
@@ -42,7 +42,7 @@
       "apiBase": "https://post-ops.fatihtatoglu.workers.dev",
       "like": true,
       "dislike": true,
-      "comment": false,
+      "comment": true,
       "share": {
         "enabled": true,
         "whatsapp": true,

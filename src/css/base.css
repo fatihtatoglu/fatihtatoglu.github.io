@@ -92,4 +92,8 @@
   img {
     @apply max-w-full h-auto;
   }
+
+  blockquote p {
+    @apply mb-1;
+  }
 }

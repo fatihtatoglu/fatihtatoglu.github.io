@@ -1,0 +1,53 @@
+@layer base {
+  :root {
+    --ini-bg: #22272e;
+    --ini-fg: #adbac7;
+
+    --ini-section: #dcbdfb;
+    --ini-attr: #6cb6ff;
+    --ini-string: #96d0ff;
+    --ini-number: #6cb6ff;
+    --ini-comment: #768390;
+    --ini-symbol: #f69d50;
+  }
+}
+
+@layer components {
+  pre.code-block[data-code-language="ini"] {
+    @apply bg-[var(--ini-bg)];
+
+    code.language-ini::before {
+      content: "ini";
+    }
+
+    code.language-ini {
+      @apply font-sans text-[var(--ini-fg)];
+
+      span.hljs-section {
+        @apply text-[var(--ini-section)];
+      }
+
+      span.hljs-attr {
+        @apply text-[var(--ini-attr)];
+      }
+
+      span.hljs-string {
+        @apply text-[var(--ini-string)];
+      }
+
+      span.hljs-number {
+        @apply text-[var(--ini-number)];
+      }
+
+      span.hljs-comment {
+        @apply text-[var(--ini-comment)];
+      }
+
+      span.hljs-symbol,
+      span.hljs-literal,
+      span.hljs-variable {
+        @apply text-[var(--ini-symbol)];
+      }
+    }
+  }
+}

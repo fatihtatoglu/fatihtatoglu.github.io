@@ -19,8 +19,9 @@
 @import "./section_comments.css";
 
 /* Code Styles */
-@import "./code_powershell.css";
 @import "./code_bash.css";
-@import "./code_yml.css";
-@import "./code_python.css";
+@import "./code_ini.css";
 @import "./code_json.css";
+@import "./code_powershell.css";
+@import "./code_python.css";
+@import "./code_yml.css";

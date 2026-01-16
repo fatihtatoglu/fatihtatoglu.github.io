@@ -8,7 +8,6 @@
     font-family: var(--font-body);
   }
 
-
   .post-body,
   article.page {
     @apply text-[var(--ink)] leading-[1.7];
@@ -63,7 +62,7 @@
 
   article.post .post-body table,
   article.page table {
-    @apply w-full text-sm my-8 border rounded-2xl border-[var(--sage-900)] bg-[var(--bg)];
+    @apply max-w-full w-fit text-sm my-8 mx-auto border rounded-2xl border-[var(--sage-900)] bg-[var(--bg)];
     @apply overflow-x-auto overflow-y-hidden block border-collapse;
   }
 
@@ -117,6 +116,10 @@
 
       div.post-back {
         @apply bg-[var(--bg)] w-full p-4 rounded-t-2xl;
+
+        button.btn {
+          @apply w-full;
+        }
       }
 
       div.post-cover {
@@ -126,7 +129,6 @@
       div.post-meta {
         @apply mx-4 border border-[var(--border)];
       }
-
     }
 
     footer.post-footer {
@@ -204,6 +206,10 @@
 
         div.post-back {
           @apply w-full;
+
+          button.btn {
+            @apply w-1/4;
+          }
         }
 
         div.post-meta,

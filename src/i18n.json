@@ -249,6 +249,118 @@
       }
     }
   },
+  "contact": {
+    "form": {
+      "name": {
+        "label": {
+          "tr": "İsim",
+          "en": "Name"
+        },
+        "placeholder": {
+          "tr": "Adın ve soyadın",
+          "en": "Your name"
+        }
+      },
+      "email": {
+        "label": {
+          "tr": "E-posta",
+          "en": "Email"
+        },
+        "placeholder": {
+          "tr": "ornek@posta.com",
+          "en": "you@example.com"
+        }
+      },
+      "type": {
+        "label": {
+          "tr": "Konu",
+          "en": "Topic"
+        },
+        "placeholder": {
+          "tr": "Bir konu seçin",
+          "en": "Select a topic"
+        },
+        "options": {
+          "general": {
+            "tr": "Genel Geri Bildirim",
+            "en": "General Feedback"
+          },
+          "post": {
+            "tr": "Blog Yazısı Hakkında",
+            "en": "About a Blog Post"
+          },
+          "technical": {
+            "tr": "Teknik Soru",
+            "en": "Technical Question"
+          },
+          "correction": {
+            "tr": "Düzeltme / Hata Bildirimi",
+            "en": "Correction / Bug Report"
+          },
+          "collaboration": {
+            "tr": "İşbirliği Fikri",
+            "en": "Collaboration Idea"
+          },
+          "speaking": {
+            "tr": "Konuşma Daveti",
+            "en": "Speaking Invitation"
+          },
+          "proposal": {
+            "tr": "Proje Önerisi",
+            "en": "Project Proposal"
+          },
+          "personal": {
+            "tr": "Kişisel Mesaj",
+            "en": "Personal Message"
+          },
+          "hello": {
+            "tr": "Sadece Merhaba Demek 👋",
+            "en": "Just Saying Hi 👋"
+          }
+        }
+      },
+      "message": {
+        "label": {
+          "tr": "Mesaj",
+          "en": "Message"
+        },
+        "placeholder": {
+          "tr": "Nasıl yardımcı olabilirim?",
+          "en": "How can I help?"
+        }
+      },
+      "submit": {
+        "tr": "Gönder",
+        "en": "Send message"
+      },
+      "status": {
+        "missing": {
+          "tr": "Lütfen tüm zorunlu alanları doldurun.",
+          "en": "Please fill in all required fields."
+        },
+        "invalidEmail": {
+          "tr": "Lütfen geçerli bir e-posta girin.",
+          "en": "Please enter a valid email address."
+        },
+        "captchaMissing": {
+          "tr": "Lütfen doğrulamayı tamamlayın.",
+          "en": "Please complete the captcha."
+        },
+        "sending": {
+          "tr": "Gönderiliyor...",
+          "en": "Sending..."
+        },
+        "success": {
+          "tr": "Teşekkürler! Mesajınız alındı.",
+          "en": "Thanks! Your message has been received."
+        },
+        "error": {
+          "tr": "Bir hata oluştu. Lütfen tekrar deneyin.",
+          "en": "Something went wrong. Please try again."
+        }
+      }
+    }
+  },
   "seo": {
     "collections": {
       "tags": {

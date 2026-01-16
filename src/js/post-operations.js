@@ -142,6 +142,13 @@ function bindButton(button, apiBase, identity) {
       postOpsState.counts.dislike = Number(payload?.dislike) || 0;
       postOpsState.counts.comment = Number(payload?.comment) || 0;
       applyCounts(postOpsState.countButtons, postOpsState.counts);
+      if (postOpsState.counts.comment > 0) {
+        document.dispatchEvent(
+          new CustomEvent("post-comments-open", {
+            detail: { postId, count: postOpsState.counts.comment }
+          })
+        );
+      }
       setButtonState(button, "done");
       setTimeout(() => setButtonState(button, "idle"), 1200);
     } catch (error) {
@@ -203,6 +210,13 @@ function initPostOperations() {
         postOpsState.counts.dislike = Number(payload?.dislike) || 0;
         postOpsState.counts.comment = Number(payload?.comment) || 0;
         applyCounts(countButtons, postOpsState.counts);
+        if (postOpsState.counts.comment > 0) {
+          document.dispatchEvent(
+            new CustomEvent("post-comments-open", {
+              detail: { postId, count: postOpsState.counts.comment }
+            })
+          );
+        }
       })
       .catch((error) => {
         console.warn("post-ops counts failed", error);

@@ -33,7 +33,7 @@ status: published
 ---
 # About Me
 
-![Fatih Tatoğlu](/assets/images/fatih_tatoglu.webp "Fatih Tatoğlu")
+![About Fatih Tatoğlu](/assets/images/fatih_tatoglu.webp "Fatih Tatoğlu")
 
 Hello, I'm **Fatih Tatoğlu**.
 

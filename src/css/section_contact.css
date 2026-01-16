@@ -1,0 +1,71 @@
+@layer components {
+  article.page .contact-form {
+    @apply border border-[var(--border)] rounded-2xl bg-[var(--bg-elev)] p-6 flex flex-col gap-6;
+  }
+
+  .contact-form__form {
+    @apply flex flex-col gap-4;
+  }
+
+  .contact-form__fields {
+    @apply grid gap-4 grid-cols-1;
+  }
+
+  .contact-form__field {
+    @apply flex flex-col gap-2 text-[var(--ink)];
+    font-family: var(--font-body);
+  }
+
+  .contact-form__field span {
+    @apply text-[0.9rem] font-semibold text-[var(--ink)] tracking-[0.03em];
+  }
+
+  .contact-form__field input,
+  .contact-form__field textarea,
+  .contact-form__field select {
+    @apply border border-[var(--border)] rounded-2xl px-[0.95rem] py-3 bg-[var(--bg)] text-[var(--ink)];
+    font-family: var(--font-body);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .contact-form__field select {
+    @apply bg-[var(--bg-elev)];
+  }
+
+  .contact-form__field input:focus-visible,
+  .contact-form__field textarea:focus-visible,
+  .contact-form__field select:focus-visible {
+    @apply outline-none border-[var(--brand-400)];
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--brand-400) 20%, transparent);
+  }
+
+  .contact-form__actions {
+    @apply flex flex-wrap items-center justify-end gap-3;
+  }
+
+  .contact-form__status {
+    @apply text-[0.85rem] text-[var(--muted)];
+  }
+
+  .contact-form__status[data-tone="success"] {
+    @apply text-[var(--ok)];
+  }
+
+  .contact-form__status[data-tone="error"] {
+    @apply text-[var(--err)];
+  }
+
+  .contact-form__captcha {
+    @apply flex;
+  }
+
+  @media (min-width: 768px) {
+    .contact-form__fields {
+      @apply grid-cols-2;
+    }
+
+    .contact-form__field--full {
+      @apply col-span-2;
+    }
+  }
+}

@@ -20,7 +20,13 @@
       {{/isCurrent}}
       {{^isCurrent}}
       {{#hasUrl}}
-      <a class="post-series__link" href="{{{url}}}" lang="{{lang}}">{{label}}</a>
+      <a class="post-series__link" href="{{{url}}}" lang="{{lang}}"
+        data-metric
+        data-metric-name="series_click"
+        data-metric-source="post"
+        data-metric-meta-label="{{label}}">
+        {{label}}
+      </a>
       {{/hasUrl}}
       {{^hasUrl}}
       <span class="post-series__link" lang="{{lang}}">{{label}}</span>

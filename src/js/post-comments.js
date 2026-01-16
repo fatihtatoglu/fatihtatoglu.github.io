@@ -1,5 +1,6 @@
 import cookieApi from "./utils/cookies.js";
 import analyticsApi from "./analytics.js";
+import telemetryApi from "./telemetry.js";
 import { getLocalizedString, getRootLanguage } from "./utils/i18n-client.js";
 
 const doc = typeof document !== "undefined" ? document : null;
@@ -544,6 +545,19 @@ function initPostComments() {
   bindForm(apiBase, commentsState.postId);
   bindReactions(apiBase, commentsState.postId);
   bindScrollButton(section);
+  document.addEventListener("post-comments-open", (event) => {
+    const detail = event?.detail || {};
+    if (detail.postId !== commentsState.postId) {
+      return;
+    }
+    if (Number(detail.count) > 0) {
+      openCommentsSection();
+      telemetryApi.trackCustom("auto_comment_open", {
+        source: "auto",
+        post_id: detail.postId || ""
+      }, String(detail.count || ""));
+    }
+  });
   commentsState.initialized = true;
 
   return postCommentsApi;

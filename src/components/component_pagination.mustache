@@ -5,6 +5,10 @@
       <button
         class="btn btn--sm btn--quarter {{#hasPrev}}btn--tone-brand{{/hasPrev}} {{^hasPrev}}btn--tone-neutral{{/hasPrev}} btn--icon-left"
         data-href="{{prevUrl}}" {{^hasPrev}}disabled{{/hasPrev}}
+        data-metric
+        data-metric-name="pagination_click"
+        data-metric-source="listing"
+        data-metric-meta-direction="prev"
       >
         <svg aria-hidden="true">
           <use href="/assets/svg/icons.svg#icon-arrow-left"></use>
@@ -15,6 +19,10 @@
       <button
         class="btn btn--sm btn--quarter {{#hasNext}}btn--tone-brand{{/hasNext}} {{^hasNext}}btn--tone-neutral{{/hasNext}} btn--icon-right"
         data-href="{{nextUrl}}" {{^hasNext}}disabled{{/hasNext}}
+        data-metric
+        data-metric-name="pagination_click"
+        data-metric-source="listing"
+        data-metric-meta-direction="next"
       >
         <span>{{i18n.ui.pagination.next}}</span>
         <svg aria-hidden="true">

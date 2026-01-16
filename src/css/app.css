@@ -17,6 +17,7 @@
 @import "./section_tags.css";
 @import "./section_series.css";
 @import "./section_comments.css";
+@import "./section_contact.css";
 
 /* Code Styles */
 @import "./code_bash.css";

@@ -27,6 +27,8 @@ status: published
 ---
 # Contact
 
+![Get in Touch](/assets/images/get-in-touch.webp)
+
 I'd be delighted to respond if you wish to reach out.
 
 You can write for technical questions, feedback, suggestions, or even just to say hello.

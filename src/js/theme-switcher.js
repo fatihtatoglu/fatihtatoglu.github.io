@@ -80,7 +80,10 @@ prefersDark?.addEventListener("change", () => {
 });
 
 const SWITCHER_TEMPLATE = /* html */ `
-  <button type="button" class="btn btn--md btn--tone-neutral btn--icon theme-button" data-theme-toggle data-theme-state="light" aria-label="">
+  <button type="button" class="btn btn--md btn--tone-neutral btn--icon theme-button" data-theme-toggle data-theme-state="light" aria-label=""
+    data-metric
+    data-metric-name="theme_toggle"
+    data-metric-source="switcher">
     <!-- Light -->
     <svg aria-hidden="true" data-icon="light" class="theme-icon">
       <use href="${ICON_SPRITE}#${ICON_IDS.light}"></use>
@@ -138,6 +141,9 @@ class ThemeSwitcher extends HTMLElement {
 
   handleClick() {
     const next = nextThemeValue(themePreference);
+    if (this.button?.dataset) {
+      this.button.dataset.metricValue = next;
+    }
     setThemePreference(next);
   }
 
@@ -153,6 +159,9 @@ class ThemeSwitcher extends HTMLElement {
 
     const state = pref ?? themePreference;
     this.button.setAttribute("data-theme-state", state);
+    if (this.button?.dataset) {
+      this.button.dataset.metricMetaCurrent = state;
+    }
     const stateLabel = toTitleCase(state);
     this.button.setAttribute("aria-label", `Theme: ${stateLabel}`);
   }

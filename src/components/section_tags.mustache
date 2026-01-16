@@ -2,7 +2,12 @@
 <section class="post-tags">
 
   {{#front.categoryUrl}}
-  <a class="btn btn--xs btn--tone-brand btn--icon-left" href="{{{front.categoryUrl}}}">
+  <a class="btn btn--xs btn--tone-brand btn--icon-left" href="{{{front.categoryUrl}}}"
+    data-metric
+    data-metric-name="tag_click"
+    data-metric-source="post"
+    data-metric-meta-type="category"
+    data-metric-meta-label="{{front.categoryLabel}}">
     <svg aria-hidden="true">
       <use href="/assets/svg/icons.svg#icon-category"></use>
     </svg>
@@ -11,7 +16,12 @@
   {{/front.categoryUrl}}
 
   {{#front.tagLinks}}
-  <a class="btn btn--xs btn--tone-sage btn--icon-left" href="{{{url}}}">
+  <a class="btn btn--xs btn--tone-sage btn--icon-left" href="{{{url}}}"
+    data-metric
+    data-metric-name="tag_click"
+    data-metric-source="post"
+    data-metric-meta-type="tag"
+    data-metric-meta-label="{{label}}">
     <svg aria-hidden="true">
       <use href="/assets/svg/icons.svg#icon-tag"></use>
     </svg>

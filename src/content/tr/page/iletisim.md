@@ -26,6 +26,8 @@ status: published
 ---
 # İletişim
 
+![İletişime Geçin](/assets/images/get-in-touch.webp)
+
 Bana ulaşmak isterseniz memnuniyetle cevaplarım.
 
 Teknik sorular, geri bildirimler, öneriler veya sadece merhaba demek için bile yazabilirsiniz.

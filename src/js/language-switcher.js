@@ -93,7 +93,10 @@ function getLanguageName(locale, langCode) {
 }
 
 const SWITCHER_TEMPLATE = /* html */ `
-  <button type="button" class="btn btn--md btn--tone-neutral btn--icon language-button" data-lang-toggle data-active-lang="tr" aria-label="">
+  <button type="button" class="btn btn--md btn--tone-neutral btn--icon language-button" data-lang-toggle data-active-lang="tr" aria-label=""
+    data-metric
+    data-metric-name="language_toggle"
+    data-metric-source="switcher">
     <svg aria-hidden="true" data-flag="tr" class="lang-flag">
       <use href="${ICON_SPRITE}#${FLAG_IDS.tr}"></use>
     </svg>
@@ -139,6 +142,9 @@ class LanguageSwitcher extends HTMLElement {
     const currentIndex = SUPPORTED_LANGUAGES.indexOf(this.currentLang);
     const nextIndex = currentIndex === -1 ? 0 : (currentIndex + 1) % SUPPORTED_LANGUAGES.length;
     const next = SUPPORTED_LANGUAGES[nextIndex] ?? DEFAULT_LANGUAGE;
+    if (this.button?.dataset) {
+      this.button.dataset.metricValue = next;
+    }
     persistLang(next);
     const targetPath = getLanguageUrl(next);
     if (typeof window !== "undefined" && window.location) {
@@ -159,6 +165,9 @@ class LanguageSwitcher extends HTMLElement {
     const activeLang = lang ?? this.currentLang ?? DEFAULT_LANGUAGE;
     const locale = activeLang;
     this.button.setAttribute("data-active-lang", activeLang);
+    if (this.button?.dataset) {
+      this.button.dataset.metricMetaCurrent = activeLang;
+    }
     const labelPrefix = getLanguageLabel(locale);
     const languageName = getLanguageName(locale, activeLang);
     this.button.setAttribute("aria-label", `${labelPrefix}: ${languageName}`);

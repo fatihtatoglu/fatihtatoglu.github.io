@@ -20,7 +20,14 @@
   <!-- Post Content -->
   <div class="post-body">
     <h2 class="text-lg">
-      <a href="{{{canonical}}}" lang="{{lang}}">{{title}}</a>
+      <a href="{{{canonical}}}" lang="{{lang}}"
+        data-metric
+        data-metric-name="post_card_click"
+        data-metric-source="listing"
+        data-metric-meta-post-id="{{id}}"
+        data-metric-meta-title="{{title}}">
+        {{title}}
+      </a>
     </h2>
 
     {{#description}}

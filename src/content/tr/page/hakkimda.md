@@ -26,7 +26,7 @@ status: "published"
 ---
 # Hakkımda
 
-![Fatih Tatoğlu](/assets/images/fatih_tatoglu.webp "Fatih Tatoğlu")
+![Fatih Tatoğlu Hakkında](/assets/images/fatih_tatoglu.webp "Fatih Tatoğlu")
 
 Merhaba, ben **Fatih Tatoğlu**.
 

@@ -4,8 +4,10 @@ import cookieApi from "./utils/cookies.js";
 import menuApi from "./menu.js";
 import shareApi from "./share.js";
 import analyticsApi from "./analytics.js";
+import telemetryApi from "./telemetry.js";
 import postOpsApi from "./post-operations.js";
 import postCommentsApi from "./post-comments.js";
+import contactApi from "./contact.js";
 
 const yearEl = document.querySelector("[data-year]");
 const PAGE_OPEN_EVENT = "open_page";
@@ -19,6 +21,8 @@ menuApi.init();
 shareApi.init();
 postOpsApi.init();
 postCommentsApi.init();
+telemetryApi.init();
+contactApi.init();
 
 const sessionId = cookieApi.getSessionId?.() || "";
 const userId = cookieApi.getUserId?.() || "";
@@ -55,6 +59,12 @@ document.querySelectorAll("p img").forEach(image => {
   image.addEventListener("click", function (e) {
     if (e.target && e.target.classList) {
       e.target.classList.toggle("zoom");
+      const isZoomed = e.target.classList.contains("zoom");
+      telemetryApi.trackCustom("image_zoom_toggle", {
+        src: e.target.getAttribute("src") || "",
+        alt: e.target.getAttribute("alt") || "",
+        zoomed: isZoomed
+      }, isZoomed ? "on" : "off");
     }
   });
 });

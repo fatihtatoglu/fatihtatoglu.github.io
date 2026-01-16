@@ -12,6 +12,18 @@ serves aggregate counts per post.
 - `POST /{postId}/comment/{commentId}/dislike`
 - `GET /{postId}`
 - `GET /{postId}/comment`
+- `POST /view`
+- `POST /event`
+- `POST /contact`
+
+`POST /view` is a shortcut for an event with `type: "view"` and `name: "pageview"`.
+
+Currently tracked event types:
+
+- `view` (`pageview`)
+- `leave` (`page_leave`, duration not sent)
+- `scroll` (`scroll_depth`, 20/40/60/80/100)
+- `vital` (`lcp`, `fcp`, `cls`, `ttfb`)
 
 `GET /{postId}` returns:
 
@@ -47,6 +59,52 @@ Columns A–R:
 16) tatUser  
 17) name  
 18) lang  
+
+## Sheet schema (tab name: `views`)
+
+Columns A–V:
+
+1) id  
+2) createdOn  
+3) eventType  
+4) eventName  
+5) eventValue  
+6) url  
+7) referrer  
+8) utmSource  
+9) utmMedium  
+10) utmCampaign  
+11) utmContent  
+12) utmTerm  
+13) ip  
+14) country  
+15) region  
+16) city  
+17) userAgent  
+18) tatSession  
+19) tatUser  
+20) lang  
+21) theme  
+22) eventData  
+
+## Sheet schema (tab name: `contact_form`)
+
+Columns A–N:
+
+1) id  
+2) createdOn  
+3) ip  
+4) country  
+5) region  
+6) city  
+7) userAgent  
+8) tatSession  
+9) tatUser  
+10) lang  
+11) name  
+12) email  
+13) type  
+14) message  
 
 ## Environment variables
 
@@ -92,3 +150,63 @@ For comments:
   "tatUser": "user-id"
 }
 ```
+
+For views:
+
+```json
+{
+  "url": "https://tatoglu.net/posts/...",
+  "referrer": "https://example.com/",
+  "tatSession": "session-id",
+  "tatUser": "user-id",
+  "lang": "tr",
+  "theme": "dark",
+  "utm_source": "newsletter",
+  "utm_medium": "email",
+  "utm_campaign": "launch",
+  "utm_content": "hero",
+  "utm_term": "ai"
+}
+```
+
+For events:
+
+```json
+{
+  "type": "vital",
+  "name": "lcp",
+  "value": 2450,
+  "data": { "rating": "good", "id": "v1-123" },
+  "url": "https://tatoglu.net/posts/...",
+  "referrer": "https://example.com/",
+  "tatSession": "session-id",
+  "tatUser": "user-id",
+  "lang": "tr",
+  "theme": "dark",
+  "utm_source": "newsletter",
+  "utm_medium": "email",
+  "utm_campaign": "launch",
+  "utm_content": "hero",
+  "utm_term": "ai"
+}
+```
+
+For contact:
+
+```json
+{
+  "name": "Fatih",
+  "email": "fatih@tatoglu.net",
+  "type": "feedback",
+  "message": "Merhaba!",
+  "lang": "tr",
+  "tatSession": "session-id",
+  "tatUser": "user-id",
+  "turnstileToken": "token-from-turnstile"
+}
+```
+
+Optional headers for views:
+
+- `tat-lang`
+- `tat-theme`

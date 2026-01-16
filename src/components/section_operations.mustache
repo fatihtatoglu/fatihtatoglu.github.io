@@ -24,6 +24,9 @@
     <button class="btn btn--xs btn--icon btn--tone-sage btn--has-badge post-operations__comment" type="button"
       aria-label="{{i18n.post.operations.comment.aria}}"
       data-comment-scroll
+      data-metric
+      data-metric-name="comment_open"
+      data-metric-source="post"
       data-post-id="{{front.id}}">
       <svg aria-hidden="true">
         <use href="/assets/svg/icons.svg#icon-comment"></use>
@@ -34,6 +37,10 @@
       {{#enabled}}
         {{#whatsapp}}
         <button class="btn btn--xs btn--icon btn--tone-sage" type="button" data-share="whatsapp" aria-label="WhatsApp"
+        data-metric
+        data-metric-name="share_click"
+        data-metric-source="post"
+        data-metric-meta-channel="whatsapp"
         data-post-id="{{front.id}}">
           <svg aria-hidden="true">
             <use href="/assets/svg/icons.svg#icon-whatsapp"></use>
@@ -42,6 +49,10 @@
         {{/whatsapp}}
         {{#x}}
         <button class="btn btn--xs btn--icon btn--tone-sage" type="button" data-share="x" aria-label="X"
+        data-metric
+        data-metric-name="share_click"
+        data-metric-source="post"
+        data-metric-meta-channel="x"
         data-post-id="{{front.id}}">
           <svg aria-hidden="true">
             <use href="/assets/svg/icons.svg#icon-x"></use>
@@ -50,6 +61,10 @@
         {{/x}}
         {{#linkedin}}
         <button class="btn btn--xs btn--icon btn--tone-sage" type="button" data-share="linkedin" aria-label="LinkedIn"
+        data-metric
+        data-metric-name="share_click"
+        data-metric-source="post"
+        data-metric-meta-channel="linkedin"
         data-post-id="{{front.id}}">
           <svg aria-hidden="true">
             <use href="/assets/svg/icons.svg#icon-linkedin"></use>
@@ -58,6 +73,10 @@
         {{/linkedin}}
         {{#facebook}}
         <button class="btn btn--xs btn--icon btn--tone-sage" type="button" data-share="facebook" aria-label="Facebook"
+        data-metric
+        data-metric-name="share_click"
+        data-metric-source="post"
+        data-metric-meta-channel="facebook"
         data-post-id="{{front.id}}">
           <svg aria-hidden="true">
             <use href="/assets/svg/icons.svg#icon-facebook"></use>
@@ -67,6 +86,10 @@
         {{#copy}}
         <button class="btn btn--xs btn--icon btn--tone-sage" type="button" data-share="copy"
           aria-label="{{i18n.post.operations.copyLink.aria}}"
+          data-metric
+          data-metric-name="share_click"
+          data-metric-source="post"
+          data-metric-meta-channel="copy"
           data-post-id="{{front.id}}">
           <svg aria-hidden="true">
             <use href="/assets/svg/icons.svg#icon-copy"></use>

@@ -5,7 +5,12 @@
       <ul>
         {{#footer.tags}}
         <li>
-          <a class="btn btn--xs btn--tone-sage btn--icon-left" href="{{{url}}}" data-i18n="footer.tags.{{key}}">
+          <a class="btn btn--xs btn--tone-sage btn--icon-left" href="{{{url}}}" data-i18n="footer.tags.{{key}}"
+            data-metric
+            data-metric-name="footer_tag_click"
+            data-metric-source="footer"
+            data-metric-meta-key="{{key}}"
+            data-metric-meta-label="{{label}}">
             <svg aria-hidden="true">
               <use href="/assets/svg/icons.svg#icon-bookmark"></use>
             </svg>
@@ -19,7 +24,12 @@
     <div class="footer-policies">
     {{#footer.policies}}
       <a class="btn btn--md btn--fill btn--tone-brand btn--icon-left" href="{{{url}}}"
-          data-i18n="footer.policies.{{key}}">
+          data-i18n="footer.policies.{{key}}"
+          data-metric
+          data-metric-name="footer_policy_click"
+          data-metric-source="footer"
+          data-metric-meta-key="{{key}}"
+          data-metric-meta-label="{{label}}">
           <svg aria-hidden="true">
             <use href="/assets/svg/icons.svg#icon-shield-check"></use>
           </svg>
@@ -31,7 +41,12 @@
     <div class="footer-social">
     {{#footer.social}}
       <a class="btn btn--md btn--tone-brand btn--icon-left btn--tone-{{tone}}" href="{{{url}}}"
-        {{#external}}rel="noopener noreferrer" target="_blank"{{/external}}>
+        {{#external}}rel="noopener noreferrer" target="_blank"{{/external}}
+        data-metric
+        data-metric-name="social_click"
+        data-metric-source="footer"
+        data-metric-meta-platform="{{key}}"
+        data-metric-value="{{tone}}">
         {{{icon}}}
         <span data-i18n="footer.social.{{key}}" lang="{{lang}}">{{label}}</span>
       </a>

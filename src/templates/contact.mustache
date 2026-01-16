@@ -1,7 +1,80 @@
-<article id="page-{{front.id}}"  class="page">
+<article id="page-{{front.id}}" class="page">
   {{{content.html}}}
 
-<div class="external-content">
-  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSej2dJoNt93Kh0N6diG7p3eOa2-X4qSIQb-rT0o8jFL1JWanw/viewform?embedded=true" width="100%" height="1850" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-</div>
+  <section class="contact-form" data-contact>
+    <form class="contact-form__form" data-contact-form>
+      <div class="contact-form__fields">
+        <label class="contact-form__field">
+          <span data-i18n="contact.form.name.label">{{i18n.contact.form.name.label}}</span>
+          <input type="text" name="name" required autocomplete="name" maxlength="120"
+            placeholder="{{i18n.contact.form.name.placeholder}}"
+            data-i18n-attrs="placeholder:contact.form.name.placeholder">
+        </label>
+
+        <label class="contact-form__field">
+          <span data-i18n="contact.form.email.label">{{i18n.contact.form.email.label}}</span>
+          <input type="email" name="email" required autocomplete="email" maxlength="200"
+            placeholder="{{i18n.contact.form.email.placeholder}}"
+            data-i18n-attrs="placeholder:contact.form.email.placeholder">
+        </label>
+
+        <label class="contact-form__field contact-form__field--full">
+          <span data-i18n="contact.form.type.label">{{i18n.contact.form.type.label}}</span>
+          <select name="type" required>
+            <option value="" selected disabled data-i18n="contact.form.type.placeholder">
+              {{i18n.contact.form.type.placeholder}}
+            </option>
+            <option value="general" data-i18n="contact.form.type.options.general">
+              {{i18n.contact.form.type.options.general}}
+            </option>
+            <option value="post" data-i18n="contact.form.type.options.post">
+              {{i18n.contact.form.type.options.post}}
+            </option>
+            <option value="technical" data-i18n="contact.form.type.options.technical">
+              {{i18n.contact.form.type.options.technical}}
+            </option>
+            <option value="correction" data-i18n="contact.form.type.options.correction">
+              {{i18n.contact.form.type.options.correction}}
+            </option>
+            <option value="collaboration" data-i18n="contact.form.type.options.collaboration">
+              {{i18n.contact.form.type.options.collaboration}}
+            </option>
+            <option value="speaking" data-i18n="contact.form.type.options.speaking">
+              {{i18n.contact.form.type.options.speaking}}
+            </option>
+            <option value="proposal" data-i18n="contact.form.type.options.proposal">
+              {{i18n.contact.form.type.options.proposal}}
+            </option>
+            <option value="personal" data-i18n="contact.form.type.options.personal">
+              {{i18n.contact.form.type.options.personal}}
+            </option>
+            <option value="hello" data-i18n="contact.form.type.options.hello">
+              {{i18n.contact.form.type.options.hello}}
+            </option>
+          </select>
+        </label>
+
+        <label class="contact-form__field contact-form__field--full">
+          <span data-i18n="contact.form.message.label">{{i18n.contact.form.message.label}}</span>
+          <textarea name="message" rows="6" required maxlength="5000"
+            placeholder="{{i18n.contact.form.message.placeholder}}"
+            data-i18n-attrs="placeholder:contact.form.message.placeholder"></textarea>
+        </label>
+      </div>
+
+      {{#site.features.postOperations.turnstileSiteKey}}
+      <div class="contact-form__captcha">
+        <div class="cf-turnstile" data-sitekey="{{site.features.postOperations.turnstileSiteKey}}"></div>
+      </div>
+      {{/site.features.postOperations.turnstileSiteKey}}
+
+      <div class="contact-form__actions">
+        <button class="btn btn--md btn--tone-brand btn--third" type="submit" data-contact-submit
+          data-i18n="contact.form.submit">
+          {{i18n.contact.form.submit}}
+        </button>
+        <span class="contact-form__status" data-contact-status aria-live="polite"></span>
+      </div>
+    </form>
+  </section>
 </article>

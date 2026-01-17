@@ -48,8 +48,8 @@ function resolvePostId() {
   }
 
   const anyPostEl = doc.querySelector("[data-content-id]");
-  if (anyPostEl?.dataset?.postId) {
-    return anyPostEl.dataset.postId;
+  if (anyPostEl?.dataset?.contentId) {
+    return anyPostEl.dataset.contentId;
   }
 
   return "";

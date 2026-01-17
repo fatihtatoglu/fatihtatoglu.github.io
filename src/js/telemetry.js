@@ -5,7 +5,8 @@ const doc = typeof document !== "undefined" ? document : null;
 const telemetryState = {
   apiBase: "",
   basePayload: null,
-  enabled: false
+  enabled: false,
+  postId: ""
 };
 
 function resolveApiBase() {
@@ -38,6 +39,29 @@ function buildBasePayload() {
     tatUser: cookieApi.getUserId?.() || "",
     lang,
     theme
+  };
+}
+
+function resolvePostId() {
+  if (!doc) {
+    return "";
+  }
+
+  const anyPostEl = doc.querySelector("[data-content-id]");
+  if (anyPostEl?.dataset?.postId) {
+    return anyPostEl.dataset.postId;
+  }
+
+  return "";
+}
+
+function withPostId(data, postId) {
+  if (!postId) {
+    return data || {};
+  }
+  return {
+    postId,
+    ...(data || {})
   };
 }
 
@@ -78,74 +102,6 @@ function sendEvent(
   return true;
 }
 
-function getContentInfo() {
-  if (!doc) {
-    return {};
-  }
-
-  const pageType = doc.body?.dataset?.activeMenu || "";
-  const postEl = doc.querySelector("article.post");
-  if (!postEl) {
-    return { pageType };
-  }
-
-  const postId =
-    postEl.dataset?.postId || String(postEl.id || "").replace(/^post-/, "");
-  const title = doc.querySelector("h1")?.textContent?.trim() || "";
-  const category =
-    doc.querySelector(".post-tags .btn--tone-brand span")?.textContent?.trim() || "";
-  const tags = Array.from(doc.querySelectorAll(".post-tags .btn--tone-sage span"))
-    .map((el) => el.textContent?.trim())
-    .filter(Boolean);
-  const series =
-    doc.querySelector(".post-series__item.is-current span")?.textContent?.trim() || "";
-
-  return {
-    pageType,
-    postId,
-    title,
-    category,
-    tags,
-    series
-  };
-}
-
-function getDeviceInfo() {
-  if (typeof window === "undefined") {
-    return {};
-  }
-
-  const nav = navigator || {};
-  const connection = nav.connection || nav.mozConnection || nav.webkitConnection;
-  const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone || "";
-
-  return {
-    viewport: {
-      width: window.innerWidth || 0,
-      height: window.innerHeight || 0
-    },
-    screen: {
-      width: window.screen?.width || 0,
-      height: window.screen?.height || 0,
-      colorDepth: window.screen?.colorDepth || 0
-    },
-    dpr: window.devicePixelRatio || 1,
-    language: nav.language || "",
-    platform: nav.platform || "",
-    timezone,
-    hardwareConcurrency: nav.hardwareConcurrency || 0,
-    deviceMemory: nav.deviceMemory || 0,
-    connection: connection
-      ? {
-          effectiveType: connection.effectiveType || "",
-          downlink: connection.downlink || 0,
-          rtt: connection.rtt || 0,
-          saveData: Boolean(connection.saveData)
-        }
-      : {}
-  };
-}
-
 function readMetricMeta(dataset) {
   const meta = {};
   for (const [key, value] of Object.entries(dataset || {})) {
@@ -162,7 +118,7 @@ function readMetricMeta(dataset) {
   return meta;
 }
 
-function initMetricTracking(apiBase, basePayload) {
+function initMetricTracking(apiBase, basePayload, postId) {
   if (!doc) {
     return;
   }
@@ -200,12 +156,12 @@ function initMetricTracking(apiBase, basePayload) {
       type,
       name,
       value,
-      data
+      data: withPostId(data, postId)
     });
   });
 }
 
-function initContentLinkTracking(apiBase, basePayload) {
+function initContentLinkTracking(apiBase, basePayload, postId) {
   if (!doc || typeof window === "undefined") {
     return;
   }
@@ -273,16 +229,19 @@ function initContentLinkTracking(apiBase, basePayload) {
         type,
         name,
         value,
-        data: {
-          source: "content",
-          href: linkUrl.href,
-          url: linkUrl.href,
-          host: linkUrl.host,
-          path: linkUrl.pathname,
-          target: link.getAttribute("target") || "",
-          text: (link.textContent || "").trim().slice(0, 120),
-          trigger
-        }
+        data: withPostId(
+          {
+            source: "content",
+            href: linkUrl.href,
+            url: linkUrl.href,
+            host: linkUrl.host,
+            path: linkUrl.pathname,
+            target: link.getAttribute("target") || "",
+            text: (link.textContent || "").trim().slice(0, 120),
+            trigger
+          },
+          postId
+        )
       },
       { useBeacon: true, skipHeaders: true }
     );
@@ -329,7 +288,7 @@ function initContentLinkTracking(apiBase, basePayload) {
   );
 }
 
-function initScrollTracking(apiBase, basePayload) {
+function initScrollTracking(apiBase, basePayload, postId) {
   if (typeof window === "undefined" || !doc) {
     return;
   }
@@ -337,7 +296,6 @@ function initScrollTracking(apiBase, basePayload) {
   const thresholds = [20, 40, 60, 80, 100];
   const fired = new Set();
   let ticking = false;
-  let maxPercent = 0;
 
   const onScroll = () => {
     if (ticking) {
@@ -354,7 +312,6 @@ function initScrollTracking(apiBase, basePayload) {
       const viewportHeight = window.innerHeight || 1;
       const total = Math.max(1, docHeight - viewportHeight);
       const percent = Math.min(100, Math.round((scrollTop / total) * 100));
-      maxPercent = Math.max(maxPercent, percent);
 
       thresholds.forEach((threshold) => {
         if (percent >= threshold && !fired.has(threshold)) {
@@ -364,7 +321,7 @@ function initScrollTracking(apiBase, basePayload) {
             type: "scroll",
             name: "scroll_depth",
             value: String(threshold),
-            data: { scroll_percent: threshold, max_scroll_percent: maxPercent }
+            data: { postId }
           });
         }
       });
@@ -372,10 +329,9 @@ function initScrollTracking(apiBase, basePayload) {
   };
 
   window.addEventListener("scroll", onScroll, { passive: true });
-  return () => maxPercent;
 }
 
-function initVitalsTracking(apiBase, basePayload) {
+function initVitalsTracking(apiBase, basePayload, postId) {
   if (typeof window === "undefined" || typeof PerformanceObserver === "undefined") {
     return;
   }
@@ -396,7 +352,7 @@ function initVitalsTracking(apiBase, basePayload) {
       type: "vital",
       name: normalizedName,
       value: normalizedValue,
-      data
+      data: withPostId(data, postId)
     });
   };
 
@@ -448,25 +404,25 @@ function initTelemetry() {
   }
 
   const basePayload = buildBasePayload();
+  const postId = resolvePostId();
   telemetryState.apiBase = apiBase;
   telemetryState.basePayload = basePayload;
   telemetryState.enabled = true;
-  const content = getContentInfo();
-  const device = getDeviceInfo();
+  telemetryState.postId = postId;
 
   sendEvent(
     apiBase,
     {
       ...basePayload,
-      data: { device, content }
+      data: { postId }
     },
     { endpoint: "view" }
   );
 
-  const getMaxScroll = initScrollTracking(apiBase, basePayload) || (() => 0);
-  initVitalsTracking(apiBase, basePayload);
-  initMetricTracking(apiBase, basePayload);
-  initContentLinkTracking(apiBase, basePayload);
+  initScrollTracking(apiBase, basePayload, postId);
+  initVitalsTracking(apiBase, basePayload, postId);
+  initMetricTracking(apiBase, basePayload, postId);
+  initContentLinkTracking(apiBase, basePayload, postId);
 
   let leaveSent = false;
   const sendLeave = () => {
@@ -484,7 +440,7 @@ function initTelemetry() {
         type: "leave",
         name: "page_leave",
         value: "",
-        data: { max_scroll_percent: getMaxScroll() }
+        data: { postId }
       },
       { useBeacon: true, skipHeaders: true }
     );
@@ -519,7 +475,7 @@ const telemetryApi = {
       type: "custom",
       name,
       value: String(value || ""),
-      data
+      data: withPostId(data, telemetryState.postId)
     });
     return true;
   }

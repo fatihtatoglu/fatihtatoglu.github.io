@@ -105,5 +105,12 @@
         }
       }
     }
-  }
+  },
+  "plugins": [
+    "@shevky/plugin-robots-txt",
+    "@shevky/plugin-tailwindcss",
+    "@shevky/plugin-esbuild",
+    "@shevky/plugin-rss",
+    "@shevky/plugin-sitemap"
+  ]
 }

@@ -4,6 +4,8 @@ lang: en
 title: "Disclaimer & Terms of Use for tatoglu.net (2025)"
 slug: disclaimer
 category: policy
+schemaType: policy
+policyType: disclaimer
 menu: "Disclaimer"
 readingTime: 3
 date: 2025-11-11
@@ -13,10 +15,10 @@ canonical: ~/en/disclaimer/
 alternate: ~/sorumluluk-reddi/
 description: "Read the official disclaimer and terms of use for tatoglu.net, including liability limits, third-party responsibilities, and content usage."
 keywords:
-  - disclaimer
-  - legal notice
-  - terms of use
-  - fatih tatoglu
+  - Disclaimer
+  - Legal Notice
+  - Terms of Use
+  - Fatih Tatoğlu
 featured: false
 template: page
 layout: default

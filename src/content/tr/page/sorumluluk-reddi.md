@@ -4,6 +4,8 @@ lang: tr
 title: "Sorumluluk Reddi ve Kullanım Şartları (2025 Güncel)"
 slug: sorumluluk-reddi
 category: policy
+schemaType: policy
+policyType: disclaimer
 menu: "Sorumluluk Reddi"
 readingTime: 3
 date: 2025-11-11
@@ -13,10 +15,10 @@ canonical: ~/sorumluluk-reddi/
 alternate: ~/en/disclaimer/
 description: "Bu sayfa, tatoglu.net üzerindeki tüm içerikler için geçerli sorumluluk reddi, kullanım şartları, üçüncü taraf bağlantılar ve telif hakları bilgilerini açıklar."
 keywords:
-  - sorumluluk reddi
-  - disclaimer
-  - kullanım şartları
-  - fatih tatoğlu
+  - Sorumluluk Reddi
+  - Disclaimer
+  - Kullanım Şartları
+  - Fatih Tatoğlu
 featured: false
 template: page
 layout: default

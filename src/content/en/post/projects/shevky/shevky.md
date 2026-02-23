@@ -4,7 +4,7 @@ lang: en
 title: "Shevky Technical Documentation"
 slug: shevky-technical-documentation
 category: projects
-type: documentation
+schemaType: post
 tags:
   - shevky
   - static-site-generator

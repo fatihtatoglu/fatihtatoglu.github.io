@@ -5,6 +5,7 @@ title: "SHEVKY: Yazma Odaklı Minimal Statik Site Üretici"
 subtitle: "Yazma sürecindeki engelleri kaldırmak için tasarlanmış sade bir SSG"
 slug: shevky-minimal-statik-site-uretici
 category: "teknik-notlar"
+schemaType: post
 tags:
   - statik-site-uretici
   - minimal-ssg

@@ -3,6 +3,7 @@ id: ikewf66woi
 lang: tr
 title: "Teknik Notlar | Kategori"
 slug: teknik-notlar
+schemaType: collection
 menu: "Teknik Notlar"
 order: 3
 show: true
@@ -14,7 +15,10 @@ canonical: ~/teknik-notlar/
 alternate: ~/en/technical-notes/
 description: "Mimari notlar, debug hikayeleri ve teknik keşiflerin tek akışı."
 keywords:
-  - 
+  - Teknik
+  - Mimari
+  - Debug
+  - Denemek
 featured: false
 template: collection
 layout: default

@@ -4,6 +4,7 @@ lang: en
 title: What Is SWOT Analysis? Identify Strengths & Weaknesses
 slug: what-is-swot-analysis
 category: life-learning
+schemaType: post
 tags:
   - swot
   - swot-analysis

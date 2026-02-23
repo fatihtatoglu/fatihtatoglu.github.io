@@ -4,6 +4,7 @@ lang: en
 title: "Trying and Failing: What Not Succeeding Taught Me"
 slug: learning-from-failure
 category: life-learning
+schemaType: post
 tags:
   - trying-and-failing
   - learning-from-failure

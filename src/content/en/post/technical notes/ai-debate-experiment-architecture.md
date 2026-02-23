@@ -4,7 +4,7 @@ lang: en
 title: "AI Debate Experiment Architecture: Multi-Agent LLM Design"
 slug: ai-debate-experiment-architecture
 category: "technical-notes"
-type: "technical"
+schemaType: post
 tags:
   - ai-debate-experiment
   - llm-architecture

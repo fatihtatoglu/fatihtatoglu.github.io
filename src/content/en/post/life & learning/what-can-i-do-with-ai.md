@@ -4,7 +4,7 @@ lang: en
 title: "Working with Artificial Intelligence: What Can I Do as an Individual?"
 slug: what-can-i-do-with-ai
 category: life-learning
-type: essay
+schemaType: post
 tags:
   - artificial-intelligence 
   - working-with-ai

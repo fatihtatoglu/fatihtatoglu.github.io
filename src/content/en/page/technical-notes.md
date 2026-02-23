@@ -3,6 +3,7 @@ id: ikewf66woi
 lang: en
 title: "Technical Notes | Category"
 slug: technical-notes
+schemaType: collection
 menu: "Technical Notes"
 order: 3
 show: true
@@ -14,7 +15,10 @@ canonical: ~/en/technical-notes/
 alternate: ~/teknik-notlar/
 description: "Deep-dive articles, debugging stories, and architecture notes collected in one feed."
 keywords:
-  - 
+  - Technical
+  - Architecture
+  - Debug
+  - Lessons Learned
 featured: false
 template: collection
 layout: default

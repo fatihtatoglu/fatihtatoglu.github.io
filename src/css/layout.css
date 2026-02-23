@@ -204,7 +204,7 @@
         }
 
         div.menu-drawer {
-          @apply left-0 right-0 relative m-0 z-0 p-0 border-0 mt-4;
+          @apply left-0 right-0 relative m-0 z-0 p-0 border-0 mt-4 bg-[var(--bg-elev)];
           display: block !important;
 
           nav ul.menu-list {

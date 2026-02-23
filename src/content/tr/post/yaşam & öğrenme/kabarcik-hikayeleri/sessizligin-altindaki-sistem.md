@@ -4,7 +4,7 @@ lang: tr
 title: "Sessizliğin Altındaki Sistem: Tüplü Dalışta Disiplin"
 slug: sessizligin-altindaki-sistem
 category: yasam-ogrenme
-type: reflection
+schemaType: post
 tags:
   - tuplu-dalis
   - scuba-diving

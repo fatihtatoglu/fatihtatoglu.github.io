@@ -1,0 +1,11 @@
+@layer components {
+  div.cta-buttons {
+    @apply flex flex-col items-center justify-center gap-4 w-full p-4;
+  }
+
+  @media (min-width: 640px) {
+    div.cta-buttons {
+      @apply flex-row;
+    }
+  }
+}

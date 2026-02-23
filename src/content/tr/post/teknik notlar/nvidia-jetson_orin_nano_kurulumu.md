@@ -4,7 +4,7 @@ lang: tr
 title: NVIDIA Jetson Orin Nano Kurulumu (JetPack, SD Kart & Sorunlar)
 slug: nvidia-jetson-orin-nano-kurulumu
 category: teknik-notlar
-type: guide
+schemaType: post
 tags:
   - nvidia-jetson
   - jetson-orin-nano

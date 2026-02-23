@@ -1,0 +1,51 @@
+<div class="cta-buttons">
+    {{#front.raw.primaryButton}}
+    <a href="{{{href}}}" class="btn btn--tone-brand btn--full" data-metric data-metric-name="page_primary_cta_click"
+        data-metric-source="page_cta" data-metric-meta-label="{{label}}" data-metric-meta-href="{{{href}}}">
+        {{label}}
+    </a>
+    {{/front.raw.primaryButton}}
+    {{^front.raw.primaryButton}}
+    {{#front.primaryButton}}
+    <a href="{{{href}}}" class="btn btn--tone-brand btn--full" data-metric data-metric-name="page_primary_cta_click"
+        data-metric-source="page_cta" data-metric-meta-label="{{label}}" data-metric-meta-href="{{{href}}}">
+        {{label}}
+    </a>
+    {{/front.primaryButton}}
+    {{/front.raw.primaryButton}}
+    {{^front.raw.primaryButton}}
+    {{^front.primaryButton}}
+    {{#primaryButton}}
+    <a href="{{{href}}}" class="btn btn--tone-brand btn--full" data-metric data-metric-name="page_primary_cta_click"
+        data-metric-source="page_cta" data-metric-meta-label="{{label}}" data-metric-meta-href="{{{href}}}">
+        {{label}}
+    </a>
+    {{/primaryButton}}
+    {{/front.primaryButton}}
+    {{/front.raw.primaryButton}}
+
+    {{#front.raw.secondaryButton}}
+    <a href="{{{href}}}" class="btn btn--tone-sage btn--full" data-metric data-metric-name="page_secondary_cta_click"
+        data-metric-source="page_cta" data-metric-meta-label="{{label}}" data-metric-meta-href="{{{href}}}">
+        {{label}}
+    </a>
+    {{/front.raw.secondaryButton}}
+    {{^front.raw.secondaryButton}}
+    {{#front.secondaryButton}}
+    <a href="{{{href}}}" class="btn btn--tone-sage btn--full" data-metric data-metric-name="page_secondary_cta_click"
+        data-metric-source="page_cta" data-metric-meta-label="{{label}}" data-metric-meta-href="{{{href}}}">
+        {{label}}
+    </a>
+    {{/front.secondaryButton}}
+    {{/front.raw.secondaryButton}}
+    {{^front.raw.secondaryButton}}
+    {{^front.secondaryButton}}
+    {{#secondaryButton}}
+    <a href="{{{href}}}" class="btn btn--tone-sage btn--full" data-metric data-metric-name="page_secondary_cta_click"
+        data-metric-source="page_cta" data-metric-meta-label="{{label}}" data-metric-meta-href="{{{href}}}">
+        {{label}}
+    </a>
+    {{/secondaryButton}}
+    {{/front.secondaryButton}}
+    {{/front.raw.secondaryButton}}
+</div>

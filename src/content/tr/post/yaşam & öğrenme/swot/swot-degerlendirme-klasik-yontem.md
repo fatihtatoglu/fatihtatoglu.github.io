@@ -4,6 +4,7 @@ lang: tr
 title: "SWOT Değerlendirme: Klasik Yöntemle Adım Adım Rehber"
 slug: swot-degerlendirme-klasik-yontem
 category: yasam-ogrenme
+schemaType: post
 tags:
   - swot
   - swot-degerlendirme

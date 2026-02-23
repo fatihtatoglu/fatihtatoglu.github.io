@@ -4,6 +4,7 @@ lang: tr
 title: "Elimin Hamuruyla Yine Yapamadım: Denemek ve Yanılmak Üzerine"
 slug: denemek-yanilmak-basarisizlik
 category: yasam-ogrenme
+schemaType: post
 tags:
   - denemek
   - yanilmak

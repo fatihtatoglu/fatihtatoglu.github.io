@@ -4,7 +4,7 @@ lang: en
 title: "The System Beneath the Silence: Discipline in Scuba Diving"
 slug: system-beneath-the-silence
 category: life-learning
-type: reflection
+schemaType: post
 tags:
   - scuba-diving
   - scuba-diving-discipline

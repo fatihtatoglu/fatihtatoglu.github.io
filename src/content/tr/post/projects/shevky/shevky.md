@@ -4,7 +4,7 @@ lang: tr
 title: "Shevky Teknik Dokümantasyon"
 slug: shevky-teknik-dokumantasyon
 category: projects
-type: documentation
+schemaType: post
 tags:
   - shevky
   - static-site-generator

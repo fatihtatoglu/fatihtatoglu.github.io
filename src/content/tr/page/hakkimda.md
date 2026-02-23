@@ -4,7 +4,7 @@ lang: tr
 title: "Hakkımda"
 slug: "hakkimda"
 category: meta
-type: about
+schemaType: about
 menu: "Hakkımda"
 order: 4
 show: true
@@ -15,7 +15,7 @@ pair: "about-me"
 canonical: "~/hakkimda/"
 alternate: "~/en/about-fatih-tatoglu/"
 description: "Fatih Tatoğlu'nun 20+ yıllık mühendislik serüveni, öğrenmeye olan merakı ve hayat yolculuğuna dair samimi bir hikâye."
-keywords: ["Fatih Tatoğlu", "hakkımda", "mühendis", "kişisel blog", "öğrenme", "babalık"]
+keywords: ["Fatih Tatoğlu", "Hakkımda", "Mühendis", "Kişisel Blog", "Öğrenme", "Babalık"]
 featured: false
 cover: "/assets/images/standard-cover-terminal.webp"
 coverAlt: "Minimal terminal temalı kapak görüntüsü"

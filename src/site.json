@@ -4,6 +4,7 @@
     "email": "fatih@tatoglu.net",
     "url": "https://tatoglu.net",
     "themeColor": "#5a8df0",
+    "profileImage": "~/assets/images/fatih_tatoglu.webp",
     "social": {
       "github": "https://github.com/fatihtatoglu",
       "linkedin": "https://www.linkedin.com/in/fatihtatoglu/",
@@ -33,8 +34,19 @@
     ]
   },
   "build": {
-    "minify": true,
-    "debug": false
+    "minify": false,
+    "debug": true,
+    "pageBufferLimit": 20,
+    "outputAliases": [
+      {
+        "from": "~/404/",
+        "to": "~/404.html"
+      },
+      {
+        "from": "~/en/404/",
+        "to": "~/en/404.html"
+      }
+    ]
   },
   "features": {
     "postOperations": {
@@ -78,6 +90,7 @@
       }
     },
     "collections": {
+      "includeContentFile": false,
       "tags": {
         "template": "collection",
         "types": [
@@ -111,6 +124,30 @@
     "@shevky/plugin-tailwindcss",
     "@shevky/plugin-esbuild",
     "@shevky/plugin-rss",
-    "@shevky/plugin-sitemap"
-  ]
+    "@shevky/plugin-sitemap",
+    "@shevky/plugin-open-graph"
+  ],
+  "pluginConfigs": {
+    "shevky-sitemap": {
+      "sitemapFilename": "sitemap.xml"
+    },
+    "shevky-rss": {
+      "feedFilename": "feed.xml",
+      "feedTtl": 1440,
+      "feedItemCount": 50
+    },
+    "shevky-open-graph": {
+      "twitterSite": "@fatihtatoglu",
+      "publisherType": "personal",
+      "defaultImage": "~/assets/images/fatih_tatoglu_cover.webp",
+      "defaultTwitterCard": "summary_large_image",
+      "siteName": "Fatih Tatoğlu",
+      "force": false,
+      "contact": {
+        "emails": {
+          "general": "fatih@tatoglu.net"
+        }
+      }
+    }
+  }
 }

@@ -4,6 +4,7 @@ lang: en
 title: "Hyper-V: Linux Mint Dev VM on Windows (Guide)"
 slug: hyper-v-linux-mint-setup
 category: technical-notes
+schemaType: post
 tags:
   - hyper-v
   - linux-mint

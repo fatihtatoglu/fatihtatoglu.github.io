@@ -4,7 +4,7 @@ lang: tr
 title: "İletişim"
 slug: iletisim
 category: meta
-type: contact
+schemaType: contact
 menu: "İletişim"
 order: 5
 show: true
@@ -16,9 +16,9 @@ canonical: ~/iletisim/
 alternate: ~/en/contact/
 description: "Teknik sorularınız, geri bildirimleriniz veya sadece merhaba demek için Fatih Tatoğlu ile iletişime geçebileceğiniz sayfa."
 keywords:
-  - iletişim
-  - contact
-  - fatih tatoğlu
+  - İletişim
+  - Contact
+  - Fatih Tatoğlu
 featured: false
 template: contact
 layout: default

@@ -4,6 +4,8 @@ lang: en
 title: "Cookie Policy: Types, Usage & Preference Management"
 slug: cookie-policy
 category: policy
+schemaType: policy
+policyType: cookie
 menu: "Cookie Policy"
 readingTime: 2
 date: 2025-11-11
@@ -13,11 +15,11 @@ canonical: ~/en/cookie-policy/
 alternate: ~/cerez-politikasi/
 description: Learn which cookies tatoglu.net uses, why they’re stored, and how to manage your privacy preferences effectively.
 keywords:
-  - cookie policy
-  - privacy
-  - data processing
-  - analytics
-  - cookies
+  - Cookie Policy
+  - Privacy
+  - Data Processing
+  - Analytics
+  - Cookies
 featured: false
 template: page
 layout: default

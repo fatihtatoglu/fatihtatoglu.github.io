@@ -4,6 +4,7 @@ lang: tr
 title: "AWS Lambda -> Google Sheets: WIF ile Anahtarsız Kurulum"
 slug: aws-lambda-google-sheets-baglantisi
 category: teknik-notlar
+schemaType: post
 tags:
   - aws
   - lambda

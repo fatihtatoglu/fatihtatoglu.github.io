@@ -4,7 +4,7 @@ lang: en
 title: Contact Fatih Tatoğlu - Get in Touch
 slug: contact
 category: meta
-type: contact
+schemaType: contact
 menu: "Contact"
 order: 5
 show: true
@@ -16,10 +16,10 @@ canonical: ~/en/contact/
 alternate: ~/iletisim/
 description: Reach Fatih Tatoğlu for technical questions, feedback, collaboration requests, or simply to say hello. Get in touch easily through the form or email.
 keywords:
-  - contact
-  - get-in-touch
-  - fatih tatoglu
-  - contact page
+  - Contact
+  - Get in Touch
+  - Fatih Tatoğlu
+  - Contact Page
 featured: false
 template: contact
 layout: default

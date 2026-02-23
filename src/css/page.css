@@ -175,7 +175,9 @@
     article.post .post-body p > img,
     article.page p > img {
       @apply cursor-zoom-in;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
     }
 
     article.post .post-body p > img.zoom,
@@ -235,6 +237,18 @@
           }
         }
       }
+    }
+  }
+
+  article.page.not-found {
+    @apply flex flex-col items-center border-2 border-[var(--sage-500)];
+
+    p {
+      @apply m-4 text-center;
+    }
+
+    img {
+      @apply my-0;
     }
   }
 }

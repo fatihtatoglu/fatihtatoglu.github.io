@@ -4,6 +4,7 @@ lang: en
 title: "AI Debate Experiment: Thinking and Persuasion with Artificial Intelligence"
 slug: debate-experiment-with-ai
 category: life-learning
+schemaType: post
 tags:
   - ai-debate
   - artificial-intelligence

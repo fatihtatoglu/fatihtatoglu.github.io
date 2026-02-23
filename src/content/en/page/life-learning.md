@@ -3,6 +3,7 @@ id: n9pxj201h9
 lang: en
 title: "Life & Learning | Category"
 slug: life-learning
+schemaType: collection
 menu: "Life & Learning"
 order: 2
 show: true
@@ -14,10 +15,10 @@ canonical: ~/en/life-learning/
 alternate: ~/yasam-ogrenme/
 description: "Collected essays, observations, and guides that explore habits, learning systems, and everyday reflections."
 keywords:
-  - life
-  - learning
-  - values
-  - routines
+  - Life
+  - Learning
+  - Values
+  - Routines
 featured: false
 template: collection
 layout: default

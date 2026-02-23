@@ -1,15 +1,13 @@
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>{{page.title}} | {{site.title}}</title>
-  <meta name="description" content="{{page.description}}">
-  <meta name="author" content="{{site.author}}">
-  <meta name="robots" content="{{page.robots}}">
-  <meta name="theme-color" content="{{site.themeColor}}">
-  <meta name="referrer" content="strict-origin-when-cross-origin">
-  <meta
-  http-equiv="Content-Security-Policy"
-  content="
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>{{page.title}} | {{site.title}}</title>
+<meta name="description" content="{{page.description}}">
+<meta name="author" content="{{site.author}}">
+<meta name="robots" content="{{page.robots}}">
+<meta name="theme-color" content="{{site.themeColor}}">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Content-Security-Policy" content="
     default-src 'self';
 
     script-src 'self' 'unsafe-inline'
@@ -49,52 +47,70 @@
     upgrade-insecure-requests;
   ">
 
-  <link rel="canonical" href="{{{page.canonical}}}" data-canonical>
-  {{#page.alternateLinks}}
-  <link rel="alternate" href="{{{url}}}" hreflang="{{hreflang}}" data-lang="{{lang}}">
-  {{/page.alternateLinks}}
-  <link rel="alternate" href="{{{page.alternates.default}}}" hreflang="x-default">
-  {{#page.alternateLinks}}
-  <link rel="alternate" type="application/rss+xml" title="{{site.owner}} | {{label}} RSS" href="{{{baseUrl}}}feed.xml">
-  {{/page.alternateLinks}}
+<link rel="canonical" href="{{{page.canonical}}}" data-canonical>
+{{#page.alternateLinks}}
+<link rel="alternate" href="{{{url}}}" hreflang="{{hreflang}}" data-lang="{{lang}}">
+{{/page.alternateLinks}}
+<link rel="alternate" href="{{{page.alternates.default}}}" hreflang="x-default">
+{{#page.alternateLinks}}
+<link rel="alternate" type="application/rss+xml" title="{{site.owner}} | {{label}} RSS" href="{{{baseUrl}}}feed.xml">
+{{/page.alternateLinks}}
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="{{page.og.type}}">
-  <meta property="og:site_name" content="{{site.title}}">
-  <meta property="og:title" content="{{page.og.title}}">
-  <meta property="og:description" content="{{page.og.description}}">
-  <meta property="og:image" content="{{{page.og.image}}}">
-  <meta property="og:image:secure_url" content="{{{page.og.image}}}">
-  <meta property="og:url" content="{{{page.og.url}}}">
-  <meta property="og:locale" content="{{page.og.locale}}">
-  {{#page.og.altLocale}}
-  <meta property="og:locale:alternate" content="{{.}}">
-  {{/page.og.altLocale}}
+<!-- Open Graph -->
+{{#page.og.type}}
+<meta property="og:type" content="{{.}}"> {{/page.og.type}}
+{{#site.title}}
+<meta property="og:site_name" content="{{.}}"> {{/site.title}}
+{{#page.og.title}}
+<meta property="og:title" content="{{.}}"> {{/page.og.title}}
+{{#page.og.description}}
+<meta property="og:description" content="{{.}}"> {{/page.og.description}}
+{{#page.og.image}}
+<meta property="og:image" content="{{{.}}}">
+<meta property="og:image:secure_url" content="{{{.}}}">
+{{/page.og.image}}
+{{#page.og.url}}
+<meta property="og:url" content="{{{.}}}">
+{{/page.og.url}}
+{{#page.og.locale}}
+<meta property="og:locale" content="{{.}}">
+{{/page.og.locale}}
+{{#page.og.altLocale}}
+<meta property="og:locale:alternate" content="{{.}}">
+{{/page.og.altLocale}}
 
-  <!-- Twitter -->
-  <meta name="twitter:card" content="{{page.twitter.card}}">
-  <meta name="twitter:title" content="{{page.twitter.title}}">
-  <meta name="twitter:description" content="{{page.twitter.description}}">
-  <meta name="twitter:image" content="{{{page.twitter.image}}}">
-  <meta name="twitter:url" content="{{{page.twitter.url}}}">
-  <meta name="twitter:site" content="@fatihtatoglu">
+<!-- Twitter -->
+{{#page.twitter.card}}
+<meta name="twitter:card" content="{{.}}">
+{{/page.twitter.card}}
+{{#page.twitter.title}}
+<meta name="twitter:title" content="{{.}}">{{/page.twitter.title}}
+{{#page.twitter.description}}
+<meta name="twitter:description" content="{{.}}">{{/page.twitter.description}}
+{{#page.twitter.image}}
+<meta name="twitter:image" content="{{{.}}}">{{/page.twitter.image}}
+{{#page.twitter.url}}
+<meta name="twitter:url" content="{{{.}}}">{{/page.twitter.url}}
+{{#page.twitter.site}}
+<meta name="twitter:site" content="{{.}}">
+{{/page.twitter.site}}
 
-  {{#page.structuredData}}
-  <script type="application/ld+json">
-    {{{page.structuredData}}}
-  </script>
-  {{/page.structuredData}}
+{{#page.structuredData}}
+<script type="application/ld+json">
+  {{{page.structuredData}}}
+</script>
+{{/page.structuredData}}
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
-  <link rel="manifest" href="/assets/favicon/site.webmanifest">
-  <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+<link rel="manifest" href="/assets/favicon/site.webmanifest">
+<link rel="shortcut icon" href="/assets/favicon/favicon.ico">
 
-  {{#scripts.analytics}}
-    {{{.}}}
-  {{/scripts.analytics}}
+{{#scripts.analytics}}
+{{{.}}}
+{{/scripts.analytics}}
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="/output.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="/output.css">

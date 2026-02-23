@@ -3,6 +3,7 @@ id: djb3ulcx2f
 lang: tr
 title: "Öğrenen Bir Mühendisin Teknoloji, Öğrenme ve Hayat Üzerine Kişisel Notları"
 slug: ""
+schemaType: home
 menu: "Anasayfa"
 order: 1
 show: true

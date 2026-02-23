@@ -3,6 +3,7 @@ id: n9pxj201h9
 lang: tr
 title: "Yaşam & Öğrenme | Kategori"
 slug: yasam-ogrenme
+schemaType: collection
 menu: "Yaşam & Öğrenme"
 order: 2
 show: true
@@ -14,10 +15,10 @@ canonical: ~/yasam-ogrenme/
 alternate: ~/en/life-learning/
 description: "Gündelik pratikler, öğrenme ritüelleri ve zihni açık tutan deneyimlerin bir arşivi."
 keywords:
-  - hayat
-  - öğrenme
-  - rutinler
-  - farkındalık
+  - Hayat
+  - Öğrenme
+  - Rutinler
+  - Farkındalık
 featured: false
 template: collection
 layout: default

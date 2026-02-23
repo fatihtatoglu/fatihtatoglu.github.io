@@ -4,7 +4,7 @@ lang: en
 title: "NVIDIA Jetson Orin Nano Setup: JetPack, SD Card & Fixes"
 slug: nvidia-jetson-orin-nano-setup
 category: technical-notes
-type: guide
+schemaType: post
 tags:
   - nvidia-jetson
   - jetson-orin-nano

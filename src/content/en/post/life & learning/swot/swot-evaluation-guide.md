@@ -4,6 +4,7 @@ lang: en
 title: "SWOT Evaluation Guide: How to Assess SWOT Results"
 slug: swot-evaluation-guide
 category: life-learning
+schemaType: post
 tags:
   - swot
   - swot-analysis

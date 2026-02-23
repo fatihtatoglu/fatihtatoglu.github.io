@@ -4,6 +4,7 @@ lang: en
 title: "SHEVKY: A Minimal Static Site Generator for Writing"
 slug: shevky-static-site-generator
 category: "technical-notes"
+schemaType: post
 tags:
   - static-site-generator
   - markdown

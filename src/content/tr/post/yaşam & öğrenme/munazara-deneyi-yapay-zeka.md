@@ -4,6 +4,7 @@ lang: tr
 title: "Yapay Zeka ile Münazara Deneyi: Düşünme ve İkna"
 slug: munazara-deneyi-yapay-zeka
 category: "yasam-ogrenme"
+schemaType: post
 tags:
   - munazara
   - yapay-zeka

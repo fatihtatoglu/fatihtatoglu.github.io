@@ -1,0 +1,43 @@
+<!doctype html>
+<html
+  lang="{{lang}}"
+  class="h-full"
+  data-theme="{{theme}}"
+  data-supported-languages="{{site.languagesCsv}}"
+  data-default-language="{{site.defaultLanguage}}"
+  data-base-url="{{{site.url}}}"
+  data-author-name="{{site.author}}"
+  data-analytics-enabled="{{site.analyticsEnabled}}"
+  data-post-ops-api="{{{site.features.postOperations.apiBase}}}"
+  data-post-ops-like="{{site.features.postOperations.like}}"
+  data-post-ops-dislike="{{site.features.postOperations.dislike}}"
+  data-post-ops-comment="{{site.features.postOperations.comment}}"
+  data-turnstile-site-key="{{site.features.postOperations.turnstileSiteKey}}"
+  data-debug="{{site.build.debug}}"
+>
+
+<head>
+  {{> partials/_head }}
+</head>
+
+<body data-active-menu="{{menu.activeKey}}">
+  {{> partials/_noscript }}
+  <a class="skip-link" href="#content" data-i18n="ui.skipToContent">
+    {{i18n.ui.skipToContent}}
+  </a>
+
+  <div class="app-shell">
+    <main id="content" class="site-content flex-1">
+      {{{content}}}
+    </main>
+
+    {{> partials/_footer }}
+  </div>
+
+  <script type="module" src="/output.js"></script>
+  {{#scripts.body}}
+    {{{.}}}
+  {{/scripts.body}}
+</body>
+
+</html>

@@ -4,6 +4,8 @@ lang: tr
 title: Çerez Politikası ve Çerez Yönetimi Rehberi
 slug: cerez-politikasi
 category: policy
+schemaType: policy
+policyType: cookie
 menu: "Çerez Politikası"
 readingTime: 2
 date: 2025-11-11
@@ -13,11 +15,10 @@ canonical: ~/cerez-politikasi/
 alternate: ~/en/cookie-policy/
 description: tatoglu.net üzerinde kullanılan çerez türlerini, saklama sürelerini ve tercihlerinizi nasıl yönetebileceğinizi içeren güncel çerez politikası.
 keywords:
-  - çerez politikası
-  - gizlilik
-  - analytics
-  - veri işleme
-  - analytics
+  - Çerez Politikası
+  - Gizlilik
+  - Analytics
+  - Veri İşleme
 featured: false
 template: page
 layout: default

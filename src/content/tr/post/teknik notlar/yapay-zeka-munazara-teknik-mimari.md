@@ -4,6 +4,7 @@ lang: tr
 title: "Yapay Zekâ Münazara Deneyi: Teknik Arka Plan"
 slug: yapay-zeka-munazara-teknik-mimari
 category: teknik-notlar
+schemaType: post
 tags:
   - yapay-zeka
   - llm

@@ -4,7 +4,7 @@ lang: en
 title: About Me - Fatih Tatoğlu's Journey in Tech & Learning
 slug: about-fatih-tatoglu
 category: meta
-type: about
+schemaType: about
 menu: "About Me"
 order: 4
 show: true
@@ -16,13 +16,13 @@ canonical: ~/en/about-fatih-tatoglu/
 alternate: ~/hakkimda/
 description: Discover the story of engineer and lifelong learner Fatih Tatoğlu - exploring technology, AI, creativity, and personal growth across 20+ years.
 keywords:
-  - about
-  - fatih-tatoglu
-  - personal-journey
-  - engineering
-  - learning
-  - ai-productivity
-  - career-story
+  - About
+  - Fatih Tatoğlu
+  - Personal Journey
+  - Engineering
+  - Learning
+  - AI Productivity
+  - Career Story
 featured: false
 cover: /assets/images/fatih_tatoglu_cover.webp
 coverAlt: Minimal retro-style illustrated cover for Fatih Tatoğlu

@@ -4,7 +4,7 @@ lang: tr
 title: "Yapay Zekâ ile Uğraşmak: Bireysel Olarak Ne Yapabilirim?"
 slug: yapay-zeka-ile-ugrasmak-bireysel-olarak-ne-yapabilirim
 category: yasam-ogrenme
-type: essay
+schemaType: post
 tags:
   - yapay-zeka  
   - bireysel-uretim

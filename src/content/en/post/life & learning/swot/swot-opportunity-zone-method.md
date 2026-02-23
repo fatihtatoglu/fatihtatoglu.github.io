@@ -4,6 +4,7 @@ lang: en
 title: "Opportunity Zone SWOT Method: A Practical Assessment Guide"
 slug: swot-opportunity-zone-method
 category: life-learning
+schemaType: post
 tags:
   - swot
   - swot-analysis

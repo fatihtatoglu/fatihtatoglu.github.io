@@ -362,8 +362,84 @@
     }
   },
   "seo": {
+    "policy": {
+      "hints": {
+        "cookie": {
+          "tr": [
+            "çerez",
+            "cookies"
+          ],
+          "en": [
+            "cookie",
+            "cookies"
+          ]
+        },
+        "disclaimer": {
+          "tr": [
+            "sorumluluk reddi"
+          ],
+          "en": [
+            "disclaimer"
+          ]
+        }
+      },
+      "genre": {
+        "cookie": {
+          "tr": [
+            "Çerez Politikası",
+            "Hukuki"
+          ],
+          "en": [
+            "Cookie Policy",
+            "Legal"
+          ]
+        },
+        "disclaimer": {
+          "tr": [
+            "Sorumluluk Reddi",
+            "Hukuki"
+          ],
+          "en": [
+            "Disclaimer",
+            "Legal"
+          ]
+        },
+        "default": {
+          "tr": [
+            "Politika",
+            "Hukuki"
+          ],
+          "en": [
+            "Policy",
+            "Legal"
+          ]
+        }
+      }
+    },
+    "home": {
+      "itemList": {
+        "name": {
+          "tr": "Son yazılar",
+          "en": "Latest posts"
+        },
+        "pageName": {
+          "tr": "Son yazılar - Sayfa {{page}}",
+          "en": "Latest posts - Page {{page}}"
+        }
+      }
+    },
+    "articleSections": {
+      "yasam-ogrenme": {
+        "tr": "Yaşam & Öğrenme",
+        "en": "Life & Learning"
+      },
+      "teknik-notlar": {
+        "tr": "Teknik Notlar",
+        "en": "Technical Notes"
+      }
+    },
     "collections": {
-      "tags": {
+      "tag": {
         "titleSuffix": {
           "tr": "Etiket",
           "en": "Tag"
@@ -371,6 +447,28 @@
         "description": {
           "tr": "\"{{label}}\" etiketiyle işaretlenmiş tüm yazıları burada bulabilirsiniz. Fatih Tatoğlu'nun teknoloji, öğrenme ve kişisel deneyim notlarından derlenmiştir.",
           "en": "Browse all posts tagged with \"{{label}}\". A curated collection of Fatih Tatoğlu's notes on technology, learning, and personal experience."
+        },
+        "itemList": {
+          "name": {
+            "tr": "{{label}} etiketiyle yazılar",
+            "en": "Posts tagged \"{{label}}\""
+          }
+        }
+      },
+      "category": {
+        "titleSuffix": {
+          "tr": "Kategori",
+          "en": "Category"
+        },
+        "description": {
+          "tr": "\"{{label}}\" kategorisindeki yazıları burada bulabilirsiniz.",
+          "en": "Browse posts in the \"{{label}}\" category."
+        },
+        "itemList": {
+          "name": {
+            "tr": "{{label}} kategorisindeki yazılar",
+            "en": "Posts in \"{{label}}\" category"
+          }
         }
       },
       "series": {
@@ -381,6 +479,20 @@
         "description": {
           "tr": "\"{{label}}\" yazı dizisi, belirli bir tema etrafında yazılmış çok bölümlü içerikleri bir araya getirir. Fatih Tatoğlu'nun bu serideki tüm yazılarını kronolojik olarak burada bulabilirsiniz.",
           "en": "The \"{{label}}\" series brings together multi-part writings focused on a single theme. Explore all posts in this series by Fatih Tatoğlu in chronological order."
+        },
+        "itemList": {
+          "name": {
+            "tr": "{{label}} serisindeki yazılar",
+            "en": "Posts in \"{{label}}\" series"
+          }
+        }
+      },
+      "default": {
+        "itemList": {
+          "name": {
+            "tr": "{{label}} yazıları",
+            "en": "{{label}} posts"
+          }
         }
       }
     }

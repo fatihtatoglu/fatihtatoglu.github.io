@@ -4,6 +4,7 @@ lang: tr
 title: Değerler Nedir? Kendi Çekirdek Değerlerini Keşfet
 slug: degerler
 category: yasam-ogrenme
+schemaType: post
 tags:
   - kisisel-gelisim
   - degerler

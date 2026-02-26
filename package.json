@@ -14,7 +14,7 @@
     "@shevky/core": "^0.0.8",
     "@shevky/plugin-tailwindcss": "^0.0.5",
     "@shevky/plugin-esbuild": "^0.0.3",
-    "@shevky/plugin-rss": "^0.0.3",
+    "@shevky/plugin-rss": "^0.0.4",
     "@shevky/plugin-sitemap": "^0.0.4",
     "@shevky/plugin-robots-txt": "^0.0.3",
     "@shevky/plugin-open-graph": "^0.0.1"

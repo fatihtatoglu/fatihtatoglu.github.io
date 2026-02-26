@@ -34,8 +34,8 @@
     ]
   },
   "build": {
-    "minify": false,
-    "debug": true,
+    "minify": true,
+    "debug": false,
     "pageBufferLimit": 20,
     "outputAliases": [
       {
@@ -134,7 +134,10 @@
     "shevky-rss": {
       "feedFilename": "feed.xml",
       "feedTtl": 1440,
-      "feedItemCount": 50
+      "feedItemCount": 50,
+      "includedSchemaTypes": [
+        "post"
+      ]
     },
     "shevky-open-graph": {
       "twitterSite": "@fatihtatoglu",

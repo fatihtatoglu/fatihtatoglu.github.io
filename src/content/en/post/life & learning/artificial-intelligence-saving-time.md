@@ -35,6 +35,7 @@ coverCaption: Artificial intelligence sometimes offers more than speed; it can a
 template: post
 layout: default
 status: published
+featured: true
 ---
 # Is Artificial Intelligence Only Saving Time?
 

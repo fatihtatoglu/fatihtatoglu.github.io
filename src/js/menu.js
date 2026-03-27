@@ -6,7 +6,6 @@ const menuState = {
   overlay: null,
   links: [],
   initialized: false,
-  pagingBound: false,
 };
 
 function cacheDom() {
@@ -28,6 +27,11 @@ function setActiveMenuLink(id) {
   menuState.links.forEach((link) => {
     const isMatch = link.dataset.menuLink === id;
     link.classList.toggle("is-active", isMatch);
+    if (isMatch) {
+      link.setAttribute("aria-current", "page");
+    } else {
+      link.removeAttribute("aria-current");
+    }
   });
 
   if (doc.body) {
@@ -47,6 +51,11 @@ function setMenuState(open, silent = false) {
 
   if (overlay) {
     overlay.hidden = !open;
+  }
+
+  // Prevent body scroll when mobile menu is open
+  if (typeof document !== "undefined") {
+    document.body.style.overflow = open ? "hidden" : "";
   }
 
   if (open) {
@@ -82,6 +91,40 @@ function handleDocumentClick(event) {
   setMenuState(false, true);
 }
 
+function trapFocus(event) {
+  const { panel } = menuState;
+  if (!panel || panel.hidden) {
+    return;
+  }
+
+  if (event.key !== "Tab") {
+    return;
+  }
+
+  const focusableElements = panel.querySelectorAll(
+    'a[href], button:not([disabled]), input:not([disabled]), textarea:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])'
+  );
+
+  if (!focusableElements.length) {
+    return;
+  }
+
+  const first = focusableElements[0];
+  const last = focusableElements[focusableElements.length - 1];
+
+  if (event.shiftKey) {
+    if (document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    }
+  } else {
+    if (document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
+  }
+}
+
 function bindMenuListeners() {
   const { button, panel, overlay, links } = menuState;
   button?.addEventListener("click", toggleMenu);
@@ -90,6 +133,7 @@ function bindMenuListeners() {
     if (event.key === "Escape") {
       setMenuState(false);
     }
+    trapFocus(event);
   });
 
   overlay?.addEventListener("click", () => setMenuState(false));
@@ -111,7 +155,6 @@ function initMenu(options = {}) {
 
   cacheDom();
   bindMenuListeners();
-  bindPagingButtons();
 
   const providedInitial = typeof options.initialSelection === "string"
     ? options.initialSelection.trim()
@@ -132,36 +175,10 @@ function initMenu(options = {}) {
   return menuApi;
 }
 
-function bindPagingButtons() {
-  if (!doc || menuState.pagingBound) {
-    return;
-  }
-
-  const pagingButtons = doc.querySelectorAll("button[data-href]");
-  if (!pagingButtons.length) {
-    menuState.pagingBound = true;
-    return;
-  }
-
-  pagingButtons.forEach((button) => {
-    button.addEventListener("click", (event) => {
-      const targetButton = event.currentTarget;
-      const href = targetButton?.getAttribute("data-href");
-      if (!href || typeof window === "undefined") {
-        return;
-      }
-      window.location.href = href;
-    });
-  });
-
-  menuState.pagingBound = true;
-}
-
 const menuApi = {
   init: initMenu,
   setActiveMenu: setActiveMenuLink,
   setMenuState,
-  bindPagingButtons,
 };
 
 export default menuApi;

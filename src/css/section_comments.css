@@ -1,6 +1,9 @@
 @layer components {
   article.post .post-comments {
-    @apply border border-[var(--border)] rounded-2xl bg-[var(--bg-elev)] p-6 flex flex-col gap-6;
+    @apply p-6 flex flex-col gap-6;
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
   }
 
   .post-comments__header {
@@ -8,17 +11,22 @@
   }
 
   .post-comments__title {
-    @apply m-0 text-[1.55rem] font-semibold text-[var(--ink)];
+    @apply m-0 text-xl font-semibold;
+    color: var(--ink);
+    font-family: var(--font-mono);
   }
 
   .post-comments__subtitle {
-    @apply mt-[0.4rem] mb-0 text-[0.95rem] text-[var(--ink-dim)];
+    @apply mt-1 mb-0 text-sm;
+    color: var(--ink-dim);
     font-family: var(--font-body);
   }
 
   .post-comments__count {
-    @apply flex items-center gap-[0.4rem] text-[0.75rem] uppercase tracking-[0.15em] text-[var(--ink-dim)];
+    @apply flex items-center gap-1.5 text-xs uppercase tracking-wider;
+    color: var(--muted);
     font-family: var(--font-mono);
+    letter-spacing: 0.1em;
   }
 
   .post-comments__list {
@@ -26,15 +34,22 @@
   }
 
   .post-comments__empty {
-    @apply m-0 text-[0.95rem] text-[var(--ink-dim)] italic;
+    @apply m-0 text-sm italic;
+    color: var(--muted);
   }
 
+  /* Comment cards */
   .comment-card {
-    @apply border border-[var(--brand-500)] rounded-2xl bg-[var(--brand-200)] px-5 py-4 flex flex-col gap-3 w-[90%] mr-[10%];
+    @apply px-5 py-4 flex flex-col gap-3 w-[92%] mr-[8%];
+    background: color-mix(in srgb, var(--brand-100) 50%, var(--bg));
+    border: 1px solid var(--brand-300);
+    border-radius: var(--radius-md);
   }
 
   .comment-card.author {
-    @apply ml-[10%] mr-0 bg-[var(--sage-200)] border-[var(--sage-500)];
+    @apply ml-[8%] mr-0;
+    background: color-mix(in srgb, var(--sage-100) 50%, var(--bg));
+    border-color: var(--sage-400);
   }
 
   .comment-card__header {
@@ -42,18 +57,24 @@
   }
 
   .comment-card__name {
-    @apply font-semibold text-[var(--ink)];
+    @apply font-semibold text-sm;
+    color: var(--ink);
   }
 
   .comment-card__badge {
-    @apply text-[0.65rem] uppercase tracking-[0.12em] text-[var(--brand-700)] px-2 py-[0.2rem] rounded-2xl;
-    background: color-mix(in srgb, var(--brand-500) 15%, transparent);
+    @apply text-[0.6rem] uppercase tracking-wider px-2 py-0.5;
+    color: var(--brand-700);
+    background: color-mix(in srgb, var(--brand-500) 12%, transparent);
     font-family: var(--font-mono);
+    border-radius: var(--radius-sm);
+    letter-spacing: 0.08em;
   }
 
   .comment-card__message {
-    @apply m-0 text-[var(--ink)];
+    @apply m-0 text-sm;
+    color: var(--ink);
     font-family: var(--font-body);
+    line-height: 1.6;
   }
 
   .comment-card__actions {
@@ -61,16 +82,20 @@
   }
 
   .comment-card__action {
-    --btn-icon-size: 34px;
+    --btn-icon-size: 32px;
   }
 
   .comment-card__count {
-    @apply text-[0.7rem] tracking-[0.08em];
+    @apply text-xs;
     font-family: var(--font-mono);
+    color: var(--muted);
+    letter-spacing: 0.06em;
   }
 
+  /* Comment form */
   .post-comments__form {
-    @apply border-t border-[var(--border)] pt-6 flex flex-col gap-4;
+    @apply pt-6 flex flex-col gap-4;
+    border-top: 1px solid var(--border-subtle);
   }
 
   .post-comments__fields {
@@ -78,25 +103,37 @@
   }
 
   .post-comments__field {
-    @apply flex flex-col gap-2 text-[var(--ink)];
+    @apply flex flex-col gap-2;
+    color: var(--ink);
     font-family: var(--font-body);
   }
 
   .post-comments__field span {
-    @apply text-[0.9rem] font-semibold text-[var(--ink)] tracking-[0.03em];
+    @apply text-sm font-semibold tracking-wide;
+    color: var(--ink);
   }
 
   .post-comments__field input,
   .post-comments__field textarea {
-    @apply border border-[var(--border)] rounded-2xl px-[0.95rem] py-[0.75rem] bg-[var(--bg)] text-[var(--ink)];
+    @apply px-4 py-3 text-sm;
+    background: var(--bg);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-md);
+    color: var(--ink);
     font-family: var(--font-body);
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  }
+
+  .post-comments__field input::placeholder,
+  .post-comments__field textarea::placeholder {
+    color: var(--muted);
   }
 
   .post-comments__field input:focus-visible,
   .post-comments__field textarea:focus-visible {
-    @apply outline-none border-[var(--brand-400)];
-    box-shadow: 0 0 0 3px color-mix(in srgb, var(--brand-400) 20%, transparent);
+    outline: none;
+    border-color: var(--brand-400);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--brand-400) 15%, transparent);
   }
 
   .post-comments__actions {
@@ -104,19 +141,20 @@
   }
 
   .post-comments__status {
-    @apply text-[0.85rem] text-[var(--muted)];
+    @apply text-sm;
+    color: var(--muted);
   }
 
   .post-comments__submit {
-    @apply min-w-[160px];
+    @apply min-w-35;
   }
 
   .post-comments__status[data-tone="success"] {
-    @apply text-[var(--ok)];
+    color: var(--ok);
   }
 
   .post-comments__status[data-tone="error"] {
-    @apply text-[var(--err)];
+    color: var(--err);
   }
 
   .post-comments__captcha {

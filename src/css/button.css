@@ -12,15 +12,15 @@
     --btn-shadow: none;
     --btn-shadow-hover: none;
     --btn-shadow-active: none;
-    --btn-padding-y: 0.45rem;
-    --btn-padding-x: 0.9rem;
-    --btn-letter-spacing: 0.15em;
+    --btn-padding-y: 0.5rem;
+    --btn-padding-x: 0.95rem;
+    --btn-letter-spacing: 0.1em;
     --btn-font-size: 0.75rem;
     --btn-font-weight: 600;
-    --btn-gap: 0.35rem;
-    --btn-radius: 16px;
+    --btn-gap: 0.4rem;
+    --btn-radius: var(--radius-md);
     --btn-border-width: 1.5px;
-    --btn-icon-size: 48px;
+    --btn-icon-size: 44px;
 
     @apply inline-flex items-center justify-center uppercase cursor-pointer no-underline;
     gap: var(--btn-gap);
@@ -33,15 +33,16 @@
     font-size: var(--btn-font-size);
     font-weight: var(--btn-font-weight);
     letter-spacing: var(--btn-letter-spacing);
-    line-height: 1.1;
+    line-height: 1.2;
     box-shadow: var(--btn-shadow);
-    transition: border-color 0.2s ease, color 0.2s ease,
-      background-color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
+    transition: border-color var(--transition-fast), color var(--transition-fast),
+      background-color var(--transition-fast), box-shadow var(--transition-fast),
+      transform 100ms ease;
   }
 
   .btn svg {
-    @apply w-4 h-4 text-current;
-    transition: color 0.2s ease;
+    @apply w-4 h-4 text-current shrink-0;
+    transition: color var(--transition-fast);
   }
 
   .btn:hover {
@@ -52,9 +53,9 @@
   }
 
   .btn:focus-visible {
-    outline: none;
+    outline: 2px solid var(--brand-500);
+    outline-offset: 2px;
     border-color: var(--btn-border-hover);
-    box-shadow: 0 0 0 2px rgba(90, 141, 240, 0.25);
   }
 
   .btn:active {
@@ -66,42 +67,43 @@
   }
 
   .btn:disabled {
-    @apply opacity-60 cursor-not-allowed pointer-events-none;
+    @apply opacity-50 cursor-not-allowed pointer-events-none;
   }
 
   /* Size system */
   .btn--xs {
-    --btn-padding-y: 0.25rem;
-    --btn-padding-x: 0.55rem;
-    --btn-font-size: 0.62rem;
-    --btn-letter-spacing: 0.2em;
-    --btn-radius: 16px;
+    --btn-padding-y: 0.3rem;
+    --btn-padding-x: 0.6rem;
+    --btn-font-size: 0.65rem;
+    --btn-letter-spacing: 0.14em;
+    --btn-radius: var(--radius-sm);
   }
 
   .btn--sm {
-    --btn-padding-y: 0.35rem;
-    --btn-padding-x: 0.7rem;
+    --btn-padding-y: 0.4rem;
+    --btn-padding-x: 0.75rem;
     --btn-font-size: 0.7rem;
+    --btn-radius: var(--radius-sm);
   }
 
   .btn--md {
-    --btn-padding-y: 0.45rem;
-    --btn-padding-x: 0.9rem;
+    --btn-padding-y: 0.5rem;
+    --btn-padding-x: 0.95rem;
     --btn-font-size: 0.75rem;
   }
 
   .btn--lg {
-    --btn-padding-y: 0.55rem;
-    --btn-padding-x: 1.1rem;
+    --btn-padding-y: 0.6rem;
+    --btn-padding-x: 1.15rem;
     --btn-font-size: 0.85rem;
-    --btn-radius: 16px;
+    --btn-radius: var(--radius-md);
   }
 
   .btn--xl {
-    --btn-padding-y: 0.7rem;
-    --btn-padding-x: 1.35rem;
+    --btn-padding-y: 0.75rem;
+    --btn-padding-x: 1.4rem;
     --btn-font-size: 0.95rem;
-    --btn-radius: 16px;
+    --btn-radius: var(--radius-lg);
   }
 
   .btn--full {
@@ -145,20 +147,20 @@
 
   /* Button types */
   .btn--fill {
-    --btn-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
-    --btn-shadow-hover: 0 6px 18px rgba(2, 6, 23, 0.08);
-    --btn-shadow-active: 0 4px 12px rgba(2, 6, 23, 0.12);
+    --btn-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --btn-shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --btn-shadow-active: 0 2px 8px rgba(0, 0, 0, 0.1);
   }
 
   .btn--text {
     --btn-bg: transparent;
-    --btn-bg-hover: rgba(90, 141, 240, 0.08);
-    --btn-bg-active: rgba(90, 141, 240, 0.16);
+    --btn-bg-hover: color-mix(in srgb, var(--brand-500) 8%, transparent);
+    --btn-bg-active: color-mix(in srgb, var(--brand-500) 14%, transparent);
     --btn-border: transparent;
     --btn-border-hover: transparent;
     --btn-border-active: transparent;
     --btn-border-width: 0;
-    --btn-letter-spacing: 0.08em;
+    --btn-letter-spacing: 0.06em;
     text-transform: none;
     padding-inline: 0.25rem;
     box-shadow: none;
@@ -167,20 +169,24 @@
   .btn--icon {
     --btn-padding-x: 0;
     --btn-padding-y: 0;
-    --btn-gap: 0.15rem;
-    @apply w-[var(--btn-icon-size)] h-[var(--btn-icon-size)] rounded-2xl;
+    --btn-gap: 0;
+    @apply rounded-full;
+    width: var(--btn-icon-size);
+    height: var(--btn-icon-size);
+    min-width: var(--btn-icon-size);
+    min-height: var(--btn-icon-size);
   }
 
   .btn--icon svg {
-    @apply w-6.5 h-6.5;
-  }
-
-  .btn--icon.btn--xs svg {
     @apply w-5 h-5;
   }
 
   .btn--icon.btn--xs {
-    --btn-icon-size: 34px;
+    --btn-icon-size: 36px;
+  }
+
+  .btn--icon.btn--xs svg {
+    @apply w-4.5 h-4.5;
   }
 
   .btn--icon.btn--sm {
@@ -188,15 +194,15 @@
   }
 
   .btn--icon.btn--md {
-    --btn-icon-size: 48px;
+    --btn-icon-size: 44px;
   }
 
   .btn--icon.btn--lg {
-    --btn-icon-size: 56px;
+    --btn-icon-size: 52px;
   }
 
   .btn--icon.btn--xl {
-    --btn-icon-size: 64px;
+    --btn-icon-size: 60px;
   }
 
   .btn--has-badge {
@@ -204,7 +210,9 @@
   }
 
   .btn__badge {
-    @apply absolute -top-2.5 -right-2.5 min-w-5 h-5 px-1.5 rounded-2xl bg-[var(--sage-500)] text-white text-[0.6rem] font-bold leading-5 text-center tracking-normal opacity-0 scale-[0.85] transition-[opacity,transform] duration-200 ease-in pointer-events-none;
+    @apply absolute -top-2 -right-2 min-w-5 h-5 px-1.5 bg-[var(--sage-600)] text-white text-[0.6rem] font-bold leading-5 text-center tracking-normal opacity-0 scale-90 pointer-events-none;
+    border-radius: 10px;
+    transition: opacity var(--transition-fast), transform var(--transition-fast);
   }
 
   .btn--has-badge[data-has-count="true"] .btn__badge {
@@ -220,7 +228,7 @@
     flex-direction: unset;
   }
 
-  /* Tone / color tokens */
+  /* ——— Tone / color tokens ——— */
   .btn--tone-neutral {
     --btn-bg: var(--bg);
     --btn-bg-hover: var(--bg-elev);
@@ -228,7 +236,7 @@
     --btn-border: var(--border);
     --btn-border-hover: var(--brand-300);
     --btn-border-active: var(--brand-400);
-    --btn-color: var(--muted);
+    --btn-color: var(--ink-dim);
     --btn-color-hover: var(--brand-700);
     --btn-color-active: var(--brand-800);
   }
@@ -237,9 +245,9 @@
     --btn-bg: var(--brand-50);
     --btn-bg-hover: var(--brand-100);
     --btn-bg-active: var(--brand-200);
-    --btn-border: var(--brand-400);
-    --btn-border-hover: var(--brand-500);
-    --btn-border-active: var(--brand-600);
+    --btn-border: var(--brand-300);
+    --btn-border-hover: var(--brand-400);
+    --btn-border-active: var(--brand-500);
     --btn-color: var(--brand-800);
     --btn-color-hover: var(--brand-900);
     --btn-color-active: #142348;
@@ -255,6 +263,30 @@
     --btn-color: var(--sage-800);
     --btn-color-hover: var(--sage-900);
     --btn-color-active: #1b2a23;
+  }
+
+  .dark .btn--tone-brand {
+    --btn-bg: #1a2e52;
+    --btn-bg-hover: #23406e;
+    --btn-bg-active: #2d5188;
+    --btn-border: #3f6299;
+    --btn-border-hover: #5a80bb;
+    --btn-border-active: #7aa2dc;
+    --btn-color: #d8e7ff;
+    --btn-color-hover: #edf4ff;
+    --btn-color-active: #ffffff;
+  }
+
+  .dark .btn--tone-sage {
+    --btn-bg: #17302d;
+    --btn-bg-hover: #1f403c;
+    --btn-bg-active: #28524d;
+    --btn-border: #3f6d67;
+    --btn-border-hover: #5a8f88;
+    --btn-border-active: #74aea6;
+    --btn-color: #d3efe9;
+    --btn-color-hover: #e9fbf7;
+    --btn-color-active: #ffffff;
   }
 
   .btn--tone-rss {
@@ -413,9 +445,59 @@
     --btn-color-active: #ffffff;
   }
 
-  /* Header specific buttons */
+  /* Keep social brand tones readable in dark mode.
+     These override `.dark .btn--tone-brand` when both classes are present. */
+  .dark .btn--tone-github {
+    --btn-bg: #242c36;
+    --btn-bg-hover: #2f3946;
+    --btn-bg-active: #1a2028;
+    --btn-border: #3f4b5a;
+    --btn-border-hover: #556478;
+    --btn-border-active: #6a7d95;
+    --btn-color: #e8eef7;
+    --btn-color-hover: #ffffff;
+    --btn-color-active: #ffffff;
+  }
+
+  .dark .btn--tone-linkedin {
+    --btn-bg: #0b67c5;
+    --btn-bg-hover: #1478de;
+    --btn-bg-active: #084f93;
+    --btn-border: #2c86e6;
+    --btn-border-hover: #53a0f1;
+    --btn-border-active: #78b7ff;
+    --btn-color: #f3f9ff;
+    --btn-color-hover: #ffffff;
+    --btn-color-active: #ffffff;
+  }
+
+  .dark .btn--tone-x {
+    --btn-bg: #0b1118;
+    --btn-bg-hover: #151e29;
+    --btn-bg-active: #060a10;
+    --btn-border: #2a3748;
+    --btn-border-hover: #3d5067;
+    --btn-border-active: #536a87;
+    --btn-color: #dbe7f8;
+    --btn-color-hover: #ffffff;
+    --btn-color-active: #ffffff;
+  }
+
+  .dark .btn--tone-instagram {
+    --btn-bg: #d83d69;
+    --btn-bg-hover: #e6547d;
+    --btn-bg-active: #bc2f56;
+    --btn-border: #ec6c92;
+    --btn-border-hover: #f48ab0;
+    --btn-border-active: #f8a5c2;
+    --btn-color: #fff6f9;
+    --btn-color-hover: #ffffff;
+    --btn-color-active: #ffffff;
+  }
+
+  /* ——— Header-specific buttons ——— */
   .theme-icon {
-    @apply hidden w-[26px] h-[26px] text-current;
+    @apply hidden w-5 h-5 text-current;
   }
 
   .theme-button svg path,
@@ -435,21 +517,21 @@
     --btn-bg: var(--bg-elev);
     --btn-bg-hover: var(--brand-50);
     --btn-bg-active: var(--brand-100);
-    --btn-border: var(--brand-400);
-    --btn-border-hover: var(--brand-500);
-    --btn-border-active: var(--brand-600);
-    --btn-color: var(--brand-700);
-    --btn-color-hover: var(--brand-800);
-    --btn-color-active: var(--brand-900);
+    --btn-border: var(--brand-300);
+    --btn-border-hover: var(--brand-400);
+    --btn-border-active: var(--brand-500);
+    --btn-color: var(--brand-600);
+    --btn-color-hover: var(--brand-700);
+    --btn-color-active: var(--brand-800);
   }
 
   .language-button {
     --btn-gap: 0;
-    @apply rounded-2xl;
+    border-radius: var(--radius-md);
   }
 
   .lang-flag {
-    @apply hidden w-7.5 h-5.5 overflow-hidden;
+    @apply hidden w-7 h-5 overflow-hidden;
   }
 
   .language-button[data-active-lang="tr"] [data-flag="tr"],
@@ -459,12 +541,12 @@
 
   .language-button[data-active-lang="en"] {
     --btn-bg: var(--bg-elev);
-    --btn-border: var(--brand-400);
-    --btn-border-hover: var(--brand-500);
-    --btn-border-active: var(--brand-600);
-    --btn-color: var(--brand-700);
-    --btn-color-hover: var(--brand-800);
-    --btn-color-active: var(--brand-900);
+    --btn-border: var(--brand-300);
+    --btn-border-hover: var(--brand-400);
+    --btn-border-active: var(--brand-500);
+    --btn-color: var(--brand-600);
+    --btn-color-hover: var(--brand-700);
+    --btn-color-active: var(--brand-800);
   }
 
   .menu-button {
@@ -474,8 +556,9 @@
   .icon-menu,
   .icon-menu::before,
   .icon-menu::after {
-    @apply block w-[18px] h-[2px] rounded-2xl bg-current;
-    transition: background-color 0.2s ease;
+    @apply block w-4.5 h-0.5 bg-current;
+    border-radius: 1px;
+    transition: background-color var(--transition-fast);
   }
 
   .icon-menu {
@@ -499,16 +582,19 @@
 
   .btn[data-menu-open="true"] {
     --btn-bg: var(--bg-elev);
-    --btn-border: var(--brand-400);
-    --btn-border-hover: var(--brand-500);
-    --btn-border-active: var(--brand-600);
-    --btn-color: var(--brand-700);
-    --btn-color-hover: var(--brand-800);
-    --btn-color-active: var(--brand-900);
-    box-shadow: var(--btn-shadow-hover);
+    --btn-border: var(--brand-300);
+    --btn-border-hover: var(--brand-400);
+    --btn-border-active: var(--brand-500);
+    --btn-color: var(--brand-600);
+    --btn-color-hover: var(--brand-700);
+    --btn-color-active: var(--brand-800);
   }
 
   a.btn {
+    text-decoration: none;
+  }
+
+  a.btn:hover {
     text-decoration: none;
   }
 }

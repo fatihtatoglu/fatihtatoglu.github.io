@@ -1,29 +1,188 @@
 @layer components {
+  /* ——— Base card: horizontal layout (mobile-first) ——— */
   section.category article.post-card {
-    @apply rounded-2xl border border-[var(--border)] bg-[var(--bg-elev)] p-4 mb-4;
+    @apply flex flex-row p-0 overflow-hidden justify-end;
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
 
     header.post-header {
-      @apply bg-[var(--bg-elev)];
+      @apply shrink-0 w-32.5;
+      background: var(--bg-elev);
+
+      div.post-cover {
+        @apply p-0 h-full;
+
+        figure.post-cover {
+          @apply m-0 h-full;
+
+          img {
+            @apply w-full h-full object-cover;
+            border-radius: 0;
+            min-height: 100%;
+          }
+
+          figcaption {
+            @apply hidden;
+          }
+        }
+      }
 
       div.post-meta {
-        @apply mt-1;
+        @apply hidden;
       }
     }
 
     div.post-body {
-      @apply flex flex-col rounded-2xl p-4 justify-start bg-[var(--bg)] mt-4;
+      @apply flex flex-col flex-1 min-w-0 px-4 py-3 justify-center;
+      background: var(--bg);
 
       h2 {
-        @apply mt-0;
+        @apply mt-0 mb-1.5 font-semibold leading-snug;
+        font-family: var(--font-mono);
+        font-size: 0.9rem;
+        flex-shrink: 0;
+
+        a {
+          color: var(--ink);
+          transition: color var(--transition-fast);
+          text-decoration: none;
+        }
+
+        a:hover {
+          color: var(--brand-600);
+          text-decoration: none;
+        }
+      }
+
+      p {
+        @apply text-xs leading-relaxed m-0;
+        color: var(--ink-dim);
+        line-height: 1.6;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        overflow-wrap: anywhere;
+        flex-shrink: 0;
       }
     }
   }
 
-  section.category article.post-card:last-child {
-    @apply mb-0;
+  /* ——— Hover: shared for home AND collection ——— */
+  section.category article.post-card:hover {
+    border-color: var(--brand-300);
+    box-shadow: 0 4px 16px color-mix(in srgb, var(--brand-500) 10%, transparent);
+    transform: translateY(-2px);
   }
 
-  section.category div.category-listing article.post-card {
-    @apply mb-0 h-auto;
+  /* ——— ≥480px: Slightly wider thumbnail ——— */
+  @media (min-width: 480px) {
+    section.category article.post-card {
+      header.post-header {
+        @apply w-40;
+      }
+
+      div.post-body {
+        @apply px-5 py-4;
+
+        h2 {
+          @apply mb-2;
+          font-size: 0.95rem;
+        }
+
+        p {
+          @apply text-sm;
+        }
+      }
+    }
+  }
+
+  /* ——— ≥640px: Vertical card stack ——— */
+  @media (min-width: 640px) {
+    section.category article.post-card {
+      @apply flex-col;
+
+      header.post-header {
+        @apply w-full shrink-0;
+
+        div.post-cover {
+          @apply h-auto;
+
+          figure.post-cover {
+            @apply h-auto;
+
+            img {
+              @apply w-full aspect-[2.2/1] object-cover;
+              min-height: unset;
+            }
+
+            figcaption {
+              @apply block px-4 pt-2 pb-2 text-[0.7rem] italic text-center;
+              color: var(--muted);
+            }
+          }
+        }
+
+        div.post-meta {
+          @apply block px-4 py-3;
+
+          dl.post-meta__grid {
+            @apply flex-row gap-6 justify-start text-left;
+          }
+
+          .post-meta {
+            @apply p-0 bg-transparent;
+          }
+
+          .post-meta__item {
+            @apply text-left;
+          }
+
+          .post-meta__item dt {
+            @apply text-[0.6rem];
+          }
+
+          .post-meta__item dd {
+            @apply text-xs;
+          }
+        }
+      }
+
+      div.post-body {
+        @apply px-5 py-4;
+        border-top: 1px solid var(--border-subtle);
+        justify-content: flex-start;
+
+        h2 {
+          @apply mb-2;
+          font-size: 1.05rem;
+        }
+
+        p {
+          @apply text-sm;
+          line-height: 1.7;
+        }
+      }
+    }
+  }
+
+  /* ——— Featured home card: horizontal on ≥960px ——— */
+  @media (min-width: 960px) {
+    section.category.home div.category-listing article.post-card:first-child {
+      div.post-body {
+        border-top: none;
+        border-left: 1px solid var(--border-subtle);
+
+        h2 {
+          font-size: 1.15rem;
+        }
+
+        p {
+          -webkit-line-clamp: 4;
+        }
+      }
+    }
   }
 }

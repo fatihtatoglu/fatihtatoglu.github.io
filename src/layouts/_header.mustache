@@ -1,4 +1,4 @@
-<header class="site-header">
+<header class="site-header" role="banner">
   <div class="header-wrapper">
 
     <div class="header-bar">
@@ -6,10 +6,11 @@
         <a href="{{{site.home}}}" class="owner" data-i18n="site.owner" lang="{{lang}}"
           data-metric
           data-metric-name="header_home_click"
-          data-metric-source="header">
+          data-metric-source="header"
+          aria-label="{{site.owner}} — {{site.role}}">
           {{site.owner}}
         </a>
-        <p class="role" data-i18n="site.role" lang="{{lang}}">
+        <p class="role" data-i18n="site.role" lang="{{lang}}" aria-hidden="true">
           {{site.role}}
         </p>
       </div>
@@ -28,13 +29,14 @@
       </div>
     </div>
 
-    <div class="menu-drawer" data-menu-panel id="primary-menu" hidden>
+    <div class="menu-drawer" data-menu-panel id="primary-menu" role="dialog" aria-label="{{i18n.menu.primary}}" hidden>
       {{#site.features.search}}
+      <label for="site-search" class="sr-only">{{i18n.menu.searchPlaceholder}}</label>
       <input id="site-search" type="search" placeholder="{{i18n.menu.searchPlaceholder}}" class="search-field"
         data-i18n="menu.searchPlaceholder" />
       {{/site.features.search}}
       <nav aria-label="{{i18n.menu.primary}}" data-i18n-attrs="aria-label:menu.primary">
-        <ul class="menu-list">
+        <ul class="menu-list" role="list">
           {{#menu.items}}
             <li>
               <a class="btn btn--tone-neutral menu-link{{#isActive}} is-active{{/isActive}}"
@@ -54,8 +56,8 @@
       </nav>
     </div>
 
-    <div class="menu-overlay" data-menu-overlay hidden></div>
+    <div class="menu-overlay" data-menu-overlay hidden aria-hidden="true"></div>
 
-    <p class="slogan" data-i18n="site.quote">{{site.quote}}</p>
+    <p class="slogan" data-i18n="site.quote" aria-label="{{site.quote}}">{{site.quote}}</p>
   </div>
 </header>

@@ -4,19 +4,21 @@
   <header class="post-header">
 
     <div class="post-back">
-      <button class="btn btn--md btn--quarter btn--tone-brand btn--icon-left" type="button" onclick="window.history.back()"
-        aria-label="{{i18n.ui.backButton.aria}}">
+      <a class="btn btn--md btn--quarter btn--tone-brand btn--icon-left" href="javascript:void(0)"
+        data-back-link
+        aria-label="{{i18n.ui.backButton.aria}}"
+        data-i18n-attrs="aria-label:ui.backButton.aria">
         <svg aria-hidden="true">
           <use href="/assets/svg/icons.svg#icon-arrow-left"></use>
         </svg>
-        <span>{{i18n.ui.backButton.label}}</span>
-      </button>
+        <span data-i18n="ui.backButton.label">{{i18n.ui.backButton.label}}</span>
+      </a>
     </div>
 
     {{#front.cover}}
     <div class="post-cover">
       <figure class="post-cover">
-        <img src="{{{.}}}" alt="{{front.coverAlt}}">
+        <img src="{{{.}}}" alt="{{front.coverAlt}}" loading="eager">
         {{#front.coverCaption}}
         <figcaption>{{.}}</figcaption>
         {{/front.coverCaption}}
@@ -29,7 +31,7 @@
         {{#front.dateDisplay}}
         <div class="post-meta__item">
           <dt lang="{{lang}}">{{i18n.category.meta.publishedLabel}}</dt>
-          <dd>{{.}}</dd>
+          <dd><time>{{.}}</time></dd>
         </div>
         {{/front.dateDisplay}}
 

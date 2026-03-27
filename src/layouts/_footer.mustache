@@ -1,8 +1,8 @@
-<footer class="site-footer">
+<footer class="site-footer" role="contentinfo">
   <div class="footer-wrapper">
 
-    <div class="footer-tags">
-      <ul>
+    <div class="footer-tags" aria-label="Tags">
+      <ul role="list">
         {{#footer.tags}}
         <li>
           <a class="btn btn--xs btn--tone-sage btn--icon-left" href="{{{url}}}" data-i18n="footer.tags.{{key}}"
@@ -21,7 +21,7 @@
       </ul>
     </div>
     
-    <div class="footer-policies">
+    <div class="footer-policies" role="navigation" aria-label="Legal">
     {{#footer.policies}}
       <a class="btn btn--md btn--fill btn--tone-brand btn--icon-left" href="{{{url}}}"
           data-i18n="footer.policies.{{key}}"
@@ -38,7 +38,7 @@
     {{/footer.policies}}
     </div>
 
-    <div class="footer-social">
+    <div class="footer-social" aria-label="Social links">
     {{#footer.social}}
       <a class="btn btn--md btn--tone-brand btn--icon-left btn--tone-{{tone}}" href="{{{url}}}"
         {{#external}}rel="noopener noreferrer" target="_blank"{{/external}}
@@ -54,11 +54,7 @@
     </div>
 
     <p class="copyright">
-      © <span data-year>{{site.year}}</span> - <span data-i18n="footer.tagline">{{footer.tagline}}</span>
+      &copy; <span data-year>{{site.year}}</span> - <span data-i18n="footer.tagline">{{footer.tagline}}</span>
     </p>
   </div>
-
-  <script class="easter-egg">
-    var data = {{{easterEgg}}};
-  </script>
 </footer>

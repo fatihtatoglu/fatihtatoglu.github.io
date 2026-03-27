@@ -1,11 +1,25 @@
 @layer base {
   a {
     @apply font-medium no-underline;
-    color: var(--brand-700);
+    color: var(--brand-600);
+    transition: color var(--transition-fast), text-decoration-color var(--transition-fast);
   }
 
   a:hover {
-    @apply underline opacity-75;
+    color: var(--brand-700);
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 3px;
+    text-decoration-color: color-mix(in srgb, var(--brand-600) 50%, transparent);
+  }
+
+  .dark a {
+    color: var(--brand-400);
+  }
+
+  .dark a:hover {
+    color: var(--brand-300);
+    text-decoration-color: color-mix(in srgb, var(--brand-400) 50%, transparent);
   }
 
   p {
@@ -13,62 +27,130 @@
   }
 
   h1 {
-    @apply font-mono text-3xl font-medium leading-tight;
+    @apply text-2xl font-semibold leading-tight tracking-tight;
+    font-family: var(--font-mono);
     color: var(--ink);
     @apply mb-6;
   }
 
   h2 {
-    @apply font-mono text-2xl font-medium;
+    @apply text-xl font-semibold leading-snug;
+    font-family: var(--font-mono);
     color: var(--ink);
-    @apply mt-8 mb-4;
+    @apply mt-10 mb-4;
   }
 
   h3 {
-    @apply font-mono text-xl font-medium;
+    @apply text-lg font-semibold leading-snug;
+    font-family: var(--font-mono);
     color: var(--ink);
-    @apply mt-7 mb-3;
+    @apply mt-8 mb-3;
   }
 
   h4 {
-    @apply font-mono text-lg font-medium;
+    @apply text-base font-semibold;
+    font-family: var(--font-mono);
     color: var(--ink);
     @apply mt-6 mb-2;
   }
 
+  @media (min-width: 640px) {
+    h1 {
+      @apply text-3xl;
+    }
+
+    h2 {
+      @apply text-2xl;
+    }
+
+    h3 {
+      @apply text-xl;
+    }
+
+    h4 {
+      @apply text-lg;
+    }
+  }
+
   blockquote {
-    @apply my-8 rounded-2xl border-l-4 px-6 py-4 italic leading-relaxed;
-    background-color: var(--bg-elev);
-    border-color: var(--sage-400);
-    color: var(--ink);
+    @apply my-8 px-6 py-5 italic leading-relaxed;
+    background-color: var(--bg-surface);
+    border-left: 4px solid var(--sage-400);
+    border-radius: var(--radius-md);
+    color: var(--ink-dim);
   }
 
   blockquote p:last-child {
     margin-bottom: 0;
   }
 
+  blockquote cite,
+  blockquote footer {
+    @apply block mt-3 text-sm not-italic;
+    color: var(--muted);
+    font-family: var(--font-mono);
+  }
+
   pre {
-    @apply w-full font-mono text-sm my-8 p-2 border rounded-2xl border-[var(--sage-900)] bg-[var(--bg-elev)] leading-relaxed;
+    @apply w-full text-sm my-8 p-4 leading-relaxed;
+    font-family: var(--font-mono);
+    background-color: var(--bg-elev);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
     @apply overflow-x-auto overflow-y-hidden block;
   }
 
+  .dark pre {
+    background-color: var(--bg-surface);
+    border-color: var(--border);
+  }
+
   code {
-    @apply bg-[var(--sage-200)] font-mono text-xs p-0.5 px-1 font-medium border rounded-2xl;
-    color: var(--sage-900);
+    @apply text-[0.85em] py-0.5 px-1.5 font-medium;
+    font-family: var(--font-mono);
+    background-color: color-mix(in srgb, var(--sage-200) 60%, transparent);
+    color: var(--sage-800);
+    border: 1px solid var(--sage-200);
+    border-radius: var(--radius-sm);
+  }
+
+  .dark code {
+    background-color: color-mix(in srgb, var(--sage-800) 40%, transparent);
+    color: var(--sage-200);
+    border-color: var(--sage-700);
   }
 
   pre > code {
-    @apply font-mono text-sm;
-    background-color: unset;
-    padding: unset;
-    font-weight: unset;
-    border: unset;
-    color: unset;
+    @apply text-sm p-0 font-normal border-0;
+    background-color: transparent;
+    color: inherit;
+    border-radius: 0;
   }
 
   pre > code::before {
-    @apply flex items-end justify-end px-2 pb-2 text-xs border-b border-dashed mb-2 sticky left-0;
-    color: var(--ink-dim);
+    @apply flex items-end justify-end px-3 pb-2 text-xs border-b border-dashed mb-3 sticky left-0;
+    color: var(--muted);
+    border-color: var(--border);
     content: "txt";
+    font-family: var(--font-mono);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  hr {
+    @apply my-10 border-0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--border), transparent);
+  }
+
+  strong {
+    @apply font-semibold;
+    color: var(--ink);
+  }
+
+  mark {
+    @apply py-0.5 px-1;
+    background-color: color-mix(in srgb, var(--brand-200) 50%, transparent);
+    border-radius: 2px;
   }
 }

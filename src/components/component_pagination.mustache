@@ -1,34 +1,62 @@
 {{#listing.hasItems}}
   {{#listing.hasPagination}}
-  <nav class="pagination" aria-label="Sayfa geçişleri">
+  <nav class="pagination" aria-label="{{i18n.ui.pagination.previous}} / {{i18n.ui.pagination.next}}">
     {{#listing}}
-      <button
-        class="btn btn--sm btn--quarter {{#hasPrev}}btn--tone-brand{{/hasPrev}} {{^hasPrev}}btn--tone-neutral{{/hasPrev}} btn--icon-left"
-        data-href="{{prevUrl}}" {{^hasPrev}}disabled{{/hasPrev}}
+      {{#hasPrev}}
+      <a
+        class="btn btn--sm btn--quarter btn--tone-brand btn--icon-left"
+        href="{{prevUrl}}"
         data-metric
         data-metric-name="pagination_click"
         data-metric-source="listing"
         data-metric-meta-direction="prev"
+        rel="prev"
       >
         <svg aria-hidden="true">
           <use href="/assets/svg/icons.svg#icon-arrow-left"></use>
         </svg>
         <span>{{i18n.ui.pagination.previous}}</span>
-      </button>
+      </a>
+      {{/hasPrev}}
+      {{^hasPrev}}
+      <span
+        class="btn btn--sm btn--quarter btn--tone-neutral btn--icon-left"
+        aria-disabled="true"
+      >
+        <svg aria-hidden="true">
+          <use href="/assets/svg/icons.svg#icon-arrow-left"></use>
+        </svg>
+        <span>{{i18n.ui.pagination.previous}}</span>
+      </span>
+      {{/hasPrev}}
 
-      <button
-        class="btn btn--sm btn--quarter {{#hasNext}}btn--tone-brand{{/hasNext}} {{^hasNext}}btn--tone-neutral{{/hasNext}} btn--icon-right"
-        data-href="{{nextUrl}}" {{^hasNext}}disabled{{/hasNext}}
+      {{#hasNext}}
+      <a
+        class="btn btn--sm btn--quarter btn--tone-brand btn--icon-right"
+        href="{{nextUrl}}"
         data-metric
         data-metric-name="pagination_click"
         data-metric-source="listing"
         data-metric-meta-direction="next"
+        rel="next"
       >
         <span>{{i18n.ui.pagination.next}}</span>
         <svg aria-hidden="true">
           <use href="/assets/svg/icons.svg#icon-arrow-right"></use>
         </svg>
-      </button>
+      </a>
+      {{/hasNext}}
+      {{^hasNext}}
+      <span
+        class="btn btn--sm btn--quarter btn--tone-neutral btn--icon-right"
+        aria-disabled="true"
+      >
+        <span>{{i18n.ui.pagination.next}}</span>
+        <svg aria-hidden="true">
+          <use href="/assets/svg/icons.svg#icon-arrow-right"></use>
+        </svg>
+      </span>
+      {{/hasNext}}
     {{/listing}}
   </nav>
   {{/listing.hasPagination}}

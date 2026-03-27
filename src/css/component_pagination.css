@@ -1,16 +1,16 @@
 @layer components {
   .pagination {
-    @apply flex items-center justify-between w-full p-2 gap-4;
+    @apply flex items-center justify-between w-full py-4 gap-4;
 
     .btn {
-      @apply w-1/2;
+      @apply w-[45%];
     }
   }
 
   @media (min-width: 768px) {
     .pagination {
       .btn {
-        @apply w-1/4;
+        @apply w-auto min-w-35;
       }
     }
   }

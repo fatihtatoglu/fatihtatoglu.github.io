@@ -13,7 +13,7 @@ const ICON_IDS = {
 const root = document.documentElement;
 const THEME_COLORS = {
   light: "#5a8df0",
-  dark: "#0e1116",
+  dark: "#0c1220",
 };
 const prefersDark = window.matchMedia ? window.matchMedia("(prefers-color-scheme: dark)") : null;
 
@@ -43,11 +43,24 @@ function updateThemeMeta(theme) {
   meta.setAttribute("content", color);
 }
 
-function applyRootTheme(pref) {
+function applyRootTheme(pref, animate = false) {
   const resolved = resolveTheme(pref);
+
+  if (animate) {
+    root.classList.add("theme-transitioning");
+  }
+
   root.dataset.theme = resolved;
   root.classList.toggle("dark", resolved === "dark");
   updateThemeMeta(resolved);
+
+  if (animate) {
+    requestAnimationFrame(() => {
+      setTimeout(() => {
+        root.classList.remove("theme-transitioning");
+      }, 350);
+    });
+  }
 }
 
 let themePreference = readStoredTheme();
@@ -55,12 +68,12 @@ if (!THEME_STATES.includes(themePreference)) {
   themePreference = "system";
 }
 
-applyRootTheme(themePreference);
+applyRootTheme(themePreference, false);
 
 function setThemePreference(pref) {
   themePreference = THEME_STATES.includes(pref) ? pref : "system";
   persistTheme(themePreference);
-  applyRootTheme(themePreference);
+  applyRootTheme(themePreference, true);
   document.dispatchEvent(new CustomEvent(THEME_CHANGE_EVENT, { detail: themePreference }));
 }
 
@@ -75,9 +88,20 @@ function nextThemeValue(current) {
 
 prefersDark?.addEventListener("change", () => {
   if (themePreference === "system") {
-    applyRootTheme(themePreference);
+    applyRootTheme(themePreference, true);
   }
 });
+
+const LABEL_MAP = {
+  light: { tr: "Tema: Açık", en: "Theme: Light" },
+  dark: { tr: "Tema: Koyu", en: "Theme: Dark" },
+  system: { tr: "Tema: Sistem", en: "Theme: System" },
+};
+
+function getThemeLabel(state) {
+  const lang = root?.lang?.split("-")[0] || "tr";
+  return LABEL_MAP[state]?.[lang] || `Theme: ${toTitleCase(state)}`;
+}
 
 const SWITCHER_TEMPLATE = /* html */ `
   <button type="button" class="btn btn--md btn--tone-neutral btn--icon theme-button" data-theme-toggle data-theme-state="light" aria-label=""
@@ -162,8 +186,7 @@ class ThemeSwitcher extends HTMLElement {
     if (this.button?.dataset) {
       this.button.dataset.metricMetaCurrent = state;
     }
-    const stateLabel = toTitleCase(state);
-    this.button.setAttribute("aria-label", `Theme: ${stateLabel}`);
+    this.button.setAttribute("aria-label", getThemeLabel(state));
   }
 }
 

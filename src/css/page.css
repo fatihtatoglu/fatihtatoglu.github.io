@@ -1,29 +1,42 @@
 @layer components {
+  /* ——— Shared: Cover images ——— */
   figure.post-cover img {
-    @apply rounded-2xl;
+    border-radius: var(--radius-md);
   }
 
   figure.post-cover figcaption {
-    @apply text-xs text-center p-2 font-semibold;
+    @apply text-xs text-center p-2 font-medium;
     font-family: var(--font-body);
+    color: var(--muted);
   }
 
+  /* ——— Shared: Post body & page prose ——— */
   .post-body,
   article.page {
-    @apply text-[var(--ink)] leading-[1.7];
+    @apply text-[var(--ink)] leading-[1.75];
     font-family: var(--font-body);
+    font-size: 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .post-body,
+    article.page {
+      font-size: 1.05rem;
+    }
   }
 
   article.post .post-body img,
   article.page img {
-    @apply rounded-2xl block my-7 mx-auto;
+    @apply block my-8 mx-auto;
+    border-radius: var(--radius-md);
   }
 
+  /* ——— Lists ——— */
   article.post .post-body ul,
   article.post .post-body ol,
   article.page ul,
   article.page ol {
-    @apply mt-5 mb-6 p-0 text-[var(--ink)] list-none;
+    @apply mt-4 mb-6 p-0 text-[var(--ink)] list-none;
   }
 
   article.post .post-body ol,
@@ -38,14 +51,15 @@
 
   article.post .post-body li + li,
   article.page li + li {
-    @apply mt-3;
+    @apply mt-2.5;
   }
 
   article.post .post-body ul li::before,
   article.page ul li::before {
     content: "";
-    @apply absolute left-[0.45rem] top-[0.65rem] w-[0.4rem] h-[0.4rem] rounded-2xl bg-[var(--brand-500)];
-    box-shadow: 0 0 0 3px color-mix(in srgb, var(--brand-500) 30%, transparent);
+    @apply absolute left-[0.4rem] top-[0.7rem] w-1.25 h-1.25 rounded-full;
+    background: var(--brand-500);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--brand-500) 20%, transparent);
   }
 
   article.post .post-body ol li,
@@ -56,34 +70,43 @@
   article.post .post-body ol li::before,
   article.page ol li::before {
     content: counter(post-list-counter) ".";
-    @apply absolute left-0 top-0 text-[0.85rem] tracking-[0.1em] text-[var(--muted)];
+    @apply absolute left-0 top-0 text-[0.85rem] tracking-wider;
     font-family: var(--font-mono);
+    color: var(--muted);
   }
 
+  /* ——— Tables ——— */
   article.post .post-body table,
   article.page table {
-    @apply max-w-full w-fit text-sm my-8 mx-auto border rounded-2xl border-[var(--sage-900)] bg-[var(--bg)];
+    @apply max-w-full w-fit text-sm my-8 mx-auto;
     @apply overflow-x-auto overflow-y-hidden block border-collapse;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
   }
 
   article.post .post-body th,
   article.post .post-body td,
   article.page th,
   article.page td {
-    @apply text-left align-top border-0 p-2;
+    @apply text-left align-top p-3;
+    border: none;
   }
 
   article.post .post-body thead,
   article.page thead {
-    @apply font-mono text-left uppercase bg-[var(--sage-500)] border-b border-[var(--sage-900)];
-    color: var(--invert-ink);
+    @apply text-left uppercase text-xs;
+    font-family: var(--font-mono);
+    background: var(--sage-600);
+    color: white;
+    letter-spacing: 0.05em;
   }
 
   article.post .post-body th,
   article.post .post-body td,
   article.page th,
   article.page td {
-    @apply border-r border-dashed border-[var(--sage-900)];
+    border-right: 1px dashed var(--border);
   }
 
   article.post .post-body th:last-child,
@@ -95,12 +118,12 @@
 
   article.post .post-body tr:nth-child(even),
   article.page tr:nth-child(even) {
-    @apply bg-[var(--sage-100)] text-[var(--ink)];
+    background: var(--bg-surface);
   }
 
   article.post .post-body tr,
   article.page tr {
-    @apply border-b border-dashed border-[var(--sage-900)];
+    border-bottom: 1px solid var(--border-subtle);
   }
 
   article.post .post-body tr:last-child,
@@ -108,16 +131,31 @@
     @apply border-b-0;
   }
 
+  html.dark article.post .post-body > table > tbody > tr:nth-child(even),
+  html.dark article.page > table > tbody > tr:nth-child(even) {
+    background: var(--bg-surface);
+    color: var(--ink);
+  }
+
+  /* ——— Article: Post ——— */
   article.post {
-    @apply rounded-2xl border border-[var(--border)] bg-[var(--bg)] p-4;
+    @apply p-5;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
 
     header.post-header {
-      @apply rounded-2xl border border-[var(--border)] mb-6 bg-[var(--bg-elev)];
+      @apply mb-8;
+      background: var(--bg-elev);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
 
       div.post-back {
-        @apply bg-[var(--bg)] w-full p-4 rounded-t-2xl;
+        @apply w-full p-4;
+        background: var(--bg);
+        border-radius: var(--radius-md) var(--radius-md) 0 0;
 
-        button.btn {
+        .btn {
           @apply w-full;
         }
       }
@@ -127,36 +165,41 @@
       }
 
       div.post-meta {
-        @apply mx-4 border border-[var(--border)];
+        @apply mx-4 mb-4;
+        border: 1px solid var(--border-subtle);
+        border-radius: var(--radius-sm);
       }
     }
 
     footer.post-footer {
-      @apply flex flex-col gap-4 pt-4 border-t border-[var(--border)];
+      @apply flex flex-col gap-6 pt-6 mt-8;
+      border-top: 1px solid var(--border-subtle);
     }
   }
 
+  /* ——— Article: Page ——— */
   article.page {
-    @apply rounded-2xl border border-[var(--border)] bg-[var(--bg)] p-4;
+    @apply p-5;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
 
     div.external-content {
-      @apply rounded-2xl border border-[var(--border)] bg-[var(--bg-elev)] overflow-x-scroll w-full;
+      @apply overflow-x-scroll w-full;
+      background: var(--bg-elev);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
     }
   }
 
-  html.dark article.post .post-body > table > tbody > tr:nth-child(even),
-  html.dark article.page > table > tbody > tr:nth-child(even) {
-    @apply bg-[var(--sage-100)] text-[var(--invert-ink)];
-  }
-
+  /* ——— Image zoom ——— */
   @keyframes zoom-in {
     from {
       transform: translate(-50%, -50%) scale(0.95);
       opacity: 0;
     }
-
     to {
-      transform: translate(-50%, -50%) scale(1.02);
+      transform: translate(-50%, -50%) scale(1);
       opacity: 1;
     }
   }
@@ -165,7 +208,6 @@
     from {
       opacity: 0;
     }
-
     to {
       opacity: 1;
     }
@@ -175,33 +217,34 @@
     article.post .post-body p > img,
     article.page p > img {
       @apply cursor-zoom-in;
-      transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
+      transition: transform var(--transition-base), box-shadow var(--transition-base);
     }
 
     article.post .post-body p > img.zoom,
     article.page p > img.zoom {
-      @apply cursor-zoom-out fixed top-1/2 left-1/2 z-[1001] w-auto h-auto;
-      transform: translate(-50%, -50%) scale(1.02);
-      max-width: min(90vw, 60rem);
+      @apply cursor-zoom-out fixed top-1/2 left-1/2 z-1001 w-auto h-auto;
+      transform: translate(-50%, -50%) scale(1);
+      max-width: min(90vw, 56rem);
       max-height: 90vh;
-      box-shadow: 0 25px 80px color-mix(in srgb, var(--ink) 25%, transparent);
-      animation: zoom-in 0.25s ease;
+      box-shadow: 0 24px 80px color-mix(in srgb, var(--ink) 30%, transparent);
+      animation: zoom-in 0.2s ease;
+      border-radius: var(--radius-md);
     }
 
     body:has(article.post .post-body p > img.zoom)::after,
     body:has(article.page p > img.zoom)::after {
       content: "";
-      @apply fixed inset-0 z-[1000] pointer-events-none;
-      background: color-mix(in srgb, var(--ink) 65%, transparent);
-      backdrop-filter: blur(18px);
+      @apply fixed inset-0 z-1000 pointer-events-none;
+      background: color-mix(in srgb, var(--ink) 60%, transparent);
+      backdrop-filter: blur(12px);
       animation: overlay-fade 0.2s ease;
     }
 
+    /* Desktop: constrained article width */
     article.post,
     article.page {
-      @apply max-w-[70ch] mx-auto;
+      max-width: var(--content-max);
+      @apply mx-auto p-8;
 
       header.post-header {
         @apply flex flex-row flex-wrap items-start;
@@ -209,8 +252,8 @@
         div.post-back {
           @apply w-full;
 
-          button.btn {
-            @apply w-1/4;
+          .btn {
+            @apply w-auto;
           }
         }
 
@@ -224,13 +267,13 @@
         }
 
         div.post-cover {
-          flex-basis: calc(75% - 0.75rem);
-          max-width: calc(75% - 0.75rem);
+          flex-basis: calc(70% - 0.5rem);
+          max-width: calc(70% - 0.5rem);
         }
 
         div.post-meta {
-          flex-basis: calc(25% - 0.75rem);
-          max-width: calc(25% - 0.75rem);
+          flex-basis: calc(30% - 0.5rem);
+          max-width: calc(30% - 0.5rem);
 
           dl.post-meta__grid {
             @apply flex-col;
@@ -240,8 +283,10 @@
     }
   }
 
+  /* ——— 404 ——— */
   article.page.not-found {
-    @apply flex flex-col items-center border-2 border-[var(--sage-500)];
+    @apply flex flex-col items-center;
+    border: 2px solid var(--sage-400);
 
     p {
       @apply m-4 text-center;

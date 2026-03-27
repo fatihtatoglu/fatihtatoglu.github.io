@@ -1,6 +1,8 @@
 @layer components {
   .post-meta {
-    @apply py-4 rounded-2xl bg-[var(--bg)];
+    @apply py-4 px-3;
+    background: var(--bg);
+    /* border-radius: var(--radius-sm); */
   }
 
   .post-meta__grid {
@@ -8,14 +10,18 @@
   }
 
   .post-meta__item {
-    @apply flex flex-col gap-2 text-center;
+    @apply flex flex-col gap-1.5 text-center;
   }
 
   .post-meta__item dt {
-    @apply uppercase font-mono text-sm text-[var(--muted)];
+    @apply uppercase text-xs tracking-wider;
+    font-family: var(--font-mono);
+    color: var(--muted);
+    letter-spacing: 0.1em;
   }
 
   .post-meta__item dd {
     @apply text-sm font-semibold;
+    color: var(--ink);
   }
 }

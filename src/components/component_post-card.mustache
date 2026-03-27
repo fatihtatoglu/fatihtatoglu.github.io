@@ -5,7 +5,7 @@
     {{#cover}}
     <div class="post-cover">
       <figure class="post-cover">
-        <img src="{{.}}" alt="{{coverAlt}}">
+        <img src="{{.}}" alt="{{coverAlt}}" loading="lazy">
         {{#coverCaption}}
         <figcaption lang="{{lang}}">{{.}}</figcaption>
         {{/coverCaption}}
@@ -19,7 +19,7 @@
 
   <!-- Post Content -->
   <div class="post-body">
-    <h2 class="text-lg">
+    <h2>
       <a href="{{{canonical}}}" lang="{{lang}}"
         data-metric
         data-metric-name="post_card_click"
@@ -31,7 +31,7 @@
     </h2>
 
     {{#description}}
-    <p class="text-sm mb-0" lang="{{lang}}">
+    <p lang="{{lang}}">
       {{.}}
     </p>
     {{/description}}

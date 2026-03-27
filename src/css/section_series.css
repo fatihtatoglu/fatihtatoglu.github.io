@@ -1,22 +1,29 @@
 @layer components {
   article.post footer.post-footer .post-series {
-    @apply mt-8 rounded-2xl border border-[var(--border)] bg-[var(--bg-elev)] p-4;
+    @apply mt-4 p-5;
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
   }
 
   article.post footer.post-footer .post-series__title {
-    @apply flex font-semibold tracking-wide uppercase text-base mb-3 pl-2 gap-2 items-center justify-start text-[var(--ink-dim)];
+    @apply flex font-semibold tracking-wide uppercase text-sm mb-4 gap-2 items-center justify-start;
+    color: var(--ink-dim);
+    font-family: var(--font-mono);
+    letter-spacing: 0.08em;
 
     svg {
-      @apply h-6;
+      @apply h-5 w-5 shrink-0;
     }
   }
 
   article.post footer.post-footer .post-series__list {
-    @apply list-decimal pl-6 m-0 flex flex-col gap-[0.4rem];
+    @apply list-decimal pl-6 m-0 flex flex-col gap-2;
   }
 
   article.post footer.post-footer .post-series__item {
-    @apply text-sm text-[var(--ink)];
+    @apply text-sm;
+    color: var(--ink);
   }
 
   article.post footer.post-footer .post-series__item.is-current {
@@ -32,12 +39,10 @@
   article.post footer.post-footer .post-series__link {
     color: var(--brand-600);
     text-decoration: underline;
-    text-decoration-thickness: 2px;
-    text-decoration-color: color-mix(
-      in srgb,
-      var(--brand-600) 50%,
-      transparent
-    );
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 3px;
+    text-decoration-color: color-mix(in srgb, var(--brand-600) 40%, transparent);
+    transition: color var(--transition-fast), text-decoration-color var(--transition-fast);
   }
 
   article.post footer.post-footer .post-series__link:hover {
@@ -45,7 +50,18 @@
     text-decoration-color: var(--brand-700);
   }
 
+  .dark article.post footer.post-footer .post-series__link {
+    color: var(--brand-400);
+    text-decoration-color: color-mix(in srgb, var(--brand-400) 40%, transparent);
+  }
+
+  .dark article.post footer.post-footer .post-series__link:hover {
+    color: var(--brand-300);
+    text-decoration-color: var(--brand-300);
+  }
+
   article.post footer.post-footer .post-series__placeholder {
-    @apply text-[var(--muted)] italic;
+    color: var(--muted);
+    @apply italic;
   }
 }

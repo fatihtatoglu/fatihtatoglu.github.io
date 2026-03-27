@@ -1,11 +1,41 @@
 @layer components {
+  /* Mobile: inline bar */
   article.post .post-operations {
-    @apply rounded-2xl border border-[var(--border)] flex flex-wrap gap-3 items-center justify-center p-2 bg-[var(--bg-elev)];
+    @apply flex flex-wrap gap-2 items-center justify-center p-3;
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
   }
 
+  /* Desktop: floating sidebar panel */
   @media (min-width: 960px) {
     article.post .post-operations {
-      @apply fixed top-37.5 left-[calc(50%+35ch+1rem)] p-3 grid grid-cols-2 gap-2 border-2;
+      @apply fixed flex-col gap-1.5 p-2;
+      top: 10.55rem;
+      left: calc(50% + 32ch + 2rem);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-lg);
+      background: color-mix(in srgb, var(--bg-elev) 85%, transparent);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 4px 20px color-mix(in srgb, var(--ink) 6%, transparent);
+      width: auto;
+
+      /* Visual separator between reactions and share buttons */
+      .post-operations__comment {
+        @apply mb-0 pb-1.5;
+        border-bottom: 1px solid var(--border-subtle);
+      }
+    }
+
+    .dark article.post .post-operations {
+      background: color-mix(in srgb, var(--bg-elev) 90%, transparent);
+    }
+  }
+
+  /* Very large screens: slightly more offset */
+  @media (min-width: 1280px) {
+    article.post .post-operations {
+      left: calc(50% + 31ch + 2.5rem);
     }
   }
 }

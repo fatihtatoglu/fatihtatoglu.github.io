@@ -3,13 +3,24 @@
     @apply bg-[var(--bg)] max-w-full;
 
     div.collection-content {
-      padding: calc(var(--spacing) * 4);
+      @apply mb-6 py-6 px-6;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--brand-400);
       border-radius: var(--radius-lg);
-      border-style: var(--tw-border-style);
-      border-width: 1px;
-      border-color: var(--border);
-      background-color: var(--bg);
-      @apply mb-4;
+
+      h1 {
+        @apply mb-3 text-xl;
+      }
+
+      p {
+        @apply text-[0.95rem] leading-relaxed;
+        color: var(--ink-dim);
+      }
+
+      p:last-child {
+        @apply mb-0;
+      }
     }
 
     div.collection-content.no-content h1 {
@@ -17,161 +28,144 @@
     }
 
     div.category-listing {
-      @apply flex flex-col gap-4 justify-around;
+      @apply flex flex-col gap-5;
 
       article.post-card {
         @apply items-stretch;
       }
     }
-
   }
 
   section.category.home {
+    @apply flex flex-col gap-5;
+
     h1 {
       @apply sr-only;
     }
   }
 
-  @media (min-width: 600px) {
+  /* ≥640px: 2-column grid */
+  @media (min-width: 640px) {
     section.category {
-      article {
-        @apply flex justify-between;
+      div.category-listing {
+        @apply grid grid-cols-2 gap-5;
+      }
+    }
 
-        header.post-header {
-          flex-basis: calc(50% - 0.75rem);
-          max-width: calc(50% - 0.75rem);
-          margin-inline: unset;
-          width: unset;
-        }
+    section.category.home {
+      div.category-listing {
+        @apply grid grid-cols-2 gap-5;
+      }
 
-        div.post-body {
-          margin-top: 0px !important;
-          flex-basis: calc(50% - 0.75rem);
-          max-width: calc(50% - 0.75rem);
-        }
+      div.category-listing article.post-card:first-child {
+        @apply col-span-2;
       }
     }
   }
 
+  /* ≥960px: Desktop grid */
   @media (min-width: 960px) {
     section.category {
-      @apply flex flex-wrap gap-4 justify-center;
+      @apply flex flex-wrap gap-5 justify-center;
 
       div.collection-content {
         @apply mb-0 w-full;
       }
 
       div.category-listing {
-        @apply flex-row justify-center flex-wrap;
-
-        article {
-          flex-basis: calc(50% - 0.75rem);
-          max-width: calc(50% - 0.75rem);
-          @apply mb-0;
-
-          header.post-header {
-            div.post-meta {
-              dl.post-meta__grid {
-                @apply flex-col;
-              }
-            }
-          }
-        }
+        @apply grid grid-cols-2 gap-6 w-full;
       }
     }
 
     section.category.home {
-      article:first-of-type {
-        flex-basis: calc(100% - 0.75rem);
-        max-width: calc(100% - 0.75rem);
-        @apply mb-0;
+      div.category-listing {
+        @apply grid grid-cols-3 gap-5 w-full;
       }
 
-      article:not(:first-of-type) {
-        flex-basis: calc(50% - 0.75rem);
-        max-width: calc(50% - 0.75rem);
-        @apply mb-0;
+      div.category-listing article.post-card:first-child {
+        @apply col-span-3;
+
+        /* Featured card: horizontal layout */
+        @apply flex-row;
+        max-height: 320px;
 
         header.post-header {
-          div.post-meta {
-            dl.post-meta__grid {
-              @apply flex-col;
+          @apply flex-1 min-w-0 w-auto;
+          max-width: 55%;
+
+          div.post-cover {
+            @apply h-full;
+
+            figure.post-cover {
+              @apply h-full overflow-hidden;
+
+              img {
+                @apply w-full h-full object-cover;
+                aspect-ratio: unset;
+                min-height: unset;
+              }
+
+              figcaption {
+                @apply hidden;
+              }
             }
+          }
+
+          div.post-meta {
+            @apply hidden;
+          }
+        }
+
+        div.post-body {
+          @apply flex-1 min-w-0 justify-center py-6;
+          border-top: none;
+          border-left: 1px solid var(--border-subtle);
+
+          h2 {
+            font-size: 1.15rem;
+          }
+
+          p {
+            -webkit-line-clamp: 4;
           }
         }
       }
     }
   }
 
+  /* ≥1280px: 3-column grid */
   @media (min-width: 1280px) {
     section.category {
-      @apply flex flex-wrap gap-4 justify-center;
-
       div.category-listing {
-        @apply justify-center;
-
-        article {
-          flex-basis: calc(33% - 0.75rem);
-          max-width: calc(33% - 0.75rem);
-          @apply mb-0;
-        }
+        @apply grid-cols-3 gap-6;
       }
     }
 
     section.category.home {
-      article:first-of-type {
-        flex-basis: calc(66% - 0.75rem);
-        max-width: calc(66% - 0.75rem);
-        @apply mb-0;
+      div.category-listing {
+        @apply grid-cols-3 gap-5;
       }
 
-      article:not(:first-of-type) {
-        flex-basis: calc(33% - 0.75rem);
-        max-width: calc(33% - 0.75rem);
-        @apply mb-0;
+      div.category-listing article.post-card:first-child {
+        @apply col-span-3;
       }
     }
   }
 
+  /* ≥1536px: wider layout */
   @media (min-width: 1536px) {
     section.category {
-      @apply flex flex-wrap gap-4 justify-center;
-
       div.category-listing {
-        article {
-          flex-basis: calc(33% - 0.75rem);
-          max-width: calc(33% - 0.75rem);
-          @apply mb-0;
-
-          header.post-header {
-            div.post-meta {
-              dl.post-meta__grid {
-                @apply flex-row;
-              }
-            }
-          }
-        }
+        @apply grid-cols-3 gap-6;
       }
     }
 
     section.category.home {
-      article:first-of-type {
-        flex-basis: calc(66% - 0.75rem);
-        max-width: calc(66% - 0.75rem);
-        @apply mb-0;
-      }
+      div.category-listing {
+        @apply grid-cols-4 gap-5;
 
-      article:not(:first-of-type) {
-        flex-basis: calc(33% - 0.75rem);
-        max-width: calc(33% - 0.75rem);
-        @apply mb-0;
-
-        header.post-header {
-          div.post-meta {
-            dl.post-meta__grid {
-              @apply flex-row;
-            }
-          }
+        article.post-card:first-child {
+          @apply col-span-4;
         }
       }
     }

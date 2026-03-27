@@ -92,6 +92,14 @@ function getLanguageName(locale, langCode) {
   return getLocalizedString(locale, `languages.${langCode}.name`, fallback) ?? fallback;
 }
 
+function getNextLanguageName(locale, nextLang) {
+  if (!nextLang) {
+    return "";
+  }
+  const fallback = nextLang.toUpperCase();
+  return getLocalizedString(locale, `languages.${nextLang}.name`, fallback) ?? fallback;
+}
+
 const SWITCHER_TEMPLATE = /* html */ `
   <button type="button" class="btn btn--md btn--tone-neutral btn--icon language-button" data-lang-toggle data-active-lang="tr" aria-label=""
     data-metric

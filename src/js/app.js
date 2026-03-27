@@ -55,6 +55,7 @@ if (typeof window !== "undefined") {
   });
 }
 
+// Image zoom
 document.querySelectorAll("p img").forEach(image => {
   image.addEventListener("click", function (e) {
     if (e.target && e.target.classList) {
@@ -67,4 +68,26 @@ document.querySelectorAll("p img").forEach(image => {
       }, isZoomed ? "on" : "off");
     }
   });
+});
+
+// Back link — progressive enhancement
+document.querySelectorAll("[data-back-link]").forEach(link => {
+  link.addEventListener("click", function (e) {
+    e.preventDefault();
+    if (window.history.length > 1) {
+      window.history.back();
+    } else {
+      window.location.href = "/";
+    }
+  });
+});
+
+// Close image zoom on Escape
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Escape") {
+    const zoomed = document.querySelector("img.zoom");
+    if (zoomed) {
+      zoomed.classList.remove("zoom");
+    }
+  }
 });

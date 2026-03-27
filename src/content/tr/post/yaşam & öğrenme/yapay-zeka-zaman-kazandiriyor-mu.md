@@ -31,7 +31,7 @@ keywords:
   - zihinsel yük
 cover: /assets/images/ai-time-saving-mental-load.webp
 coverAlt: Yapay zekâ, zaman ve zihinsel yük ilişkisini temsil eden; mavi ve sıcak turuncu tonların buluştuğu kavramsal yatay illüstrasyon
-coverCaption: Yapay zekâ bazen sadece hız değil; daha az zihinsel yük, daha fazla açıklık ve harekete geçmek için küçük bir alan da sağlar.
+coverCaption: Yapay zekâ bazen sadece hız değil, daha az zihinsel yük, daha fazla açıklık ve harekete geçmek için küçük bir alan da sağlar.
 template: post
 layout: default
 status: published
@@ -40,15 +40,15 @@ status: published
 
 Eşimle bugün evden biraz dışarı çıkabildik. Uzun süredir, yetişmesi gereken bir proje için evde gece gündüz çalışıyorum. Bu yüzden de pek dışarı çıkamadık. Projede biraz rahatlama yaşadıktan sonra ufak bir nefes almak ve kafamı boşaltmak için dışarı çıktık.
 
-Yolda giderken, arabayı vale otoparkına mı koyalım yoksa normal otoparka mı koyalım diye konuşurken eşim, "Vale çok pahalı," dedi. Ben de, "Sana zaman ve konfor satın alıyorum," dedim. Normal otopark 100-150 TL, vale otoparkı 550 TL. Eşim alışveriş yaparken biz kızımızla arabada oturuyoruz hem de açık havada.
+Yolda giderken, arabayı vale otoparkına mı koyalım yoksa normal otoparka mı koyalım diye konuşurken eşim, "Vale çok pahalı," dedi. Ben de, "Sana zaman ve konfor satın alıyorum," dedim. Normal otopark 100-150 TL, vale otoparkı 550 TL. Eşim alışveriş yaparken, biz kızımızla arabada oturuyoruz, hem de açık havada.
 
-Açıkçası hem para veriyorum, hem arabayı ben park ediyorum ve hem de arabanın içinde eşimi bekliyorum. Böyle düşününce pahalı gibi geldi. Ancak bir de şöyle düşündüm. Normal otoparka park etmek için sıra bekleyeceğim. Bugün indirim günü yani o sıranın normalden daha uzun olma olasılığı çok yüksek. Yerin iki-üç kat altında arabayı dar ve karanlık bir yere bırakacağım ve yine arabada kızımızla oturacağım.
+Açıkçası, hem para veriyorum, hem arabayı ben park ediyorum ve hem de arabanın içinde eşimi bekliyorum. Böyle düşününce pahalı gibi geldi. Ancak bir de şöyle düşündüm. Normal otoparka park etmek için sıra bekleyeceğim. Bugün indirim günü, yani o sıranın normalden daha uzun olma olasılığı çok yüksek. Yerin iki-üç kat altında arabayı dar ve karanlık bir yere bırakacağım ve yine arabada kızımızla oturacağım.
 
-Açık hava yok, dar ve karanlık bir yer. Havalandırma da çok iyi değil, çocuk uyurken egzoz gazı soluyacak.
+Açık hava yok; dar ve karanlık bir yer. Havalandırma da çok iyi değil, çocuk uyurken egzoz gazı soluyacak.
 
-Nasıl da kötüyü gösterip valeyi daha iyi bir alternatif gibi sundum, değil mi? Ama işin garip tarafı farklı bir durumda olsam yine açık otoparkı seçerdim yani vale otoparkını. Çünkü araba park etmek, yer bulmak, alışveriş yapıp sonra geri gelmek derken kaybedeceğim zaman ve üstüne üstelik yüklenecek stres seviyesini düşününce geriliyorum. Bu yüzden eşime "Sana zaman ve konfor satın alıyorum" dediğimde aslında biraz da kendimi düşünüyorum. Kendime de "konfor" satın almış oluyorum.
+Nasıl da kötüyü gösterip valeyi daha iyi bir alternatif gibi sundum, değil mi? Ama işin garip tarafı, farklı bir durumda olsam yine açık otoparkı seçerdim, yani vale otoparkını. Çünkü araba park etmek, yer bulmak, alışveriş yapıp sonra geri gelmek derken kaybedeceğim zaman ve üstüne üstelik yüklenecek stres seviyesini düşününce geriliyorum. Bu yüzden eşime "Sana zaman ve konfor satın alıyorum" dediğimde aslında biraz da kendimi düşünüyorum. Kendime de "konfor" satın almış oluyorum.
 
-Bu konuşma bittikten sonra, neleri kullandığım için "zaman satın aldığımı" düşünmeye başladım. O anda fark ettim ki, bu mesele sadece vale ya da otopark tercihiyle ilgili değildi. Bazen bir hizmete para vererek fiziksel bir süreci hızlandırıyoruz, bazen de bir aracı kullanarak zihinsel yükümüzü azaltıyoruz. Tam bu noktada aklıma şu soru geldi: Yapay zekâ kullanarak da zaman satın alıyor olabilir miyiz?
+Bu konuşma bittikten sonra, neleri kullandığım için "zaman satın aldığımı" düşünmeye başladım. O anda fark ettim ki bu mesele sadece vale ya da otopark tercihiyle ilgili değildi. Bazen bir hizmete para vererek fiziksel bir süreci hızlandırıyoruz, bazen de bir aracı kullanarak zihinsel yükümüzü azaltıyoruz. Tam bu noktada aklıma şu soru geldi: Yapay zekâ kullanarak da zaman satın alıyor olabilir miyiz?
 
 ## Zaman Satın Almak Ne Demek?
 
@@ -60,15 +60,15 @@ Burada dikkat ettiğim nokta, yapay zekânın ürettiği kodu incelemeden doğru
 
 ## Yapay Zekâ Zamanı Nasıl Kazandırıyor?
 
-![Masada oturan bir kişi, açık bir dizüstü bilgisayarın yanında yapay zekâ destekli dijital paneller ve havada duran bloklarla fikirlerini organize edip bir iş akışı kuruyor.](ai-thinking-and-building.webp)
+![Masada oturan bir kişi, açık bir dizüstü bilgisayarın yanında yapay zekâ destekli dijital paneller ve havada duran bloklarla fikirlerini organize edip bir iş akışı kuruyor.](/assets/images/ai-thinking-and-building.webp)
 
-Örneğin, daha önce hiç Android uygulaması geliştirmedim, ancak Web istemcisi ve Windows Form uygulamaları üzerinde çalıştım. Bu, zaten anladığım bir problemi ele alıp yapay zekaya Android için benzer veya daha güvenli bir çözümün nasıl görünebileceğini sorabileceğim anlamına geliyor. Bu sayede, öğrenmeye ve uygulamaya harcadığım zaman ortadan kaybolmuyor, ancak daha odaklı ve daha kısa hale geliyor. Kritik nokta, sıfırdan başlamadan; zaten sahip olduğum deneyim üzerine çözüm inşa etmiş olmam.
+Örneğin, daha önce hiç Android uygulaması geliştirmedim, ancak web istemcisi ve Windows Forms uygulamaları üzerinde çalıştım. Bu, zaten anladığım bir problemi ele alıp yapay zekâya Android için benzer veya daha güvenli bir çözümün nasıl görünebileceğini sorabileceğim anlamına geliyor. Bu sayede, öğrenmeye ve uygulamaya harcadığım zaman ortadan kaybolmuyor, ancak daha odaklı ve daha kısa hale geliyor. Kritik nokta, sıfırdan başlamadan, zaten sahip olduğum deneyim üzerine çözüm inşa etmiş olmam.
 
-Farklı bir örnek olarak, evimizde bulunan bambu ve orkidelerin yaprakları çok sararıyor ya da orkideler hiç çiçek açmıyor. Bunun için ne yapabileceğimi yapay zekâya soruyorum. Hiç bilmediğim bir konuda öğrenmem gereken temel bilgileri öğreniyorum, ama beni hala bir uzman yapmıyor.
+Farklı bir örnek olarak, evimizde bulunan bambu ve orkidelerin yaprakları çok sararıyor ya da orkideler hiç çiçek açmıyor. Bunun için ne yapabileceğimi yapay zekâya soruyorum. Hiç bilmediğim bir konuda öğrenmem gereken temel bilgileri öğreniyorum, ama beni hâlâ bir uzman yapmıyor.
 
 Bilmediğim bir konuda yapay zekâyı kullanırken, yine öğrendiğim temel bilgileri veya taktikleri kullanmaya çalışıyorum.
 
-Yapay zekâ da bana "zaman satın alabiliyor". Bu zaman; uygulama ya da hayata geçirme, öğrenme, alternatifleri değerlendirme zamanı olarak görünüyor. Bunlar doğrudan satın alınan zamanlar. Bunların yanında, dolaylı olarak kazanılan şeyleri de unutmamak lazım: mental yükün azalması, bekleme sürelerinden doğacak stresin hafiflemesi ve karar verme yorgunluğunun düşmesi gibi.
+Yapay zekâ da bana "zaman satın alabiliyor". Bu zaman, uygulama ya da hayata geçirme, öğrenme, alternatifleri değerlendirme zamanı olarak görünüyor. Bunlar doğrudan satın alınan zamanlar. Bunların yanında, dolaylı olarak kazanılan şeyleri de unutmamak lazım: mental yükün azalması, bekleme sürelerinden doğacak stresin hafiflemesi ve karar verme yorgunluğunun düşmesi gibi.
 
 ## Yeni Başlayanlar İçin Risk ve Fırsat
 

@@ -35,6 +35,7 @@ coverCaption: Yapay zekâ bazen sadece hız değil, daha az zihinsel yük, daha 
 template: post
 layout: default
 status: published
+featured: true
 ---
 # Yapay Zekâ Sadece Zaman mı Kazandırıyor?
 

@@ -60,7 +60,7 @@ What I try to avoid is using AI-generated code directly without reviewing it fir
 
 ## How Does Artificial Intelligence Save Time?
 
-![A person sitting at a desk is organizing ideas and building a workflow with AI-supported digital panels and floating blocks beside an open laptop.](ai-thinking-and-building.webp)
+![A person sitting at a desk is organizing ideas and building a workflow with AI-supported digital panels and floating blocks beside an open laptop.](/assets/images/ai-thinking-and-building.webp)
 
 For example, I have never built an Android application, but I have worked on Web Client and Windows Forms applications. That means I can take a problem I already understand and ask AI how a similar or more secure solution might look on Android. In that sense, the time I spend learning and applying does not disappear, but it becomes more focused and shorter. What disappears is not the need to learn, but some of the wandering that usually comes before a workable solution. The critical point is that I am not starting from nothing; I am building on the experience I already have.
 

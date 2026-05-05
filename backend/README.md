@@ -39,7 +39,7 @@ Currently tracked event types:
 
 ## Sheet schema (tab name: `records`)
 
-Columns A–R:
+Columns A-R:
 
 1) id  
 2) postId  
@@ -62,7 +62,7 @@ Columns A–R:
 
 ## Sheet schema (tab name: `views`)
 
-Columns A–V:
+Columns A-V:
 
 1) id  
 2) createdOn  
@@ -89,7 +89,7 @@ Columns A–V:
 
 ## Sheet schema (tab name: `contact_form`)
 
-Columns A–N:
+Columns A-N:
 
 1) id  
 2) createdOn  

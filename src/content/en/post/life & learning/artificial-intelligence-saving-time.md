@@ -15,7 +15,7 @@ tags:
   - reasoning
   - digital-tools
 date: 2026-03-01
-updated: 2026-03-28
+updated: 2026-05-06
 readingTime: 6
 canonical: ~/en/artificial-intelligence-saving-time/
 pair: yapay-zeka-zaman-kazandiriyor-mu
@@ -36,6 +36,7 @@ template: post
 layout: default
 status: published
 featured: true
+extract: "Sometimes a simple parking choice is not just about where to leave the car. It becomes a question of comfort, stress, time, and the quiet calculations we make without noticing. From that small moment, a larger question begins to appear: when we use artificial intelligence, are we only trying to move faster, or are we also buying something less visible? Perhaps the real matter is not how much time we save, but what kind of depth we can still build while moving so quickly."
 ---
 # Is Artificial Intelligence Only Saving Time?
 

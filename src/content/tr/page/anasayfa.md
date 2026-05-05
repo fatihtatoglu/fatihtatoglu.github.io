@@ -21,4 +21,4 @@ layout: "default"
 status: "published"
 ---
 
-# Fatih Tatoğlu – Öğrenen Bir Mühendisin Teknoloji, Öğrenme ve Hayat Üzerine Kişisel Notları
+# Fatih Tatoğlu - Öğrenen Bir Mühendisin Teknoloji, Öğrenme ve Hayat Üzerine Kişisel Notları

@@ -4,6 +4,8 @@
     {{#like}}
     <button class="btn btn--xs btn--icon btn--tone-sage btn--has-badge" type="button" data-action="like"
       aria-label="{{i18n.post.operations.like.aria}}"
+      title="{{i18n.post.operations.like.aria}}"
+      lang="{{lang}}"
       data-post-id="{{front.id}}">
       <svg aria-hidden="true">
         <use href="/assets/svg/icons.svg#icon-like"></use>
@@ -14,6 +16,8 @@
     {{#dislike}}
     <button class="btn btn--xs btn--icon btn--tone-sage btn--has-badge" type="button" data-action="dislike"
       aria-label="{{i18n.post.operations.dislike.aria}}"
+      title="{{i18n.post.operations.dislike.aria}}"
+      lang="{{lang}}"
       data-post-id="{{front.id}}">
       <svg aria-hidden="true">
         <use href="/assets/svg/icons.svg#icon-dislike"></use>
@@ -23,6 +27,8 @@
     {{/dislike}}
     <button class="btn btn--xs btn--icon btn--tone-sage btn--has-badge post-operations__comment" type="button"
       aria-label="{{i18n.post.operations.comment.aria}}"
+      title="{{i18n.post.operations.comment.aria}}"
+      lang="{{lang}}"
       data-comment-scroll
       data-metric
       data-metric-name="comment_open"
@@ -36,7 +42,10 @@
     {{#share}}
       {{#enabled}}
         {{#whatsapp}}
-        <button class="btn btn--xs btn--icon btn--tone-sage" type="button" data-share="whatsapp" aria-label="WhatsApp"
+        <button class="btn btn--xs btn--icon btn--tone-sage" type="button" data-share="whatsapp"
+        aria-label="{{i18n.post.operations.shareWhatsapp.aria}}"
+        title="{{i18n.post.operations.shareWhatsapp.aria}}"
+        lang="{{lang}}"
         data-metric
         data-metric-name="share_click"
         data-metric-source="post"
@@ -48,7 +57,10 @@
         </button>
         {{/whatsapp}}
         {{#x}}
-        <button class="btn btn--xs btn--icon btn--tone-sage" type="button" data-share="x" aria-label="X"
+        <button class="btn btn--xs btn--icon btn--tone-sage" type="button" data-share="x"
+        aria-label="{{i18n.post.operations.shareX.aria}}"
+        title="{{i18n.post.operations.shareX.aria}}"
+        lang="{{lang}}"
         data-metric
         data-metric-name="share_click"
         data-metric-source="post"
@@ -60,7 +72,10 @@
         </button>
         {{/x}}
         {{#linkedin}}
-        <button class="btn btn--xs btn--icon btn--tone-sage" type="button" data-share="linkedin" aria-label="LinkedIn"
+        <button class="btn btn--xs btn--icon btn--tone-sage" type="button" data-share="linkedin"
+        aria-label="{{i18n.post.operations.shareLinkedIn.aria}}"
+        title="{{i18n.post.operations.shareLinkedIn.aria}}"
+        lang="{{lang}}"
         data-metric
         data-metric-name="share_click"
         data-metric-source="post"
@@ -72,7 +87,10 @@
         </button>
         {{/linkedin}}
         {{#facebook}}
-        <button class="btn btn--xs btn--icon btn--tone-sage" type="button" data-share="facebook" aria-label="Facebook"
+        <button class="btn btn--xs btn--icon btn--tone-sage" type="button" data-share="facebook"
+        aria-label="{{i18n.post.operations.shareFacebook.aria}}"
+        title="{{i18n.post.operations.shareFacebook.aria}}"
+        lang="{{lang}}"
         data-metric
         data-metric-name="share_click"
         data-metric-source="post"
@@ -86,6 +104,8 @@
         {{#copy}}
         <button class="btn btn--xs btn--icon btn--tone-sage" type="button" data-share="copy"
           aria-label="{{i18n.post.operations.copyLink.aria}}"
+          title="{{i18n.post.operations.copyLink.aria}}"
+          lang="{{lang}}"
           data-metric
           data-metric-name="share_click"
           data-metric-source="post"

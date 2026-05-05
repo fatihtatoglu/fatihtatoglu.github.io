@@ -13,7 +13,7 @@ updated: 2025-12-31
 pair: cerez-politikasi
 canonical: ~/en/cookie-policy/
 alternate: ~/cerez-politikasi/
-description: Learn which cookies tatoglu.net uses, why they’re stored, and how to manage your privacy preferences effectively.
+description: Learn which cookies tatoglu.net uses, why they're stored, and how to manage your privacy preferences effectively.
 keywords:
   - Cookie Policy
   - Privacy
@@ -54,34 +54,34 @@ Some cookies may contain personal data; therefore, it's important for you to kno
 
 ### Configuration Cookies
 
-- `tat-theme` — Stores your selected theme status for 12 months.
-- `tat-lang` — Remembers the interface language for 12 months.
-- `tat-session` — Maintains session continuity for 2 hours and is not used for any other purpose.
-- `tat-user` — Used to anonymously identify the browser and is stored for about 20 years.
+- `tat-theme` - Stores your selected theme status for 12 months.
+- `tat-lang` - Remembers the interface language for 12 months.
+- `tat-session` - Maintains session continuity for 2 hours and is not used for any other purpose.
+- `tat-user` - Used to anonymously identify the browser and is stored for about 20 years.
 
 ## Purposes of Cookies
 
-- **Experience:** Remembering theme, language, and content density preferences.
-- **Analytics:** Planning the production schedule by measuring which articles are of interest.
-- **Security:** Detecting suspicious sessions and preventing misuse.
-- **Continuity:** Anonymously linking returning visits with `tat-user`.
-- **Communication:** Managing feedback and communication requests.
+- **Experience:** Remembering theme, language, and content density preferences.
+- **Analytics:** Planning the production schedule by measuring which articles are of interest.
+- **Security:** Detecting suspicious sessions and preventing misuse.
+- **Continuity:** Anonymously linking returning visits with `tat-user`.
+- **Communication:** Managing feedback and communication requests.
 
 ## Third-Party Tools
 
 The following services are used to enhance site performance:
 
-- **Google Analytics 4:** Measures traffic while anonymizing it; IP addresses are shortened with masking.
-- **Google Tag Manager:** Provides tag management, does not directly process personal data.
-- **Microsoft Clarity:** Finds usability problems using heatmaps and session recordings.
+- **Google Analytics 4:** Measures traffic while anonymizing it; IP addresses are shortened with masking.
+- **Google Tag Manager:** Provides tag management, does not directly process personal data.
+- **Microsoft Clarity:** Finds usability problems using heatmaps and session recordings.
 
 These platforms have their own privacy policies; please visit the relevant sites for detailed information.
 
 ## Managing Your Cookie Preferences
 
-1. **Browser Settings:** You can use options to block cookies, delete them, or restrict them to specific websites.
-2. **Incognito Mode:** You can prefer your browser's incognito window for data deletion upon session end.
-3. **Opt-out Tools:** You can install the official opt-out add-on for Google Analytics.
+1. **Browser Settings:** You can use options to block cookies, delete them, or restrict them to specific websites.
+2. **Incognito Mode:** You can prefer your browser's incognito window for data deletion upon session end.
+3. **Opt-out Tools:** You can install the official opt-out add-on for Google Analytics.
 
 While these preferences may restrict certain features, access to core content remains protected.
 

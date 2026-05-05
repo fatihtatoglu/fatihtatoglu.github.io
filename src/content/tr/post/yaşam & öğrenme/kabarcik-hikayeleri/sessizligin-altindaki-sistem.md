@@ -16,7 +16,7 @@ tags:
   - ekstrem-sporlar
 readingTime: 2
 date: 2012-04-10
-updated: 2025-12-23
+updated: 2026-05-06
 pair: system-beneath-the-silence
 canonical: ~/sessizligin-altindaki-sistem/
 alternate: ~/en/system-beneath-the-silence/
@@ -41,6 +41,7 @@ seriesTitle: Kabarcık Hikayeleri
 related:
   - jwymi6xenc
   - ""
+extract: "Denizin altında her şey yavaşlar sanılır; sesler azalır, beden hafifler, zaman başka türlü akar. Oysa bu huzurun görünmeyen tarafında, insanı sürekli dikkatli olmaya çağıran çok ciddi bir düzen vardır. Tüplü dalış, sadece suyun içinde süzülmek değil; kurallarla, güvenle, çevreyle ve kendi sınırlarınla kurulan sessiz bir anlaşmadır. Bu yazı dizisi de biraz o anlaşmanın izini sürüyor: hikâyelerin, teknik bilginin ve suyun altında değişen farkındalığın peşinden."
 ---
 # Sessizliğin Altındaki Sistem: Tüplü Dalışta Disiplin
 

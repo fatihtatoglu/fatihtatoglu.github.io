@@ -18,11 +18,11 @@ tags:
   - vscode
 readingTime: 20
 date: 2022-12-06
-updated: 2025-10-28
+updated: 2026-05-06
 pair: hyper-v-linux-mint-setup
 canonical: ~/gelistirme-ortami-kurulumu/
 alternate: ~/en/hyper-v-linux-mint-setup/
-description: Windows 10/11’de Hyper-V kullanarak Linux Mint sanal geliştirme ortamı kurma, ağ ayarları, Docker/Node/Go/.NET ve VS Code kurulumu adım adım.
+description: Windows 10/11'de Hyper-V kullanarak Linux Mint sanal geliştirme ortamı kurma, ağ ayarları, Docker/Node/Go/.NET ve VS Code kurulumu adım adım.
 keywords:
   - geliştirme ortamı
   - windows
@@ -41,6 +41,7 @@ coverCaption: Windows ana makinede Hyper-V üzerinden izole edilmiş Linux Mint 
 template: post
 layout: default
 status: published
+extract: "Geliştirme ortamı kurmak bazen sadece birkaç araç yüklemekten ibaret değildir; nerede çalıştığınızı, neyi izole tuttuğunuzu ve hangi riski ana makinenize taşımak istemediğinizi de belirler. Ben hâlâ Windows üzerinde Linux sanal makinelerle çalışmayı tercih ediyorum; çünkü temiz başlayabilmek, gerektiğinde kolayca yedekleyebilmek ve denemeleri kontrollü bir alanda tutmak bana özgürlük sağlıyor. Bu yazıda, bu tercihin arkasındaki pratik sebeplerle birlikte Hyper-V üzerinde adım adım kurulmuş bir geliştirme ortamının izini süreceğiz."
 ---
 # Geliştirme Ortamı Kurulumu
 
@@ -56,12 +57,12 @@ Günün sonunda bu yazıda, Windows 10 Professional veya Enterprise üzerinde Hy
 
 | Bileşen      | Test Edilen Sürüm                           | Notlar                                 |
 | ------------------- | ------------------------------------------- | ------------------------------------------------------ |
-| **Ana Makine OS** | Windows 10 Enterprise 22H2 | Hyper-V aktif olmalı, BIOS’ta virtualization açık |
+| **Ana Makine OS** | Windows 10 Enterprise 22H2 | Hyper-V aktif olmalı, BIOS'ta virtualization açık |
 | **Hyper-V** | 10.0.22621 | "Hyper-V Management Tools" ve "Hyper-V Platform" etkin |
 | **Sanal Makine OS** | Linux Mint 21.3 XFCE (Ubuntu 22.04 tabanlı) | `UBUNTU_CODENAME`=jammy |
 | **PowerShell** | 7.4.4 | Winget üzerinden güncel sürüm |
 | **VS Code** | 1.94.0 | apt repo ile yüklenmiş sürüm |
-| **Docker** | 27.2.0 | Mint için Ubuntu repo’su kullanılıyor |
+| **Docker** | 27.2.0 | Mint için Ubuntu repo'su kullanılıyor |
 | **NodeJS / NVM** | Node 22.11.0 / NVM 0.40.3 | Restart sonrası aktifleşiyor |
 | **Go** | 1.25.3 | Manuel indirilen tar.gz kurulum |
 | **.NET SDK** | 8.0 / 9.0 | apt veya PPA:dotnet/backports ile |

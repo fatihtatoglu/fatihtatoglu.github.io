@@ -15,7 +15,7 @@ tags:
   - technology-and-society
 readingTime: 9
 date: 2026-01-11
-updated: 2026-01-12
+updated: 2026-05-06
 pair: yapay-zeka-ile-ugrasmak-bireysel-olarak-ne-yapabilirim
 canonical: ~/en/what-can-i-do-with-ai/
 alternate: ~/yapay-zeka-ile-ugrasmak-bireysel-olarak-ne-yapabilirim/
@@ -34,6 +34,7 @@ template: post
 layout: default
 status: published
 aiTranslated: "ChatGPT 5.2"
+extract: "We often speak about artificial intelligence as if it belongs only to laboratories, giant companies, or people with deep mathematical knowledge. But perhaps the real question is smaller and more uncomfortable: where do we stand in this change, and what are we willing to do with what we have? Between envy, hesitation, local difficulties, and the simple desire to contribute, this is a search for a personal lane in the AI age-not to make the biggest leap, but to keep walking."
 ---
 # Working with Artificial Intelligence: What Can I Do as an Individual?
 

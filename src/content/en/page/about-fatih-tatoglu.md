@@ -61,7 +61,7 @@ I've spent years working with large teams, leading them, and mentoring others.
 
 I genuinely enjoy creating and growing together with people.
 
-The development of a teammate, overcoming their mistakes, finding their own path – it's just as valuable to me as designing an architecture I wrote.
+The development of a teammate, overcoming their mistakes, finding their own path - it's just as valuable to me as designing an architecture I wrote.
 
 One of the most important things I've learned in my career is this:  **No matter how powerful the technology, no system truly works without good communication.**
 

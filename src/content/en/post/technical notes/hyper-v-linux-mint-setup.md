@@ -18,7 +18,7 @@ tags:
   - security-ssh-ufw
 readingTime: 18
 date: 2022-12-06
-updated: 2025-10-28
+updated: 2026-05-06
 pair: gelistirme-ortami-kurulumu
 canonical: ~/en/hyper-v-linux-mint-setup/
 alternate: ~/gelistirme-ortami-kurulumu/
@@ -45,16 +45,17 @@ coverCaption: Isolated Linux Mint development environment on Windows via Hyper-V
 template: post
 layout: default
 status: published
+extract: "Some development habits are hard to let go of, especially when they keep your main machine clean and your experiments safely contained. Running Linux virtual machines on Windows may look like extra work from the outside, but behind that choice there is a simple need: predictable, disposable, and reusable environments. Of course, this comfort brings its own small battles-network settings, disk choices, package versions, security, and the endless little fixes that turn a fresh machine into a real workspace."
 ---
 # Development Environment Setup
 
-Despite my colleagues' pressure, I’m still doing development work at home using Linux virtual machines on Windows.
+Despite my colleagues' pressure, I'm still doing development work at home using Linux virtual machines on Windows.
 
 This configuration provides clean, isolated, customizable, portable, and backupable development environments. It also keeps the host machine tidy and prevents any libraries, applications, or tools installed just for testing from leaving residue on the main system.
 
 However, it also has some drawbacks, such as network management, keeping the virtual operating systems up-to-date, file transfer, and disk management.
 
-At the end of this article, you’ll find the steps to set up a development environment using Hyper-V on Windows 10 Professional or Enterprise.
+At the end of this article, you'll find the steps to set up a development environment using Hyper-V on Windows 10 Professional or Enterprise.
 
 ## Prerequisites and Version Matrix
 
@@ -108,7 +109,7 @@ Set-ItemProperty . Hidden "1"
 Pop-Location
 ```
 
-This command makes file extensions visible and also ensures that hidden files are visible. This is totally optional. I consider it important to have this setting on my host machine, so I’m sharing it here.
+This command makes file extensions visible and also ensures that hidden files are visible. This is totally optional. I consider it important to have this setting on my host machine, so I'm sharing it here.
 
 ### Disabling UAC
 
@@ -120,7 +121,7 @@ This is another one of those suggested commands that you can perform. User Accou
 
 ## Hyper-V Network Adjustment
 
-Before setting up the environment, you need to allocate a network for Hyper-V and provide internet access. In this step, I’ll be using the `172.19.85.0/24` network. You can choose any IP configuration you prefer. This parameter has been made parametric.
+Before setting up the environment, you need to allocate a network for Hyper-V and provide internet access. In this step, I'll be using the `172.19.85.0/24` network. You can choose any IP configuration you prefer. This parameter has been made parametric.
 
 ```powershell
 $natSwitch     = "LAN-85"
@@ -133,7 +134,7 @@ New-NetIPAddress -IPAddress $natIPAddress -PrefixLength 24 -InterfaceAlias "vEth
 New-NetNAT -Name $natSwitch -InternalIPInterfaceAddressPrefix $natAddress
 ```
 
-This command creates an internal virtual switch, performs NAT to the host machine using the specified address, and gains internet access. It’s important to note that a gateway value should not be entered for the virtual switch created for the virtual adapter.
+This command creates an internal virtual switch, performs NAT to the host machine using the specified address, and gains internet access. It's important to note that a gateway value should not be entered for the virtual switch created for the virtual adapter.
 
 ## Creating a Virtual Machine
 
@@ -165,13 +166,13 @@ Set-VMFirmware -VMName $vmName -FirstBootDevice $dvd
 Start-VM -Name $vmName
 ```
 
-Different virtual machines can be installed using the parameters in the above command. I’ll explain a bit more detailed what this command does.
+Different virtual machines can be installed using the parameters in the above command. I'll explain a bit more detailed what this command does.
 
 ### Virtual Machine Settings
 
 When creating the virtual machine, we create it as Gen 2. Gen 2 allows Hyper-V to perform virtualization using the physical resources that the host machine also uses. If we had used Gen 1, the CPU, RAM, and other hardware would be in the virtualization layer, causing the virtual machine to slow down.
 
-Because the `SecureBoot` feature is not recommended on Linux machines, it’s disabled. As a personal preference, I also disable the `Checkpoint` feature to make the virtual machine take up less space. The disadvantage of this is that Hyper-V cannot receive checkpoints, so a restore operation cannot be performed later.
+Because the `SecureBoot` feature is not recommended on Linux machines, it's disabled. As a personal preference, I also disable the `Checkpoint` feature to make the virtual machine take up less space. The disadvantage of this is that Hyper-V cannot receive checkpoints, so a restore operation cannot be performed later.
 
 ### Disk Block Size Adjustment
 
@@ -224,7 +225,7 @@ sudo reboot
 sudo apt install -y openssh-server vim git
 ```
 
-I'm installing 3 software that I’ve determined to be necessary in all the developer machines I’ve built so far with this command.
+I'm installing 3 software that I've determined to be necessary in all the developer machines I've built so far with this command.
 
 - OpenSSH Server: To share files
 - Vim: Text editor used in CLI
@@ -248,7 +249,7 @@ This command adjusts the firewall software and enables the SSH service within th
 
 The last setting required for the virtual machine to run independently is the network configuration. This can be done via GUI or CLI. I will only explain what needs to be done basically.
 
-Since Hyper-V doesn’t provide a DHCP server, we need to manually assign an IP address to our virtual machine.
+Since Hyper-V doesn't provide a DHCP server, we need to manually assign an IP address to our virtual machine.
 
 **Device:** eth0
 **Method:** Manual
@@ -273,7 +274,7 @@ The preparations for the virtual machine structure are complete. The virtual mac
 
 ### VS Code
 
-I like to use VS Code as an IDE when developing. I prefer it because of its flexibility and ability to be developed by adding plugins. It’s also a reason why it’s free.
+I like to use VS Code as an IDE when developing. I prefer it because of its flexibility and ability to be developed by adding plugins. It's also a reason why it's free.
 
 ```bash
 sudo apt install dirmngr ca-certificates software-properties-common apt-transport-https -y
@@ -296,7 +297,7 @@ sudo sysctl -p
 
 ### Docker
 
-Even if it’s a virtual machine, I prefer to use docker when I need to temporarily use some software. The important thing to note when installing Docker is that Linux Mint is based on Ubuntu.
+Even if it's a virtual machine, I prefer to use docker when I need to temporarily use some software. The important thing to note when installing Docker is that Linux Mint is based on Ubuntu.
 
 Normally, the part defined as `VERSION_CODENAME` in the script is used as `UBUNTU_CODENAME` for Linux Mint. Because Linux Mint updates its version information with the `VERSION_CODENAME` value and using it will cause Docker to not find the relevant package. Therefore, the `UBUNTU_CODENAME` value is used.
 
@@ -442,7 +443,7 @@ git config --global commit.gpgsign true
 git config --global tag.gpgSign true
 ```
 
-The first two lines of the above command are a necessity for Git, and the other lines are my recommendations. Don’t forget to adjust the values according to yourself.
+The first two lines of the above command are a necessity for Git, and the other lines are my recommendations. Don't forget to adjust the values according to yourself.
 
 ```bash
 gpg --full-generate-key
@@ -493,7 +494,7 @@ However, because it has more features and is newer, I prefer to install AWS CLI 
 
 Python has become the standard when working with artificial intelligence these days. Therefore, it may be necessary to install Python as well.
 
-The good thing is that Linux Mint comes with Python 3.10 by default. It’s enough for me to just install the necessary tools on top of it.
+The good thing is that Linux Mint comes with Python 3.10 by default. It's enough for me to just install the necessary tools on top of it.
 
 ```bash
 sudo apt update && sudo apt upgrade && sudo apt install python3 python3-venv -y
@@ -501,7 +502,7 @@ sudo apt update && sudo apt upgrade && sudo apt install python3 python3-venv -y
 
 ## Troubleshooting
 
-I’ve scattered solutions for potential issues throughout this article, but to consolidate them in the below.
+I've scattered solutions for potential issues throughout this article, but to consolidate them in the below.
 
 ### ENOSPC Error
 
@@ -515,9 +516,9 @@ sudo sysctl -p
 
 Running this command increases the watch limit.
 
-### Running Docker Commands Without `sudo`
+### Running Docker Commands Without `sudo`
 
-After installing Docker, it won’t allow you to perform operations without `sudo` privileges.
+After installing Docker, it won't allow you to perform operations without `sudo` privileges.
 
 You can solve this problem using the following command:
 
@@ -529,13 +530,13 @@ newgrp docker
 
 ### No Network Access / Unable to Get an IP Address
 
-If your virtual machine cannot access the network or obtain an IP address after you’ve completed the setup, check the following steps:
+If your virtual machine cannot access the network or obtain an IP address after you've completed the setup, check the following steps:
 
-- Is the **Gateway** value set to `172.19.85.254`?
-- Has the **DNS** value been assigned correctly?
-- Does the **IP Address** conflict with another virtual machine?
+- Is the **Gateway** value set to `172.19.85.254`?
+- Has the **DNS** value been assigned correctly?
+- Does the **IP Address** conflict with another virtual machine?
 
-### Linux Mint Won’t Boot
+### Linux Mint Won't Boot
 
 This may be because `Secure Boot` was left enabled.
 
@@ -556,7 +557,7 @@ However, if you want to create a backup, you can enable this parameter or take a
 
 I often need different development environments every day. Having a simple and mostly pre-defined guideline for this makes my job much easier. Especially being able to run a small machine without paying any extra fees is very appealing.
 
-The same thing can be done with different virtualization layers, and even a complete lab setup can be created. There are no obstacles to that. I’m just saving these options for other articles.
+The same thing can be done with different virtualization layers, and even a complete lab setup can be created. There are no obstacles to that. I'm just saving these options for other articles.
 
 If you would like to contribute, you can share the steps you need or use, or forward this article to people who you want to read it, or leave your likes and comments.
 

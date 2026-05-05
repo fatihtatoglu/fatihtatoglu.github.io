@@ -16,7 +16,7 @@ tags:
   - karar-verme
 readingTime: 13
 date: 2026-01-06
-updated: 2026-01-07
+updated: 2026-05-06
 pair: debate-experiment-with-ai
 canonical: "~/munazara-deneyi-yapay-zeka/"
 alternate: ~/en/debate-experiment-with-ai/
@@ -37,6 +37,7 @@ coverCaption: "AI vs AI münazarasını simgeleyen bir sahne: argüman, yapı ve
 template: "post"
 layout: "default"
 status: published
+extract: "Yapay zekâ çağında asıl soru, işimizi kimin elimizden alacağı değil; değişen dünyanın içinde hangi becerilerimizi diri tutabileceğimiz. Bir raporun işaret ettiği gelecek becerileri, yazarın zihninde beklenmedik bir deneye dönüşüyor: iki yapay zekâyı karşı karşıya getirip onları düşünürken, tartışırken ve ikna etmeye çalışırken izlemek. Teknik bir meraktan çok, insanın kendi düşünme kaslarını yokladığı bu deneme, yapay zekâyı bir tehdit değil, tuhaf ama güçlü bir antrenman partneri olarak görmenin kapısını aralıyor."
 ---
 # Yapay Zeka ile Münazara Deneyi: Düşünme ve İkna
 
@@ -182,5 +183,5 @@ Sonuç olarak mesele, yapay zekânın bizi geçip geçmeyeceği değil; onunla b
 
 ## Kaynaklar ve Ek Okumalar
 
-- [World Economic Forum – Future of Jobs Report 2025](https://www.weforum.org/stories/2025/01/future-of-jobs-report-2025-the-fastest-growing-and-declining-jobs/) - Gelecek iş gücü piyasası, yükselen ve gerileyen meslekler ile önümüzdeki yıllarda öne çıkması beklenen beceriler hakkında kapsamlı bir analiz.  
+- [World Economic Forum - Future of Jobs Report 2025](https://www.weforum.org/stories/2025/01/future-of-jobs-report-2025-the-fastest-growing-and-declining-jobs/) - Gelecek iş gücü piyasası, yükselen ve gerileyen meslekler ile önümüzdeki yıllarda öne çıkması beklenen beceriler hakkında kapsamlı bir analiz.  
 - [Debating Guide - Durham Union Society](https://dus.org.uk/debating-guide/) - Münazaranın temel kuralları, argüman kurma teknikleri ve karşı argüman geliştirme üzerine pratik bir rehber.

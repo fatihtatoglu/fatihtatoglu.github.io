@@ -18,11 +18,11 @@ tags:
   - self-assessment
 readingTime: 7
 date: 2025-10-28
-updated: 2025-12-02
+updated: 2026-05-06
 pair: swot-degerlendirme-klasik-yontem
 canonical: ~/en/swot-evaluation-guide/
 alternate: ~/swot-degerlendirme-klasik-yontem/
-description: Learn how to evaluate SWOT analysis results using the classic method—protect strengths, assess opportunities, mitigate weaknesses, and respond to threats.
+description: Learn how to evaluate SWOT analysis results using the classic method-protect strengths, assess opportunities, mitigate weaknesses, and respond to threats.
 keywords:
   - swot analysis
   - swot evaluation
@@ -39,6 +39,7 @@ status: published
 series: "swot"
 seriesTitle: "SWOT Analysis"
 related: ["mxzxdguji8", "meebjnw1ox", "y62dvrtos5"]
+extract: "A SWOT analysis can make your current situation visible, but visibility alone does not create change. The real question begins afterward: what will you protect, what will you improve, which opportunities deserve attention, and which threats are quietly pulling you back? From familiar business stories to personal health lessons, this guide looks at SWOT not as a static table, but as a decision point. Because sometimes the most dangerous choice is the one that looks like doing nothing."
 ---
 # SWOT Evaluation Guide: How to Assess SWOT Results
 

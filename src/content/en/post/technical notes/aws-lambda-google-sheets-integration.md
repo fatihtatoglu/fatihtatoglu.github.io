@@ -18,7 +18,7 @@ tags:
   - iam-security
 readingTime: 15
 date: 2025-11-07
-updated: 2025-12-23
+updated: 2026-05-06
 pair: aws-lambda-google-sheets-baglantisi
 canonical: ~/en/aws-lambda-google-sheets-integration/
 alternate: ~/aws-lambda-google-sheets-baglantisi/
@@ -40,6 +40,7 @@ coverCaption: "EventBridge -> Lambda -> (WIF) -> Google Sheets"
 template: post
 layout: default
 status: published
+extract: "Sometimes the simplest reporting need turns into a bridge between two cloud worlds. In this case, the goal was not to build a large data pipeline or introduce a heavy analytics stack, but to make project metrics visible quickly, safely, and with as little operational burden as possible. The path led from AWS Lambda to Google Sheets, through Workload Identity Federation, without long-lived keys. Along the way, small limits, missing dependencies, and permission details shaped the final solution."
 ---
 # AWS Lambda to Google Sheets with Keyless WIF
 
@@ -57,17 +58,17 @@ On the AWS side, a **Lambda** triggered by **EventBridge** obtains short-lived c
 
 ![Flow Diagram between AWS and GCP](/assets/images/aws-gcp-architecture-diagram.webp)
 
-- **Trigger:** Lambda runs with EventBridge `rate(6 hours)`.
-- **Computation:** Lambda reads from DynamoDB/Cognito using an IAM role with **read-only** permissions.
-- **Identity Federation:** The Lambda role is trusted to the GCP **Workload Identity Federation (WIF)** provider.
-- **Authorization:** Lambda obtains a short-lived GCP credential via WIF and makes authorized requests to the **Google Sheets API**.
-- **Writing:** Access/verification records are written to the `run_log` tab, and metrics are appended to other tabs.
+- **Trigger:** Lambda runs with EventBridge `rate(6 hours)`.
+- **Computation:** Lambda reads from DynamoDB/Cognito using an IAM role with **read-only** permissions.
+- **Identity Federation:** The Lambda role is trusted to the GCP **Workload Identity Federation (WIF)** provider.
+- **Authorization:** Lambda obtains a short-lived GCP credential via WIF and makes authorized requests to the **Google Sheets API**.
+- **Writing:** Access/verification records are written to the `run_log` tab, and metrics are appended to other tabs.
 
 ## Why This Approach?
 
-- **Keyless and Secure:** I'm not storing permanent GCP keys; I'm using identity federation and delegation for access.
-- **Fast Delivery:** A lightweight solution tailored to the need, instead of setting up an ETL/warehousing system. Google Sheets provides sufficient visibility for the team.
-- **Cost/Operational Simplicity:** A scheduled, easy-to-maintain, and low-cost flow using serverless (EventBridge -> Lambda).
+- **Keyless and Secure:** I'm not storing permanent GCP keys; I'm using identity federation and delegation for access.
+- **Fast Delivery:** A lightweight solution tailored to the need, instead of setting up an ETL/warehousing system. Google Sheets provides sufficient visibility for the team.
+- **Cost/Operational Simplicity:** A scheduled, easy-to-maintain, and low-cost flow using serverless (EventBridge -> Lambda).
 
 ## Prerequisites
 
@@ -506,7 +507,7 @@ After solving the first problem, I encountered a limit on the Google Cloud side.
 
 To solve this, I shortened the role name to `arn:aws:iam::<aws-account-id>:role/production-dashcalc-role`.
 
-### `requests` Library
+### `requests` Library
 
 I completed the development on Lambda and ran it. I saw an error in CloudWatch: missing `requests` library. I had overlooked that the `google-auth` library has a dependency on `requests`; therefore, I received an error.
 

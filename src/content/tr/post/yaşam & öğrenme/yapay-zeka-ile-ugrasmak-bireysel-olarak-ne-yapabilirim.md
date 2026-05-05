@@ -18,7 +18,7 @@ tags:
   - yapay-zeka-ogrenmek
 readingTime: 8
 date: 2026-01-11
-updated: 2026-01-16
+updated: 2026-05-06
 pair: what-can-i-do-with-ai
 canonical: ~/yapay-zeka-ile-ugrasmak-bireysel-olarak-ne-yapabilirim/
 alternate: ~/en/what-can-i-do-with-ai/
@@ -40,6 +40,7 @@ coverCaption: "Yapay zekâ ile uğraşmak bazen model eğitmekten çok, doğru y
 template: post
 layout: default
 status: published
+extract: "Yapay zekâ artık sadece laboratuvarlarda, büyük şirketlerin sunumlarında ya da uzak gelecek tartışmalarında değil; gündelik hayatımızın tam ortasında duruyor. Ama bütün bu büyük cümlelerin arasında insanın kendine sorması gereken daha küçük, daha rahatsız edici bir soru var: Ben bu çağın neresindeyim? Belki devrim yapacak imkânımız, bilgimiz ya da cesaretimiz yok; ama denize atılmayı bekleyen bir deniz yıldızı kadar somut, küçük ve sahici bir adımımız olabilir."
 ---
 # Yapay Zekâ ile Uğraşmak: Bireysel Olarak Ne Yapabilirim?
 

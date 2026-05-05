@@ -18,7 +18,7 @@ tags:
   - kisisel-gelisim
 readingTime: 8
 date: 2025-10-28
-updated: 2025-12-02
+updated: 2026-05-06
 pair: swot-evaluation-guide
 canonical: ~/swot-degerlendirme-klasik-yontem/
 alternate: ~/en/swot-evaluation-guide/
@@ -41,6 +41,7 @@ status: published
 series: "swot"
 seriesTitle: "SWOT Analizi"
 related: ["mxzxdguji8", "meebjnw1ox", "y62dvrtos5"]
+extract: "SWOT analizi çoğu zaman dört kutucuğu doldurup kenara koyduğumuz basit bir egzersiz gibi görünür. Oysa asıl mesele, o kutucukların bize ne söylediğini duyabilmekte başlar. Çünkü güçlü yanlarımızı korumak, zayıf yanlarımızı azaltmak, fırsatları değerlendirmek ve tehditleri savuşturmak; sadece teorik başlıklar değil, günlük hayatın içinde sürekli karşımıza çıkan karar anlarıdır. Bazen bir şirketin sessizce geride kalması, bazen de küçük bir sağlık uyarısı bize aynı şeyi hatırlatır: Görmek yetmez, harekete geçmek gerekir."
 ---
 # SWOT Değerlendirme: Klasik Yöntemle Adım Adım Rehber
 
@@ -141,8 +142,8 @@ Eğer benim analiz yöntemimi merak ediyorsanız, SWOT Analizi ile ilgili diğer
 
 ## Kaynaklar ve Ek Okumalar
 
-- [The origins of SWOT analysis](https://doi.org/10.1016/j.lrp.2023.102304) SWOT’un tarihsel kökenini anlatan en güçlü referans.
+- [The origins of SWOT analysis](https://doi.org/10.1016/j.lrp.2023.102304) SWOT'un tarihsel kökenini anlatan en güçlü referans.
 - [SWOT Analysis With SWOT Templates and Examples](https://members.mindtools.com/amtbj63/swot-analysis) Uygulama temelli, basit ve anlaşılır uygulama örneği.
-- [BlackBerry’s success led to its failure](https://www.theverge.com/2016/9/30/13119924/blackberry-failure-success) BlackBerry'nin hikayesi. Teknik ve stratejik açıdan güzel bir breakdown.
-- [The Strategic Decisions That Caused Nokia’s Failure](https://knowledge.insead.edu/strategy/strategic-decisions-caused-nokias-failure) Nokia'nın hikayesi.
-- [Case Study: Strategic Backstory of Nokia’s Rise and Fall](https://cdotimes.com/2025/08/13/case-study-strategic-backstory-nokias-rise-and-fall/) Nokia'nın hikayesi.
+- [BlackBerry's success led to its failure](https://www.theverge.com/2016/9/30/13119924/blackberry-failure-success) BlackBerry'nin hikayesi. Teknik ve stratejik açıdan güzel bir breakdown.
+- [The Strategic Decisions That Caused Nokia's Failure](https://knowledge.insead.edu/strategy/strategic-decisions-caused-nokias-failure) Nokia'nın hikayesi.
+- [Case Study: Strategic Backstory of Nokia's Rise and Fall](https://cdotimes.com/2025/08/13/case-study-strategic-backstory-nokias-rise-and-fall/) Nokia'nın hikayesi.

@@ -15,7 +15,7 @@ tags:
   - bubble-stories
 readingTime: 2
 date: 2012-04-10
-updated: 2025-12-23
+updated: 2026-05-06
 pair: sessizligin-altindaki-sistem
 canonical: ~/en/system-beneath-the-silence/
 alternate: ~/sessizligin-altindaki-sistem/
@@ -38,6 +38,7 @@ related:
   - jwymi6xenc
   - ""
 aiTranslated: Gemma 3 12B
+extract: "Beneath the calm surface of scuba diving, there is more than silence, weightlessness, and the quiet beauty of marine life. There is a discipline that begins long before entering the water and follows every breath beneath it. What appears peaceful from the outside carries rules, habits, and small decisions that can change everything. This journey looks back at years of diving not as a manual, but as a way to understand the fragile balance between trust, environment, and human responsibility."
 ---
 # The System Beneath the Silence: Scuba Diving Discipline
 

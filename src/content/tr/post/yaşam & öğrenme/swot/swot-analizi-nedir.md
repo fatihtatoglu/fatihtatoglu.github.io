@@ -17,7 +17,7 @@ tags:
   - tehditler
 readingTime: 7
 date: 2022-05-24
-updated: 2025-12-02
+updated: 2026-05-06
 pair: what-is-swot-analysis
 canonical: ~/swot-analizi-nedir/
 alternate: ~/en/what-is-swot-analysis/
@@ -40,6 +40,7 @@ status: published
 series: "swot"
 seriesTitle: "SWOT Analizi"
 related: ["mxzxdguji8", "meebjnw1ox", "y62dvrtos5"]
+extract: "Bazen neye sahip olduğumuzu, neyin eksik kaldığını ya da hangi risklerin sessizce yaklaştığını ancak durup gerçekten baktığımızda fark ederiz. SWOT analizi tam da bu yüzden basit görünen ama etkisi derinleşebilen bir araçtır. Güçlü yönler kadar zayıf yönleri, fırsatlar kadar tehditleri de görünür kılar. Fakat asıl mesele dört kutuyu doldurmak değil; verilen cevaplara dürüstçe bakabilmek ve onların neye dönüşebileceğini zamanında okuyabilmektir."
 ---
 # SWOT Analizi Nedir? Güçlü ve Zayıf Yönlerinizi Keşfedin
 
@@ -164,6 +165,6 @@ Eğer benim analiz yöntemimi merak ediyorsanız, SWOT Analizi ile ilgili diğer
 
 Bu yazıyı hazırlarken faydalandığım ve SWOT analizini daha derin anlamak isteyenler için önerdiğim bazı kaynaklar:
 
-- [Wikipedia – SWOT Analysis](https://en.wikipedia.org/wiki/SWOT_analysis) - SWOT analizinin tanımı ve tarihsel kökeni.
-- [Harvard Business Review – Are You Doing the SWOT Analysis Backwards?](https://hbr.org/2021/02/are-you-doing-the-swot-analysis-backwards) - SWOT analizine eleştirel, modern bakış.
-- [MindTools – SWOT Analysis: Discover New Opportunities, Manage and Eliminate Threats](https://www.mindtools.com/amtbj63/swot-analysis) - SWOT analizinin uygulama adımları ve örnekleri.
+- [Wikipedia - SWOT Analysis](https://en.wikipedia.org/wiki/SWOT_analysis) - SWOT analizinin tanımı ve tarihsel kökeni.
+- [Harvard Business Review - Are You Doing the SWOT Analysis Backwards?](https://hbr.org/2021/02/are-you-doing-the-swot-analysis-backwards) - SWOT analizine eleştirel, modern bakış.
+- [MindTools - SWOT Analysis: Discover New Opportunities, Manage and Eliminate Threats](https://www.mindtools.com/amtbj63/swot-analysis) - SWOT analizinin uygulama adımları ve örnekleri.

@@ -15,7 +15,7 @@ tags:
   - tecrube
   - muhakeme
 date: 2026-03-01
-updated: 2026-03-28
+updated: 2026-05-06
 readingTime: 5
 canonical: ~/yapay-zeka-zaman-kazandiriyor-mu/
 pair: artificial-intelligence-saving-time
@@ -36,6 +36,7 @@ template: post
 layout: default
 status: published
 featured: true
+extract: "Bazen küçük bir tercih, düşündüğümüzden daha büyük bir sorunun kapısını aralıyor. Bir otopark seçimiyle başlayan \"zaman satın alma\" fikri, kısa sürede konfor, stres, zihinsel yük ve yapay zekâ ile kurduğumuz ilişkiye uzanıyor. Gerçekten kazandığımız şey sadece birkaç saat mi, yoksa daha rahat karar verebilmek, daha cesur denemek ve bildiklerimizin üzerine yeni yollar açmak mı? Belki de asıl mesele, hızlanmak değil; hızlandığımız yerde neyi eksiltmeden taşıyabildiğimiz."
 ---
 # Yapay Zekâ Sadece Zaman mı Kazandırıyor?
 

@@ -17,7 +17,7 @@ tags:
   - deneme-yanilma
 readingTime: 8
 date: 2025-12-31
-updated: 2026-01-01
+updated: 2026-05-06
 pair: learning-from-failure
 canonical: ~/denemek-yanilmak-basarisizlik
 alternate: ~/en/learning-from-failure
@@ -36,6 +36,7 @@ coverCaption: "Bazen sonuç, niyetle aynı şey olmaz. Ama deneme yine de bir ş
 template: post
 layout: default
 status: published
+extract: "Mutfakta dağılan un, tutmayan sufleler, unutulan tuz ve beklenmedik sonuçlar bazen sadece yemekle ilgili değildir. İnsanın denemeye, yanılmaya, geri çekilmeye ve yeniden başlamaya dair bütün hikâyesi, en sıradan anların içinden usulca görünür olur. Bir çocuğun ilk adımları, bir sporcunun tekrarı, bir tarifin bozulması ya da insanın kendi içinde duyduğu \"ya olmazsa?\" sesi... Hepsi aynı yere çıkar gibi: belki de ilerlemek, her zaman doğru yapmakla değil, yapamadığımız yerden tekrar bakabilmekle başlar."
 ---
 # Elimin Hamuruyla Yine Yapamadım: Denemek ve Yanılmak Üzerine
 
@@ -73,7 +74,7 @@ Kızımdan öğrendiğim bir başka şey de şu oldu: Başaramadığım bir şey
 
 Bebeklerden yetişkinlere geçtiğimizde, bu durumu gözlemleyebileceğimiz gruplardan biri de sporcular. Kan, ter ve gözyaşı... Sporcular binlerce tekrar yapıyor, defalarca başarısız oluyor ve bazen sakatlanıyorlar. Biz onların en başarılı anlarını görüyoruz. Oysa onların aklında kalan, sürecin kendisi; yapılan çalışmalar ve tekrarlar.
 
-Yüksek disiplin ve konsantrasyon olmadan yapılması zor olan spor konusunda pek çok örnek var ama özellikle [Semih Saygıner](https://www.youtube.com/watch?v=MQFBGNtiq8w)’in konuşmalarını dinlemek bana hep bunları hatırlatıyor.
+Yüksek disiplin ve konsantrasyon olmadan yapılması zor olan spor konusunda pek çok örnek var ama özellikle [Semih Saygıner](https://www.youtube.com/watch?v=MQFBGNtiq8w)'in konuşmalarını dinlemek bana hep bunları hatırlatıyor.
 
 Buraya kadar anlattıklarım mutfakta, evde ya da gündelik hayatta karşıma çıkan şeylerdi. Biraz daha kavramsal baktığımda ise, evrim sürecinin de aslında başlı başına bir deneme ve yanılma süreci olduğunu görüyorum. Bugün bizler, bu sürecin ayakta kalabilmiş ürünleri olarak yaşamaya devam ediyoruz. Yani denemek, insanın fabrika ayarlarında var. Vazgeçmeyi ise sonradan öğrenmiş gibiyiz.
 

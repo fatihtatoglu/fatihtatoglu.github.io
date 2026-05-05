@@ -228,7 +228,7 @@
     flex-direction: unset;
   }
 
-  /* ——— Tone / color tokens ——— */
+  /* --- Tone / color tokens --- */
   .btn--tone-neutral {
     --btn-bg: var(--bg);
     --btn-bg-hover: var(--bg-elev);
@@ -495,7 +495,7 @@
     --btn-color-active: #ffffff;
   }
 
-  /* ——— Header-specific buttons ——— */
+  /* --- Header-specific buttons --- */
   .theme-icon {
     @apply hidden w-5 h-5 text-current;
   }

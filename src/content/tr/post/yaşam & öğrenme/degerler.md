@@ -16,7 +16,7 @@ tags:
   - oz-farkindalik
 readingTime: 8
 date: 2025-10-16
-updated: 2025-10-16
+updated: 2026-05-06
 pair: core-values
 canonical: ~/degerler/
 alternate: ~/en/core-values/
@@ -35,6 +35,7 @@ coverCaption: Değerlerini keşfetmek, karanlıktan aydınlığa çıkan bir yol
 template: post
 layout: default
 status: published
+extract: "Bazı kararları neden öyle verdiğimizi, bazı seçimlerin neden içimize sinmediğini ya da bazı dönemlerde neden bambaşka şeyleri önemser hale geldiğimizi çoğu zaman sonradan fark ederiz. Değerler, bu görünmez pusulanın en sessiz ama en belirleyici parçalarından biri. Fakat insanın gerçekten kendi değerleriyle mi, yoksa çevresinin beklentileri ve dönemsel ihtiyaçlarıyla mı hareket ettiğini ayırt etmesi sanıldığı kadar kolay değildir. Bu yazı, değerlerle tanışmayı biraz daha dikkatli, biraz daha dürüst bir yerden ele alıyor."
 ---
 # Değerler
 
@@ -124,11 +125,11 @@ Değerlerin zamanla değişebileceğini kabul etmek, gelişimin doğal bir parç
 
 Bu yazının şekillenmesinde katkı sağlayan [SRL Danışmanlık](https://linkedin.com/company/srl-danışmanlık/) ekibine, çalışmalarıma katılan çalışma arkadaşlarıma ve tüm öğrenci arkadaşlarıma teşekkür ediyorum.
 
-Eğer siz de katkı sağlamak isterseniz, [Değerler Anketi](#)’ni doldurabilir, anonim olarak **Değer Envanteri**’ne katılabilir ya da bu yazıyı paylaşarak daha fazla kişinin kendi değerleriyle tanışmasına destek olabilirsiniz.
+Eğer siz de katkı sağlamak isterseniz, [Değerler Anketi](#)'ni doldurabilir, anonim olarak **Değer Envanteri**'ne katılabilir ya da bu yazıyı paylaşarak daha fazla kişinin kendi değerleriyle tanışmasına destek olabilirsiniz.
 
 ## Kaynaklar ve Ek Okumalar
 
-- [Bireysel Değerler Envanteri’nin Dilsel Eşdeğerlik, Geçerlik ve Güvenirlik Çalışması](https://dergipark.org.tr/tr/download/article-file/1783)  
+- [Bireysel Değerler Envanteri'nin Dilsel Eşdeğerlik, Geçerlik ve Güvenirlik Çalışması](https://dergipark.org.tr/tr/download/article-file/1783)  
 - [Personal Values Across Cultures](https://www.annualreviews.org/content/journals/10.1146/annurev-psych-020821-125100)  
 - [Personal Values and Their Impact on Subjective Wellbeing (2024)](https://link.springer.com/article/10.1007/s10212-024-00800-1)  
 - [Changing Personal Values Through Value-Manipulation Tasks](https://pmc.ncbi.nlm.nih.gov/articles/PMC9319275/pdf/ejihpe-12-00052.pdf)

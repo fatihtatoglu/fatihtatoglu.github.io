@@ -75,8 +75,8 @@
   },
   "menu": {
     "searchPlaceholder": {
-      "tr": "Başlık, konu, etiket…",
-      "en": "Search title, topic, tag…"
+      "tr": "Başlık, konu, etiket...",
+      "en": "Search title, topic, tag..."
     },
     "primary": {
       "tr": "Birincil menü",
@@ -133,6 +133,30 @@
         "aria": {
           "tr": "Yorum Yap",
           "en": "Comment"
+        }
+      },
+      "shareWhatsapp": {
+        "aria": {
+          "tr": "WhatsApp ile paylaş",
+          "en": "Share on WhatsApp"
+        }
+      },
+      "shareX": {
+        "aria": {
+          "tr": "X'te paylaş",
+          "en": "Share on X"
+        }
+      },
+      "shareLinkedIn": {
+        "aria": {
+          "tr": "LinkedIn'de paylaş",
+          "en": "Share on LinkedIn"
+        }
+      },
+      "shareFacebook": {
+        "aria": {
+          "tr": "Facebook'ta paylaş",
+          "en": "Share on Facebook"
         }
       },
       "copyLink": {

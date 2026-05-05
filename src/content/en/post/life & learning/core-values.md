@@ -18,7 +18,7 @@ tags:
   - values-assessment
 readingTime: 8
 date: 2025-10-16
-updated: 2025-10-16
+updated: 2026-05-06
 pair: degerler
 canonical: ~/en/core-values/
 alternate: ~/degerler/
@@ -37,12 +37,13 @@ coverCaption: Discovering your values is a journey from darkness into light.
 template: post
 layout: default
 status: published
+extract: "Values often feel like familiar words we already understand, but the moment we try to name our own, things become less certain. Are the principles we choose truly ours, or are they shaped by the environments we live in, the needs we carry, and the pressures we don't always notice? Identifying values is not only about making a list; it is also a quiet confrontation with how we decide, what we lack, and where our authentic self begins."
 ---
 # Core Values
 
 Values are a concept that plays an active role in decision-making, prioritizing, and guiding our behavior. While in everyday conversation it's used to mean _things we value_ or _guiding principles_, it actually possesses a deeper meaning.
 
-We can think of values as the foundation of a person. Some may be built upon biologically inherited predispositions, but for most, they begin to shape during childhood through environmental factors. Knowing one’s own values and using them at the right times ensures greater resilience and makes it much easier to distinguish between needs and values.
+We can think of values as the foundation of a person. Some may be built upon biologically inherited predispositions, but for most, they begin to shape during childhood through environmental factors. Knowing one's own values and using them at the right times ensures greater resilience and makes it much easier to distinguish between needs and values.
 
 ## Identifying Values
 
@@ -54,7 +55,7 @@ Approaches that form the theoretical basis of this include **paired comparison m
 
 In short, the human mind doesn't evaluate options directly; it understands them by comparing them. Therefore, I prefer the comparative method when identifying values.
 
-Now let’s move on to the stage of identifying values. For this, I have a list of 142 values. 10 values are selected from this list. Then these values are compared. In each comparison, an answer is wanted to the question **"Which one is more important?"**
+Now let's move on to the stage of identifying values. For this, I have a list of 142 values. 10 values are selected from this list. Then these values are compared. In each comparison, an answer is wanted to the question **"Which one is more important?"**
 
 After the comparisons are complete, the top 5 values with the most votes are moved to a separate list and compared again. As a result, you end up with a list of your own values.
 
@@ -64,7 +65,7 @@ You can also perform this evaluation over [Core Value Survey](#). If you agree t
 
 You now have a list of what you call your values from the survey or another method. So, what do you need to _do_ with this list? Let's take a look at them a bit.
 
-Firstly, your values list belongs to you, and the meaning of these values may be different for you than it is for me. While there might be universal definitions for some values, that definition can be different for you – and that’s perfectly normal.
+Firstly, your values list belongs to you, and the meaning of these values may be different for you than it is for me. While there might be universal definitions for some values, that definition can be different for you - and that's perfectly normal.
 
 To get acquainted with your values, ask yourself the following questions for each value and answer them honestly:
 
@@ -72,7 +73,7 @@ To get acquainted with your values, ask yourself the following questions for eac
 - What does it mean to live/defend the X value?
 - What are the obstacles preventing me from living or upholding the X value?
 
-You’ve answered these questions for each of your values, and now we're moving on to general questions. You need to answer these questions using your values and with broader reflection.
+You've answered these questions for each of your values, and now we're moving on to general questions. You need to answer these questions using your values and with broader reflection.
 
 - What is the importance and meaning of the values I have chosen for myself?
 - How do I feel and behave when I cannot live or provide these values in my life?
@@ -82,17 +83,17 @@ In fact, while getting acquainted with your values, you also have an opportunity
 
 ## Observations
 
-As a manager or mentor, I always conduct a values exercise with the people I support. During these exercises, I’ve made many different observations.
+As a manager or mentor, I always conduct a values exercise with the people I support. During these exercises, I've made many different observations.
 
-One observation I've consistently had is that before even starting the work, most individuals don’t value the concept of values and find it meaningless. Individuals are both unwilling to have their personal space entered and believe that the results will not mean anything.
+One observation I've consistently had is that before even starting the work, most individuals don't value the concept of values and find it meaningless. Individuals are both unwilling to have their personal space entered and believe that the results will not mean anything.
 
 The common point among those who think this is a fear of wrongly defining the concept of values and a worry that environmental factors are required for values to emerge in the work's outcome.
 
-Another observation during the process is that individuals often select values they don’t currently have but somehow desire to have when initially choosing their values. Participants shared that the reason for this selection is a need or deficiency.
+Another observation during the process is that individuals often select values they don't currently have but somehow desire to have when initially choosing their values. Participants shared that the reason for this selection is a need or deficiency.
 
 My final observation is that I have been able to achieve the results I aimed for with the work.
 
-The purpose of this exercise is to create small movements in the individual's brain. To ensure they use their own brains instead of autopilot when making decisions or choices. It also enables a review of one’s relationship with oneself.
+The purpose of this exercise is to create small movements in the individual's brain. To ensure they use their own brains instead of autopilot when making decisions or choices. It also enables a review of one's relationship with oneself.
 
 Therefore, I say that **values exercises** are an awareness exercise everyone should do.
 
@@ -106,23 +107,23 @@ This conclusion shows me that individuals are actually being molded into a certa
 
 The values that are transmitted to us without our awareness in the environments we live in, work in, or spend time in may be certain values. We need to be aware of these and know that they are actually the values of society or our neighborhood.
 
-It’s not about **ignoring** these values but being **aware of their existence** and managing them consciously. When we can distinguish between environment values and our own core values, we can make much more authentic decisions.
+It's not about **ignoring** these values but being **aware of their existence** and managing them consciously. When we can distinguish between environment values and our own core values, we can make much more authentic decisions.
 
 ### 2. Need Masking
 
-In my work, I've observed that the desire for a value one doesn’t have is actually related to a need. A clear example of this came when working with a teammate.
+In my work, I've observed that the desire for a value one doesn't have is actually related to a need. A clear example of this came when working with a teammate.
 
 I conducted two values exercises with a colleague three months apart. In the first exercise, **health** was not listed as a value. However, in the second exercise, **health** and **family** were directly at the top of the list. When we compared the results together, he said that both he and his mother had health problems.
 
 According to my conclusion, if there is a value we want to be fulfilled or whose lack we feel, we may find it in our list at the end of the work as a **need mask**.
 
-Therefore, when interpreting values, it’s necessary to consider environmental conditions and temporary effects. I believe that by cleaning out our lists of needs, we can reach our core values.
+Therefore, when interpreting values, it's necessary to consider environmental conditions and temporary effects. I believe that by cleaning out our lists of needs, we can reach our core values.
 
 ## Closing Remark
 
 Values are concepts that influence our decision-making and choices. Being aware of them and using them correctly will support us in making a difference in life.
 
-Accepting that values can change over time is a natural part of growth. According to my hypothesis, if an individual’s values transform at least once over time, this indicates that their ability to adapt to life and communicate remains alive.
+Accepting that values can change over time is a natural part of growth. According to my hypothesis, if an individual's values transform at least once over time, this indicates that their ability to adapt to life and communicate remains alive.
 
 I would like to thank the [SRL Danışmanlık](https://linkedin.com/company/srl-danışmanlık/) team for contributing to the shaping of this writing, my colleagues who participated in my work, and all my student friends.
 
@@ -130,7 +131,7 @@ If you also want to contribute, you can fill out the [Core Value Survey](#), par
 
 ## References and Further Reading
 
-- [Bireysel Değerler Envanteri’nin Dilsel Eşdeğerlik, Geçerlik ve Güvenirlik Çalışması](https://dergipark.org.tr/tr/download/article-file/1783)  
+- [Bireysel Değerler Envanteri'nin Dilsel Eşdeğerlik, Geçerlik ve Güvenirlik Çalışması](https://dergipark.org.tr/tr/download/article-file/1783)  
 - [Personal Values Across Cultures](https://www.annualreviews.org/content/journals/10.1146/annurev-psych-020821-125100)  
 - [Personal Values and Their Impact on Subjective Wellbeing (2024)](https://link.springer.com/article/10.1007/s10212-024-00800-1)  
 - [Changing Personal Values Through Value-Manipulation Tasks](https://pmc.ncbi.nlm.nih.gov/articles/PMC9319275/pdf/ejihpe-12-00052.pdf)

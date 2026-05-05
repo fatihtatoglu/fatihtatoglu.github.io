@@ -15,56 +15,55 @@
       </a>
     </div>
 
-    {{#front.cover}}
-    <div class="post-cover">
-      <figure class="post-cover">
-        <img src="{{{.}}}" alt="{{front.coverAlt}}" loading="eager">
-        {{#front.coverCaption}}
-        <figcaption>{{.}}</figcaption>
-        {{/front.coverCaption}}
-      </figure>
-    </div>
-    {{/front.cover}}
+    <div class="post-hero">
+      {{#front.cover}}
+      <div class="post-cover">
+        <figure class="post-cover">
+          <img src="{{{.}}}" alt="{{front.coverAlt}}" loading="eager" lang="{{lang}}" {{#front.coverCaption}}title="{{.}}"{{/front.coverCaption}}>
+        </figure>
+      </div>
+      {{/front.cover}}
 
-    <div class="post-meta">
-      <dl class="post-meta__grid">
-        {{#front.dateDisplay}}
-        <div class="post-meta__item">
-          <dt lang="{{lang}}">{{i18n.category.meta.publishedLabel}}</dt>
-          <dd><time>{{.}}</time></dd>
-        </div>
-        {{/front.dateDisplay}}
+      <div class="post-meta">
+        <dl class="post-meta__grid">
+          {{#front.dateDisplay}}
+          <div class="post-meta__item">
+            <dt lang="{{lang}}">{{i18n.category.meta.publishedLabel}}</dt>
+            <dd><time>{{.}}</time></dd>
+          </div>
+          {{/front.dateDisplay}}
 
-        {{#front.readingTime}}
-        <div class="post-meta__item">
-          <dt lang="{{lang}}">{{i18n.category.meta.readingTimeLabel}}</dt>
-          <dd>{{.}} {{i18n.category.readingTimeSuffix}}</dd>
-        </div>
-        {{/front.readingTime}}
+          {{#front.readingTime}}
+          <div class="post-meta__item">
+            <dt lang="{{lang}}">{{i18n.category.meta.readingTimeLabel}}</dt>
+            <dd>{{.}} {{i18n.category.readingTimeSuffix}}</dd>
+          </div>
+          {{/front.readingTime}}
 
-        {{#front.seriesTitle}}
-        <div class="post-meta__item">
-          <dt lang="{{lang}}">{{i18n.category.meta.series}}</dt>
-          <dd>{{.}}</dd>
-        </div>
-        {{/front.seriesTitle}}
+          {{#front.seriesTitle}}
+          <div class="post-meta__item">
+            <dt lang="{{lang}}">{{i18n.category.meta.series}}</dt>
+            <dd>{{.}}</dd>
+          </div>
+          {{/front.seriesTitle}}
 
-        {{#isEnglish}}
-        {{#front.aiTranslated}}
-        <div class="post-meta__item">
-          <dt lang="{{lang}}">{{i18n.category.meta.translatedBy}}</dt>
-          <dd>{{.}}</dd>
-        </div>
-        {{/front.aiTranslated}}
+          {{#isEnglish}}
+          {{#front.aiTranslated}}
+          <div class="post-meta__item">
+            <dt lang="{{lang}}">{{i18n.category.meta.translatedBy}}</dt>
+            <dd>{{.}}</dd>
+          </div>
+          {{/front.aiTranslated}}
 
-        {{^front.aiTranslated}}
-        <div class="post-meta__item">
-          <dt lang="{{lang}}">{{i18n.category.meta.translatedBy}}</dt>
-          <dd>{{site.author}}</dd>
-        </div>
-        {{/front.aiTranslated}}
-        {{/isEnglish}}
-      </dl>
+          {{^front.aiTranslated}}
+          <div class="post-meta__item">
+            <dt lang="{{lang}}">{{i18n.category.meta.translatedBy}}</dt>
+            <dd>{{site.author}}</dd>
+          </div>
+          {{/front.aiTranslated}}
+          {{/isEnglish}}
+        </dl>
+      </div>
     </div>
 
   </header>

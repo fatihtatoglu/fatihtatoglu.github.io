@@ -20,4 +20,4 @@ listKey: "home"
 layout: "default"
 status: "published"
 ---
-# Fatih Tatoğlu – Personal Notes on Technology, Learning, and Life from a Learning Engineer
+# Fatih Tatoğlu - Personal Notes on Technology, Learning, and Life from a Learning Engineer

@@ -18,7 +18,7 @@ tags:
   - iam-security
 readingTime: 16
 date: 2025-11-07
-updated: 2025-12-23
+updated: 2026-05-06
 pair: aws-lambda-google-sheets-integration
 canonical: ~/aws-lambda-google-sheets-baglantisi/
 alternate: ~/en/aws-lambda-google-sheets-integration/
@@ -40,6 +40,7 @@ coverCaption: EventBridge -> Lambda -> (WIF) -> Google Sheets akışı için sta
 template: post
 layout: default
 status: published
+extract: "Bazen bir projenin ihtiyacı büyük bir veri ambarı değil, doğru yere akan küçük ve güvenilir bir veri hattıdır. AWS tarafında duran veriyi Google Sheets'e taşımak ilk bakışta basit görünebilir; ama işin içine kimlikler, izinler, anahtar güvenliği ve zamanlanmış işler girince tablo biraz değişir. Bu yazıda, kalıcı anahtar taşımadan, iki bulutu birbirine konuşturan sade ama dikkat isteyen bir kurulumun adımlarına yakından bakıyoruz."
 ---
 # AWS Lambda -> Google Sheets: WIF ile Anahtarsız Kurulum
 

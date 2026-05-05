@@ -18,7 +18,7 @@ tags:
   - karar-verme
 readingTime: 15
 date: 2025-10-28
-updated: 2025-12-02
+updated: 2026-05-06
 pair: swot-opportunity-zone-method
 canonical: ~/swot-degerlendirme-firsat-reyonu/
 alternate: ~/en/swot-opportunity-zone-method/
@@ -41,6 +41,7 @@ status: published
 series: "swot"
 seriesTitle: "SWOT Analizi"
 related: ["mxzxdguji8", "meebjnw1ox", "y62dvrtos5"]
+extract: "SWOT analizi bazen bir tabloyu doldurmakla kalır, bazen de insanı kendisiyle biraz daha dürüst bir yere taşır. Ama o tablonun içindeki başlıklar her zaman ilk göründüğü kadar basit değildir; güçlü yanlar bizi yavaşlatabilir, zayıflıklar gizli birer fırsata dönüşebilir, tehditler ise doğru bakıldığında yeni bir hareket alanı açabilir. Fırsat Reyonu yaklaşımı, SWOT'u yalnızca anlamak için değil, gerçekten harekete geçmek için yeniden düşünmeye davet ediyor."
 ---
 # SWOT Değerlendirme Yöntemi: Fırsat Reyonu Yaklaşımı
 
@@ -197,5 +198,5 @@ Eğer yöntem sizde işe yararsa bunu başkalarıyla paylaşmanız benim için b
 
 - [Buzdağımız Eriyor](https://www.kitapyurdu.com/kitap/buzdagimiz-eriyor-her-kosulda-degismek-ve-basarili-olmak/642287.html) Değişimin adımlarının anlatıldığı bir Penguen hikâyesi.
 - [Leading Change](https://www.amazon.com/Leading-Change-New-Preface-Author/dp/1422186431/) Değişimin yönetilmesi ile ilgili okunması gereken referans kaynak kitap.
-- [Don’t Just Play To Your Strengths. Focus On Your Polarities](https://www.forbes.com/councils/forbescoachescouncil/2019/05/21/dont-just-play-to-your-strengths-focus-on-your-polarities/) Güçlü yanların aşırı kullanıldığında nasıl zayıflığa dönüşebileceğini tartışan, liderlik ve polarite yönetimi odağında bir makale.
+- [Don't Just Play To Your Strengths. Focus On Your Polarities](https://www.forbes.com/councils/forbescoachescouncil/2019/05/21/dont-just-play-to-your-strengths-focus-on-your-polarities/) Güçlü yanların aşırı kullanıldığında nasıl zayıflığa dönüşebileceğini tartışan, liderlik ve polarite yönetimi odağında bir makale.
 - [Personal SWOT Analysis Examples: How To Achieve Your Goals](https://www.betterup.com/blog/personal-swot-analysis) SWOT sonuçlarını aksiyona dönüştürme, önceliklendirme ve kişisel hedeflerle ilişkilendirme üzerine pratik öneriler.

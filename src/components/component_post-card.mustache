@@ -5,10 +5,7 @@
     {{#cover}}
     <div class="post-cover">
       <figure class="post-cover">
-        <img src="{{.}}" alt="{{coverAlt}}" loading="lazy">
-        {{#coverCaption}}
-        <figcaption lang="{{lang}}">{{.}}</figcaption>
-        {{/coverCaption}}
+        <img src="{{.}}" alt="{{coverAlt}}" loading="lazy" lang="{{lang}}" {{#coverCaption}}title="{{.}}"{{/coverCaption}}>
       </figure>
     </div>
     {{/cover}}
@@ -30,11 +27,15 @@
       </a>
     </h2>
 
+    {{#header.extract}}
+    <p lang="{{lang}}">{{.}}</p>
+    {{/header.extract}}
+    {{^header.extract}}
     {{#description}}
-    <p lang="{{lang}}">
-      {{.}}
-    </p>
+    <p lang="{{lang}}">{{.}}</p>
     {{/description}}
+    {{/header.extract}}
+
   </div>
   <!-- Post Content -->
 </article>

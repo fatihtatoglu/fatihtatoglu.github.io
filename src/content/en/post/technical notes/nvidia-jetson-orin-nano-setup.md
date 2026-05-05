@@ -16,7 +16,7 @@ tags:
   - sdk-manager
 readingTime: 18
 date: 2026-01-14
-updated: 2026-01-15
+updated: 2026-05-06
 pair: nvidia-jetson-orin-nano-kurulumu
 canonical: ~/en/nvidia-jetson-orin-nano-setup/
 alternate: ~/nvidia-jetson-orin-nano-kurulumu/
@@ -36,6 +36,7 @@ template: post
 layout: default
 status: published
 aiTranslated: "ChatGPT 5.2"
+extract: "Setting up a new device always begins with a little optimism: download the image, write it to the card, connect a few cables, and move on. But sometimes the real setup is not in the official steps; it is hidden in missing cables, stubborn boot screens, conflicting tools, and small details that only appear after hours of trial and error. This is the story of turning a Jetson Orin Nano from a promising box on the desk into a working companion for future AI experiments."
 ---
 # NVIDIA Jetson Orin Nano Setup: JetPack, SD Card & Fixes
 
@@ -60,7 +61,7 @@ When we talk about artificial intelligence today, NVIDIA is usually the first na
 | CPU       | 6-Core ARM Cortex-A78AE 64Bit 1.5MB L2 + 4MB L3                        |
 | Memory    | 8GB 128Bit LPDDR5 102GB/s                                              |
 | Storage   | microSD card slot and dual external NVMe support (Type 2230 & 2280)    |
-| Power     | 7W–25W                                                                 |
+| Power     | 7W-25W                                                                 |
 | Network   | 802.11ac/abgn Wireless Network Interface Controller                    |
 
 I bought the device, whose key features I listed above, in September 2025. I only recently found the time to work on it, and after a successful setup, I wanted to write this post right away.
@@ -130,7 +131,7 @@ In the first step, you select the device and additional packages. You also choos
 
 In the second step, you select mandatory, recommended, and optional packages, and choose the directory where they will be installed.
 
-In the third step, the selected packages are downloaded and prepared to be transferred to the device. At this point, you put the device into Recovery mode and start the flashing process. If everything goes well, the process finishes in about 20–25 minutes, and you move on to the final "you're good to go" step.
+In the third step, the selected packages are downloaded and prepared to be transferred to the device. At this point, you put the device into Recovery mode and start the flashing process. If everything goes well, the process finishes in about 20-25 minutes, and you move on to the final "you're good to go" step.
 
 #### What I Went Through
 

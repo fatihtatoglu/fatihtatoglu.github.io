@@ -16,7 +16,7 @@ tags:
   - nvme
 readingTime: 17
 date: 2026-01-14
-updated: 2026-01-15
+updated: 2026-05-06
 pair: nvidia-jetson-orin-nano-setup
 canonical: ~/nvidia-jetson-orin-nano-kurulumu/
 alternate: ~/en/nvidia-jetson-orin-nano-setup/
@@ -35,6 +35,7 @@ coverCaption: Jetson Orin Nano ile gömülü yapay zekâ denemeleri için ilk ad
 template: post
 layout: default
 status: published
+extract: "Bazı kurulumlar vardır; belgelerde birkaç adım gibi görünür, gerçekte ise insanı kablolara, sürücülere, BIOS ekranlarına ve \"acaba nerede hata yaptım?\" sorusuna kadar götürür. Jetson Orin Nano da benim için böyle bir başlangıç oldu. Yapay zekâ denemeleri için küçük ama güçlü bir cihaz kurmak isterken, ideal dokümantasyon ile gerçek dünyanın birbirine her zaman uymadığını bir kez daha gördüm. Bu yazı, sonunda çalışan bir sistem kadar, oraya varırken takıldığım taşların da hikâyesi."
 ---
 # NVIDIA Jetson Orin Nano Kurulumu (JetPack, SD Kart & Sorunlar)
 
@@ -48,7 +49,7 @@ Bu yazımda yapay zekâ denemelerimde bana destek olacak olan bir cihazın kurul
 
 ## NVIDIA Jetson Orin Nano Nedir?
 
-Yapay zekâ denildiğinde artık ilk aklımıza NVIDIA geliyor. Jetson Orin Nano da NVIDIA’nın bu alandaki ürünlerinden biri olarak konumlanıyor. Cihazın geliştirme amacı bireysel ve sanayiye hazır projelerde kullanılacak, yapay zekâ kasları güçlü olan bir gömülü bilgisayar platformu. İçerisinde bulunan CUDA ve Tensor çekirdekleri sayesinde çoğu laptop veya masaüstü bilgisayardan bile daha güçlü bir yapay zekâ hesaplama desteği sunuyor. Bunun yanında düşük enerji tüketimi ve küçük boyutu, yapay zekâ projelerine başlangıç için biçilmez bir kaftan olmasını sağlıyor.
+Yapay zekâ denildiğinde artık ilk aklımıza NVIDIA geliyor. Jetson Orin Nano da NVIDIA'nın bu alandaki ürünlerinden biri olarak konumlanıyor. Cihazın geliştirme amacı bireysel ve sanayiye hazır projelerde kullanılacak, yapay zekâ kasları güçlü olan bir gömülü bilgisayar platformu. İçerisinde bulunan CUDA ve Tensor çekirdekleri sayesinde çoğu laptop veya masaüstü bilgisayardan bile daha güçlü bir yapay zekâ hesaplama desteği sunuyor. Bunun yanında düşük enerji tüketimi ve küçük boyutu, yapay zekâ projelerine başlangıç için biçilmez bir kaftan olmasını sağlıyor.
 
 ![NVIDIA Jetson Orin Nano Super Development Kit](/assets/images/jetson-orin-nano-super-developer-kit.webp)
 

@@ -16,7 +16,7 @@ tags:
   - experimental-learning
 readingTime: 13
 date: 2026-01-06
-updated: 2026-01-07
+updated: 2026-05-06
 pair: munazara-deneyi-yapay-zeka
 canonical: ~/en/debate-experiment-with-ai/
 alternate: ~/munazara-deneyi-yapay-zeka/
@@ -35,6 +35,7 @@ template: post
 layout: default
 status: published
 aiTranslated: ChatGPT 5.2
+extract: "What if the question is not whether artificial intelligence will replace us, but whether we can use it to train the parts of ourselves we tend to avoid? Behind the familiar fear of lost jobs sits a quieter challenge: thinking more clearly, listening more carefully, defending an idea without becoming attached to it. Starting from a report about the future of work, this experiment turns AI into something unexpected: not just a tool, but a sparring partner for the mind."
 ---
 # AI Debate Experiment: Thinking and Persuasion with Artificial Intelligence
 
@@ -182,5 +183,5 @@ In the end, the real question is not whether AI will surpass us, but which muscl
 
 ## References and Further Reading
 
-- [World Economic Forum – Future of Jobs Report 2025](https://www.weforum.org/stories/2025/01/future-of-jobs-report-2025-the-fastest-growing-and-declining-jobs/) – A comprehensive analysis of the future labor market, rising and declining jobs, and the skills expected to stand out in the coming years.  
-- [Debating Guide – Durham Union Society](https://dus.org.uk/debating-guide/) – A practical guide to the basic rules of debate, argument construction, and developing counterarguments.
+- [World Economic Forum - Future of Jobs Report 2025](https://www.weforum.org/stories/2025/01/future-of-jobs-report-2025-the-fastest-growing-and-declining-jobs/) - A comprehensive analysis of the future labor market, rising and declining jobs, and the skills expected to stand out in the coming years.  
+- [Debating Guide - Durham Union Society](https://dus.org.uk/debating-guide/) - A practical guide to the basic rules of debate, argument construction, and developing counterarguments.

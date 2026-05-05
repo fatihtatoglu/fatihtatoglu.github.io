@@ -15,7 +15,7 @@ tags:
   - new-year-reflection
 readingTime: 9
 date: 2025-12-31
-updated: 2026-01-01
+updated: 2026-05-06
 pair: denemek-yanilmak-basarisizlik
 canonical: ~/en/learning-from-failure
 alternate: ~/denemek-yanilmak-basarisizlik
@@ -35,6 +35,7 @@ template: post
 layout: default
 status: published
 aiTranslated: ChatGPT 5.2
+extract: "Some failures begin quietly, in the middle of an ordinary kitchen. A recipe changes, a step is forgotten, and what should have been bread turns into something else entirely. But sometimes the real question is not whether the result is successful. It is what happens inside us while we try, fail, hesitate, begin again, or stop ourselves before even starting. From childhood memories to a child's first steps, this is a reflection on the strange courage hidden in imperfect attempts."
 ---
 # Once Again, I Couldn't Do It With My Own Hands: On Trying and Failing
 

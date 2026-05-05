@@ -13,7 +13,7 @@
     }
   },
   "analytics": {
-    "enabled": true,
+    "enabled": false,
     "gtmId": "GTM-5WHLJZ6Z",
     "gaId": "G-R2SETB688N",
     "clarityId": "ubkn3xooz5"
@@ -90,7 +90,7 @@
       }
     },
     "collections": {
-      "includeContentFile": false,
+      "includeContentFile": true,
       "tags": {
         "template": "collection",
         "types": [

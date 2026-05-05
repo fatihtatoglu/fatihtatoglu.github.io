@@ -16,7 +16,7 @@ tags:
   - python
 readingTime: 9
 date: 2026-01-10
-updated: 2026-01-11
+updated: 2026-05-06
 pair: "yapay-zeka-munazara-teknik-mimari"
 canonical: "~/en/ai-debate-experiment-architecture/"
 alternate: "~/yapay-zeka-munazara-teknik-mimari/"
@@ -34,6 +34,7 @@ template: post
 layout: default
 status: published
 aiTranslated: "ChatGPT 5.2"
+extract: "A debate between two AI models may look simple from the outside: give a topic, collect arguments, choose a winner. But once the models begin to answer, the real question becomes how to keep the conversation fair, comparable, and meaningful. Behind each round there is a coordinator, a set of constraints, blind jury decisions, and many small design choices that shape the result. This experiment is less about making models argue, and more about understanding how a controlled AI discussion can be built."
 ---
 # AI Debate Experiment Architecture: Multi-Agent LLM Design
 

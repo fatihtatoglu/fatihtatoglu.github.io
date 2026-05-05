@@ -17,7 +17,7 @@ tags:
   - self-improvement
 readingTime: 15
 date: 2025-10-28
-updated: 2025-12-02
+updated: 2026-05-06
 pair: swot-degerlendirme-firsat-reyonu
 canonical: ~/en/swot-opportunity-zone-method/
 alternate: ~/swot-degerlendirme-firsat-reyonu/
@@ -38,6 +38,7 @@ status: published
 series: swot
 seriesTitle: SWOT Analysis
 related: ["mxzxdguji8", "meebjnw1ox", "y62dvrtos5"]
+extract: "Sometimes a SWOT analysis leaves us with more questions than answers. Strengths look safe until they begin to slow us down, weaknesses may not truly belong to us, and threats often appear only after they have already started blocking the way. The Opportunity Zone method begins from that tension: how can each part of SWOT become something more practical, more personal, and more connected to action? This is not a shortcut to growth, but an attempt to look at familiar headings from a more useful angle."
 ---
 # Opportunity Zone SWOT Method: A Practical Assessment Guide
 
@@ -69,8 +70,8 @@ Recalling the definition I gave in the classic assessment; we call things that a
 
 Before moving on to the selection part, I need to briefly mention the types of opportunities. According to my view, there are two types of opportunities.
 
-- **Uncontrolled Opportunities:** Situations that arise entirely through environmental interaction, spontaneously, and outside our control, which can turn out in our favor if we evaluate them.
-- **Forced Opportunities:** Situations that develop outside our control but force us to take action in order to "survive" or continue, and which yield benefits when properly managed.
+- **Uncontrolled Opportunities:** Situations that arise entirely through environmental interaction, spontaneously, and outside our control, which can turn out in our favor if we evaluate them.
+- **Forced Opportunities:** Situations that develop outside our control but force us to take action in order to "survive" or continue, and which yield benefits when properly managed.
 
 Opportunities arise from environmental interactions that are inherently beyond the control of individuals and are fleeting. I call all opportunities that conform to this definition **Uncontrolled Opportunities**.
 

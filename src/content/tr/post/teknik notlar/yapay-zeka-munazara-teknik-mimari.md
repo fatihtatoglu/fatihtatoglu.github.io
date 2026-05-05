@@ -16,7 +16,7 @@ tags:
   - python
 readingTime: 9
 date: 2026-01-09
-updated: 2026-01-10
+updated: 2026-05-06
 pair: ai-debate-experiment-architecture
 canonical: ~/yapay-zeka-munazara-teknik-mimari/
 alternate: ~/en/ai-debate-experiment-architecture/
@@ -34,6 +34,7 @@ coverCaption: Her yapay zekâ münazarasının arkasında, argümanların nasıl
 template: post
 layout: default
 status: published
+extract: "İki yapay zekâ modelini karşı karşıya getirmek ilk bakışta sadece iyi yazılmış birkaç prompt meselesi gibi görünebilir. Ama işin içine roller, turlar, hafıza, jüri değerlendirmesi ve tarafsızlık girince basit bir deneme, küçük bir deney altyapısına dönüşüyor. Bu yazıda, önceki münazara deneyinin arkasında çalışan mekanizmaya bakıyoruz: modellerin birbirini nasıl \"duyduğu\", cevapların nasıl taşındığı, jürinin nasıl devreye girdiği ve bütün bu akışın neden düşündüğümden daha dikkatli tasarlanması gerektiği üzerine."
 ---
 # Yapay Zekâ Münazara Deneyi: Teknik Arka Plan
 

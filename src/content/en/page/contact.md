@@ -44,8 +44,8 @@ I do my best to read every message and generally try to get back to you within a
 
 ## How Can You Reach Me?
 
-- Via the **contact form** I'll add below
-- Or directly by email: [fatih@tatoglu.net](mailto:fatih@tatoglu.net)
+- Via the **contact form** I'll add below
+- Or directly by email: [fatih@tatoglu.net](mailto:fatih@tatoglu.net)
 
 > Feel free to use whichever channel you prefer; the important thing is that you can write comfortably.
 

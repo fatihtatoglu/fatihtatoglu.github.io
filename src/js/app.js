@@ -70,7 +70,7 @@ document.querySelectorAll("p img").forEach(image => {
   });
 });
 
-// Back link — progressive enhancement
+// Back link - progressive enhancement
 document.querySelectorAll("[data-back-link]").forEach(link => {
   link.addEventListener("click", function (e) {
     e.preventDefault();

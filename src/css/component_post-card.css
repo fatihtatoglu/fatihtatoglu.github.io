@@ -1,10 +1,11 @@
 @layer components {
-  /* ——— Base card: horizontal layout (mobile-first) ——— */
+  /* --- Base card: horizontal layout (mobile-first) --- */
   section.category article.post-card {
-    @apply flex flex-row p-0 overflow-hidden justify-end;
+    @apply relative flex flex-row p-0 overflow-hidden justify-end;
     background: var(--bg-elev);
     border: 1px solid var(--border);
     border-radius: var(--radius-lg);
+    cursor: pointer;
     transition: border-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
 
     header.post-header {
@@ -50,6 +51,11 @@
           text-decoration: none;
         }
 
+        a::after {
+          content: "";
+          @apply absolute inset-0;
+        }
+
         a:hover {
           color: var(--brand-600);
           text-decoration: none;
@@ -60,24 +66,20 @@
         @apply text-xs leading-relaxed m-0;
         color: var(--ink-dim);
         line-height: 1.6;
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
         overflow-wrap: anywhere;
         flex-shrink: 0;
       }
     }
   }
 
-  /* ——— Hover: shared for home AND collection ——— */
+  /* --- Hover: shared for home AND collection --- */
   section.category article.post-card:hover {
     border-color: var(--brand-300);
     box-shadow: 0 4px 16px color-mix(in srgb, var(--brand-500) 10%, transparent);
     transform: translateY(-2px);
   }
 
-  /* ——— ≥480px: Slightly wider thumbnail ——— */
+  /* --- ≥480px: Slightly wider thumbnail --- */
   @media (min-width: 480px) {
     section.category article.post-card {
       header.post-header {
@@ -99,7 +101,7 @@
     }
   }
 
-  /* ——— ≥640px: Vertical card stack ——— */
+  /* --- ≥640px: Vertical card stack --- */
   @media (min-width: 640px) {
     section.category article.post-card {
       @apply flex-col;
@@ -168,7 +170,7 @@
     }
   }
 
-  /* ——— Featured home card: horizontal on ≥960px ——— */
+  /* --- Featured home card: horizontal on ≥960px --- */
   @media (min-width: 960px) {
     section.category.home div.category-listing article.post-card:first-child {
       div.post-body {
@@ -179,9 +181,6 @@
           font-size: 1.15rem;
         }
 
-        p {
-          -webkit-line-clamp: 4;
-        }
       }
     }
   }

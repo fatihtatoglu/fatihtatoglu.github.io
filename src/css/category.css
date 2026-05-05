@@ -125,9 +125,6 @@
             font-size: 1.15rem;
           }
 
-          p {
-            -webkit-line-clamp: 4;
-          }
         }
       }
     }

@@ -33,7 +33,7 @@ keywords:
   - "safe-to-fail experiments"
   - "software teams"
 featured: false
-cover: assets/images/cynefin-not-all-problems-are-the-same.webp
+cover: /assets/images/cynefin-not-all-problems-are-the-same.webp
 coverAlt: "A person at a crossroads looks toward signs representing goals, analysis, networks, crisis, and uncertainty."
 coverCaption: "Not every problem is the same type; good decisions begin with understanding the context."
 template: post

@@ -29,7 +29,7 @@ keywords:
   - "sistem düşüncesi"
   - "yazılım ekipleri"
 featured: false
-cover: assets/images/cynefin-not-all-problems-are-the-same.webp
+cover: /assets/images/cynefin-not-all-problems-are-the-same.webp
 coverAlt: "Yol ayrımında duran bir kişinin farklı problem türlerini simgeleyen yönlere baktığı Cynefin temalı illüstrasyon"
 coverCaption: "Her problem aynı türden değildir; doğru karar, önce içinde bulunduğumuz bağlamı anlamakla başlar."
 template: post

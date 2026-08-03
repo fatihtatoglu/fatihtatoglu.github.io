@@ -1,24 +1,28 @@
 ---
 id: n9pxj201h9
 lang: en
-title: "Life & Learning | Category"
+title: Life & Learning | Category
 slug: life-learning
 schemaType: collection
-menu: "Life & Learning"
+menu: Life & Learning
 order: 2
 show: true
 readingTime: 1
 date: 2025-11-14
-updated: 2025-11-14
+updated: 2026-08-03
 pair: yasam-ogrenme
 canonical: ~/en/life-learning/
 alternate: ~/yasam-ogrenme/
-description: "Collected essays, observations, and guides that explore habits, learning systems, and everyday reflections."
+description: Long-form reflections on learning, career experiences, daily rituals, personal growth, and the insights that gradually emerge through life.
 keywords:
-  - Life
-  - Learning
-  - Values
-  - Routines
+  - life and learning
+  - lifelong learning
+  - career experiences
+  - personal insights
+  - learning systems
+  - lessons from professional life
+  - daily rituals
+  - personal growth notes
 featured: false
 template: collection
 layout: default
@@ -26,4 +30,4 @@ status: published
 ---
 # Life & Learning
 
-Notes on rituals, reflection practices, and experiments that create momentum. This stream is where I publish the longer narratives that connect strategy with day-to-day living.
+This is where I collect my long-form notes on ways of learning, career experiences, daily rituals, and the personal insights that accumulate through life. Experiences, reflections, and perspectives that evolve over time come together in the same flow.
